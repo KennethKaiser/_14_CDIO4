@@ -12,6 +12,7 @@ public class Player {
     private ArrayList<Field> properties;
     private String color;
 
+    private boolean bankrupt;
     private boolean jail = false;
     private boolean getOutOfJailCard = false;
 
