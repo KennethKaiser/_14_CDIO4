@@ -8,6 +8,10 @@ public class RaffleCup {
     private int[] ourRolls;
     private Die die = new Die();
 
+    /**
+     * Method for rolling dice. Returns 2 random numbers in an int array.
+     * @return
+     */
     public int[] roll(){
 
         ourRolls = new int[NUMBER_OF_ROLLS];
