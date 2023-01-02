@@ -12,7 +12,6 @@ public class PlayerHandler {
         players[id] = new Player(id, name, money, color);
     }
 
-
     public Player[] getPlayers() {
         return players;
     }
