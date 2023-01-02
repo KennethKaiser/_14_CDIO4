@@ -24,4 +24,76 @@ public class Player {
         this.money = money;
         this.color = color;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public ArrayList<Field> getProperties() {
+        return properties;
+    }
+
+    public void setProperties(ArrayList<Field> properties) {
+        this.properties = properties;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public boolean isBankrupt() {
+        return bankrupt;
+    }
+
+    public void setBankrupt(boolean bankrupt) {
+        this.bankrupt = bankrupt;
+    }
+
+    public boolean isJail() {
+        return jail;
+    }
+
+    public void setJail(boolean jail) {
+        this.jail = jail;
+    }
+
+    public boolean isGetOutOfJailCard() {
+        return getOutOfJailCard;
+    }
+
+    public void setGetOutOfJailCard(boolean getOutOfJailCard) {
+        this.getOutOfJailCard = getOutOfJailCard;
+    }
 }
