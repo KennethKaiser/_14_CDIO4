@@ -1,5 +1,7 @@
 import dtu.dice.RaffleCup;
-import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 import static org.testng.Assert.assertTrue;
 
 class TC1_DiceTest {
