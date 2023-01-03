@@ -18,7 +18,7 @@ public class RaffleCup {
         Random random = new Random();
 
         for(int i =0; i < ourRolls.length; i++){
-            ourRolls[0] = random.nextInt(die.getMAXIMUM()-die.getMINIMUM()+1)+1;
+            ourRolls[i] = random.nextInt(die.getMAXIMUM()-die.getMINIMUM()+1)+1;
         }
         return ourRolls;
     }
