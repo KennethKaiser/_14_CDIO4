@@ -1,9 +1,12 @@
 package com.example._14_cdio4;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+
+import java.net.URL;
 
 public class BoardController {
 
@@ -228,8 +231,8 @@ public class BoardController {
         }
     }
     //endregion
-
-    /*
+    //region biler i stackpanes
+     /*
     Note til Kenneth til bilerne
 
     Bilen skal flyttes til det stackpane. Det vil automatisk sætte den til toppen af feltet.
@@ -248,9 +251,6 @@ public class BoardController {
     Ellers skal hver spiller have en konstant top margin på deres bil og stå forskellige steder på brættet.
      */
 
-
-
-    //region biler i stackpanes
     @FXML
     ImageView car1;
     @FXML
@@ -398,7 +398,35 @@ public class BoardController {
     }
 
     //endregion
+    //region fieldPresses
 
+    @FXML
+    Button bField1;
+    @FXML
+    Button bField2;
+    @FXML
+    Button bField3;
+    @FXML
+    Button bField4;
+    @FXML
+    Button bField5;
+    @FXML
+    Button bField6;
+    @FXML
+    Button bField7;
+    @FXML
+    Button bField8;
+
+
+
+
+
+    public void buttonIsPressed(String id){
+
+    }
+
+
+    //endregion
 
 
 
