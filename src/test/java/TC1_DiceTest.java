@@ -8,22 +8,28 @@ class TC1_DiceTest {
 
     @Test
     void testDice() {
-        int rollNumber = 10000; //Hvor mange gange terningen rulles
-        int value = 0;
-        int die1, die2;
+        final int ROLLNUMBER = 10000; //Hvor mange gange terningen rulles
+        int value = 0; //Samlet værdi af alle slag
+        int die1, die2; //Variabel for de to terninger
         //Mulige terninge øjne
         int two = 0, three = 0, four = 0, five = 0, six = 0, seven = 0, eight = 0, nine = 0, ten =0;
         int elleven = 0, twelve = 0;
+        //Forventede værdier
         float expecVal, expecValMin, expecValMax;
         float expected, expectedMin, expectedMax;
-        for(int i=0; i<= rollNumber; i++) {
-            //Terning 1
+
+        // Her en for som ruller udfører en handling flere gange
+        for(int i=0; i<= ROLLNUMBER; i++) {
+            //Terninger og raflebæger oprettes
             RaffleCup dices = new RaffleCup();
-            die1 = dices.roll()[0];
-            die2 = dices.roll()[1];
+            //Terningerne rulles
+            dices.roll();
+            //De to terningers værdi gemmes
+            die1 = dices.getOurRolls()[0];
+            die2 = dices.getOurRolls()[1];
             //Lægge terningerne sammen oven i tidligere rul
             value += (die1 + die2);
-            //Gem hvilken værdi blev slået
+            //Gemmer hvilken værdi der blev slået
             switch(die1 + die2){
                 case 2:
                     two++;
@@ -64,20 +70,20 @@ class TC1_DiceTest {
             }
         }
         //Middelværdi
-        expected = (float) (rollNumber*3.5);
+        expected = (float) (ROLLNUMBER*7);
         expectedMin = (float) (expected-(expected*0.05));
         expectedMax =(float) (expected+(expected*0.05));
 
-        //Forskellige værdier
-        expecVal = (float) (rollNumber/6);
+        //Forskellige værdier forventet værdi
+        expecVal = (float) (ROLLNUMBER/6);
         expecValMin = (float) (expecVal-(expecVal*0.05));
         expecValMax =(float) (expecVal+(expecVal*0.05));
 
-        //Se om middel er fin
+        //Tester middel
         assertTrue((expectedMax > value) && (expectedMin < value), "expected (" + expected + ") should be near collected sum" + value);
         System.out.println("Samlet sum af terningen " + value + "forventede værdi er " + expected);
 
-        //Se om enkelte øjne er fin
+        //Tester værdierne
         assertTrue((expecValMax > two) && (expecValMin < two), "expected for 2 (" + expecVal + ") should be near collected sum of 2 " + two);
         System.out.println("Samlet sum af 2 " + two + "forventede værdi er " + expecVal);
         assertTrue((expecValMax > three) && (expecValMin < three), "expected for 3 (" + expecVal + ") should be near collected sum of 3 " + three);
