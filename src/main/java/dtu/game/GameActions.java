@@ -1,6 +1,9 @@
 package dtu.game;
 
 import dtu.board.Board;
+import dtu.board.Field;
+import dtu.board.FieldProperty;
+import dtu.board.Property;
 import dtu.players.Player;
 
 public class GameActions {
@@ -18,5 +21,18 @@ public class GameActions {
 
         player.setPosition(nextFieldPlacement);
 
+    }
+
+    public void buyProperty(Player player, Property property){
+        player.setMoney(player.getMoney() - property.getPrice());
+        property.setOwner(player);
+        property.setOwned(true);
+        property.setActiveRent(0);
+    }
+
+    public void payRent(Player player, Property property, int hotels){
+
+        player.setMoney(player.getMoney() - property.getActiveRent());
+        property.getOwner().setMoney(property.getOwner().getMoney() + property.getActiveRent());
     }
 }
