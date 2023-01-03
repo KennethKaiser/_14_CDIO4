@@ -1,4 +1,4 @@
-package com.example._14_cdio4;
+package dtu._14_cdio4;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
