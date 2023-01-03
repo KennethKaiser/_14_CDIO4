@@ -1,4 +1,10 @@
 package dtu.board;
 
-public class Field {
+public abstract class Field {
+
+
+
+    public abstract void action();
+
+
 }
