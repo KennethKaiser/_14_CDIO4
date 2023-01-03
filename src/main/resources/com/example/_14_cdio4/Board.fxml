@@ -55,7 +55,7 @@
                                     <Font size="23.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" textAlignment="CENTER" wrappingWidth="5.100116848945618">
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                  <font>
                                     <Font size="23.0" />
                                  </font>
@@ -67,20 +67,12 @@
                         <Insets />
                      </VBox.margin>
                   </HBox>
-                  <FlowPane alignment="TOP_CENTER" prefHeight="69.0" prefWidth="261.0">
+                  <FlowPane alignment="TOP_CENTER" hgap="5.0" prefHeight="69.0" prefWidth="261.0">
                      <children>
                         <StackPane alignment="TOP_CENTER" prefHeight="70.0" prefWidth="42.0">
                            <children>
                               <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="45.0">
                                  <children>
-                                    <Button maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="43.0" style="-fx-background-color: #ADD8E6; -fx-border-color: #606060;" text="5000" textFill="WHITE">
-                                       <StackPane.margin>
-                                          <Insets />
-                                       </StackPane.margin>
-                                       <font>
-                                          <Font size="8.0" />
-                                       </font>
-                                    </Button>
                                     <ImageView fitHeight="30.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/money_5000.png" />
@@ -90,137 +82,69 @@
                               </StackPane>
                            </children>
                         </StackPane>
-                        <StackPane alignment="TOP_CENTER" prefHeight="70.0" prefWidth="42.0">
+                        <StackPane alignment="TOP_CENTER" layoutX="158.0" layoutY="10.0" prefHeight="70.0" prefWidth="42.0">
                            <children>
-                              <Button layoutX="118.0" layoutY="48.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #BF40BF; -fx-border-color: #606060;" text="2000" textFill="WHITE">
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="14.0" layoutY="48.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #BF40BF; -fx-border-color: #606060;" text="2000" textFill="WHITE">
-                                 <StackPane.margin>
-                                    <Insets top="8.0" />
-                                 </StackPane.margin>
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="14.0" layoutY="52.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #BF40BF; -fx-border-color: #606060;" text="2000" textFill="WHITE">
-                                 <StackPane.margin>
-                                    <Insets top="16.0" />
-                                 </StackPane.margin>
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="14.0" layoutY="56.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #BF40BF; -fx-border-color: #606060;" text="2000" textFill="WHITE">
-                                 <StackPane.margin>
-                                    <Insets top="24.0" />
-                                 </StackPane.margin>
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
+                              <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="45.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/money_2000.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </StackPane>
                            </children>
                         </StackPane>
-                        <StackPane alignment="TOP_CENTER" layoutX="140.0" layoutY="10.0" prefHeight="70.0" prefWidth="42.0">
+                        <StackPane alignment="TOP_CENTER" layoutX="180.0" layoutY="10.0" prefHeight="70.0" prefWidth="42.0">
                            <children>
-                              <Button layoutX="118.0" layoutY="48.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #FF1493; -fx-border-color: #606060;" text="1000" textFill="WHITE">
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="14.0" layoutY="48.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #FF1493; -fx-border-color: #606060;" text="1000" textFill="WHITE">
-                                 <StackPane.margin>
-                                    <Insets top="8.0" />
-                                 </StackPane.margin>
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="14.0" layoutY="52.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #FF1493; -fx-border-color: #606060;" text="1000" textFill="WHITE">
-                                 <StackPane.margin>
-                                    <Insets top="16.0" />
-                                 </StackPane.margin>
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="14.0" layoutY="56.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #FF1493; -fx-border-color: #606060;" text="1000" textFill="WHITE">
-                                 <StackPane.margin>
-                                    <Insets top="24.0" />
-                                 </StackPane.margin>
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
+                              <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="45.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/money_1000.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </StackPane>
                            </children>
                         </StackPane>
-                        <StackPane alignment="TOP_CENTER" layoutX="168.0" layoutY="10.0" prefHeight="70.0" prefWidth="42.0">
+                        <StackPane alignment="TOP_CENTER" layoutX="204.0" layoutY="10.0" prefHeight="70.0" prefWidth="42.0">
                            <children>
-                              <Button layoutX="118.0" layoutY="48.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: pink; -fx-border-color: #606060;" text="500" textFill="WHITE">
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="14.0" layoutY="48.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: pink; -fx-border-color: #606060;" text="500" textFill="WHITE">
-                                 <StackPane.margin>
-                                    <Insets top="8.0" />
-                                 </StackPane.margin>
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
+                              <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="45.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/money_500.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </StackPane>
                            </children>
                         </StackPane>
-                        <StackPane alignment="TOP_CENTER" layoutX="140.0" layoutY="10.0" prefHeight="70.0" prefWidth="42.0">
+                        <StackPane alignment="TOP_CENTER" layoutX="226.0" layoutY="10.0" prefHeight="70.0" prefWidth="42.0">
                            <children>
-                              <Button layoutX="118.0" layoutY="48.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: orange; -fx-border-color: #606060;" text="100" textFill="WHITE">
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="14.0" layoutY="48.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: orange; -fx-border-color: #606060;" text="100" textFill="WHITE">
-                                 <StackPane.margin>
-                                    <Insets top="8.0" />
-                                 </StackPane.margin>
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="14.0" layoutY="52.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: orange; -fx-border-color: #606060;" text="100" textFill="WHITE">
-                                 <StackPane.margin>
-                                    <Insets top="16.0" />
-                                 </StackPane.margin>
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="14.0" layoutY="56.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: orange; -fx-border-color: #606060;" text="100" textFill="WHITE">
-                                 <StackPane.margin>
-                                    <Insets top="24.0" />
-                                 </StackPane.margin>
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
+                              <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="45.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/money_100.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </StackPane>
                            </children>
                         </StackPane>
-                        <StackPane alignment="TOP_CENTER" layoutX="114.0" layoutY="110.0" prefHeight="70.0" prefWidth="42.0">
+                        <StackPane alignment="TOP_CENTER" layoutX="249.0" layoutY="10.0" prefHeight="70.0" prefWidth="42.0">
                            <children>
-                              <Button layoutX="118.0" layoutY="48.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #ffff00; -fx-border-color: #606060;" text="50" textFill="WHITE">
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="14.0" layoutY="48.0" maxHeight="20.0" maxWidth="35.0" minHeight="4.0" minWidth="4.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #ffff00; -fx-border-color: #606060;" text="50" textFill="WHITE">
-                                 <StackPane.margin>
-                                    <Insets top="8.0" />
-                                 </StackPane.margin>
-                                 <font>
-                                    <Font size="8.0" />
-                                 </font>
-                              </Button>
+                              <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="45.0">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/money_50.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </StackPane>
                            </children>
                         </StackPane>
                      </children>
@@ -808,12 +732,12 @@
                         <HBox prefHeight="36.0" prefWidth="60.0" />
                         <HBox prefHeight="36.0" prefWidth="90.0">
                            <children>
-                              <Text fx:id="p1Money1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="77.90013360977173">
+                              <Text fx:id="p3Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="77.90013360977173">
                                  <font>
                                     <Font size="23.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" textAlignment="CENTER" wrappingWidth="5.100116848945618">
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                  <font>
                                     <Font size="23.0" />
                                  </font>
@@ -1562,12 +1486,12 @@
                         <HBox prefHeight="36.0" prefWidth="60.0" />
                         <HBox prefHeight="36.0" prefWidth="90.0">
                            <children>
-                              <Text fx:id="p1Money13" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="77.90013360977173">
+                              <Text fx:id="p5Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="77.90013360977173">
                                  <font>
                                     <Font size="23.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" textAlignment="CENTER" wrappingWidth="5.100116848945618">
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                  <font>
                                     <Font size="23.0" />
                                  </font>
@@ -2289,7 +2213,1059 @@
       </VBox>
       <StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="900.0">
          <children>
-            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="910.0" prefWidth="900.0" style="-fx-background-color: #00dd00;" />
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="910.0" prefWidth="900.0" style="-fx-background-color: #00dd00;">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <StackPane layoutX="310.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 2;">
+                                 <children>
+                                    <VBox prefHeight="3.0" prefWidth="77.0" />
+                                    <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/parkingIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="#968181" strokeType="OUTSIDE" strokeWidth="0.0" text="Gratis" textAlignment="CENTER" wrappingWidth="93.25139904022217">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="48.0" prefWidth="94.0" />
+                                    <Text fill="#968181" layoutX="10.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parkering" textAlignment="CENTER" wrappingWidth="93.25139904022217">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: red; -fx-border-color: black; -fx-border-width: 2;" />
+                              <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/houseNulIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Trianglen" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="37.0" prefWidth="88.0" />
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 4400" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 2;">
+                                 <children>
+                                    <Text fill="#aaaa00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" wrappingWidth="23.6513671875">
+                                       <font>
+                                          <Font name="System Bold" size="42.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#aaaa00" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prøv Lykken" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="610.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: red; -fx-border-color: black; -fx-border-width: 2;" />
+                              <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/houseNulIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Østerbrogade" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="37.0" prefWidth="88.0" />
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 4400" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="110.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: red; -fx-border-color: black; -fx-border-width: 2;" />
+                              <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/houseNulIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Grønningen" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="37.0" prefWidth="88.0" />
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 4800" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00dddd; -fx-border-color: black; -fx-border-width: 2;">
+                                 <children>
+                                    <VBox prefHeight="14.0" prefWidth="95.0" />
+                                    <ImageView fitHeight="50.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/ferry.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gedser - Rostock" textAlignment="CENTER" wrappingWidth="87.65142345428467">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="30.0" prefWidth="100.0" />
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4000" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="310.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 2;" />
+                              <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/houseNulIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="#665353" strokeType="OUTSIDE" strokeWidth="0.0" text="Bredgade" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="37.0" prefWidth="88.0" />
+                                    <Text fill="#665353" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 5200" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="710.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 2;" />
+                              <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/houseNulIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="#665353" strokeType="OUTSIDE" strokeWidth="0.0" text="Kgs. Nytorv" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="37.0" prefWidth="88.0" />
+                                    <Text fill="#665353" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 5200" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #dd0000; -fx-border-color: black; -fx-border-width: 2;" />
+                              <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/cokeIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Coca Cola" textAlignment="CENTER" wrappingWidth="87.65142345428467">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="46.0" prefWidth="82.0" />
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 3000" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="820.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 2;" />
+                              <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/houseNulIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="#665353" strokeType="OUTSIDE" strokeWidth="0.0" text="Østergade" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="37.0" prefWidth="88.0" />
+                                    <Text fill="#665353" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 5600" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00aadd; -fx-border-color: black; -fx-border-width: 2;" />
+                              <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/policeOfficerIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Politi" textAlignment="CENTER" wrappingWidth="93.25139904022217">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="46.0" prefWidth="82.0" />
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gå i fængsel" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                     </children></HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="736.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #aaaaaa; -fx-border-color: black; -fx-border-width: 2;" />
+                                    <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Strandvejen" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="37.0" prefWidth="88.0" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 4000" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane layoutX="10.0" layoutY="310.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #aaaaaa; -fx-border-color: black; -fx-border-width: 2;" />
+                                    <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Hellerupvej" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="34.0" prefWidth="88.0" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 3600" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 2;">
+                                       <children>
+                                          <Text fill="#aaaa00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" wrappingWidth="23.6513671875">
+                                             <font>
+                                                <Font name="System Bold" size="42.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#aaaa00" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prøv Lykken" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane layoutX="10.0" layoutY="410.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #aaaaaa; -fx-border-color: black; -fx-border-width: 2;" />
+                                    <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Bernstorffsvej" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="37.0" prefWidth="88.0" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 3600" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00dddd; -fx-border-color: black; -fx-border-width: 2;">
+                                       <children>
+                                          <VBox prefHeight="14.0" prefWidth="95.0" />
+                                          <ImageView fitHeight="50.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../textures/ferry.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Molslinjen" textAlignment="CENTER" wrappingWidth="87.65142345428467">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="36.0" prefWidth="88.0" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4000" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane layoutX="10.0" layoutY="510.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #32cd32; -fx-border-color: black; -fx-border-width: 2;" />
+                                    <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gl. Kongevej" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="36.0" prefWidth="88.0" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 3200" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane layoutX="10.0" layoutY="610.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #32cd32; -fx-border-color: black; -fx-border-width: 2;" />
+                                    <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Bülowsvej" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="34.0" prefWidth="88.0" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 2800" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: orange; -fx-border-color: black; -fx-border-width: 2;" />
+                                    <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/fantaIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuborg Squash" textAlignment="CENTER" wrappingWidth="93.25139904022217">
+                                             <font>
+                                                <Font name="System Bold" size="10.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="46.0" prefWidth="82.0" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 3000" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane layoutX="10.0" layoutY="648.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #32cd32; -fx-border-color: black; -fx-border-width: 2;" />
+                                    <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksberg Allé" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="20.0" prefWidth="88.0" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 2800" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                           </children></VBox>
+                        <VBox prefHeight="720.0" prefWidth="750.0">
+                           <children>
+                              <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="900.0" prefWidth="900.0">
+                                 <children>
+                                    <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="162.0" prefWidth="100.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" prefHeight="140.0" prefWidth="100.0" style="-fx-background-color: #404040;" textFill="#00aa00">
+                                             <font>
+                                                <Font size="40.0" />
+                                             </font>
+                                          </Button>
+                                          <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="150.0" prefWidth="100.0" style="-fx-border-color: #00aa00; -fx-border-width: 5; -fx-border-radius: 5;" />
+                                          <Text fill="#00aa00" strokeType="OUTSIDE" strokeWidth="0.0" text="?">
+                                             <font>
+                                                <Font name="System Bold" size="96.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane opacity="0.0" prefHeight="150.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="585.0" prefWidth="635.0" style="-fx-background-color: white;">
+                                             <children>
+                                                <StackPane prefHeight="654.0" prefWidth="635.0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="52.0" layoutY="74.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="650.0" style="-fx-border-color: #00aa00; -fx-border-radius: 20; -fx-border-width: 10;" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </StackPane>
+                           </children></VBox>
+                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <StackPane layoutX="10.0" layoutY="645.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: yellow; -fx-border-color: black; -fx-border-width: 2;" />
+                                    <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="#665353" strokeType="OUTSIDE" strokeWidth="0.0" text="Amagertorv" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="37.0" prefWidth="88.0" />
+                                          <Text fill="#665353" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 6000" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane layoutX="10.0" layoutY="592.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: yellow; -fx-border-color: black; -fx-border-width: 2;" />
+                                    <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="#665353" strokeType="OUTSIDE" strokeWidth="0.0" text="Vimmelskaftet" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font name="System Bold" size="11.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="37.0" prefWidth="88.0" />
+                                          <Text fill="#665353" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 6000" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 2;">
+                                       <children>
+                                          <Text fill="#aaaa00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" wrappingWidth="23.6513671875">
+                                             <font>
+                                                <Font name="System Bold" size="42.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#aaaa00" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prøv Lykken" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: yellow; -fx-border-color: black; -fx-border-width: 2;" />
+                                    <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="#665353" strokeType="OUTSIDE" strokeWidth="0.0" text="Nygade" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="37.0" prefWidth="88.0" />
+                                          <Text fill="#665353" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 6400" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00dddd; -fx-border-color: black; -fx-border-width: 2;">
+                                       <children>
+                                          <VBox prefHeight="14.0" prefWidth="95.0" />
+                                          <ImageView fitHeight="50.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../textures/ferry.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Rødby - Puttgarden" textAlignment="CENTER" wrappingWidth="87.65142345428467">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="30.0" prefWidth="100.0" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4000" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 2;">
+                                       <children>
+                                          <Text fill="#aaaa00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" wrappingWidth="23.6513671875">
+                                             <font>
+                                                <Font name="System Bold" size="42.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#aaaa00" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prøv Lykken" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #BF40BF; -fx-border-color: black; -fx-border-width: 2;" />
+                                    <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksberg gade" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="37.0" prefWidth="88.0" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 7000" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane prefHeight="96.0" prefWidth="85.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #aaaaaa; -fx-border-color: black; -fx-border-width: 2;">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Skat" textAlignment="CENTER" wrappingWidth="73.25139904022217">
+                                             <font>
+                                                <Font name="System Bold" size="17.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="WHITE" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betal kr. 2000" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane layoutX="10.0" layoutY="392.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #BF40BF; -fx-border-color: black; -fx-border-width: 2;" />
+                                    <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Rådhus- pladsen" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="37.0" prefWidth="88.0" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 8000" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #808080; -fx-border-color: black; -fx-border-width: 2;" />
+                              <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/jailIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Fængsel" textAlignment="CENTER" wrappingWidth="93.25139904022217">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="46.0" prefWidth="82.0" />
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="På besøg" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="460.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: orange; -fx-border-color: black; -fx-border-width: 2;" />
+                              <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/houseNulIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Allégade" textAlignment="CENTER" wrappingWidth="93.25139904022217">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="46.0" prefWidth="82.0" />
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 2400" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="820.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: orange; -fx-border-color: black; -fx-border-width: 2;" />
+                              <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/houseNulIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Valby Langgade" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="26.0" prefWidth="82.0" />
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 2000" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 2;">
+                                 <children>
+                                    <Text fill="#aaaa00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" wrappingWidth="23.6513671875">
+                                       <font>
+                                          <Font name="System Bold" size="42.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#aaaa00" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prøv Lykken" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: orange; -fx-border-color: black; -fx-border-width: 2;" />
+                              <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/houseNulIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Roskildevej" textAlignment="CENTER" wrappingWidth="93.25139904022217">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="45.0" prefWidth="94.0" />
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 2000" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="710.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00dddd; -fx-border-color: black; -fx-border-width: 2;">
+                                 <children>
+                                    <VBox prefHeight="14.0" prefWidth="95.0" />
+                                    <ImageView fitHeight="50.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/ferry.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gedser - Rostock" textAlignment="CENTER" wrappingWidth="87.65142345428467">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="30.0" prefWidth="100.0" />
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4000" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00dddd; -fx-border-color: black; -fx-border-width: 2;">
+                                       <children>
+                                          <VBox prefHeight="14.0" prefWidth="95.0" />
+                                          <ImageView fitHeight="50.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../textures/ferry.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør - Helsingborg" textAlignment="CENTER" wrappingWidth="87.65142345428467">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <VBox prefHeight="30.0" prefWidth="100.0" />
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4000" textAlignment="CENTER" wrappingWidth="80.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #aaaaaa; -fx-border-color: black; -fx-border-width: 2;">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Skat" textAlignment="CENTER" wrappingWidth="73.25139904022217">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="WHITE" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betal 10% eller kr. 4000" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #aaaaaa; -fx-border-color: black; -fx-border-width: 2;">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Skat" textAlignment="CENTER" wrappingWidth="73.25139904022217">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="WHITE" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betal 10% eller kr. 4000" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="610.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0000ff; -fx-border-color: black; -fx-border-width: 2;" />
+                              <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/houseNulIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Hvidovrevej" textAlignment="CENTER" wrappingWidth="93.25139904022217">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="46.0" prefWidth="82.0" />
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 1200" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="260.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 2;">
+                                 <children>
+                                    <Text fill="#aaaa00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" wrappingWidth="23.6513671875">
+                                       <font>
+                                          <Font name="System Bold" size="42.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#aaaa00" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prøv Lykken" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0000ff; -fx-border-color: black; -fx-border-width: 2;" />
+                              <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/houseNulIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Rødovrevej" textAlignment="CENTER" wrappingWidth="93.25139904022217">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <VBox prefHeight="46.0" prefWidth="82.0" />
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr 1200" textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="10.0" minWidth="10.0" prefHeight="100.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: red; -fx-border-color: black; -fx-border-width: 2;">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Start" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="26.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="WHITE" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modtag kr. 4000 " textAlignment="CENTER" wrappingWidth="80.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
+               </children></VBox>
          </children>
       </StackPane>
       <VBox maxHeight="700.0" prefHeight="700.0" prefWidth="400.0" spacing="5.0">
@@ -2325,12 +3301,12 @@
                         <HBox prefHeight="36.0" prefWidth="60.0" />
                         <HBox prefHeight="36.0" prefWidth="90.0">
                            <children>
-                              <Text fx:id="p1Money11" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="77.90013360977173">
+                              <Text fx:id="p2Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="77.90013360977173">
                                  <font>
                                     <Font size="23.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" textAlignment="CENTER" wrappingWidth="5.100116848945618">
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                  <font>
                                     <Font size="23.0" />
                                  </font>
@@ -3079,12 +4055,12 @@
                         <HBox prefHeight="36.0" prefWidth="60.0" />
                         <HBox prefHeight="36.0" prefWidth="90.0">
                            <children>
-                              <Text fx:id="p1Money12" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="77.90013360977173">
+                              <Text fx:id="p4Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="77.90013360977173">
                                  <font>
                                     <Font size="23.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" textAlignment="CENTER" wrappingWidth="5.100116848945618">
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                  <font>
                                     <Font size="23.0" />
                                  </font>
@@ -3833,12 +4809,12 @@
                         <HBox prefHeight="36.0" prefWidth="60.0" />
                         <HBox prefHeight="36.0" prefWidth="90.0">
                            <children>
-                              <Text fx:id="p1Money121" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="77.90013360977173">
+                              <Text fx:id="p6Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="77.90013360977173">
                                  <font>
                                     <Font size="23.0" />
                                  </font>
                               </Text>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" textAlignment="CENTER" wrappingWidth="5.100116848945618">
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                  <font>
                                     <Font size="23.0" />
                                  </font>

@@ -188,6 +188,45 @@ public class BoardController {
         }
     }
     //endregion
+    //region money
+    @FXML
+    Text p1Money;
+    @FXML
+    Text p2Money;
+    @FXML
+    Text p3Money;
+    @FXML
+    Text p4Money;
+    @FXML
+    Text p5Money;
+    @FXML
+    Text p6Money;
+    public void setMoney(int amount, int player){
+        switch (player){
+            case 1:
+                p1Money.setText(amount + "");
+                break;
+            case 2:
+                p2Money.setText(amount + "");
+                break;
+            case 3:
+                p3Money.setText(amount + "");
+                break;
+            case 4:
+                p4Money.setText(amount + "");
+                break;
+            case 5:
+                p5Money.setText(amount + "");
+                break;
+            case 6:
+                p6Money.setText(amount + "");
+                break;
+            default:
+                System.out.println("Error: can't set player " + player + "'s money, because the player doesn't exist.");
+                break;
+        }
+    }
+    //endregion
 
 
 
