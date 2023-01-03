@@ -2,7 +2,7 @@ package dtu.board;
 
 import dtu.players.Player;
 
-public class FieldProperty extends Field{
+public class FieldProperty extends BuyableFields{
 
     private Property property;
     private Boolean owned;
@@ -16,6 +16,11 @@ public class FieldProperty extends Field{
 
     @Override
     public void action() {
+
+    }
+
+    @Override
+    public void buy() {
 
     }
 }
