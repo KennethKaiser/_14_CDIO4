@@ -15,6 +15,10 @@ public class BoardController {
     Text p3Name;
     @FXML
     Text p4Name;
+    @FXML
+    Text p5Name;
+    @FXML
+    Text p6Name;
 
     public void setName(String name, int player){
         switch (player){
@@ -29,6 +33,12 @@ public class BoardController {
                 break;
             case 4:
                 p4Name.setText(name);
+                break;
+            case 5:
+                p5Name.setText(name);
+                break;
+            case 6:
+                p6Name.setText(name);
                 break;
             default:
                 System.out.println("Error: Cannot set player name as player number {"+ player + "} does not exist");
@@ -45,6 +55,10 @@ public class BoardController {
     ImageView p3KeyIcon;
     @FXML
     ImageView p4KeyIcon;
+    @FXML
+    ImageView p5KeyIcon;
+    @FXML
+    ImageView p6KeyIcon;
 
     public boolean isGetOutOfJailFreeCard(int player){
         switch (player){
@@ -59,6 +73,12 @@ public class BoardController {
                 else return false;
             case 4:
                 if(p4KeyIcon.getOpacity() > 0) return true;
+                else return false;
+            case 5:
+                if(p5KeyIcon.getOpacity() > 0) return true;
+                else return false;
+            case 6:
+                if(p6KeyIcon.getOpacity() > 0) return true;
                 else return false;
             default:
                 System.out.println("Error: could not find isGetOutOfJailFreeCard with player number {" + player + "}");
@@ -85,6 +105,12 @@ public class BoardController {
             case 4:
                 p4KeyIcon.setOpacity(toSet);
                 break;
+            case 5:
+                p5KeyIcon.setOpacity(toSet);
+                break;
+            case 6:
+                p6KeyIcon.setOpacity(toSet);
+                break;
             default:
                 System.out.println("Error: could not find player with number {" + player + "} while trying to setGetOutOfJailFreeCard");
                 break;
@@ -100,6 +126,10 @@ public class BoardController {
     ImageView p3JailIcon;
     @FXML
     ImageView p4JailIcon;
+    @FXML
+    ImageView p5JailIcon;
+    @FXML
+    ImageView p6JailIcon;
 
     public boolean isInJail(int player){
         switch (player){
@@ -114,6 +144,12 @@ public class BoardController {
                 else return false;
             case 4:
                 if(p4JailIcon.getOpacity() > 0) return true;
+                else return false;
+            case 5:
+                if(p5JailIcon.getOpacity() > 0) return true;
+                else return false;
+            case 6:
+                if(p6JailIcon.getOpacity() > 0) return true;
                 else return false;
             default:
                 System.out.println("Error: could not find isInJail with player number {" + player + "}");
@@ -140,8 +176,53 @@ public class BoardController {
             case 4:
                 p4JailIcon.setOpacity(toSet);
                 break;
+            case 5:
+                p5JailIcon.setOpacity(toSet);
+                break;
+            case 6:
+                p6JailIcon.setOpacity(toSet);
+                break;
             default:
                 System.out.println("Error: could not find player with number {" + player + "} while trying to setInJailIcon");
+                break;
+        }
+    }
+    //endregion
+    //region money
+    @FXML
+    Text p1Money;
+    @FXML
+    Text p2Money;
+    @FXML
+    Text p3Money;
+    @FXML
+    Text p4Money;
+    @FXML
+    Text p5Money;
+    @FXML
+    Text p6Money;
+    public void setMoney(int amount, int player){
+        switch (player){
+            case 1:
+                p1Money.setText(amount + "");
+                break;
+            case 2:
+                p2Money.setText(amount + "");
+                break;
+            case 3:
+                p3Money.setText(amount + "");
+                break;
+            case 4:
+                p4Money.setText(amount + "");
+                break;
+            case 5:
+                p5Money.setText(amount + "");
+                break;
+            case 6:
+                p6Money.setText(amount + "");
+                break;
+            default:
+                System.out.println("Error: can't set player " + player + "'s money, because the player doesn't exist.");
                 break;
         }
     }
