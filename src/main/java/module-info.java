@@ -1,8 +1,6 @@
-module dtu._14_cdio4 {
+module dtu._14_CDIO4 {
     requires javafx.controls;
     requires javafx.fxml;
-    requires junit;
-    requires org.testng;
 
 
     opens dtu._14_cdio4 to javafx.fxml;
