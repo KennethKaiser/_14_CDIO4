@@ -46,6 +46,9 @@ public class Player {
     }
 
     public void setPosition(int position) {
+        if(position > 39){
+            position = position - 40;
+        }
         this.position = position;
     }
 
