@@ -62,21 +62,21 @@ public class BoardController {
 
     public void initPics() {
         try{
-            ferry1.setImage(image("src/main/textures/ferry_card.png"));
-            ferry2.setImage(image("src/main/textures/ferry_card.png"));
-            ferry3.setImage(image("src/main/textures/ferry_card.png"));
-            ferry4.setImage(image("src/main/textures/ferry_card.png"));
-            colaImage.setImage(image("src/main/textures/colaflaske.png"));
-            squashImage.setImage(image("src/main/textures/squash_card.png"));
-            policeImage.setImage(image("src/main/textures/police_man_card.png"));
-            prisonImage.setImage(image("src/main/textures/jail_card.png"));
-            parkingImage.setImage(image("src/main/textures/parking_field.png"));
-            carBlue.setImage(image("src/main/textures/blueCar.png"));
-            carBlack.setImage(image("src/main/textures/blackCar.png"));
-            carOrange.setImage(image("src/main/textures/orangeCar.png"));
-            carYellow.setImage(image("src/main/textures/yellowCar.png"));
-            carRed.setImage(image("src/main/textures/redCar.png"));
-            carGreen.setImage(image("src/main/textures/greenCar.png"));
+            ferry1.setImage(image("src/textures/ferry_card.png"));
+            ferry2.setImage(image("src/textures/ferry_card.png"));
+            ferry3.setImage(image("src/textures/ferry_card.png"));
+            ferry4.setImage(image("src/textures/ferry_card.png"));
+            colaImage.setImage(image("src/textures/colaflaske.png"));
+            squashImage.setImage(image("src/textures/squash_card.png"));
+            policeImage.setImage(image("src/textures/police_man_card.png"));
+            prisonImage.setImage(image("src/textures/jail_card.png"));
+            parkingImage.setImage(image("src/textures/parking_field.png"));
+            carBlue.setImage(image("src/textures/blueCar.png"));
+            carBlack.setImage(image("src/textures/blackCar.png"));
+            carOrange.setImage(image("src/textures/orangeCar.png"));
+            carYellow.setImage(image("src/textures/yellowCar.png"));
+            carRed.setImage(image("src/textures/redCar.png"));
+            carGreen.setImage(image("src/textures/greenCar.png"));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
