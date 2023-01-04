@@ -10,6 +10,8 @@ public class Property {
     private int rentNormal, rent1House, rent2House, rent3House, rent4House, rentHotel;
     private int pledge;
 
+    private int buildings;
+
     int ActiveRent;
 
     //Ejerskab
@@ -29,29 +31,33 @@ public class Property {
         this.pledge = pledge;
     }
 
+    //Change the rent after the amount of buildings
     public void setActiveRent(int rentNumber){
 
         switch (rentNumber){
             case 0:
                 ActiveRent = rentNormal;
+                setBuidlings(0);
             break;
             case 1:
                 ActiveRent = rent1House;
+                setBuidlings(1);
             break;
             case 2:
                 ActiveRent = rent2House;
+                setBuidlings(2);
             break;
             case 3:
                 ActiveRent = rent3House;
+                setBuidlings(3);
             break;
             case 4:
                 ActiveRent = rent4House;
+                setBuidlings(4);
             break;
             case 5:
                 ActiveRent = rentHotel;
-            break;
-            default:
-                ActiveRent = 0;
+                setBuidlings(5);
             break;
         }
     }
@@ -89,4 +95,9 @@ public class Property {
     }
 
     public void setHousePrice(int newPrice){housePrice = newPrice;}
+
+    public void setBuidlings(int amount){buildings = amount;}
+
+    public int getBuidlings(){
+        return buildings;}
 }

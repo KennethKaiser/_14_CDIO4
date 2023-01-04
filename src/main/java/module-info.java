@@ -10,4 +10,5 @@ module com.example._14_cdio4 {
     exports dtu.dice;
     exports dtu.players;
     exports dtu.board;
+    exports dtu.game;
 }

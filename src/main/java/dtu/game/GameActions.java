@@ -29,10 +29,13 @@ public class GameActions {
      * @param property the property being bought
      */
     public static void buyProperty(Player player, Property property){
-        player.setMoney(player.getMoney() - property.getPrice());
-        property.setOwner(player);
-        property.setOwned(true);
-        property.setActiveRent(0);
+        if(player.getMoney() > property.getPrice()) {
+            player.setMoney(player.getMoney() - property.getPrice());
+            property.setOwner(player);
+            property.setOwned(true);
+            property.setActiveRent(0);
+        }
+        else{System.out.println("Du har ikke penge nok");}
     }
 
     /**
@@ -57,13 +60,17 @@ public class GameActions {
     public static void buildHouse(Player player, Property property) {
         // En besked fortæller pris og giver mulighed for at bekræfte køb
         //hvis der trykkes køb:
-        if (property.getActiveRent() < 5) {
+        if (property.getBuidlings() < 5) {
+            if(player.getMoney() > property.getHousePrice()){
             player.setMoney(player.getMoney() - property.getHousePrice());
-            property.setActiveRent(property.getActiveRent() + 1);
+            property.setActiveRent(property.getBuidlings()+1);}
+            else{System.out.println("Du har ikke penge nok");}
         }
         else {
+            if(player.getMoney() > property.getHousePrice() * 5){
             player.setMoney(player.getMoney() - (property.getHousePrice() * 5));
-            property.setActiveRent(property.getActiveRent() + 1);
+            property.setActiveRent(property.getActiveRent() + 1);}
+            else{System.out.println("Du har ikke penge nok");}
         }
         //Hvis ikke der trykkes køb sker intet
     }
