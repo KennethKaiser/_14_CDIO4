@@ -77,6 +77,7 @@ public class BoardController {
             carYellow.setImage(image("src/textures/yellowCar.png"));
             carRed.setImage(image("src/textures/redCar.png"));
             carGreen.setImage(image("src/textures/greenCar.png"));
+
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -314,24 +315,6 @@ public class BoardController {
     }
     //endregion
     //region biler i stackpanes
-     /*
-    Note til Kenneth til bilerne
-
-    Bilen skal flyttes til det stackpane. Det vil automatisk sætte den til toppen af feltet.
-    Når der kommer en bil til, vil de blive sat på præcis samme spot.
-    Derfor hvis der er mere end en bil, vil de næste biler skulle rykkes på lidt.
-    Jeg har målt og der vil være plads til 6 spillere på samme felt hvis dette er med 8 pixels.
-    Derfor skal første bil der lander have en top margin på 0.
-    bil 2 top margin 8
-    bil 3 top margin 16
-    bil 4 top margin 24
-    bil 5 top margin 32
-    bil 6 top margin 40
-
-    Hvis en spiller rykker sig fra feltet, vil de andre ikke rykke op,
-    så der skal enten være en update hvor de alle får -8 top margin.
-    Ellers skal hver spiller have en konstant top margin på deres bil og stå forskellige steder på brættet.
-     */
 
     ImageView[] cars;
     private void setCars(){
@@ -626,6 +609,22 @@ public class BoardController {
 
 
     //endregion
+    //region dice
+
+    ImageView dice1;
+    ImageView dice2;
+
+
+    public void rollDice(int result1, int result2) throws FileNotFoundException {
+        dice1.setImage(image(""));
+        dice2.setImage(image(""));
+    }
+
+    //Position can be between 10 and 500
+
+
+    //endregion
+
 
 
 
