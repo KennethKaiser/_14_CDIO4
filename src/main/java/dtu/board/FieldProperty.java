@@ -15,7 +15,13 @@ public class FieldProperty extends Field{
 
 
     @Override
-    public void action() {
-
+    public void action(Player player) {
+        if(property.getOwned() == false){
+            //En besked giver valget for at købe grunden
+            //Hvis ja:
+            property.setOwner(player);
+            property.setOwned(true);
+            //Hvis nej, intet
+        }
     }
 }
