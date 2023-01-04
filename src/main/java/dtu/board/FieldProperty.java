@@ -6,6 +6,7 @@ import dtu.game.GameActions;
 public class FieldProperty extends Field{
 
     private Property property;
+    //Har skrevet så disse to variable bruges mest i Property klassen
     private Boolean owned;
     private Player owner;
 
