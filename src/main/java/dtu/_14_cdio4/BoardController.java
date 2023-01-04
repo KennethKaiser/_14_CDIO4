@@ -22,7 +22,7 @@ public class BoardController {
         System.out.println("Instantiated");
 
 
-
+        startCars();
         initPics();
     }
     public void test(){
@@ -94,7 +94,6 @@ public class BoardController {
 
 
     //endregion
-
     //region names
 
     @FXML
@@ -319,6 +318,11 @@ public class BoardController {
     //endregion
     //region biler i stackpanes
 
+    public void TestMove(){
+        movePLayer(0, 39);
+    }
+
+
     ImageView[] cars;
     private void setCars(){
         cars = new ImageView[6];
@@ -329,23 +333,86 @@ public class BoardController {
         cars[4] = carOrange;
         cars[5] = carBlack;
     }
-    public void moveCarOne(){
-        carMoveOne(1);
-    }
 
     public void carMoveOne(int player){
         if(cars == null) setCars();
         if(fields == null) initFields();
-
-        int position;
         for(int i = 0; i < fields.length; i++){
             if(fields[i].getChildren().contains(cars[player])){
                 fields[i].getChildren().remove(cars[player]);
-                if(i == 39)fields[0].getChildren().add(cars[player]);
-                else fields[i+1].getChildren().add(cars[player]);
+                if(i == 39){
+                    multipleCars(player, 0);
+                    fields[0].getChildren().add(cars[player]);
+
+                }
+                else {
+                    multipleCars(player, i+1);
+                    fields[i+1].getChildren().add(cars[player]);
+                }
                 break;
             }
         }
+    }
+    public void carMoveOneBackwards(int player){
+        for(int i = 0; i < fields.length; i++){
+            if(fields[i].getChildren().contains(cars[player])){
+                fields[i].getChildren().remove(cars[player]);
+                if(i == 0){
+                    multipleCars(player, 39);
+                    fields[1].getChildren().add(cars[player]);
+
+                }
+                else {
+                    multipleCars(player, i-1);
+                    fields[i+1].getChildren().add(cars[player]);
+                }
+                break;
+            }
+        }
+    }
+    public void movePLayer(int player, int amount){
+        for(int i = amount; i > 0; i--){
+            carMoveOne(player);
+        }
+    }
+    public void movePLayerBackward(int player, int amount){
+        for(int i = amount; i > 0; i--){
+            carMoveOneBackwards(player);
+        }
+    }
+    public void startCars(){
+        if(cars == null) setCars();
+        if(fields == null) initFields();
+
+        for(int car = 0; car < cars.length; car++){
+            for(int i = 0; i < fields.length; i++){
+                if(fields[i].getChildren().contains(cars[car])){
+                    fields[i].getChildren().remove(cars[car]);
+                    break;
+                }
+            }
+            fields[39].getChildren().add(cars[car]);
+        }
+
+        carMoveOne(0);
+        carMoveOne(1);
+        carMoveOne(2);
+        carMoveOne(3);
+        carMoveOne(4);
+        carMoveOne(5);
+
+    }
+    public void multipleCars(int player, int position){
+        if(fields == null) initFields();
+        int total = 0;
+        if(fields[position].getChildren().contains(cars[0])) total++;
+        if(fields[position].getChildren().contains(cars[1])) total++;
+        if(fields[position].getChildren().contains(cars[2])) total++;
+        if(fields[position].getChildren().contains(cars[3])) total++;
+        if(fields[position].getChildren().contains(cars[4])) total++;
+        if(fields[position].getChildren().contains(cars[5])) total++;
+
+        cars[player].setTranslateY(total*8);
     }
     @FXML
     StackPane field0;
@@ -606,10 +673,6 @@ public class BoardController {
         return fieldButtons;
     }
 
-    public void buttonPress(int id){
-
-    }
-
 
     //endregion
     //region dice
@@ -681,7 +744,6 @@ public class BoardController {
 
 
     //endregion
-
     //region player property cards
 
     @FXML
@@ -806,7 +868,6 @@ public class BoardController {
     StackPane sodaProp6;
 
     //endregion
-
     //region player money
     @FXML
     StackPane p15000;
