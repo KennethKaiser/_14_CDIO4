@@ -23,14 +23,14 @@ public class GameActions {
 
     }
 
-    public void buyProperty(Player player, Property property){
+    public static void buyProperty(Player player, Property property){
         player.setMoney(player.getMoney() - property.getPrice());
         property.setOwner(player);
         property.setOwned(true);
         property.setActiveRent(0);
     }
 
-    public void payRent(Player player, Property property, int hotels){
+    public static void payRent(Player player, Property property){
 
         player.setMoney(player.getMoney() - property.getActiveRent());
         property.getOwner().setMoney(property.getOwner().getMoney() + property.getActiveRent());
