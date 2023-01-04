@@ -428,6 +428,13 @@ public class BoardController {
 
     //endregion
 
+    @FXML
+    Button testBut;
+
+    public void testFunc(){
+        System.out.println("hej");
+        testBut.setText("HEYO");
+    }
 
 
 
