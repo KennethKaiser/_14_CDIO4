@@ -19,7 +19,7 @@ class TC5_RentTest {
        Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
        Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        Property property = new Property("DTU",300,200,RENT,500,600,700,800,900,5);
+        Property property = new Property(0, "DTU",300,200,RENT,500,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwner(player2);
@@ -28,6 +28,7 @@ class TC5_RentTest {
 
         propertyField.action(player1);
 
+        //Tester at den ene spiller mistede penge og den anden fik
         assertTrue((player1.getMoney() == lost) && (player2.getMoney() == gained), "expect player1 to have: " + lost + " and player2 to have: " + gained + ". player1 has " + player1.getMoney()
         + ". And player 2 has: "+ player2.getMoney());
         System.out.println("expect player1 to have: " + lost + ", player1 has: " + player1.getMoney() + ". Expect player2 to have: " + gained + ", player 2 has: " + player2.getMoney());
@@ -45,7 +46,7 @@ class TC5_RentTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        Property property = new Property("DTU",300,200,RENT,500,600,700,800,900,5);
+        Property property = new Property(0,"DTU",300,200,RENT,500,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwner(player2);
@@ -54,6 +55,7 @@ class TC5_RentTest {
 
         propertyField.action(player1);
 
+        //Tester at den ene spiller mistede flere penge end han ejede og den anden fik mange
         assertTrue((player1.getMoney() == lost) && (player2.getMoney() == gained), "expect player1 to have: " + lost + " and player2 to have: " + gained + ". player1 has " + player1.getMoney()
                 + ". And player 2 has: "+ player2.getMoney());
         System.out.println("expect player1 to have: " + lost + ", player1 has: " + player1.getMoney() + ". Expect player2 to have: " + gained + ", player 2 has: " + player2.getMoney());
@@ -71,7 +73,7 @@ class TC5_RentTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        Property property = new Property("DTU",300,200,RENT,500,600,700,800,900,5);
+        Property property = new Property(0,"DTU",300,200,RENT,500,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwner(player2);
@@ -80,6 +82,7 @@ class TC5_RentTest {
 
         propertyField.action(player1);
 
+        //Testede om systemet virkede med værdier på 0
         assertTrue((player1.getMoney() == lost) && (player2.getMoney() == gained), "expect player1 to have: " + lost + " and player2 to have: " + gained + ". player1 has " + player1.getMoney()
                 + ". And player 2 has: "+ player2.getMoney());
         System.out.println("expect player1 to have: " + lost + ", player1 has: " + player1.getMoney() + ". Expect player2 to have: " + gained + ", player 2 has: " + player2.getMoney());
@@ -97,7 +100,7 @@ class TC5_RentTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        Property property = new Property("DTU",300,200,200,RENT_HOUSE,600,700,800,900,5);
+        Property property = new Property(0,"DTU",300,200,200,RENT_HOUSE,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwner(player2);
@@ -106,6 +109,7 @@ class TC5_RentTest {
 
         propertyField.action(player1);
 
+        //Tester at lejen også ændres hvis der er et hus
         assertTrue((player1.getMoney() == lost) && (player2.getMoney() == gained), "expect player1 to have: " + lost + " and player2 to have: " + gained + ". player1 has " + player1.getMoney()
                 + ". And player 2 has: "+ player2.getMoney());
         System.out.println("expect player1 to have: " + lost + ", player1 has: " + player1.getMoney() + ". Expect player2 to have: " + gained + ", player 2 has: " + player2.getMoney());

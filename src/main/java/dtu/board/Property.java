@@ -18,7 +18,7 @@ public class Property {
     private Boolean owned;
     private Player owner;
 
-    public Property(String name, int price, int housePrice, int rentNormal, int rent1House, int rent2House, int rent3House, int rent4House, int rentHotel, int pledge) {
+    public Property(int ID, String name, int price, int housePrice, int rentNormal, int rent1House, int rent2House, int rent3House, int rent4House, int rentHotel, int pledge) {
         this.name = name;
         this.price = price;
         this.housePrice = housePrice;
