@@ -13,6 +13,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.Random;
+import java.util.Vector;
 
 public class BoardController {
 
@@ -77,6 +79,7 @@ public class BoardController {
             carYellow.setImage(image("src/textures/yellowCar.png"));
             carRed.setImage(image("src/textures/redCar.png"));
             carGreen.setImage(image("src/textures/greenCar.png"));
+
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -93,6 +96,7 @@ public class BoardController {
     //endregion
 
     //region names
+
     @FXML
     Text p1Name;
     @FXML
@@ -105,9 +109,9 @@ public class BoardController {
     Text p5Name;
     @FXML
     Text p6Name;
-
     public void setName(String name, int player){
-        switch (player){
+        switch (player-1){
+
             case 1:
                 p1Name.setText(name);
                 break;
@@ -218,7 +222,7 @@ public class BoardController {
     ImageView p6JailIcon;
 
     public boolean isInJail(int player){
-        switch (player){
+        switch (player-1){
             case 1:
                 if(p1JailIcon.getOpacity() > 0) return true;
                 else return false;
@@ -249,7 +253,7 @@ public class BoardController {
         else toSet = 0;
 
 
-        switch (player){
+        switch (player-1){
             case 1:
                 p1JailIcon.setOpacity(toSet);
                 break;
@@ -288,7 +292,7 @@ public class BoardController {
     @FXML
     Text p6Money;
     public void setMoney(int amount, int player){
-        switch (player){
+        switch (player-1){
             case 1:
                 p1Money.setText(amount + "");
                 break;
@@ -314,24 +318,6 @@ public class BoardController {
     }
     //endregion
     //region biler i stackpanes
-     /*
-    Note til Kenneth til bilerne
-
-    Bilen skal flyttes til det stackpane. Det vil automatisk sætte den til toppen af feltet.
-    Når der kommer en bil til, vil de blive sat på præcis samme spot.
-    Derfor hvis der er mere end en bil, vil de næste biler skulle rykkes på lidt.
-    Jeg har målt og der vil være plads til 6 spillere på samme felt hvis dette er med 8 pixels.
-    Derfor skal første bil der lander have en top margin på 0.
-    bil 2 top margin 8
-    bil 3 top margin 16
-    bil 4 top margin 24
-    bil 5 top margin 32
-    bil 6 top margin 40
-
-    Hvis en spiller rykker sig fra feltet, vil de andre ikke rykke op,
-    så der skal enten være en update hvor de alle får -8 top margin.
-    Ellers skal hver spiller have en konstant top margin på deres bil og stå forskellige steder på brættet.
-     */
 
     ImageView[] cars;
     private void setCars(){
@@ -626,6 +612,277 @@ public class BoardController {
 
 
     //endregion
+    //region dice
+
+    @FXML
+    ImageView dice1;
+    @FXML
+    ImageView dice2;
+
+    public void roll(){
+        Random rnd = new Random();
+
+        int first;
+        int second;
+
+        first = rnd.nextInt(1, 7);
+        second = rnd.nextInt(1, 7);
+        rollDice(first, second);
+    }
+
+    public void rollDice(int result1, int result2) {
+        String[] dice = new String[6];
+        dice[0] = "src/textures/d1.png";
+        dice[1] = "src/textures/d2.png";
+        dice[2] = "src/textures/d3.png";
+        dice[3] = "src/textures/d4.png";
+        dice[4] = "src/textures/d5.png";
+        dice[5] = "src/textures/d6.png";
+        try {
+            dice1.setImage(image(dice[result1 -1]));
+            dice2.setImage(image(dice[result2 -1]));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        Random rnd = new Random();
+        //Position of dice can be between 10 and 500
+
+
+        double x1 = rnd.nextDouble(10, 500);
+        double y1 = rnd.nextDouble(10, 500);
+        double x2 = rnd.nextDouble(10, 500);
+        double y2 = rnd.nextDouble(10, 500);
+
+
+
+        boolean touchingOther = true;
+        boolean touchingMiddle = false;
+        while(touchingMiddle || touchingOther){
+             x1 = rnd.nextDouble(10, 500);
+             y1 = rnd.nextDouble(10, 500);
+             x2 = rnd.nextDouble(10, 500);
+             y2 = rnd.nextDouble(10, 500);
+            if(x1 < y1+30 && x1 > y1-30){
+                touchingOther = true;
+            }
+            touchingOther = false;
+
+
+        }
+
+        dice1.setLayoutX(rnd.nextDouble(x1));
+        dice1.setLayoutY(rnd.nextDouble(y1));
+        dice1.setRotate(rnd.nextDouble(0, 360));
+        dice2.setLayoutX(rnd.nextDouble(x2));
+        dice2.setLayoutY(rnd.nextDouble(y2));
+        dice2.setRotate(rnd.nextDouble(0, 360));
+
+    }
+
+
+    //endregion
+
+    //region player property cards
+
+    @FXML
+    StackPane blueProp1;
+    @FXML
+    StackPane orangeProp1;
+    @FXML
+    StackPane greenProp1;
+    @FXML
+    StackPane greyProp1;
+    @FXML
+    StackPane redProp1;
+    @FXML
+    StackPane whiteProp1;
+    @FXML
+    StackPane yellowProp1;
+    @FXML
+    StackPane purpleProp1;
+    @FXML
+    StackPane ferryProp1;
+    @FXML
+    StackPane sodaProp1;
+    @FXML
+    StackPane blueProp2;
+    @FXML
+    StackPane orangeProp2;
+    @FXML
+    StackPane greenProp2;
+    @FXML
+    StackPane greyProp2;
+    @FXML
+    StackPane redProp2;
+    @FXML
+    StackPane whiteProp2;
+    @FXML
+    StackPane yellowProp2;
+    @FXML
+    StackPane purpleProp2;
+    @FXML
+    StackPane ferryProp2;
+    @FXML
+    StackPane sodaProp2;
+    @FXML
+    StackPane blueProp3;
+    @FXML
+    StackPane orangeProp3;
+    @FXML
+    StackPane greenProp3;
+    @FXML
+    StackPane greyProp3;
+    @FXML
+    StackPane redProp3;
+    @FXML
+    StackPane whiteProp3;
+    @FXML
+    StackPane yellowProp3;
+    @FXML
+    StackPane purpleProp3;
+    @FXML
+    StackPane ferryProp3;
+    @FXML
+    StackPane sodaProp3;
+    @FXML
+    StackPane blueProp4;
+    @FXML
+    StackPane orangeProp4;
+    @FXML
+    StackPane greenProp4;
+    @FXML
+    StackPane greyProp4;
+    @FXML
+    StackPane redProp4;
+    @FXML
+    StackPane whiteProp4;
+    @FXML
+    StackPane yellowProp4;
+    @FXML
+    StackPane purpleProp4;
+    @FXML
+    StackPane ferryProp4;
+    @FXML
+    StackPane sodaProp4;
+    @FXML
+    StackPane blueProp5;
+    @FXML
+    StackPane orangeProp5;
+    @FXML
+    StackPane greenProp5;
+    @FXML
+    StackPane greyProp5;
+    @FXML
+    StackPane redProp5;
+    @FXML
+    StackPane whiteProp5;
+    @FXML
+    StackPane yellowProp5;
+    @FXML
+    StackPane purpleProp5;
+    @FXML
+    StackPane ferryProp5;
+    @FXML
+    StackPane sodaProp5;
+    @FXML
+    StackPane blueProp6;
+    @FXML
+    StackPane orangeProp6;
+    @FXML
+    StackPane greenProp6;
+    @FXML
+    StackPane greyProp6;
+    @FXML
+    StackPane redProp6;
+    @FXML
+    StackPane whiteProp6;
+    @FXML
+    StackPane yellowProp6;
+    @FXML
+    StackPane purpleProp6;
+    @FXML
+    StackPane ferryProp6;
+    @FXML
+    StackPane sodaProp6;
+
+    //endregion
+
+    //region player money
+    @FXML
+    StackPane p15000;
+    @FXML
+    StackPane p12000;
+    @FXML
+    StackPane p11000;
+    @FXML
+    StackPane p1500;
+    @FXML
+    StackPane p1100;
+    @FXML
+    StackPane p150;
+    @FXML
+    StackPane p25000;
+    @FXML
+    StackPane p22000;
+    @FXML
+    StackPane p21000;
+    @FXML
+    StackPane p2500;
+    @FXML
+    StackPane p2100;
+    @FXML
+    StackPane p250;
+    @FXML
+    StackPane p35000;
+    @FXML
+    StackPane p32000;
+    @FXML
+    StackPane p31000;
+    @FXML
+    StackPane p3500;
+    @FXML
+    StackPane p3100;
+    @FXML
+    StackPane p350;
+    @FXML
+    StackPane p45000;
+    @FXML
+    StackPane p42000;
+    @FXML
+    StackPane p41000;
+    @FXML
+    StackPane p4500;
+    @FXML
+    StackPane p4100;
+    @FXML
+    StackPane p450;
+    @FXML
+    StackPane p55000;
+    @FXML
+    StackPane p52000;
+    @FXML
+    StackPane p51000;
+    @FXML
+    StackPane p5500;
+    @FXML
+    StackPane p5100;
+    @FXML
+    StackPane p550;
+    @FXML
+    StackPane p65000;
+    @FXML
+    StackPane p62000;
+    @FXML
+    StackPane p61000;
+    @FXML
+    StackPane p6500;
+    @FXML
+    StackPane p6100;
+    @FXML
+    StackPane p650;
+
+    //endregion
+
 
 
 
