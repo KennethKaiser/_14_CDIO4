@@ -2005,7 +2005,7 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0020ff;">
                                  <children>
-                                    <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="parkingImage" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/parking_field.png" />
                                        </image>
@@ -2160,7 +2160,7 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
                                  <children>
-                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="ferry3" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/ferry_card.png" />
                                        </image>
@@ -2264,7 +2264,7 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #bbbbbb;">
                                  <children>
-                                    <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="colaImage" fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/colaflaske.png" />
                                        </image>
@@ -2330,7 +2330,7 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0080ff;">
                                  <children>
-                                    <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="policeImage" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/police_man_card.png" />
                                        </image>
@@ -2490,7 +2490,7 @@
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
                                        <children>
-                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="ferry2" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../../../textures/ferry_card.png" />
                                              </image>
@@ -2594,7 +2594,7 @@
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #bbbbbb;">
                                        <children>
-                                          <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="squashImage" fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../../../textures/squash_card.png" />
                                              </image>
@@ -2657,6 +2657,7 @@
                                  </children>
                               </StackPane>
                            </children></VBox>
+                        <Button mnemonicParsing="false" onAction="#moveCarOne" prefHeight="26.0" prefWidth="71.0" text="Button" />
                         <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="564.0">
                            <children>
                               <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0">
@@ -2901,7 +2902,7 @@
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
                                        <children>
-                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="ferry4" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../../../textures/ferry_card.png" />
                                              </image>
@@ -3059,7 +3060,7 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #808080;">
                                  <children>
-                                    <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="prisonImage" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/jail_card.png" />
                                        </image>
@@ -3214,7 +3215,7 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
                                  <children>
-                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="ferry1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/ferry_card.png" />
                                        </image>
@@ -3383,6 +3384,36 @@
                                     <Font size="9.0" />
                                  </font>
                               </Button>
+                              <ImageView fx:id="carBlue" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/blueCar.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="carGreen" fitHeight="20.0" fitWidth="40.0" layoutX="22.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/blueCar.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="carOrange" fitHeight="20.0" fitWidth="40.0" layoutX="22.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/blueCar.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="carYellow" fitHeight="20.0" fitWidth="40.0" layoutX="22.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/blueCar.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="carBlack" fitHeight="20.0" fitWidth="40.0" layoutX="22.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/blueCar.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="carRed" fitHeight="20.0" fitWidth="40.0" layoutX="22.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/blueCar.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </StackPane>
                      </children>
