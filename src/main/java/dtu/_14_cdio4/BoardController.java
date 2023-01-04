@@ -1,8 +1,6 @@
 package dtu._14_cdio4;
 
 import javafx.fxml.FXML;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -12,18 +10,15 @@ import javafx.scene.text.Text;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.Random;
-import java.util.Vector;
 
 public class BoardController {
 
     public void instantiateBoard() {
-        System.out.println("Instantiated");
-
-
+        initHouses();
         startCars();
         initPics();
+        System.out.println("Board Instantiated");
     }
     public void test(){
         System.out.println("Button Pressed");
@@ -945,7 +940,107 @@ public class BoardController {
     //endregion
 
 
+    //region houses
 
+    private ImageView[] propHouses;
+    public void setHousesOn(int totalAmount, int propertyID){
+        String[] houseURLS = new String[6];
+        houseURLS[0] = "src/textures/houseNulIcon.png";
+        houseURLS[1] = "src/textures/house1Icon.png";
+        houseURLS[2] = "src/textures/house2Icon.png";
+        houseURLS[3] = "src/textures/house3Icon.png";
+        houseURLS[4] = "src/textures/house4Icon.png";
+        houseURLS[5] = "src/textures/hotelIcon.png";
+        try{
+            propHouses[propertyID].setImage(image(houseURLS[totalAmount]));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void initHouses(){
+        propHouses = new ImageView[22];
+        propHouses[0] = houseBlue1;
+        propHouses[1] = houseBlue2;
+        propHouses[2] = houseOrange1;
+        propHouses[3] = houseOrange2;
+        propHouses[4] = houseOrange3;
+        propHouses[5] = houseGreen1;
+        propHouses[6] = houseGreen2;
+        propHouses[7] = houseGreen3;
+        propHouses[8] = houseGrey1;
+        propHouses[9] = houseGrey2;
+        propHouses[10] = houseGrey3;
+        propHouses[11] = houseRed1;
+        propHouses[12] = houseRed2;
+        propHouses[13] = houseRed3;
+        propHouses[14] = houseWhite1;
+        propHouses[15] = houseWhite2;
+        propHouses[16] = houseWhite3;
+        propHouses[17] = houseYellow1;
+        propHouses[18] = houseYellow2;
+        propHouses[19] = houseYellow3;
+        propHouses[20] = housePurple1;
+        propHouses[21] = housePurple2;
+
+        for(int i = 0; i < propHouses.length; i++){
+            try{
+                propHouses[i].setImage(image("src/textures/houseNulIcon.png"));
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+
+
+
+
+    @FXML
+    ImageView houseBlue1;
+    @FXML
+    ImageView houseBlue2;
+    @FXML
+    ImageView houseOrange1;
+    @FXML
+    ImageView houseOrange2;
+    @FXML
+    ImageView houseOrange3;
+    @FXML
+    ImageView houseGreen1;
+    @FXML
+    ImageView houseGreen2;
+    @FXML
+    ImageView houseGreen3;
+    @FXML
+    ImageView houseGrey1;
+    @FXML
+    ImageView houseGrey2;
+    @FXML
+    ImageView houseGrey3;
+    @FXML
+    ImageView houseRed1;
+    @FXML
+    ImageView houseRed2;
+    @FXML
+    ImageView houseRed3;
+    @FXML
+    ImageView houseWhite1;
+    @FXML
+    ImageView houseWhite2;
+    @FXML
+    ImageView houseWhite3;
+    @FXML
+    ImageView houseYellow1;
+    @FXML
+    ImageView houseYellow2;
+    @FXML
+    ImageView houseYellow3;
+    @FXML
+    ImageView housePurple1;
+    @FXML
+    ImageView housePurple2;
+
+    //endregion
 
 
 }
