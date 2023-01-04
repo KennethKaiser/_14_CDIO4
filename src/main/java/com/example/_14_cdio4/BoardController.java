@@ -10,6 +10,12 @@ import java.net.URL;
 
 public class BoardController {
 
+    public void instantiateBoard(){
+        System.out.println("Instantiated");
+    }
+    public void test(){
+        System.out.println("Button Pressed");
+    }
     //region names
     @FXML
     Text p1Name;
@@ -401,6 +407,8 @@ public class BoardController {
     //region fieldPresses
 
     @FXML
+    Button bField0;
+    @FXML
     Button bField1;
     @FXML
     Button bField2;
@@ -416,12 +424,119 @@ public class BoardController {
     Button bField7;
     @FXML
     Button bField8;
+    @FXML
+    Button bField9;
+    @FXML
+    Button bField10;
+    @FXML
+    Button bField11;
+    @FXML
+    Button bField12;
+    @FXML
+    Button bField13;
+    @FXML
+    Button bField14;
+    @FXML
+    Button bField15;
+    @FXML
+    Button bField16;
+    @FXML
+    Button bField17;
+    @FXML
+    Button bField18;
+    @FXML
+    Button bField19;
+    @FXML
+    Button bField20;
+    @FXML
+    Button bField21;
+    @FXML
+    Button bField22;
+    @FXML
+    Button bField23;
+    @FXML
+    Button bField24;
+    @FXML
+    Button bField25;
+    @FXML
+    Button bField26;
+    @FXML
+    Button bField27;
+    @FXML
+    Button bField28;
+    @FXML
+    Button bField29;
+    @FXML
+    Button bField30;
+    @FXML
+    Button bField31;
+    @FXML
+    Button bField32;
+    @FXML
+    Button bField33;
+    @FXML
+    Button bField34;
+    @FXML
+    Button bField35;
+    @FXML
+    Button bField36;
+    @FXML
+    Button bField37;
+    @FXML
+    Button bField38;
+    @FXML
+    Button bField39;
 
+    private Button[] fieldButtons;
+    private void initFieldButtons(){
+        fieldButtons = new Button[40];
+        fieldButtons[0] = bField0;
+        fieldButtons[1] = bField1;
+        fieldButtons[2] = bField2;
+        fieldButtons[3] = bField3;
+        fieldButtons[4] = bField4;
+        fieldButtons[5] = bField5;
+        fieldButtons[6] = bField6;
+        fieldButtons[7] = bField7;
+        fieldButtons[8] = bField8;
+        fieldButtons[9] = bField9;
+        fieldButtons[10] = bField10;
+        fieldButtons[11] = bField11;
+        fieldButtons[12] = bField12;
+        fieldButtons[13] = bField13;
+        fieldButtons[14] = bField14;
+        fieldButtons[15] = bField15;
+        fieldButtons[16] = bField16;
+        fieldButtons[17] = bField17;
+        fieldButtons[18] = bField18;
+        fieldButtons[19] = bField19;
+        fieldButtons[20] = bField20;
+        fieldButtons[21] = bField21;
+        fieldButtons[22] = bField22;
+        fieldButtons[23] = bField23;
+        fieldButtons[24] = bField24;
+        fieldButtons[25] = bField25;
+        fieldButtons[26] = bField26;
+        fieldButtons[27] = bField27;
+        fieldButtons[28] = bField28;
+        fieldButtons[29] = bField29;
+        fieldButtons[30] = bField30;
+        fieldButtons[31] = bField31;
+        fieldButtons[32] = bField32;
+        fieldButtons[33] = bField33;
+        fieldButtons[34] = bField34;
+        fieldButtons[35] = bField35;
+        fieldButtons[36] = bField36;
+        fieldButtons[37] = bField37;
+        fieldButtons[38] = bField38;
+        fieldButtons[39] = bField39;
+    }
+    public Button[] getFieldButtons(){
+        if(fieldButtons == null) initFieldButtons();
+        return fieldButtons;
+    }
 
-
-
-
-    public void buttonIsPressed(String id){
+    public void buttonPress(int id){
 
     }
 
