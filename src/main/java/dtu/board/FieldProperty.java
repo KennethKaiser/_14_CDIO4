@@ -14,7 +14,10 @@ public class FieldProperty extends Field{
         this.property = property;
     }
 
-
+    /**
+     * Method for when the player lands on a property, getting the choice to buy it or must pay rent
+     * @param player the player who landed on the field
+     */
     @Override
     public void action(Player player) {
         if(property.getOwned() == false){

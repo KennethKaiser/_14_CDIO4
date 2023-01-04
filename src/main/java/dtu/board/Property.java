@@ -84,4 +84,9 @@ public class Property {
         return ActiveRent;
     }
 
+    public int getHousePrice() {
+        return housePrice;
+    }
+
+    public void setHousePrice(int newPrice){housePrice = newPrice;}
 }
