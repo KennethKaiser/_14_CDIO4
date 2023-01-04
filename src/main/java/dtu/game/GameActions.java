@@ -12,7 +12,7 @@ public class GameActions {
      * @param player
      * @param deltaMove
      */
-    public void movePlayer(Player player, int deltaMove){
+    public static void movePlayer(Player player, int deltaMove){
 
         int nextFieldPlacement = player.getPosition() + deltaMove;
 

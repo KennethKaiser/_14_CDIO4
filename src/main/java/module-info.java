@@ -7,4 +7,5 @@ module dtu._14_CDIO4 {
     exports dtu._14_cdio4;
     exports dtu.dice;
     exports dtu.players;
+    exports dtu.game;
 }
