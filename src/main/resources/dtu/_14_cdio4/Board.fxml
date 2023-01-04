@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1500.0" spacing="5.0" style="-fx-background-color: #00aa00;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1500.0" spacing="5.0" style="-fx-background-color: #00aa00;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu._14_cdio4.BoardController">
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
@@ -2005,7 +2005,7 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0020ff;">
                                  <children>
-                                    <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="parkingImage" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/parking_field.png" />
                                        </image>
@@ -2027,7 +2027,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField20" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -2060,7 +2060,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField21" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -2083,7 +2083,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField22" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -2116,7 +2116,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField23" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -2149,7 +2149,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField24" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -2158,14 +2158,9 @@
                         </StackPane>
                         <StackPane fx:id="field25" alignment="TOP_CENTER" prefHeight="63.0" prefWidth="63.0">
                            <children>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
-                                 <font>
-                                    <Font size="9.0" />
-                                 </font>
-                              </Button>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
                                  <children>
-                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="ferry3" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/ferry_card.png" />
                                        </image>
@@ -2192,6 +2187,11 @@
                                     </Text>
                                  </children>
                               </VBox>
+                              <Button fx:id="bField25" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Button>
                            </children>
                         </StackPane>
                         <StackPane fx:id="field26" alignment="TOP_CENTER" layoutX="263.0" layoutY="10.0" prefHeight="63.0" prefWidth="63.0">
@@ -2220,7 +2220,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField26" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -2253,7 +2253,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField27" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -2264,7 +2264,7 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #bbbbbb;">
                                  <children>
-                                    <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="colaImage" fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/colaflaske.png" />
                                        </image>
@@ -2286,7 +2286,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField28" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -2319,7 +2319,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField29" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -2330,7 +2330,7 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0080ff;">
                                  <children>
-                                    <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="policeImage" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/police_man_card.png" />
                                        </image>
@@ -2352,7 +2352,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField30" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -2390,7 +2390,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField19" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -2423,7 +2423,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField18" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -2446,7 +2446,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField17" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -2479,7 +2479,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField16" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -2488,14 +2488,9 @@
                               </StackPane>
                               <StackPane fx:id="field15" alignment="TOP_CENTER" prefHeight="63.0" prefWidth="63.0">
                                  <children>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
-                                       <font>
-                                          <Font size="9.0" />
-                                       </font>
-                                    </Button>
                                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
                                        <children>
-                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="ferry2" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../../../textures/ferry_card.png" />
                                              </image>
@@ -2522,6 +2517,11 @@
                                           </Text>
                                        </children>
                                     </VBox>
+                                    <Button fx:id="bField15" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </StackPane>
                               <StackPane fx:id="field14" alignment="TOP_CENTER" prefHeight="63.0" prefWidth="63.0">
@@ -2550,7 +2550,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField14" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -2583,7 +2583,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField13" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -2594,7 +2594,7 @@
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #bbbbbb;">
                                        <children>
-                                          <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="squashImage" fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../../../textures/squash_card.png" />
                                              </image>
@@ -2616,7 +2616,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField12" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -2649,7 +2649,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField11" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -2657,6 +2657,7 @@
                                  </children>
                               </StackPane>
                            </children></VBox>
+                        <Button mnemonicParsing="false" onAction="#moveCarOne" prefHeight="26.0" prefWidth="71.0" text="Button" />
                         <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="564.0">
                            <children>
                               <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0">
@@ -2801,7 +2802,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField31" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -2834,7 +2835,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField32" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -2857,7 +2858,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField33" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -2890,7 +2891,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField34" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -2899,14 +2900,9 @@
                               </StackPane>
                               <StackPane fx:id="field35" alignment="TOP_CENTER" prefHeight="63.0" prefWidth="63.0">
                                  <children>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
-                                       <font>
-                                          <Font size="9.0" />
-                                       </font>
-                                    </Button>
                                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
                                        <children>
-                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="ferry4" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../../../textures/ferry_card.png" />
                                              </image>
@@ -2933,6 +2929,11 @@
                                           </Text>
                                        </children>
                                     </VBox>
+                                    <Button fx:id="bField35" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </StackPane>
                               <StackPane fx:id="field36" alignment="TOP_CENTER" prefHeight="63.0" prefWidth="63.0">
@@ -2951,7 +2952,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField36" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -2984,7 +2985,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField37" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -3009,7 +3010,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField38" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -3042,7 +3043,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                    <Button fx:id="bField39" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -3059,7 +3060,7 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #808080;">
                                  <children>
-                                    <ImageView fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="prisonImage" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/jail_card.png" />
                                        </image>
@@ -3081,7 +3082,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField10" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -3114,7 +3115,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField9" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -3147,7 +3148,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField8" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -3170,7 +3171,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField7" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -3203,7 +3204,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField6" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -3212,14 +3213,9 @@
                         </StackPane>
                         <StackPane fx:id="field5" alignment="TOP_CENTER" layoutX="292.0" layoutY="10.0" prefHeight="63.0" prefWidth="63.0">
                            <children>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
-                                 <font>
-                                    <Font size="9.0" />
-                                 </font>
-                              </Button>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
                                  <children>
-                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="ferry1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/ferry_card.png" />
                                        </image>
@@ -3246,6 +3242,11 @@
                                     </Text>
                                  </children>
                               </VBox>
+                              <Button fx:id="bField5" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Button>
                            </children>
                         </StackPane>
                         <StackPane fx:id="field4" alignment="TOP_CENTER" layoutX="418.0" layoutY="10.0" prefHeight="63.0" prefWidth="63.0">
@@ -3266,7 +3267,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField4" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -3299,7 +3300,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField3" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -3322,7 +3323,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField2" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -3355,7 +3356,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField1" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
@@ -3378,11 +3379,41 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                              <Button fx:id="bField0" mnemonicParsing="false" onAction="#test" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                  <font>
                                     <Font size="9.0" />
                                  </font>
                               </Button>
+                              <ImageView fx:id="carBlue" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/blueCar.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="carGreen" fitHeight="20.0" fitWidth="40.0" layoutX="22.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/blueCar.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="carOrange" fitHeight="20.0" fitWidth="40.0" layoutX="22.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/blueCar.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="carYellow" fitHeight="20.0" fitWidth="40.0" layoutX="22.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/blueCar.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="carBlack" fitHeight="20.0" fitWidth="40.0" layoutX="22.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/blueCar.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="carRed" fitHeight="20.0" fitWidth="40.0" layoutX="22.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../textures/blueCar.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </StackPane>
                      </children>

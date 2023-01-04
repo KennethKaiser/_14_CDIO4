@@ -1,8 +1,10 @@
-module com.example._14_cdio4 {
+module dtu._14_CDIO4 {
     requires javafx.controls;
     requires javafx.fxml;
-            
-                            
-    opens com.example._14_cdio4 to javafx.fxml;
-    exports com.example._14_cdio4;
+
+
+    opens dtu._14_cdio4 to javafx.fxml;
+    exports dtu._14_cdio4;
+    exports dtu.dice;
+    exports dtu.players;
 }

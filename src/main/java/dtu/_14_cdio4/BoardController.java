@@ -1,14 +1,97 @@
-package com.example._14_cdio4;
+package dtu._14_cdio4;
 
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.net.URL;
 
 public class BoardController {
+
+    public void instantiateBoard() {
+        System.out.println("Instantiated");
+
+
+
+        initPics();
+    }
+    public void test(){
+        System.out.println("Button Pressed");
+    }
+
+
+    //region pictures on board
+    @FXML
+    ImageView prisonImage;
+    @FXML
+    ImageView policeImage;
+    @FXML
+    ImageView parkingImage;
+    @FXML
+    ImageView squashImage;
+    @FXML
+    ImageView colaImage;
+    @FXML
+    ImageView ferry1;
+    @FXML
+    ImageView ferry2;
+    @FXML
+    ImageView ferry3;
+    @FXML
+    ImageView ferry4;
+    @FXML
+    ImageView carBlack;
+    @FXML
+    ImageView carBlue;
+    @FXML
+    ImageView carOrange;
+    @FXML
+    ImageView carRed;
+    @FXML
+    ImageView carYellow;
+    @FXML
+    ImageView carGreen;
+
+    public void initPics() {
+        try{
+            ferry1.setImage(image("src/textures/ferry_card.png"));
+            ferry2.setImage(image("src/textures/ferry_card.png"));
+            ferry3.setImage(image("src/textures/ferry_card.png"));
+            ferry4.setImage(image("src/textures/ferry_card.png"));
+            colaImage.setImage(image("src/textures/colaflaske.png"));
+            squashImage.setImage(image("src/textures/squash_card.png"));
+            policeImage.setImage(image("src/textures/police_man_card.png"));
+            prisonImage.setImage(image("src/textures/jail_card.png"));
+            parkingImage.setImage(image("src/textures/parking_field.png"));
+            carBlue.setImage(image("src/textures/blueCar.png"));
+            carBlack.setImage(image("src/textures/blackCar.png"));
+            carOrange.setImage(image("src/textures/orangeCar.png"));
+            carYellow.setImage(image("src/textures/yellowCar.png"));
+            carRed.setImage(image("src/textures/redCar.png"));
+            carGreen.setImage(image("src/textures/greenCar.png"));
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    public Image image(String url) throws FileNotFoundException {
+        InputStream stream = new FileInputStream(url);
+        Image image = new Image(stream);
+        return image;
+    }
+
+
+
+    //endregion
 
     //region names
     @FXML
@@ -232,39 +315,35 @@ public class BoardController {
     }
     //endregion
     //region biler i stackpanes
-     /*
-    Note til Kenneth til bilerne
 
-    Bilen skal flyttes til det stackpane. Det vil automatisk sætte den til toppen af feltet.
-    Når der kommer en bil til, vil de blive sat på præcis samme spot.
-    Derfor hvis der er mere end en bil, vil de næste biler skulle rykkes på lidt.
-    Jeg har målt og der vil være plads til 6 spillere på samme felt hvis dette er med 8 pixels.
-    Derfor skal første bil der lander have en top margin på 0.
-    bil 2 top margin 8
-    bil 3 top margin 16
-    bil 4 top margin 24
-    bil 5 top margin 32
-    bil 6 top margin 40
+    ImageView[] cars;
+    private void setCars(){
+        cars = new ImageView[6];
+        cars[0] = carBlue;
+        cars[1] = carGreen;
+        cars[2] = carRed;
+        cars[3] = carYellow;
+        cars[4] = carOrange;
+        cars[5] = carBlack;
+    }
+    public void moveCarOne(){
+        carMoveOne(1);
+    }
 
-    Hvis en spiller rykker sig fra feltet, vil de andre ikke rykke op,
-    så der skal enten være en update hvor de alle får -8 top margin.
-    Ellers skal hver spiller have en konstant top margin på deres bil og stå forskellige steder på brættet.
-     */
+    public void carMoveOne(int player){
+        if(cars == null) setCars();
+        if(fields == null) initFields();
 
-    @FXML
-    ImageView car1;
-    @FXML
-    ImageView car2;
-    @FXML
-    ImageView car3;
-    @FXML
-    ImageView car4;
-    @FXML
-    ImageView car5;
-    @FXML
-    ImageView car6;
-
-
+        int position;
+        for(int i = 0; i < fields.length; i++){
+            if(fields[i].getChildren().contains(cars[player])){
+                fields[i].getChildren().remove(cars[player]);
+                if(i == 39)fields[0].getChildren().add(cars[player]);
+                else fields[i+1].getChildren().add(cars[player]);
+                break;
+            }
+        }
+    }
     @FXML
     StackPane field0;
     @FXML
@@ -348,6 +427,7 @@ public class BoardController {
 
     private StackPane[] fields;
     private void initFields(){
+        fields = new StackPane[40];
         fields[0] = field0;
         fields[1] = field1;
         fields[2] = field2;
@@ -389,17 +469,12 @@ public class BoardController {
         fields[38] = field38;
         fields[39] = field39;
     }
-    public StackPane[] getFields(){
-        if(fields == null){
-            fields = new StackPane[40];
-            initFields();
-        }
-        return fields;
-    }
 
     //endregion
     //region fieldPresses
 
+    @FXML
+    Button bField0;
     @FXML
     Button bField1;
     @FXML
@@ -416,17 +491,140 @@ public class BoardController {
     Button bField7;
     @FXML
     Button bField8;
+    @FXML
+    Button bField9;
+    @FXML
+    Button bField10;
+    @FXML
+    Button bField11;
+    @FXML
+    Button bField12;
+    @FXML
+    Button bField13;
+    @FXML
+    Button bField14;
+    @FXML
+    Button bField15;
+    @FXML
+    Button bField16;
+    @FXML
+    Button bField17;
+    @FXML
+    Button bField18;
+    @FXML
+    Button bField19;
+    @FXML
+    Button bField20;
+    @FXML
+    Button bField21;
+    @FXML
+    Button bField22;
+    @FXML
+    Button bField23;
+    @FXML
+    Button bField24;
+    @FXML
+    Button bField25;
+    @FXML
+    Button bField26;
+    @FXML
+    Button bField27;
+    @FXML
+    Button bField28;
+    @FXML
+    Button bField29;
+    @FXML
+    Button bField30;
+    @FXML
+    Button bField31;
+    @FXML
+    Button bField32;
+    @FXML
+    Button bField33;
+    @FXML
+    Button bField34;
+    @FXML
+    Button bField35;
+    @FXML
+    Button bField36;
+    @FXML
+    Button bField37;
+    @FXML
+    Button bField38;
+    @FXML
+    Button bField39;
 
+    private Button[] fieldButtons;
+    private void initFieldButtons(){
+        fieldButtons = new Button[40];
+        fieldButtons[0] = bField0;
+        fieldButtons[1] = bField1;
+        fieldButtons[2] = bField2;
+        fieldButtons[3] = bField3;
+        fieldButtons[4] = bField4;
+        fieldButtons[5] = bField5;
+        fieldButtons[6] = bField6;
+        fieldButtons[7] = bField7;
+        fieldButtons[8] = bField8;
+        fieldButtons[9] = bField9;
+        fieldButtons[10] = bField10;
+        fieldButtons[11] = bField11;
+        fieldButtons[12] = bField12;
+        fieldButtons[13] = bField13;
+        fieldButtons[14] = bField14;
+        fieldButtons[15] = bField15;
+        fieldButtons[16] = bField16;
+        fieldButtons[17] = bField17;
+        fieldButtons[18] = bField18;
+        fieldButtons[19] = bField19;
+        fieldButtons[20] = bField20;
+        fieldButtons[21] = bField21;
+        fieldButtons[22] = bField22;
+        fieldButtons[23] = bField23;
+        fieldButtons[24] = bField24;
+        fieldButtons[25] = bField25;
+        fieldButtons[26] = bField26;
+        fieldButtons[27] = bField27;
+        fieldButtons[28] = bField28;
+        fieldButtons[29] = bField29;
+        fieldButtons[30] = bField30;
+        fieldButtons[31] = bField31;
+        fieldButtons[32] = bField32;
+        fieldButtons[33] = bField33;
+        fieldButtons[34] = bField34;
+        fieldButtons[35] = bField35;
+        fieldButtons[36] = bField36;
+        fieldButtons[37] = bField37;
+        fieldButtons[38] = bField38;
+        fieldButtons[39] = bField39;
+    }
+    public Button[] getFieldButtons(){
+        if(fieldButtons == null) initFieldButtons();
+        return fieldButtons;
+    }
 
-
-
-
-    public void buttonIsPressed(String id){
+    public void buttonPress(int id){
 
     }
 
 
     //endregion
+    //region dice
+
+    ImageView dice1;
+    ImageView dice2;
+
+
+    public void rollDice(int result1, int result2) throws FileNotFoundException {
+        dice1.setImage(image(""));
+        dice2.setImage(image(""));
+    }
+
+    //Position can be between 10 and 500
+
+
+    //endregion
+
 
 
 
