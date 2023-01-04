@@ -1,8 +1,6 @@
 package dtu.game;
 
 import dtu.board.Board;
-import dtu.board.Field;
-import dtu.board.FieldProperty;
 import dtu.board.Property;
 import dtu.players.Player;
 
@@ -60,18 +58,19 @@ public class GameActions {
     public static void buildHouse(Player player, Property property) {
         // En besked fortæller pris og giver mulighed for at bekræfte køb
         //hvis der trykkes køb:
-        if (property.getBuidlings() < 5) {
+        if (property.getBuildings() < 4) {
             if(player.getMoney() > property.getHousePrice()){
             player.setMoney(player.getMoney() - property.getHousePrice());
-            property.setActiveRent(property.getBuidlings()+1);}
+            property.setActiveRent(property.getBuildings()+1);}
             else{System.out.println("Du har ikke penge nok");}
         }
-        else {
+        else if (property.getBuildings() == 4) {
             if(player.getMoney() > property.getHousePrice() * 5){
             player.setMoney(player.getMoney() - (property.getHousePrice() * 5));
-            property.setActiveRent(property.getActiveRent() + 1);}
+            property.setActiveRent(property.getBuildings() + 1);}
             else{System.out.println("Du har ikke penge nok");}
         }
+        else{System.out.println("Du kan ikke bygge mere");}
         //Hvis ikke der trykkes køb sker intet
     }
 }

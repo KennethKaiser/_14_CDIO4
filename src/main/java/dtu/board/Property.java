@@ -98,6 +98,6 @@ public class Property {
 
     public void setBuidlings(int amount){buildings = amount;}
 
-    public int getBuidlings(){
+    public int getBuildings(){
         return buildings;}
 }
