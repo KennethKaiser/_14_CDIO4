@@ -2,6 +2,8 @@ import dtu.players.Player;
 import org.junit.jupiter.api.Test;
 
 import static dtu.game.GameActions.movePlayer;
+import static dtu.game.GameActions.movePlayerChanceCard;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TC3_MovePlayerTest {
@@ -84,5 +86,27 @@ class TC3_MovePlayerTest {
 
         assertTrue((player.getPosition() == EX_BBAM), "expected (" + EX_BBAM + ") should be eaquel to players current placement: " + player.getPosition());
         System.out.println("player position is: " + player.getPosition() + ", expected placement is " + EX_BBAM);
+    }
+
+    @Test
+    void testMoveChanceCardIDgreaterPlayerPos() {
+        player.setPosition(30);
+        movePlayerChanceCard(player, 38);
+        boolean expected = false;
+        if (player.getPosition() == 38) {
+            expected = true;
+        }
+        assertEquals(expected, true, "expecting 8, as it should move 8 forward");
+    }
+
+    @Test
+    void testMoveChanceCardIDlessPlayerPos(){
+        boolean expected = false;
+        player.setPosition(38);
+        movePlayerChanceCard(player, 30);
+        if (player.getPosition() == 30) {
+            expected = true;
+        }
+        assertEquals(expected, true, "Expecting player to be on position 30");
     }
 }

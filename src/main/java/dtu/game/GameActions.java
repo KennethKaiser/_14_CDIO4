@@ -73,4 +73,16 @@ public class GameActions {
         else{System.out.println("Du kan ikke bygge mere");}
         //Hvis ikke der trykkes køb sker intet
     }
+
+    public static void movePlayerChanceCard(Player player, int ID){
+        int moveChanceCard;
+        if(player.getPosition()<ID) {
+            moveChanceCard = ID - player.getPosition();
+            player.setPosition(player.getPosition()+moveChanceCard);
+        }
+        if(player.getPosition()>ID){
+            moveChanceCard = (40-player.getPosition())+ID;
+            player.setPosition(player.getPosition()+moveChanceCard);
+        }
+    }
 }
