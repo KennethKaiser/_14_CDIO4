@@ -1,7 +1,9 @@
 package dtu.players;
 
 import dtu.board.Field;
+import dtu.board.FieldProperty;
 
+import java.text.FieldPosition;
 import java.util.ArrayList;
 
 public class Player {
@@ -10,7 +12,7 @@ public class Player {
     private String name;
     private int position;
     private int money;
-    private ArrayList<Field> properties;
+    private ArrayList<FieldProperty> properties;
     private String color;
 
     private boolean bankrupt;
@@ -63,11 +65,11 @@ public class Player {
         this.money = money;
     }
 
-    public ArrayList<Field> getProperties() {
+    public ArrayList<FieldProperty> getProperties() {
         return properties;
     }
 
-    public void setProperties(ArrayList<Field> properties) {
+    public void setProperties(ArrayList<FieldProperty> properties) {
         this.properties = properties;
     }
 
