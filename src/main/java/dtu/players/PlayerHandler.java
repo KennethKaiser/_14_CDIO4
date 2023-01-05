@@ -40,6 +40,10 @@ public class PlayerHandler {
         }
     }
 
+    /**
+     * Method for checking if player is bankrupt.
+     * @param player
+     */
     public void isPlayerBankrupt(Player player){
         if (player.getMoney() < 0){
             player.setBankrupt(true);
@@ -48,6 +52,11 @@ public class PlayerHandler {
 
     }
 
+
+    /**
+     * Method for when a player is bankrupt. It will remove the player from the game and set the player to null.
+     * @param player
+     */
     public void playerIsBankrupt(Player player){
         for (int i=0; i<player.getProperties().size();i++) {
             player.getProperties().get(i).setOwner(null);
