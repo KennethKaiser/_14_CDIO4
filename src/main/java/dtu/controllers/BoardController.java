@@ -1,5 +1,9 @@
 package dtu.controllers;
 
+import dtu.dice.Die;
+import dtu.dice.RaffleCup;
+import dtu.players.Player;
+import dtu.players.PlayerHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -14,10 +18,17 @@ import java.util.Random;
 
 public class BoardController {
 
+    //Model variables
+    RaffleCup dice = new RaffleCup();
+    PlayerHandler playerHandler = new PlayerHandler();
+    Player player1 = new Player(1,"",100,"");
+
+
 
     private ImageView[] cars; //car Icons that move on the field
     private StackPane[] fields; //The Stackpanes that a car is placed in on each field
     private Button[] fieldButtons;
+
 
     //region Images on the board
     //All pictures needs instantiating on start
@@ -282,6 +293,8 @@ public class BoardController {
 
     //Methods:
     //------------------------------------------------------------------------------
+
+    //Initializes on start
     @FXML
     public void initialize() {
         initPics();
@@ -291,129 +304,8 @@ public class BoardController {
         initHouses();
         initFieldButtons();
     }
-    //region Initialize pictures on board
-    //set the pictures on the board along with cars.
-    public void initPics() {
-        try{
-            ferry1.setImage(image("src/textures/ferry_card.png"));
-            ferry2.setImage(image("src/textures/ferry_card.png"));
-            ferry3.setImage(image("src/textures/ferry_card.png"));
-            ferry4.setImage(image("src/textures/ferry_card.png"));
-            colaImage.setImage(image("src/textures/colaflaske.png"));
-            squashImage.setImage(image("src/textures/squash_card.png"));
-            policeImage.setImage(image("src/textures/police_man_card.png"));
-            prisonImage.setImage(image("src/textures/jail_card.png"));
-            parkingImage.setImage(image("src/textures/parking_field.png"));
-            carBlue.setImage(image("src/textures/blueCar.png"));
-            carBlack.setImage(image("src/textures/blackCar.png"));
-            carOrange.setImage(image("src/textures/orangeCar.png"));
-            carYellow.setImage(image("src/textures/yellowCar.png"));
-            carRed.setImage(image("src/textures/redCar.png"));
-            carGreen.setImage(image("src/textures/greenCar.png"));
 
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-    public Image image(String url) throws FileNotFoundException {
-        InputStream stream = new FileInputStream(url);
-        Image image = new Image(stream);
-        return image;
-    }
-
-
-    //endregion
-    //region Cars
-    private void setCars(){
-        cars = new ImageView[6];
-        cars[0] = carBlue;
-        cars[1] = carGreen;
-        cars[2] = carRed;
-        cars[3] = carYellow;
-        cars[4] = carOrange;
-        cars[5] = carBlack;
-    }
-    public void startCars(){
-
-        for(int car = 0; car < cars.length; car++){
-            for(int i = 0; i < fields.length; i++){
-                if(fields[i].getChildren().contains(cars[car])){
-                    fields[i].getChildren().remove(cars[car]);
-                    break;
-                }
-            }
-            fields[39].getChildren().add(cars[car]);
-        }
-
-        carMoveOne(0);
-        carMoveOne(1);
-        carMoveOne(2);
-        carMoveOne(3);
-        carMoveOne(4);
-        carMoveOne(5);
-
-    }
-    public void carMoveOne(int player){
-        for(int i = 0; i < fields.length; i++){
-            if(fields[i].getChildren().contains(cars[player])){
-                fields[i].getChildren().remove(cars[player]);
-                if(i == 39){
-                    multipleCars(player, 0);
-                    fields[0].getChildren().add(cars[player]);
-
-                }
-                else {
-                    multipleCars(player, i+1);
-                    fields[i+1].getChildren().add(cars[player]);
-                }
-
-            }
-        }
-    }
-    public void carMoveOneBackwards(int player){
-        for(int i = 0; i < fields.length; i++){
-            if(fields[i].getChildren().contains(cars[player])){
-                fields[i].getChildren().remove(cars[player]);
-                if(i == 0){
-                    multipleCars(player, 39);
-                    fields[1].getChildren().add(cars[player]);
-
-                }
-                else {
-                    multipleCars(player, i-1);
-                    fields[i+1].getChildren().add(cars[player]);
-                }
-                break;
-            }
-        }
-    }
-    public void movePLayer(int player, int amount){
-        for(int i = amount; i > 0; i--){
-            carMoveOne(player);
-        }
-    }
-    public void movePLayerBackward(int player, int amount){
-        for(int i = amount; i > 0; i--){
-            carMoveOneBackwards(player);
-        }
-    }
-
-    public void multipleCars(int player, int position){
-        if(fields == null) initFields();
-        int total = 0;
-        if(fields[position].getChildren().contains(cars[0])) total++;
-        if(fields[position].getChildren().contains(cars[1])) total++;
-        if(fields[position].getChildren().contains(cars[2])) total++;
-        if(fields[position].getChildren().contains(cars[3])) total++;
-        if(fields[position].getChildren().contains(cars[4])) total++;
-        if(fields[position].getChildren().contains(cars[5])) total++;
-
-        cars[player].setTranslateY(total*8);
-    }
-
-    //endregion
-    //region Fields on the board
+    //region Initialize Fields and buttons to fields
     private void initFields(){
         fields = new StackPane[40];
         fields[0] = field0;
@@ -457,8 +349,6 @@ public class BoardController {
         fields[38] = field38;
         fields[39] = field39;
     }
-    //endregion
-    //region Buttons on each Field
     private void initFieldButtons(){
         fieldButtons = new Button[40];
         fieldButtons[0] = bField0;
@@ -506,85 +396,67 @@ public class BoardController {
         if(fieldButtons == null) initFieldButtons();
         return fieldButtons;
     }
-
     //endregion
-    //region rolling dice
-    public void roll(){
-        Random rnd = new Random();
 
-        int first;
-        int second;
-
-        first = rnd.nextInt(1, 7);
-        second = rnd.nextInt(1, 7);
-        rollDice(first, second);
-    }
-
-    public void rollDice(int result1, int result2) {
-        String[] dice = new String[6];
-        dice[0] = "src/textures/d1.png";
-        dice[1] = "src/textures/d2.png";
-        dice[2] = "src/textures/d3.png";
-        dice[3] = "src/textures/d4.png";
-        dice[4] = "src/textures/d5.png";
-        dice[5] = "src/textures/d6.png";
-        try {
-            dice1.setImage(image(dice[result1 -1]));
-            dice2.setImage(image(dice[result2 -1]));
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        Random rnd = new Random();
-        //Position of dice can be between 10 and 500
-
-
-        double x1 = rnd.nextDouble(10, 500);
-        double y1 = rnd.nextDouble(10, 500);
-        double x2 = rnd.nextDouble(10, 500);
-        double y2 = rnd.nextDouble(10, 500);
-
-
-
-        boolean touchingOther = true;
-        boolean touchingMiddle = false;
-        while(touchingMiddle || touchingOther){
-            x1 = rnd.nextDouble(10, 500);
-            y1 = rnd.nextDouble(10, 500);
-            x2 = rnd.nextDouble(10, 500);
-            y2 = rnd.nextDouble(10, 500);
-            if(x1 < y1+30 && x1 > y1-30){
-                touchingOther = true;
-            }
-            touchingOther = false;
-
-
-        }
-
-        dice1.setLayoutX(rnd.nextDouble(x1));
-        dice1.setLayoutY(rnd.nextDouble(y1));
-        dice1.setRotate(rnd.nextDouble(0, 360));
-        dice2.setLayoutX(rnd.nextDouble(x2));
-        dice2.setLayoutY(rnd.nextDouble(y2));
-        dice2.setRotate(rnd.nextDouble(0, 360));
-
-    }
-    //endregion
-    //region set house images on board
-    private ImageView[] propHouses;
-    public void setHousesOn(int totalAmount, int propertyID){
-        String[] houseURLS = new String[6];
-        houseURLS[0] = "src/textures/houseNulIcon.png";
-        houseURLS[1] = "src/textures/house1Icon.png";
-        houseURLS[2] = "src/textures/house2Icon.png";
-        houseURLS[3] = "src/textures/house3Icon.png";
-        houseURLS[4] = "src/textures/house4Icon.png";
-        houseURLS[5] = "src/textures/hotelIcon.png";
+    //region Initialize pictures on board
+    //set the pictures on the board along with cars.
+    public void initPics() {
         try{
-            propHouses[propertyID].setImage(image(houseURLS[totalAmount]));
+            ferry1.setImage(image("src/textures/ferry_card.png"));
+            ferry2.setImage(image("src/textures/ferry_card.png"));
+            ferry3.setImage(image("src/textures/ferry_card.png"));
+            ferry4.setImage(image("src/textures/ferry_card.png"));
+            colaImage.setImage(image("src/textures/colaflaske.png"));
+            squashImage.setImage(image("src/textures/squash_card.png"));
+            policeImage.setImage(image("src/textures/police_man_card.png"));
+            prisonImage.setImage(image("src/textures/jail_card.png"));
+            parkingImage.setImage(image("src/textures/parking_field.png"));
+            carBlue.setImage(image("src/textures/blueCar.png"));
+            carBlack.setImage(image("src/textures/blackCar.png"));
+            carOrange.setImage(image("src/textures/orangeCar.png"));
+            carYellow.setImage(image("src/textures/yellowCar.png"));
+            carRed.setImage(image("src/textures/redCar.png"));
+            carGreen.setImage(image("src/textures/greenCar.png"));
+
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+
     }
+    public Image image(String url) throws FileNotFoundException {
+        InputStream stream = new FileInputStream(url);
+        Image image = new Image(stream);
+        return image;
+    }
+
+
+    //endregion
+
+    //region Initialize Cars
+    private void setCars(){
+        cars = new ImageView[6];
+        cars[0] = carBlue;
+        cars[1] = carGreen;
+        cars[2] = carRed;
+        cars[3] = carYellow;
+        cars[4] = carOrange;
+        cars[5] = carBlack;
+    }
+    public void startCars(){
+
+        for(int car = 0; car < cars.length; car++){
+            for(int i = 0; i < fields.length; i++){
+                if(fields[i].getChildren().contains(cars[car])){
+                    fields[i].getChildren().remove(cars[car]);
+                    break;
+                }
+            }
+            fields[39].getChildren().add(cars[car]);
+        }
+    }
+    //endregion
+
+    //region Initialize houses
     public void initHouses(){
         propHouses = new ImageView[22];
         propHouses[0] = houseBlue1;
@@ -617,12 +489,125 @@ public class BoardController {
             }
         }
     }
+    //endregion
+
+    /**
+     * This method is called when player clicks button "Roll and Move"
+     */
+    @FXML
+    public void moveAndRoll(){
+        int[] playerRoll = dice.roll();
+        playerHandler.movePlayer(player1, playerRoll[0]+playerRoll[1]);
+        rollDiceAnimation(playerRoll[0],playerRoll[1]);
+
+        int playerId = player1.getId();
+
+        movePLayerOnGUI(playerId, player1.getPosition());
+
+    }
+
+
+
+    //region moving car gui
+    public void movePLayerOnGUI(int player, int fieldPlacement){
+        fields[fieldPlacement].getChildren().add(cars[player]);
+    }
+    //endregion
+
+    //region car gui methods
+    public void multipleCars(int player, int position){
+        if(fields == null) initFields();
+        int total = 0;
+        if(fields[position].getChildren().contains(cars[0])) total++;
+        if(fields[position].getChildren().contains(cars[1])) total++;
+        if(fields[position].getChildren().contains(cars[2])) total++;
+        if(fields[position].getChildren().contains(cars[3])) total++;
+        if(fields[position].getChildren().contains(cars[4])) total++;
+        if(fields[position].getChildren().contains(cars[5])) total++;
+
+        cars[player].setTranslateY(total*8);
+    }
+    //endregion
+
+    //region Set house images on board
+    private ImageView[] propHouses;
+    public void setHousesOn(int totalAmount, int propertyID){
+        String[] houseURLS = new String[6];
+        houseURLS[0] = "src/textures/houseNulIcon.png";
+        houseURLS[1] = "src/textures/house1Icon.png";
+        houseURLS[2] = "src/textures/house2Icon.png";
+        houseURLS[3] = "src/textures/house3Icon.png";
+        houseURLS[4] = "src/textures/house4Icon.png";
+        houseURLS[5] = "src/textures/hotelIcon.png";
+        try{
+            propHouses[propertyID].setImage(image(houseURLS[totalAmount]));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     //endregion
     public void test(){
 
     }
-    public void TestMove(){
+
+
+    //region Animations
+    public void rollDiceAnimation(int die1, int die2) {
+        String[] dice = new String[6];
+        dice[0] = "src/textures/d1.png";
+        dice[1] = "src/textures/d2.png";
+        dice[2] = "src/textures/d3.png";
+        dice[3] = "src/textures/d4.png";
+        dice[4] = "src/textures/d5.png";
+        dice[5] = "src/textures/d6.png";
+        try {
+            dice1.setImage(image(dice[die1-1]));
+            dice2.setImage(image(dice[die2-1]));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        Random rnd = new Random();
+        //Position of dice can be between 10 and 500
+
+
+        double x1 = rnd.nextDouble(10, 500);
+        double y1 = rnd.nextDouble(10, 500);
+        double x2 = rnd.nextDouble(10, 500);
+        double y2 = rnd.nextDouble(10, 500);
+
+
+
+        boolean touchingOther = true;
+        boolean touchingMiddle = false;
+        while(touchingMiddle || touchingOther){
+            x1 = rnd.nextDouble(10, 500);
+            y1 = rnd.nextDouble(10, 500);
+            x2 = rnd.nextDouble(10, 500);
+            y2 = rnd.nextDouble(10, 500);
+            if(x1 < y1+30 && x1 > y1-30){
+                int colliding;
+                touchingOther = true;
+                System.out.println("10");
+            }
+            else {
+                touchingOther = false;
+            }
+
+
+
+        }
+
+        dice1.setLayoutX(x1);
+        dice1.setLayoutY(y1);
+        dice1.setRotate(rnd.nextDouble(0, 360));
+        dice2.setLayoutX(x2);
+        dice2.setLayoutY(y2);
+        dice2.setRotate(rnd.nextDouble(0, 360));
 
     }
+    //endregion
+
+
 }

@@ -1,4 +1,4 @@
-module com.example._14_cdio4 {
+module dtu._14_cdio4 {
     requires javafx.controls;
     requires javafx.fxml;
 

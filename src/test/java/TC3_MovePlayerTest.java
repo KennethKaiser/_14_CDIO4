@@ -1,12 +1,15 @@
 import dtu.players.Player;
+import dtu.players.PlayerHandler;
 import org.junit.jupiter.api.Test;
 
-import static dtu.game.GameActions.movePlayer;
+
 import static dtu.game.GameActions.movePlayerChanceCard;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TC3_MovePlayerTest {
+
+    PlayerHandler playerHandler = new PlayerHandler();
 
     //Ændring af værdi
    final int STARTM = 4000;
@@ -32,7 +35,7 @@ class TC3_MovePlayerTest {
     void testMoving4Forward() {
         player.setPosition(START_POS);
 
-        movePlayer(player, MOVE);
+        playerHandler.movePlayer(player, MOVE);
 
         assertTrue((player.getPosition() == EX_M), "expected (" + EX_M + ") should be eaquel to players current placement: " + player.getPosition());
         System.out.println("player position is: " + player.getPosition() + ", expected placement is " + EX_M);
@@ -42,7 +45,7 @@ class TC3_MovePlayerTest {
     void testMoving12Forward() {
         player.setPosition(START_POS);
 
-        movePlayer(player, BIG_MOVE);
+        playerHandler.movePlayer(player, BIG_MOVE);
 
         assertTrue((player.getPosition() == EX_BIGM), "expected (" + EX_BIGM + ") should be eaquel to players current placement: " + player.getPosition());
         System.out.println("player position is: " + player.getPosition() + ", expected placement is " + EX_BIGM);
@@ -52,7 +55,7 @@ class TC3_MovePlayerTest {
     void testMovingPastStartForward() {
         player.setPosition(START_POS);
 
-        movePlayer(player, BIGGER_MOVE);
+        playerHandler.movePlayer(player, BIGGER_MOVE);
 
         assertTrue((player.getPosition() == EX_BIGGM), "expected (" + EX_BIGGM + ") should be eaquel to players current placement: " + player.getPosition());
         System.out.println("player position is: " + player.getPosition() + ", expected placement is " + EX_BIGGM);
@@ -62,7 +65,7 @@ class TC3_MovePlayerTest {
     void testMoving0() {
         player.setPosition(START_POS);
 
-        movePlayer(player, NO_MOVE);
+        playerHandler.movePlayer(player, NO_MOVE);
 
         assertTrue((player.getPosition() == EX_NM), "expected (" + EX_NM + ") should be eaquel to players current placement: " + player.getPosition());
         System.out.println("player position is: " + player.getPosition() + ", expected placement is " + EX_NM);
@@ -72,7 +75,7 @@ class TC3_MovePlayerTest {
     void testMoving4Backward() {
         player.setPosition(START_POS);
 
-        movePlayer(player, BACK_MOVE);
+        playerHandler.movePlayer(player, BACK_MOVE);
 
         assertTrue((player.getPosition() == EX_BAM), "expected (" + EX_BAM + ") should be eaquel to players current placement: " + player.getPosition());
         System.out.println("player position is: " + player.getPosition() + ", expected placement is " + EX_BAM);
@@ -82,7 +85,7 @@ class TC3_MovePlayerTest {
     void testMovingPastStartBackward() {
         player.setPosition(START_POS);
 
-        movePlayer(player, B_BACK_MOVE);
+        playerHandler.movePlayer(player, B_BACK_MOVE);
 
         assertTrue((player.getPosition() == EX_BBAM), "expected (" + EX_BBAM + ") should be eaquel to players current placement: " + player.getPosition());
         System.out.println("player position is: " + player.getPosition() + ", expected placement is " + EX_BBAM);

@@ -13,6 +13,20 @@ public class PlayerHandler {
         players[id] = new Player(id, name, money, color);
     }
 
+
+    /**
+     * Method for moving player based on how many times to move on board.
+     * @param player
+     * @param deltaMove
+     */
+    public void movePlayer(Player player, int deltaMove){
+
+        int nextFieldPlacement = player.getPosition() + deltaMove;
+
+        player.setPosition(nextFieldPlacement);
+
+    }
+
     /**
      * Method for setting start-money for each player in a loop going from the iterator i=0 to i < length of player
      * array. Its sharp smaller than because index starts at 0. So for player[].length = 4, we will have index
