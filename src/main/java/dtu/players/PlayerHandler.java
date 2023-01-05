@@ -3,13 +3,28 @@ package dtu.players;
 public class PlayerHandler {
 
     private Player[] players;
+    private Player currentPlayer;
+    private int nID = -1;
     private static final int STARTMONEY = 30000;
 
-    public void amountOfPlayers(int howManyPlayers){
-        this.players = new Player[howManyPlayers];
+
+
+    public void currentPlayer(){
+        nID++;
+        if(nID >= players.length){
+            nID = 0;
+        }
+        currentPlayer = players[nID];
     }
 
-    public void initializePlayer(int id, String name, int money, String color){
+    //Should be called when the game ask how many are playing
+    public void initializePlayers(int size){
+        players = new Player[size];
+    }
+
+    //Should be called after player has entered name and what color
+    public void initializePlayerInPlayers(int id, String name, int money, String color){
+
         players[id] = new Player(id, name, money, color);
     }
 
@@ -69,5 +84,13 @@ public class PlayerHandler {
 
     public Player[] getPlayers() {
         return players;
+    }
+
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
     }
 }

@@ -21,8 +21,6 @@ public class BoardController {
     //Model variables
     RaffleCup dice = new RaffleCup();
     PlayerHandler playerHandler = new PlayerHandler();
-    Player player1 = new Player(1,"",100,"");
-
 
     //GUI variables
     private ImageView[] cars; //car Icons that move on the field
@@ -32,9 +30,6 @@ public class BoardController {
 
     //region Images on the board
     //All pictures needs instantiating on start
-
-
-
     @FXML
     ImageView prisonImage;
     @FXML
@@ -303,6 +298,7 @@ public class BoardController {
         startCars();
         initHouses();
         initFieldButtons();
+        initializing4Players();
     }
 
     //region Initialize Fields and buttons to fields
@@ -491,6 +487,22 @@ public class BoardController {
     }
     //endregion
 
+    /**
+     * Initializing 4 players in "players" array. Start GUI should do this later. Also calling currentPlayer method.
+     */
+    public void initializing4Players(){
+
+        playerHandler.initializePlayers(4);
+        playerHandler.initializePlayerInPlayers(0,"",200,"");
+        playerHandler.initializePlayerInPlayers(1,"",200,"");
+        playerHandler.initializePlayerInPlayers(2,"",200,"");
+        playerHandler.initializePlayerInPlayers(3,"",200,"");
+
+        playerHandler.currentPlayer();
+
+    }
+
+
     //region game loop actions
 
     /**
@@ -499,24 +511,33 @@ public class BoardController {
     @FXML
     public void moveAndRoll(){
         int[] playerRoll = dice.roll();
-        playerHandler.movePlayer(player1, playerRoll[0]+playerRoll[1]);
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+
+        playerHandler.movePlayer(currentPlayer, playerRoll[0]+playerRoll[1]);
         rollDiceAnimation(playerRoll[0],playerRoll[1]);
 
-        int playerId = player1.getId();
+        int playerId = currentPlayer.getId();
+        int playerPosition = currentPlayer.getPosition();
 
-        movePLayerOnGUI(playerId, player1.getPosition());
+        movePLayerOnGUI(playerId, playerPosition);
+        multipleCars(playerId, playerPosition);
+
+        //Should be called after a player turn and not in this method
+        playerHandler.currentPlayer();
 
     }
 
     //endregion
 
     //region moving car gui
-    public void movePLayerOnGUI(int player, int fieldPlacement){
-        fields[fieldPlacement].getChildren().add(cars[player]);
-    }
+
     //endregion
 
     //region car gui methods
+    public void movePLayerOnGUI(int player, int fieldPlacement){
+        fields[fieldPlacement].getChildren().add(cars[player]);
+    }
+
     public void multipleCars(int player, int position){
         if(fields == null) initFields();
         int total = 0;
