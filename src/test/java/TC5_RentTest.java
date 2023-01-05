@@ -3,7 +3,7 @@ import dtu.board.Property;
 import dtu.players.Player;
 import org.junit.jupiter.api.Test;
 
-import static org.testng.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TC5_RentTest {
 

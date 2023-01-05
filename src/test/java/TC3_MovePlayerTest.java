@@ -1,3 +1,4 @@
+import dtu.game.GameActions;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
 import org.junit.jupiter.api.Test;
@@ -111,5 +112,42 @@ class TC3_MovePlayerTest {
             expected = true;
         }
         assertEquals(expected, true, "Expecting player to be on position 30");
+    }
+
+    /**
+     * Test of nearestFerry method, of class GameActions.
+     */
+    @Test
+    void testNearestFerry() {
+        GameActions gameActions = new GameActions();
+
+        Player player1 = new Player(0, "Nicklas", 4000, "Black");
+        Player player2 = new Player(1, "Nicklas", 4000, "Black");
+        Player player3 = new Player(2, "Nicklas", 4000, "Black");
+        Player player4 = new Player(3, "Nicklas", 4000, "Black");
+        Player player5 = new Player(4, "Nicklas", 4000, "Black");
+
+        player1.setPosition(36);
+        player2.setPosition(4);
+        player3.setPosition(14);
+        player4.setPosition(24);
+        player5.setPosition(34);
+
+        gameActions.nearestFerry(player1);
+        assertEquals(5, player1.getPosition());
+
+        gameActions.nearestFerry(player2);
+        assertEquals(5, player2.getPosition());
+
+        gameActions.nearestFerry(player3);
+        assertEquals(15, player3.getPosition());
+
+        gameActions.nearestFerry(player4);
+        assertEquals(25, player4.getPosition());
+
+        gameActions.nearestFerry(player5);
+        assertEquals(35, player5.getPosition());
+
+
     }
 }
