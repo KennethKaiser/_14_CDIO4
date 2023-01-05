@@ -17,7 +17,7 @@ class TC6_BuyingPropertyTest {
 
        Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,200,100,500,600,700,800,900,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,200,100,500,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);
@@ -38,7 +38,7 @@ class TC6_BuyingPropertyTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,200,100,500,600,700,800,900,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,200,100,500,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);
@@ -62,7 +62,7 @@ class TC6_BuyingPropertyTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,200,0,500,600,700,800,900,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,200,0,500,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);

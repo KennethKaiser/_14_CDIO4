@@ -19,7 +19,7 @@ class TC5_RentTest {
        Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
        Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        Property property = new Property(0, "DTU",300,200,RENT,500,600,700,800,900,5);
+        Property property = new Property(0, 1,"DTU",300,200,RENT,500,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwner(player2);
@@ -46,7 +46,7 @@ class TC5_RentTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        Property property = new Property(0,"DTU",300,200,RENT,500,600,700,800,900,5);
+        Property property = new Property(0,1,"DTU",300,200,RENT,500,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwner(player2);
@@ -73,7 +73,7 @@ class TC5_RentTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        Property property = new Property(0,"DTU",300,200,RENT,500,600,700,800,900,5);
+        Property property = new Property(0,1,"DTU",300,200,RENT,500,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwner(player2);
@@ -100,7 +100,7 @@ class TC5_RentTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        Property property = new Property(0,"DTU",300,200,200,RENT_HOUSE,600,700,800,900,5);
+        Property property = new Property(0,1,"DTU",300,200,200,RENT_HOUSE,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwner(player2);

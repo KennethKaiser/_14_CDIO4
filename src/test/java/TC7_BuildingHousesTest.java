@@ -21,7 +21,7 @@ class TC7_BuildingHousesTest {
 
        Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,600,700,800,900,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);
@@ -49,7 +49,7 @@ class TC7_BuildingHousesTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,HOUSE_PRICE,RENT_NORM,RENT_HOUSE,600,700,800,900,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,HOUSE_PRICE,RENT_NORM,RENT_HOUSE,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);
@@ -77,7 +77,7 @@ class TC7_BuildingHousesTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,RENT_2HOUSE,700,800,900,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,RENT_2HOUSE,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);
@@ -106,7 +106,7 @@ class TC7_BuildingHousesTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,200,RENT_3HOUSE,800,900,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,200,RENT_3HOUSE,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);
@@ -137,7 +137,7 @@ class TC7_BuildingHousesTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,RENT_2HOUSE,RENT_3HOUSE,800,900,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,RENT_2HOUSE,RENT_3HOUSE,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);
@@ -167,7 +167,7 @@ class TC7_BuildingHousesTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,200,700,RENT_4HOUSE,900,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,200,700,RENT_4HOUSE,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);
@@ -198,7 +198,7 @@ class TC7_BuildingHousesTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,200,700,800,RENT_HOTEL,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,200,700,800,RENT_HOTEL,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);
@@ -230,7 +230,7 @@ class TC7_BuildingHousesTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,200,200,700,RENT_4HOUSE,RENT_HOTEL,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,200,200,700,RENT_4HOUSE,RENT_HOTEL,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);
@@ -262,7 +262,7 @@ class TC7_BuildingHousesTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,200,700,800,RENT_HOTEL,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,200,700,800,RENT_HOTEL,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);

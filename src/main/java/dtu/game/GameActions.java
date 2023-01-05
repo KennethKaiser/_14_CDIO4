@@ -43,7 +43,7 @@ public class GameActions {
      * @param property the property which the player landed on
      */
     public static void payRent(Player player, Property property){
-
+        if(property.getPledgestate() == false)
         player.setMoney(player.getMoney() - property.getActiveRent());
         property.getOwner().setMoney(property.getOwner().getMoney() + property.getActiveRent());
     }
@@ -73,4 +73,18 @@ public class GameActions {
         else{System.out.println("Du kan ikke bygge mere");}
         //Hvis ikke der trykkes køb sker intet
     }
-}
+
+    public static void pledgeProperty(Player player,Property property){
+        if(property.getPledgestate() == false) {
+            player.setMoney(player.getMoney() + (property.getPledge()));
+            property.setPledgestate(true);
+        }
+        else{
+            if(player.getMoney() > (property.getPledge() + (property.getPledge()/10))){
+                player.setMoney(player.getMoney() - (property.getPledge() + (property.getPledge()/10)));
+                property.setPledgestate(false);}
+            else{System.out.println("Du har ikke penge nok til at få grunden tilbage");}
+            }
+        }
+    }
+
