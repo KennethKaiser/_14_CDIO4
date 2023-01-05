@@ -118,12 +118,6 @@ class TC3_MovePlayerTest {
     void testNearestFerry() {
         GameActions gameActions = new GameActions();
 
-        boolean expected1 = false;
-        boolean expected2 = false;
-        boolean expected3 = false;
-        boolean expected4 = false;
-        boolean expected5 = false;
-
         Player player1 = new Player(0, "Nicklas", 4000, "Black");
         Player player2 = new Player(1, "Nicklas", 4000, "Black");
         Player player3 = new Player(2, "Nicklas", 4000, "Black");
@@ -136,60 +130,20 @@ class TC3_MovePlayerTest {
         player4.setPosition(24);
         player5.setPosition(34);
 
-
-
         gameActions.nearestFerry(player1);
-        System.out.println(player1.getPosition());
-
-        if (player1.getPosition()==5) {
-            expected1 = true;
-
-        }
-        assertEquals(true, expected1);
-
-
+        assertEquals(5, player1.getPosition());
 
         gameActions.nearestFerry(player2);
-        System.out.println(player2.getPosition());
-
-        if (player2.getPosition()==5) {
-            expected2 = true;
-
-        }
-        assertEquals(true, expected2);
-
-
+        assertEquals(5, player2.getPosition());
 
         gameActions.nearestFerry(player3);
-        System.out.println(player3.getPosition());
-
-        if (player3.getPosition()==15) {
-            expected3 = true;
-
-        }
-        assertEquals(true, expected3);
-
-
+        assertEquals(15, player3.getPosition());
 
         gameActions.nearestFerry(player4);
-        System.out.println(player4.getPosition());
-
-        if (player4.getPosition()==25) {
-            expected4 = true;
-
-        }
-        assertEquals(true, expected4);
-
-
+        assertEquals(25, player4.getPosition());
 
         gameActions.nearestFerry(player5);
-        System.out.println(player5.getPosition());
-
-        if (player5.getPosition()==35) {
-            expected5 = true;
-
-        }
-        assertEquals(true, expected5);
+        assertEquals(35, player5.getPosition());
 
 
     }
