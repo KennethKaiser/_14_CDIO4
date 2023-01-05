@@ -40,6 +40,24 @@ public class PlayerHandler {
         }
     }
 
+    public void isPlayerBankrupt(Player player){
+        if (player.getMoney() < 0){
+            player.setBankrupt(true);
+            playerIsBankrupt(player);
+        }
+
+    }
+
+    public void playerIsBankrupt(Player player){
+        for (int i=0; i<player.getProperties().size();i++) {
+            player.getProperties().get(i).setOwner(null);
+            player.getProperties().get(i).setOwned(false);
+            player.getProperties().get(i).setActiveRent(0);
+            player.getProperties().get(i).setBuildings(0);
+
+        }
+    }
+
     public Player[] getPlayers() {
         return players;
     }
