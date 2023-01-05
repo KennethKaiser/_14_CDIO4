@@ -4,4 +4,13 @@ public class BoardController {
 
 
 
+    public void test(){
+
+    }
+    public void roll(){
+
+    }
+    public void TestMove(){
+
+    }
 }
