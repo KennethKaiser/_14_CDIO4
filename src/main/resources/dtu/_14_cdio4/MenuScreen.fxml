@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu._14_cdio4.MenuScreenController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Matador" textAlignment="CENTER">
+               <font>
+                  <Font name="Century Gothic Bold" size="53.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Players to Game" />
+      <HBox alignment="CENTER" prefHeight="38.0" prefWidth="600.0" spacing="10.0">
+         <children>
+            <TextField fx:id="nameInput" promptText="Player Name">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="colorPicker" prefHeight="26.0" prefWidth="82.0" promptText="Color" />
+            <Button mnemonicParsing="false" text="Add Player">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <VBox prefHeight="200.0" prefWidth="1000.0">
+         <children>
+            <HBox fx:id="player1" prefHeight="0.0" prefWidth="600.0" />
+            <HBox fx:id="player2" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="600.0" />
+            <HBox fx:id="player3" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="600.0" />
+            <HBox fx:id="player4" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="600.0" />
+            <HBox fx:id="player5" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="600.0" />
+            <HBox fx:id="player6" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="600.0" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="52.0" prefWidth="600.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="150.0" text="Start Game">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
