@@ -1,4 +1,4 @@
-package dtu._14_cdio4.controllers;
+package dtu.controllers;
 
 public class ControllerHandler {
 
