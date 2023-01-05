@@ -150,21 +150,21 @@ public class ChanceCardFunctionality {
             }
             case 30: {
                 //Ryk tre felter frem
-                gameActions.movePlayer(player, 3);
+                playerHandler.movePlayer(player, 3);
             }
             case 31: {
                 //Ryk tre felter tilbage
-                gameActions.movePlayer(player, -3);
+                playerHandler.movePlayer(player, -3);
                 break;
             }
             case 32: {
                 ////Ryk tre felter tilbage
-                gameActions.movePlayer(player, -3);
+                playerHandler.movePlayer(player, -3);
                 break;
             }
             case 33: {
                 //Ryk frem til Frederiksberg Allé. Hvis De passere START  indkasser da 4000 kr.
-                gameActions.movePlayer(player, 11);
+                playerHandler.movePlayer(player, 11);
                 break;
             }
             case 34: {
