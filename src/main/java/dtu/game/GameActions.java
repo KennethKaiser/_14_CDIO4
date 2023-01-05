@@ -2,6 +2,7 @@ package dtu.game;
 
 import dtu.board.Board;
 import dtu.board.Property;
+import dtu.board.PropertyList;
 import dtu.players.Player;
 
 public class GameActions {
@@ -36,6 +37,7 @@ public class GameActions {
         else{System.out.println("Du har ikke penge nok");}
     }
 
+
     /**
      * Method for paying rent, retrieves rent frem property and removes money accordingly.
      * Also delivers money to the properties owner
@@ -43,10 +45,15 @@ public class GameActions {
      * @param property the property which the player landed on
      */
     public static void payRent(Player player, Property property){
-        if(property.getPledgestate() == false)
-        player.setMoney(player.getMoney() - property.getActiveRent());
-        property.getOwner().setMoney(property.getOwner().getMoney() + property.getActiveRent());
-    }
+        if(property.getPledgestate() == false){//Sikrer en pantsat property ikke kræver leje
+            if(PropertyList.getPermit(property) == true && property.getBuildings() == 0) {//Sætter dobbelt leje ved ejerskab af alt grund, uden bygning
+                player.setMoney(player.getMoney() - (property.getActiveRent() * 2));
+                property.getOwner().setMoney(property.getOwner().getMoney() + (property.getActiveRent() * 2));
+            }
+        else{
+                player.setMoney(player.getMoney() - property.getActiveRent());
+                property.getOwner().setMoney(property.getOwner().getMoney() + property.getActiveRent());
+        }   } }
 
     /**
      * Method for building house or hotel, removes money and set activeRent accordingly.
