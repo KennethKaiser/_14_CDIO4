@@ -1,24 +1,18 @@
 package dtu._14_cdio4;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Random;
-import java.util.Timer;
 
-public class BoardController {
+public class BoardController1 {
 
     public void instantiateBoard() {
         initHouses();

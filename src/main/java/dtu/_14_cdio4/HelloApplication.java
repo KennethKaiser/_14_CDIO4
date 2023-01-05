@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-        BoardController controller = fxmlLoader.getController();
+        BoardController1 controller = fxmlLoader.getController();
         controller.instantiateBoard();
 
     }
