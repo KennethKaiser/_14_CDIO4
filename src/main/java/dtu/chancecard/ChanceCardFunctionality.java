@@ -8,11 +8,17 @@ import dtu.game.GameActions;
 public class ChanceCardFunctionality {
     PlayerHandler playerHandler = new PlayerHandler();
     GameActions gameActions = new GameActions();
+
+    /* Reason why we are initializing the csvFileReader, is so we can get chancecard descriptions for each chancecard.
+    by calling something like: String case0 = csvFileReader.getChancecarddesc()[0];
+
+     */
     CSVFileReader csvFileReader = new CSVFileReader();
     public String chanceCardFunction(int id, Player player) {
         switch (id) {
             case 0: {
                 //Oliepriserne er steget og De skal betale 500,- pr hus og 2000,- pr hotel.
+                String case0 = csvFileReader.getChancecarddesc()[0];
                 break;
             }
             case 1: {

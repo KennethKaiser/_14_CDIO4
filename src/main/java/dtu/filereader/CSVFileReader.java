@@ -7,9 +7,11 @@ import java.util.ArrayList;
 
 public class CSVFileReader {
 
-    String[] chancecarddesc;
+    private String[] chancecarddesc;
+    private String[] fieldinfo;
     public CSVFileReader() {
         chancecarddesc = readCSV(1,"dtu/chancecard/chancecarddesc.csv", ";");
+        fieldinfo = readCSV(1, "test", ";");
     }
     /**
      * fileReader loads in a CSV file on a certain colon (para 1), and splits at delimiter (para 3) in the array data, and saves and returns the value.
@@ -53,5 +55,11 @@ public class CSVFileReader {
         return colData.toArray(new String[0]);
     }
 
+    public String[] getChancecarddesc() {
+        return chancecarddesc;
+    }
 
+    public String[] getFieldinfo() {
+        return fieldinfo;
+    }
 }
