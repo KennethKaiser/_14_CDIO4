@@ -25,7 +25,7 @@ public class BoardController1 {
     }
 
 
-    //region pictures on board
+    //region pictures on board {MOVED}
     @FXML
     ImageView prisonImage;
     @FXML
@@ -88,8 +88,8 @@ public class BoardController1 {
 
 
 
-    //endregion
-    //region names
+    //endregion {
+    //region names {MOVED}
 
     @FXML
     Text p1Name;
@@ -130,7 +130,7 @@ public class BoardController1 {
         }
     }
     //endregion
-    //region get out of jail free icon
+    //region get out of jail free icon {MOVED}
     @FXML
     ImageView p1KeyIcon;
     @FXML
@@ -144,64 +144,9 @@ public class BoardController1 {
     @FXML
     ImageView p6KeyIcon;
 
-    public boolean isGetOutOfJailFreeCard(int player){
-        switch (player){
-            case 1:
-                if(p1KeyIcon.getOpacity() > 0) return true;
-                else return false;
-            case 2:
-                if(p2KeyIcon.getOpacity() > 0) return true;
-                else return false;
-            case 3:
-                if(p3KeyIcon.getOpacity() > 0) return true;
-                else return false;
-            case 4:
-                if(p4KeyIcon.getOpacity() > 0) return true;
-                else return false;
-            case 5:
-                if(p5KeyIcon.getOpacity() > 0) return true;
-                else return false;
-            case 6:
-                if(p6KeyIcon.getOpacity() > 0) return true;
-                else return false;
-            default:
-                System.out.println("Error: could not find isGetOutOfJailFreeCard with player number {" + player + "}");
-                break;
-        }
-        return false;
-    }
-    public void setGetOutOfJailFreeCard(boolean state, int player){
-        int toSet;
-        if(state) toSet = 1;
-        else toSet = 0;
 
-
-        switch (player){
-            case 1:
-                p1KeyIcon.setOpacity(toSet);
-                break;
-            case 2:
-                p2KeyIcon.setOpacity(toSet);
-                break;
-            case 3:
-                p3KeyIcon.setOpacity(toSet);
-                break;
-            case 4:
-                p4KeyIcon.setOpacity(toSet);
-                break;
-            case 5:
-                p5KeyIcon.setOpacity(toSet);
-                break;
-            case 6:
-                p6KeyIcon.setOpacity(toSet);
-                break;
-            default:
-                System.out.println("Error: could not find player with number {" + player + "} while trying to setGetOutOfJailFreeCard");
-                break;
-        }
-    }
-    //endregion
-    //region is in jail icon
+    //endregion {M
+    //region is in jail icon {MOVED}
     @FXML
     ImageView p1JailIcon;
     @FXML
@@ -272,7 +217,7 @@ public class BoardController1 {
         }
     }
     //endregion
-    //region money
+    //region money {MOVED}
     @FXML
     Text p1Money;
     @FXML
@@ -677,65 +622,7 @@ public class BoardController1 {
     @FXML
     ImageView dice2;
 
-    public void roll(){
-        Random rnd = new Random();
 
-        int first;
-        int second;
-
-        first = rnd.nextInt(1, 7);
-        second = rnd.nextInt(1, 7);
-        rollDice(first, second);
-    }
-
-    public void rollDice(int result1, int result2) {
-        String[] dice = new String[6];
-        dice[0] = "src/textures/d1.png";
-        dice[1] = "src/textures/d2.png";
-        dice[2] = "src/textures/d3.png";
-        dice[3] = "src/textures/d4.png";
-        dice[4] = "src/textures/d5.png";
-        dice[5] = "src/textures/d6.png";
-        try {
-            dice1.setImage(image(dice[result1 -1]));
-            dice2.setImage(image(dice[result2 -1]));
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        Random rnd = new Random();
-        //Position of dice can be between 10 and 500
-
-
-        double x1 = rnd.nextDouble(10, 500);
-        double y1 = rnd.nextDouble(10, 500);
-        double x2 = rnd.nextDouble(10, 500);
-        double y2 = rnd.nextDouble(10, 500);
-
-
-
-        boolean touchingOther = true;
-        boolean touchingMiddle = false;
-        while(touchingMiddle || touchingOther){
-             x1 = rnd.nextDouble(10, 500);
-             y1 = rnd.nextDouble(10, 500);
-             x2 = rnd.nextDouble(10, 500);
-             y2 = rnd.nextDouble(10, 500);
-            if(x1 < y1+30 && x1 > y1-30){
-                touchingOther = true;
-            }
-            touchingOther = false;
-
-
-        }
-
-        dice1.setLayoutX(rnd.nextDouble(x1));
-        dice1.setLayoutY(rnd.nextDouble(y1));
-        dice1.setRotate(rnd.nextDouble(0, 360));
-        dice2.setLayoutX(rnd.nextDouble(x2));
-        dice2.setLayoutY(rnd.nextDouble(y2));
-        dice2.setRotate(rnd.nextDouble(0, 360));
-
-    }
 
 
     //endregion
