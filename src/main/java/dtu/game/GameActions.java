@@ -102,13 +102,13 @@ public class GameActions {
         if (player.getPosition()>=35 || player.getPosition()<5){
             movePlayerChanceCard(player, ferry1);
         }
-        if (player.getPosition()>=5 && player.getPosition()<15){
+        else if (player.getPosition()>=5 && player.getPosition()<15){
             movePlayerChanceCard(player, ferry2);
         }
-        if (player.getPosition()>=15 && player.getPosition()<25){
+        else if (player.getPosition()>=15 && player.getPosition()<25){
             movePlayerChanceCard(player, ferry3);
         }
-        if (player.getPosition()>=25 && player.getPosition()<35){
+        else if (player.getPosition()>=25 && player.getPosition()<35){
             movePlayerChanceCard(player, ferry4);
         }
     }
