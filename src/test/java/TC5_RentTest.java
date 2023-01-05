@@ -1,11 +1,14 @@
 import dtu.board.FieldProperty;
 import dtu.board.Property;
+import dtu.game.GameActions;
 import dtu.players.Player;
 import org.junit.jupiter.api.Test;
 
 import static org.testng.Assert.assertTrue;
 
 class TC5_RentTest {
+
+    GameActions gameActions = new GameActions();
 
     @Test
     void testPayRent() {

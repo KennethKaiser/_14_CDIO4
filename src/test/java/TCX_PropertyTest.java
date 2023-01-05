@@ -10,6 +10,9 @@ import static org.testng.Assert.assertEquals;
 
 class TCX_PropertyTest {
 
+    GameActions gameActions = new GameActions();
+
+
     @Test
     void testBuyingRødovrevej() {
         //Variable
@@ -29,18 +32,39 @@ class TCX_PropertyTest {
     }
 
     @Test
-    void testBuildingHouseRødovrevej() {
+    void testBuildingFailHouseRødovrevej() {
         //Variable
         final int START_MONEY = 4400;
         final int RØD_PRICE = 1200;
         final int RØD_HOUSEPRICE = 1000;
         //Expected
-        int moneyAfterBuying = START_MONEY - RØD_PRICE - RØD_HOUSEPRICE;
+        int moneyAfterBuying = START_MONEY - RØD_PRICE;
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        GameActions.buyProperty(player, PropertyList.getRødovrevej());
-        GameActions.buildHouse(player,PropertyList.getRødovrevej());
+        gameActions.buyProperty(player, PropertyList.getRødovrevej());
+        gameActions.buildHouse(player,PropertyList.getRødovrevej());
+
+
+        //Se om player er blevet ejer og mistet rette mængde penge penge
+        assertEquals(player.getMoney(),moneyAfterBuying,"Spilleren burde have: " + moneyAfterBuying + ". Spilleren har: "+ player.getMoney());
+        assertEquals(PropertyList.getRødovrevej().getBuildings(),0,"Rødovre skulle have bygninger: " + 0 + " Rødovre har: " + PropertyList.getRødovrevej().getBuildings());
+    }
+
+    @Test
+    void testBuilding1HouseRødovrevej() {
+        //Variable
+        final int START_MONEY = 4400;
+        final int REDnWHITE_PRICE = 1200;
+        final int RØD_HOUSEPRICE = 1000;
+        //Expected
+        int moneyAfterBuying = START_MONEY - (REDnWHITE_PRICE * 2) - RØD_HOUSEPRICE;
+
+        Player player = new Player(0,"Nicklas",START_MONEY,"Black");
+
+        gameActions.buyProperty(player, PropertyList.getRødovrevej());
+        gameActions.buyProperty(player,PropertyList.getHvidovrevej());
+        gameActions.buildHouse(player,PropertyList.getRødovrevej());
 
 
         //Se om player er blevet ejer og mistet rette mængde penge penge
@@ -61,14 +85,33 @@ class TCX_PropertyTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        GameActions.buyProperty(player1, PropertyList.getRødovrevej());
-        GameActions.payRent(player2,PropertyList.getRødovrevej());
+        gameActions.buyProperty(player1, PropertyList.getRødovrevej());
+        gameActions.payRent(player2,PropertyList.getRødovrevej());
 
 
         //Se om player er blevet ejer og mistet rette mængde penge penge
-        assertEquals(player1.getMoney(),moneyAfterRentGood,"Spilleren1 burde have: " + moneyAfterRentGood + ". Spilleren har: "+ player1.getMoney());
         assertEquals(player2.getMoney(),moneyAfterRent,"Spilleren2 burde have: " + moneyAfterRent + ". Spilleren har: "+ player2.getMoney());
+        assertEquals(player1.getMoney(),moneyAfterRentGood,"Spilleren1 burde have: " + moneyAfterRentGood + ". Spilleren har: "+ player1.getMoney());
         assertEquals(PropertyList.getRødovrevej().getOwner(),player1,"Spilleren: " + player1 + " skulle gerne være ejer. Ejeren er: " + PropertyList.getRødovrevej().getOwner());
+    }
+
+    @Test
+    void testPledgingRødovrevej() {
+        //Variable
+        final int START_MONEY = 4400;
+        final int REDnWHITE_PRICE = 1200;
+        //Expected
+        int moneyAfterBuying = START_MONEY - REDnWHITE_PRICE + (REDnWHITE_PRICE / 2);
+
+        Player player = new Player(0,"Nicklas",START_MONEY,"Black");
+
+        gameActions.buyProperty(player, PropertyList.getRødovrevej());
+        gameActions.pledgeProperty(player, PropertyList.getRødovrevej());
+
+
+        //Se om player er blevet ejer og mistet rette mængde penge penge
+        assertEquals(player.getMoney(),moneyAfterBuying,"Spilleren burde have: " + moneyAfterBuying + ". Spilleren har: "+ player.getMoney());
+        assertEquals(PropertyList.getRødovrevej().getPledgestate(),true,"Rødovre skulle have være pledged så: " + true + " Rødovre pledgestate er: " + PropertyList.getRødovrevej().getPledgestate());
     }
 
 }

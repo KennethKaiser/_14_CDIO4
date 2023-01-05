@@ -8,6 +8,8 @@ import static org.testng.Assert.assertTrue;
 
 class TC7_BuildingHousesTest {
 
+    GameActions gameActions = new GameActions();
+
     @Test
     void testBuyHouseHasCash() {
         //Variable
@@ -27,7 +29,7 @@ class TC7_BuildingHousesTest {
         property.setOwned(false);
         propertyField.action(player);
 
-        GameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
 
         //Se om player er blevet ejer og mistet rette mængde penge penge
         assertTrue((player.getMoney() == moneyAfterHouse) && (property.getActiveRent() == RENT_HOUSE), "expect player to have: " + moneyAfterHouse + " and rent of property to be: " + RENT_HOUSE + ". property has rent to " + property.getActiveRent()
@@ -55,7 +57,7 @@ class TC7_BuildingHousesTest {
         property.setOwned(false);
         propertyField.action(player);
 
-        GameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
 
         //Se om player er nægtet at købe huset
         assertTrue((player.getMoney() == moneyAfterHouse) && (property.getActiveRent() == RENT_NORM), "expect player to have: " + moneyAfterHouse + " and rent of property to be: " + RENT_NORM + ". property has rent to " + property.getActiveRent()
@@ -83,8 +85,8 @@ class TC7_BuildingHousesTest {
         property.setOwned(false);
         propertyField.action(player);
 
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
 
         //Se om player er blevet ejer og mistet rette mængde penge penge
         assertTrue((player.getMoney() == moneyAfterHouse) && (property.getActiveRent() == RENT_2HOUSE), "expect player to have: " + moneyAfterHouse + " and rent of property to be: " + RENT_2HOUSE + ". property has rent to " + property.getActiveRent()
@@ -112,9 +114,9 @@ class TC7_BuildingHousesTest {
         property.setOwned(false);
         propertyField.action(player);
 
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
 
         //Se om player er blevet ejer og mistet rette mængde penge penge
         assertTrue((player.getMoney() == moneyAfterHouse) && (property.getActiveRent() == RENT_3HOUSE), "expect player to have: " + moneyAfterHouse + " and rent of property to be: " + RENT_3HOUSE + ". property has rent to " + property.getActiveRent()
@@ -143,9 +145,9 @@ class TC7_BuildingHousesTest {
         property.setOwned(false);
         propertyField.action(player);
 
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
 
         //Se om player er blevet ejer og mistet rette mængde penge penge
         assertTrue((player.getMoney() == moneyAfterHouse) && (property.getActiveRent() == RENT_2HOUSE), "expect player to have: " + moneyAfterHouse + " and rent of property to be: " + RENT_2HOUSE + ". property has rent to " + property.getActiveRent()
@@ -173,10 +175,10 @@ class TC7_BuildingHousesTest {
         property.setOwned(false);
         propertyField.action(player);
 
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
 
         //Se om player er blevet ejer og mistet rette mængde penge penge
         assertTrue((player.getMoney() == moneyAfterHouse) && (property.getActiveRent() == RENT_4HOUSE), "expect player to have: " + moneyAfterHouse + " and rent of property to be: " + RENT_4HOUSE + ". property has rent to " + property.getActiveRent()
@@ -204,11 +206,11 @@ class TC7_BuildingHousesTest {
         property.setOwned(false);
         propertyField.action(player);
 
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
 
         //Se om player er blevet ejer og mistet rette mængde penge penge
         assertTrue((player.getMoney() == moneyAfterHouse) && (property.getActiveRent() == RENT_HOTEL), "expect player to have: " + moneyAfterHouse + " and rent of property to be: " + RENT_HOTEL + ". property has rent to " + property.getActiveRent()
@@ -236,11 +238,11 @@ class TC7_BuildingHousesTest {
         property.setOwned(false);
         propertyField.action(player);
 
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
 
         //Se om player er blevet ejer og mistet rette mængde penge penge
         assertTrue((player.getMoney() == moneyAfterHouse) && (property.getActiveRent() == RENT_4HOUSE), "expect player to have: " + moneyAfterHouse + " and rent of property to be: " + RENT_4HOUSE + ". property has rent to " + property.getActiveRent()
@@ -268,12 +270,12 @@ class TC7_BuildingHousesTest {
         property.setOwned(false);
         propertyField.action(player);
 
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
-        GameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
+        gameActions.buildHouse(player,property);
 
         //Se om player er blevet ejer og mistet rette mængde penge penge
         assertTrue((player.getMoney() == moneyAfterHouse) && (property.getActiveRent() == RENT_HOTEL), "expect player to have: " + moneyAfterHouse + " and rent of property to be: " + RENT_HOTEL + ". property has rent to " + property.getActiveRent()

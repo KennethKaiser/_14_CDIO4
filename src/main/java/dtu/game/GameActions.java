@@ -33,6 +33,7 @@ public class GameActions {
             property.setOwner(player);
             property.setOwned(true);
             property.setActiveRent(0);
+            property.setPledgestate(false);
         }
         else{System.out.println("Du har ikke penge nok");}
     }
@@ -44,16 +45,18 @@ public class GameActions {
      * @param player the player who must pay rent
      * @param property the property which the player landed on
      */
-    public static void payRent(Player player, Property property){
-        if(property.getPledgestate() == false){//Sikrer en pantsat property ikke kræver leje
-            if(PropertyList.getPermit(property) == true && property.getBuildings() == 0) {//Sætter dobbelt leje ved ejerskab af alt grund, uden bygning
+    public static void payRent(Player player, Property property) {
+        if(property.getPledgestate() == false) {
+            if(PropertyList.getPermit(property) == true && property.getBuildings() == 0){
                 player.setMoney(player.getMoney() - (property.getActiveRent() * 2));
                 property.getOwner().setMoney(property.getOwner().getMoney() + (property.getActiveRent() * 2));
             }
-        else{
+            else{
                 player.setMoney(player.getMoney() - property.getActiveRent());
                 property.getOwner().setMoney(property.getOwner().getMoney() + property.getActiveRent());
-        }   } }
+            }
+        }}
+
 
     /**
      * Method for building house or hotel, removes money and set activeRent accordingly.
@@ -62,26 +65,33 @@ public class GameActions {
      * @param player the player paying (could be changed to property owner)
      * @param property the property getting houses build on it
      */
-    public static void buildHouse(Player player, Property property) {
+    public void buildHouse(Player player, Property property) {
         // En besked fortæller pris og giver mulighed for at bekræfte køb
         //hvis der trykkes køb:
-        if (property.getBuildings() < 4) {
-            if(player.getMoney() > property.getHousePrice()){
-            player.setMoney(player.getMoney() - property.getHousePrice());
-            property.setActiveRent(property.getBuildings()+1);}
-            else{System.out.println("Du har ikke penge nok");}
+        if(PropertyList.getPermit(property) == true) {//Sikrer man ikke kan bygge før man har alle grunde i farven
+            if (property.getBuildings() < 4) {
+                if (player.getMoney() > property.getHousePrice()) {
+                    player.setMoney(player.getMoney() - property.getHousePrice());
+                    property.setActiveRent(property.getBuildings() + 1);
+                } else {
+                    System.out.println("Du har ikke penge nok");
+                }
+            } else if (property.getBuildings() == 4) {
+                if (player.getMoney() > property.getHousePrice() * 5) {
+                    player.setMoney(player.getMoney() - (property.getHousePrice() * 5));
+                    property.setActiveRent(property.getBuildings() + 1);
+                } else {
+                    System.out.println("Du har ikke penge nok");
+                }
+            } else {
+                System.out.println("Du kan ikke bygge mere");
+            }
+            //Hvis ikke der trykkes køb sker intet
         }
-        else if (property.getBuildings() == 4) {
-            if(player.getMoney() > property.getHousePrice() * 5){
-            player.setMoney(player.getMoney() - (property.getHousePrice() * 5));
-            property.setActiveRent(property.getBuildings() + 1);}
-            else{System.out.println("Du har ikke penge nok");}
-        }
-        else{System.out.println("Du kan ikke bygge mere");}
-        //Hvis ikke der trykkes køb sker intet
+        else{System.out.println("Du skal eje alle properties af denne farve først");}
     }
 
-    public static void pledgeProperty(Player player,Property property){
+    public void pledgeProperty(Player player,Property property){
         if(property.getPledgestate() == false) {
             player.setMoney(player.getMoney() + (property.getPledge()));
             property.setPledgestate(true);
