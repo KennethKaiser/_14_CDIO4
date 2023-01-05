@@ -491,6 +491,8 @@ public class BoardController {
     }
     //endregion
 
+    //region game loop actions
+
     /**
      * This method is called when player clicks button "Roll and Move"
      */
@@ -506,7 +508,7 @@ public class BoardController {
 
     }
 
-
+    //endregion
 
     //region moving car gui
     public void movePLayerOnGUI(int player, int fieldPlacement){
@@ -548,9 +550,7 @@ public class BoardController {
 
 
     //endregion
-    public void test(){
 
-    }
 
 
     //region Animations

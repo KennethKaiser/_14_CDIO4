@@ -1436,7 +1436,7 @@
                                         </Text>
                                     </children>
                                 </VBox>
-                                <Button fx:id="bField0" mnemonicParsing="false" onAction="#test" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
+                                <Button fx:id="bField0" mnemonicParsing="false" opacity="0.01" prefHeight="60.0" prefWidth="60.0">
                                     <font>
                                         <Font size="9.0" />
                                     </font>
