@@ -220,6 +220,7 @@ public class ChanceCardFunctionality {
                 break;
             }
         }
+        return "test";
     }
 
     public void getValueOfAllAsssets(Player player) {
