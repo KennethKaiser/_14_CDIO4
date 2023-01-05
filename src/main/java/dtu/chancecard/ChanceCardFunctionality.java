@@ -1,5 +1,6 @@
 package dtu.chancecard;
 
+import dtu.filereader.CSVFileReader;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
 import dtu.game.GameActions;
@@ -7,10 +8,11 @@ import dtu.game.GameActions;
 public class ChanceCardFunctionality {
     PlayerHandler playerHandler = new PlayerHandler();
     GameActions gameActions = new GameActions();
-    public void chanceCardFunction(int id, Player player) {
+    CSVFileReader csvFileReader = new CSVFileReader();
+    public String chanceCardFunction(int id, Player player) {
         switch (id) {
             case 0: {
-                //Oliepriserne er steget  og De skal betale 500,- pr hus og 2000,- pr hotel.
+                //Oliepriserne er steget og De skal betale 500,- pr hus og 2000,- pr hotel.
                 break;
             }
             case 1: {
@@ -95,11 +97,7 @@ public class ChanceCardFunctionality {
                 gameActions.changePlayerBalance(player, 1000);
                 break;
             }
-            case 20: {
-                //Deres præmieobligation er udtrykket. De modtager 1000,- af banken.
-                gameActions.changePlayerBalance(player, 1000);
-                break;
-            }
+            case 20:
             case 21: {
                 //Deres præmieobligation er udtrykket. De modtager 1000,- af banken.
                 gameActions.changePlayerBalance(player, 1000);
@@ -222,7 +220,6 @@ public class ChanceCardFunctionality {
                 break;
             }
         }
-
     }
 
     public void getValueOfAllAsssets(Player player) {
