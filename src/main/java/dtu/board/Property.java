@@ -135,6 +135,6 @@ public class Property {
         return pledge;
     }
 
-    public void serPledge(int newPledge){
+    public void setPledge(int newPledge){
         pledge = newPledge;}
 }

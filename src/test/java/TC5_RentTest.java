@@ -1,5 +1,6 @@
 import dtu.board.FieldProperty;
 import dtu.board.Property;
+import dtu.board.PropertyList;
 import dtu.game.GameActions;
 import dtu.players.Player;
 import org.junit.jupiter.api.Test;
@@ -28,6 +29,7 @@ class TC5_RentTest {
         property.setOwner(player2);
         property.setOwned(true);
         property.setActiveRent(0);
+        PropertyList.getRødovrevej().setOwner(player1);//Sikrer at den anden spiller ejer i familie1 og undgår dobbelt leje
 
         propertyField.action(player1);
 
