@@ -24,7 +24,7 @@ public class BoardController {
     Player player1 = new Player(1,"",100,"");
 
 
-
+    //GUI variables
     private ImageView[] cars; //car Icons that move on the field
     private StackPane[] fields; //The Stackpanes that a car is placed in on each field
     private Button[] fieldButtons;
