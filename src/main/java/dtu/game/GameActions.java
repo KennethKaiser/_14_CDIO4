@@ -50,8 +50,8 @@ public class GameActions {
 
     /**
      * Method for building house or hotel, removes money and set activeRent accordingly.
-     * Doesn't check if requirements for building is met, in any form,
-     * but does change price to hotel standard if four houses is already placed.
+     * Doesn't check if requirements for building is met, in any form.
+     * But does change price to hotel standard if four houses is already placed.
      * @param player the player paying (could be changed to property owner)
      * @param property the property getting houses build on it
      */
