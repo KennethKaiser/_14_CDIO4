@@ -551,8 +551,6 @@ public class BoardController {
 
     //endregion
 
-
-
     //region Animations
     public void rollDiceAnimation(int die1, int die2) {
         String[] dice = new String[6];
