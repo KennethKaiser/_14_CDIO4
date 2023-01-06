@@ -1,6 +1,9 @@
 package dtu.board;
 
+import dtu.filereader.CSVFileReader;
 import dtu.players.Player;
+
+import java.util.List;
 
 public class Property {
 
@@ -35,6 +38,22 @@ public class Property {
         this.rentHotel = rentHotel;
         this.pledge = pledge;
         pledgestate = false;
+    }
+
+    public void instantiateFieldsCSV(){
+        List<Property> properties;
+        Property[] test = new Property[40];
+        CSVFileReader csvFileReader = new CSVFileReader();
+        String[] liste = csvFileReader.fileReader(1);
+
+        for (int i = 0; i < cards.length; i++){
+            cards[i] = new Card(i, liste[i]);
+        }
+        for (int i = 0; i<12;i++){
+
+        }
+        Property Bernstoffsvej = new Property(15,4,"Bernstoffsvej",3600,2000,300,1400,4000,11000,15000,19000,1800);
+        FieldProperty fieldBernstoffvej = new FieldProperty(Bernstoffsvej);
     }
 
     //Change the rent after the amount of buildings

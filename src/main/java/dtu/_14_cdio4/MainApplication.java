@@ -1,6 +1,7 @@
 package dtu._14_cdio4;
 
 import dtu.controllers.*;
+import dtu.filereader.CSVFileReader;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,6 +10,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainApplication extends Application {
 

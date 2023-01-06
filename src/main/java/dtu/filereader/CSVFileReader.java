@@ -9,10 +9,13 @@ public class CSVFileReader {
 
     private String[] chancecarddesc;
     private String[] fieldinfo;
+    /*
     public CSVFileReader() {
-        chancecarddesc = readCSV(1,"dtu/chancecard/chancecarddesc.csv", ";");
+    chancecarddesc = readCSV(1,"dtu/chancecard/chancecarddesc.csv", ";");
         fieldinfo = readCSV(1, "test", ";");
     }
+     */
+
     /**
      * fileReader loads in a CSV file on a certain colon (para 1), and splits at delimiter (para 3) in the array data, and saves and returns the value.
      * @param colon
@@ -28,38 +31,30 @@ public class CSVFileReader {
 
     /**
      * readColon takes the data from fileReader + and handles data, split the data and adds all the data into an ArrayList colData.
+     *
      * @param colon
      * @param filepath
      * @param delimiter
      * @return
      */
-    public static String[] readCSV(int colon, String filepath, String delimiter) {
+    public static ArrayList<String[]> readCSV(String filepath, String delimiter) {
         String data[];
         String currentLine;
-        ArrayList<String> colData = new ArrayList<>();
+        ArrayList<String[]> colData = new ArrayList<>();
 
-        try
-        {
+        try {
             FileReader read = new FileReader(filepath);
             BufferedReader bread = new BufferedReader(read);
-            while((currentLine = bread.readLine()) != null)
-            {
+            while ((currentLine = bread.readLine()) != null) {
                 data = currentLine.split(delimiter);
-                colData.add(data[colon]);
+                colData.add(data);
             }
 
         } catch (Exception e) {
             System.out.println(e);
             return null;
         }
-        return colData.toArray(new String[0]);
+        return colData;
     }
 
-    public String[] getChancecarddesc() {
-        return chancecarddesc;
-    }
-
-    public String[] getFieldinfo() {
-        return fieldinfo;
-    }
 }

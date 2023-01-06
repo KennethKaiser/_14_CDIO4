@@ -18,7 +18,7 @@ public class ChanceCardFunctionality {
         switch (id) {
             case 0: {
                 //Oliepriserne er steget og De skal betale 500,- pr hus og 2000,- pr hotel.
-                String case0 = csvFileReader.getChancecarddesc()[0];
+                //String case0 = csvFileReader.getChancecarddesc()[0];
                 break;
             }
             case 1: {
