@@ -38,6 +38,21 @@ public class MainApplication extends Application {
         StackPane board = (StackPane) fxmlLoader.load();
         boardController = fxmlLoader.getController();
         ControllerHandler.getInstance().setBoardController(boardController);
+        fxmlLoader = new FXMLLoader(MainApplication.class.getResource("ChanceCards.fxml"));
+        StackPane chanceCards = (StackPane) fxmlLoader.load();
+        chanceCardsController = fxmlLoader.getController();
+        ControllerHandler.getInstance().setChanceCardsController(chanceCardsController);
+        fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PropertyMenu.fxml"));
+        StackPane propertyMenu = (StackPane) fxmlLoader.load();
+        propertyMenuController = fxmlLoader.getController();
+        ControllerHandler.getInstance().setPropertyMenuController(propertyMenuController);
+
+
+        boardController.getMiddleMenuVBox().getChildren().add(0, propertyMenu);
+
+        //Method needed here to switch which thing is in the middle of the board. Normally
+
+
 
         playerView.getChildren().add(1, board);
         root.getChildren().add(playerView);

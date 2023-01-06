@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.io.FileInputStream;
@@ -284,6 +285,11 @@ public class BoardController {
     ImageView housePurple1;
     @FXML
     ImageView housePurple2;
+    //endregion
+
+    //region VBOX that needs access because we need to put chancecards and the property menu inside it.
+    @FXML
+    VBox middleVBOX;
     //endregion
 
     //Methods:
@@ -625,6 +631,12 @@ public class BoardController {
         dice2.setLayoutY(y2);
         dice2.setRotate(rnd.nextDouble(0, 360));
 
+    }
+    //endregion
+
+    //region get VBOX to put other fxml files into
+    public VBox getMiddleMenuVBox(){
+        return this.middleVBOX;
     }
     //endregion
 
