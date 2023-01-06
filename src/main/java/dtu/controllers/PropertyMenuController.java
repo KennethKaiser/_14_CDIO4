@@ -192,6 +192,7 @@ public class PropertyMenuController {
         initCards();
 
         parent.getChildren().clear();
+        parent.getChildren().add(property1);
     }
     private void initCards(){
         cards = new VBox[9];
