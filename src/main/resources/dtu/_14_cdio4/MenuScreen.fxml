@@ -22,7 +22,7 @@
             </Text>
          </children>
       </HBox>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Players to Game">
+      <Text fx:id="communicator" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Players to Game">
          <font>
             <Font size="24.0" />
          </font></Text>

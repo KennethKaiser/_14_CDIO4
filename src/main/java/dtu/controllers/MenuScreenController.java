@@ -15,6 +15,8 @@ import java.io.InputStream;
 
 public class MenuScreenController {
     @FXML
+    Text communicator;
+    @FXML
     HBox player1;
     @FXML
     HBox player2;
@@ -175,19 +177,45 @@ public class MenuScreenController {
     }
     public void addPlayerPressed(){
         if(playersAdded < 6){
-            String name = nameInput.getText();
-            String color = colorPicker.getValue().toString();
-            removeColor(color);
-            for(int i = 0; i < players.length; i++){
-                if(players[i].getOpacity() < 1){
-                    setPlayer(i,name,color);
-                    break;
+            if(nameInput.getText().length() < 16){
+                if(!nameInput.getText().equals("")) {
+                    boolean free = true;
+                    for(int currentNames = 0; currentNames < playersAdded; currentNames++){
+                        if(nameInput.getText().equals(names[currentNames].getText())) {
+                            free = false;
+                        }
+                    }
+                    if(free){
+                        if(colorPicker.getValue() != null){
+                            String name = nameInput.getText();
+                            String color = colorPicker.getValue().toString();
+                            removeColor(color);
+                            for(int i = 0; i < players.length; i++){
+                                if(players[i].getOpacity() < 1){
+                                    setPlayer(i,name,color);
+                                    break;
+                                }
+                            }
+                            playersAdded++;
+                        }
+                        else{
+                            communicator.setText("You must pick a color, using the dropdown menu");
+                        }
+                    }
+                    else{
+                        communicator.setText("You cannot add the same player name twice");
+                    }
+                }
+                else{
+                    communicator.setText("You must add a name");
                 }
             }
-            playersAdded++;
+            else{
+                communicator.setText("Your name must be 15 characters or less");
+            }
         }
         else{
-            System.out.println("Cannot add another player, maximum has been created");
+            communicator.setText("You can only add up to 6 players");
         }
     }
     private void setPlayer(int playerNumber, String name, String color){
