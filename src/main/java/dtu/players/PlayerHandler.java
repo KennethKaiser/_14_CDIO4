@@ -70,6 +70,9 @@ public class PlayerHandler {
         }
     }
 
+    /**
+     *  Method that changes the player to null and moves all players to new array.
+     */
     public void changePlayerArray(){
         int j = 0;
         for (int i=0; i<players.length; i++){
