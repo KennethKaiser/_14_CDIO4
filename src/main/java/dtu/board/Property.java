@@ -4,11 +4,13 @@ import dtu.players.Player;
 
 public class Property {
 
+   private int ID;//ID er hvilket felt på boardet de står ved Rødovrevej starter som 0.
     private String name;
     private int price;
     private int housePrice;
     private int rentNormal, rent1House, rent2House, rent3House, rent4House, rentHotel;
     private int pledge;
+    private int familie;
 
     private int buildings;
 
@@ -17,8 +19,11 @@ public class Property {
     //Ejerskab
     private Boolean owned;
     private Player owner;
+    private Boolean pledgestate;
 
-    public Property(int ID, String name, int price, int housePrice, int rentNormal, int rent1House, int rent2House, int rent3House, int rent4House, int rentHotel, int pledge) {
+    public Property(int ID, int familie, String name, int price, int housePrice, int rentNormal, int rent1House, int rent2House, int rent3House, int rent4House, int rentHotel, int pledge) {
+        this.ID = ID;
+        this.familie = familie;
         this.name = name;
         this.price = price;
         this.housePrice = housePrice;
@@ -29,6 +34,7 @@ public class Property {
         this.rent4House = rent4House;
         this.rentHotel = rentHotel;
         this.pledge = pledge;
+        pledgestate = false;
     }
 
     //Change the rent after the amount of buildings
@@ -100,4 +106,36 @@ public class Property {
 
     public int getBuildings(){
         return buildings;}
+
+    public int getFamilie(){
+        return familie;
+    }
+
+    public void setFamilie(int newFamilie){
+        familie = newFamilie;
+    }
+
+    public int getID(){
+        return ID;
+    }
+
+    public void setID(int newID){
+        ID = newID;
+    }
+
+    public Boolean getPledgestate() {
+        return pledgestate;
+    }
+
+    public void setPledgestate(Boolean newPledgestate) {
+        this.pledgestate = newPledgestate;
+    }
+
+    public int getPledge(){
+        return pledge;
+    }
+
+    public void setPledge(int newPledge){
+        pledge = newPledge;}
+
 }

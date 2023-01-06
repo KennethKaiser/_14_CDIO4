@@ -240,5 +240,14 @@ public class MenuScreenController {
             playerNamesAdded[i] = names[i].getText();
         }
     }
+    public String[] getMenuNames(){
+        return playerNamesAdded;
+    }
+    public Image[] getMenuCarColours(){
+        return carImages;
+    }
+    public int getMenuAmountOfPlayers(){
+        return playersAdded;
+    }
 
 }
