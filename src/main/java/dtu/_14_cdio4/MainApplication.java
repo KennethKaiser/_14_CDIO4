@@ -46,7 +46,7 @@ public class MainApplication extends Application {
 
 
 
-        Scene scene = new Scene(menu, 1500, 700);
+        Scene scene = new Scene(root, 1500, 700);
         stage.setTitle("Matador");
         stage.setScene(scene);
         stage.show();
