@@ -63,6 +63,9 @@ public class PlayerHandler {
         if (player.getMoney() < 0){
             player.setBankrupt(true);
             playerIsBankrupt(player);
+
+            changePlayerArray();
+
         }
 
     }
@@ -81,6 +84,31 @@ public class PlayerHandler {
 
         }
     }
+
+    /**
+     *  Method that changes the player to null and moves all players to new array.
+     */
+    public void changePlayerArray(){
+        int j = 0;
+        for (int i=0; i<players.length; i++){
+            if (!players[i].isBankrupt()){
+                j++;
+            }
+        }
+
+        Player[] newPlayers = new Player[j];
+
+        int k = 0;
+        for (int i=0; i<players.length; i++){
+            if (!players[i].isBankrupt()){
+                newPlayers[k] = players[i];
+                k++;
+            }
+        }
+
+        players = newPlayers;
+    }
+
 
     public Player[] getPlayers() {
         return players;
