@@ -303,6 +303,7 @@ public class BoardController {
         initHouses();
         initFieldButtons();
         initializing4Players();
+        initializePlayerHandlerPlayerViewController();
 
     }
 

@@ -311,6 +311,10 @@ public class PlayerViewController {
 
     }
 
+    public void setPlayerMoney(){
+
+    }
+
     //region Get out of jail free card ICON
     public boolean isGetOutOfJailFreeCard(int player){
         switch (player){

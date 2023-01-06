@@ -796,7 +796,6 @@
                                 </AnchorPane>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                                     <children>
-                              <Button mnemonicParsing="false" onAction="#initializePlayerHandlerPlayerViewController" text="Button" />
                                         <Button mnemonicParsing="false" onAction="#moveAndRoll" prefHeight="26.0" prefWidth="130.0" text="Roll and Move" />
                                     </children>
                                 </VBox>
