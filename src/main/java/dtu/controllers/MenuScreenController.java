@@ -139,7 +139,7 @@ public class MenuScreenController {
         cars[4] = car5;
         cars[5] = car6;
     }
-    public Image image(String url){
+    private Image image(String url){
         try{
             InputStream stream = new FileInputStream(url);
             Image newImage = new Image(stream);
@@ -149,7 +149,7 @@ public class MenuScreenController {
         }
 
     }
-    public Image getCarImage(String color){
+    private Image getCarImage(String color){
         switch (color){
             case "Green":
                 return carImages[0];
@@ -251,7 +251,7 @@ public class MenuScreenController {
             players[playerNumber].setOpacity(0);
         }
     }
-    void removeColor(String color){
+    private void removeColor(String color){
         colorPicker.getItems().removeAll();
         for (int i = 0; i < colors.length; i++){
             if(colors[i].equals(color)){

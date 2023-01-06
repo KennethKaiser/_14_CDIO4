@@ -1,17 +1,1340 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0"  xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="dtu.controllers.PropertyMenuController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PropertyMenuController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="3.0">
+         <VBox fx:id="property1" alignment="TOP_CENTER" layoutX="75.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="190.0" prefWidth="121.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+            <children>
+               <HBox fx:id="color1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin>
+                  <children>
+                     <ImageView fx:id="propertyImage1" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+               </HBox>
+               <Text fx:id="propertyName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksberg Allé" textAlignment="CENTER" underline="true" wrappingWidth="110.0">
+                  <font>
+                     <Font name="Century Gothic Bold" size="9.0" />
+                  </font>
+               </Text>
+               <VBox prefHeight="0.0" prefWidth="100.0">
+                  <children>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="leje" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="leje1" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="104.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 hus" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hus11" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 huse" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hus21" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="151.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 huse" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hus31" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 huse" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hus41" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="21.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hotel1" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pris pr hus" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="husPris1" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="100.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsætning" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="pant1" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </VBox>
+         <VBox fx:id="property2" alignment="TOP_CENTER" layoutX="886.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="190.0" prefWidth="121.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+            <children>
+               <HBox fx:id="color2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin>
+                  <children>
+                     <ImageView fx:id="propertyImage2" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+               </HBox>
+               <Text fx:id="propertyName2" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksberg Allé" textAlignment="CENTER" underline="true" wrappingWidth="110.0">
+                  <font>
+                     <Font name="Century Gothic Bold" size="9.0" />
+                  </font>
+               </Text>
+               <VBox prefHeight="0.0" prefWidth="100.0">
+                  <children>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="leje" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="leje2" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="104.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 hus" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hus12" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 huse" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hus22" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="151.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 huse" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hus32" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 huse" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hus42" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="21.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hotel2" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pris pr hus" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="husPris2" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="100.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsætning" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="pant2" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </VBox>
+         <VBox fx:id="property3" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="190.0" prefWidth="121.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+            <children>
+               <HBox fx:id="color3" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin>
+                  <children>
+                     <ImageView fx:id="propertyImage3" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+               </HBox>
+               <Text fx:id="propertyName3" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksberg Allé" textAlignment="CENTER" underline="true" wrappingWidth="110.0">
+                  <font>
+                     <Font name="Century Gothic Bold" size="9.0" />
+                  </font>
+               </Text>
+               <VBox prefHeight="0.0" prefWidth="100.0">
+                  <children>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="leje" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="leje3" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="104.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 hus" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hus13" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 huse" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hus23" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="151.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 huse" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hus33" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 huse" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hus43" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="21.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="hotel3" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pris pr hus" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="husPris3" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="100.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsætning" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text fx:id="pant3" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </VBox>
+         <VBox alignment="TOP_CENTER" layoutX="324.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="190.0" prefWidth="121.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+            <children>
+               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #00ffff; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin>
+                  <children>
+                     <ImageView fx:id="ferryImage1" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+               </HBox>
+               <Text fx:id="ferryName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør - Helsingborg" textAlignment="CENTER" underline="true" wrappingWidth="110.0">
+                  <font>
+                     <Font name="Century Gothic Bold" size="9.0" />
+                  </font>
+               </Text>
+               <VBox prefHeight="0.0" prefWidth="100.0">
+                  <children>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Færger giver større indkomst ved flere færger ejet" wrappingWidth="102.79992866516113">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="151.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 færge" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="55.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 færger" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="66.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 færger" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 færger" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsætning" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </VBox>
+         <VBox alignment="TOP_CENTER" layoutX="200.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="190.0" prefWidth="121.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+            <children>
+               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #00ffff; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin>
+                  <children>
+                     <ImageView fx:id="ferryImage2" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+               </HBox>
+               <Text fx:id="ferryName2" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør - Helsingborg" textAlignment="CENTER" underline="true" wrappingWidth="110.0">
+                  <font>
+                     <Font name="Century Gothic Bold" size="9.0" />
+                  </font>
+               </Text>
+               <VBox prefHeight="0.0" prefWidth="100.0">
+                  <children>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Færger giver større indkomst ved flere færger ejet" wrappingWidth="102.79992866516113">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="151.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 færge" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="55.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 færger" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="66.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 færger" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 færger" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsætning" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </VBox>
+         <VBox alignment="TOP_CENTER" layoutX="134.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="190.0" prefWidth="121.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+            <children>
+               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #00ffff; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin>
+                  <children>
+                     <ImageView fx:id="ferryImage3" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+               </HBox>
+               <Text fx:id="ferryName3" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør - Helsingborg" textAlignment="CENTER" underline="true" wrappingWidth="110.0">
+                  <font>
+                     <Font name="Century Gothic Bold" size="9.0" />
+                  </font>
+               </Text>
+               <VBox prefHeight="0.0" prefWidth="100.0">
+                  <children>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Færger giver større indkomst ved flere færger ejet" wrappingWidth="102.79992866516113">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="151.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 færge" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="55.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 færger" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="66.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 færger" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 færger" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsætning" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </VBox>
+         <VBox alignment="TOP_CENTER" layoutX="258.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="190.0" prefWidth="121.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+            <children>
+               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #00ffff; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin>
+                  <children>
+                     <ImageView fx:id="ferryImage4" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+               </HBox>
+               <Text fx:id="ferryName4" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør - Helsingborg" textAlignment="CENTER" underline="true" wrappingWidth="110.0">
+                  <font>
+                     <Font name="Century Gothic Bold" size="9.0" />
+                  </font>
+               </Text>
+               <VBox prefHeight="0.0" prefWidth="100.0">
+                  <children>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Færger giver større indkomst ved flere færger ejet" wrappingWidth="102.79992866516113">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="151.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 færge" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="55.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 færger" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="66.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 færger" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 færger" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsætning" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </VBox>
+         <VBox fx:id="soda1" alignment="TOP_CENTER" layoutX="262.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="190.0" prefWidth="121.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+            <children>
+               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #bbbbbb; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin>
+                  <children>
+                     <ImageView fx:id="sodaImage1" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+               </HBox>
+               <Text fx:id="sodaName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Coca Cola Fabrik" textAlignment="CENTER" underline="true" wrappingWidth="110.0">
+                  <font>
+                     <Font name="Century Gothic Bold" size="9.0" />
+                  </font>
+               </Text>
+               <VBox prefHeight="0.0" prefWidth="100.0">
+                  <children>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ved leje modtag terningernes øjne ganget med 100" wrappingWidth="102.79992866516113">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="88.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hvis man ejer begge sodavandsfabrikker kan terningerne ganges med 200" wrappingWidth="102.79992866516113">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="99.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsætning" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.500" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </VBox>
+         <VBox fx:id="soda2" alignment="TOP_CENTER" layoutX="324.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="190.0" prefWidth="121.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+            <children>
+               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #bbbbbb; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin>
+                  <children>
+                     <ImageView fx:id="sodaImage2" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+               </HBox>
+               <Text fx:id="sodaName2" strokeType="OUTSIDE" strokeWidth="0.0" text="Squash Fabrik" textAlignment="CENTER" underline="true" wrappingWidth="110.0">
+                  <font>
+                     <Font name="Century Gothic Bold" size="9.0" />
+                  </font>
+               </Text>
+               <VBox prefHeight="0.0" prefWidth="100.0">
+                  <children>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ved leje modtag terningernes øjne ganget med 100" wrappingWidth="102.79992866516113">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="88.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hvis man ejer begge sodavandsfabrikker kan terningerne ganges med 200" wrappingWidth="102.79992866516113">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                     <HBox alignment="CENTER" layoutX="10.0" layoutY="99.0" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsætning" wrappingWidth="63.59997749328613">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                           <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.500" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                              <font>
+                                 <Font name="Century Gothic" size="9.0" />
+                              </font>
+                           </Text>
+                        </children>
+                        <padding>
+                           <Insets left="3.0" right="1.0" />
+                        </padding>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </VBox>
 
+      </HBox>
+   </children>
 </StackPane>
