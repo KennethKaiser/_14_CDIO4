@@ -19,7 +19,7 @@ public class MainApplication extends Application {
     private PropertyMenuController propertyMenuController;
     private StartGameController startGameController;
     private TradingMenuController tradingMenuController;
-    //private MenuScreenController menuScreenController;
+    private MenuScreenController menuScreenController;
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Background.fxml"));
@@ -36,11 +36,11 @@ public class MainApplication extends Application {
 
 
 
-        /*fxmlLoader = new FXMLLoader(MainApplication.class.getResource("MenuScreen.fxml"));
+        fxmlLoader = new FXMLLoader(MainApplication.class.getResource("MenuScreen.fxml"));
         VBox menu = (VBox) fxmlLoader.load();
-        menuScreenController = fxmlLoader.getController();*/
+        menuScreenController = fxmlLoader.getController();
 
-        Scene scene = new Scene(root, 1500, 700);
+        Scene scene = new Scene(menu, 1500, 700);
         stage.setTitle("Matador");
         stage.setScene(scene);
         stage.show();

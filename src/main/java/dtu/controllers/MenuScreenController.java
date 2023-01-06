@@ -3,6 +3,7 @@ package dtu.controllers;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -39,6 +40,7 @@ public class MenuScreenController {
     String[] removedColors;
     HBox[] players;
     Image[] carImages;
+    Button[] buttons;
     int[] numbers;
     @FXML
     public void initialize(){
@@ -70,6 +72,7 @@ public class MenuScreenController {
             removedColors[i] = "";
         }
         updateColorPicker();
+        buttons = new Button[6];
     }
     public Image image(String url){
         try{
@@ -100,6 +103,7 @@ public class MenuScreenController {
         }
     }
     private void updateColorPicker(){
+        colorPicker.getItems().clear();
         for(int i = 0; i < colors.length; i++){
             if(colors[i] != ""){
                 colorPicker.getItems().add(colors[i]);
@@ -114,29 +118,37 @@ public class MenuScreenController {
         ImageView carImage = new ImageView();
         carImage.setImage(getCarImage(color));
         carImage.setFitWidth(30);
+        carImage.setFitHeight(30);
         Button button = new Button("X");
-        button.setOnAction(e -> removePlayer(playersAdded));
+        button.setOnAction(e -> removePlayer(playersAdded+1));
         players[playersAdded].getChildren().clear();
         players[playersAdded].getChildren().addAll(nameText, carImage, button);
         playersAdded++;
+        buttons[playersAdded] = button;
+        updateColorPicker();
     }
     private void removePlayer(int player){
         if(player < playersAdded){
             players[player].getChildren().clear();
             players[player].getChildren().addAll(players[player+1]);
+            buttons[player] = buttons[player+1];
             if(player+1 < playersAdded){
                 players[player+1].getChildren().clear();
                 players[player+1].getChildren().addAll(players[player+2]);
+                buttons[player+1] = buttons[player+2];
                 if(player+2 < playersAdded){
                     players[player+2].getChildren().clear();
                     players[player+2].getChildren().addAll(players[player+3]);
+                    buttons[player+2] = buttons[player+3];
                     if(player+3 < playersAdded){
                         players[player+3].getChildren().clear();
                         players[player+3].getChildren().addAll(players[player+4]);
+                        buttons[player+3] = buttons[player+4];
                         if(player+4 < playersAdded){
                             players[player+4].getChildren().clear();
                             players[player+4].getChildren().addAll(players[player+5]);
                             players[player+5].getChildren().clear();
+                            buttons[player+4] = buttons[player+5];
                         }
                         else players[player+4].getChildren().clear();
                     }
@@ -149,12 +161,13 @@ public class MenuScreenController {
         else{
             players[player].getChildren().clear();
         }
-        for(int i = 0; i < players.length; i++){
-            Button b = (Button) players[i].getChildren().get(2);
-            int tempIndex = i;
-            b.setOnAction(e -> removePlayer(tempIndex));
-            players[i].getChildren().set(2, b);
+        for(int i = 0; i < buttons.length; i++){
+            int temp = i;
+            if(buttons[i] != null){
+                buttons[i].setOnAction(e -> removePlayer(temp));
+            }
         }
+        updateColorPicker();
     }
     void removeColor(String color){
         colorPicker.getItems().removeAll();
