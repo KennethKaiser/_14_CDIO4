@@ -1,13 +1,23 @@
 package dtu.controllers;
 
+import dtu.players.PlayerHandler;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 
 public class PlayerViewController {
+
+    //Model variables
+    PlayerHandler playerHandler;
+
+
+
     //region Player Name Tekst
     //tekst elementerne der indeholder navnene på spillerne
+
+    Text[] allPNames;
+
     @FXML
     Text p1Name;
     @FXML
@@ -270,6 +280,36 @@ public class PlayerViewController {
 
     //Methods
     //________________________________________________________
+
+    @FXML
+    public void initialize(){
+        initializePlayerNameTextArray();
+    }
+
+    public void initializePlayerNameTextArray(){
+
+        Text[] playerNameText = {p1Name,p2Name,p3Name,p4Name,p5Name,p6Name};
+
+        allPNames = playerNameText;
+
+    }
+
+
+    public void initializePlayerHandler(PlayerHandler playerHandler){
+
+        this.playerHandler = playerHandler;
+
+    }
+
+    public void setPlayersStart(){
+
+
+
+    }
+
+    public void setPlayerName(){
+
+    }
 
     //region Get out of jail free card ICON
     public boolean isGetOutOfJailFreeCard(int player){

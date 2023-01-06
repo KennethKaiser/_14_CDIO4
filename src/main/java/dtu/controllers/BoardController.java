@@ -18,6 +18,10 @@ import java.util.Random;
 
 public class BoardController {
 
+    //Controllers
+    PlayerViewController playerViewController = ControllerHandler.getInstance().getPlayerViewController();
+
+
     //Model variables
     RaffleCup dice = new RaffleCup();
     PlayerHandler playerHandler = new PlayerHandler();
@@ -299,7 +303,19 @@ public class BoardController {
         initHouses();
         initFieldButtons();
         initializing4Players();
+
     }
+
+    //region delegate model objects to other controller
+
+
+    public void initializePlayerHandlerPlayerViewController(){
+
+        playerViewController.initializePlayerHandler(this.playerHandler);
+
+    }
+
+    //endregion
 
     //region Initialize Fields and buttons to fields
     private void initFields(){
@@ -492,13 +508,24 @@ public class BoardController {
      */
     public void initializing4Players(){
 
-        playerHandler.initializePlayers(4);
-        playerHandler.initializePlayerInPlayers(0,"",200,"");
-        playerHandler.initializePlayerInPlayers(1,"",200,"");
-        playerHandler.initializePlayerInPlayers(2,"",200,"");
-        playerHandler.initializePlayerInPlayers(3,"",200,"");
+        playerHandler.initializePlayers(5);
+        playerHandler.initializePlayerInPlayers(0,"Kenneth",30000,"");
+        playerHandler.initializePlayerInPlayers(1,"Nicklas",30000,"");
+        playerHandler.initializePlayerInPlayers(2,"Tobias",30000,"");
+        playerHandler.initializePlayerInPlayers(3,"Andreas",30000,"");
+        playerHandler.initializePlayerInPlayers(4,"Mikkel",30000,"");
+
 
         playerHandler.currentPlayer();
+
+    }
+
+    /**
+     * Updates playerview at start
+     */
+    public void initializingPlayerViewStart(){
+
+
 
     }
 
@@ -526,10 +553,6 @@ public class BoardController {
         playerHandler.currentPlayer();
 
     }
-
-    //endregion
-
-    //region moving car gui
 
     //endregion
 
