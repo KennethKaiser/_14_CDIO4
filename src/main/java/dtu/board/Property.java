@@ -138,4 +138,31 @@ public class Property {
     public void setPledge(int newPledge){
         pledge = newPledge;}
 
+    public String getName() {
+        return name;
+    }
+
+    public int getRentNormal() {
+        return rentNormal;
+    }
+
+    public int getRent1House() {
+        return rent1House;
+    }
+
+    public int getRent2House() {
+        return rent2House;
+    }
+
+    public int getRent3House() {
+        return rent3House;
+    }
+
+    public int getRent4House() {
+        return rent4House;
+    }
+
+    public int getRentHotel() {
+        return rentHotel;
+    }
 }

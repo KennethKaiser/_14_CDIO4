@@ -1,8 +1,12 @@
 package dtu.controllers;
 
+import dtu.board.Property;
+import javafx.css.Style;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -75,11 +79,11 @@ public class PropertyMenuController {
     //endregion
     //region VBoxes for background colours for property cards
     @FXML
-    VBox color1;
+    HBox color1;
     @FXML
-    VBox color2;
+    HBox color2;
     @FXML
-    VBox color3;
+    HBox color3;
     //endregion
     //region info Text som leje for property cards sammen med huse og pantsætningsværdi
     @FXML
@@ -133,17 +137,91 @@ public class PropertyMenuController {
     @FXML
     Text pant3;
     //endregion
+    //region pantsætning
+
+    @FXML
+    VBox pansatProp1;
+    @FXML
+    VBox pansatProp2;
+    @FXML
+    VBox pansatProp3;
+    @FXML
+    VBox pansatFerry1;
+    @FXML
+    VBox pansatFerry2;
+    @FXML
+    VBox pansatFerry3;
+    @FXML
+    VBox pansatFerry4;
+    @FXML
+    VBox pansatSoda1;
+    @FXML
+    VBox pansatSoda2;
+
+
+    //endregion
+
+    @FXML
+    HBox parent;
+
+
 
     ImageView[] cardImages;
     Image[] houseIcons;
     Text[] names;
+    Text[] normalRent;
+    Text[] house1Rent;
+    Text[] house2Rent;
+    Text[] house3Rent;
+    Text[] house4Rent;
+    Text[] hotelRent;
+    Text[] housePrice;
+    Text[] pledgeValue;
+    HBox[] colors;
+    VBox[] pledgeValueIcons;
+    VBox[] cards;
 
     //Methods
     //---------------------------------------------------
 
     @FXML
     public void initialize(){
-        names = new Text[9];
+        initPics();
+        initTextFields();
+        initPledgeValueSigns();
+        initCards();
+
+        parent.getChildren().clear();
+    }
+    private void initCards(){
+        cards = new VBox[9];
+        cards[0] = property1;
+        cards[1] = property2;
+        cards[2] = property3;
+        cards[3] = ferry1;
+        cards[4] = ferry2;
+        cards[5] = ferry3;
+        cards[6] = ferry4;
+        cards[7] = soda1;
+        cards[8] = soda2;
+    }
+    private void initPledgeValueSigns(){
+        pledgeValueIcons = new VBox[9];
+        pledgeValueIcons[0] = pansatProp1;
+        pledgeValueIcons[1] = pansatProp2;
+        pledgeValueIcons[2] = pansatProp3;
+        pledgeValueIcons[3] = pansatFerry1;
+        pledgeValueIcons[4] = pansatFerry2;
+        pledgeValueIcons[5] = pansatFerry3;
+        pledgeValueIcons[6] = pansatFerry4;
+        pledgeValueIcons[7] = pansatSoda1;
+        pledgeValueIcons[8] = pansatSoda2;
+        for(int i = 0; i < pledgeValueIcons.length; i++){
+            setPledgeValueSign(false,i);
+        }
+    }
+    private void initTextFields(){
+        names = new Text[12];
         names[0] = propertyName1;
         names[1] = propertyName2;
         names[2] = propertyName3;
@@ -153,7 +231,42 @@ public class PropertyMenuController {
         names[6] = ferryName4;
         names[7] = sodaName1;
         names[8] = sodaName2;
-
+        normalRent = new Text[3];
+        normalRent[0] = leje1;
+        normalRent[1] = leje2;
+        normalRent[2] = leje3;
+        house1Rent = new Text[3];
+        house1Rent[0] = hus11;
+        house1Rent[1] = hus12;
+        house1Rent[2] = hus13;
+        house2Rent = new Text[3];
+        house2Rent[0] = hus21;
+        house2Rent[1] = hus22;
+        house2Rent[2] = hus23;
+        house3Rent = new Text[3];
+        house3Rent[0] = hus31;
+        house3Rent[1] = hus32;
+        house3Rent[2] = hus33;
+        house4Rent = new Text[3];
+        house4Rent[0] = hus41;
+        house4Rent[1] = hus42;
+        house4Rent[2] = hus43;
+        hotelRent = new Text[3];
+        hotelRent[0] = hotel1;
+        hotelRent[1] = hotel2;
+        hotelRent[2] = hotel3;
+        pledgeValue = new Text[3];
+        pledgeValue[0] = pant1;
+        pledgeValue[1] = pant2;
+        pledgeValue[2] = pant3;
+        housePrice = new Text[3];
+        housePrice[0] = husPris1;
+        housePrice[1] = husPris2;
+        housePrice[2] = husPris3;
+        colors = new HBox[3];
+        colors[0] = color1;
+        colors[1] = color2;
+        colors[2] = color3;
     }
     private void initPics(){
         cardImages = new ImageView[9];
@@ -174,8 +287,92 @@ public class PropertyMenuController {
         ferryImage2.setImage(image("src/textures/ferry_card.png"));
         ferryImage3.setImage(image("src/textures/ferry_card.png"));
         ferryImage4.setImage(image("src/textures/ferry_card.png"));
-        sodaImage1.setImage(image("src/textures/cola_card.png"));
+        sodaImage1.setImage(image("src/textures/colaflaske.png"));
         sodaImage1.setImage(image("src/textures/squash_card.png"));
+    }
+
+    private void setPledgeValueSign(boolean isPledgeValue, int spot){
+        if(isPledgeValue) pledgeValueIcons[spot].setOpacity(0.84);
+        else pledgeValueIcons[spot].setOpacity(0);
+    }
+    public void showProperties(Property[] properties){
+        parent.getChildren().clear();
+        for(int i = 0; i < properties.length; i++){
+            parent.getChildren().add(cards[i]);
+            names[i].setText(properties[i].getName());
+            normalRent[i].setText(numbersToString(properties[i].getRentNormal()));
+            house1Rent[i].setText(numbersToString(properties[i].getRent1House()));
+            house2Rent[i].setText(numbersToString(properties[i].getRent2House()));
+            house3Rent[i].setText(numbersToString(properties[i].getRent3House()));
+            house4Rent[i].setText(numbersToString(properties[i].getRent4House()));
+            housePrice[i].setText(numbersToString(properties[i].getHousePrice()));
+            pledgeValue[i].setText(numbersToString(properties[i].getPledge()));
+            setColorOf(colors[i], properties[i].getFamilie());
+            setHouseIcon(i, properties[i].getBuildings());
+            if(properties[i].getPledgestate())pledgeValueIcons[i].setOpacity(84);
+            else pledgeValueIcons[i].setOpacity(0);
+        }
+
+
+    }
+    private String numbersToString(int number){
+        String finalNumber = "";
+        if(number>=1000){
+            char[] numberToCharacter = (number+"").toCharArray();
+            char[] newCharacterArray = new char[numberToCharacter.length+1];
+            for(int i = newCharacterArray.length-1; i >= 0;i--){
+
+                if(newCharacterArray.length - (i + 4) < 0){
+                    newCharacterArray[i] = numberToCharacter[i-1];
+                }
+                else if(newCharacterArray.length - (i + 4) == 0){
+                    newCharacterArray[i] = '.';
+                }
+                else{
+                    newCharacterArray[i] = numberToCharacter[i];
+                }
+            }
+            for(int i = 0; i < newCharacterArray.length; i++){
+                finalNumber += newCharacterArray[i];
+            }
+            finalNumber += " kr.";
+        }
+        else finalNumber = number +" kr.";
+
+        return finalNumber;
+    }
+    private void setColorOf(Node node, int family){
+        switch (family){
+            case 0: //Blue
+                node.setStyle("-fx-background-color: #0000ff;");
+                break;
+            case 1: //Orange
+                node.setStyle("-fx-background-color: #FFA500;");
+                break;
+            case 2: //Green
+                node.setStyle("-fx-background-color:  #32cd32;");
+                break;
+            case 3: //Grey
+                node.setStyle("-fx-background-color:  #aaaaaa;");
+                break;
+            case 4: //Red
+                node.setStyle("-fx-background-color: #ff0000;");
+                break;
+            case 5: //White
+                node.setStyle("-fx-background-color: #ffffff;");
+                break;
+            case 6: //Yellow
+                node.setStyle("-fx-background-color: #FFFF00;");
+                break;
+            case 7: //Purple
+                node.setStyle("-fx-background-color:  #BF40BF;");
+                break;
+            default:
+                System.out.println("family is outside of known cases");
+                break;
+        }
+
+
     }
     private void setHouseIcon(int card, int amount){
         cardImages[card].setImage(houseIcons[amount]);
@@ -190,8 +387,5 @@ public class PropertyMenuController {
         }
 
     }
-
-
-
 
 }

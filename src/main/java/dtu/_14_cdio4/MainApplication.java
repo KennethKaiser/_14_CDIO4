@@ -23,7 +23,6 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader;
-
         fxmlLoader = new FXMLLoader(MainApplication.class.getResource("MenuScreen.fxml"));
         VBox menu = (VBox) fxmlLoader.load();
         menuScreenController = fxmlLoader.getController();
@@ -70,4 +69,5 @@ public class MainApplication extends Application {
     public static void main(String[] args) {
         launch();
     }
+
 }
