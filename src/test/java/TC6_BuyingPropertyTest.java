@@ -15,9 +15,9 @@ class TC6_BuyingPropertyTest {
         //Expected
         int endMoney = START_MONEY - PROPERTY_PRICE;
 
-       Player player = new Player(0,"Nicklas",START_MONEY,"Black");
+        Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,200,100,500,600,700,800,900,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,200,100,500,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);
@@ -26,7 +26,7 @@ class TC6_BuyingPropertyTest {
 
         //Se om player er blevet ejer og mister den rette mængde penge penge
         assertTrue((player.getMoney() == endMoney) && (property.getOwner() == player), "expect player to have: " + endMoney + " and owner of property to be: " + player + ". player has " + player.getMoney()
-        + ". And property is owned by: " + property.getOwner());
+                + ". And property is owned by: " + property.getOwner());
         System.out.println("expect player to have: " + endMoney + ", player has: " + player.getMoney() + ". Expect property to be owned: " + true + ", property is: " + property.getOwned());
     }
 
@@ -38,7 +38,7 @@ class TC6_BuyingPropertyTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,200,100,500,600,700,800,900,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,200,100,500,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);
@@ -62,7 +62,7 @@ class TC6_BuyingPropertyTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        Property property = new Property(0,"DTU",PROPERTY_PRICE,200,0,500,600,700,800,900,5);
+        Property property = new Property(0,1,"DTU",PROPERTY_PRICE,200,0,500,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
         property.setOwned(false);
