@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.MenuScreenController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="167.0" prefWidth="1500.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Matador" textAlignment="CENTER">
+               <font>
+                  <Font name="Century Gothic Bold" size="96.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Players to Game">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
+      <HBox alignment="CENTER" prefHeight="68.0" prefWidth="1500.0" spacing="10.0">
+         <children>
+            <TextField fx:id="nameInput" prefWidth="200.0" promptText="Player Name">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="colorPicker" prefWidth="150.0" promptText="Pick Color" />
+            <Button mnemonicParsing="false" onAction="#addPlayerPressed" text="Add Player">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <VBox maxWidth="-Infinity" prefHeight="366.0" prefWidth="544.0" spacing="20.0">
+         <children>
+            <HBox fx:id="player1" alignment="CENTER" prefHeight="0.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Text fx:id="name1" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="230.26880645751953">
+                     <font>
+                        <Font name="Century Gothic" size="24.0" />
+                     </font>
+                  </Text>
+                  <VBox prefHeight="42.0" prefWidth="54.0" />
+                  <ImageView fx:id="car1" fitHeight="40.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true" />
+                  <StackPane prefHeight="40.0" prefWidth="40.0">
+                     <children>
+                        <Button fx:id="button1" mnemonicParsing="false" text="X">
+                           <font>
+                              <Font name="Century Gothic" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </StackPane>
+               </children></HBox>
+            <HBox fx:id="player2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Text fx:id="name2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="230.26880645751953">
+                     <font>
+                        <Font name="Century Gothic" size="24.0" />
+                     </font>
+                  </Text>
+                  <VBox prefHeight="42.0" prefWidth="54.0" />
+                  <ImageView fx:id="car2" fitHeight="40.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true" />
+                  <StackPane prefHeight="40.0" prefWidth="40.0">
+                     <children>
+                        <Button fx:id="button2" mnemonicParsing="false" text="X">
+                           <font>
+                              <Font name="Century Gothic" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <HBox fx:id="player3" alignment="CENTER" layoutX="10.0" layoutY="72.0" prefHeight="0.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Text fx:id="name3" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="230.26880645751953">
+                     <font>
+                        <Font name="Century Gothic" size="24.0" />
+                     </font>
+                  </Text>
+                  <VBox prefHeight="42.0" prefWidth="54.0" />
+                  <ImageView fx:id="car3" fitHeight="40.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true" />
+                  <StackPane prefHeight="40.0" prefWidth="40.0">
+                     <children>
+                        <Button fx:id="button3" mnemonicParsing="false" text="X">
+                           <font>
+                              <Font name="Century Gothic" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <HBox fx:id="player4" alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="0.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Text fx:id="name4" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="230.26880645751953">
+                     <font>
+                        <Font name="Century Gothic" size="24.0" />
+                     </font>
+                  </Text>
+                  <VBox prefHeight="42.0" prefWidth="54.0" />
+                  <ImageView fx:id="car4" fitHeight="40.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true" />
+                  <StackPane prefHeight="40.0" prefWidth="40.0">
+                     <children>
+                        <Button fx:id="button4" mnemonicParsing="false" text="X">
+                           <font>
+                              <Font name="Century Gothic" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <HBox fx:id="player5" alignment="CENTER" layoutX="10.0" layoutY="197.0" prefHeight="0.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Text fx:id="name5" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="230.26880645751953">
+                     <font>
+                        <Font name="Century Gothic" size="24.0" />
+                     </font>
+                  </Text>
+                  <VBox prefHeight="42.0" prefWidth="54.0" />
+                  <ImageView fx:id="car5" fitHeight="40.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true" />
+                  <StackPane prefHeight="40.0" prefWidth="40.0">
+                     <children>
+                        <Button fx:id="button5" mnemonicParsing="false" text="X">
+                           <font>
+                              <Font name="Century Gothic" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <HBox fx:id="player6" alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="0.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Text fx:id="name6" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="230.26880645751953">
+                     <font>
+                        <Font name="Century Gothic" size="24.0" />
+                     </font>
+                  </Text>
+                  <VBox prefHeight="42.0" prefWidth="54.0" />
+                  <ImageView fx:id="car6" fitHeight="40.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true" />
+                  <StackPane prefHeight="40.0" prefWidth="40.0">
+                     <children>
+                        <Button fx:id="button6" mnemonicParsing="false" text="X">
+                           <font>
+                              <Font name="Century Gothic" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="52.0" prefWidth="600.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#startGamePressed" prefHeight="23.0" prefWidth="150.0" text="Start Game">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

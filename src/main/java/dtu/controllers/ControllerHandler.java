@@ -9,9 +9,15 @@ public class ControllerHandler {
     private PropertyMenuController propertyMenuController;
     private StartGameController startGameController;
     private TradingMenuController tradingMenuController;
+    private MenuScreenController menuScreenController;
 
+    public MenuScreenController getMenuScreenController() {
+        return menuScreenController;
+    }
 
-
+    public void setMenuScreenController(MenuScreenController menuScreenController) {
+        this.menuScreenController = menuScreenController;
+    }
 
     public static ControllerHandler controllerHandler = null;
 
