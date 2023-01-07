@@ -794,12 +794,7 @@
                                         <ImageView fx:id="dice2" fitHeight="50.0" fitWidth="50.0" layoutX="20.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
                                     </children>
                                 </AnchorPane>
-                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
-                                    <children>
-                              <Button mnemonicParsing="false" onAction="#initializingPlayerViewStart" text="Update" />
-                                        <Button mnemonicParsing="false" onAction="#moveAndRoll" prefHeight="26.0" prefWidth="130.0" text="Roll and Move" />
-                                    </children>
-                                </VBox>
+                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" />
                             </children>
                         </StackPane>
                         <VBox minWidth="-Infinity" prefHeight="569.0" prefWidth="63.0">
