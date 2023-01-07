@@ -290,6 +290,9 @@ public class PlayerViewController {
         initializePlayerMoneyTextArray();
     }
 
+    /**
+     * Initializes a player name text array at start
+     */
     public void initializePlayerNameTextArray(){
 
         Text[] playerNameText = {p1Name,p2Name,p3Name,p4Name,p5Name,p6Name};
@@ -298,13 +301,19 @@ public class PlayerViewController {
 
     }
 
+    /**
+     * Initializes a player money text array at start
+     */
     public void initializePlayerMoneyTextArray(){
 
         Text[] playerMoneyText = {p1Money,p2Money,p3Money,p4Money,p5Money,p6Money};
         allPMoney = playerMoneyText;
     }
 
-
+    /**
+     * updatePlayerName method updates all players names. It's getting called from BoardController at the moment,
+     * but should be called from StartGameController.
+     */
     public void updatePlayerName(){
 
         for(int i = 0; i < playerHandler.getPlayers().length; i++){
@@ -314,6 +323,10 @@ public class PlayerViewController {
 
     }
 
+    /**
+     * updatePlayerMoney method updates all players Money. It's getting called from BoardController at the moment,
+     * but should be called from StartGameController.
+     */
     public void updatePlayerMoney(){
 
         for(int i = 0; i < playerHandler.getPlayers().length; i++){
