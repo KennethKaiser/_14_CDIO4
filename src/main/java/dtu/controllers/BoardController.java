@@ -526,7 +526,8 @@ public class BoardController {
      */
     public void initializingPlayerViewStart(){
 
-
+        playerViewController.updatePlayerName();
+        playerViewController.updatePlayerMoney();
 
     }
 

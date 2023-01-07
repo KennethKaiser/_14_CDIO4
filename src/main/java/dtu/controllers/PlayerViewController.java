@@ -61,6 +61,9 @@ public class PlayerViewController {
     ImageView p6JailIcon;
     //endregion
     //region Player Money Text
+
+    Text[] allPMoney;
+
     @FXML
     Text p1Money;
     @FXML
@@ -284,6 +287,7 @@ public class PlayerViewController {
     @FXML
     public void initialize(){
         initializePlayerNameTextArray();
+        initializePlayerMoneyTextArray();
     }
 
     public void initializePlayerNameTextArray(){
@@ -291,6 +295,32 @@ public class PlayerViewController {
         Text[] playerNameText = {p1Name,p2Name,p3Name,p4Name,p5Name,p6Name};
 
         allPNames = playerNameText;
+
+    }
+
+    public void initializePlayerMoneyTextArray(){
+
+        Text[] playerMoneyText = {p1Money,p2Money,p3Money,p4Money,p5Money,p6Money};
+        allPMoney = playerMoneyText;
+    }
+
+
+    public void updatePlayerName(){
+
+        for(int i = 0; i < playerHandler.getPlayers().length; i++){
+            String playerName = playerHandler.getPlayers()[i].getName();
+            allPNames[i].setText(playerName);
+        }
+
+    }
+
+    public void updatePlayerMoney(){
+
+        for(int i = 0; i < playerHandler.getPlayers().length; i++){
+            int playerMoney = playerHandler.getPlayers()[i].getMoney();
+            String s = String.valueOf(playerMoney);
+            allPMoney[i].setText(s);
+        }
 
     }
 
