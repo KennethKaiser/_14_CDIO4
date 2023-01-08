@@ -1,6 +1,7 @@
-package dtu.controllers;
+package dtu._14_cdio4;
 
 import dtu._14_cdio4.MainApplication;
+import dtu.controllers.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
