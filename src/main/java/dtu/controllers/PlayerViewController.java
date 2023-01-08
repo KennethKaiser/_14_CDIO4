@@ -2,11 +2,17 @@ package dtu.controllers;
 
 import dtu.players.PlayerHandler;
 import javafx.fxml.FXML;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 public class PlayerViewController {
 
@@ -203,83 +209,6 @@ public class PlayerViewController {
     StackPane sodaProp6;
 
     //endregion
-    //region player money images
-    //pX  =  player nr X, the number following is the amount fx p25000 is player 2's 5000 stack.
-
-
-    @FXML
-    StackPane p15000;
-    @FXML
-    StackPane p12000;
-    @FXML
-    StackPane p11000;
-    @FXML
-    StackPane p1500;
-    @FXML
-    StackPane p1100;
-    @FXML
-    StackPane p150;
-    @FXML
-    StackPane p25000;
-    @FXML
-    StackPane p22000;
-    @FXML
-    StackPane p21000;
-    @FXML
-    StackPane p2500;
-    @FXML
-    StackPane p2100;
-    @FXML
-    StackPane p250;
-    @FXML
-    StackPane p35000;
-    @FXML
-    StackPane p32000;
-    @FXML
-    StackPane p31000;
-    @FXML
-    StackPane p3500;
-    @FXML
-    StackPane p3100;
-    @FXML
-    StackPane p350;
-    @FXML
-    StackPane p45000;
-    @FXML
-    StackPane p42000;
-    @FXML
-    StackPane p41000;
-    @FXML
-    StackPane p4500;
-    @FXML
-    StackPane p4100;
-    @FXML
-    StackPane p450;
-    @FXML
-    StackPane p55000;
-    @FXML
-    StackPane p52000;
-    @FXML
-    StackPane p51000;
-    @FXML
-    StackPane p5500;
-    @FXML
-    StackPane p5100;
-    @FXML
-    StackPane p550;
-    @FXML
-    StackPane p65000;
-    @FXML
-    StackPane p62000;
-    @FXML
-    StackPane p61000;
-    @FXML
-    StackPane p6500;
-    @FXML
-    StackPane p6100;
-    @FXML
-    StackPane p650;
-    //endregion
     //region Player Info Areas
     VBox[] areas;
     VBox[] parts;
@@ -303,6 +232,41 @@ public class PlayerViewController {
     VBox area6;
 
     //endregion
+    //region player property area
+    FlowPane[] propAreas;
+    @FXML
+    FlowPane propAreaP1;
+    @FXML
+    FlowPane propAreaP2;
+    @FXML
+    FlowPane propAreaP3;
+    @FXML
+    FlowPane propAreaP4;
+    @FXML
+    FlowPane propAreaP5;
+    @FXML
+    FlowPane propAreaP6;
+
+    //endregion
+    //region Player Money Area
+    FlowPane[] moneyAreas;
+    StackPane[][] playerCashAreas;
+    Image[] moneyPictures;
+    @FXML
+    FlowPane moneyAreaP1;
+    @FXML
+    FlowPane moneyAreaP2;
+    @FXML
+    FlowPane moneyAreaP3;
+    @FXML
+    FlowPane moneyAreaP4;
+    @FXML
+    FlowPane moneyAreaP5;
+    @FXML
+    FlowPane moneyAreaP6;
+
+    //endregion
+
 
 
 
@@ -311,9 +275,11 @@ public class PlayerViewController {
 
     @FXML
     public void initialize(){
+        initializeCash();
         initializePlayerNameTextArray();
         initializePlayerMoneyTextArray();
         initializePlayerAreaArray();
+
     }
 
 
@@ -357,6 +323,87 @@ public class PlayerViewController {
         allPMoney = playerMoneyText;
     }
 
+
+
+    /*
+    initializes the cash on screen for every player, by saving the pictures of money along with
+     */
+    private void initializeCash(){
+        moneyPictures = new Image[6];
+        moneyPictures[0] = image("src/textures/5000_v2.png");
+        moneyPictures[1] = image("src/textures/2000_v2.png");
+        moneyPictures[2] = image("src/textures/1000_v2.png");
+        moneyPictures[3] = image("src/textures/500_v2.png");
+        moneyPictures[4] = image("src/textures/100_v2.png");
+        moneyPictures[5] = image("src/textures/50_v2.png");
+        moneyAreas = new FlowPane[6];
+        moneyAreas[0] = moneyAreaP1;
+        moneyAreas[1] = moneyAreaP2;
+        moneyAreas[2] = moneyAreaP3;
+        moneyAreas[3] = moneyAreaP4;
+        moneyAreas[4] = moneyAreaP5;
+        moneyAreas[5] = moneyAreaP6;
+
+
+        playerCashAreas = new StackPane[6][];
+        for(int i = 0; i < playerCashAreas.length; i++){
+            moneyAreas[i].getChildren().clear();
+            playerCashAreas[i] = new StackPane[6];
+            for(int n = 0; n < playerCashAreas[i].length; n++){
+                playerCashAreas[i][n] = new StackPane();
+                playerCashAreas[i][n].setLayoutX(1);
+                playerCashAreas[i][n].setLayoutY(50);
+                moneyAreas[i].getChildren().add(playerCashAreas[i][n]);
+            }
+        }
+    }
+
+
+    /*
+    's the amount of cash for a singular player, this is called in the update money method, but can be set without it if need be.'
+     */
+    public void setPlayerShownCash(int player, int moneyAmount){
+        int[] cashAmount = new int[6]; //0 = 5000,  5 = 50
+        while(moneyAmount > 5000*2){
+            moneyAmount -= 5000;
+            cashAmount[0] += 1;
+        }
+        while(moneyAmount > 2000*2){
+            moneyAmount -= 2000;
+            cashAmount[1] += 1;
+        }
+        while(moneyAmount > 1000*2){
+            moneyAmount -= 1000;
+            cashAmount[2] += 1;
+        }
+        while(moneyAmount > 500*2){
+            moneyAmount -= 500;
+            cashAmount[3] += 1;
+        }
+        while(moneyAmount > 100){
+            moneyAmount -= 100;
+            cashAmount[4] += 1;
+        }
+        while(moneyAmount >= 50){
+            moneyAmount -= 50;
+            cashAmount[5] += 1;
+        }
+        if(moneyAmount > 0){
+            System.out.println("Error: There are " + moneyAmount + " extra90");
+        }
+        for(int i = 0; i < 6; i++){
+            playerCashAreas[player][i].getChildren().clear();
+            for(int n = 0; n < cashAmount[i]; n++){
+                ImageView cash = new ImageView(moneyPictures[i]);
+                cash.setFitWidth(45);
+                cash.setFitHeight(30);
+                if(cashAmount[i] < 4) cash.setTranslateY(n*8);
+                else cash.setTranslateY(n*(Math.round((24/cashAmount[i]))));
+                playerCashAreas[player][i].getChildren().add(cash);
+            }
+        }
+
+    }
     /**
      * updatePlayerName method updates all players names. It's getting called from BoardController at the moment,
      * but should be called from StartGameController.
@@ -388,6 +435,7 @@ public class PlayerViewController {
             int playerMoney = playerHandler.getPlayers()[i].getMoney();
             String s = String.valueOf(playerMoney);
             allPMoney[i].setText(s);
+            setPlayerShownCash(i, playerMoney);
         }
 
     }
@@ -399,17 +447,15 @@ public class PlayerViewController {
 
     }
 
-    public void setPlayersStart(){
 
-
-
-    }
-
-    public void setPlayerName(){
-
-    }
-
-    public void setPlayerMoney(){
+    private Image image(String url){
+        try{
+            InputStream stream = new FileInputStream(url);
+            Image newImage = new Image(stream);
+            return newImage;
+        }catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

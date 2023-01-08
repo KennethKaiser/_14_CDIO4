@@ -1,6 +1,5 @@
 package dtu._14_cdio4;
 
-import dtu._14_cdio4.MainApplication;
 import dtu.controllers.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -86,7 +85,6 @@ public class SceneSwitch {
         stage.setResizable(false);
         stage.show();
         boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getMenuCarColorImages(), menuScreenController.getColorNames());
-
     }
 
 }

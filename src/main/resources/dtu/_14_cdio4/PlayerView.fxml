@@ -11,12 +11,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="wholeArea" spacing="5.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PlayerViewController">
-    <VBox fx:id="part1" maxHeight="700.0" prefHeight="671.0" prefWidth="270.0" spacing="5.0">
+<HBox fx:id="wholeArea" prefHeight="700.0" prefWidth="1500.0" spacing="5.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PlayerViewController">
+    <VBox fx:id="part1" maxHeight="700.0" prefHeight="671.0" prefWidth="440.0" spacing="5.0">
         <children>
-            <VBox fx:id="area1" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="780.0" prefWidth="390.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area1" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="780.0" prefWidth="500.0" spacing="10.0" style="-fx-background-color: #00dd00;">
                 <children>
-                    <HBox alignment="CENTER" prefHeight="43.0" prefWidth="396.0" spacing="8.0">
+                    <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
                             <ImageView fx:id="p1KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
                                 <image>
@@ -34,7 +34,7 @@
                                     <ColorAdjust brightness="1.0" />
                                 </effect>
                             </ImageView>
-                            <Text fx:id="p1Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="217.50013828277588">
+                            <Text fx:id="p1Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PlayerName" textAlignment="CENTER" wrappingWidth="217.50013828277588">
                                 <font>
                                     <Font name="System Bold" size="20.0" />
                                 </font>
@@ -60,21 +60,8 @@
                     </HBox>
                     <HBox prefHeight="150.0" prefWidth="396.0">
                         <children>
-                            <FlowPane alignment="TOP_CENTER" hgap="2.0" prefHeight="134.0" prefWidth="234.0" vgap="2.0">
-                                <children>
-                                    <StackPane prefHeight="60.0" prefWidth="1.0" />
-                                </children>
-                            </FlowPane>
-                            <FlowPane alignment="TOP_CENTER" hgap="5.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0">
-                                <children>
-                                    <StackPane alignment="TOP_LEFT" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="81.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="81.0" layoutY="72.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="101.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="101.0" layoutY="72.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="121.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                </children>
-                            </FlowPane>
+                            <FlowPane fx:id="propAreaP1" alignment="TOP_CENTER" hgap="2.0" prefHeight="130.0" prefWidth="234.0" vgap="2.0" />
+                            <FlowPane fx:id="moneyAreaP1" alignment="TOP_CENTER" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="160.0" vgap="20.0" />
                         </children>
                     </HBox>
                 </children>
@@ -85,9 +72,9 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area3" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="780.0" prefWidth="390.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area3" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="780.0" prefWidth="500.0" spacing="10.0" style="-fx-background-color: #00dd00;">
                 <children>
-                    <HBox alignment="CENTER" prefHeight="43.0" prefWidth="396.0" spacing="8.0">
+                    <HBox alignment="CENTER" prefHeight="27.0" prefWidth="386.0" spacing="8.0">
                         <children>
                             <ImageView fx:id="p3KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
                                 <image>
@@ -131,21 +118,8 @@
                     </HBox>
                     <HBox prefHeight="150.0" prefWidth="396.0">
                         <children>
-                            <FlowPane alignment="TOP_CENTER" hgap="2.0" prefHeight="134.0" prefWidth="234.0" vgap="2.0">
-                                <children>
-                                    <StackPane prefHeight="60.0" prefWidth="1.0" />
-                                </children>
-                            </FlowPane>
-                            <FlowPane alignment="TOP_CENTER" hgap="5.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0">
-                                <children>
-                                    <StackPane alignment="TOP_LEFT" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="81.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="81.0" layoutY="72.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="101.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="101.0" layoutY="72.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="121.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                </children>
-                            </FlowPane>
+                            <FlowPane fx:id="propAreaP3" alignment="TOP_CENTER" hgap="2.0" prefHeight="130.0" prefWidth="234.0" vgap="2.0" />
+                            <FlowPane fx:id="moneyAreaP3" alignment="TOP_CENTER" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="160.0" vgap="20.0" />
                         </children>
                     </HBox>
                 </children>
@@ -156,9 +130,9 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area5" alignment="TOP_CENTER" layoutX="10.0" layoutY="352.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="780.0" prefWidth="390.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area5" alignment="TOP_CENTER" layoutX="10.0" layoutY="352.0" prefHeight="780.0" prefWidth="500.0" spacing="10.0" style="-fx-background-color: #00dd00;">
                 <children>
-                    <HBox alignment="CENTER" prefHeight="43.0" prefWidth="396.0" spacing="8.0">
+                    <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
                             <ImageView fx:id="p5KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
                                 <image>
@@ -202,21 +176,8 @@
                     </HBox>
                     <HBox prefHeight="150.0" prefWidth="396.0">
                         <children>
-                            <FlowPane alignment="TOP_CENTER" hgap="2.0" prefHeight="134.0" prefWidth="234.0" vgap="2.0">
-                                <children>
-                                    <StackPane prefHeight="60.0" prefWidth="1.0" />
-                                </children>
-                            </FlowPane>
-                            <FlowPane alignment="TOP_CENTER" hgap="5.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0">
-                                <children>
-                                    <StackPane alignment="TOP_LEFT" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="81.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="81.0" layoutY="72.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="101.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="101.0" layoutY="72.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="121.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                </children>
-                            </FlowPane>
+                            <FlowPane fx:id="propAreaP5" alignment="TOP_CENTER" hgap="2.0" prefHeight="130.0" prefWidth="234.0" vgap="2.0" />
+                            <FlowPane fx:id="moneyAreaP5" alignment="TOP_CENTER" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="160.0" vgap="20.0" />
                         </children>
                     </HBox>
                 </children>
@@ -229,11 +190,11 @@
             </VBox>
         </children>
     </VBox>
-    <VBox fx:id="part2" maxHeight="700.0" prefHeight="700.0" prefWidth="400.0" spacing="5.0">
+    <VBox fx:id="part2" maxHeight="700.0" prefHeight="700.0" prefWidth="440.0" spacing="5.0">
         <children>
-            <VBox fx:id="area2" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="780.0" prefWidth="292.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area2" alignment="TOP_CENTER" prefHeight="780.0" prefWidth="500.0" spacing="10.0" style="-fx-background-color: #00dd00;">
                 <children>
-                    <HBox alignment="CENTER" prefHeight="43.0" prefWidth="396.0" spacing="8.0">
+                    <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
                             <ImageView fx:id="p2KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
                                 <image>
@@ -277,21 +238,8 @@
                     </HBox>
                     <HBox prefHeight="150.0" prefWidth="396.0">
                         <children>
-                            <FlowPane alignment="TOP_CENTER" hgap="2.0" prefHeight="134.0" prefWidth="234.0" vgap="2.0">
-                                <children>
-                                    <StackPane prefHeight="60.0" prefWidth="1.0" />
-                                </children>
-                            </FlowPane>
-                            <FlowPane alignment="TOP_CENTER" hgap="5.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0">
-                                <children>
-                                    <StackPane alignment="TOP_LEFT" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="81.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="81.0" layoutY="72.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="101.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="101.0" layoutY="72.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="121.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                </children>
-                            </FlowPane>
+                            <FlowPane fx:id="propAreaP2" alignment="TOP_CENTER" hgap="2.0" prefHeight="130.0" prefWidth="234.0" vgap="2.0" />
+                            <FlowPane fx:id="moneyAreaP2" alignment="TOP_CENTER" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="160.0" vgap="20.0" />
                         </children>
                     </HBox>
                 </children>
@@ -302,9 +250,9 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area4" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="780.0" prefWidth="390.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area4" alignment="TOP_CENTER" prefHeight="780.0" prefWidth="500.0" spacing="10.0" style="-fx-background-color: #00dd00;">
                 <children>
-                    <HBox alignment="CENTER" prefHeight="43.0" prefWidth="396.0" spacing="8.0">
+                    <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
                             <ImageView fx:id="p4KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
                                 <image>
@@ -348,21 +296,8 @@
                     </HBox>
                     <HBox prefHeight="150.0" prefWidth="396.0">
                         <children>
-                            <FlowPane alignment="TOP_CENTER" hgap="2.0" prefHeight="134.0" prefWidth="234.0" vgap="2.0">
-                                <children>
-                                    <StackPane prefHeight="60.0" prefWidth="1.0" />
-                                </children>
-                            </FlowPane>
-                            <FlowPane alignment="TOP_CENTER" hgap="5.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0">
-                                <children>
-                                    <StackPane alignment="TOP_LEFT" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="81.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="81.0" layoutY="72.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="101.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="101.0" layoutY="72.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="121.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                </children>
-                            </FlowPane>
+                            <FlowPane fx:id="propAreaP4" alignment="TOP_CENTER" hgap="2.0" prefHeight="130.0" prefWidth="234.0" vgap="2.0" />
+                            <FlowPane fx:id="moneyAreaP4" alignment="TOP_CENTER" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="160.0" vgap="20.0" />
                         </children>
                     </HBox>
                 </children>
@@ -373,9 +308,9 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area6" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="780.0" prefWidth="390.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area6" alignment="TOP_CENTER" prefHeight="780.0" prefWidth="500.0" spacing="10.0" style="-fx-background-color: #00dd00;">
                 <children>
-                    <HBox alignment="CENTER" prefHeight="43.0" prefWidth="396.0" spacing="8.0">
+                    <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
                             <ImageView fx:id="p6KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
                                 <image>
@@ -419,19 +354,35 @@
                     </HBox>
                     <HBox prefHeight="150.0" prefWidth="396.0">
                         <children>
-                            <FlowPane alignment="TOP_CENTER" hgap="2.0" prefHeight="134.0" prefWidth="234.0" vgap="2.0">
+                            <FlowPane fx:id="propAreaP6" alignment="TOP_CENTER" hgap="2.0" prefHeight="130.0" prefWidth="234.0" vgap="2.0" />
+                            <FlowPane fx:id="moneyAreaP6" alignment="TOP_CENTER" hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="160.0" vgap="20.0">
                                 <children>
-                                    <StackPane prefHeight="60.0" prefWidth="1.0" />
-                                </children>
-                            </FlowPane>
-                            <FlowPane alignment="TOP_CENTER" hgap="5.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0">
-                                <children>
-                                    <StackPane alignment="TOP_LEFT" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="81.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="81.0" layoutY="72.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="101.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="101.0" layoutY="72.0" prefHeight="60.0" prefWidth="1.0" />
-                                    <StackPane alignment="TOP_LEFT" layoutX="121.0" layoutY="44.0" prefHeight="60.0" prefWidth="1.0" />
+                                    <StackPane alignment="TOP_LEFT" prefHeight="60.0" prefWidth="1.0">
+                              <children>
+                                 <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../../../../textures/50_v2.png" />
+                                    </image>
+                                 </ImageView>
+                                 <ImageView fitHeight="20.0" fitWidth="30.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" translateY="10.0">
+                                    <image>
+                                       <Image url="@../../../../textures/50_v2.png" />
+                                    </image>
+                                 </ImageView>
+                                 <ImageView fitHeight="20.0" fitWidth="30.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" translateY="10.0">
+                                    <image>
+                                       <Image url="@../../../../textures/50_v2.png" />
+                                    </image>
+                                 </ImageView>
+                                 <ImageView fitHeight="20.0" fitWidth="30.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" translateY="10.0">
+                                    <image>
+                                       <Image url="@../../../../textures/50_v2.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                              <opaqueInsets>
+                                 <Insets />
+                              </opaqueInsets></StackPane>
                                 </children>
                             </FlowPane>
                         </children>
@@ -445,4 +396,7 @@
                 </opaqueInsets>
             </VBox>
         </children></VBox>
+   <padding>
+      <Insets bottom="5.0" top="5.0" />
+   </padding>
 </HBox>
