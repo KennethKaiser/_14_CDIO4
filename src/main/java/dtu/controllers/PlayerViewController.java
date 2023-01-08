@@ -2,6 +2,8 @@ package dtu.controllers;
 
 import dtu.players.PlayerHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
@@ -232,8 +234,9 @@ public class PlayerViewController {
     VBox area6;
 
     //endregion
-    //region player property area
+    //region Player property area
     FlowPane[] propAreas;
+    StackPane propertyStackPanes[][];
     @FXML
     FlowPane propAreaP1;
     @FXML
@@ -276,6 +279,7 @@ public class PlayerViewController {
     @FXML
     public void initialize(){
         initializeCash();
+        initializePropertyCards();
         initializePlayerNameTextArray();
         initializePlayerMoneyTextArray();
         initializePlayerAreaArray();
@@ -323,8 +327,30 @@ public class PlayerViewController {
         allPMoney = playerMoneyText;
     }
 
-
-
+    /*
+    makes the Stackpanes where the cards should be at every player spot and puts them in a Stackpane Array Array,
+    this makes it easy to acces from whereever in this controller
+     */
+    private void initializePropertyCards(){
+        propAreas = new FlowPane[6];
+        propAreas[0] = propAreaP1;
+        propAreas[1] = propAreaP2;
+        propAreas[2] = propAreaP3;
+        propAreas[3] = propAreaP4;
+        propAreas[4] = propAreaP5;
+        propAreas[5] = propAreaP6;
+        propertyStackPanes = new StackPane[6][];
+        for(int i = 0; i < propertyStackPanes.length; i++){
+            propAreas[i].getChildren().clear();
+            propertyStackPanes[i] = new StackPane[10];
+            for(int n = 0; n < propertyStackPanes[i].length; n++){
+                propertyStackPanes[i][n] = new StackPane();
+                propertyStackPanes[i][n].setLayoutX(1);
+                propertyStackPanes[i][n].setLayoutY(50);
+                propAreas[i].getChildren().add(propertyStackPanes[i][n]);
+            }
+        }
+    }
     /*
     initializes the cash on screen for every player, by saving the pictures of money along with
      */
@@ -430,24 +456,63 @@ public class PlayerViewController {
      * but should be called from StartGameController.
      */
     public void updatePlayerMoney(){
-
         for(int i = 0; i < playerHandler.getPlayers().length; i++){
             int playerMoney = playerHandler.getPlayers()[i].getMoney();
             String s = String.valueOf(playerMoney);
             allPMoney[i].setText(s);
             setPlayerShownCash(i, playerMoney);
         }
-
     }
 
 
     public void initializePlayerHandler(PlayerHandler playerHandler){
-
         this.playerHandler = playerHandler;
-
     }
 
+    //region adding, removing and functions of cards
 
+    /*
+    openOwnedCard is the function that happens when a card given to a player is clicked,
+    it should open a card on the middle platform,
+    but if that specific player has two of the same family it should open both.
+     */
+    public void openOwnedCard(int family, int player){
+        System.out.println("Open card from the family: [" + family + "] and from the player [" + player + "]");
+    }
+
+    /*
+    adding and removing a card is pretty much what these two next methods does.
+    They only do this on screen, not in the player handler.
+     */
+    public void addCard(int family, int player){
+        Button button = new Button("");
+        button.setOnAction(e -> openOwnedCard(family, player));
+        setBackgroundColorOf(button, family);
+        String style = button.getStyle() + ";-fx-border-width: 1; -fx-border-radius: 3; -fx-background-radius: 3; -fx-border-color: #000000;";
+        button.setStyle(style);
+        int size = propertyStackPanes[player][family].getChildren().size();
+        button.setTranslateY(size*8);
+        button.setTranslateX(size*4);
+        button.setOnMouseEntered(e -> lineOn(button));
+        button.setOnMouseExited(e -> lineOff(button));
+        propertyStackPanes[player][family].getChildren().add(button);
+    }
+    public void removeCard(int family, int player){
+        int size = propertyStackPanes[player][family].getChildren().size();
+        if(size > 0) propertyStackPanes[player][family].getChildren().remove(size-1);
+        else System.out.println("no card to remove");
+    }
+
+    /*
+    line on and line off is a white outline, it can be chanced later if we want.
+    but mostly it works as a highlighter for when the mouse is over an object. (card in these instances)
+     */
+    private void lineOn(Node node){
+        node.setStyle(node.getStyle() + ";-fx-border-color: #ffffff;");
+    }
+    private void lineOff(Node node){
+        node.setStyle(node.getStyle() + ";-fx-border-color: #000000;");
+    }
     private Image image(String url){
         try{
             InputStream stream = new FileInputStream(url);
@@ -458,7 +523,44 @@ public class PlayerViewController {
         }
 
     }
-
+    private void setBackgroundColorOf(Node node, int family) {
+        switch (family) {
+            case 0: //Blue
+                node.setStyle("-fx-background-color: #0000ff;");
+                break;
+            case 1: //Orange
+                node.setStyle("-fx-background-color: #FFA500;");
+                break;
+            case 2: //Green
+                node.setStyle("-fx-background-color:  #32cd32;");
+                break;
+            case 3: //Grey
+                node.setStyle("-fx-background-color:  #aaaaaa;");
+                break;
+            case 4: //Red
+                node.setStyle("-fx-background-color: #ff0000;");
+                break;
+            case 5: //White
+                node.setStyle("-fx-background-color: #ffffff;");
+                break;
+            case 6: //Yellow
+                node.setStyle("-fx-background-color: #FFFF00;");
+                break;
+            case 7: //Purple
+                node.setStyle("-fx-background-color:  #BF40BF;");
+                break;
+            case 8: //Ferry
+                node.setStyle("-fx-background-color:   #00ffff;");
+                break;
+            case 9: //Soda
+                node.setStyle("-fx-background-color:  #FF69B4;");
+                break;
+            default:
+                System.out.println("family is outside of known cases");
+                break;
+        }
+    }
+    //endregion
     //region Get out of jail free card ICON
     public boolean isGetOutOfJailFreeCard(int player){
         switch (player){

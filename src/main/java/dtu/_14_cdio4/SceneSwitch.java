@@ -85,6 +85,11 @@ public class SceneSwitch {
         stage.setResizable(false);
         stage.show();
         boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getMenuCarColorImages(), menuScreenController.getColorNames());
+        playerViewController.addCard(0, 0);
+        playerViewController.addCard(0, 0);
+        playerViewController.addCard(4, 0);
+        playerViewController.addCard(4, 0);
+        playerViewController.addCard(4, 0);
     }
 
 }

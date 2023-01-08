@@ -278,7 +278,7 @@
                         </StackPane>
                         <StackPane fx:id="field28" alignment="TOP_CENTER" prefHeight="63.0" prefWidth="63.0">
                             <children>
-                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #bbbbbb;">
+                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FF69B4;">
                                     <children>
                                         <ImageView fx:id="colaImage" fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -608,7 +608,7 @@
                                 </StackPane>
                                 <StackPane fx:id="field12" alignment="TOP_CENTER" layoutX="10.0" layoutY="326.0" prefHeight="63.0" prefWidth="63.0">
                                     <children>
-                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #bbbbbb;">
+                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FF69B4;">
                                             <children>
                                                 <ImageView fx:id="squashImage" fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
