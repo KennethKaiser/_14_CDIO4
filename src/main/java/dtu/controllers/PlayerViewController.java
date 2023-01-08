@@ -3,7 +3,9 @@ package dtu.controllers;
 import dtu.players.PlayerHandler;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 public class PlayerViewController {
@@ -278,6 +280,24 @@ public class PlayerViewController {
     @FXML
     StackPane p650;
     //endregion
+    //region Player Info Areas
+    VBox[] areas;
+    @FXML
+    HBox wholeArea;
+    @FXML
+    VBox area1;
+    @FXML
+    VBox area2;
+    @FXML
+    VBox area3;
+    @FXML
+    VBox area4;
+    @FXML
+    VBox area5;
+    @FXML
+    VBox area6;
+
+    //endregion
 
 
 
@@ -288,6 +308,21 @@ public class PlayerViewController {
     public void initialize(){
         initializePlayerNameTextArray();
         initializePlayerMoneyTextArray();
+        initializePlayerAreaArray();
+    }
+
+
+    /**
+     * Initializes a player info area array at start
+     */
+    public void initializePlayerAreaArray(){
+        areas = new VBox[6];
+        areas[0] = area1;
+        areas[1] = area2;
+        areas[2] = area3;
+        areas[3] = area4;
+        areas[4] = area5;
+        areas[5] = area6;
     }
 
     /**
@@ -319,6 +354,11 @@ public class PlayerViewController {
         for(int i = 0; i < playerHandler.getPlayers().length; i++){
             String playerName = playerHandler.getPlayers()[i].getName();
             allPNames[i].setText(playerName);
+        }
+        for(int i = 0; i < 6; i++){
+            if( i > (playerHandler.getPlayers().length - 1)){
+                wholeArea.getChildren().remove(areas[i]);
+            }
         }
 
     }

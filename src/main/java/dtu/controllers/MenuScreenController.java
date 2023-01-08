@@ -267,6 +267,7 @@ public class MenuScreenController {
             playerColorsAdded[i] = cars[i].getImage();
             playerNamesAdded[i] = names[i].getText();
         }
+        ControllerHandler.getInstance().switchToBoard();
     }
     public String[] getMenuNames(){
         return playerNamesAdded;

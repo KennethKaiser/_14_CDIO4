@@ -960,32 +960,32 @@
                                                 <Font size="9.0" />
                                             </font>
                                         </Button>
-                                        <ImageView fx:id="carBlue" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fx:id="car2" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../../../../textures/blueCar.png" />
                                             </image>
                                         </ImageView>
-                                        <ImageView fx:id="carGreen" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fx:id="car6" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../../../../textures/blueCar.png" />
                                             </image>
                                         </ImageView>
-                                        <ImageView fx:id="carOrange" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fx:id="car3" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../../../../textures/blueCar.png" />
                                             </image>
                                         </ImageView>
-                                        <ImageView fx:id="carYellow" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fx:id="car5" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../../../../textures/blueCar.png" />
                                             </image>
                                         </ImageView>
-                                        <ImageView fx:id="carBlack" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fx:id="car1" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../../../../textures/blueCar.png" />
                                             </image>
                                         </ImageView>
-                                        <ImageView fx:id="carRed" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fx:id="car4" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../../../../textures/blueCar.png" />
                                             </image>

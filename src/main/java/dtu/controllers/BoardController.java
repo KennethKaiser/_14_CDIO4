@@ -1,6 +1,5 @@
 package dtu.controllers;
 
-import dtu.dice.Die;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
@@ -10,7 +9,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -58,17 +56,17 @@ public class BoardController {
     //endregion
     //region Cars Imageview that Moves Across the fields
     @FXML
-    ImageView carBlack;
+    ImageView car1;
     @FXML
-    ImageView carBlue;
+    ImageView car2;
     @FXML
-    ImageView carOrange;
+    ImageView car3;
     @FXML
-    ImageView carRed;
+    ImageView car4;
     @FXML
-    ImageView carYellow;
+    ImageView car5;
     @FXML
-    ImageView carGreen;
+    ImageView car6;
 
     //endregion
     //region Field StackPanes
@@ -308,7 +306,6 @@ public class BoardController {
         startCars();
         initHouses();
         initFieldButtons();
-        initializing4Players();
         initializePlayerHandlerPlayerViewController();
 
     }
@@ -430,12 +427,12 @@ public class BoardController {
             policeImage.setImage(image("src/textures/police_man_card.png"));
             prisonImage.setImage(image("src/textures/jail_card.png"));
             parkingImage.setImage(image("src/textures/parking_field.png"));
-            carBlue.setImage(image("src/textures/blueCar.png"));
-            carBlack.setImage(image("src/textures/blackCar.png"));
-            carOrange.setImage(image("src/textures/orangeCar.png"));
-            carYellow.setImage(image("src/textures/yellowCar.png"));
-            carRed.setImage(image("src/textures/redCar.png"));
-            carGreen.setImage(image("src/textures/greenCar.png"));
+            car2.setImage(image("src/textures/blueCar.png"));
+            car1.setImage(image("src/textures/blackCar.png"));
+            car3.setImage(image("src/textures/orangeCar.png"));
+            car5.setImage(image("src/textures/yellowCar.png"));
+            car4.setImage(image("src/textures/redCar.png"));
+            car6.setImage(image("src/textures/greenCar.png"));
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -454,12 +451,12 @@ public class BoardController {
     //region Initialize Cars
     private void setCars(){
         cars = new ImageView[6];
-        cars[0] = carBlue;
-        cars[1] = carGreen;
-        cars[2] = carRed;
-        cars[3] = carYellow;
-        cars[4] = carOrange;
-        cars[5] = carBlack;
+        cars[0] = car2;
+        cars[1] = car6;
+        cars[2] = car4;
+        cars[3] = car5;
+        cars[4] = car3;
+        cars[5] = car1;
     }
     public void startCars(){
 
@@ -513,17 +510,17 @@ public class BoardController {
     /**
      * Initializing 4 players in "players" array. Start GUI should do this later. Also calling currentPlayer method.
      */
-    public void initializing4Players(){
+    public void initializingPlayers(int playersAdded, String names[], Image[] colours){
 
-        playerHandler.initializePlayers(5);
-        playerHandler.initializePlayerInPlayers(0,"Kenneth",30000,"");
-        playerHandler.initializePlayerInPlayers(1,"Nicklas",30000,"");
-        playerHandler.initializePlayerInPlayers(2,"Tobias",30000,"");
-        playerHandler.initializePlayerInPlayers(3,"Andreas",30000,"");
-        playerHandler.initializePlayerInPlayers(4,"Mikkel",30000,"");
+        playerHandler.initializePlayers(playersAdded);
 
-
+        //missing describing color
+        for(int i = 0; i < playersAdded; i++){
+            playerHandler.initializePlayerInPlayers(i, names[i],30000,"");
+            cars[i].setImage(colours[i]);
+        }
         playerHandler.currentPlayer();
+
 
     }
 
