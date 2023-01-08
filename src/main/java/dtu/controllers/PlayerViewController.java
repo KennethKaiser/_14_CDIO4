@@ -282,8 +282,13 @@ public class PlayerViewController {
     //endregion
     //region Player Info Areas
     VBox[] areas;
+    VBox[] parts;
     @FXML
     HBox wholeArea;
+    @FXML
+    VBox part1;
+    @FXML
+    VBox part2;
     @FXML
     VBox area1;
     @FXML
@@ -323,6 +328,13 @@ public class PlayerViewController {
         areas[3] = area4;
         areas[4] = area5;
         areas[5] = area6;
+        parts = new VBox[2];
+        parts[0] = part1;
+        parts[1] = part2;
+
+
+        part1.getChildren().clear();
+        part2.getChildren().clear();
     }
 
     /**
@@ -350,17 +362,20 @@ public class PlayerViewController {
      * but should be called from StartGameController.
      */
     public void updatePlayerName(){
-
         for(int i = 0; i < playerHandler.getPlayers().length; i++){
+            addPlayerInfoArea(areas[i], i);
             String playerName = playerHandler.getPlayers()[i].getName();
             allPNames[i].setText(playerName);
         }
-        for(int i = 0; i < 6; i++){
-            if( i > (playerHandler.getPlayers().length - 1)){
-                wholeArea.getChildren().remove(areas[i]);
-            }
-        }
 
+    }
+    private void addPlayerInfoArea(VBox player, int number){
+        if(number % 2 == 0){
+            parts[0].getChildren().add(player);
+        }
+        else{
+            parts[1].getChildren().add(player);
+        }
     }
 
     /**

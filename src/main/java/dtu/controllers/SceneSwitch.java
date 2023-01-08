@@ -38,6 +38,7 @@ public class SceneSwitch {
         loadScenes();
         collectBoard();
         switchToMenu();
+        //switchToBoard();
     }
     private void loadScenes() throws IOException {
         FXMLLoader fxmlLoader;
@@ -79,8 +80,11 @@ public class SceneSwitch {
     }
     public void switchToBoard(){
         stage.setScene(boardScene);
+        stage.setX(10);
+        stage.setY(20);
+        stage.setResizable(false);
         stage.show();
-        boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getMenuCarColours());
+        boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getMenuCarColorImages(), menuScreenController.getColorNames());
 
     }
 

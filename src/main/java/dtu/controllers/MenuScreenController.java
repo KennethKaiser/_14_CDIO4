@@ -197,6 +197,8 @@ public class MenuScreenController {
                                 }
                             }
                             playersAdded++;
+                            communicator.setText("Successfully added " + name);
+
                         }
                         else{
                             communicator.setText("You must pick a color, using the dropdown menu");
@@ -261,20 +263,46 @@ public class MenuScreenController {
         updateColorPicker();
     }
     public void startGamePressed(){
-        playerColorsAdded = new Image[playersAdded];
-        playerNamesAdded = new String[playersAdded];
-        for(int i = 0; i < playersAdded; i++){
-            playerColorsAdded[i] = cars[i].getImage();
-            playerNamesAdded[i] = names[i].getText();
+        if(playersAdded < 3){
+            communicator.setText("You must add at least 3 players before starting the game.");
         }
-        ControllerHandler.getInstance().switchToBoard();
+        else{
+            playerColorsAdded = new Image[playersAdded];
+            playerNamesAdded = new String[playersAdded];
+            for(int i = 0; i < playersAdded; i++){
+                playerColorsAdded[i] = cars[i].getImage();
+                playerNamesAdded[i] = names[i].getText();
+            }
+            ControllerHandler.getInstance().switchToBoard();
+        }
+
     }
     public String[] getMenuNames(){
         return playerNamesAdded;
     }
-    public Image[] getMenuCarColours(){
+    public Image[] getMenuCarColorImages(){
         return carImages;
     }
+    public String[] getColorNames(){
+        String[] colors = new String[playersAdded];
+        for(int i = 0; i < playersAdded; i++){
+            if(cars[i].getImage() == carImages[0]){
+                colors[i] = "Green";
+            } else if(cars[i].getImage() == carImages[1]){
+                colors[i] = "Blue";
+            } else if(cars[i].getImage() == carImages[2]){
+                colors[i] = "Yellow";
+            } else if(cars[i].getImage() == carImages[3]){
+                colors[i] = "Red";
+            } else if(cars[i].getImage() == carImages[4]){
+                colors[i] = "Orange";
+            } else if(cars[i].getImage() == carImages[5]){
+                colors[i] = "Black";
+            }
+        }
+        return colors;
+    }
+
     public int getMenuAmountOfPlayers(){
         return playersAdded;
     }

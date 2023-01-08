@@ -510,14 +510,13 @@ public class BoardController {
     /**
      * Initializing 4 players in "players" array. Start GUI should do this later. Also calling currentPlayer method.
      */
-    public void initializingPlayers(int playersAdded, String names[], Image[] colours){
+    public void initializingPlayers(int playersAdded, String names[], Image[] carImageColors, String[] colorNames){
 
         playerHandler.initializePlayers(playersAdded);
 
-        //missing describing color
         for(int i = 0; i < playersAdded; i++){
             playerHandler.initializePlayerInPlayers(i, names[i],30000,"");
-            cars[i].setImage(colours[i]);
+            cars[i].setImage(carImageColors[i]);
         }
         playerHandler.currentPlayer();
 
