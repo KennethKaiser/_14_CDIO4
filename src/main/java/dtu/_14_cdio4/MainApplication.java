@@ -1,6 +1,8 @@
 package dtu._14_cdio4;
 
+import dtu.board.Board;
 import dtu.controllers.*;
+import dtu.filereader.CSVFileReader;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,6 +21,9 @@ public class MainApplication extends Application {
     }
 
     public static void main(String[] args) {
+
+        Board board = new Board();
+
         launch();
     }
 

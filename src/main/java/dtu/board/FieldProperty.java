@@ -57,4 +57,8 @@ public class FieldProperty extends Field{
     public void setBuildings(int buildings) {
         this.buildings = buildings;
     }
+
+
+
+
 }

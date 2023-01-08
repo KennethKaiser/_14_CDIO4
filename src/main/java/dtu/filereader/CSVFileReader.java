@@ -3,27 +3,28 @@ package dtu.filereader;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Stack;
 
 
 public class CSVFileReader {
 
-    private String[] chancecarddesc;
-    private String[] fieldinfo;
+    private ArrayList<String[]> chancecarddesc;
+    private ArrayList<String[]> fieldinfo;
     public CSVFileReader() {
-        chancecarddesc = readCSV(1,"dtu/chancecard/chancecarddesc.csv", ";");
-        fieldinfo = readCSV(1, "test", ";");
+        chancecarddesc = readCSV(1,"src/main/java/dtu/chancecard/chancecarddesc.csv", ";");
+        fieldinfo = readCSV(1, "src/main/java/dtu/board/fields.csv", ";");
     }
-    /**
-     * fileReader loads in a CSV file on a certain colon (para 1), and splits at delimiter (para 3) in the array data, and saves and returns the value.
-     * @param colon
-     * @return
-     */
 
-    /*public String[] readCSV(int colon, String URL, String delimiter){
-        String[] data = readColon(colon,URL, delimiter);
-        return data;
+    public void readRow(int index, ArrayList<String[]> file){
+
+        for (int i =0; i<file.get(index).length; i++){
+            System.out.println(file.get(index)[i]);
+        }
+
     }
-     */
+
+
+
 
 
     /**
@@ -33,10 +34,10 @@ public class CSVFileReader {
      * @param delimiter
      * @return
      */
-    public static String[] readCSV(int colon, String filepath, String delimiter) {
-        String data[];
+    public ArrayList<String[]> readCSV(int colon, String filepath, String delimiter) {
+        String[] data;
         String currentLine;
-        ArrayList<String> colData = new ArrayList<>();
+        ArrayList<String[]> colData = new ArrayList<>();
 
         try
         {
@@ -45,21 +46,21 @@ public class CSVFileReader {
             while((currentLine = bread.readLine()) != null)
             {
                 data = currentLine.split(delimiter);
-                colData.add(data[colon]);
+                colData.add(data);
             }
 
         } catch (Exception e) {
             System.out.println(e);
             return null;
         }
-        return colData.toArray(new String[0]);
+        return colData;
     }
 
-    public String[] getChancecarddesc() {
+    public ArrayList<String[]> getChancecarddesc() {
         return chancecarddesc;
     }
 
-    public String[] getFieldinfo() {
+    public ArrayList<String[]> getFieldinfo() {
         return fieldinfo;
     }
 }
