@@ -423,8 +423,15 @@ public class PlayerViewController {
                 ImageView cash = new ImageView(moneyPictures[i]);
                 cash.setFitWidth(45);
                 cash.setFitHeight(30);
-                if(cashAmount[i] < 4) cash.setTranslateY(n*8);
-                else cash.setTranslateY(n*(Math.round((24/cashAmount[i]))));
+                if(cashAmount[i] < 4)
+                {
+                    cash.setTranslateY(n*8);
+                    cash.setTranslateX(n*4);
+                }
+                else {
+                    cash.setTranslateY(n * (Math.round((24 / cashAmount[i]))));
+                    cash.setTranslateX(n * (Math.round((12 / cashAmount[i]))));
+                }
                 playerCashAreas[player][i].getChildren().add(cash);
             }
         }
