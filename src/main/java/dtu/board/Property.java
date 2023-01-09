@@ -37,6 +37,7 @@ public class Property {
         pledgestate = false;
     }
 
+    /*
     //Change the rent after the amount of buildings
     public void setActiveRent(int rentNumber){
 
@@ -67,7 +68,7 @@ public class Property {
             break;
         }
     }
-
+/*
     public int getPrice() {
         return price;
     }
@@ -165,4 +166,6 @@ public class Property {
     public int getRentHotel() {
         return rentHotel;
     }
+
+ */
 }
