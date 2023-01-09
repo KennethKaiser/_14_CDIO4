@@ -7,13 +7,14 @@ import java.util.List;
 
 public class Property {
 
-   private int ID;//ID er hvilket felt på boardet de står ved Rødovrevej starter som 0.
-    private String name;
-    private int price;
-    private int housePrice;
-    private int rentNormal, rent1House, rent2House, rent3House, rent4House, rentHotel;
-    private int pledge;
-    private int familie;
+   protected int ID;//ID er hvilket felt på boardet de står ved Rødovrevej starter som 0.
+    protected String type;
+    protected String name;
+    protected int price;
+    protected int housePrice;
+    protected int rentNormal, rent1House, rent2House, rent3House, rent4House, rentHotel;
+    protected int pledge;
+    protected int familie;
 
     private int buildings;
 
@@ -24,8 +25,9 @@ public class Property {
     private Player owner;
     private Boolean pledgestate;
 
-    public Property(int ID, int familie, String name, int price, int housePrice, int rentNormal, int rent1House, int rent2House, int rent3House, int rent4House, int rentHotel, int pledge) {
+    public Property(int ID,String type, int familie, String name, int price, int housePrice, int rentNormal, int rent1House, int rent2House, int rent3House, int rent4House, int rentHotel, int pledge) {
         this.ID = ID;
+        this.type = type;
         this.familie = familie;
         this.name = name;
         this.price = price;
@@ -40,6 +42,7 @@ public class Property {
         pledgestate = false;
     }
 
+    /*  Mikkel lave fields med csv
     public void instantiateFieldsCSV(){
         List<Property> properties;
         Property[] test = new Property[40];
@@ -55,6 +58,7 @@ public class Property {
         Property Bernstoffsvej = new Property(15,4,"Bernstoffsvej",3600,2000,300,1400,4000,11000,15000,19000,1800);
         FieldProperty fieldBernstoffvej = new FieldProperty(Bernstoffsvej);
     }
+    */
 
     //Change the rent after the amount of buildings
     public void setActiveRent(int rentNumber){

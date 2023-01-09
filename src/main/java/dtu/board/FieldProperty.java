@@ -16,7 +16,7 @@ public class FieldProperty extends Field{
 
 
     public FieldProperty(Property property){
-        this.property = property;
+        super(property.type,property.ID,property.familie,property.name,property.price,property.housePrice,property.rentNormal,property.rent1House, property.rent2House, property.rent3House, property.rent4House, property.rentHotel,property.pledge);
     }
 
     /**
