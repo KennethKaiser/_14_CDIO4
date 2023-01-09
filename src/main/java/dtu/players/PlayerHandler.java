@@ -81,10 +81,10 @@ public class PlayerHandler {
      */
     public void playerIsBankrupt(Player player){
         for (int i=0; i<player.getProperties().size();i++) {
-            player.getProperties().get(i).setOwner(null);
-            player.getProperties().get(i).setOwned(false);
-            player.getProperties().get(i).setActiveRent(0);
-            player.getProperties().get(i).setBuildings(0);
+            player.getProperties().get(i).getProperty().setOwner(null);
+            player.getProperties().get(i).getProperty().setOwned(false);
+            player.getProperties().get(i).getProperty().setActiveRent(0);
+            player.getProperties().get(i).getProperty().setBuildings(0);
 
         }
     }
