@@ -317,7 +317,6 @@ public class BoardController {
         initHouses();
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
-        giveButtonsFunctions();
 
     }
 
@@ -676,7 +675,7 @@ public class BoardController {
     //endregion
 
     //region Buttons on board
-    private void giveButtonsFunctions(){
+    public void giveButtonsFunctions(){
         for(int i = 0; i < fieldButtons.length; i++){
             if(ControllerHandler.getInstance().getBoard().getCurrentBoard()[i] != null){
                 int temp = i;
