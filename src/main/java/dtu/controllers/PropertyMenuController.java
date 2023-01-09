@@ -376,17 +376,21 @@ public class PropertyMenuController {
             setHouseIcon(i, fieldProperty.getBuildings());
             if(player != -1){
                 if(houseLogic.checkForHasAllOfFamily(fieldProperty, player)){
-                    if(fieldProperty.getBuildings()<5){
-                        plusStackPanes[i].setOpacity(1);
-                        plusButtons[i].setDisable(false);
-                        int index = i;
-                        plusButtons[i].setOnAction(e -> buildOrRemoveHouse(fieldProperty, 1, player, properties));
+                    if(houseLogic.canBuild(fieldProperty, player)){
+                        if(fieldProperty.getBuildings()<5){
+                            plusStackPanes[i].setOpacity(1);
+                            plusButtons[i].setDisable(false);
+                            int index = i;
+                            plusButtons[i].setOnAction(e -> buildOrRemoveHouse(fieldProperty, 1, player, properties));
+                        }
                     }
-                    if(fieldProperty.getBuildings()>0){
-                        minusStackPanes[i].setOpacity(1);
-                        minusButtons[i].setDisable(false);
-                        int index = i;
-                        minusButtons[i].setOnAction(e -> buildOrRemoveHouse(fieldProperty, -1, player, properties));
+                    if(houseLogic.canRemove(fieldProperty, player)){
+                        if(fieldProperty.getBuildings()>0){
+                            minusStackPanes[i].setOpacity(1);
+                            minusButtons[i].setDisable(false);
+                            int index = i;
+                            minusButtons[i].setOnAction(e -> buildOrRemoveHouse(fieldProperty, -1, player, properties));
+                        }
                     }
                 }
             }
@@ -396,11 +400,24 @@ public class PropertyMenuController {
         }
     }
     private void buildOrRemoveHouse(FieldProperty property, int amountOfHouses, int player, Field[] initialProperties){
-        if(ControllerHandler.getInstance().getHousingLogic().canBuild().equals("")){
-            property.setBuildings(property.getBuildings()+amountOfHouses);
+        if(playerHandler == null) playerHandler = ControllerHandler.getInstance().getBoardController().playerHandler;
+        if(amountOfHouses<0){ //Sells a house
+            playerHandler.changePlayerBalance(playerHandler.getPlayers()[player], property.getProperty().getHousePrice()/2);
+            property.setBuildings(property.getBuildings() + amountOfHouses);
             showProperties(initialProperties, player);
             ControllerHandler.getInstance().getBoardController().setHousesOn(property.getBuildings(), property.getProperty().getID());
+        } //checks if they can buy a house
+        else if(ControllerHandler.getInstance().getHousingLogic().canAfford(property, player)) {
+            property.setBuildings(property.getBuildings() + amountOfHouses);
+            showProperties(initialProperties, player);
+            ControllerHandler.getInstance().getBoardController().setHousesOn(property.getBuildings(), property.getProperty().getID());
+            playerHandler.changePlayerBalance(playerHandler.getPlayers()[player], -property.getProperty().getHousePrice());
+        } //Cannot afford to buy the house
+        else{
+            System.out.println(playerHandler.getPlayers()[player].getName() + " cannot afford to build on this property");
         }
+        ControllerHandler.getInstance().getPlayerViewController().updatePlayerMoney();
+
     }
     private String numbersToString(int number){
         String finalNumber = "";

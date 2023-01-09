@@ -14,6 +14,8 @@ public class HousingLogic {
         switch (property.getProperty().getFamilie()){
             case 1: //Blå (de starter fra 1)
                 if(playerProperties.contains(allProperties[1]) && playerProperties.contains(allProperties[3])){
+
+
                     return true;
                 }
                 else return false;
@@ -57,9 +59,42 @@ public class HousingLogic {
                 return false;
         }
     }
-    public String canBuild(){
-        String error = "";
-        return error;
+    public boolean canBuild(FieldProperty property, int player){
+        int family = property.getProperty().getFamilie();
+        if(property.isPledgeState()) return  false;
+        ArrayList<Field> properties = playerHandler.getPlayers()[player].getProperties();
+        ArrayList<Field> sameFamily = new ArrayList<>();
+        for(int i = 0; i < properties.size(); i++){
+            if(((FieldProperty)properties.get(i)).getProperty().getFamilie() == family) {
+                if((FieldProperty) properties.get(i) != property) sameFamily.add(properties.get(i));
+            }
+        }
+        boolean canBuild = true;
+        for(int i = 0; i < sameFamily.size(); i++){
+            int buildings = ((FieldProperty)sameFamily.get(i)).getBuildings();
+            if(buildings < property.getBuildings()) canBuild = false;
+        }
+        return canBuild;
+    }
+    public boolean canRemove(FieldProperty property, int player){
+        int family = property.getProperty().getFamilie();
+        if(property.isPledgeState()) return  false;
+        ArrayList<Field> properties = playerHandler.getPlayers()[player].getProperties();
+        ArrayList<Field> sameFamily = new ArrayList<>();
+        for(int i = 0; i < properties.size(); i++){
+            if(((FieldProperty)properties.get(i)).getProperty().getFamilie() == family) {
+                if((FieldProperty) properties.get(i) != property) sameFamily.add(properties.get(i));
+            }
+        }
+        boolean canRemove = true;
+        for(int i = 0; i < sameFamily.size(); i++){
+            int buildings = ((FieldProperty)sameFamily.get(i)).getBuildings();
+            if(buildings > property.getBuildings()) canRemove = false;
+        }
+        return canRemove;
+    }
+    public boolean canAfford(FieldProperty property, int player){
+        return true;
     }
 
 }
