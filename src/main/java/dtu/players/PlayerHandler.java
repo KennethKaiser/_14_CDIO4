@@ -64,14 +64,10 @@ public class PlayerHandler {
      * @param player
      */
     public void isPlayerBankrupt(Player player){
-        if (player.getMoney() < 0){
-            player.setBankrupt(true);
+        if (getPlayers()[player.getId()].getMoney() < 0){
+            getPlayers()[player.getId()].setBankrupt(true);
             playerIsBankrupt(player);
-
-            changePlayerArray();
-
         }
-
     }
 
 
@@ -80,12 +76,13 @@ public class PlayerHandler {
      * @param player
      */
     public void playerIsBankrupt(Player player){
-        for (int i=0; i<player.getProperties().size();i++) {
-            player.getProperties().get(i).getProperty().setOwner(null);
-            player.getProperties().get(i).getProperty().setOwned(false);
-            player.getProperties().get(i).getProperty().setActiveRent(0);
-            //player.getProperties().get(i).getProperty().setBuildings(0);
-
+        if(player.getProperties() != null){
+            for (int i=0; i<player.getProperties().size();i++) {
+                player.getProperties().get(i).getProperty().setOwner(null);
+                player.getProperties().get(i).getProperty().setOwned(false);
+                player.getProperties().get(i).getProperty().setActiveRent(0);
+                //player.getProperties().get(i).getProperty().setBuildings(0);
+            }
         }
     }
 
