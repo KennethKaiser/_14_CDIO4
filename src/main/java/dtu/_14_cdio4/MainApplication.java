@@ -1,6 +1,7 @@
 package dtu._14_cdio4;
 
 import dtu.board.Board;
+import dtu.board.FerryField;
 import dtu.board.FieldProperty;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -18,9 +19,9 @@ public class MainApplication extends Application {
 
         Board board = new Board();
 
-        FieldProperty fieldProperty = (FieldProperty)board.getCurrentBoard()[1];
+        FerryField ferryField = (FerryField)board.getCurrentBoard()[15];
 
-
+        System.out.println(ferryField.getFerry().getName());
 
         launch();
     }

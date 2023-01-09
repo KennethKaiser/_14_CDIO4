@@ -12,8 +12,6 @@ public class Property {
     private int pledge;
     private int familie;
 
-    private int buildings;
-
 
     public Property(int ID, int familie, String name, int price, int housePrice, int rentNormal, int rent1House, int rent2House, int rent3House, int rent4House, int rentHotel, int pledge) {
         this.ID = ID;
@@ -46,11 +44,6 @@ public class Property {
     }
 
     public void setHousePrice(int newPrice){housePrice = newPrice;}
-
-    public void setBuidlings(int amount){buildings = amount;}
-
-    public int getBuildings(){
-        return buildings;}
 
     public int getFamilie(){
         return familie;

@@ -77,6 +77,11 @@ public class Board {
                         break;
                 }
             }
+            else if(fieldText.get(i)[2].equals("ferry")){
+                currentBoard[i-1] = new FerryField(new Ferry(Integer.parseInt(fieldText.get(i)[1]),fieldText.get(i)[0],Integer.parseInt(fieldText.get(i)[3]),
+                        Integer.parseInt(fieldText.get(i)[4]),Integer.parseInt(fieldText.get(i)[6]),Integer.parseInt(fieldText.get(i)[7]),Integer.parseInt(fieldText.get(i)[8]),
+                                Integer.parseInt(fieldText.get(i)[9])));
+            }
         }
 
 
