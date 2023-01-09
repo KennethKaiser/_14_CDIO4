@@ -372,8 +372,8 @@ public class PropertyMenuController {
             pledgeValue[i].setText(numbersToString(fieldProperty.getProperty().getPledge()));
             setColorOf(colors[i], fieldProperty.getProperty().getFamilie());
             setHouseIcon(i, fieldProperty.getBuildings());
-            if(checkForHasAllOfFamily(fieldProperty, player)){
-                if(player != -1){
+            if(player != -1){
+                if(checkForHasAllOfFamily(fieldProperty, player)){
                     if(fieldProperty.getBuildings()<5){
                         plusStackPanes[i].setOpacity(1);
                         plusButtons[i].setDisable(false);

@@ -7,11 +7,17 @@ import dtu.board.FieldProperty;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
+import javafx.beans.Observable;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
@@ -19,6 +25,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Random;
+
+import static java.lang.Integer.parseInt;
 
 public class BoardController {
 
@@ -246,6 +254,11 @@ public class BoardController {
     ImageView dice1;
     @FXML
     ImageView dice2;
+
+
+
+    @FXML
+    AnchorPane diceBox;
     //endregion
     //region HouseImages
 
@@ -303,6 +316,19 @@ public class BoardController {
 
     @FXML
     StackPane middleParent;
+    //endregion
+    //region cheats and testing
+    @FXML
+    HBox cheatBox;
+    @FXML
+    ComboBox cheatDropDown;
+    @FXML
+    TextField cheatInput;
+
+    @FXML
+    Button cheatFieldButton;
+    @FXML
+    Button cheatMoneyButton;
     //endregion
 
     //Methods:
@@ -694,6 +720,9 @@ public class BoardController {
         dice1.setRotate(rnd.nextDouble(0, 360));
         dice2.setRotate(rnd.nextDouble(0, 360));
     }
+    public AnchorPane getDiceBox() {
+        return diceBox;
+    }
     private void setRandomPosition(ImageView dice){
         Random rnd = new Random();
         int cases = rnd.nextInt(1, 4);
@@ -757,6 +786,53 @@ public class BoardController {
 
     //endregion
 
+    //region cheating
+    public void initCheating(){
+        if(ControllerHandler.getInstance().getMenuScreenController().getIsCheating()){
+            cheatDropDown.getItems().addAll("Spiller 1", "Spiller 2", "Spiller 3", "Spiller 4", "Spiller 5", "Spiller 6");
+            cheatFieldButton.setOnAction(e -> cheatAddField());
+            cheatMoneyButton.setOnAction(e -> cheatAddMoney());
+            System.out.println("Cheating Engaged");
+        }
+        else{
+            cheatBox.getChildren().clear();
+        }
+    }
+    public void cheatAddField(){
+        System.out.println("Cheating for field");
+        String player = cheatDropDown.getValue().toString();
+        int playerIndex = 0;
+        for(int i = 0; i < 6; i++){
+            if(player.equals(("Spiller " + (i+1)))) playerIndex = i;
+        }
+        String fieldStringID = cheatInput.getText();
+        int fieldID = parseInt(fieldStringID);
+        FieldProperty fieldProperty = (FieldProperty)ControllerHandler.getInstance().getBoard().getCurrentBoard()[fieldID];
+        Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+        if(fieldProperty.buy(cheatPlayer)){
+            int temp = fieldProperty.getProperty().getFamilie();
+            playerViewController.updatePlayerMoney();
+            playerViewController.addCard(temp, cheatPlayer.getId());
+            communicationController.playerBought(fieldProperty, cheatPlayer);
+        }
+    }
+    public void cheatAddMoney(){
+        System.out.println("Cheating for money");
+        String player = cheatDropDown.getValue().toString();
+        int playerIndex = 0;
+        for(int i = 0; i < 6; i++){
+            if(player.equals(("Spiller " + (i+1)))) playerIndex = i;
+        }
+        String moneyString = cheatInput.getText();
+        int money = parseInt(moneyString);
+        System.out.println(money);
+        Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+        playerHandler.changePlayerBalance(cheatPlayer, money);
+        playerViewController.updatePlayerMoney();
+        System.out.println(cheatPlayer.getMoney());
+
+    }
+    //endregion
 
 
 }
