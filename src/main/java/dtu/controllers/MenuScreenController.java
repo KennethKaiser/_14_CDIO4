@@ -73,6 +73,7 @@ public class MenuScreenController {
     String[] playerNamesAdded;
     Image[] playerColorsAdded;
     String[] colors;
+    String[] colorsDanish;
     String[] removedColors;
     HBox[] players;
     Image[] carImages;
@@ -100,6 +101,13 @@ public class MenuScreenController {
         colors[3] = "Green";
         colors[4] = "Orange";
         colors[5] = "Black";
+        colorsDanish = new String[6];
+        colors[0] = "Rød";
+        colors[1] = "Gul";
+        colors[2] = "Blå";
+        colors[3] = "Grøn";
+        colors[4] = "Orange";
+        colors[5] = "Sort";
         players = new HBox[6];
         players[0] = player1;
         players[1] = player2;
@@ -171,9 +179,41 @@ public class MenuScreenController {
         colorPicker.getItems().clear();
         for(int i = 0; i < colors.length; i++){
             if(colors[i] != ""){
-                colorPicker.getItems().add(colors[i]);
+                colorPicker.getItems().add(colorDanishfy(colors[i]));
             }
         }
+    }
+    private String colorDanishfy(String color){
+        switch (color){
+            case "Red":
+            case "Rød":
+                return "Rød";
+            case "Yellow":
+            case "Gul" :
+                    return "Gul";
+            case "Blue":
+            case "Blå":
+                return "Blå";
+            case "Orange": return "Orange";
+            case "Green":
+            case "Grøn":
+                    return "Grøn";
+            case "Black":
+            case "Sort":
+                return "Sort";
+        }
+        return "fejl";
+    }
+    private String colorEnglishfy(String color){
+        switch (color){
+            case "Rød": return "Red";
+            case "Gul": return "Yellow";
+            case "Blå": return "Blue";
+            case "Orange": return "Orange";
+            case "Grøn": return "Green";
+            case "Sort": return "Black";
+        }
+        return "fejl";
     }
     public void addPlayerPressed(){
         if(playersAdded < 6){
@@ -188,7 +228,7 @@ public class MenuScreenController {
                     if(free){
                         if(colorPicker.getValue() != null){
                             String name = nameInput.getText();
-                            String color = colorPicker.getValue().toString();
+                            String color = colorEnglishfy(colorPicker.getValue().toString());
                             removeColor(color);
                             for(int i = 0; i < players.length; i++){
                                 if(players[i].getOpacity() < 1){
@@ -197,27 +237,27 @@ public class MenuScreenController {
                                 }
                             }
                             playersAdded++;
-                            communicator.setText("Successfully added " + name);
+                            communicator.setText("Tilføjede " + name + " til spillet");
 
                         }
                         else{
-                            communicator.setText("You must pick a color, using the dropdown menu");
+                            communicator.setText("Du skal vælge en farve, med dropdown menuen");
                         }
                     }
                     else{
-                        communicator.setText("You cannot add the same player name twice");
+                        communicator.setText("Du kan ikke hedde det samme navn to gange");
                     }
                 }
                 else{
-                    communicator.setText("You must add a name");
+                    communicator.setText("Indsæt et navn til spilleren");
                 }
             }
             else{
-                communicator.setText("Your name must be 15 characters or less");
+                communicator.setText("Dit navn skal være på maximum 15 karakterer");
             }
         }
         else{
-            communicator.setText("You can only add up to 6 players");
+            communicator.setText("Du kan kun tilføje op til 6 spillere");
         }
     }
     private void setPlayer(int playerNumber, String name, String color){
@@ -256,7 +296,7 @@ public class MenuScreenController {
     private void removeColor(String color){
         colorPicker.getItems().removeAll();
         for (int i = 0; i < colors.length; i++){
-            if(colors[i].equals(color)){
+            if(colors[i].equals(colorDanishfy(color))){
                 colors[i] = "";
             }
         }
@@ -264,7 +304,7 @@ public class MenuScreenController {
     }
     public void startGamePressed(){
         if(playersAdded < 3){
-            communicator.setText("You must add at least 3 players before starting the game.");
+            communicator.setText("Du skal tilføje minimum 3 spillere før du kan starte spillet");
         }
         else{
             playerColorsAdded = new Image[playersAdded];
