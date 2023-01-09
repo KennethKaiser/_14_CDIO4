@@ -15,7 +15,5 @@ public abstract class Field {
 
     public abstract String type();
 
-    public Property getProperty() {
-        return property;
-    }
+
 }
