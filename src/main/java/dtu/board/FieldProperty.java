@@ -93,6 +93,7 @@ public class FieldProperty extends BuyableFields{
             this.owned = true;
             this.activeRent = 0;
             this.pledgeState = false;
+            player.getProperties().add(this);
             return true;
         }
         else{

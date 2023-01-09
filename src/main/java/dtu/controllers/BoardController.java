@@ -584,6 +584,11 @@ public class BoardController {
         Player currentPlayer = playerHandler.getCurrentPlayer();
 
         if(fieldProperty.buy(currentPlayer)){
+
+            int temp = fieldProperty.getProperty().getFamilie();
+
+            playerViewController.updatePlayerMoney();
+            playerViewController.addCard(temp, currentPlayer.getId());
             communicationController.playerBought(fieldProperty, currentPlayer);
         }
 

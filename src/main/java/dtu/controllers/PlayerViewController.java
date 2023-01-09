@@ -545,8 +545,9 @@ public class PlayerViewController {
     They only do this on screen, not in the player handler.
      */
     public void addCard(int family, int player){
+        int finalInt = family-1;
         Button button = new Button("");
-        button.setOnAction(e -> openOwnedCard(family, player));
+        button.setOnAction(e -> openOwnedCard(finalInt, player));
         setBackgroundColorOf(button, family);
         String style = button.getStyle() + ";-fx-border-width: 1; -fx-border-radius: 3; -fx-background-radius: 3; -fx-border-color: #000000;";
         button.setStyle(style);

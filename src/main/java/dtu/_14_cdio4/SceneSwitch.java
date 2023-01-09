@@ -95,11 +95,7 @@ public class SceneSwitch {
         boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getMenuCarColorImages(), menuScreenController.getColorNames());
         boardController.giveButtonsFunctions();
         boardController.initializeStartPlayerTurn();
-        playerViewController.addCard(0, 0);
-        playerViewController.addCard(0, 0);
-        playerViewController.addCard(4, 0);
-        playerViewController.addCard(4, 0);
-        playerViewController.addCard(4, 0);
+        
 
     }
     public void showCardInMiddle(Property[] properties){
