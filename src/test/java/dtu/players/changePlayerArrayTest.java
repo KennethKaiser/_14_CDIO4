@@ -25,7 +25,7 @@ class changePlayerArrayTest {
 
         for(int i = 0; i < playerHandler.getPlayers().length; i++){
             playerHandler.isPlayerBankrupt(playerHandler.getPlayers()[i]);
-            playerHandler.changePlayerArray(playerHandler.getPlayers()[i]);
+            playerHandler.changePlayerArray();
         }
         System.out.println(playerHandler.getPlayers()[0]);
 
