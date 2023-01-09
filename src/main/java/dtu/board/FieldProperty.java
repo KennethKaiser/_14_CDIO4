@@ -50,6 +50,14 @@ public class FieldProperty extends Field{
         this.owner = owner;
     }
 
+    public Player getOwner(){
+        return property.getOwner();
+    }
+
+    public Property getProperty(){
+        return property;
+    }
+
     public void setActiveRent(int activeRent) {
         this.activeRent = activeRent;
     }

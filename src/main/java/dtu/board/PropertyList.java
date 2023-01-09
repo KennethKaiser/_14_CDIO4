@@ -4,9 +4,14 @@ public class PropertyList {
 
     final int NUMBER_PROPERTIES = 22;
 
+
+
     //Pledge/pantsætning er valgt til at være 50% pris
     //Her er en liste med properties
     //Familie 1
+
+    /*
+    Gammel instantiering af alle properties
     static Property Rødovrevej = new Property(0,1,"Rødeovrevej",1200,1000,50,250,750,2250,4000,6000,600);
     FieldProperty fieldRødovrevej = new FieldProperty(Rødovrevej);
     public static Property getRødovrevej(){return Rødovrevej;}
@@ -105,60 +110,35 @@ public class PropertyList {
     static Property Rådhuspladsen = new Property(38,8,"Rådhuspladsen",8000,4000,1000,4000,12000,28000,34000,40000,4000);
     FieldProperty fieldRådhuspladsen = new FieldProperty(Rådhuspladsen);
     public static Property getRådhuspladsen(){return Rådhuspladsen;}
+    */
 
 
     //En række arrays som sætter properties i familier
-    private static Property[] familie1 = {Rødovrevej,Hvidovrevej};
-    private static Property[] familie2 = {Roskildevej, ValbyLanggade, Allegade};
+    /*
+    private static FieldProperty[] familie1 = {Rød,2};
+    private static Field[] familie2 = {Roskildevej, ValbyLanggade, Allegade};
     private static Property[] familie3 = {Frederiksberg, Bullowsvej, GlKongevej};
     private static Property[] familie4 = {Bernstoffsvej, Hellerupvej, Strandvejen};
     private static Property[] familie5 = {Trianglen, Østerbrogade, Grønningen};
     private static Property[] familie6 = {Bredgade, KgsNytorv, Østergade};
     private static Property[] familie7 = {Amagertorv, Vimmelskaftet, Nygade};
     private static Property[] familie8 = {Frederiksberggade, Rådhuspladsen};
+     */
 
     //Metode til at skaffe familie
-    public static Property[] getFamilieList(int familieNum){
-        Property[] send = new Property[0];
-        switch (familieNum) {
-            case 1:
-                send = familie1;
-            break;
-            case 2:
-                send = familie2;
-            break;
-            case 3:
-                send = familie3;
-            break;
-            case 4:
-                send = familie4;
-            break;
-            case 5:
-                send = familie5;
-            break;
-            case 6:
-                send = familie6;
-            break;
-            case 7:
-                send = familie7;
-            break;
-            case 8:
-                send = familie8;
-            break;
-        }
-        return send;
-    }
+
 
     /**
      * Method to see if a player owns all properties in a fimilie
      * @param property Just one of the properties in question
      * @return True means a player owns all properties in the familie
      */
-    public static Boolean getPermit(Property property) {
+    /*
+    public Boolean getPermit(Property property) {
         Boolean answer = null;
         switch (property.getFamilie()) {
             case 1:
-                if (PropertyList.getFamilieList(1)[0].getOwner() == PropertyList.getFamilieList(1)[1].getOwner()) {
+                if (Board.getFamilieList(1)[0].getOwner() == Board.getFamilieList(1)[1].getOwner()) {
                     answer = true;
                 } else {
                     answer = false;
@@ -217,5 +197,8 @@ public class PropertyList {
         return answer;
     }
 
+
+
+     */
 }
 

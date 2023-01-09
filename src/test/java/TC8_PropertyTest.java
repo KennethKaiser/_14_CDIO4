@@ -1,3 +1,5 @@
+import dtu.board.Board;
+import dtu.board.FieldProperty;
 import dtu.board.PropertyList;
 import dtu.game.GameActions;
 import dtu.players.Player;
@@ -9,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class TC8_PropertyTest {
 
     GameActions gameActions = new GameActions();
+    Board board = new Board();
 
 
     @Test
@@ -21,12 +24,13 @@ class TC8_PropertyTest {
 
        Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-       GameActions.buyProperty(player, PropertyList.getRødovrevej());
+        FieldProperty fieldPropertyAction = (FieldProperty)board.getField(1);
+       GameActions.buyProperty(player,fieldPropertyAction.getProperty());
 
 
         //Ser om player er blevet ejer og mistet rette mængde penge penge
         assertEquals(player.getMoney(),moneyAfterBuying,"Spilleren burde have: " + moneyAfterBuying + ". Spilleren har: "+ player.getMoney());
-        assertEquals(PropertyList.getRødovrevej().getOwner(),player,"Spilleren: " + player + " skulle gerne være ejer. Ejeren er: " + PropertyList.getRødovrevej().getOwner());
+        assertEquals(fieldPropertyAction.getOwner(),player,"Spilleren: " + player + " skulle gerne være ejer. Ejeren er: " + fieldPropertyAction.getOwner());
     }
 
     @Test
@@ -40,13 +44,14 @@ class TC8_PropertyTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        gameActions.buyProperty(player, PropertyList.getRødovrevej());
-        gameActions.buildHouse(player,PropertyList.getRødovrevej());
+        FieldProperty fieldPropertyAction = (FieldProperty)board.getField(1);
+        gameActions.buyProperty(player, fieldPropertyAction.getProperty());
+        gameActions.buildHouse(player,fieldPropertyAction.getProperty());
 
 
         //Ser om player har rette mængde penge og Rødovrevej ikke har fået hus
         assertEquals(player.getMoney(),moneyAfterBuying,"Spilleren burde have: " + moneyAfterBuying + ". Spilleren har: "+ player.getMoney());
-        assertEquals(PropertyList.getRødovrevej().getBuildings(),0,"Rødovre skulle have bygninger: " + 0 + " Rødovre har: " + PropertyList.getRødovrevej().getBuildings());
+        assertEquals(fieldPropertyAction.getProperty().getBuildings(),0,"Rødovre skulle have bygninger: " + 0 + " Rødovre har: " + fieldPropertyAction.getProperty().getBuildings());
     }
 
     @Test
@@ -60,14 +65,16 @@ class TC8_PropertyTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        gameActions.buyProperty(player, PropertyList.getRødovrevej());
-        gameActions.buyProperty(player,PropertyList.getHvidovrevej());
-        gameActions.buildHouse(player,PropertyList.getRødovrevej());
+        FieldProperty fieldPropertyAction = (FieldProperty)board.getField(1);
+        FieldProperty fieldPropertyAction2 = (FieldProperty)board.getField(3);
+        gameActions.buyProperty(player, fieldPropertyAction.getProperty());
+        gameActions.buyProperty(player,fieldPropertyAction2.getProperty());
+        gameActions.buildHouse(player, fieldPropertyAction.getProperty());
 
 
         //Ser om player har mistet rette mængde penge og Rødovrevej har fået en bygning
         assertEquals(player.getMoney(),moneyAfterBuying,"Spilleren burde have: " + moneyAfterBuying + ". Spilleren har: "+ player.getMoney());
-        assertEquals(PropertyList.getRødovrevej().getBuildings(),1,"Rødovre skulle have bygninger: " + 1 + " Rødovre har: " + PropertyList.getRødovrevej().getBuildings());
+        assertEquals(fieldPropertyAction.getProperty().getBuildings(),1,"Rødovre skulle have bygninger: " + 1 + " Rødovre har: " + fieldPropertyAction.getProperty().getBuildings());
     }
 
     @Test
@@ -83,14 +90,15 @@ class TC8_PropertyTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        gameActions.buyProperty(player1, PropertyList.getRødovrevej());
-        gameActions.payRent(player2,PropertyList.getRødovrevej());
+        FieldProperty fieldPropertyAction = (FieldProperty)board.getField(1);
+        gameActions.buyProperty(player1, fieldPropertyAction.getProperty());
+        gameActions.payRent(player2,fieldPropertyAction.getProperty());
 
 
         //Ser om player1 og 2 har rette mængde penge og Rødovrevej har rette ejer
         assertEquals(player2.getMoney(),moneyAfterRent,"Spilleren2 burde have: " + moneyAfterRent + ". Spilleren har: "+ player2.getMoney());
         assertEquals(player1.getMoney(),moneyAfterRentGood,"Spilleren1 burde have: " + moneyAfterRentGood + ". Spilleren har: "+ player1.getMoney());
-        assertEquals(PropertyList.getRødovrevej().getOwner(),player1,"Spilleren: " + player1 + " skulle gerne være ejer. Ejeren er: " + PropertyList.getRødovrevej().getOwner());
+        assertEquals(fieldPropertyAction.getOwner(),player1,"Spilleren: " + player1 + " skulle gerne være ejer. Ejeren er: " + fieldPropertyAction.getOwner());
     }
 
     @Test
@@ -106,15 +114,17 @@ class TC8_PropertyTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        gameActions.buyProperty(player1, PropertyList.getRødovrevej());
-        gameActions.buyProperty(player1, PropertyList.getHvidovrevej());
-        gameActions.payRent(player2,PropertyList.getRødovrevej());
+        FieldProperty fieldPropertyAction = (FieldProperty)board.getField(1);
+        FieldProperty fieldPropertyAction2 = (FieldProperty)board.getField(3);
+        gameActions.buyProperty(player1, fieldPropertyAction.getProperty());
+        gameActions.buyProperty(player1, fieldPropertyAction2.getProperty());
+        gameActions.payRent(player2, fieldPropertyAction.getProperty());
 
 
         //Ser om player 2 og 1 har rette mængde penge og player1 stadig er ejer
         assertEquals(player2.getMoney(),moneyAfterRent,"Spilleren2 burde have: " + moneyAfterRent + ". Spilleren har: "+ player2.getMoney());
         assertEquals(player1.getMoney(),moneyAfterRentGood,"Spilleren1 burde have: " + moneyAfterRentGood + ". Spilleren har: "+ player1.getMoney());
-        assertEquals(PropertyList.getRødovrevej().getOwner(),player1,"Spilleren: " + player1 + " skulle gerne være ejer. Ejeren er: " + PropertyList.getRødovrevej().getOwner());
+        assertEquals(fieldPropertyAction.getOwner(),player1,"Spilleren: " + player1 + " skulle gerne være ejer. Ejeren er: " + fieldPropertyAction.getOwner());
     }
 
     @Test
@@ -127,13 +137,14 @@ class TC8_PropertyTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        gameActions.buyProperty(player, PropertyList.getRødovrevej());
-        gameActions.pledgeProperty(player, PropertyList.getRødovrevej());
+        FieldProperty fieldPropertyAction = (FieldProperty)board.getField(1);
+        gameActions.buyProperty(player, fieldPropertyAction.getProperty());
+        gameActions.pledgeProperty(player, fieldPropertyAction.getProperty());
 
 
         //Ser om player har mistet rette penge og bygningen er pantsat
         assertEquals(player.getMoney(),moneyAfterBuying,"Spilleren burde have: " + moneyAfterBuying + ". Spilleren har: "+ player.getMoney());
-        assertEquals(PropertyList.getRødovrevej().getPledgestate(),true,"Rødovre skulle have være pledged så: " + true + " Rødovre pledgestate er: " + PropertyList.getRødovrevej().getPledgestate());
+        assertEquals(fieldPropertyAction.getProperty().getPledgestate(),true,"Rødovre skulle have være pledged så: " + true + " Rødovre pledgestate er: " + fieldPropertyAction.getProperty().getPledgestate());
     }
 
     @Test
@@ -147,15 +158,16 @@ class TC8_PropertyTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        gameActions.buyProperty(player1, PropertyList.getRødovrevej());
-        gameActions.pledgeProperty(player1, PropertyList.getRødovrevej());
-        gameActions.payRent(player2,PropertyList.getRødovrevej());
+        FieldProperty fieldPropertyAction = (FieldProperty)board.getField(1);
+        gameActions.buyProperty(player1, fieldPropertyAction.getProperty());
+        gameActions.pledgeProperty(player1, fieldPropertyAction.getProperty());
+        gameActions.payRent(player2, fieldPropertyAction.getProperty());
 
 
         //Se om player1 fortsat har samme penge, player1 har fået pledge penge og Rødovrevej er pledged
         assertEquals(player2.getMoney(),START_MONEY,"Spilleren burde have: " + START_MONEY + ". Spilleren har: "+ player2.getMoney());
         assertEquals(player1.getMoney(),endMoney,"Spilleren burde have: " + endMoney + ". Spilleren har: "+ player2.getMoney());
-        assertEquals(PropertyList.getRødovrevej().getPledgestate(),true,"Rødovre skulle have være pledged så: " + true + " Rødovre pledgestate er: " + PropertyList.getRødovrevej().getPledgestate());
+        assertEquals(fieldPropertyAction.getProperty().getPledgestate(),true,"Rødovre skulle have være pledged så: " + true + " Rødovre pledgestate er: " + fieldPropertyAction.getProperty().getPledgestate());
     }
 
 }

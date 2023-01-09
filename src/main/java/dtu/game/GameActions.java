@@ -7,7 +7,6 @@ import dtu.players.Player;
 
 public class GameActions {
 
-    private Board board = new Board();
 
 
 
@@ -35,7 +34,7 @@ public class GameActions {
      */
     public static void payRent(Player player, Property property) {
         if(property.getPledgestate() == false) {
-            if(PropertyList.getPermit(property) == true && property.getBuildings() == 0){
+            if(Board.getPermit(property) == true && property.getBuildings() == 0){
                 player.setMoney(player.getMoney() - (property.getActiveRent() * 2));
                 property.getOwner().setMoney(property.getOwner().getMoney() + (property.getActiveRent() * 2));
             }
@@ -56,7 +55,7 @@ public class GameActions {
     public void buildHouse(Player player, Property property) {
         // En besked fortæller pris og giver mulighed for at bekræfte køb
         //hvis der trykkes køb:
-        if(PropertyList.getPermit(property) == true) {//Sikrer man ikke kan bygge før man har alle grunde i farven
+        if(Board.getPermit(property) == true) {//Sikrer man ikke kan bygge før man har alle grunde i farven
             if (property.getBuildings() < 4) {
                 if (player.getMoney() > property.getHousePrice()) {
                     player.setMoney(player.getMoney() - property.getHousePrice());
