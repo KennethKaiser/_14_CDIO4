@@ -1,5 +1,6 @@
 package dtu.controllers;
 
+import dtu.board.FerryField;
 import dtu.board.Field;
 import dtu.board.FieldProperty;
 import dtu.players.Player;
@@ -98,7 +99,7 @@ public class CommunicationController {
         choices[0].setOnAction(e -> boardController.whatType());
     }
 
-    public void wantToBuy(FieldProperty property){
+    public void wantToBuyProperty(FieldProperty property){
 
 
 
@@ -114,6 +115,24 @@ public class CommunicationController {
         showCommunicationBox(textField, choiceOptions);
 
         choices[0].setOnAction(e -> boardController.buyProperty(property));
+    }
+
+    public void wantToBuyFerry(FerryField ferry){
+
+
+
+        String[] choiceOptions = new String[2];
+
+        choiceOptions[0] = "Ja";
+        choiceOptions[1] = "Nej";
+
+        String ferryName = ferry.getFerry().getName();
+        int ferryPrice = ferry.getFerry().getPrice();
+
+        String textField = "Vil du gerne købe " + ferryName + " for " + ferryPrice + "?";
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.buyFerry(ferry));
     }
 
     public void playerBought(FieldProperty fieldProperty, Player player){

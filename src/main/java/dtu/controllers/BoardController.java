@@ -1,5 +1,6 @@
 package dtu.controllers;
 
+import dtu.board.FerryField;
 import dtu.board.Field;
 
 import dtu.board.FieldProperty;
@@ -607,7 +608,10 @@ public class BoardController {
         String type = field.type();
 
         if(type.equals("buyablefield")){
-            buyOrRentChecker(field);
+            buyOrRentCheckerProperty(field);
+        }
+        else if(type.equals("ferry")){
+            b
         }
 
 
@@ -628,6 +632,21 @@ public class BoardController {
 
     }
 
+    public void buyFerry(FerryField ferryField){
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+
+        if(ferryField.buy(currentPlayer)){
+
+            int temp = fieldProperty.getProperty().getFamilie();
+
+            playerViewController.updatePlayerMoney();
+            playerViewController.addCard(temp, currentPlayer.getId());
+            communicationController.playerBought(fieldProperty, currentPlayer);
+        }
+
+
+    }
+
     public void endTurn(){
         playerHandler.currentPlayer();
         String playerName = playerHandler.getCurrentPlayer().getName();
@@ -635,14 +654,25 @@ public class BoardController {
     }
 
 
-    public void buyOrRentChecker(Field field){
+    public void buyOrRentCheckerProperty(Field field){
         FieldProperty fieldProperty = (FieldProperty) field;
         if(fieldProperty.isOwned()){
 
 
         }
         else{
-            communicationController.wantToBuy(fieldProperty);
+            communicationController.wantToBuyProperty(fieldProperty);
+        }
+    }
+
+    public void buyOrRentCheckerFerry(Field field){
+        FerryField ferryField = (FerryField) field;
+        if(ferryField.getOwned()){
+
+
+        }
+        else{
+            communicationController.wantToBuyFerry(ferryField);
         }
     }
 
