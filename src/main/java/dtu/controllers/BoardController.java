@@ -641,6 +641,7 @@ public class BoardController {
 
         if(fieldProperty.buy(currentPlayer)){
 
+            fieldProperty.setActiveRent(0);
             int temp = fieldProperty.getProperty().getFamilie();
 
             playerViewController.updatePlayerMoney();
@@ -691,8 +692,9 @@ public class BoardController {
     public void buyOrRentCheckerProperty(Field field){
         FieldProperty fieldProperty = (FieldProperty) field;
         if(fieldProperty.isOwned()){
-
-
+            fieldProperty.rent(playerHandler.getCurrentPlayer());
+            playerViewController.updatePlayerMoney();
+            communicationController.payRentProperty(fieldProperty, playerHandler.getCurrentPlayer());
         }
         else{
             communicationController.wantToBuyProperty(fieldProperty);

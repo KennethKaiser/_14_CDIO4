@@ -40,7 +40,7 @@ public class FerryField extends BuyableFields{
     }
 
     @Override
-    public void rent() {
+    public void rent(Player player) {
 
     }
 

@@ -1,9 +1,6 @@
 package dtu.controllers;
 
-import dtu.board.BreweryField;
-import dtu.board.FerryField;
-import dtu.board.Field;
-import dtu.board.FieldProperty;
+import dtu.board.*;
 import dtu.players.Player;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -201,6 +198,25 @@ public class CommunicationController {
 
         choices[0].setOnAction(e -> boardController.endTurn());
     }
+
+    //region rent
+    public void payRentProperty(FieldProperty fieldProperty, Player player){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        String playerName = player.getName();
+        String propertyName = fieldProperty.getProperty().getName();
+        String propertyOwner = fieldProperty.getOwner().getName();
+        int rent = fieldProperty.getActiveRent();
+
+
+        String textField = propertyName + " er ejet af " + propertyOwner + ". Betal " + rent + " i leje."  ;
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurn());
+    }
+    //endregion
 
 
 

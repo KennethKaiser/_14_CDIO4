@@ -89,7 +89,10 @@ public class FieldProperty extends BuyableFields{
     }
 
     @Override
-    public void rent() {
+    public void rent(Player player) {
+
+        player.setMoney(player.getMoney() - activeRent);
+        owner.setMoney(owner.getMoney() + activeRent);
 
     }
 
