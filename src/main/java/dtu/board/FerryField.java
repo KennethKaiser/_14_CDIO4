@@ -31,7 +31,7 @@ public class FerryField extends BuyableFields{
             this.owned = true;
             this.activeRent = 0;
             this.pledgeState = false;
-            player.getProperties().add(this);
+            player.getFerries().add(this);
             return true;
         }
         else{

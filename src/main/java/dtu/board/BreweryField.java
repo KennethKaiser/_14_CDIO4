@@ -29,7 +29,7 @@ public class BreweryField extends BuyableFields{
             this.owned = true;
             this.activeRent = 0;
             this.pledgeState = false;
-            player.getProperties().add(this);
+            player.getBreweries().add(this);
             return true;
         }
         else{
