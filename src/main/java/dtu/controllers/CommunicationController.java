@@ -1,5 +1,6 @@
 package dtu.controllers;
 
+import dtu.board.BreweryField;
 import dtu.board.FerryField;
 import dtu.board.Field;
 import dtu.board.FieldProperty;
@@ -135,6 +136,26 @@ public class CommunicationController {
         choices[0].setOnAction(e -> boardController.buyFerry(ferry));
     }
 
+    public void wantToBuyBrewery(BreweryField breweryField){
+
+
+
+        String[] choiceOptions = new String[2];
+
+        choiceOptions[0] = "Ja";
+        choiceOptions[1] = "Nej";
+
+        String breweryName = breweryField.getBrewery().getName();
+        int breweryPrice = breweryField.getBrewery().getPrice();
+
+        String textField = "Vil du gerne købe " + breweryName + " for " + breweryPrice + "?";
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.buyBrewery(breweryField));
+    }
+
+
+
     public void playerBoughtProperty(FieldProperty fieldProperty, Player player){
         String[] choiceOptions = new String[1];
 
@@ -145,6 +166,21 @@ public class CommunicationController {
 
 
         String textField = fieldName + " er købt af " + playerName + ".";
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurn());
+    }
+
+    public void playerBoughtBrewery(BreweryField breweryField, Player player){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        String playerName = player.getName();
+        String breweryName = breweryField.getBrewery().getName();
+
+
+        String textField = breweryName + " er købt af " + playerName + ".";
         showCommunicationBox(textField, choiceOptions);
 
         choices[0].setOnAction(e -> boardController.endTurn());

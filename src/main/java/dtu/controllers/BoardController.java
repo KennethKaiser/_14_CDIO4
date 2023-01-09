@@ -1,5 +1,6 @@
 package dtu.controllers;
 
+import dtu.board.BreweryField;
 import dtu.board.FerryField;
 import dtu.board.Field;
 
@@ -613,6 +614,9 @@ public class BoardController {
         else if(type.equals("ferry")){
             buyOrRentCheckerFerry(field);
         }
+        else if(type.equals("brewery")){
+            buyOrRentCheckerBrewery(field);
+        }
 
 
     }
@@ -647,6 +651,21 @@ public class BoardController {
 
     }
 
+    public void buyBrewery(BreweryField breweryField){
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+
+        if(breweryField.buy(currentPlayer)){
+
+            int temp = breweryField.getBrewery().getFamily();
+
+            playerViewController.updatePlayerMoney();
+            playerViewController.addCard(temp, currentPlayer.getId());
+            communicationController.playerBoughtBrewery(breweryField, currentPlayer);
+        }
+
+
+    }
+
     public void endTurn(){
         playerHandler.currentPlayer();
         String playerName = playerHandler.getCurrentPlayer().getName();
@@ -673,6 +692,17 @@ public class BoardController {
         }
         else{
             communicationController.wantToBuyFerry(ferryField);
+        }
+    }
+
+    public void buyOrRentCheckerBrewery(Field field){
+        BreweryField breweryField = (BreweryField) field;
+        if(breweryField.getOwned()){
+
+
+        }
+        else{
+            communicationController.wantToBuyBrewery(breweryField);
         }
     }
 
