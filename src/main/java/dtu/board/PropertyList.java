@@ -2,6 +2,9 @@ package dtu.board;
 
 import dtu.filereader.CSVFileReader;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 
 public class PropertyList {
@@ -10,15 +13,53 @@ public class PropertyList {
 
     //Making field with csv
     public void instantiateFieldsCSV(){
+
+        /*
         List<Field> fields;
         Field[] field = new Field[40];
         CSVFileReader csvFileReader = new CSVFileReader();
         String[] liste = csvFileReader.toString();
+         */
+
+//Eksperiment fra google
+
+        String line = "";
+        String splitBy = ",";
+        try
+        {
+            BufferedReader br = new BufferedReader(new FileReader("fields.csv"));
+        while ((line = br.readLine()) != null)   //Sikrer der er noget at læse
+        {
+            String[] fieldLine = line.split(splitBy);    // Komma seperering
+            if (fieldLine[1] == "Street") {
+                 i = 0;
+                Property i = new Property(Integer.valueOf(fieldLine[0]), fieldLine[1], Integer.valueOf(fieldLine[2]), fieldLine[3], Integer.valueOf(fieldLine[4]), Integer.valueOf(fieldLine[5]), Integer.valueOf(fieldLine[6]), Integer.valueOf(fieldLine[7]), Integer.valueOf(fieldLine[8]), Integer.valueOf(fieldLine[9]), Integer.valueOf(fieldLine[10]), Integer.valueOf(fieldLine[11]), Integer.valueOf(fieldLine[12]));
+                FieldProperty fieldProperty = new FieldProperty(i);
+                i++;
+            }
+        }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
+    //Gammel
+            String[] employee = line.split(splitBy);    // use comma as separator
+            System.out.println("Employee [First Name=" + employee[0] + ", Last Name=" + employee[1] + ", Designation=" + employee[2] + ", Contact=" + employee[3] + ", Salary= " + employee[4] + ", City= " + employee[5] +"]");
+        }
 
         for (int i = 0; i < field.length; i++){
             field[i] = new Field(i, liste[i],);
         }
         for (int i = 0; i<12;i++){
+            Property csvFileReader
 
         }
         Property Bernstoffsvej = new Property(15,"Street",4,"Bernstoffsvej",3600,2000,300,1400,4000,11000,15000,19000,1800);
