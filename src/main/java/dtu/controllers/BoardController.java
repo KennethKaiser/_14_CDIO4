@@ -1,8 +1,11 @@
 package dtu.controllers;
 
+import dtu.board.Property;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -14,6 +17,7 @@ import javafx.scene.layout.VBox;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.lang.reflect.Field;
 import java.util.Random;
 
 public class BoardController {
@@ -313,7 +317,6 @@ public class BoardController {
         initHouses();
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
-        giveButtonsFunctions();
 
     }
 
@@ -672,13 +675,20 @@ public class BoardController {
     //endregion
 
     //region Buttons on board
-    private void giveButtonsFunctions(){
+    public void giveButtonsFunctions(){
         for(int i = 0; i < fieldButtons.length; i++){
-
-
-
+            if(ControllerHandler.getInstance().getBoard().getCurrentBoard()[i] != null){
+                int temp = i;
+                fieldButtons[i].setOnAction(e -> openCard());
+            }
         }
     }
+
+    private void openCard(){
+
+    }
+
+
     private void lineOn(Node node){
         node.setStyle(node.getStyle() + ";-fx-border-color: #ffffff;");
     }

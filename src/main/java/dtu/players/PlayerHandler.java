@@ -68,6 +68,8 @@ public class PlayerHandler {
             player.setBankrupt(true);
             playerIsBankrupt(player);
 
+            changePlayerArray();
+
         }
 
     }
@@ -78,15 +80,15 @@ public class PlayerHandler {
      * @param player
      */
     public void playerIsBankrupt(Player player){
-        if(player.getProperties()!=null){
         for (int i=0; i<player.getProperties().size();i++) {
-                player.getProperties().get(i).setOwner(null);
-                player.getProperties().get(i).setOwned(false);
-                player.getProperties().get(i).setActiveRent(0);
-                player.getProperties().get(i).setBuildings(0);
-            }
+            player.getProperties().get(i).getProperty().setOwner(null);
+            player.getProperties().get(i).getProperty().setOwned(false);
+            player.getProperties().get(i).getProperty().setActiveRent(0);
+            //player.getProperties().get(i).getProperty().setBuildings(0);
+
         }
     }
+
     /**
      *  Method that changes the player to null and moves all players to new array.
      */

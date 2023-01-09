@@ -12,7 +12,7 @@ public class Player {
     private String name;
     private int position;
     private int money;
-    private ArrayList<FieldProperty> properties;
+    private ArrayList<Field> properties;
     private String color;
 
     private boolean bankrupt;
@@ -65,11 +65,11 @@ public class Player {
         this.money = money;
     }
 
-    public ArrayList<FieldProperty> getProperties() {
+    public ArrayList<Field> getProperties() {
         return properties;
     }
 
-    public void setProperties(ArrayList<FieldProperty> properties) {
+    public void setProperties(ArrayList<Field> properties) {
         this.properties = properties;
     }
 
