@@ -343,7 +343,7 @@ public class PropertyMenuController {
         return finalNumber;
     }
     private void setColorOf(Node node, int family){
-        switch (family){
+        switch (family-1){
             case 0: //Blue
                 node.setStyle("-fx-background-color: #0000ff;");
                 break;
