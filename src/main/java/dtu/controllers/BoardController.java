@@ -20,6 +20,7 @@ public class BoardController {
 
     //Controllers
     PlayerViewController playerViewController = ControllerHandler.getInstance().getPlayerViewController();
+    CommunicationController communicationController = ControllerHandler.getInstance().getCommunicationController();
 
 
     //Model variables
@@ -314,6 +315,7 @@ public class BoardController {
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
         giveButtonsFunctions();
+        initializingStartPlayerTurn();
 
     }
 
@@ -530,14 +532,8 @@ public class BoardController {
 
     }
 
-    /**
-     * Updates playerview at start
-     */
-    public void initializingPlayerViewStart(){
-
-        playerViewController.updatePlayerName();
-        playerViewController.updatePlayerMoney();
-
+    public void initializingStartPlayerTurn(){
+        communicationController.playerTurnStart(playerHandler.getCurrentPlayer().getId());
     }
 
 
