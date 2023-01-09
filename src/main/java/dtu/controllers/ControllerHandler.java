@@ -36,8 +36,9 @@ public class ControllerHandler {
     public void showChanceCardPileOnBoard(){
         sceneSwitch.showChanceCardPileInMiddle();
     }
-    public void showChanceCard(){
-
+    public void showChanceCard(String title, String text){
+        sceneSwitch.showChanceCardPileInMiddle();
+        chanceCardsController.showChanceCard(title, text);
     }
 
 
