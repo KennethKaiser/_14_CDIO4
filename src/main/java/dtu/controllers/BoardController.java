@@ -4,6 +4,7 @@ import dtu.dice.RaffleCup;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -307,6 +308,7 @@ public class BoardController {
         initHouses();
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
+        giveButtonsFunctions();
 
     }
 
@@ -661,5 +663,20 @@ public class BoardController {
     }
     //endregion
 
+    //region Buttons on board
+    private void giveButtonsFunctions(){
+        for(int i = 0; i < fieldButtons.length; i++){
 
+
+
+        }
+    }
+    private void lineOn(Node node){
+        node.setStyle(node.getStyle() + ";-fx-border-color: #ffffff;");
+    }
+    private void lineOff(Node node){
+        node.setStyle(node.getStyle() + ";-fx-border-color: #000000;");
+    }
+
+    //endregion
 }

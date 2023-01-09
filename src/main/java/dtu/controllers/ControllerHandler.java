@@ -1,6 +1,7 @@
 package dtu.controllers;
 
 import dtu._14_cdio4.SceneSwitch;
+import dtu.board.Property;
 
 public class ControllerHandler {
 
@@ -29,6 +30,16 @@ public class ControllerHandler {
         playerViewController.updatePlayerName();
         playerViewController.updatePlayerMoney();
     }
+    public void showCardOnBoard(Property[] properties){
+        sceneSwitch.showCardInMiddle(properties);
+    }
+    public void showChanceCardPileOnBoard(){
+        sceneSwitch.showChanceCardPileInMiddle();
+    }
+    public void showChanceCard(){
+
+    }
+
 
 
     //region getters and setters
