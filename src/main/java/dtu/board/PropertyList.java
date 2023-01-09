@@ -1,6 +1,7 @@
 package dtu.board;
 
 public class PropertyList {
+    /*
 
     final int NUMBER_PROPERTIES = 22;
 
@@ -147,75 +148,10 @@ public class PropertyList {
             break;
         }
         return send;
-    }
-
-    /**
-     * Method to see if a player owns all properties in a fimilie
-     * @param property Just one of the properties in question
-     * @return True means a player owns all properties in the familie
-     */
-    public static Boolean getPermit(Property property) {
-        Boolean answer = null;
-        switch (property.getFamilie()) {
-            case 1:
-                if (PropertyList.getFamilieList(1)[0].getOwner() == PropertyList.getFamilieList(1)[1].getOwner()) {
-                    answer = true;
-                } else {
-                    answer = false;
-                }
-                break;
-            case 2:
-                if (PropertyList.getFamilieList(2)[0].getOwner() == PropertyList.getFamilieList(2)[1].getOwner() && PropertyList.getFamilieList(2)[0].getOwner() == PropertyList.getFamilieList(2)[2].getOwner()) {
-                    answer = true;
-                } else {
-                    answer = false;
-                }
-                break;
-            case 3:
-                if (PropertyList.getFamilieList(3)[0].getOwner() == PropertyList.getFamilieList(3)[1].getOwner() && PropertyList.getFamilieList(3)[0].getOwner() == PropertyList.getFamilieList(3)[2].getOwner()) {
-                    answer = true;
-                } else {
-                    answer = false;
-                }
-                break;
-            case 4:
-                if (PropertyList.getFamilieList(4)[0].getOwner() == PropertyList.getFamilieList(4)[1].getOwner() && PropertyList.getFamilieList(4)[0].getOwner() == PropertyList.getFamilieList(4)[2].getOwner()) {
-                    answer = true;
-                } else {
-                    answer = false;
-                }
-                break;
-            case 5:
-                if (PropertyList.getFamilieList(5)[0].getOwner() == PropertyList.getFamilieList(5)[1].getOwner() && PropertyList.getFamilieList(5)[0].getOwner() == PropertyList.getFamilieList(5)[2].getOwner()) {
-                    answer = true;
-                } else {
-                    answer = false;
-                }
-                break;
-            case 6:
-                if (PropertyList.getFamilieList(6)[0].getOwner() == PropertyList.getFamilieList(6)[1].getOwner() && PropertyList.getFamilieList(6)[0].getOwner() == PropertyList.getFamilieList(6)[2].getOwner()) {
-                    answer = true;
-                } else {
-                    answer = false;
-                }
-                break;
-            case 7:
-                if (PropertyList.getFamilieList(7)[0].getOwner() == PropertyList.getFamilieList(7)[1].getOwner() && PropertyList.getFamilieList(7)[0].getOwner() == PropertyList.getFamilieList(7)[2].getOwner()) {
-                    answer = true;
-                } else {
-                    answer = false;
-                }
-                break;
-            case 8:
-                if (PropertyList.getFamilieList(8)[0].getOwner() == PropertyList.getFamilieList(8)[1].getOwner()) {
-                    answer = true;
-                } else {
-                    answer = false;
-                }
-                break;
         }
-        return answer;
-    }
+     */
+
+
 
 }
 

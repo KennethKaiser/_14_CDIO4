@@ -2,6 +2,7 @@ import dtu.board.FieldProperty;
 import dtu.board.Property;
 import dtu.board.PropertyList;
 import dtu.board.PropertyHandler;
+import dtu.board.Board;
 import dtu.players.Player;
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class TC5_RentTest {
 
     PropertyHandler propertyHandler = new PropertyHandler();
+    Board board = new Board();
 
     @Test
     void testPayRent() {
@@ -29,7 +31,7 @@ class TC5_RentTest {
         property.setOwner(player2);
         property.setOwned(true);
         property.setActiveRent(0);
-        PropertyList.getRødovrevej().setOwner(player1);//Sikrer at den anden spiller ejer i familie1 og undgår dobbelt leje
+        board.getCurrentBoard()[1].getProperty().setOwner(player1);//Sikrer at den anden spiller ejer i familie1 og undgår dobbelt leje
 
         propertyField.action(player1);
 
@@ -52,8 +54,10 @@ class TC5_RentTest {
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
         Property property = new Property(0,1,"DTU",300,200,RENT,500,600,700,800,900,5);
+        Property property1 = new Property(1,1,"Bornholm",300,400,500,600,700,800,900,1000,9);
 
         FieldProperty propertyField = new FieldProperty(property);
+        property1.setOwner(player1);
         property.setOwner(player2);
         property.setOwned(true);
         property.setActiveRent(0);
