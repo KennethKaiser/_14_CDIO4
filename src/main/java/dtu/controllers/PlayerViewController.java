@@ -507,7 +507,7 @@ public class PlayerViewController {
 
             for(int i = 0; i < properties.length; i++){
                 switch (family){
-                    case 0:
+                    case 1:
                         //if player owns any of these properties add property
                         if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[1])){
                             if(!Arrays.asList(properties).contains(gameCards[1])){
@@ -515,10 +515,152 @@ public class PlayerViewController {
                                 break;
                             }
                         }
-
-                        if(!Arrays.asList(properties).contains(gameCards[3])){
-                            properties[i] = gameCards[3];
-                            break;
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[3])){
+                            if(!Arrays.asList(properties).contains(gameCards[3])){
+                                properties[i] = gameCards[3];
+                                break;
+                            }
+                        }
+                        break;
+                    case 2:
+                        //if player owns any of these properties add property
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[6])){
+                            if(!Arrays.asList(properties).contains(gameCards[6])){
+                                properties[i] = gameCards[6];
+                                break;
+                            }
+                        }
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[8])){
+                            if(!Arrays.asList(properties).contains(gameCards[8])){
+                                properties[i] = gameCards[8];
+                                break;
+                            }
+                        }
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[9])){
+                            if(!Arrays.asList(properties).contains(gameCards[9])){
+                                properties[i] = gameCards[9];
+                                break;
+                            }
+                        }
+                        break;
+                    case 3:
+                        //if player owns any of these properties add property
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[11])){
+                            if(!Arrays.asList(properties).contains(gameCards[11])){
+                                properties[i] = gameCards[11];
+                                break;
+                            }
+                        }
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[13])){
+                            if(!Arrays.asList(properties).contains(gameCards[13])){
+                                properties[i] = gameCards[13];
+                                break;
+                            }
+                        }
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[14])){
+                            if(!Arrays.asList(properties).contains(gameCards[14])){
+                                properties[i] = gameCards[14];
+                                break;
+                            }
+                        }
+                        break;
+                    case 4:
+                        //if player owns any of these properties add property
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[16])){
+                            if(!Arrays.asList(properties).contains(gameCards[16])){
+                                properties[i] = gameCards[16];
+                                break;
+                            }
+                        }
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[18])){
+                            if(!Arrays.asList(properties).contains(gameCards[18])){
+                                properties[i] = gameCards[18];
+                                break;
+                            }
+                        }
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[19])){
+                            if(!Arrays.asList(properties).contains(gameCards[19])){
+                                properties[i] = gameCards[19];
+                                break;
+                            }
+                        }
+                        break;
+                    case 5:
+                        //if player owns any of these properties add property
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[21])){
+                            if(!Arrays.asList(properties).contains(gameCards[21])){
+                                properties[i] = gameCards[21];
+                                break;
+                            }
+                        }
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[23])){
+                            if(!Arrays.asList(properties).contains(gameCards[23])){
+                                properties[i] = gameCards[23];
+                                break;
+                            }
+                        }
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[24])){
+                            if(!Arrays.asList(properties).contains(gameCards[24])){
+                                properties[i] = gameCards[24];
+                                break;
+                            }
+                        }
+                        break;
+                    case 6:
+                        //if player owns any of these properties add property
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[26])){
+                            if(!Arrays.asList(properties).contains(gameCards[26])){
+                                properties[i] = gameCards[26];
+                                break;
+                            }
+                        }
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[27])){
+                            if(!Arrays.asList(properties).contains(gameCards[27])){
+                                properties[i] = gameCards[27];
+                                break;
+                            }
+                        }
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[29])){
+                            if(!Arrays.asList(properties).contains(gameCards[29])){
+                                properties[i] = gameCards[29];
+                                break;
+                            }
+                        }
+                        break;
+                    case 7:
+                        //if player owns any of these properties add property
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[31])){
+                            if(!Arrays.asList(properties).contains(gameCards[31])){
+                                properties[i] = gameCards[31];
+                                break;
+                            }
+                        }
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[32])){
+                            if(!Arrays.asList(properties).contains(gameCards[32])){
+                                properties[i] = gameCards[32];
+                                break;
+                            }
+                        }
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[34])){
+                            if(!Arrays.asList(properties).contains(gameCards[34])){
+                                properties[i] = gameCards[34];
+                                break;
+                            }
+                        }
+                        break;
+                    case 8:
+                        //if player owns any of these properties add property
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[37])){
+                            if(!Arrays.asList(properties).contains(gameCards[37])){
+                                properties[i] = gameCards[37];
+                                break;
+                            }
+                        }
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[39])){
+                            if(!Arrays.asList(properties).contains(gameCards[39])){
+                                properties[i] = gameCards[39];
+                                break;
+                            }
                         }
                         break;
                 }
@@ -581,6 +723,7 @@ public class PlayerViewController {
 
     }
     private void setBackgroundColorOf(Node node, int family) {
+        family--;
         switch (family) {
             case 0: //Blue
                 node.setStyle("-fx-background-color: #0000ff;");

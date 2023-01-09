@@ -13,8 +13,13 @@ public class FieldProperty extends BuyableFields{
 
     private int buildings;
 
+    private boolean pledgeState;
+
+    //PropertyHandler propertyHandler = new PropertyHandler();
+
 
     public FieldProperty(Property property){
+        this.owned = false;
         this.property = property;
     }
 
@@ -22,18 +27,20 @@ public class FieldProperty extends BuyableFields{
      * Method for when the player lands on a property, getting the choice to buy it or must pay rent
      * @param player the player who landed on the field
      */
+
+
     @Override
-    public void action(Player player) {
-        if(property.getOwned() == false){
-            //En besked giver valget for at købe grunden
-            //Hvis ja:
-            PropertyHandler.buyProperty(player, property);
-            //Hvis nej, intet
-        }
-        if(property.getOwned() == true){
-            //En besked fortæller summen af penge der gives og til hvem
-            PropertyHandler.payRent(player, property);
-        }
+    public String landedLabel() {
+        String s = "Du er landet på " + property.getName();
+
+        return s;
+    }
+
+
+
+    @Override
+    public String type() {
+        return "buyablefield";
     }
 
     public Property getProperty() {
@@ -56,22 +63,73 @@ public class FieldProperty extends BuyableFields{
         this.owner = owner;
     }
 
-    public void setActiveRent(int activeRent) {
+    /*public void setActiveRent(int activeRent) {
         this.activeRent = activeRent;
-    }
+    }*/
 
     public void setBuildings(int buildings) {
         this.buildings = buildings;
     }
 
+    public boolean isOwned(){
+        return this.owned;
+    }
+
 
     @Override
-    public void buy() {
-
+    public Boolean buy(Player player) {
+        if(player.getMoney() >= this.property.getPrice()){
+            player.setMoney(player.getMoney() - property.getPrice());
+            this.owner = player;
+            this.owned = true;
+            this.activeRent = 0;
+            this.pledgeState = false;
+            player.getProperties().add(this);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Override
     public void rent() {
 
+    }
+
+    //Maybe needs changes
+    public void setActiveRent(int rentNumber){
+
+        switch (rentNumber){
+            case 0:
+                activeRent = property.getRentNormal();
+                buildings = 0;
+                break;
+            case 1:
+                activeRent = property.getRent1House();
+                buildings = 1;
+                break;
+            case 2:
+                activeRent = property.getRent2House();
+                buildings = 2;
+                break;
+            case 3:
+                activeRent = property.getRent3House();
+                buildings = 3;
+                break;
+            case 4:
+                activeRent = property.getRent4House();
+                buildings = 4;
+                break;
+            case 5:
+                activeRent = property.getRentHotel();
+                buildings = 5;
+                break;
+        }
+    }
+
+
+    public boolean isPledgeState() {
+        return pledgeState;
     }
 }
