@@ -44,6 +44,12 @@ public class ControllerHandler {
         playerViewController.updatePlayerName();
         playerViewController.updatePlayerMoney();
     }
+    public void switchToCheatBoard(){
+        board = new Board();
+        sceneSwitch.switchToCheatBoard();
+        playerViewController.updatePlayerName();
+        playerViewController.updatePlayerMoney();
+    }
 
     public Board getBoard() {
         return board;

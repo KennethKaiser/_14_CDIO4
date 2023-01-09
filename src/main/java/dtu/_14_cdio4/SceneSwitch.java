@@ -96,8 +96,16 @@ public class SceneSwitch {
         boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getMenuCarColorImages(), menuScreenController.getColorNames());
         boardController.giveButtonsFunctions();
         boardController.initializeStartPlayerTurn();
-        
-
+    }
+    public void switchToCheatBoard(){
+        stage.setScene(boardScene);
+        stage.setX(10);
+        stage.setY(20);
+        stage.setResizable(false);
+        stage.show();
+        boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getMenuCarColorImages(), menuScreenController.getColorNames());
+        boardController.giveButtonsFunctions();
+        boardController.initializeStartPlayerTurn();
     }
     public void showCardInMiddle(Field[] properties, int player){
         boardController.getMiddleMenuVBox().getChildren().clear();
