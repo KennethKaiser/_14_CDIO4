@@ -10,23 +10,61 @@ public class Board {
     private Field[] currentBoard;
     private CSVFileReader csvFileReader = new CSVFileReader();
 
-    private static Property[] familie1 = new Property[2];
+    private Property[] familie1 = new Property[2];
     int f1 = 0;
-    private static Property[] familie2 = new Property[3];
+
+    public Property[] getFamilie1() {
+        return familie1;
+    }
+
+    private Property[] familie2 = new Property[3];
     int f2 = 0;
-    private static Property[] familie3 = new Property[3];
+
+    public Property[] getFamilie2() {
+        return familie2;
+    }
+
+    private Property[] familie3 = new Property[3];
     int f3 = 0;
-    private static Property[] familie4 = new Property[3];
+
+    public Property[] getFamilie3() {
+        return familie3;
+    }
+
+    private Property[] familie4 = new Property[3];
     int f4 = 0;
-    private static Property[] familie5 = new Property[3];
+
+    public Property[] getFamilie4() {
+        return familie4;
+    }
+
+    private Property[] familie5 = new Property[3];
     int f5 = 0;
-    private static Property[] familie6 = new Property[3];
+
+    public Property[] getFamilie5() {
+        return familie5;
+    }
+
+    private Property[] familie6 = new Property[3];
     int f6 = 0;
-    private static Property[] familie7 = new Property[3];
+
+    public Property[] getFamilie6() {
+        return familie6;
+    }
+
+    private Property[] familie7 = new Property[3];
     int f7 = 0;
-    private static Property[] familie8 = new Property[2];
+
+    public Property[] getFamilie7() {
+        return familie7;
+    }
+
+    private Property[] familie8 = new Property[2];
     int f8 = 0;
 
+    public Property[] getFamilie8() {
+        return familie8;
+    }
 
     public Board(){
         currentBoard = new Field[40];
@@ -82,6 +120,14 @@ public class Board {
                         Integer.parseInt(fieldText.get(i)[4]),Integer.parseInt(fieldText.get(i)[6]),Integer.parseInt(fieldText.get(i)[7]),Integer.parseInt(fieldText.get(i)[8]),
                                 Integer.parseInt(fieldText.get(i)[9])));
             }
+            /*
+            else if(fieldText.get(i)[2].equals("brewery")){
+                currentBoard[i-1] = new BreweryField( new Brewery((fieldText.get(i)[1]),Integer.parseInt(fieldText.get(i)[2]),(fieldText.get(i)[3]),
+                        Integer.parseInt(fieldText.get(i)[4]), Integer.parseInt(fieldText.get(i)[5]),
+                        Integer.parseInt(fieldText.get(i)[6]),Integer.parseInt(fieldText.get(i)[7])));
+            }
+
+             */
         }
 
 
@@ -101,7 +147,7 @@ public class Board {
     }
 
     //Metode til at skaffe familie
-    public static Property[] getFamilieList(int familieNum){
+    public Property[] getFamilieList(int familieNum){
         Property[] send = new Property[0];
         switch (familieNum) {
             case 1:
