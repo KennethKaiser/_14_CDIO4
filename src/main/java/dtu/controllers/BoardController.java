@@ -674,6 +674,10 @@ public class BoardController {
     }
     //endregion
 
+    public PlayerHandler getPlayerHandler() {
+        return playerHandler;
+    }
+
     //region Buttons on board
     public void giveButtonsFunctions(){
         for(int i = 0; i < fieldButtons.length; i++){
