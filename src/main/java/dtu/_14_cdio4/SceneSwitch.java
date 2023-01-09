@@ -75,7 +75,7 @@ public class SceneSwitch {
     }
     private void collectBoard(){
         showChanceCardPileInMiddle();
-        boardController.getMiddleParent().getChildren().add(0, communication);
+        boardController.getMiddleParent().getChildren().add(2, communication);
         playerView.getChildren().add(1, board);
         root.getChildren().add(playerView);
         boardScene = new Scene(root, 1500, 700);
@@ -94,6 +94,7 @@ public class SceneSwitch {
         stage.show();
         boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getMenuCarColorImages(), menuScreenController.getColorNames());
         boardController.giveButtonsFunctions();
+        boardController.initializeStartPlayerTurn();
         playerViewController.addCard(0, 0);
         playerViewController.addCard(0, 0);
         playerViewController.addCard(4, 0);

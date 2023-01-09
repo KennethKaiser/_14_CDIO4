@@ -24,6 +24,7 @@ public class BoardController {
 
     //Controllers
     PlayerViewController playerViewController = ControllerHandler.getInstance().getPlayerViewController();
+    CommunicationController communicationController;
 
 
     //Model variables
@@ -318,6 +319,8 @@ public class BoardController {
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
 
+
+
     }
 
     //region delegate model objects to other controller
@@ -533,16 +536,6 @@ public class BoardController {
 
     }
 
-    /**
-     * Updates playerview at start
-     */
-    public void initializingPlayerViewStart(){
-
-        playerViewController.updatePlayerName();
-        playerViewController.updatePlayerMoney();
-
-    }
-
 
     //region game loop actions
 
@@ -566,6 +559,11 @@ public class BoardController {
         //Should be called after a player turn and not in this method
         playerHandler.currentPlayer();
 
+    }
+
+    public void initializeStartPlayerTurn(){
+        communicationController = ControllerHandler.getInstance().getCommunicationController();
+        communicationController.playerTurnStart(playerHandler.getCurrentPlayer().getName());
     }
 
     //endregion
