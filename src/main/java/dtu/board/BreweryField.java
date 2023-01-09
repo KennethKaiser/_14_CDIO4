@@ -23,7 +23,18 @@ public class BreweryField extends BuyableFields{
 
     @Override
     public Boolean buy(Player player) {
-        return null;
+        if(player.getMoney() >= this.brewery.getPrice()){
+            player.setMoney(player.getMoney() - brewery.getPrice());
+            this.owner = player;
+            this.owned = true;
+            this.activeRent = 0;
+            this.pledgeState = false;
+            player.getProperties().add(this);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Override
