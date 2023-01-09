@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TC7_BuildingHousesTest {
 
-    PropertyHandler propertyHandler = new PropertyHandler();
+    /*PropertyHandler propertyHandler = new PropertyHandler();
 
     @Test
     void testBuyHouseHasCash() {
@@ -282,5 +282,5 @@ class TC7_BuildingHousesTest {
                 + ". And player has: " + player.getMoney());
         System.out.println("expect player to have: " + moneyAfterHouse + ", player has: " + player.getMoney() + ". Expect property to have rent: " + RENT_HOTEL + ", property has rent: " + property.getActiveRent());
     }
-
+*/
 }

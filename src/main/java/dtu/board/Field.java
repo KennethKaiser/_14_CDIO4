@@ -4,9 +4,18 @@ import dtu.players.Player;
 
 public abstract class Field {
 
+    protected Property property;
 
 
-    public abstract void action(Player player);
+    public Field(){
 
+    }
 
+    public abstract String landedLabel();
+
+    public abstract String type();
+
+    public Property getProperty() {
+        return property;
+    }
 }

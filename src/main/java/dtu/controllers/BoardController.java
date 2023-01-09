@@ -1,6 +1,9 @@
 package dtu.controllers;
 
 import dtu.board.Field;
+
+import dtu.board.FieldProperty;
+
 import dtu.board.Property;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
@@ -24,6 +27,7 @@ public class BoardController {
 
     //Controllers
     PlayerViewController playerViewController = ControllerHandler.getInstance().getPlayerViewController();
+    CommunicationController communicationController;
 
 
     //Model variables
@@ -461,12 +465,12 @@ public class BoardController {
     //region Initialize Cars
     private void setCars(){
         cars = new ImageView[6];
-        cars[0] = car2;
-        cars[1] = car6;
-        cars[2] = car4;
-        cars[3] = car5;
-        cars[4] = car3;
-        cars[5] = car1;
+        cars[0] = car1;
+        cars[1] = car2;
+        cars[2] = car3;
+        cars[3] = car4;
+        cars[4] = car5;
+        cars[5] = car6;
     }
     public void startCars(){
 
@@ -563,10 +567,69 @@ public class BoardController {
         movePLayerOnGUI(playerId, playerPosition);
         multipleCars(playerId, playerPosition);
 
-        //Should be called after a player turn and not in this method
-        playerHandler.currentPlayer();
+        //Switch decision box
+        communicationController.whatRolled(playerRoll);
+
 
     }
+
+    public void whatField(){
+        String landedLabel = ControllerHandler.getInstance().getBoard().getCurrentBoard()[playerHandler.getCurrentPlayer().getPosition()].landedLabel();
+        communicationController.whatLandedOn(landedLabel);
+    }
+
+    public void whatType(){
+        Field field;
+        field = ControllerHandler.getInstance().getBoard().getCurrentBoard()[playerHandler.getCurrentPlayer().getPosition()];
+        String type = field.type();
+
+        if(type.equals("buyablefield")){
+            buyOrRentChecker(field);
+        }
+
+
+    }
+
+    public void buyProperty(FieldProperty fieldProperty){
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+
+        if(fieldProperty.buy(currentPlayer)){
+
+            int temp = fieldProperty.getProperty().getFamilie();
+
+            playerViewController.updatePlayerMoney();
+            playerViewController.addCard(temp, currentPlayer.getId());
+            communicationController.playerBought(fieldProperty, currentPlayer);
+        }
+
+
+    }
+
+    public void endTurn(){
+        playerHandler.currentPlayer();
+        String playerName = playerHandler.getCurrentPlayer().getName();
+        communicationController.playerTurnStart(playerName);
+    }
+
+
+    public void buyOrRentChecker(Field field){
+        FieldProperty fieldProperty = (FieldProperty) field;
+        if(fieldProperty.isOwned()){
+
+
+        }
+        else{
+            communicationController.wantToBuy(fieldProperty);
+        }
+    }
+
+    public void initializeStartPlayerTurn(){
+        communicationController = ControllerHandler.getInstance().getCommunicationController();
+        communicationController.playerTurnStart(playerHandler.getCurrentPlayer().getName());
+
+    }
+
+
 
     //endregion
 
@@ -674,6 +737,10 @@ public class BoardController {
     }
     //endregion
 
+    public PlayerHandler getPlayerHandler() {
+        return playerHandler;
+    }
+
     //region Buttons on board
     public void giveButtonsFunctions(){
         for(int i = 0; i < fieldButtons.length; i++){
@@ -687,7 +754,7 @@ public class BoardController {
     private void openCard(int i){
         Field[] property = new Field[1];
         property[0] = ControllerHandler.getInstance().getBoard().getCurrentBoard()[i];
-        ControllerHandler.getInstance().showCardOnBoard( property, -1);
+        ControllerHandler.getInstance().showCardOnBoard(property, -1);
     }
 
 
@@ -699,4 +766,7 @@ public class BoardController {
     }
 
     //endregion
+
+
+
 }

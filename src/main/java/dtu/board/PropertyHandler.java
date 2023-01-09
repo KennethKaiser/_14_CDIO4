@@ -4,8 +4,8 @@ import dtu.players.Player;
 
 public class PropertyHandler {
 
-    private Board board = new Board();
-
+   // private Board board = new Board();
+/*
 
 
     /**
@@ -13,13 +13,13 @@ public class PropertyHandler {
      * @param player the player buying the property
      * @param property the property being bought
      */
-    public static void buyProperty(Player player, Property property){
+ /*   public void buyProperty(Player player, Property property){
         if(player.getMoney() > property.getPrice()) {
             player.setMoney(player.getMoney() - property.getPrice());
-            property.setOwner(player);
-            property.setOwned(true);
-            property.setActiveRent(0);
-            property.setPledgestate(false);
+            //property.setOwner(player);
+            //property.setOwned(true);
+            //property.setActiveRent(0);
+            //property.setPledgestate(false);
         }
         else{System.out.println("Du har ikke penge nok");}
     }
@@ -30,7 +30,7 @@ public class PropertyHandler {
      * @param player the player who must pay rent
      * @param property the property which the player landed on
      */
-    public static void payRent(Player player, Property property) {
+ /*   public static void payRent(Player player, Property property) {
         if(property.getPledgestate() == false) {
             if(getPermit(property) == true && property.getBuildings() == 0){
                 player.setMoney(player.getMoney() - (property.getActiveRent() * 2));
@@ -50,7 +50,7 @@ public class PropertyHandler {
      * @param player the player paying (could be changed to property owner)
      * @param property the property getting houses build on it
      */
-    public void buildHouse(Player player, Property property) {
+ /*   public void buildHouse(Player player, Property property) {
         // En besked fortæller pris og giver mulighed for at bekræfte køb
         //hvis der trykkes køb:
         if(getPermit(property) == true) {//Sikrer man ikke kan bygge før man har alle grunde i farven
@@ -81,7 +81,7 @@ public class PropertyHandler {
      * @param player
      * @param property
      */
-    public void pledgeProperty(Player player,Property property){
+  /*  public void pledgeProperty(Player player,Property property){
         if(property.getPledgestate() == false) {
             player.setMoney(player.getMoney() + (property.getPledge()));
             property.setPledgestate(true);
@@ -100,7 +100,7 @@ public class PropertyHandler {
      * @param property Just one of the properties in question
      * @return True means a player owns all properties in the familie
      */
-    public static Boolean getPermit(Property property) {
+ /*   public static Boolean getPermit(Property property) {
         Boolean answer = null;
         switch (property.getFamilie()) {
             case 1:
