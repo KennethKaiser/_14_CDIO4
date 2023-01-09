@@ -611,7 +611,7 @@ public class BoardController {
             buyOrRentCheckerProperty(field);
         }
         else if(type.equals("ferry")){
-            b
+            buyOrRentCheckerFerry(field);
         }
 
 
@@ -626,7 +626,7 @@ public class BoardController {
 
             playerViewController.updatePlayerMoney();
             playerViewController.addCard(temp, currentPlayer.getId());
-            communicationController.playerBought(fieldProperty, currentPlayer);
+            communicationController.playerBoughtProperty(fieldProperty, currentPlayer);
         }
 
 
@@ -637,11 +637,11 @@ public class BoardController {
 
         if(ferryField.buy(currentPlayer)){
 
-            int temp = fieldProperty.getProperty().getFamilie();
+            int temp = ferryField.getFerry().getFamilie();
 
             playerViewController.updatePlayerMoney();
             playerViewController.addCard(temp, currentPlayer.getId());
-            communicationController.playerBought(fieldProperty, currentPlayer);
+            communicationController.playerBoughtFerry(ferryField, currentPlayer);
         }
 
 
@@ -843,7 +843,7 @@ public class BoardController {
             int temp = fieldProperty.getProperty().getFamilie();
             playerViewController.updatePlayerMoney();
             playerViewController.addCard(temp, cheatPlayer.getId());
-            communicationController.playerBought(fieldProperty, cheatPlayer);
+            communicationController.playerBoughtProperty(fieldProperty, cheatPlayer);
         }
     }
     public void cheatAddMoney(){

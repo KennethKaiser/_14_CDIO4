@@ -135,7 +135,7 @@ public class CommunicationController {
         choices[0].setOnAction(e -> boardController.buyFerry(ferry));
     }
 
-    public void playerBought(FieldProperty fieldProperty, Player player){
+    public void playerBoughtProperty(FieldProperty fieldProperty, Player player){
         String[] choiceOptions = new String[1];
 
         choiceOptions[0] = "Okay";
@@ -145,6 +145,21 @@ public class CommunicationController {
 
 
         String textField = fieldName + " er købt af " + playerName + ".";
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurn());
+    }
+
+    public void playerBoughtFerry(FerryField ferryField, Player player){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        String playerName = player.getName();
+        String ferryName = ferryField.getFerry().getName();
+
+
+        String textField = ferryName + " er købt af " + playerName + ".";
         showCommunicationBox(textField, choiceOptions);
 
         choices[0].setOnAction(e -> boardController.endTurn());
