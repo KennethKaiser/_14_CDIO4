@@ -24,6 +24,7 @@ public class ChanceCardsController {
     @FXML
     public void initialize(){
         pileButton.setOnAction(e -> pullCard());
+        hideChanceCard();
     }
 
     public void showChanceCard(String title, String text){

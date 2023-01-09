@@ -517,7 +517,7 @@ public class BoardController {
         playerHandler.initializePlayers(playersAdded);
 
         for(int i = 0; i < playersAdded; i++){
-            playerHandler.initializePlayerInPlayers(i, names[i],30000,"");
+            playerHandler.initializePlayerInPlayers(i, names[i],30000,colorNames[i]);
             cars[i].setImage(carImageColors[i]);
         }
         playerHandler.currentPlayer();
