@@ -20,8 +20,15 @@ public class MainApplication extends Application {
         Board board = new Board();
 
         FerryField ferryField = (FerryField)board.getCurrentBoard()[15];
+        FerryField ferryField2 = (FerryField)board.getCurrentBoard()[5];
+        FerryField ferryField3 = (FerryField)board.getCurrentBoard()[25];
+        FerryField ferryField4 = (FerryField)board.getCurrentBoard()[35];
 
         System.out.println(ferryField.getFerry().getName());
+        System.out.println(ferryField2.getFerry().getName());
+        System.out.println(ferryField3.getFerry().getName());
+        System.out.println(ferryField4.getFerry().getName());
+
 
         launch();
     }

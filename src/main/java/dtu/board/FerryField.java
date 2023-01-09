@@ -25,7 +25,7 @@ public class FerryField extends BuyableFields{
 
     @Override
     public String landedLabel() {
-        return null;
+        return "Du er landet på færgen: " + ferry.getName() + ".";
     }
 
     @Override
