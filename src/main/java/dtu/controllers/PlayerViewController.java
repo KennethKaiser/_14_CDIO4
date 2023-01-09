@@ -283,7 +283,6 @@ public class PlayerViewController {
         initializePlayerNameTextArray();
         initializePlayerMoneyTextArray();
         initializePlayerAreaArray();
-
     }
 
 
@@ -475,7 +474,19 @@ public class PlayerViewController {
     public void initializePlayerHandler(PlayerHandler playerHandler){
         this.playerHandler = playerHandler;
     }
+    //region show turn
+    public void updatePlayerTurn(){
+        if(playerHandler != null){
+            int player = playerHandler.getCurrentPlayer().getId();
+            for(int i = 0; i < areas.length; i++){
+                if(i == player) areas[i].setStyle("-fx-background-color: #00dd00; -fx-border-color: yellow");
+                else areas[i].setStyle("-fx-background-color: #00dd00");
+            }
+        }
+        else System.out.println("No playerhandler instantiated yet");
+    }
 
+    //endregion
     //region adding, removing and functions of cards
 
     /*
