@@ -15,7 +15,7 @@ public class DummyField extends Field{
 
     @Override
     public String type() {
-        return null;
+        return "dummy";
     }
 
     public Dummy getDummy() {
