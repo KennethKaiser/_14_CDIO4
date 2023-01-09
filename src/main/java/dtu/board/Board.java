@@ -26,7 +26,7 @@ public class Board {
     int f7 = 0;
     private static Property[] familie8 = new Property[2];
     int f8 = 0;
-    private static Brewery[] familie9 = new Brewery[2];
+    public static Brewery[] familie9 = new Brewery[2];
     int f9 = 0;
 
     public Board(){

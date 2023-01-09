@@ -1,6 +1,10 @@
 package dtu.board;
 
+import dtu.players.Player;
+
 public class Brewery {
+    Player owner;
+    Boolean owned;
     String name, type, empty;
     int position, type, family, price, rent1, rent2
 
@@ -45,5 +49,20 @@ public class Brewery {
 
     public int getRent2() {
         return rent2;
+    }
+
+    public Player getOwner() {
+        return owner;
+    }
+    public void setOwner(Player owner){
+        this.owner = owner;
+    }
+
+    public void setOwned(Boolean owned){
+        this.owned = owned;
+    }
+
+    public Boolean getOwned(){
+        return owned;
     }
 }
