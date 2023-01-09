@@ -3,6 +3,7 @@ package dtu.players;
 import dtu.board.Board;
 import dtu.board.Field;
 import dtu.board.FieldProperty;
+import dtu.board.PropertyHandler;
 import dtu.chancecard.ChanceCardFunctionality;
 import org.junit.jupiter.api.Test;
 
@@ -49,6 +50,51 @@ class PlayerPropertiesTest {
 
         System.out.println(valueOfProperties);
     }
+
+    @Test
+    void houseValue() {
+        PlayerHandler playerHandler = new PlayerHandler();
+        ChanceCardFunctionality chanceCardFunctionality = new ChanceCardFunctionality();
+        Player player = new Player(0, "test0", 4000, "black");
+        playerHandler.initializePlayers(4);
+        playerHandler.initializePlayerInPlayers(0, "Test1", 4000, "black");
+        playerHandler.initializePlayerInPlayers(1, "Test2", 4000, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Test3", 4000, "red");
+        playerHandler.initializePlayerInPlayers(3, "Test4", 4000, "green");
+        Board board = new Board();
+        FieldProperty fieldProperty = (FieldProperty) board.getCurrentBoard()[34];
+        //FieldProperty fieldProperty1 = (FieldProperty) board.getCurrentBoard()[1];
+        fieldProperty.buy(playerHandler.getPlayers()[0]);
+        //fieldProperty1.buy(playerHandler.getPlayers()[0]);
+
+        System.out.println(playerHandler.getPlayers()[0].getProperties().get(0).getProperty().getName());
+
+
+        int valueOfBuildings = 0;
+        int familie1 = 0;
+        int familie1HousePrice = 1000;
+        int familie2 = 0;
+        int familie2HusPris = 1000;
+        int familie3 = 0;
+        int familie3HusPris = 2000;
+        int familie7 = 0;
+        int familie7HousePrice = 4000;
+        ArrayList<Field> playerProperties = playerHandler.getPlayers()[player.getId()].getProperties();
+        if (playerHandler.getPlayers() != null) {
+            for (int i = 0; i < playerProperties.size(); i++) {
+                if ((playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie() == 7) {
+                    familie7 = ((FieldProperty) playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getBuildings() * familie7HousePrice;
+
+                }
+                else if ((playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie() == 1) {
+                    familie1 = ((FieldProperty) playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getBuildings() * familie1HousePrice;
+                }
+            }
+            System.out.println(familie7);
+            System.out.println(familie1);
+            }
+
+        }
 
     @Test
     void setProperties() {

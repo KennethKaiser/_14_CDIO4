@@ -254,14 +254,18 @@ public class ChanceCardFunctionality {
     public int getValueOfPlayersBuildings(Player player){
         int valueOfBuildings = 0;
         int familie1 = 0;
+        int familie1HousePrice = 1000;
         int familie2 = 0;
+        int familie2HusPris = 1000;
         int familie3 = 0;
+        int familie3HusPris= 2000;
         int familie4 = 0;
+        int familie4HusPris;
         ArrayList<Field> playerProperties = playerHandler.getPlayers()[player.getId()].getProperties();
         if (playerHandler.getPlayers() != null){
             for (int i = 0; i < playerProperties.size(); i++){
-                if (((FieldProperty)playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie() == 1){
-                    familie1 = playerHandler.getPlayers()[player.getId()].getProperties().get(i).get
+                if (((FieldProperty)playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie() == 1 ){
+                    familie1 = ((FieldProperty) playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getBuildings()*familie1HousePrice;
 
                 }
 
