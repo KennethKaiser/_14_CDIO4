@@ -15,7 +15,6 @@ public class FieldProperty extends BuyableFields{
 
 
     public FieldProperty(Property property){
-        super(property);
         this.property = property;
     }
 
@@ -39,6 +38,10 @@ public class FieldProperty extends BuyableFields{
 
     public Property getProperty() {
         return property;
+    }
+
+    public int getBuildings() {
+        return buildings;
     }
 
     public void setProperty(Property property) {
