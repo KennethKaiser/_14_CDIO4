@@ -274,10 +274,6 @@ public class PlayerViewController {
     FlowPane moneyAreaP6;
 
     //endregion
-    //region plus and minus buttons
-
-    //endregion
-
 
 
 
@@ -506,37 +502,38 @@ public class PlayerViewController {
         if(playerHandler.getPlayers()[player].getProperties() != null){
             System.out.println("Open card from the family: [" + family + "] and from the player [" + player + "]");
             int size = propertyStackPanes[player][family].getChildren().size();
-            Property[] properties = new Property[size];
+            Field[] properties = new Field[size];
             Field[] gameCards = ControllerHandler.getInstance().getBoard().getCurrentBoard();
 
             for(int i = 0; i < properties.length; i++){
                 switch (family){
                     case 0:
                         //if player owns any of these properties add property
-                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[1].getProperty())){
-                            if(!Arrays.asList(properties).contains(gameCards[1].getProperty())){
-                                properties[i] = gameCards[1].getProperty();
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[1])){
+                            if(!Arrays.asList(properties).contains(gameCards[1])){
+                                properties[i] = gameCards[1];
                                 break;
                             }
                         }
 
-                        if(!Arrays.asList(properties).contains(gameCards[3].getProperty())){
-                            properties[i] = gameCards[3].getProperty();
+                        if(!Arrays.asList(properties).contains(gameCards[3])){
+                            properties[i] = gameCards[3];
                             break;
                         }
                         break;
                 }
             }
-            if(properties[0] != null) ControllerHandler.getInstance().showCardOnBoard(properties);
+            if(properties[0] != null) ControllerHandler.getInstance().showCardOnBoard(properties, player);
         }
         else System.out.println("player doesn't own any properties");
     }
-    private boolean hasProperty(ArrayList<Field> ownedProperties, Property property){
+    private boolean hasProperty(ArrayList<Field> ownedProperties, Field field){
+
         boolean toReturn = false;
         for(int i = 0; i < ownedProperties.size(); i++){
-            if(ownedProperties.get(i).getProperty() == property) toReturn = true;
+            if(ownedProperties.contains(field)) toReturn = true;
         }
-        if(!toReturn) System.out.println("Player did not have " + property.getName());
+        if(!toReturn) System.out.println("Player did not have " + ((FieldProperty)field).getProperty().getName());
         return toReturn;
     }
 

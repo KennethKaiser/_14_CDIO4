@@ -1,7 +1,9 @@
 package dtu.controllers;
 
 import dtu.board.Field;
+
 import dtu.board.FieldProperty;
+
 import dtu.board.Property;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
@@ -320,8 +322,6 @@ public class BoardController {
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
 
-
-
     }
 
     //region delegate model objects to other controller
@@ -537,6 +537,16 @@ public class BoardController {
 
     }
 
+    /**
+     * Updates playerview at start
+     */
+    public void initializingPlayerViewStart(){
+
+        playerViewController.updatePlayerName();
+        playerViewController.updatePlayerMoney();
+
+    }
+
 
     //region game loop actions
 
@@ -732,13 +742,15 @@ public class BoardController {
         for(int i = 0; i < fieldButtons.length; i++){
             if(ControllerHandler.getInstance().getBoard().getCurrentBoard()[i] != null){
                 int temp = i;
-                fieldButtons[i].setOnAction(e -> openCard());
+                fieldButtons[i].setOnAction(e -> openCard(temp));
             }
         }
     }
 
-    private void openCard(){
-
+    private void openCard(int i){
+        Field[] property = new Field[1];
+        property[0] = ControllerHandler.getInstance().getBoard().getCurrentBoard()[i];
+        ControllerHandler.getInstance().showCardOnBoard(property, -1);
     }
 
 

@@ -23,11 +23,15 @@ class PlayerPropertiesTest {
 
         ArrayList<Field> properties = new ArrayList<>();
         properties.add(board.getCurrentBoard()[1]);
+        properties.add(board.getCurrentBoard()[3]);
         playerHandler.getPlayers()[0].setProperties(properties);
         FieldProperty fieldProperty = (FieldProperty) playerHandler.getPlayers()[0].getProperties().get(0);
         fieldProperty.setOwner(playerHandler.getPlayers()[0]);
 
-        System.out.println(playerHandler.getPlayers()[0].getProperties().get(0).getProperty().getName());
+        assertEquals(1, playerHandler.getPlayers()[0].getProperties().get(0).getProperty().getID(), "Expecting player to own Rødovrevej, which has ID = 1");
+        System.out.println("Expecting: 1" + " Received: " + playerHandler.getPlayers()[0].getProperties().get(0).getProperty().getID());
+        assertEquals(3, playerHandler.getPlayers()[0].getProperties().get(1).getProperty().getID());
+        System.out.println("Expecting: 3" + " Received: " + playerHandler.getPlayers()[0].getProperties().get(1).getProperty().getID());
     }
 
     @Test
