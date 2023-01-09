@@ -4,12 +4,9 @@ import dtu.board.Field;
 
 import dtu.board.FieldProperty;
 
-import dtu.board.Property;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -673,7 +670,7 @@ public class BoardController {
     //endregion
 
     //region Animations
-    public void rollDiceAnimation(int die1, int die2) {
+        public void rollDiceAnimation(int die1, int die2) {
         String[] dice = new String[6];
         dice[0] = "src/textures/d1.png";
         dice[1] = "src/textures/d2.png";
@@ -689,42 +686,35 @@ public class BoardController {
         }
         Random rnd = new Random();
         //Position of dice can be between 10 and 500
-
-
-        double x1 = rnd.nextDouble(10, 500);
-        double y1 = rnd.nextDouble(10, 500);
-        double x2 = rnd.nextDouble(10, 500);
-        double y2 = rnd.nextDouble(10, 500);
-
-
-
-        boolean touchingOther = true;
-        boolean touchingMiddle = false;
-        while(touchingMiddle || touchingOther){
-            x1 = rnd.nextDouble(10, 500);
-            y1 = rnd.nextDouble(10, 500);
-            x2 = rnd.nextDouble(10, 500);
-            y2 = rnd.nextDouble(10, 500);
-            if(x1 < y1+30 && x1 > y1-30){
-                int colliding;
-                touchingOther = true;
-                System.out.println("10");
-            }
-            else {
-                touchingOther = false;
-            }
-
-
-
+        setRandomPosition(dice1);
+        setRandomPosition(dice2);
+        while((dice1.getTranslateX() - dice2.getTranslateX()) < 80 && -80 <(dice1.getTranslateX() - dice2.getTranslateX())){
+            setRandomPosition(dice2);
         }
-
-        dice1.setLayoutX(x1);
-        dice1.setLayoutY(y1);
         dice1.setRotate(rnd.nextDouble(0, 360));
-        dice2.setLayoutX(x2);
-        dice2.setLayoutY(y2);
         dice2.setRotate(rnd.nextDouble(0, 360));
-
+    }
+    private void setRandomPosition(ImageView dice){
+        Random rnd = new Random();
+        int cases = rnd.nextInt(1, 4);
+        double x = 0;
+        double y = 0;
+        switch (cases){
+            case 1:
+                x = rnd.nextDouble(0, 120);
+                y = rnd.nextDouble(0, 380);
+                break;
+            case 2:
+                x = rnd.nextDouble(0, 400);
+                y = rnd.nextDouble(0, 100);
+                break;
+            case 3:
+                x = rnd.nextDouble(350, 400);
+                y = rnd.nextDouble(0, 380);
+                break;
+        }
+        dice.setTranslateX(x);
+        dice.setTranslateY(y);
     }
     //endregion
 

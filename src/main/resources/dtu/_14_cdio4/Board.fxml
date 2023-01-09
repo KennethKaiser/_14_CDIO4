@@ -675,10 +675,10 @@
                             </children></VBox>
                         <StackPane fx:id="middleParent" alignment="TOP_CENTER" maxWidth="-Infinity" prefHeight="150.0" prefWidth="200.0">
                             <children>
-                                <AnchorPane fx:id="diceBox" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="300.0" prefWidth="530.0">
+                                <AnchorPane fx:id="diceBox" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="530.0">
                                     <children>
-                                        <ImageView fx:id="dice1" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" rotate="-14.8" />
-                                        <ImageView fx:id="dice2" fitHeight="50.0" fitWidth="50.0" layoutX="20.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                                        <ImageView fx:id="dice1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                                        <ImageView fx:id="dice2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
                                     </children>
                                 </AnchorPane>
                                 <VBox fx:id="middleVBOX" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="565.0" prefWidth="564.0">
