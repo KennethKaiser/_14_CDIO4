@@ -81,6 +81,7 @@ public class MenuScreenController {
     Text[] names;
     Button[] buttons;
     int[] numbers;
+    boolean isCheat = false;
 
 
 
@@ -216,7 +217,8 @@ public class MenuScreenController {
         return "fejl";
     }
     public void addPlayerPressed(){
-        if(playersAdded < 6){
+        if(nameInput.getText().equals("test")) cheat();
+        else if(playersAdded < 6){
             if(nameInput.getText().length() < 16){
                 if(!nameInput.getText().equals("")) {
                     boolean free = true;
@@ -313,7 +315,9 @@ public class MenuScreenController {
                 playerColorsAdded[i] = cars[i].getImage();
                 playerNamesAdded[i] = names[i].getText();
             }
-            ControllerHandler.getInstance().switchToBoard();
+
+            if(!isCheat)ControllerHandler.getInstance().switchToBoard();
+            else ControllerHandler.getInstance().switchToCheatBoard();
         }
 
     }
@@ -350,6 +354,17 @@ public class MenuScreenController {
 
     public int getMenuAmountOfPlayers(){
         return playersAdded;
+    }
+    private void cheat(){
+        for(int i = 0; i < 6; i++){
+            playersAdded++;
+            names[i].setText("Player " + i);
+            cars[i].setImage(carImages[i]);
+        }
+
+        isCheat = true;
+        startGamePressed();
+
     }
 
 }
