@@ -50,4 +50,40 @@ public class Ferry {
     public int getID() {
         return ID;
     }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getFamilie() {
+        return familie;
+    }
+
+    public void setFamilie(int familie) {
+        this.familie = familie;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setRent1(int rent1) {
+        this.rent1 = rent1;
+    }
+
+    public void setRent2(int rent2) {
+        this.rent2 = rent2;
+    }
+
+    public void setRent3(int rent3) {
+        this.rent3 = rent3;
+    }
+
+    public void setRent4(int rent4) {
+        this.rent4 = rent4;
+    }
 }
