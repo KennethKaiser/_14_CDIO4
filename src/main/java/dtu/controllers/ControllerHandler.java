@@ -43,6 +43,11 @@ public class ControllerHandler {
         playerViewController.updatePlayerName();
         playerViewController.updatePlayerMoney();
     }
+
+    public Board getBoard() {
+        return board;
+    }
+
     public void showCardOnBoard(Property[] properties){
         sceneSwitch.showCardInMiddle(properties);
     }
