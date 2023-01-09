@@ -620,6 +620,18 @@ public class BoardController {
         else if(type.equals("brewery")){
             buyOrRentCheckerBrewery(field);
         }
+        else if(type.equals("dummy")){
+            endTurn();
+        }
+        else if(type.equals("chance")){
+            endTurn();
+        }
+        else if(type.equals("tax")){
+            endTurn();
+        }
+        else if(type.equals("prison")){
+            endTurn();
+        }
 
 
     }
