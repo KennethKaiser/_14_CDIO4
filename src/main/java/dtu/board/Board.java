@@ -115,11 +115,14 @@ public class Board {
                         break;
                 }
             }
+            /*
             else if(fieldText.get(i)[2].equals("brewery")){
                 currentBoard[i-1] = new BreweryField( new Brewery((fieldText.get(i)[1]),Integer.parseInt(fieldText.get(i)[2]),(fieldText.get(i)[3]),
                         Integer.parseInt(fieldText.get(i)[4]), Integer.parseInt(fieldText.get(i)[5]),
                         Integer.parseInt(fieldText.get(i)[6]),Integer.parseInt(fieldText.get(i)[7])));
             }
+
+             */
         }
 
 
