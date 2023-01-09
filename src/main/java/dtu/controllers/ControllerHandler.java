@@ -2,6 +2,7 @@ package dtu.controllers;
 
 import dtu._14_cdio4.SceneSwitch;
 import dtu.board.Board;
+import dtu.board.Field;
 import dtu.board.Property;
 
 public class ControllerHandler {
@@ -48,8 +49,8 @@ public class ControllerHandler {
         return board;
     }
 
-    public void showCardOnBoard(Property[] properties){
-        sceneSwitch.showCardInMiddle(properties);
+    public void showCardOnBoard(Field[] properties, int player){
+        sceneSwitch.showCardInMiddle(properties, player);
     }
     public void showChanceCardPileOnBoard(){
         sceneSwitch.showChanceCardPileInMiddle();
