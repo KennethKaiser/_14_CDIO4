@@ -23,7 +23,7 @@ public class BreweryField extends BuyableFields{
 
     @Override
     public String landedLabel() {
-        return null;
+        return "Du er landet på " + brewery.getName() + ".";
     }
 
     @Override
@@ -32,4 +32,7 @@ public class BreweryField extends BuyableFields{
     }
 
 
+    public Brewery getBrewery() {
+        return brewery;
+    }
 }
