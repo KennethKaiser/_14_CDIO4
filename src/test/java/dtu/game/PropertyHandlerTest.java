@@ -1,19 +1,20 @@
 package dtu.game;
 
 import dtu.players.Player;
+import dtu.players.PlayerHandler;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GameActionsTest {
+class PropertyHandlerTest {
 
     @Test
     void movePlayerChanceCard() {
         Player player = new Player(1, "tis", 4000, "black");
-        GameActions gameActions = new GameActions();
+        PlayerHandler playerHandler = new PlayerHandler();
         player.setPosition(2);
 
-        gameActions.movePlayerChanceCard(player, 10);
+        playerHandler.movePlayerChanceCard(player, 10);
 
         assertEquals(10, player.getPosition(), "test");
 
@@ -23,9 +24,9 @@ class GameActionsTest {
     @Test
     void nearestFerryTest(){
         Player player = new Player(1, "tis", 4000, "black");
-        GameActions gameActions = new GameActions();
+        PlayerHandler playerHandler = new PlayerHandler();
         player.setPosition(38);
-        gameActions.nearestFerry(player);
+        playerHandler.nearestFerry(player);
         System.out.println(player.getPosition());
     }
 }
