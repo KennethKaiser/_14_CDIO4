@@ -56,7 +56,7 @@ public class PlayerHandler {
      */
     public void PlayerStartMoney(Player player){
         for (int i=0; i<players.length; i++){
-            players[i].setMoney(STARTMONEY);
+            changePlayerBalance(player, STARTMONEY);
         }
     }
 
