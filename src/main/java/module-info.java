@@ -10,4 +10,5 @@ module dtu._14_cdio4 {
     exports dtu.board;
     exports dtu.controllers;
     opens dtu.controllers to javafx.fxml;
+    opens dtu.board to javafx.fxml;
 }
