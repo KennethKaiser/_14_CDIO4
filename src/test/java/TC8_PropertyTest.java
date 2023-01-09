@@ -120,6 +120,31 @@ class TC8_PropertyTest {
     }
 
     @Test
+    void test2XRentRødovrevejUnder0() {
+        //Variable
+        final int START_MONEY = 4400;
+        final int START_MONEY2 = 75;
+        final int RØDnHVID_PRICE = 1200;
+        final int RØD_RENT = 50;
+        //Expected
+        int moneyAfterRent = START_MONEY2 - (RØD_RENT * 2);
+        int moneyAfterRentGood = (START_MONEY - (RØDnHVID_PRICE * 2)) + (RØD_RENT * 2);
+
+        Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
+        Player player2 = new Player(1,"Andreas",START_MONEY2,"Red");
+
+        propertyHandler.buyProperty(player1, board.getCurrentBoard()[1].getProperty());
+        propertyHandler.buyProperty(player1, board.getCurrentBoard()[3].getProperty());
+        propertyHandler.payRent(player2,board.getCurrentBoard()[1].getProperty());
+
+
+        //Ser om player 2 og 1 har rette mængde penge og player1 stadig er ejer
+        assertEquals(player1.getMoney(),moneyAfterRentGood,"Spilleren2 burde have: " + moneyAfterRentGood + ". Spilleren har: "+ player1.getMoney());
+        assertEquals(player2.getMoney(),moneyAfterRent,"Spilleren1 burde have: " + moneyAfterRent + ". Spilleren har: "+ player2.getMoney());
+        assertEquals(board.getCurrentBoard()[1].getProperty().getOwner(),player1,"Spilleren: " + player1 + " skulle gerne være ejer. Ejeren er: " + board.getCurrentBoard()[1].getProperty().getOwner());
+    }
+
+    @Test
     void testPledgingRødovrevej() {
         //Variable
         final int START_MONEY = 4400;
