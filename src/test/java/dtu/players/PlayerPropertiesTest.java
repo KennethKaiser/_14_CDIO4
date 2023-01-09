@@ -85,13 +85,13 @@ class PlayerPropertiesTest {
         ArrayList<Field> playerProperties = playerHandler.getPlayers()[player.getId()].getProperties();
         if (playerHandler.getPlayers() != null) {
             for (int i = 0; i < playerProperties.size(); i++) {
-                if ((playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie() == 7) {
+                /*if ((playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie() == 7) {
                     familie7 = ((FieldProperty) playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getBuildings() * familie7HousePrice;
 
-                }
-                else if ((playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie() == 1) {
+                }*/
+                /*else if ((playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie() == 1) {
                     familie1 = ((FieldProperty) playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getBuildings() * familie1HousePrice;
-                }
+                }*/
             }
             System.out.println(familie7);
             System.out.println(familie1);
