@@ -2,6 +2,7 @@ package dtu.controllers;
 
 import dtu.board.Field;
 import dtu.board.FieldProperty;
+import dtu.players.Player;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -104,7 +105,7 @@ public class CommunicationController {
         String[] choiceOptions = new String[2];
 
         choiceOptions[0] = "Ja";
-        choiceOptions[0] = "Nej";
+        choiceOptions[1] = "Nej";
 
         String propertyName = property.getProperty().getName();
         int propertyPrice = property.getProperty().getPrice();
@@ -112,8 +113,26 @@ public class CommunicationController {
         String textField = "Vil du gerne købe " + propertyName + " for " + propertyPrice + "?";
         showCommunicationBox(textField, choiceOptions);
 
-        choices[0].setOnAction(e -> boardController.whatType());
+        choices[0].setOnAction(e -> boardController.buyProperty(property));
     }
+
+    public void playerBought(FieldProperty fieldProperty, Player player){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        String playerName = player.getName();
+        String fieldName = fieldProperty.getProperty().getName();
+
+
+        String textField = fieldName + " er købt af " + playerName + ".";
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurn());
+    }
+
+
+
 
     private void rollDice(){
 

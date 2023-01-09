@@ -13,6 +13,10 @@ public class FieldProperty extends BuyableFields{
 
     private int buildings;
 
+    private boolean pledgeState;
+
+    //PropertyHandler propertyHandler = new PropertyHandler();
+
 
     public FieldProperty(Property property){
         super(property);
@@ -26,15 +30,15 @@ public class FieldProperty extends BuyableFields{
      */
     @Override
     public void action(Player player) {
-        if(property.getOwned() == false){
+        if(owned == false){
             //En besked giver valget for at købe grunden
             //Hvis ja:
-            PropertyHandler.buyProperty(player, property);
+            //propertyHandler.buyProperty(player, property);
             //Hvis nej, intet
         }
-        if(property.getOwned() == true){
+        if(owned == true){
             //En besked fortæller summen af penge der gives og til hvem
-            PropertyHandler.payRent(player, property);
+            //propertyHandler.payRent(player, property);
         }
     }
 
@@ -44,6 +48,8 @@ public class FieldProperty extends BuyableFields{
 
         return s;
     }
+
+
 
     @Override
     public String type() {
@@ -80,8 +86,18 @@ public class FieldProperty extends BuyableFields{
 
 
     @Override
-    public void buy() {
-
+    public Boolean buy(Player player) {
+        if(player.getMoney() >= this.property.getPrice()){
+            player.setMoney(player.getMoney() - property.getPrice());
+            this.owner = player;
+            this.owned = true;
+            this.activeRent = 0;
+            this.pledgeState = false;
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Override

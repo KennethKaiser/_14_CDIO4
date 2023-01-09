@@ -1,5 +1,7 @@
 package dtu.board;
 
+import dtu.players.Player;
+
 public abstract class BuyableFields extends Field {
 
 
@@ -7,7 +9,7 @@ public abstract class BuyableFields extends Field {
         super(property);
     }
 
-    public abstract void buy();
+    public abstract Boolean buy(Player player);
 
     public abstract void rent();
 

@@ -580,13 +580,31 @@ public class BoardController {
 
     }
 
+    public void buyProperty(FieldProperty fieldProperty){
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+
+        if(fieldProperty.buy(currentPlayer)){
+            communicationController.playerBought(fieldProperty, currentPlayer);
+        }
+
+
+    }
+
+    public void endTurn(){
+        playerHandler.currentPlayer();
+        String playerName = playerHandler.getCurrentPlayer().getName();
+        communicationController.playerTurnStart(playerName);
+    }
+
+
     public void buyOrRentChecker(Field field){
         FieldProperty fieldProperty = (FieldProperty) field;
         if(fieldProperty.isOwned()){
 
+
         }
         else{
-
+            communicationController.wantToBuy(fieldProperty);
         }
     }
 

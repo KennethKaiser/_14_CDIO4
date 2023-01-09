@@ -21,7 +21,7 @@ class TC8_PropertyTest {
 
        Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-       PropertyHandler.buyProperty(player, PropertyList.getRødovrevej());
+       propertyHandler.buyProperty(player, PropertyList.getRødovrevej());
 
 
         //Ser om player er blevet ejer og mistet rette mængde penge penge
