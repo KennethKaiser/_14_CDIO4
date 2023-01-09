@@ -188,7 +188,7 @@ public class PlayerHandler {
         changePlayerBalance(player, -roundedToFifty);
     }
 
-    public static void changePlayerBalance(Player player, int amount){
+    public void changePlayerBalance(Player player, int amount){
         player.setMoney(player.getMoney()+amount);
     }
 
