@@ -13,10 +13,6 @@ public class Ferry extends BuyableFields{
 
     }
 
-    @Override
-    public void action(Player player) {
-
-    }
 
     @Override
     public String landedLabel() {

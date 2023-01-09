@@ -27,19 +27,7 @@ public class FieldProperty extends BuyableFields{
      * Method for when the player lands on a property, getting the choice to buy it or must pay rent
      * @param player the player who landed on the field
      */
-    @Override
-    public void action(Player player) {
-        if(owned == false){
-            //En besked giver valget for at købe grunden
-            //Hvis ja:
-            //propertyHandler.buyProperty(player, property);
-            //Hvis nej, intet
-        }
-        if(owned == true){
-            //En besked fortæller summen af penge der gives og til hvem
-            //propertyHandler.payRent(player, property);
-        }
-    }
+
 
     @Override
     public String landedLabel() {
