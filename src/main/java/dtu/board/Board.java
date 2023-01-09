@@ -128,6 +128,9 @@ public class Board {
             }
 
              */
+            else if(fieldText.get(i)[2].equals("start")||fieldText.get(i)[2].equals("jailvisit")||fieldText.get(i)[2].equals("parking")){
+                currentBoard[i-1] = new DummyField(new Dummy(Integer.parseInt(fieldText.get(i)[1]),fieldText.get(i)[0]));
+            }
         }
 
 
