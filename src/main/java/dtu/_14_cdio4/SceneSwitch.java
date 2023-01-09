@@ -75,7 +75,7 @@ public class SceneSwitch {
     }
     private void collectBoard(){
         showChanceCardPileInMiddle();
-        boardController.getMiddleParent().getChildren().add(0, communication);
+        boardController.getMiddleParent().getChildren().add(2, communication);
         playerView.getChildren().add(1, board);
         root.getChildren().add(playerView);
         boardScene = new Scene(root, 1500, 700);

@@ -15,6 +15,7 @@ public class Board {
 
 
     public Board(){
+
         currentBoard = new Field[40];
 
         ArrayList<String[]> fieldText = csvFileReader.getFieldinfo();

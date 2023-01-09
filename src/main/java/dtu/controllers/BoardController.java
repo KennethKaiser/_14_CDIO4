@@ -20,7 +20,7 @@ public class BoardController {
 
     //Controllers
     PlayerViewController playerViewController = ControllerHandler.getInstance().getPlayerViewController();
-    CommunicationController communicationController = ControllerHandler.getInstance().getCommunicationController();
+    CommunicationController communicationController;
 
 
     //Model variables
@@ -315,7 +315,7 @@ public class BoardController {
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
         giveButtonsFunctions();
-        initializingStartPlayerTurn();
+        //initializingStartPlayerTurn();
 
     }
 
@@ -533,7 +533,8 @@ public class BoardController {
     }
 
     public void initializingStartPlayerTurn(){
-        communicationController.playerTurnStart(playerHandler.getCurrentPlayer().getId());
+        communicationController = ControllerHandler.getInstance().getCommunicationController();
+        communicationController.playerTurnStart(playerHandler.getCurrentPlayer().getName());
     }
 
 
@@ -544,6 +545,7 @@ public class BoardController {
      */
     @FXML
     public void moveAndRoll(){
+        System.out.println("Hej");
         int[] playerRoll = dice.roll();
         Player currentPlayer = playerHandler.getCurrentPlayer();
 

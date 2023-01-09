@@ -42,6 +42,7 @@ public class ControllerHandler {
         sceneSwitch.switchToBoard();
         playerViewController.updatePlayerName();
         playerViewController.updatePlayerMoney();
+        boardController.initializingStartPlayerTurn();
     }
     public void showCardOnBoard(Property[] properties){
         sceneSwitch.showCardInMiddle(properties);

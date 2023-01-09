@@ -10,6 +10,9 @@ import javafx.scene.text.Text;
 public class CommunicationController {
 
 
+    //Controllers
+    BoardController boardController = ControllerHandler.getInstance().getBoardController();
+
 
     //region FXML
     @FXML
@@ -30,7 +33,7 @@ public class CommunicationController {
 
     @FXML
     public void initialize(){
-
+        initButtons();
     }
 
     private void initButtons(){
@@ -58,14 +61,18 @@ public class CommunicationController {
         choices[1].setOnAction(e -> doNotBuy());
 
     }
-    public void playerTurnStart(int player){
+    public void playerTurnStart(String playerName){
         String[] choiceOptions = new String[1];
         choiceOptions[0] = "Rul terning";
-        String textField = "Det er spiller " + player + "'s tur";
+        String textField = "Det er spiller " + playerName + "'s tur";
         showCommunicationBox(textField, choiceOptions);
-        choices[0].setOnAction(e -> rollDice());
+        choices[0].setOnAction(e -> boardController.moveAndRoll());
 
 
+    }
+
+    public void hej(){
+        System.out.println("hej");
     }
     private void rollDice(){
 
