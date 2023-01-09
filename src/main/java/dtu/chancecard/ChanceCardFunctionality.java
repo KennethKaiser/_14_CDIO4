@@ -1,9 +1,13 @@
 package dtu.chancecard;
 
+import dtu.board.Field;
+import dtu.board.FieldProperty;
 import dtu.filereader.CSVFileReader;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
 import dtu.board.PropertyHandler;
+
+import java.util.ArrayList;
 
 public class ChanceCardFunctionality {
     PlayerHandler playerHandler = new PlayerHandler();
@@ -230,14 +234,40 @@ public class ChanceCardFunctionality {
         return "test";
     }
 
+    /**
+     * Takes the getPlayers[].getProperties size (arrayList), and for the player asking on ex. player[0], calculates the value of all properties.
+     * This is one of two methods for calculating the total asset of a player if they draw the chanceCard with ID: 24
+     * @param player
+     * @return
+     */
     public int getValueOfPlayersProperties(Player player) {
         int valueOfProperties = 0;
+        int priceOfProperties = ((FieldProperty)playerHandler.getPlayers()[player.getId()].getProperties().get(player.getId())).getProperty().getPrice();
         if (playerHandler.getPlayers() != null) {
             for (int i = 0; i < playerHandler.getPlayers()[player.getId()].getProperties().size(); i++) {
-                valueOfProperties += playerHandler.getPlayers()[player.getId()].getProperties().get(i).getProperty().getPrice();
+                valueOfProperties += priceOfProperties;
             }
         }
         return valueOfProperties;
+    }
+
+    public int getValueOfPlayersBuildings(Player player){
+        int valueOfBuildings = 0;
+        int familie1 = 0;
+        int familie2 = 0;
+        int familie3 = 0;
+        int familie4 = 0;
+        ArrayList<Field> playerProperties = playerHandler.getPlayers()[player.getId()].getProperties();
+        if (playerHandler.getPlayers() != null){
+            for (int i = 0; i < playerProperties.size(); i++){
+                if (((FieldProperty)playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie() == 1){
+                    familie1 = playerHandler.getPlayers()[player.getId()].getProperties().get(i);
+
+                }
+
+            }
+        }
+        return valueOfBuildings;
     }
 }
 
