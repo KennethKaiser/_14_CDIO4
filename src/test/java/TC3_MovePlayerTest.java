@@ -1,10 +1,9 @@
-import dtu.game.GameActions;
+import dtu.board.PropertyHandler;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
 import org.junit.jupiter.api.Test;
 
 
-import static dtu.game.GameActions.movePlayerChanceCard;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -94,8 +93,9 @@ class TC3_MovePlayerTest {
 
     @Test
     void testMoveChanceCardIDgreaterPlayerPos() {
+
         player.setPosition(30);
-        movePlayerChanceCard(player, 38);
+        playerHandler.movePlayerChanceCard(player, 38);
         boolean expected = false;
         if (player.getPosition() == 38) {
             expected = true;
@@ -107,7 +107,7 @@ class TC3_MovePlayerTest {
     void testMoveChanceCardIDlessPlayerPos(){
         boolean expected = false;
         player.setPosition(38);
-        movePlayerChanceCard(player, 30);
+        playerHandler.movePlayerChanceCard(player, 30);
         if (player.getPosition() == 30) {
             expected = true;
         }
@@ -119,7 +119,7 @@ class TC3_MovePlayerTest {
      */
     @Test
     void testNearestFerry() {
-        GameActions gameActions = new GameActions();
+        PropertyHandler propertyHandler = new PropertyHandler();
 
         Player player1 = new Player(0, "Nicklas", 4000, "Black");
         Player player2 = new Player(1, "Nicklas", 4000, "Black");
@@ -133,19 +133,19 @@ class TC3_MovePlayerTest {
         player4.setPosition(24);
         player5.setPosition(34);
 
-        gameActions.nearestFerry(player1);
+        playerHandler.nearestFerry(player1);
         assertEquals(5, player1.getPosition());
 
-        gameActions.nearestFerry(player2);
+        playerHandler.nearestFerry(player2);
         assertEquals(5, player2.getPosition());
 
-        gameActions.nearestFerry(player3);
+        playerHandler.nearestFerry(player3);
         assertEquals(15, player3.getPosition());
 
-        gameActions.nearestFerry(player4);
+        playerHandler.nearestFerry(player4);
         assertEquals(25, player4.getPosition());
 
-        gameActions.nearestFerry(player5);
+        playerHandler.nearestFerry(player5);
         assertEquals(35, player5.getPosition());
 
 

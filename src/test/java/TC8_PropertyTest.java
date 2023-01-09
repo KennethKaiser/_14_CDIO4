@@ -1,5 +1,5 @@
 import dtu.board.PropertyList;
-import dtu.game.GameActions;
+import dtu.board.PropertyHandler;
 import dtu.players.Player;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TC8_PropertyTest {
 
-    GameActions gameActions = new GameActions();
+    PropertyHandler propertyHandler = new PropertyHandler();
 
 
     @Test
@@ -21,7 +21,7 @@ class TC8_PropertyTest {
 
        Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-       GameActions.buyProperty(player, PropertyList.getRødovrevej());
+       PropertyHandler.buyProperty(player, PropertyList.getRødovrevej());
 
 
         //Ser om player er blevet ejer og mistet rette mængde penge penge
@@ -40,8 +40,8 @@ class TC8_PropertyTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        gameActions.buyProperty(player, PropertyList.getRødovrevej());
-        gameActions.buildHouse(player,PropertyList.getRødovrevej());
+        propertyHandler.buyProperty(player, PropertyList.getRødovrevej());
+        propertyHandler.buildHouse(player,PropertyList.getRødovrevej());
 
 
         //Ser om player har rette mængde penge og Rødovrevej ikke har fået hus
@@ -60,9 +60,9 @@ class TC8_PropertyTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        gameActions.buyProperty(player, PropertyList.getRødovrevej());
-        gameActions.buyProperty(player,PropertyList.getHvidovrevej());
-        gameActions.buildHouse(player,PropertyList.getRødovrevej());
+        propertyHandler.buyProperty(player, PropertyList.getRødovrevej());
+        propertyHandler.buyProperty(player,PropertyList.getHvidovrevej());
+        propertyHandler.buildHouse(player,PropertyList.getRødovrevej());
 
 
         //Ser om player har mistet rette mængde penge og Rødovrevej har fået en bygning
@@ -83,8 +83,8 @@ class TC8_PropertyTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        gameActions.buyProperty(player1, PropertyList.getRødovrevej());
-        gameActions.payRent(player2,PropertyList.getRødovrevej());
+        propertyHandler.buyProperty(player1, PropertyList.getRødovrevej());
+        propertyHandler.payRent(player2,PropertyList.getRødovrevej());
 
 
         //Ser om player1 og 2 har rette mængde penge og Rødovrevej har rette ejer
@@ -106,9 +106,9 @@ class TC8_PropertyTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        gameActions.buyProperty(player1, PropertyList.getRødovrevej());
-        gameActions.buyProperty(player1, PropertyList.getHvidovrevej());
-        gameActions.payRent(player2,PropertyList.getRødovrevej());
+        propertyHandler.buyProperty(player1, PropertyList.getRødovrevej());
+        propertyHandler.buyProperty(player1, PropertyList.getHvidovrevej());
+        propertyHandler.payRent(player2,PropertyList.getRødovrevej());
 
 
         //Ser om player 2 og 1 har rette mængde penge og player1 stadig er ejer
@@ -127,8 +127,8 @@ class TC8_PropertyTest {
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-        gameActions.buyProperty(player, PropertyList.getRødovrevej());
-        gameActions.pledgeProperty(player, PropertyList.getRødovrevej());
+        propertyHandler.buyProperty(player, PropertyList.getRødovrevej());
+        propertyHandler.pledgeProperty(player, PropertyList.getRødovrevej());
 
 
         //Ser om player har mistet rette penge og bygningen er pantsat
@@ -147,9 +147,9 @@ class TC8_PropertyTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
-        gameActions.buyProperty(player1, PropertyList.getRødovrevej());
-        gameActions.pledgeProperty(player1, PropertyList.getRødovrevej());
-        gameActions.payRent(player2,PropertyList.getRødovrevej());
+        propertyHandler.buyProperty(player1, PropertyList.getRødovrevej());
+        propertyHandler.pledgeProperty(player1, PropertyList.getRødovrevej());
+        propertyHandler.payRent(player2,PropertyList.getRødovrevej());
 
 
         //Se om player1 fortsat har samme penge, player1 har fået pledge penge og Rødovrevej er pledged

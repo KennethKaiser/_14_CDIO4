@@ -1,11 +1,8 @@
-package dtu.game;
+package dtu.board;
 
-import dtu.board.Board;
-import dtu.board.Property;
-import dtu.board.PropertyList;
 import dtu.players.Player;
 
-public class GameActions {
+public class PropertyHandler {
 
     private Board board = new Board();
 
@@ -97,43 +94,8 @@ public class GameActions {
         }
     }
 
-
-    public static void movePlayerChanceCard(Player player, int ID){
-        int moveChanceCard;
-        if(player.getPosition()<ID) {
-            moveChanceCard = ID - player.getPosition();
-            player.setPosition(player.getPosition()+moveChanceCard);
-        }
-        if(player.getPosition()>ID){
-            moveChanceCard = (40-player.getPosition())+ID;
-            player.setPosition(player.getPosition()+moveChanceCard);
-        }
-    }
-
-    public static void changePlayerBalance(Player player, int amount){
-        player.setMoney(player.getMoney()+amount);
-    }
-
     /**
      * Method for determining what ferry a player should move to when drawing a chancecard that says "Move to nearest ferry".
      * @param player
      */
-    public static void nearestFerry(Player player){
-        int ferry1 = 5;
-        int ferry2 = 15;
-        int ferry3 = 25;
-        int ferry4 = 35;
-        if (player.getPosition()>=35 || player.getPosition()<5){
-            movePlayerChanceCard(player, ferry1);
-        }
-        else if (player.getPosition()>=5 && player.getPosition()<15){
-            movePlayerChanceCard(player, ferry2);
-        }
-        else if (player.getPosition()>=15 && player.getPosition()<25){
-            movePlayerChanceCard(player, ferry3);
-        }
-        else if (player.getPosition()>=25 && player.getPosition()<35){
-            movePlayerChanceCard(player, ferry4);
-        }
-    }
 }
