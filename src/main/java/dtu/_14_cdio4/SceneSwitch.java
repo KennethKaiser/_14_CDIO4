@@ -76,7 +76,7 @@ public class SceneSwitch {
     }
     private void collectBoard(){
         showChanceCardPileInMiddle();
-        boardController.getMiddleParent().getChildren().add(2, communication);
+        boardController.getMiddleParent().getChildren().add(3, communication);
         playerView.getChildren().add(1, board);
         root.getChildren().add(playerView);
         boardScene = new Scene(root, 1500, 700);
@@ -96,16 +96,7 @@ public class SceneSwitch {
         boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getMenuCarColorImages(), menuScreenController.getColorNames());
         boardController.giveButtonsFunctions();
         boardController.initializeStartPlayerTurn();
-    }
-    public void switchToCheatBoard(){
-        stage.setScene(boardScene);
-        stage.setX(10);
-        stage.setY(20);
-        stage.setResizable(false);
-        stage.show();
-        boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getMenuCarColorImages(), menuScreenController.getColorNames());
-        boardController.giveButtonsFunctions();
-        boardController.initializeStartPlayerTurn();
+        boardController.initCheating();
     }
     public void showCardInMiddle(Field[] properties, int player){
         boardController.getMiddleMenuVBox().getChildren().clear();
