@@ -11,8 +11,8 @@ public class CSVFileReader {
     private ArrayList<String[]> chancecarddesc;
     private ArrayList<String[]> fieldinfo;
     public CSVFileReader() {
-        chancecarddesc = readCSV(1,"src/main/java/dtu/chancecard/chancecarddesc.csv", ";");
-        fieldinfo = readCSV(1, "src/main/java/dtu/board/fields.csv", ";");
+        chancecarddesc = readCSV("src/main/java/dtu/chancecard/chancecarddesc.csv", ";");
+        fieldinfo = readCSV( "src/main/java/dtu/board/fields.csv", ";");
     }
 
     public void readRow(int index, ArrayList<String[]> file){
@@ -29,12 +29,11 @@ public class CSVFileReader {
 
     /**
      * readColon takes the data from fileReader + and handles data, split the data and adds all the data into an ArrayList colData.
-     * @param colon
      * @param filepath
      * @param delimiter
      * @return
      */
-    public ArrayList<String[]> readCSV(int colon, String filepath, String delimiter) {
+    public ArrayList<String[]> readCSV(String filepath, String delimiter) {
         String[] data;
         String currentLine;
         ArrayList<String[]> colData = new ArrayList<>();

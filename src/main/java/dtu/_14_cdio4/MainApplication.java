@@ -15,7 +15,7 @@ public class MainApplication extends Application {
 
     public static void main(String[] args) {
 
-        /*Board board = new Board();
+        Board board = new Board();
 
         /*FerryField ferryField = (FerryField)board.getCurrentBoard()[15];
         FerryField ferryField2 = (FerryField)board.getCurrentBoard()[5];
@@ -46,6 +46,10 @@ public class MainApplication extends Application {
 
         System.out.println(breweryField.getBrewery().getName());
         System.out.println(breweryField2.getBrewery().getName());*/
+
+        Chance chance = (Chance) board.getCurrentBoard()[22];
+
+        System.out.println(chance.drawCard());
 
         launch();
     }
