@@ -50,4 +50,36 @@ public class BreweryField extends BuyableFields{
     public void setBrewery(Brewery brewery) {
         this.brewery = brewery;
     }
+
+    public Boolean getOwned() {
+        return owned;
+    }
+
+    public void setOwned(Boolean owned) {
+        this.owned = owned;
+    }
+
+    public Player getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Player owner) {
+        this.owner = owner;
+    }
+
+    public int getActiveRent() {
+        return activeRent;
+    }
+
+    public void setActiveRent(int activeRent) {
+        this.activeRent = activeRent;
+    }
+
+    public boolean isPledgeState() {
+        return pledgeState;
+    }
+
+    public void setPledgeState(boolean pledgeState) {
+        this.pledgeState = pledgeState;
+    }
 }
