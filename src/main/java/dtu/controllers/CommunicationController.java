@@ -30,7 +30,7 @@ public class CommunicationController {
 
     @FXML
     public void initialize(){
-        hideCommunicationBox();
+
     }
 
     private void initButtons(){
@@ -38,9 +38,6 @@ public class CommunicationController {
         choices[0] = choice1;
         choices[1] = choice2;
         choices[2] = choice3;
-        for(int i = 0; i < choices.length; i++){
-
-        }
     }
     public void showCommunicationBox(String text, String[] options){
         this.text.setText(text);
@@ -51,14 +48,37 @@ public class CommunicationController {
             choices[i].setText(options[i]);
         }
     }
+    public void choiceBuyField(String field, int price, String player){
+        String[] choiceOptions = new String[2];
+        String textField = (player + " er landet på " + field);
+        choiceOptions[0] = ("køb for " + price);
+        choiceOptions[1] = ("køb ikke grund");
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> buyField());
+        choices[1].setOnAction(e -> doNotBuy());
+
+    }
+    public void playerTurnStart(int player){
+        String[] choiceOptions = new String[1];
+        choiceOptions[0] = "Rul terning";
+        String textField = "Det er spiller " + player + "'s tur";
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> rollDice());
+
+
+    }
+    private void rollDice(){
+
+    }
+    private void doNotBuy(){
+
+    }
+    private void buyField(){
+
+    }
     public void hideCommunicationBox(){
         parent.setOpacity(0);
     }
-    public void buttonPressed(int choiceCase){
-        switch (choiceCase){
 
-        }
-
-    }
 
 }

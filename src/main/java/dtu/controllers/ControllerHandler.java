@@ -15,6 +15,16 @@ public class ControllerHandler {
     private MenuScreenController menuScreenController;
     private SceneSwitch sceneSwitch;
 
+    public CommunicationController getCommunicationController() {
+        return communicationController;
+    }
+
+    public void setCommunicationController(CommunicationController communicationController) {
+        this.communicationController = communicationController;
+    }
+
+    private CommunicationController communicationController;
+
     public static ControllerHandler controllerHandler = null;
 
     public static ControllerHandler getInstance(){

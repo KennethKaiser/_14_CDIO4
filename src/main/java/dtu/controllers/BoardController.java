@@ -293,6 +293,11 @@ public class BoardController {
     //region VBOX that needs access because we need to put chancecards and the property menu inside it.
     @FXML
     VBox middleVBOX;
+
+
+
+    @FXML
+    StackPane middleParent;
     //endregion
 
     //Methods:
@@ -660,6 +665,9 @@ public class BoardController {
     //region get VBOX to put other fxml files into
     public VBox getMiddleMenuVBox(){
         return this.middleVBOX;
+    }
+    public StackPane getMiddleParent() {
+        return middleParent;
     }
     //endregion
 
