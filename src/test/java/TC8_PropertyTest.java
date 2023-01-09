@@ -1,4 +1,5 @@
 import dtu.board.Board;
+import dtu.board.FieldProperty;
 import dtu.board.PropertyList;
 import dtu.board.PropertyHandler;
 import dtu.players.Player;
@@ -23,12 +24,12 @@ class TC8_PropertyTest {
 
        Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
-       PropertyHandler.buyProperty(player, board.getCurrentBoard()[1].getProperty());
+        board.getCurrentBoard()[1].action(player);
 
 
         //Ser om player er blevet ejer og mistet rette mængde penge penge
         assertEquals(player.getMoney(),moneyAfterBuying,"Spilleren burde have: " + moneyAfterBuying + ". Spilleren har: "+ player.getMoney());
-        assertEquals(board.getCurrentBoard()[1].getProperty().getOwner(),player,"Spilleren: " + player + " skulle gerne være ejer. Ejeren er: " + board.getCurrentBoard()[1].getProperty().getOwner());
+        assertEquals(FieldProperty.getOwner,player,"Spilleren: " + player + " skulle gerne være ejer. Ejeren er: " + board.getCurrentBoard()[1].getProperty().getOwner());
     }
 
     @Test

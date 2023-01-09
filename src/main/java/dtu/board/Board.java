@@ -26,7 +26,8 @@ public class Board {
     int f7 = 0;
     private static Property[] familie8 = new Property[2];
     int f8 = 0;
-
+    private static Brewery[] familie9 = new Brewery[2];
+    int f9 = 0;
 
     public Board(){
         currentBoard = new Field[40];
@@ -41,7 +42,7 @@ public class Board {
                             Integer.parseInt(fieldText.get(i)[7]),Integer.parseInt(fieldText.get(i)[8]), Integer.parseInt(fieldText.get(i)[9]),
                             Integer.parseInt(fieldText.get(i)[10]),Integer.parseInt(fieldText.get(i)[11]), 0));
 
-                //Udedigere street til deres familie
+                //Uddedigere street til deres familie
                 switch(Integer.parseInt(fieldText.get(i)[3])){
                     case 1:
                         familie1[f1] = (((FieldProperty)currentBoard[i-1]).getProperty());
@@ -76,6 +77,13 @@ public class Board {
                         f8++;
                         break;
                 }
+            }
+            else if(fieldText.get(i)[2].equals("brewery")){
+                currentBoard[i-1] = new Brewery((fieldText.get(i)[1]),Integer.parseInt(fieldText.get(i)[1]),(fieldText.get(i)[1]),
+                        Integer.parseInt(fieldText.get(i)[1]), Integer.parseInt(fieldText.get(i)[1]),(fieldText.get(i)[1]),
+                        Integer.parseInt(fieldText.get(i)[1]),Integer.parseInt(fieldText.get(i)[1]));
+          familie9[f9] = ((Brewery)currentBoard[i-1]);
+          f9++;
             }
         }
 

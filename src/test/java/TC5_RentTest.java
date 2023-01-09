@@ -31,7 +31,7 @@ class TC5_RentTest {
         property.setOwner(player2);
         property.setOwned(true);
         property.setActiveRent(0);
-        board.getCurrentBoard()[1].getProperty().setOwner(player1);//Sikrer at den anden spiller ejer i familie1 og undgår dobbelt leje
+        board.getCurrentBoard()[1].action(player1);//Sikrer at den anden spiller ejer i familie1 og undgår dobbelt leje
 
         propertyField.action(player1);
 
