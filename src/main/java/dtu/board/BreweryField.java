@@ -6,7 +6,18 @@ import dtu.players.Player;
 
 public class BreweryField extends BuyableFields{
     Brewery brewery;
+
+    private Boolean owned;
+
+    private Player owner;
+
+    private int activeRent;
+
+    private boolean pledgeState;
+
+
     public BreweryField(Brewery brewery) {
+        this.owned = false;
         this.brewery = brewery;
     }
 
@@ -34,5 +45,9 @@ public class BreweryField extends BuyableFields{
 
     public Brewery getBrewery() {
         return brewery;
+    }
+
+    public void setBrewery(Brewery brewery) {
+        this.brewery = brewery;
     }
 }
