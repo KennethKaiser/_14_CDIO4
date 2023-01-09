@@ -75,9 +75,9 @@ public class FieldProperty extends BuyableFields{
         this.owner = owner;
     }
 
-    public void setActiveRent(int activeRent) {
+    /*public void setActiveRent(int activeRent) {
         this.activeRent = activeRent;
-    }
+    }*/
 
     public void setBuildings(int buildings) {
         this.buildings = buildings;
@@ -107,5 +107,41 @@ public class FieldProperty extends BuyableFields{
     @Override
     public void rent() {
 
+    }
+
+    //Maybe needs changes
+    public void setActiveRent(int rentNumber){
+
+        switch (rentNumber){
+            case 0:
+                activeRent = property.getRentNormal();
+                buildings = 0;
+                break;
+            case 1:
+                activeRent = property.getRent1House();
+                buildings = 1;
+                break;
+            case 2:
+                activeRent = property.getRent2House();
+                buildings = 2;
+                break;
+            case 3:
+                activeRent = property.getRent3House();
+                buildings = 3;
+                break;
+            case 4:
+                activeRent = property.getRent4House();
+                buildings = 4;
+                break;
+            case 5:
+                activeRent = property.getRentHotel();
+                buildings = 5;
+                break;
+        }
+    }
+
+
+    public boolean isPledgeState() {
+        return pledgeState;
     }
 }

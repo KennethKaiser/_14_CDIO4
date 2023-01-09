@@ -14,12 +14,6 @@ public class Property {
 
     private int buildings;
 
-    int ActiveRent;
-
-    //Ejerskab
-    private Boolean owned;
-    private Player owner;
-    private Boolean pledgestate;
 
     public Property(int ID, int familie, String name, int price, int housePrice, int rentNormal, int rent1House, int rent2House, int rent3House, int rent4House, int rentHotel, int pledge) {
         this.ID = ID;
@@ -34,39 +28,10 @@ public class Property {
         this.rent4House = rent4House;
         this.rentHotel = rentHotel;
         this.pledge = pledge;
-        pledgestate = false;
     }
 
     //Change the rent after the amount of buildings
-    public void setActiveRent(int rentNumber){
 
-        switch (rentNumber){
-            case 0:
-                ActiveRent = rentNormal;
-                setBuidlings(0);
-            break;
-            case 1:
-                ActiveRent = rent1House;
-                setBuidlings(1);
-            break;
-            case 2:
-                ActiveRent = rent2House;
-                setBuidlings(2);
-            break;
-            case 3:
-                ActiveRent = rent3House;
-                setBuidlings(3);
-            break;
-            case 4:
-                ActiveRent = rent4House;
-                setBuidlings(4);
-            break;
-            case 5:
-                ActiveRent = rentHotel;
-                setBuidlings(5);
-            break;
-        }
-    }
 
     public int getPrice() {
         return price;
@@ -74,26 +39,6 @@ public class Property {
 
     public int setPrice(){
         return price;
-    }
-
-    public void setOwner(Player owner) {
-        this.owner = owner;
-    }
-
-    public Player getOwner() {
-        return owner;
-    }
-
-    public Boolean getOwned() {
-        return owned;
-    }
-
-    public void setOwned(Boolean ownership) {
-        owned = ownership;
-    }
-
-    public int getActiveRent(){
-        return ActiveRent;
     }
 
     public int getHousePrice() {
@@ -123,13 +68,6 @@ public class Property {
         ID = newID;
     }
 
-    public Boolean getPledgestate() {
-        return pledgestate;
-    }
-
-    public void setPledgestate(Boolean newPledgestate) {
-        this.pledgestate = newPledgestate;
-    }
 
     public int getPledge(){
         return pledge;

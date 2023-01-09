@@ -389,7 +389,7 @@ public class PropertyMenuController {
                 }
             }
 
-            if(fieldProperty.getProperty().getPledgestate())pledgeValueIcons[i].setOpacity(84);
+            if(fieldProperty.isPledgeState())pledgeValueIcons[i].setOpacity(84);
             else pledgeValueIcons[i].setOpacity(0);
         }
     }
