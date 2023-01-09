@@ -162,11 +162,17 @@ public class PlayerHandler {
      * @param amount
      */
     public void getMoneyFromOtherPlayers(Player player, int amount) {
-        player.setMoney(player.getMoney()+(getPlayers().length*amount));
-        for (int i=0; i<getPlayers().length; i++){
-            getPlayers()[i].setMoney(player.getMoney()-amount);
+        if(getPlayers() != null){
+            System.out.println(getPlayers().length);
         }
-    }
+
+        }
+        /*
+        player.setMoney(player.getMoney()+(players.length*amount));
+        for (int i=0; i<players.length; i++){
+        getPlayers()[i].setMoney(getPlayers()[i].getMoney()-amount);
+
+         */
 
     /**
      * True = flattax
@@ -186,8 +192,8 @@ public class PlayerHandler {
     }
 
     public void tenPercentTax(Player player){
-        double roundUpTenPercent = (((player.getMoney()/100*10)/50));
-        double roundUpFifty = Math.ceil(roundUpTenPercent*50);
+        double roundUpTenPercent = (((player.getMoney()*0.10)/50));
+        double roundUpFifty = Math.ceil(roundUpTenPercent)*50;
         int roundedToFifty = (int)roundUpFifty;
         changePlayerBalance(player, -roundedToFifty);
     }
@@ -204,7 +210,7 @@ public class PlayerHandler {
      */
     public int valueOfAllHousesOnPlayerProperties(Player player) {
         Board board = new Board();
-        PlayerHandler playerHandler = new PlayerHandler();
+        PlayerHandler playerHandler = this;
         int valueOfAllHouses;
         int familie1 = 0;
         int familie1HousePrice = ((FieldProperty) board.getCurrentBoard()[1]).getProperty().getHousePrice();
@@ -222,9 +228,9 @@ public class PlayerHandler {
         int familie7HousePrice = ((FieldProperty) board.getCurrentBoard()[31]).getProperty().getHousePrice();
         int familie8 = 0;
         int familie8HousePrice = ((FieldProperty) board.getCurrentBoard()[37]).getProperty().getHousePrice();
-        ArrayList<Field> playerProperties = playerHandler.getPlayers()[player.getId()].getProperties();
+
         if (playerHandler.getPlayers() != null) {
-            for (int i = 0; i < playerProperties.size(); i++) {
+            for (int i = 0; i < playerHandler.getPlayers()[player.getId()].getProperties().size(); i++) {
                 int getBuildings = ((FieldProperty) playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getBuildings();
                 int getFamily = ((FieldProperty) playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie();
                 if (getFamily == 1) {
@@ -258,10 +264,9 @@ public class PlayerHandler {
      */
     public int getValueOfPlayersProperties(Player player) {
         int valueOfProperties = 0;
-        int priceOfProperties = ((FieldProperty)getPlayers()[player.getId()].getProperties().get(player.getId())).getProperty().getPrice();
         if (getPlayers() != null) {
             for (int i = 0; i < getPlayers()[player.getId()].getProperties().size(); i++) {
-                valueOfProperties += priceOfProperties;
+                valueOfProperties += ((FieldProperty)getPlayers()[player.getId()].getProperties().get(i)).getProperty().getPrice();
             }
         }
         return valueOfProperties;

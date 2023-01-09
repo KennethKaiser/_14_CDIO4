@@ -120,7 +120,7 @@ public class ChanceCardFunctionality {
                 if (playerHandler.valueOfAllAssets(player)<15000){
                     playerHandler.changePlayerBalance(player, 40000);
                 }
-
+                break;
             }
             case 25: {
                 //Det er deres fødselsdag. Modtag af hver medspiller 200,-.
