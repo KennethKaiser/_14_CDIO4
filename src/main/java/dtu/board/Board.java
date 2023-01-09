@@ -136,6 +136,9 @@ public class Board {
             else if(fieldText.get(i)[2].equals("chance")){
                 currentBoard[i-1] = new Chance();
             }
+            else if(fieldText.get(i)[2].equals("jail")){
+                currentBoard[i-1] = new PrisonField();
+            }
         }
 
 
