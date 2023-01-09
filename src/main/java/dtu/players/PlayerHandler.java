@@ -1,7 +1,11 @@
 package dtu.players;
 
+import dtu.board.Board;
+import dtu.board.Field;
 import dtu.board.FieldProperty;
 import dtu.controllers.ControllerHandler;
+
+import java.util.ArrayList;
 
 public class PlayerHandler {
 
@@ -190,6 +194,84 @@ public class PlayerHandler {
 
     public void changePlayerBalance(Player player, int amount){
         player.setMoney(player.getMoney()+amount);
+    }
+
+    /**
+     * method for finding out the familiy of each property in a players property ArrayList, and telling how many houses have been build on each property.
+     * Calculating the total amount of the value of all houses on all properties in family 1 to 8. Neeeded for chanceCard.
+     * @param player
+     * @return
+     */
+    public int valueOfAllHousesOnPlayerProperties(Player player) {
+        Board board = new Board();
+        PlayerHandler playerHandler = new PlayerHandler();
+        int valueOfAllHouses;
+        int familie1 = 0;
+        int familie1HousePrice = ((FieldProperty) board.getCurrentBoard()[1]).getProperty().getHousePrice();
+        int familie2 = 0;
+        int familie2HousePrice = ((FieldProperty) board.getCurrentBoard()[6]).getProperty().getHousePrice();
+        int familie3 = 0;
+        int familie3HousePrice = ((FieldProperty) board.getCurrentBoard()[11]).getProperty().getHousePrice();
+        int familie4 = 0;
+        int familie4HousePrice = ((FieldProperty) board.getCurrentBoard()[16]).getProperty().getHousePrice();
+        int familie5 = 0;
+        int familie5HousePrice = ((FieldProperty) board.getCurrentBoard()[21]).getProperty().getHousePrice();
+        int familie6 = 0;
+        int familie6HousePrice = ((FieldProperty) board.getCurrentBoard()[26]).getProperty().getHousePrice();
+        int familie7 = 0;
+        int familie7HousePrice = ((FieldProperty) board.getCurrentBoard()[31]).getProperty().getHousePrice();
+        int familie8 = 0;
+        int familie8HousePrice = ((FieldProperty) board.getCurrentBoard()[37]).getProperty().getHousePrice();
+        ArrayList<Field> playerProperties = playerHandler.getPlayers()[player.getId()].getProperties();
+        if (playerHandler.getPlayers() != null) {
+            for (int i = 0; i < playerProperties.size(); i++) {
+                int getBuildings = ((FieldProperty) playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getBuildings();
+                int getFamily = ((FieldProperty) playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie();
+                if (getFamily == 1) {
+                    familie1 += getBuildings * familie1HousePrice;
+                } else if (getFamily == 2) {
+                    familie2 += getBuildings * familie2HousePrice;
+                } else if (getFamily == 3) {
+                    familie3 += getBuildings * familie3HousePrice;
+                } else if (getFamily == 4) {
+                    familie4 += getBuildings * familie4HousePrice;
+                } else if (getFamily == 5) {
+                    familie5 += getBuildings * familie5HousePrice;
+                } else if (getFamily == 6) {
+                    familie6 += getBuildings * familie6HousePrice;
+                } else if (getFamily == 7) {
+                    familie7 += getBuildings * familie7HousePrice;
+                } else if (getFamily == 8) {
+                    familie8 += getBuildings * familie8HousePrice;
+                }
+            }
+        }
+        valueOfAllHouses = familie1 + familie2 + familie3 + familie4 + familie5 + familie6 + familie7 + familie8;
+        return valueOfAllHouses;
+    }
+
+    /**
+     * Takes the getPlayers[].getProperties size (arrayList), and for the player asking on ex. player[0], calculates the value of all properties.
+     * This is one of two methods for calculating the total asset of a player if they draw the chanceCard with ID: 24
+     * @param player
+     * @return
+     */
+    public int getValueOfPlayersProperties(Player player) {
+        int valueOfProperties = 0;
+        int priceOfProperties = ((FieldProperty)getPlayers()[player.getId()].getProperties().get(player.getId())).getProperty().getPrice();
+        if (getPlayers() != null) {
+            for (int i = 0; i < getPlayers()[player.getId()].getProperties().size(); i++) {
+                valueOfProperties += priceOfProperties;
+            }
+        }
+        return valueOfProperties;
+    }
+
+    public int valueOfAllAssets(Player player){
+        int allAssetsValue;
+
+        allAssetsValue = player.getMoney() + getValueOfPlayersProperties(player) + valueOfAllHousesOnPlayerProperties(player);
+        return allAssetsValue;
     }
 
 
