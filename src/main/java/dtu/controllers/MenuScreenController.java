@@ -281,7 +281,12 @@ public class MenuScreenController {
         return playerNamesAdded;
     }
     public Image[] getMenuCarColorImages(){
-        return carImages;
+        Image[] carColors = new Image[playersAdded];
+        for(int i = 0; i <carColors.length; i++){
+            carColors[i] = cars[i].getImage();
+        }
+
+        return carColors;
     }
     public String[] getColorNames(){
         String[] colors = new String[playersAdded];

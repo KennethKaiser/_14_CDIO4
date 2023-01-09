@@ -13,7 +13,7 @@ public class PropertyHandler {
      * @param player the player buying the property
      * @param property the property being bought
      */
-    public static void buyProperty(Player player, Property property){
+    public void buyProperty(Player player, Property property){
         if(player.getMoney() > property.getPrice()) {
             player.setMoney(player.getMoney() - property.getPrice());
             property.setOwner(player);

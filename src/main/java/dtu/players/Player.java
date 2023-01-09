@@ -12,7 +12,7 @@ public class Player {
     private String name;
     private int position;
     private int money;
-    private ArrayList<Field> properties;
+    private ArrayList<Field> properties = new ArrayList<>();
     private String color;
 
     private boolean bankrupt;

@@ -581,6 +581,7 @@ public class PlayerViewController {
 
     }
     private void setBackgroundColorOf(Node node, int family) {
+        family--;
         switch (family) {
             case 0: //Blue
                 node.setStyle("-fx-background-color: #0000ff;");

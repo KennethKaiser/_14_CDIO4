@@ -13,8 +13,13 @@ public class FieldProperty extends BuyableFields{
 
     private int buildings;
 
+    private boolean pledgeState;
+
+    //PropertyHandler propertyHandler = new PropertyHandler();
+
 
     public FieldProperty(Property property){
+        this.owned = false;
         this.property = property;
     }
 
@@ -24,16 +29,30 @@ public class FieldProperty extends BuyableFields{
      */
     @Override
     public void action(Player player) {
-        if(property.getOwned() == false){
+        if(owned == false){
             //En besked giver valget for at købe grunden
             //Hvis ja:
-            PropertyHandler.buyProperty(player, property);
+            //propertyHandler.buyProperty(player, property);
             //Hvis nej, intet
         }
-        if(property.getOwned() == true){
+        if(owned == true){
             //En besked fortæller summen af penge der gives og til hvem
-            PropertyHandler.payRent(player, property);
+            //propertyHandler.payRent(player, property);
         }
+    }
+
+    @Override
+    public String landedLabel() {
+        String s = "Du er landet på " + property.getName();
+
+        return s;
+    }
+
+
+
+    @Override
+    public String type() {
+        return "buyablefield";
     }
 
     public Property getProperty() {
@@ -64,10 +83,25 @@ public class FieldProperty extends BuyableFields{
         this.buildings = buildings;
     }
 
+    public boolean isOwned(){
+        return this.owned;
+    }
+
 
     @Override
-    public void buy() {
-
+    public Boolean buy(Player player) {
+        if(player.getMoney() >= this.property.getPrice()){
+            player.setMoney(player.getMoney() - property.getPrice());
+            this.owner = player;
+            this.owned = true;
+            this.activeRent = 0;
+            this.pledgeState = false;
+            player.getProperties().add(this);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Override

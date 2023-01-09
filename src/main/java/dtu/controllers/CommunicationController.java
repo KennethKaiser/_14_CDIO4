@@ -1,5 +1,8 @@
 package dtu.controllers;
 
+import dtu.board.Field;
+import dtu.board.FieldProperty;
+import dtu.players.Player;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,6 +13,8 @@ import javafx.scene.text.Text;
 public class CommunicationController {
 
 
+    //Controllers
+    BoardController boardController = ControllerHandler.controllerHandler.getBoardController();
 
     //region FXML
     @FXML
@@ -30,7 +35,7 @@ public class CommunicationController {
 
     @FXML
     public void initialize(){
-
+        initButtons();
     }
 
     private void initButtons(){
@@ -58,15 +63,77 @@ public class CommunicationController {
         choices[1].setOnAction(e -> doNotBuy());
 
     }
-    public void playerTurnStart(int player){
+    public void playerTurnStart(String playerName){
         String[] choiceOptions = new String[1];
         choiceOptions[0] = "Rul terning";
-        String textField = "Det er spiller " + player + "'s tur";
+        String textField = "Det er spiller " + playerName + "'s tur";
         showCommunicationBox(textField, choiceOptions);
-        choices[0].setOnAction(e -> rollDice());
+        choices[0].setOnAction(e -> boardController.moveAndRoll());
 
 
     }
+
+    public void whatRolled(int[] roll){
+        String[] choiceOptions = new String[1];
+
+        int total = roll[0] + roll[1];
+
+        choiceOptions[0] = "Okay";
+        String textField = "Du slog " + total + ". Tryk 'Okay' for at rykke " + total + " felter.";
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> boardController.whatField());
+
+    }
+
+    public void whatLandedOn(String label){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        //String label = boardController.getPlayerHandler().currentPlayer();
+
+        String textField =  label;
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.whatType());
+    }
+
+    public void wantToBuy(FieldProperty property){
+
+
+
+        String[] choiceOptions = new String[2];
+
+        choiceOptions[0] = "Ja";
+        choiceOptions[1] = "Nej";
+
+        String propertyName = property.getProperty().getName();
+        int propertyPrice = property.getProperty().getPrice();
+
+        String textField = "Vil du gerne købe " + propertyName + " for " + propertyPrice + "?";
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.buyProperty(property));
+    }
+
+    public void playerBought(FieldProperty fieldProperty, Player player){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        String playerName = player.getName();
+        String fieldName = fieldProperty.getProperty().getName();
+
+
+        String textField = fieldName + " er købt af " + playerName + ".";
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurn());
+    }
+
+
+
+
     private void rollDice(){
 
     }
