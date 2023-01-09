@@ -1,5 +1,7 @@
 package dtu.players;
 
+import dtu.controllers.ControllerHandler;
+
 public class PlayerHandler {
 
     private Player[] players;
