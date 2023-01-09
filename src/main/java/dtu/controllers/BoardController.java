@@ -329,6 +329,8 @@ public class BoardController {
     Button cheatFieldButton;
     @FXML
     Button cheatMoneyButton;
+    @FXML
+    Button cheatMoveButton;
     //endregion
 
     //Methods:
@@ -793,6 +795,7 @@ public class BoardController {
             cheatDropDown.getItems().addAll("Spiller 1", "Spiller 2", "Spiller 3", "Spiller 4", "Spiller 5", "Spiller 6");
             cheatFieldButton.setOnAction(e -> cheatAddField());
             cheatMoneyButton.setOnAction(e -> cheatAddMoney());
+            cheatMoveButton.setOnAction(e -> cheatMovePlayer());
             System.out.println("Cheating Engaged");
         }
         else{
@@ -832,6 +835,31 @@ public class BoardController {
         playerViewController.updatePlayerMoney();
         System.out.println(cheatPlayer.getMoney());
 
+    }
+    public void cheatMovePlayer(){
+        System.out.println("Cheating for movement");
+        String player = cheatDropDown.getValue().toString();
+        int playerIndex = 0;
+        for(int i = 0; i < 6; i++){
+            if(player.equals(("Spiller " + (i+1)))) playerIndex = i;
+        }
+        String stepsString = cheatInput.getText();
+        int steps = parseInt(stepsString);
+        System.out.println(steps);
+
+
+        Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+        playerHandler.movePlayer(cheatPlayer, steps);
+
+        int playerId = cheatPlayer.getId();
+        int playerPosition = cheatPlayer.getPosition();
+
+        movePLayerOnGUI(playerId, playerPosition);
+        multipleCars(playerId, playerPosition);
+        int[] toIntArray = new int[1];
+        toIntArray[0] = steps;
+        //Switch decision box
+        communicationController.whatRolled(toIntArray);
     }
     //endregion
 
