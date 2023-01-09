@@ -56,7 +56,7 @@ public class PlayerHandler {
      */
     public void PlayerStartMoney(Player player){
         for (int i=0; i<players.length; i++){
-            players[i].setMoney(STARTMONEY);
+            changePlayerBalance(player, STARTMONEY);
         }
     }
 
@@ -164,7 +164,31 @@ public class PlayerHandler {
         }
     }
 
-    public static void changePlayerBalance(Player player, int amount){
+    /**
+     * True = flattax
+     * False = 10% of current money.
+     * For False, uses a method for rounding number up to nearest 50 by using math.ceil(). method is tenPercentTax()
+     * @param player
+     * @param choice
+     */
+    public void incomeTax(Player player, boolean choice){
+
+        if (choice == true){
+            changePlayerBalance(player, -4000);
+        }
+        if (choice == false){
+            tenPercentTax(player);
+        }
+    }
+
+    public void tenPercentTax(Player player){
+        double roundUpTenPercent = (((player.getMoney()/100*10)/50));
+        double roundUpFifty = Math.ceil(roundUpTenPercent*50);
+        int roundedToFifty = (int)roundUpFifty;
+        changePlayerBalance(player, -roundedToFifty);
+    }
+
+    public void changePlayerBalance(Player player, int amount){
         player.setMoney(player.getMoney()+amount);
     }
 
