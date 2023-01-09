@@ -14,4 +14,36 @@ public class Brewery {
         this.rent1 = rent1;
         this.rent2 = rent2;
     }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public int getFamily() {
+        return family;
+    }
+
+    public void setFamily(int family) {
+        this.family = family;
+    }
+
+    public int getRent1() {
+        return rent1;
+    }
+
+    public int getRent2() {
+        return rent2;
+    }
 }
