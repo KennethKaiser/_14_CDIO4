@@ -18,6 +18,7 @@ public class FerryField extends BuyableFields{
     private boolean pledgeState;
 
     public FerryField(Ferry ferry){
+        this.owned = false;
         this.ferry = ferry;
     }
 
