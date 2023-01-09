@@ -293,6 +293,11 @@ public class BoardController {
     //region VBOX that needs access because we need to put chancecards and the property menu inside it.
     @FXML
     VBox middleVBOX;
+
+
+
+    @FXML
+    StackPane middleParent;
     //endregion
 
     //Methods:
@@ -517,7 +522,7 @@ public class BoardController {
         playerHandler.initializePlayers(playersAdded);
 
         for(int i = 0; i < playersAdded; i++){
-            playerHandler.initializePlayerInPlayers(i, names[i],30000,"");
+            playerHandler.initializePlayerInPlayers(i, names[i],30000,colorNames[i]);
             cars[i].setImage(carImageColors[i]);
         }
         playerHandler.currentPlayer();
@@ -660,6 +665,9 @@ public class BoardController {
     //region get VBOX to put other fxml files into
     public VBox getMiddleMenuVBox(){
         return this.middleVBOX;
+    }
+    public StackPane getMiddleParent() {
+        return middleParent;
     }
     //endregion
 

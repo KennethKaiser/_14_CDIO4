@@ -1,6 +1,7 @@
 package dtu.controllers;
 
 import dtu._14_cdio4.SceneSwitch;
+import dtu.board.Board;
 import dtu.board.Property;
 
 public class ControllerHandler {
@@ -14,6 +15,17 @@ public class ControllerHandler {
     private TradingMenuController tradingMenuController;
     private MenuScreenController menuScreenController;
     private SceneSwitch sceneSwitch;
+    private Board board;
+
+    public CommunicationController getCommunicationController() {
+        return communicationController;
+    }
+
+    public void setCommunicationController(CommunicationController communicationController) {
+        this.communicationController = communicationController;
+    }
+
+    private CommunicationController communicationController;
 
     public static ControllerHandler controllerHandler = null;
 
@@ -26,18 +38,21 @@ public class ControllerHandler {
         sceneSwitch.switchToMenu();
     }
     public void switchToBoard(){
+        board = new Board();
         sceneSwitch.switchToBoard();
         playerViewController.updatePlayerName();
         playerViewController.updatePlayerMoney();
     }
     public void showCardOnBoard(Property[] properties){
+        board.getCurrentBoard()[1].
         sceneSwitch.showCardInMiddle(properties);
     }
     public void showChanceCardPileOnBoard(){
         sceneSwitch.showChanceCardPileInMiddle();
     }
-    public void showChanceCard(){
-
+    public void showChanceCard(String title, String text){
+        sceneSwitch.showChanceCardPileInMiddle();
+        chanceCardsController.showChanceCard(title, text);
     }
 
 
