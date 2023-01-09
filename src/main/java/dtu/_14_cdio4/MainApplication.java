@@ -1,9 +1,6 @@
 package dtu._14_cdio4;
 
-import dtu.board.Board;
-import dtu.board.DummyField;
-import dtu.board.FerryField;
-import dtu.board.FieldProperty;
+import dtu.board.*;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -30,13 +27,20 @@ public class MainApplication extends Application {
         System.out.println(ferryField3.getFerry().getName());
         System.out.println(ferryField4.getFerry().getName());*/
 
-        DummyField dummyField = (DummyField)board.getCurrentBoard()[0];
+        /*DummyField dummyField = (DummyField)board.getCurrentBoard()[0];
         DummyField dummyField2 = (DummyField)board.getCurrentBoard()[10];
         DummyField dummyField3 = (DummyField)board.getCurrentBoard()[20];
 
         System.out.println(dummyField.getDummy().getName());
         System.out.println(dummyField2.getDummy().getName());
-        System.out.println(dummyField3.getDummy().getName());
+        System.out.println(dummyField3.getDummy().getName());*/
+
+        TaxField taxField = (TaxField)board.getCurrentBoard()[4];
+        TaxField taxField2 = (TaxField)board.getCurrentBoard()[38];
+
+        System.out.println(taxField.getTax().getName());
+        System.out.println(taxField2.getTax().getName());
+
 
 
         launch();
