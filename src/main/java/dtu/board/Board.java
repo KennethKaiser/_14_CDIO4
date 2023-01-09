@@ -39,40 +39,40 @@ public class Board {
                 currentBoard[i-1] = new FieldProperty(new Property(Integer.parseInt(fieldText.get(i)[1]),Integer.parseInt(fieldText.get(i)[3]),
                             fieldText.get(i)[0],Integer.parseInt(fieldText.get(i)[4]),Integer.parseInt(fieldText.get(i)[5]),Integer.parseInt(fieldText.get(i)[6]),
                             Integer.parseInt(fieldText.get(i)[7]),Integer.parseInt(fieldText.get(i)[8]), Integer.parseInt(fieldText.get(i)[9]),
-                            Integer.parseInt(fieldText.get(i)[10]),Integer.parseInt(fieldText.get(i)[11]), Integer.parseInt(fieldText.get(i)[12])));
+                            Integer.parseInt(fieldText.get(i)[10]),Integer.parseInt(fieldText.get(i)[11]), 0));
 
                 //Udedigere street til deres familie
                 switch(Integer.parseInt(fieldText.get(i)[3])){
                     case 1:
-                        familie1[f1] = (currentBoard[i-1].getProperty());
+                        familie1[f1] = (((FieldProperty)currentBoard[i-1]).getProperty());
                         f1++;
                         break;
                     case 2:
-                        familie2[f2] = (currentBoard[i-1].getProperty());
+                        familie2[f2] = (((FieldProperty)currentBoard[i-1]).getProperty());
                         f2++;
                         break;
                     case 3:
-                        familie3[f3] = (currentBoard[i-1].getProperty());
+                        familie3[f3] = (((FieldProperty)currentBoard[i-1]).getProperty());
                         f3++;
                         break;
                     case 4:
-                        familie4[f4] = (currentBoard[i-1].getProperty());
+                        familie4[f4] = (((FieldProperty)currentBoard[i-1]).getProperty());
                         f4++;
                         break;
                     case 5:
-                        familie5[f5] = (currentBoard[i-1].getProperty());
+                        familie5[f5] = (((FieldProperty)currentBoard[i-1]).getProperty());
                         f5++;
                         break;
                     case 6:
-                        familie6[f6] = (currentBoard[i-1].getProperty());
+                        familie6[f6] = (((FieldProperty)currentBoard[i-1]).getProperty());
                         f6++;
                         break;
                     case 7:
-                        familie7[f7] = (currentBoard[i-1].getProperty());
+                        familie7[f7] = (((FieldProperty)currentBoard[i-1]).getProperty());
                         f7++;
                         break;
                     case 8:
-                        familie8[f8] = (currentBoard[i-1].getProperty());
+                        familie8[f8] = (((FieldProperty)currentBoard[i-1]).getProperty());
                         f8++;
                         break;
                 }

@@ -1,5 +1,6 @@
 package dtu.players;
 
+import dtu.board.FieldProperty;
 import dtu.controllers.ControllerHandler;
 
 public class PlayerHandler {
@@ -64,10 +65,14 @@ public class PlayerHandler {
      * @param player
      */
     public void isPlayerBankrupt(Player player){
-        if (getPlayers()[player.getId()].getMoney() < 0){
-            getPlayers()[player.getId()].setBankrupt(true);
+        if (player.getMoney() < 0){
+            player.setBankrupt(true);
             playerIsBankrupt(player);
+
+            changePlayerArray();
+
         }
+
     }
 
 
@@ -76,13 +81,12 @@ public class PlayerHandler {
      * @param player
      */
     public void playerIsBankrupt(Player player){
-        if(player.getProperties() != null){
-            for (int i=0; i<player.getProperties().size();i++) {
-                player.getProperties().get(i).getProperty().setOwner(null);
-                player.getProperties().get(i).getProperty().setOwned(false);
-                player.getProperties().get(i).getProperty().setActiveRent(0);
-                //player.getProperties().get(i).getProperty().setBuildings(0);
-            }
+        for (int i=0; i<player.getProperties().size();i++) {
+            ((FieldProperty)player.getProperties().get(i)).setOwner(null);
+            ((FieldProperty)player.getProperties().get(i)).getProperty().setOwned(false);
+            ((FieldProperty)player.getProperties().get(i)).getProperty().setActiveRent(0);
+            //player.getProperties().get(i).getProperty().setBuildings(0);
+
         }
     }
 
