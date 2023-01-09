@@ -16,6 +16,7 @@ public class FieldProperty extends BuyableFields{
 
     public FieldProperty(Property property){
         super(property);
+        owned = false;
         this.property = property;
     }
 
@@ -35,6 +36,18 @@ public class FieldProperty extends BuyableFields{
             //En besked fortæller summen af penge der gives og til hvem
             PropertyHandler.payRent(player, property);
         }
+    }
+
+    @Override
+    public String landedLabel() {
+        String s = "Du er landet på " + property.getName();
+
+        return s;
+    }
+
+    @Override
+    public String type() {
+        return "buyablefield";
     }
 
     public Property getProperty() {
@@ -59,6 +72,10 @@ public class FieldProperty extends BuyableFields{
 
     public void setBuildings(int buildings) {
         this.buildings = buildings;
+    }
+
+    public boolean isOwned(){
+        return this.owned;
     }
 
 

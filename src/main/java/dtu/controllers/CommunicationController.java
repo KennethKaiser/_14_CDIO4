@@ -1,5 +1,7 @@
 package dtu.controllers;
 
+import dtu.board.Field;
+import dtu.board.FieldProperty;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -69,6 +71,50 @@ public class CommunicationController {
 
 
     }
+
+    public void whatRolled(int[] roll){
+        String[] choiceOptions = new String[1];
+
+        int total = roll[0] + roll[1];
+
+        choiceOptions[0] = "Okay";
+        String textField = "Du slog " + total + ". Tryk 'Okay' for at rykke " + total + " felter.";
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> boardController.whatField());
+
+    }
+
+    public void whatLandedOn(String label){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        //String label = boardController.getPlayerHandler().currentPlayer();
+
+        String textField =  label;
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.whatType());
+    }
+
+    public void wantToBuy(FieldProperty property){
+
+
+
+        String[] choiceOptions = new String[2];
+
+        choiceOptions[0] = "Ja";
+        choiceOptions[0] = "Nej";
+
+        String propertyName = property.getProperty().getName();
+        int propertyPrice = property.getProperty().getPrice();
+
+        String textField = "Vil du gerne købe " + propertyName + " for " + propertyPrice + "?";
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.whatType());
+    }
+
     private void rollDice(){
 
     }

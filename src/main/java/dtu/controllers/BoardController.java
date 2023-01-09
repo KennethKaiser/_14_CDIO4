@@ -1,5 +1,7 @@
 package dtu.controllers;
 
+import dtu.board.Field;
+import dtu.board.FieldProperty;
 import dtu.board.Property;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
@@ -17,7 +19,6 @@ import javafx.scene.layout.VBox;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.lang.reflect.Field;
 import java.util.Random;
 
 public class BoardController {
@@ -464,12 +465,12 @@ public class BoardController {
     //region Initialize Cars
     private void setCars(){
         cars = new ImageView[6];
-        cars[0] = car2;
-        cars[1] = car6;
-        cars[2] = car4;
-        cars[3] = car5;
-        cars[4] = car3;
-        cars[5] = car1;
+        cars[0] = car1;
+        cars[1] = car2;
+        cars[2] = car3;
+        cars[3] = car4;
+        cars[4] = car5;
+        cars[5] = car6;
     }
     public void startCars(){
 
@@ -556,15 +557,46 @@ public class BoardController {
         movePLayerOnGUI(playerId, playerPosition);
         multipleCars(playerId, playerPosition);
 
-        //Should be called after a player turn and not in this method
-        playerHandler.currentPlayer();
+        //Switch decision box
+        communicationController.whatRolled(playerRoll);
 
+
+    }
+
+    public void whatField(){
+        String landedLabel = ControllerHandler.getInstance().getBoard().getCurrentBoard()[playerHandler.getCurrentPlayer().getPosition()].landedLabel();
+        communicationController.whatLandedOn(landedLabel);
+    }
+
+    public void whatType(){
+        Field field;
+        field = ControllerHandler.getInstance().getBoard().getCurrentBoard()[playerHandler.getCurrentPlayer().getPosition()];
+        String type = field.type();
+
+        if(type.equals("buyablefield")){
+            buyOrRentChecker(field);
+        }
+
+
+    }
+
+    public void buyOrRentChecker(Field field){
+        FieldProperty fieldProperty = (FieldProperty) field;
+        if(fieldProperty.isOwned()){
+
+        }
+        else{
+
+        }
     }
 
     public void initializeStartPlayerTurn(){
         communicationController = ControllerHandler.getInstance().getCommunicationController();
         communicationController.playerTurnStart(playerHandler.getCurrentPlayer().getName());
+
     }
+
+
 
     //endregion
 
@@ -695,4 +727,10 @@ public class BoardController {
     }
 
     //endregion
+
+    public PlayerHandler getPlayerHandler(){
+        return playerHandler;
+    }
+
+
 }
