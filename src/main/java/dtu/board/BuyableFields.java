@@ -5,8 +5,8 @@ import dtu.players.Player;
 public abstract class BuyableFields extends Field {
 
 
-    public BuyableFields(Property property) {
-        super(property);
+    public BuyableFields() {
+
     }
 
     public abstract Boolean buy(Player player);

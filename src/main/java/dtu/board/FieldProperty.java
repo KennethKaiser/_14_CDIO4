@@ -19,6 +19,7 @@ public class FieldProperty extends BuyableFields{
 
 
     public FieldProperty(Property property){
+        this.owned = false;
         this.property = property;
     }
 

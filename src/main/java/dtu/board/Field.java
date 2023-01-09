@@ -7,8 +7,8 @@ public abstract class Field {
     protected Property property;
 
 
-    public Field(Property property){
-        this.property = property;
+    public Field(){
+
     }
 
 
