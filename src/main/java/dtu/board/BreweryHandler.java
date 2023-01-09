@@ -24,8 +24,7 @@ public class BreweryHandler {
     public static void payRent(Player player, Brewery brewery) {
 
         if(familie9[0].getOwner() == familie9[1].getOwner()) {
-            RaffleCup rentRoll = new RaffleCup;
-            rentRoll.roll();
+
             player.setMoney(player.getMoney() - (brewery.getRent2())* RaffleCup.);
         }
             else{
