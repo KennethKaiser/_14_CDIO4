@@ -128,4 +128,16 @@ public class FieldProperty extends BuyableFields{
     public boolean isPledgeState() {
         return pledgeState;
     }
+
+    public Boolean getOwned() {
+        return owned;
+    }
+
+    public Player getOwner() {
+        return owner;
+    }
+
+    public int getActiveRent() {
+        return activeRent;
+    }
 }
