@@ -84,7 +84,7 @@ public class PlayerHandler {
             player.getProperties().get(i).getProperty().setOwner(null);
             player.getProperties().get(i).getProperty().setOwned(false);
             player.getProperties().get(i).getProperty().setActiveRent(0);
-            player.getProperties().get(i).getProperty().setBuildings(0);
+            //player.getProperties().get(i).getProperty().setBuildings(0);
 
         }
     }
