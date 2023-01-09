@@ -1,5 +1,8 @@
 package dtu.controllers;
 
+import dtu.board.Field;
+import dtu.board.FieldProperty;
+import dtu.board.Property;
 import dtu.players.PlayerHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -15,6 +18,8 @@ import javafx.scene.text.Text;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PlayerViewController {
 
@@ -269,6 +274,9 @@ public class PlayerViewController {
     FlowPane moneyAreaP6;
 
     //endregion
+    //region plus and minus buttons
+
+    //endregion
 
 
 
@@ -495,7 +503,41 @@ public class PlayerViewController {
     but if that specific player has two of the same family it should open both.
      */
     public void openOwnedCard(int family, int player){
-        System.out.println("Open card from the family: [" + family + "] and from the player [" + player + "]");
+        if(playerHandler.getPlayers()[player].getProperties() != null){
+            System.out.println("Open card from the family: [" + family + "] and from the player [" + player + "]");
+            int size = propertyStackPanes[player][family].getChildren().size();
+            Property[] properties = new Property[size];
+            Field[] gameCards = ControllerHandler.getInstance().getBoard().getCurrentBoard();
+
+            for(int i = 0; i < properties.length; i++){
+                switch (family){
+                    case 0:
+                        //if player owns any of these properties add property
+                        if(hasProperty(playerHandler.getPlayers()[player].getProperties(), gameCards[1].getProperty())){
+                            if(!Arrays.asList(properties).contains(gameCards[1].getProperty())){
+                                properties[i] = gameCards[1].getProperty();
+                                break;
+                            }
+                        }
+
+                        if(!Arrays.asList(properties).contains(gameCards[3].getProperty())){
+                            properties[i] = gameCards[3].getProperty();
+                            break;
+                        }
+                        break;
+                }
+            }
+            if(properties[0] != null) ControllerHandler.getInstance().showCardOnBoard(properties);
+        }
+        else System.out.println("player doesn't own any properties");
+    }
+    private boolean hasProperty(ArrayList<Field> ownedProperties, Property property){
+        boolean toReturn = false;
+        for(int i = 0; i < ownedProperties.size(); i++){
+            if(ownedProperties.get(i).getProperty() == property) toReturn = true;
+        }
+        if(!toReturn) System.out.println("Player did not have " + property.getName());
+        return toReturn;
     }
 
     /*

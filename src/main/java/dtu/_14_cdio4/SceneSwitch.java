@@ -93,11 +93,13 @@ public class SceneSwitch {
         stage.setResizable(false);
         stage.show();
         boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getMenuCarColorImages(), menuScreenController.getColorNames());
+        boardController.giveButtonsFunctions();
         playerViewController.addCard(0, 0);
         playerViewController.addCard(0, 0);
         playerViewController.addCard(4, 0);
         playerViewController.addCard(4, 0);
         playerViewController.addCard(4, 0);
+
     }
     public void showCardInMiddle(Property[] properties){
         boardController.getMiddleMenuVBox().getChildren().clear();
