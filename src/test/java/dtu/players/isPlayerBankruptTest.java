@@ -4,20 +4,23 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/*
 class isPlayerBankruptTest {
 
     @Test
     void isPlayerBankruptTest() {
-        Player player = new Player(1,"Niels", 4000, "Black");
         PlayerHandler playerHandler = new PlayerHandler();
-        player.setMoney(-1);
-        playerHandler.isPlayerBankrupt(player);
-        assertEquals(true, playerHandler.isPlayerBankrupt(player));
+        playerHandler.initializePlayers(3);
+        playerHandler.initializePlayerInPlayers(0,"Niels", 4000, "Black");
+        playerHandler.initializePlayerInPlayers(1, "tis", 4000, "blue");
+        playerHandler.initializePlayerInPlayers(2, "hejsa", 4000, "red");
+
+        playerHandler.getPlayers()[0].setMoney(-1);
+
+        playerHandler.isPlayerBankrupt(playerHandler.getPlayers()[0]);
+        assertEquals(true, playerHandler.getPlayers()[0].isBankrupt());
 
 
     }
 
 
 }
-*/
