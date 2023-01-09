@@ -22,19 +22,19 @@
             </Text>
          </children>
       </HBox>
-      <Text fx:id="communicator" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Players to Game">
+      <Text fx:id="communicator" strokeType="OUTSIDE" strokeWidth="0.0" text="Tilføj spillere">
          <font>
             <Font size="24.0" />
          </font></Text>
       <HBox alignment="CENTER" prefHeight="68.0" prefWidth="1500.0" spacing="10.0">
          <children>
-            <TextField fx:id="nameInput" prefWidth="200.0" promptText="Player Name">
+            <TextField fx:id="nameInput" prefWidth="200.0" promptText="Spiller navn">
                <font>
                   <Font name="Century Gothic" size="12.0" />
                </font>
             </TextField>
-            <ComboBox fx:id="colorPicker" prefWidth="150.0" promptText="Pick Color" />
-            <Button mnemonicParsing="false" onAction="#addPlayerPressed" text="Add Player">
+            <ComboBox fx:id="colorPicker" prefWidth="150.0" promptText="Vælg Farve" />
+            <Button mnemonicParsing="false" onAction="#addPlayerPressed" text="Tilføj Spiller">
                <font>
                   <Font name="Century Gothic" size="12.0" />
                </font>
@@ -172,7 +172,7 @@
       </VBox>
       <HBox alignment="CENTER" prefHeight="52.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#startGamePressed" prefHeight="23.0" prefWidth="150.0" text="Start Game">
+            <Button mnemonicParsing="false" onAction="#startGamePressed" prefHeight="23.0" prefWidth="150.0" text="Start Spil">
                <font>
                   <Font name="Century Gothic" size="12.0" />
                </font>
