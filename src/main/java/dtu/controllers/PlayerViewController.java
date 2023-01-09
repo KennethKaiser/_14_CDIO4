@@ -274,10 +274,6 @@ public class PlayerViewController {
     FlowPane moneyAreaP6;
 
     //endregion
-    //region plus and minus buttons
-
-    //endregion
-
 
 
 
@@ -527,7 +523,7 @@ public class PlayerViewController {
                         break;
                 }
             }
-            if(properties[0] != null) ControllerHandler.getInstance().showCardOnBoard(properties);
+            if(properties[0] != null) ControllerHandler.getInstance().showCardOnBoard(properties, player);
         }
         else System.out.println("player doesn't own any properties");
     }

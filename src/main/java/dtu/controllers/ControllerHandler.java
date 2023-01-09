@@ -48,8 +48,8 @@ public class ControllerHandler {
         return board;
     }
 
-    public void showCardOnBoard(Property[] properties){
-        sceneSwitch.showCardInMiddle(properties);
+    public void showCardOnBoard(Property[] properties, int player){
+        sceneSwitch.showCardInMiddle(properties, player);
     }
     public void showChanceCardPileOnBoard(){
         sceneSwitch.showChanceCardPileInMiddle();
