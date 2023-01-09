@@ -118,7 +118,7 @@ public class PlayerHandler {
      * Method for determining what ferry a player should move to when drawing a chancecard that says "Move to the nearest ferry".
      * @param player
      */
-    public static void nearestFerry(Player player){
+    public void nearestFerry(Player player){
         int ferry1 = 5;
         int ferry2 = 15;
         int ferry3 = 25;
@@ -137,7 +137,7 @@ public class PlayerHandler {
         }
     }
 
-    public static void movePlayerChanceCard(Player player, int ID){
+    public void movePlayerChanceCard(Player player, int ID){
         int moveChanceCard;
         if(player.getPosition()<ID) {
             moveChanceCard = ID - player.getPosition();
