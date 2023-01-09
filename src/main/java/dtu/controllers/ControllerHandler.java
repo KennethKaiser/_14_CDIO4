@@ -1,5 +1,6 @@
 package dtu.controllers;
 
+import dtu._14_cdio4.HousingLogic;
 import dtu._14_cdio4.SceneSwitch;
 import dtu.board.Board;
 import dtu.board.Field;
@@ -17,6 +18,16 @@ public class ControllerHandler {
     private MenuScreenController menuScreenController;
     private SceneSwitch sceneSwitch;
     private Board board;
+
+    public HousingLogic getHousingLogic() {
+        return housingLogic;
+    }
+
+    public void setHousingLogic(HousingLogic housingLogic) {
+        this.housingLogic = housingLogic;
+    }
+
+    private HousingLogic housingLogic = new HousingLogic();
 
     public CommunicationController getCommunicationController() {
         return communicationController;
