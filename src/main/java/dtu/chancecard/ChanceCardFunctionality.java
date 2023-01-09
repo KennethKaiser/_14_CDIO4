@@ -117,7 +117,10 @@ public class ChanceCardFunctionality {
             }
             case 24: {
                 //De modtager “Matador-legatet” på 40.000,-  men kun hvis værdier ikke overstiger 15.000,-
-                //getValueOfAllAsssets(player);
+                if (playerHandler.valueOfAllAssets(player)<15000){
+                    playerHandler.changePlayerBalance(player, 40000);
+                }
+
             }
             case 25: {
                 //Det er deres fødselsdag. Modtag af hver medspiller 200,-.
@@ -225,45 +228,7 @@ public class ChanceCardFunctionality {
         return "test";
     }
 
-    /**
-     * Takes the getPlayers[].getProperties size (arrayList), and for the player asking on ex. player[0], calculates the value of all properties.
-     * This is one of two methods for calculating the total asset of a player if they draw the chanceCard with ID: 24
-     * @param player
-     * @return
-     */
-    public int getValueOfPlayersProperties(Player player) {
-        int valueOfProperties = 0;
-        int priceOfProperties = ((FieldProperty)playerHandler.getPlayers()[player.getId()].getProperties().get(player.getId())).getProperty().getPrice();
-        if (playerHandler.getPlayers() != null) {
-            for (int i = 0; i < playerHandler.getPlayers()[player.getId()].getProperties().size(); i++) {
-                valueOfProperties += priceOfProperties;
-            }
-        }
-        return valueOfProperties;
-    }
 
-    public int getValueOfPlayersBuildings(Player player){
-        int valueOfBuildings = 0;
-        int familie1 = 0;
-        int familie1HousePrice = 1000;
-        int familie2 = 0;
-        int familie2HusPris = 1000;
-        int familie3 = 0;
-        int familie3HusPris= 2000;
-        int familie4 = 0;
-        int familie4HusPris;
-        ArrayList<Field> playerProperties = playerHandler.getPlayers()[player.getId()].getProperties();
-        if (playerHandler.getPlayers() != null){
-            for (int i = 0; i < playerProperties.size(); i++){
-                if (((FieldProperty)playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie() == 1 ){
-                    familie1 = ((FieldProperty) playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getBuildings()*familie1HousePrice;
-
-                }
-
-            }
-        }
-        return valueOfBuildings;
-    }
 }
 
 
