@@ -14,6 +14,7 @@ public class ChanceCardFunctionality {
 
      */
     CSVFileReader csvFileReader = new CSVFileReader();
+
     public String chanceCardFunction(int id, Player player) {
         switch (id) {
             case 0: {
@@ -121,21 +122,21 @@ public class ChanceCardFunctionality {
             }
             case 24: {
                 //De modtager “Matador-legatet” på 40.000,-  men kun hvis værdier ikke overstiger 15.000,-
-                getValueOfAllAsssets(player);
+                //getValueOfAllAsssets(player);
             }
             case 25: {
                 //Det er deres fødselsdag. Modtag af hver medspiller 200,-.
-                getMoneyFromOtherPlayers(player, 200);
-                    break;
+                playerHandler.getMoneyFromOtherPlayers(player, 200);
+                break;
             }
             case 26: {
                 //De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag fra hver medspiller 500 kr.
-                getMoneyFromOtherPlayers(player, 500);
+                playerHandler.getMoneyFromOtherPlayers(player, 500);
                 break;
             }
             case 27: {
                 //De skal holde familiefest og får et tilskud fra hver medspiller på 500,-.
-                getMoneyFromOtherPlayers(player, 500);
+                playerHandler.getMoneyFromOtherPlayers(player, 500);
                 break;
             }
             case 28: {
@@ -221,7 +222,7 @@ public class ChanceCardFunctionality {
                 player.setJail(true);
                 break;
             }
-            case 45:{
+            case 45: {
                 player.setJail(true);
                 break;
             }
@@ -229,28 +230,16 @@ public class ChanceCardFunctionality {
         return "test";
     }
 
-    public void getValueOfAllAsssets(Player player) {
-        if ((player.getMoney()/*+ add value of ArrayLists of PlayerProperties + Value of house and hotel here */) < 15000) {
-            player.setMoney(player.getMoney() + 40000);
-        } else {
-            player.setMoney(player.getMoney());
+    public int getValueOfPlayersProperties(Player player) {
+        int valueOfProperties = 0;
+        if (playerHandler.getPlayers() != null) {
+            for (int i = 0; i < playerHandler.getPlayers()[player.getId()].getProperties().size(); i++) {
+                valueOfProperties += playerHandler.getPlayers()[player.getId()].getProperties().get(i).getProperty().getPrice();
+            }
         }
-    }
-
-    /**
-     *
-     * getMoneyFromOtherPlayers takes the length of the array of players, and adds that amount times para2 times to the current player
-     * after that it deducts para2 from each player, also the current player to compensate for the para 2 amount the current player
-     * gets too much. Adding money before retracting, so you can't go bankrupt from picking this chancecard.
-     * @param player
-     * @param amount
-     */
-    public void getMoneyFromOtherPlayers(Player player, int amount) {
-        player.setMoney(player.getMoney()+(playerHandler.getPlayers().length*amount));
-        for (int i=0; i<playerHandler.getPlayers().length; i++){
-            playerHandler.getPlayers()[i].setMoney(player.getMoney()-amount);
-        }
+        return valueOfProperties;
     }
 }
+
 
 

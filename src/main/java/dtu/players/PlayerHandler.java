@@ -113,6 +113,10 @@ public class PlayerHandler {
         players = newPlayers;
     }
 
+    /**
+     * Method for determining what ferry a player should move to when drawing a chancecard that says "Move to the nearest ferry".
+     * @param player
+     */
     public static void nearestFerry(Player player){
         int ferry1 = 5;
         int ferry2 = 15;
@@ -141,6 +145,21 @@ public class PlayerHandler {
         if(player.getPosition()>ID){
             moveChanceCard = (40-player.getPosition())+ID;
             player.setPosition(player.getPosition()+moveChanceCard);
+        }
+    }
+
+    /**
+     *
+     * getMoneyFromOtherPlayers takes the length of the array of players, and adds that amount times para2 times to the current player
+     * after that it deducts para2 from each player, also the current player to compensate for the para 2 amount the current player
+     * gets too much. Adding money before retracting, so you can't go bankrupt from picking this chancecard.
+     * @param player
+     * @param amount
+     */
+    public void getMoneyFromOtherPlayers(Player player, int amount) {
+        player.setMoney(player.getMoney()+(getPlayers().length*amount));
+        for (int i=0; i<getPlayers().length; i++){
+            getPlayers()[i].setMoney(player.getMoney()-amount);
         }
     }
 

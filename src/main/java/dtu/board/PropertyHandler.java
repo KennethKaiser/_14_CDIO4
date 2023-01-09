@@ -164,8 +164,7 @@ public class PropertyHandler {
     }
 
 
-    /**
-     * Method for determining what ferry a player should move to when drawing a chancecard that says "Move to nearest ferry".
-     * @param player
-     */
+
+
+
 }
