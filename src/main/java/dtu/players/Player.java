@@ -13,6 +13,8 @@ public class Player {
     private int position;
     private int money;
     private ArrayList<Field> properties = new ArrayList<>();
+    private ArrayList<Field> ferries = new ArrayList<>();
+    private ArrayList<Field> breweries = new ArrayList<>();
     private String color;
 
     private boolean bankrupt;
@@ -103,5 +105,21 @@ public class Player {
 
     public void setGetOutOfJailCard(boolean getOutOfJailCard) {
         this.getOutOfJailCard = getOutOfJailCard;
+    }
+
+    public ArrayList<Field> getFerries() {
+        return ferries;
+    }
+
+    public void setFerries(ArrayList<Field> ferries) {
+        this.ferries = ferries;
+    }
+
+    public ArrayList<Field> getBreweries() {
+        return breweries;
+    }
+
+    public void setBreweries(ArrayList<Field> breweries) {
+        this.breweries = breweries;
     }
 }
