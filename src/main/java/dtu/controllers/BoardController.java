@@ -7,11 +7,16 @@ import dtu.board.FieldProperty;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
+import javafx.beans.Observable;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
@@ -19,6 +24,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Random;
+
+import static java.lang.Integer.parseInt;
 
 public class BoardController {
 
@@ -304,6 +311,19 @@ public class BoardController {
     @FXML
     StackPane middleParent;
     //endregion
+    //region cheats and testing
+    @FXML
+    HBox cheatBox;
+    @FXML
+    ComboBox cheatDropDown;
+    @FXML
+    TextField cheatInput;
+
+    @FXML
+    Button cheatFieldButton;
+    @FXML
+    Button cheatMoneyButton;
+    //endregion
 
     //Methods:
     //------------------------------------------------------------------------------
@@ -318,7 +338,7 @@ public class BoardController {
         initHouses();
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
-
+        initCheating();
     }
 
     //region delegate model objects to other controller
@@ -757,6 +777,44 @@ public class BoardController {
 
     //endregion
 
+    //region cheating
+    private void initCheating(){
+        if(ControllerHandler.getInstance().getMenuScreenController().getIsCheating()){
+            cheatDropDown.getItems().addAll("Spiller 1", "Spiller 2", "Spiller 3", "Spiller 4", "Spiller 5", "Spiller 6");
+            cheatFieldButton.setOnAction(e -> cheatAddField());
+            cheatMoneyButton.setOnAction(e -> cheatAddMoney());
+        }
+        else{
+            cheatBox.getChildren().clear();
+        }
+    }
+    public void cheatAddField(){
+        String player = cheatDropDown.getValue().toString();
+        int playerIndex = 0;
+        for(int i = 0; i < 6; i++){
+            if(player.equals(("Spiller " + (i+1)))) playerIndex = i;
+        }
+        String fieldStringID = cheatInput.getText();
+        int fieldID = parseInt(fieldStringID);
+        FieldProperty fieldProperty = (FieldProperty)ControllerHandler.getInstance().getBoard().getCurrentBoard()[fieldID];
+        Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+        if(fieldProperty.buy(cheatPlayer)){
+            int temp = fieldProperty.getProperty().getFamilie();
+            playerViewController.updatePlayerMoney();
+            playerViewController.addCard(temp, cheatPlayer.getId());
+            communicationController.playerBought(fieldProperty, cheatPlayer);
+        }
+    }
+    public void cheatAddMoney(){
+        String player = cheatDropDown.getValue().toString();
+        int playerIndex = 0;
+        for(int i = 0; i < 6; i++){
+            if(player.equals(("Spiller " + (i+1)))) playerIndex = 1;
+        }
+        String moneyString = cheatInput.getText();
+        int money = parseInt(moneyString);
+    }
+    //endregion
 
 
 }

@@ -316,8 +316,7 @@ public class MenuScreenController {
                 playerNamesAdded[i] = names[i].getText();
             }
 
-            if(!isCheat)ControllerHandler.getInstance().switchToBoard();
-            else ControllerHandler.getInstance().switchToCheatBoard();
+            ControllerHandler.getInstance().switchToBoard();
         }
 
     }
@@ -358,13 +357,16 @@ public class MenuScreenController {
     private void cheat(){
         for(int i = 0; i < 6; i++){
             playersAdded++;
-            names[i].setText("Player " + i);
+            names[i].setText("Spiller " + (i+1));
             cars[i].setImage(carImages[i]);
         }
 
         isCheat = true;
         startGamePressed();
 
+    }
+    public boolean getIsCheating(){
+        return  isCheat;
     }
 
 }
