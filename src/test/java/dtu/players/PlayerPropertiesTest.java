@@ -19,6 +19,7 @@ class PlayerPropertiesTest {
     void getProperties() {
         PlayerHandler playerHandler = new PlayerHandler();
         Board board = new Board();
+
         ChanceCardFunctionality chanceCardFunctionality = new ChanceCardFunctionality();
         playerHandler.initializePlayers(4);
         playerHandler.initializePlayerInPlayers(0, "Test1", 4000, "black");
@@ -37,16 +38,18 @@ class PlayerPropertiesTest {
         int valueOfProperties = 0;
         if (playerHandler.getPlayers() != null) {
             for (int i = 0; i < playerHandler.getPlayers()[0].getProperties().size(); i++) {
-                valueOfProperties += playerHandler.getPlayers()[0].getProperties().get(i).getProperty().getPrice();
+                valueOfProperties +=
             }
         }
+        FieldProperty testitest = (FieldProperty) ((FieldProperty) playerHandler.getPlayers()[0].getProperties().get(0));
+        FieldProperty testitest1 = (FieldProperty) ((FieldProperty) playerHandler.getPlayers()[0].getProperties().get(1));
 
-        assertEquals(1, playerHandler.getPlayers()[0].getProperties().get(0).getProperty().getID(), "Expecting player to own Rødovrevej, which has ID = 1");
-        System.out.println("Expecting: 1" + " Received: " + playerHandler.getPlayers()[0].getProperties().get(0).getProperty().getID());
-        assertEquals(3, playerHandler.getPlayers()[0].getProperties().get(1).getProperty().getID());
-        System.out.println("Expecting: 3" + " Received: " + playerHandler.getPlayers()[0].getProperties().get(1).getProperty().getID());
+                assertEquals(1, testitest.getProperty().getID(), "Expecting player to own Rødovrevej, which has ID = 1");
+        System.out.println("Expecting: 1" + " Received: " + testitest.getProperty().getID());
+        assertEquals(3, testitest1.getProperty().getID());
+        System.out.println("Expecting: 3" + " Received: " + testitest1.getProperty().getID());
         System.out.println(playerHandler.getPlayers()[0].getProperties().size());
-        System.out.println("Prisen på Rødovrevej er: " + playerHandler.getPlayers()[0].getProperties().get(0).getProperty().getPrice());
+        System.out.println("Prisen på Rødovrevej er: " + testitest.getProperty().getPrice());
 
         System.out.println(valueOfProperties);
     }
@@ -67,7 +70,7 @@ class PlayerPropertiesTest {
         fieldProperty.buy(playerHandler.getPlayers()[0]);
         //fieldProperty1.buy(playerHandler.getPlayers()[0]);
 
-        System.out.println(playerHandler.getPlayers()[0].getProperties().get(0).getProperty().getName());
+        System.out.println(fieldProperty.getProperty().getName());
 
 
         int valueOfBuildings = 0;
