@@ -1,5 +1,7 @@
 package dtu.players;
 
+import dtu.controllers.ControllerHandler;
+
 public class PlayerHandler {
 
     private Player[] players;
@@ -41,6 +43,8 @@ public class PlayerHandler {
         player.setPosition(nextFieldPlacement);
 
     }
+
+
 
     /**
      * Method for setting start-money for each player in a loop going from the iterator i=0 to i < length of player
@@ -107,6 +111,41 @@ public class PlayerHandler {
         }
 
         players = newPlayers;
+    }
+
+    public static void nearestFerry(Player player){
+        int ferry1 = 5;
+        int ferry2 = 15;
+        int ferry3 = 25;
+        int ferry4 = 35;
+        if (player.getPosition()>=35 || player.getPosition()<5){
+            movePlayerChanceCard(player, ferry1);
+        }
+        else if (player.getPosition()>=5 && player.getPosition()<15){
+            movePlayerChanceCard(player, ferry2);
+        }
+        else if (player.getPosition()>=15 && player.getPosition()<25){
+            movePlayerChanceCard(player, ferry3);
+        }
+        else if (player.getPosition()>=25 && player.getPosition()<35){
+            movePlayerChanceCard(player, ferry4);
+        }
+    }
+
+    public static void movePlayerChanceCard(Player player, int ID){
+        int moveChanceCard;
+        if(player.getPosition()<ID) {
+            moveChanceCard = ID - player.getPosition();
+            player.setPosition(player.getPosition()+moveChanceCard);
+        }
+        if(player.getPosition()>ID){
+            moveChanceCard = (40-player.getPosition())+ID;
+            player.setPosition(player.getPosition()+moveChanceCard);
+        }
+    }
+
+    public static void changePlayerBalance(Player player, int amount){
+        player.setMoney(player.getMoney()+amount);
     }
 
 

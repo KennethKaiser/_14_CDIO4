@@ -673,7 +673,7 @@
                                     </children>
                                 </StackPane>
                             </children></VBox>
-                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                        <StackPane prefHeight="150.0" prefWidth="200.0" fx:id="middleParent">
                             <children>
                                 <AnchorPane fx:id="diceBox" prefHeight="565.0" prefWidth="564.0">
                                     <children>

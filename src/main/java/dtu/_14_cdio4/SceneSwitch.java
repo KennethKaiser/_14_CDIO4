@@ -22,6 +22,7 @@ public class SceneSwitch {
     private StartGameController startGameController;
     private TradingMenuController tradingMenuController;
     private MenuScreenController menuScreenController;
+    private CommunicationController communicationController;
     //endregion
     //region loads
     VBox menu;
@@ -30,9 +31,11 @@ public class SceneSwitch {
     StackPane board;
     StackPane chanceCards;
     StackPane propertyMenu;
+    HBox communication;
     //endregion
     Scene menuScene;
     Scene boardScene;
+
     public SceneSwitch(Stage stage) throws IOException {
         this.stage = stage;
         ControllerHandler.getInstance().setSceneSwitch(this);
@@ -65,9 +68,14 @@ public class SceneSwitch {
         propertyMenu = (StackPane) fxmlLoader.load();
         propertyMenuController = fxmlLoader.getController();
         ControllerHandler.getInstance().setPropertyMenuController(propertyMenuController);
+        fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Communication.fxml"));
+        communication = (HBox) fxmlLoader.load();
+        communicationController = fxmlLoader.getController();
+        ControllerHandler.getInstance().setCommunicationController(communicationController);
     }
     private void collectBoard(){
         showChanceCardPileInMiddle();
+        boardController.getMiddleParent().getChildren().add(0, communication);
         playerView.getChildren().add(1, board);
         root.getChildren().add(playerView);
         boardScene = new Scene(root, 1500, 700);

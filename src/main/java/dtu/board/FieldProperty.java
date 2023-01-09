@@ -1,11 +1,10 @@
 package dtu.board;
 
 import dtu.players.Player;
-import dtu.game.GameActions;
 
-public class FieldProperty extends Field{
+public class FieldProperty extends BuyableFields{
 
-    private Property property;
+    protected Property property;
     //Har skrevet så disse to variable bruges mest i Property klassen
     private Boolean owned;
     private Player owner;
@@ -16,6 +15,7 @@ public class FieldProperty extends Field{
 
 
     public FieldProperty(Property property){
+        super(property);
         this.property = property;
     }
 
@@ -28,15 +28,18 @@ public class FieldProperty extends Field{
         if(property.getOwned() == false){
             //En besked giver valget for at købe grunden
             //Hvis ja:
-            GameActions.buyProperty(player, property);
+            PropertyHandler.buyProperty(player, property);
             //Hvis nej, intet
         }
         if(property.getOwned() == true){
             //En besked fortæller summen af penge der gives og til hvem
-            GameActions.payRent(player, property);
+            PropertyHandler.payRent(player, property);
         }
     }
 
+    public Property getProperty() {
+        return property;
+    }
 
     public void setProperty(Property property) {
         this.property = property;
@@ -59,6 +62,13 @@ public class FieldProperty extends Field{
     }
 
 
+    @Override
+    public void buy() {
 
+    }
 
+    @Override
+    public void rent() {
+
+    }
 }

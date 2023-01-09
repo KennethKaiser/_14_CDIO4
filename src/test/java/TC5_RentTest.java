@@ -1,7 +1,7 @@
 import dtu.board.FieldProperty;
 import dtu.board.Property;
 import dtu.board.PropertyList;
-import dtu.game.GameActions;
+import dtu.board.PropertyHandler;
 import dtu.players.Player;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TC5_RentTest {
 
-    GameActions gameActions = new GameActions();
+    PropertyHandler propertyHandler = new PropertyHandler();
 
     @Test
     void testPayRent() {
