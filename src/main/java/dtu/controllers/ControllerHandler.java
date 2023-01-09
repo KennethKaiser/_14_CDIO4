@@ -44,7 +44,6 @@ public class ControllerHandler {
         playerViewController.updatePlayerMoney();
     }
     public void showCardOnBoard(Property[] properties){
-        board.getCurrentBoard()[1].
         sceneSwitch.showCardInMiddle(properties);
     }
     public void showChanceCardPileOnBoard(){
