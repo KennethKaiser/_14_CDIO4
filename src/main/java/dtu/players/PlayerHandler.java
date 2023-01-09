@@ -56,7 +56,7 @@ public class PlayerHandler {
      */
     public void PlayerStartMoney(Player player){
         for (int i=0; i<players.length; i++){
-            players[i].setMoney(STARTMONEY);
+            changePlayerBalance(player, STARTMONEY);
         }
     }
 
@@ -114,6 +114,10 @@ public class PlayerHandler {
         players = newPlayers;
     }
 
+    /**
+     * Method for determining what ferry a player should move to when drawing a chancecard that says "Move to the nearest ferry".
+     * @param player
+     */
     public static void nearestFerry(Player player){
         int ferry1 = 5;
         int ferry2 = 15;
@@ -143,6 +147,45 @@ public class PlayerHandler {
             moveChanceCard = (40-player.getPosition())+ID;
             player.setPosition(player.getPosition()+moveChanceCard);
         }
+    }
+
+    /**
+     *
+     * getMoneyFromOtherPlayers takes the length of the array of players, and adds that amount times para2 times to the current player
+     * after that it deducts para2 from each player, also the current player to compensate for the para 2 amount the current player
+     * gets too much. Adding money before retracting, so you can't go bankrupt from picking this chancecard.
+     * @param player
+     * @param amount
+     */
+    public void getMoneyFromOtherPlayers(Player player, int amount) {
+        player.setMoney(player.getMoney()+(getPlayers().length*amount));
+        for (int i=0; i<getPlayers().length; i++){
+            getPlayers()[i].setMoney(player.getMoney()-amount);
+        }
+    }
+
+    /**
+     * True = flattax
+     * False = 10% of current money.
+     * For False, uses a method for rounding number up to nearest 50 by using math.ceil(). method is tenPercentTax()
+     * @param player
+     * @param choice
+     */
+    public void incomeTax(Player player, boolean choice){
+
+        if (choice == true){
+            changePlayerBalance(player, -4000);
+        }
+        if (choice == false){
+            tenPercentTax(player);
+        }
+    }
+
+    public void tenPercentTax(Player player){
+        double roundUpTenPercent = (((player.getMoney()/100*10)/50));
+        double roundUpFifty = Math.ceil(roundUpTenPercent*50);
+        int roundedToFifty = (int)roundUpFifty;
+        changePlayerBalance(player, -roundedToFifty);
     }
 
     public static void changePlayerBalance(Player player, int amount){
