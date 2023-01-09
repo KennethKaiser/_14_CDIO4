@@ -1,5 +1,6 @@
 package dtu.controllers;
 
+import dtu.board.Field;
 import dtu.board.Property;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
@@ -17,7 +18,6 @@ import javafx.scene.layout.VBox;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.lang.reflect.Field;
 import java.util.Random;
 
 public class BoardController {
@@ -685,8 +685,8 @@ public class BoardController {
     }
 
     private void openCard(int i){
-        Property[] property = new Property[1];
-        property[0] = ControllerHandler.getInstance().getBoard().getCurrentBoard()[i].getProperty();
+        Field[] property = new Field[1];
+        property[0] = ControllerHandler.getInstance().getBoard().getCurrentBoard()[i];
         ControllerHandler.getInstance().showCardOnBoard( property, -1);
     }
 

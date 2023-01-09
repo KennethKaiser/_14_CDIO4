@@ -1,5 +1,6 @@
 package dtu._14_cdio4;
 
+import dtu.board.Field;
 import dtu.board.Property;
 import dtu.controllers.*;
 import javafx.fxml.FXMLLoader;
@@ -101,7 +102,7 @@ public class SceneSwitch {
         playerViewController.addCard(4, 0);
 
     }
-    public void showCardInMiddle(Property[] properties, int player){
+    public void showCardInMiddle(Field[] properties, int player){
         boardController.getMiddleMenuVBox().getChildren().clear();
         boardController.getMiddleMenuVBox().getChildren().add(propertyMenu);
         propertyMenuController.showProperties(properties, player);

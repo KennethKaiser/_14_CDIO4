@@ -1,5 +1,7 @@
 package dtu.controllers;
 
+import dtu.board.Field;
+import dtu.board.FieldProperty;
 import dtu.board.Property;
 import javafx.css.Style;
 import javafx.fxml.FXML;
@@ -351,38 +353,39 @@ public class PropertyMenuController {
             plusButtons[i].setDisable(true);
         }
     }
-    public void showProperties(Property[] properties, int player){
+    public void showProperties(Field[] properties, int player){
         parent.getChildren().clear();
         hideButtons();
         for(int i = 0; i < properties.length; i++){
+            FieldProperty fieldProperty = (FieldProperty)properties[i];
             parent.getChildren().add(cards[i]);
-            names[i].setText(properties[i].getName());
-            normalRent[i].setText(numbersToString(properties[i].getRentNormal()));
-            house1Rent[i].setText(numbersToString(properties[i].getRent1House()));
-            house2Rent[i].setText(numbersToString(properties[i].getRent2House()));
-            house3Rent[i].setText(numbersToString(properties[i].getRent3House()));
-            house4Rent[i].setText(numbersToString(properties[i].getRent4House()));
-            housePrice[i].setText(numbersToString(properties[i].getHousePrice()));
-            pledgeValue[i].setText(numbersToString(properties[i].getPledge()));
-            setColorOf(colors[i], properties[i].getFamilie());
-            setHouseIcon(i, properties[i].getBuildings());
+            names[i].setText(fieldProperty.getProperty().getName());
+            normalRent[i].setText(numbersToString(fieldProperty.getProperty().getRentNormal()));
+            house1Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent1House()));
+            house2Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent2House()));
+            house3Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent3House()));
+            house4Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent4House()));
+            housePrice[i].setText(numbersToString(fieldProperty.getProperty().getHousePrice()));
+            pledgeValue[i].setText(numbersToString(fieldProperty.getProperty().getPledge()));
+            setColorOf(colors[i], fieldProperty.getProperty().getFamilie());
+            setHouseIcon(i, fieldProperty.getBuildings());
             if(player != -1){
-                if(checkForBuildHouse(properties[i], player)){
+                if(checkForBuildHouse(fieldProperty.getProperty(), player)){
                     plusStackPanes[i].setOpacity(1);
                     plusButtons[i].setDisable(false);
                     int index = i;
-                    plusButtons[i].setOnAction(e -> buildOrRemoveHouse(properties[index], 1, player, properties));
+                    plusButtons[i].setOnAction(e -> buildOrRemoveHouse(fieldProperty.getProperty(), 1, player, properties));
 
                 }
-                if(checkForRemoveHouse(properties[i], player)){
+                if(checkForRemoveHouse(fieldProperty.getProperty(), player)){
                     minusStackPanes[i].setOpacity(1);
                     minusButtons[i].setDisable(false);
                     int index = i;
-                    minusButtons[i].setOnAction(e -> buildOrRemoveHouse(properties[index], -1, player, properties));
+                    minusButtons[i].setOnAction(e -> buildOrRemoveHouse(fieldProperty.getProperty(), -1, player, properties));
                 }
             }
 
-            if(properties[i].getPledgestate())pledgeValueIcons[i].setOpacity(84);
+            if(fieldProperty.getProperty().getPledgestate())pledgeValueIcons[i].setOpacity(84);
             else pledgeValueIcons[i].setOpacity(0);
         }
     }
@@ -398,7 +401,7 @@ public class PropertyMenuController {
         }
         return true;
     }
-    private void buildOrRemoveHouse(Property property, int amountOfHouses, int player, Property[] initialProperties){
+    private void buildOrRemoveHouse(Property property, int amountOfHouses, int player, Field[] initialProperties){
         property.setBuidlings(property.getBuildings()+amountOfHouses);
         showProperties(initialProperties, player);
     }
