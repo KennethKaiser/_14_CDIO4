@@ -38,7 +38,7 @@ class PlayerPropertiesTest {
         int valueOfProperties = 0;
         if (playerHandler.getPlayers() != null) {
             for (int i = 0; i < playerHandler.getPlayers()[0].getProperties().size(); i++) {
-                valueOfProperties +=
+                valueOfProperties += valueOfProperties;
             }
         }
         FieldProperty testitest = (FieldProperty) ((FieldProperty) playerHandler.getPlayers()[0].getProperties().get(0));
@@ -85,7 +85,7 @@ class PlayerPropertiesTest {
         ArrayList<Field> playerProperties = playerHandler.getPlayers()[player.getId()].getProperties();
         if (playerHandler.getPlayers() != null) {
             for (int i = 0; i < playerProperties.size(); i++) {
-                if ((playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie() == 7) {
+                if (( == 7) {
                     familie7 = ((FieldProperty) playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getBuildings() * familie7HousePrice;
 
                 }

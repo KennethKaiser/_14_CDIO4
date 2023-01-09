@@ -2,22 +2,13 @@ package dtu.chancecard;
 
 import dtu.board.Field;
 import dtu.board.FieldProperty;
-import dtu.filereader.CSVFileReader;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
-import dtu.board.PropertyHandler;
 
 import java.util.ArrayList;
 
 public class ChanceCardFunctionality {
     PlayerHandler playerHandler = new PlayerHandler();
-    PropertyHandler propertyHandler = new PropertyHandler();
-
-    /* Reason why we are initializing the csvFileReader, is so we can get chancecard descriptions for each chancecard.
-    by calling something like: String case0 = csvFileReader.getChancecarddesc()[0];
-
-     */
-    CSVFileReader csvFileReader = new CSVFileReader();
 
     public String chanceCardFunction(int id, Player player) {
         switch (id) {
