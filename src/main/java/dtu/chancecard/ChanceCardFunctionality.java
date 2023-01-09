@@ -261,7 +261,7 @@ public class ChanceCardFunctionality {
         if (playerHandler.getPlayers() != null){
             for (int i = 0; i < playerProperties.size(); i++){
                 if (((FieldProperty)playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie() == 1){
-                    familie1 = playerHandler.getPlayers()[player.getId()].getProperties().get(i);
+                    familie1 = playerHandler.getPlayers()[player.getId()].getProperties().get(i).get
 
                 }
 
