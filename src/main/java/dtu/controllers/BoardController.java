@@ -679,13 +679,15 @@ public class BoardController {
         for(int i = 0; i < fieldButtons.length; i++){
             if(ControllerHandler.getInstance().getBoard().getCurrentBoard()[i] != null){
                 int temp = i;
-                fieldButtons[i].setOnAction(e -> openCard());
+                fieldButtons[i].setOnAction(e -> openCard(temp));
             }
         }
     }
 
-    private void openCard(){
-
+    private void openCard(int i){
+        Property[] property = new Property[1];
+        property[0] = ControllerHandler.getInstance().getBoard().getCurrentBoard()[i].getProperty();
+        ControllerHandler.getInstance().showCardOnBoard( property, -1);
     }
 
 

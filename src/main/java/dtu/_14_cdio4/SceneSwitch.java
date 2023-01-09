@@ -101,10 +101,10 @@ public class SceneSwitch {
         playerViewController.addCard(4, 0);
 
     }
-    public void showCardInMiddle(Property[] properties){
+    public void showCardInMiddle(Property[] properties, int player){
         boardController.getMiddleMenuVBox().getChildren().clear();
         boardController.getMiddleMenuVBox().getChildren().add(propertyMenu);
-        propertyMenuController.showProperties(properties);
+        propertyMenuController.showProperties(properties, player);
     }
     public void showChanceCardPileInMiddle(){
         boardController.getMiddleMenuVBox().getChildren().clear();
