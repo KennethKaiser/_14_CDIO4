@@ -370,10 +370,15 @@ public class PropertyMenuController {
                 if(checkForBuildHouse(properties[i], player)){
                     plusStackPanes[i].setOpacity(1);
                     plusButtons[i].setDisable(false);
+                    int index = i;
+                    plusButtons[i].setOnAction(e -> buildOrRemoveHouse(properties[index], 1, player, properties));
+
                 }
                 if(checkForRemoveHouse(properties[i], player)){
                     minusStackPanes[i].setOpacity(1);
                     minusButtons[i].setDisable(false);
+                    int index = i;
+                    minusButtons[i].setOnAction(e -> buildOrRemoveHouse(properties[index], -1, player, properties));
                 }
             }
 
@@ -388,16 +393,14 @@ public class PropertyMenuController {
         return true;
     }
     private boolean checkForRemoveHouse(Property property, int player){
-
         if(property.getBuildings()>0) {
 
         }
-
-
         return true;
     }
-    private void buildOrRemoveHouse(){
-
+    private void buildOrRemoveHouse(Property property, int amountOfHouses, int player, Property[] initialProperties){
+        property.setBuidlings(property.getBuildings()+amountOfHouses);
+        showProperties(initialProperties, player);
     }
     private String numbersToString(int number){
         String finalNumber = "";
