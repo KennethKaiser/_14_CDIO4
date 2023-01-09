@@ -37,7 +37,9 @@ public class FieldProperty extends Field{
         }
     }
 
-
+    public Property getProperty(){
+        return property;
+    }
     public void setProperty(Property property) {
         this.property = property;
     }
