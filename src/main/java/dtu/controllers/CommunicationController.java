@@ -77,8 +77,9 @@ public class CommunicationController {
     public void whatRolled(int[] roll){
         String[] choiceOptions = new String[1];
 
-        int total = roll[0] + roll[1];
-
+        int total;
+        if(roll.length>1) total = roll[0] + roll[1];
+        else total = roll[0];
         choiceOptions[0] = "Okay";
         String textField = "Du slog " + total + ". Tryk 'Okay' for at rykke " + total + " felter.";
         showCommunicationBox(textField, choiceOptions);

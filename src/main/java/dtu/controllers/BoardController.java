@@ -330,6 +330,8 @@ public class BoardController {
     Button cheatFieldButton;
     @FXML
     Button cheatMoneyButton;
+    @FXML
+    Button cheatMoveButton;
     //endregion
 
     //Methods:
@@ -345,7 +347,6 @@ public class BoardController {
         initHouses();
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
-
     }
 
     //region delegate model objects to other controller
@@ -512,32 +513,34 @@ public class BoardController {
 
     //region Initialize houses
     public void initHouses(){
-        propHouses = new ImageView[22];
-        propHouses[0] = houseBlue1;
-        propHouses[1] = houseBlue2;
-        propHouses[2] = houseOrange1;
-        propHouses[3] = houseOrange2;
-        propHouses[4] = houseOrange3;
-        propHouses[5] = houseGreen1;
-        propHouses[6] = houseGreen2;
-        propHouses[7] = houseGreen3;
-        propHouses[8] = houseGrey1;
-        propHouses[9] = houseGrey2;
-        propHouses[10] = houseGrey3;
-        propHouses[11] = houseRed1;
-        propHouses[12] = houseRed2;
-        propHouses[13] = houseRed3;
-        propHouses[14] = houseWhite1;
-        propHouses[15] = houseWhite2;
-        propHouses[16] = houseWhite3;
-        propHouses[17] = houseYellow1;
-        propHouses[18] = houseYellow2;
-        propHouses[19] = houseYellow3;
-        propHouses[20] = housePurple1;
-        propHouses[21] = housePurple2;
+        propHouses = new ImageView[40];
+        propHouses[1] = houseBlue1;
+        propHouses[3] = houseBlue2;
+        propHouses[6] = houseOrange1;
+        propHouses[8] = houseOrange2;
+        propHouses[9] = houseOrange3;
+        propHouses[11] = houseGreen1;
+        propHouses[13] = houseGreen2;
+        propHouses[14] = houseGreen3;
+        propHouses[16] = houseGrey1;
+        propHouses[18] = houseGrey2;
+        propHouses[19] = houseGrey3;
+        propHouses[21] = houseRed1;
+        propHouses[23] = houseRed2;
+        propHouses[24] = houseRed3;
+        propHouses[26] = houseWhite1;
+        propHouses[27] = houseWhite2;
+        propHouses[29] = houseWhite3;
+        propHouses[31] = houseYellow1;
+        propHouses[32] = houseYellow2;
+        propHouses[34] = houseYellow3;
+        propHouses[37] = housePurple1;
+        propHouses[39] = housePurple2;
         for(int i = 0; i < propHouses.length; i++){
             try{
-                propHouses[i].setImage(image("src/textures/houseNulIcon.png"));
+                if(propHouses[i] != null){
+                    propHouses[i].setImage(image("src/textures/houseNulIcon.png"));
+                }
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             }
@@ -822,6 +825,7 @@ public class BoardController {
             cheatDropDown.getItems().addAll("Spiller 1", "Spiller 2", "Spiller 3", "Spiller 4", "Spiller 5", "Spiller 6");
             cheatFieldButton.setOnAction(e -> cheatAddField());
             cheatMoneyButton.setOnAction(e -> cheatAddMoney());
+            cheatMoveButton.setOnAction(e -> cheatMovePlayer());
             System.out.println("Cheating Engaged");
         }
         else{
@@ -861,6 +865,31 @@ public class BoardController {
         playerViewController.updatePlayerMoney();
         System.out.println(cheatPlayer.getMoney());
 
+    }
+    public void cheatMovePlayer(){
+        System.out.println("Cheating for movement");
+        String player = cheatDropDown.getValue().toString();
+        int playerIndex = 0;
+        for(int i = 0; i < 6; i++){
+            if(player.equals(("Spiller " + (i+1)))) playerIndex = i;
+        }
+        String stepsString = cheatInput.getText();
+        int steps = parseInt(stepsString);
+        System.out.println(steps);
+
+
+        Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+        playerHandler.movePlayer(cheatPlayer, steps);
+
+        int playerId = cheatPlayer.getId();
+        int playerPosition = cheatPlayer.getPosition();
+
+        movePLayerOnGUI(playerId, playerPosition);
+        multipleCars(playerId, playerPosition);
+        int[] toIntArray = new int[1];
+        toIntArray[0] = steps;
+        //Switch decision box
+        communicationController.whatRolled(toIntArray);
     }
     //endregion
 
