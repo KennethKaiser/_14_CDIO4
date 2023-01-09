@@ -767,9 +767,6 @@ public class BoardController {
 
     //endregion
 
-    public PlayerHandler getPlayerHandler(){
-        return playerHandler;
-    }
 
 
 }
