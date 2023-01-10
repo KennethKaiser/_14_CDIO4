@@ -3,7 +3,7 @@ package dtu.board;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
 
-public class PrisonField {
+public class PrisonField extends Field {
 
     private Dummy dummy;
     int die1, die2;
