@@ -15,7 +15,7 @@ public class GoPrisonField extends Field {
 
     @Override
     public String type() {
-        return "prison";
+        return "jail";
     }
 
 
