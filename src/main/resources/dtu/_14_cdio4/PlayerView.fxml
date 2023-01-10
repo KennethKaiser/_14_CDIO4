@@ -53,6 +53,7 @@
                                     </Text>
                                 </children>
                             </HBox>
+                     <ImageView fx:id="car1" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
                         </children>
                         <VBox.margin>
                             <Insets />
@@ -111,6 +112,7 @@
                                     </Text>
                                 </children>
                             </HBox>
+                     <ImageView fx:id="car3" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
                         </children>
                         <VBox.margin>
                             <Insets />
@@ -169,6 +171,7 @@
                                     </Text>
                                 </children>
                             </HBox>
+                     <ImageView fx:id="car5" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
                         </children>
                         <VBox.margin>
                             <Insets />
@@ -231,6 +234,7 @@
                                     </Text>
                                 </children>
                             </HBox>
+                     <ImageView fx:id="car2" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
                         </children>
                         <VBox.margin>
                             <Insets />
@@ -289,6 +293,7 @@
                                     </Text>
                                 </children>
                             </HBox>
+                     <ImageView fx:id="car4" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
                         </children>
                         <VBox.margin>
                             <Insets />
@@ -347,6 +352,7 @@
                                     </Text>
                                 </children>
                             </HBox>
+                     <ImageView fx:id="car6" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
                         </children>
                         <VBox.margin>
                             <Insets />

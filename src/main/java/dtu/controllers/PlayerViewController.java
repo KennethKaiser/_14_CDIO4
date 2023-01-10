@@ -272,6 +272,22 @@ public class PlayerViewController {
     FlowPane moneyAreaP6;
 
     //endregion
+    //region car images
+    @FXML
+    ImageView car1;
+    @FXML
+    ImageView car2;
+    @FXML
+    ImageView car3;
+    @FXML
+    ImageView car4;
+    @FXML
+    ImageView car5;
+    @FXML
+    ImageView car6;
+    ImageView[] cars;
+
+    //endregion
 
 
 
@@ -285,6 +301,7 @@ public class PlayerViewController {
         initializePlayerNameTextArray();
         initializePlayerMoneyTextArray();
         initializePlayerAreaArray();
+        initCarImages();
     }
 
 
@@ -1005,7 +1022,21 @@ public class PlayerViewController {
         }
     }
     //endregion
+    //region set the color icon
 
+    public void setColorOfPlayer(Image image, int player){
+        cars[player].setImage(image);
+    }
+    private void initCarImages(){
+        cars = new ImageView[6];
+        cars[0] = car1;
+        cars[1] = car2;
+        cars[2] = car3;
+        cars[3] = car4;
+        cars[4] = car5;
+        cars[5] = car6;
+    }
+    //end region
 
     //region remove player
     public void removePlayerFromPlayerView(int player){
