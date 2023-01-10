@@ -60,6 +60,10 @@ public class FieldProperty extends BuyableFields{
         this.owner = owner;
     }
 
+    public void setPledgeState(boolean pledgeState) {
+        this.pledgeState = pledgeState;
+    }
+
     /*public void setActiveRent(int activeRent) {
         this.activeRent = activeRent;
     }*/
