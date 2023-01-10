@@ -268,7 +268,19 @@ public class CommunicationController {
     }
     //endregion
 
+    public void playerIsBankrupt(Player player){
+        String[] choiceOptions = new String[1];
 
+        choiceOptions[0] = "Okay";
+
+        String playerName = player.getName();
+
+        String textField = playerName + " er gået bankerot og er nu ude af spillet!";
+
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurnAfterBankrupt());
+    }
 
 
     private void rollDice(){

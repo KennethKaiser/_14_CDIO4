@@ -24,6 +24,13 @@ public class PlayerHandler {
         currentPlayer = players[nID];
     }
 
+    public void currentPlayerAfterBankrupt(){
+        if(nID > players.length){
+            nID = 0;
+        }
+        currentPlayer = players[nID];
+    }
+
     //Should be called when the game ask how many are playing
     public void initializePlayers(int size){
         players = new Player[size];
@@ -42,9 +49,11 @@ public class PlayerHandler {
      * @param deltaMove
      */
     public void movePlayer(Player player, int deltaMove){
-        int nextFieldPlacement = getPlayers()[player.getId()].getPosition() + deltaMove;
+        int nextFieldPlacement = player.getPosition() + deltaMove;
 
-        getPlayers()[player.getId()].setPosition(nextFieldPlacement);
+        player.setPosition(nextFieldPlacement);
+
+        //getPlayers()[player.getId()].setPosition(nextFieldPlacement);
 
     }
 
@@ -126,9 +135,8 @@ public class PlayerHandler {
         if (getPlayers() != null){
             for (int i=0; i<player.getProperties().size();i++) {
                 ((FieldProperty)player.getProperties().get(i)).setOwner(null);
-                //((FieldProperty)player.getProperties().get(i)).getProperty().setOwned(false);
-                //((FieldProperty)player.getProperties().get(i)).getProperty().setActiveRent(0);
-                //((FieldProperty)player.getProperties().get(i)).getProperty().setBuildings(0);
+                ((FieldProperty)player.getProperties().get(i)).setOwned(false);
+                ((FieldProperty)player.getProperties().get(i)).setBuildings(0);
         }
 
         }

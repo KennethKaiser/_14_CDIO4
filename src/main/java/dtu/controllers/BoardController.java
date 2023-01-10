@@ -582,6 +582,7 @@ public class BoardController {
         rollDiceAnimation(playerRoll[0],playerRoll[1]);
 
         int playerId = currentPlayer.getId();
+        System.out.println("playerid:"+playerId);
         int playerPosition = currentPlayer.getPosition();
 
         movePLayerOnGUI(playerId, playerPosition);
@@ -673,10 +674,41 @@ public class BoardController {
     }
 
     public void endTurn(){
-        playerHandler.currentPlayer();
+
+
+        playerHandler.isPlayerBankrupt(playerHandler.getCurrentPlayer());
+
+        if(playerHandler.getCurrentPlayer().isBankrupt()){
+            communicationController.playerIsBankrupt(playerHandler.getCurrentPlayer());
+        }
+        else {
+            System.out.println("Dette her");
+            playerViewController.updatePlayerTurn();
+            playerHandler.currentPlayer();
+            String playerName = playerHandler.getCurrentPlayer().getName();
+            communicationController.playerTurnStart(playerName);
+        }
+
+
+
+
+    }
+
+    public void endTurnAfterBankrupt(){
+
+        int temp = playerHandler.getCurrentPlayer().getId();
+
+
+        playerHandler.changePlayerArray();
+
+        playerViewController.removePlayerFromPlayerView(temp);
+
+        playerHandler.currentPlayerAfterBankrupt();
         String playerName = playerHandler.getCurrentPlayer().getName();
-        playerViewController.updatePlayerTurn();
         communicationController.playerTurnStart(playerName);
+
+
+
 
     }
 

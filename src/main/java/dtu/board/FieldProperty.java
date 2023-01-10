@@ -147,4 +147,17 @@ public class FieldProperty extends BuyableFields{
         return owner;
     }
 
+    public int getFamilie() {
+        return familie;
+    }
+
+    public void setFamilie(int familie) {
+        this.familie = familie;
+    }
+
+    public void setPledgeState(boolean pledgeState) {
+        this.pledgeState = pledgeState;
+    }
+
+
 }
