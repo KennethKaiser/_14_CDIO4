@@ -2,6 +2,7 @@ package dtu.board;
 
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
+import dtu.players.PlayerHandler;
 
 public class PrisonField extends Field {
 
@@ -45,6 +46,7 @@ public void BailOut(Player player){
     public void doubleOut(Player player) {
         if (player.isJail() == true) {
         if(player.getJailTurns() < 3){
+            PlayerHandler playerHandler = new PlayerHandler();
             RaffleCup getOut = new RaffleCup();
             getOut.roll();
             die1 = Integer.valueOf(getOut.getOurRolls()[0]);
@@ -52,7 +54,8 @@ public void BailOut(Player player){
             if (die1 == die2) {
                 player.setJail(false);
                 player.setJailTurns(0);
-                player.setPosition(player.getPosition() + (die1 + die2));
+                //Denne flytter spilleren deres slag, men en bedre måde eksisterer måske
+                playerHandler.movePlayer(player,(die1 + die2));
             }
             else{
                 System.out.println("Du slog ikke to ens og må forblive i fængsel");
