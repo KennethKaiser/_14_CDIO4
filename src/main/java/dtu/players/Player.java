@@ -1,9 +1,7 @@
 package dtu.players;
 
 import dtu.board.Field;
-import dtu.board.FieldProperty;
 
-import java.text.FieldPosition;
 import java.util.ArrayList;
 
 public class Player {
@@ -20,6 +18,8 @@ public class Player {
     private boolean bankrupt;
     private boolean jail = false;
     private boolean getOutOfJailCard = false;
+
+    private int jailTurns = 0;
 
     public Player(int id, String name, int money, String color) {
         this.id = id;
@@ -106,6 +106,8 @@ public class Player {
     public void setGetOutOfJailCard(boolean getOutOfJailCard) {
         this.getOutOfJailCard = getOutOfJailCard;
     }
+    public void setJailTurns(int turns){this.jailTurns = turns;}
+    public int getJailTurns(){return jailTurns;}
 
     public ArrayList<Field> getFerries() {
         return ferries;
