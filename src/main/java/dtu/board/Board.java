@@ -139,6 +139,9 @@ public class Board {
             else if(fieldText.get(i)[2].equals("jail")){
                 currentBoard[i-1] = new GoPrisonField();
             }
+            else if(fieldText.get(i)[2].equals("jailvisit")){
+                currentBoard[i-1] = new PrisonField();
+            }
         }
 
 

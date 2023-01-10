@@ -1,5 +1,6 @@
 package dtu.board;
 
+import dtu.controllers.ControllerHandler;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
@@ -10,9 +11,9 @@ public class PrisonField extends Field {
     int die1, die2;
     final int BAIL = 1000;
 
-    public PrisonField(Dummy dummy) {
-        this.dummy = dummy;
-    }
+    //public PrisonField(Dummy dummy) {
+    //    this.dummy = dummy;
+    //}
 
     @Override
     public String landedLabel() {
@@ -24,9 +25,6 @@ public class PrisonField extends Field {
         return "jailvisit";
     }
 
-    public Dummy getDummy() {
-        return dummy;
-    }
 
     //Ways to get out of jail
     //Bail
@@ -47,15 +45,19 @@ public void BailOut(Player player){
         if (player.isJail() == true) {
         if(player.getJailTurns() < 3){
             PlayerHandler playerHandler = new PlayerHandler();
+
+            ControllerHandler.getInstance().getBoardController().getDiceBox();
             RaffleCup getOut = new RaffleCup();
             getOut.roll();
             die1 = Integer.valueOf(getOut.getOurRolls()[0]);
             die2 = Integer.valueOf(getOut.getOurRolls()[1]);
+            ControllerHandler.getInstance().getBoardController().rollDiceAnimation(die1,die2);
             if (die1 == die2) {
                 player.setJail(false);
                 player.setJailTurns(0);
                 //Denne flytter spilleren deres slag, men en bedre måde eksisterer måske
                 playerHandler.movePlayer(player,(die1 + die2));
+                ControllerHandler.getInstance().getBoardController().movePLayerOnGUI(player.getId(), (die1 + die2));
             }
             else{
                 System.out.println("Du slog ikke to ens og må forblive i fængsel");
