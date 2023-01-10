@@ -301,6 +301,9 @@ public class MenuScreenController {
             if(colors[i].equals(colorDanishfy(color))){
                 colors[i] = "";
             }
+            else if(colors[i].equals(color)){
+                colors[i] = "";
+            }
         }
         updateColorPicker();
     }
