@@ -313,6 +313,23 @@ public class PlayerHandler {
         return allAssetsValue;
     }
 
+    public boolean checkForChickenDinner(){
+        int temp = 0;
+        for(int i = 0; i < players.length; i++){
+            if(players[i].isBankrupt() != true){
+                temp++;
+            }
+        }
+        if(temp == 1){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+
+    }
+
 
 
 
