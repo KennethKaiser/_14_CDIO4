@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,10 +11,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="wholeArea" prefHeight="700.0" prefWidth="1500.0" spacing="5.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PlayerViewController">
-    <VBox fx:id="part1" maxHeight="700.0" prefHeight="671.0" prefWidth="440.0" spacing="5.0">
+<HBox fx:id="wholeArea" alignment="CENTER" prefHeight="900.0" prefWidth="1600.0" spacing="5.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PlayerViewController">
+    <VBox fx:id="part1" maxHeight="-Infinity" prefHeight="900.0" prefWidth="400.0" spacing="5.0">
         <children>
-            <VBox fx:id="area1" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="780.0" prefWidth="500.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area1" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #00dd00;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
@@ -35,21 +34,21 @@
                                     <ColorAdjust brightness="1.0" />
                                 </effect>
                             </ImageView>
-                            <Text fx:id="p1Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PlayerName" textAlignment="CENTER" wrappingWidth="217.50013828277588">
+                            <Text fx:id="p1Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PlayerName" textAlignment="CENTER" wrappingWidth="160.0">
                                 <font>
-                                    <Font name="System Bold" size="20.0" />
+                                    <Font name="System Bold" size="16.0" />
                                 </font>
                             </Text>
-                            <HBox maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
+                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
                                 <children>
                                     <Text fx:id="p1Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
                                         <font>
-                                            <Font size="20.0" />
+                                            <Font size="16.0" />
                                         </font>
                                     </Text>
                                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                         <font>
-                                            <Font size="20.0" />
+                                            <Font size="16.0" />
                                         </font>
                                     </Text>
                                 </children>
@@ -59,22 +58,10 @@
                             <Insets />
                         </VBox.margin>
                     </HBox>
-                    <HBox prefHeight="150.0" prefWidth="396.0">
+                    <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
                         <children>
-                            <FlowPane fx:id="propAreaP1" alignment="TOP_CENTER" hgap="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="18.0">
-                        <children>
-                           <StackPane prefHeight="150.0" prefWidth="180.0">
-                              <children>
-                                 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="20.0" style="-fx-background-color: #00ffff;">
-                                    <children>
-                                       <Button mnemonicParsing="false" style="-fx-background-color: #FF69B4;" />
-                                    </children>
-                                 </VBox>
-                              </children>
-                           </StackPane>
-                        </children>
-                            </FlowPane>
-                            <FlowPane fx:id="moneyAreaP1" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="180.0" vgap="20.0" />
+                            <FlowPane fx:id="propAreaP1" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
+                            <FlowPane fx:id="moneyAreaP1" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
                         </children>
                     </HBox>
                 </children>
@@ -85,7 +72,7 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area3" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="780.0" prefWidth="500.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area3" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #00dd00;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="386.0" spacing="8.0">
                         <children>
@@ -105,21 +92,21 @@
                                     <ColorAdjust brightness="1.0" />
                                 </effect>
                             </ImageView>
-                            <Text fx:id="p3Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="217.50013828277588">
+                            <Text fx:id="p3Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
                                 <font>
-                                    <Font name="System Bold" size="20.0" />
+                                    <Font name="System Bold" size="16.0" />
                                 </font>
                             </Text>
-                            <HBox maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
+                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
                                 <children>
                                     <Text fx:id="p3Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
                                         <font>
-                                            <Font size="20.0" />
+                                            <Font size="16.0" />
                                         </font>
                                     </Text>
                                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                         <font>
-                                            <Font size="20.0" />
+                                            <Font size="16.0" />
                                         </font>
                                     </Text>
                                 </children>
@@ -129,10 +116,10 @@
                             <Insets />
                         </VBox.margin>
                     </HBox>
-                    <HBox prefHeight="150.0" prefWidth="396.0">
+                    <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
                         <children>
-                            <FlowPane fx:id="propAreaP3" alignment="TOP_CENTER" hgap="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="18.0" />
-                            <FlowPane fx:id="moneyAreaP3" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="180.0" vgap="20.0" />
+                            <FlowPane fx:id="propAreaP3" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
+                            <FlowPane fx:id="moneyAreaP3" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
                         </children>
                     </HBox>
                 </children>
@@ -143,7 +130,7 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area5" alignment="TOP_CENTER" layoutX="10.0" layoutY="352.0" prefHeight="780.0" prefWidth="500.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area5" alignment="TOP_CENTER" layoutX="10.0" layoutY="352.0" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #00dd00;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
@@ -163,21 +150,21 @@
                                     <ColorAdjust brightness="1.0" />
                                 </effect>
                             </ImageView>
-                            <Text fx:id="p5Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="217.50013828277588">
+                            <Text fx:id="p5Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
                                 <font>
-                                    <Font name="System Bold" size="20.0" />
+                                    <Font name="System Bold" size="16.0" />
                                 </font>
                             </Text>
-                            <HBox maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
+                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
                                 <children>
                                     <Text fx:id="p5Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
                                         <font>
-                                            <Font size="20.0" />
+                                            <Font size="16.0" />
                                         </font>
                                     </Text>
                                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                         <font>
-                                            <Font size="20.0" />
+                                            <Font size="16.0" />
                                         </font>
                                     </Text>
                                 </children>
@@ -187,10 +174,10 @@
                             <Insets />
                         </VBox.margin>
                     </HBox>
-                    <HBox prefHeight="150.0" prefWidth="396.0">
+                    <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
                         <children>
-                            <FlowPane fx:id="propAreaP5" alignment="TOP_CENTER" hgap="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="18.0" />
-                            <FlowPane fx:id="moneyAreaP5" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="180.0" vgap="20.0" />
+                            <FlowPane fx:id="propAreaP5" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
+                            <FlowPane fx:id="moneyAreaP5" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
                         </children>
                     </HBox>
                 </children>
@@ -203,9 +190,9 @@
             </VBox>
         </children>
     </VBox>
-    <VBox fx:id="part2" maxHeight="700.0" prefHeight="700.0" prefWidth="440.0" spacing="5.0">
+    <VBox fx:id="part2" maxHeight="-Infinity" prefHeight="900.0" prefWidth="400.0" spacing="5.0">
         <children>
-            <VBox fx:id="area2" alignment="TOP_CENTER" prefHeight="780.0" prefWidth="500.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area2" alignment="TOP_CENTER" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #00dd00;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
@@ -225,21 +212,21 @@
                                     <ColorAdjust brightness="1.0" />
                                 </effect>
                             </ImageView>
-                            <Text fx:id="p2Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="217.50013828277588">
+                            <Text fx:id="p2Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
                                 <font>
-                                    <Font name="System Bold" size="20.0" />
+                                    <Font name="System Bold" size="16.0" />
                                 </font>
                             </Text>
-                            <HBox maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
+                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
                                 <children>
                                     <Text fx:id="p2Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
                                         <font>
-                                            <Font size="20.0" />
+                                            <Font size="16.0" />
                                         </font>
                                     </Text>
                                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                         <font>
-                                            <Font size="20.0" />
+                                            <Font size="16.0" />
                                         </font>
                                     </Text>
                                 </children>
@@ -249,10 +236,10 @@
                             <Insets />
                         </VBox.margin>
                     </HBox>
-                    <HBox prefHeight="150.0" prefWidth="396.0">
+                    <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
                         <children>
-                            <FlowPane fx:id="propAreaP2" alignment="TOP_CENTER" hgap="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="18.0" />
-                            <FlowPane fx:id="moneyAreaP2" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="180.0" vgap="20.0" />
+                            <FlowPane fx:id="propAreaP2" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
+                            <FlowPane fx:id="moneyAreaP2" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
                         </children>
                     </HBox>
                 </children>
@@ -263,7 +250,7 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area4" alignment="TOP_CENTER" prefHeight="780.0" prefWidth="500.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area4" alignment="TOP_CENTER" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #00dd00;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
@@ -283,21 +270,21 @@
                                     <ColorAdjust brightness="1.0" />
                                 </effect>
                             </ImageView>
-                            <Text fx:id="p4Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="217.50013828277588">
+                            <Text fx:id="p4Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
                                 <font>
-                                    <Font name="System Bold" size="20.0" />
+                                    <Font name="System Bold" size="16.0" />
                                 </font>
                             </Text>
-                            <HBox maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
+                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
                                 <children>
                                     <Text fx:id="p4Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
                                         <font>
-                                            <Font size="20.0" />
+                                            <Font size="16.0" />
                                         </font>
                                     </Text>
                                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                         <font>
-                                            <Font size="20.0" />
+                                            <Font size="16.0" />
                                         </font>
                                     </Text>
                                 </children>
@@ -307,10 +294,10 @@
                             <Insets />
                         </VBox.margin>
                     </HBox>
-                    <HBox prefHeight="150.0" prefWidth="396.0">
+                    <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
                         <children>
-                            <FlowPane fx:id="propAreaP4" alignment="TOP_CENTER" hgap="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="18.0" />
-                            <FlowPane fx:id="moneyAreaP4" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="180.0" vgap="20.0" />
+                            <FlowPane fx:id="propAreaP4" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
+                            <FlowPane fx:id="moneyAreaP4" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
                         </children>
                     </HBox>
                 </children>
@@ -321,7 +308,7 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area6" alignment="TOP_CENTER" prefHeight="780.0" prefWidth="500.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area6" alignment="TOP_CENTER" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #00dd00;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
@@ -341,21 +328,21 @@
                                     <ColorAdjust brightness="1.0" />
                                 </effect>
                             </ImageView>
-                            <Text fx:id="p6Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="217.50013828277588">
+                            <Text fx:id="p6Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
                                 <font>
-                                    <Font name="System Bold" size="20.0" />
+                                    <Font name="System Bold" size="16.0" />
                                 </font>
                             </Text>
-                            <HBox maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
+                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
                                 <children>
                                     <Text fx:id="p6Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
                                         <font>
-                                            <Font size="20.0" />
+                                            <Font size="16.0" />
                                         </font>
                                     </Text>
                                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                         <font>
-                                            <Font size="20.0" />
+                                            <Font size="16.0" />
                                         </font>
                                     </Text>
                                 </children>
@@ -365,10 +352,10 @@
                             <Insets />
                         </VBox.margin>
                     </HBox>
-                    <HBox prefHeight="150.0" prefWidth="396.0">
+                    <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
                         <children>
-                            <FlowPane fx:id="propAreaP6" alignment="TOP_CENTER" hgap="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="18.0" />
-                            <FlowPane fx:id="moneyAreaP6" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="180.0" vgap="20.0">
+                            <FlowPane fx:id="propAreaP6" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
+                            <FlowPane fx:id="moneyAreaP6" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0">
                                 <children>
                                     <StackPane alignment="TOP_LEFT" prefHeight="60.0" prefWidth="1.0">
                               <children>
@@ -409,7 +396,4 @@
                 </opaqueInsets>
             </VBox>
         </children></VBox>
-   <padding>
-      <Insets bottom="5.0" top="5.0" />
-   </padding>
 </HBox>

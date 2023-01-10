@@ -76,10 +76,10 @@ public class SceneSwitch {
     }
     private void collectBoard(){
         showChanceCardPileInMiddle();
-        boardController.getMiddleParent().getChildren().add(3, communication);
+        boardController.getMiddleParent().getChildren().add(4, communication);
         playerView.getChildren().add(1, board);
         root.getChildren().add(playerView);
-        boardScene = new Scene(root, 1500, 700);
+        boardScene = new Scene(root, 1600, 700);
     }
     public void switchToMenu(){
         stage.setTitle("Matador");
@@ -89,8 +89,7 @@ public class SceneSwitch {
     }
     public void switchToBoard(){
         stage.setScene(boardScene);
-        stage.setX(10);
-        stage.setY(20);
+        stage.setMaximized(true);
         stage.setResizable(false);
         stage.show();
         boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getMenuCarColorImages(), menuScreenController.getColorNames());
