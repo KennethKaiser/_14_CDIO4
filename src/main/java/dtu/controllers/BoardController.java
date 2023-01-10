@@ -623,7 +623,7 @@ public class BoardController {
         else if(type.equals("tax")){
             endTurn();
         }
-        else if(type.equals("prison")){
+        else if(type.equals("jail")){
             endTurn();
         }
 
