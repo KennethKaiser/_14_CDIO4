@@ -8,17 +8,24 @@ import dtu.players.PlayerHandler;
 import java.util.ArrayList;
 
 public class ChanceCardFunctionality {
-    PlayerHandler playerHandler = new PlayerHandler();
+    PlayerHandler playerHandler;
 
     public String chanceCardFunction(int id, Player player) {
         switch (id) {
             case 0: {
                 //Oliepriserne er steget og De skal betale 500,- pr hus og 2000,- pr hotel.
-                //String case0 = csvFileReader.getChancecarddesc()[0];
+                int houses = playerHandler.amountOfHouses(playerHandler.getPlayers()[player.getId()]);
+                int hotels = playerHandler.amountOfHouses(playerHandler.getPlayers()[player.getId()]);
+                playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(houses*500));
+                playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(hotels*2000));
                 break;
             }
             case 1: {
                 //Ejendomsskatten er steget. Ekstraudgifterne er: 800,- pr. hus og 2300,- pr. hotel.
+                int houses = playerHandler.amountOfHouses(playerHandler.getPlayers()[player.getId()]);
+                int hotels = playerHandler.amountOfHouses(playerHandler.getPlayers()[player.getId()]);
+                playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(houses*800));
+                playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(hotels*2300));
                 break;
             }
             case 2: {
@@ -150,6 +157,7 @@ public class ChanceCardFunctionality {
             case 30: {
                 //Ryk tre felter frem
                 playerHandler.movePlayer(player, 3);
+                break;
             }
             case 31: {
                 //Ryk tre felter tilbage
@@ -163,7 +171,7 @@ public class ChanceCardFunctionality {
             }
             case 33: {
                 //Ryk frem til Frederiksberg Allé. Hvis De passere START  indkasser da 4000 kr.
-                playerHandler.movePlayer(player, 11);
+                playerHandler.movePlayerChanceCard(player, 11);
                 break;
             }
             case 34: {
@@ -229,6 +237,9 @@ public class ChanceCardFunctionality {
     }
 
 
+    public void setPlayerHandler(PlayerHandler playerHandler) {
+        this.playerHandler = playerHandler;
+    }
 }
 
 
