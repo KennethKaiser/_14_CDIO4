@@ -101,6 +101,13 @@ public class FieldProperty extends BuyableFields{
         int temp = buildings;
         int activeRent = 0;
 
+        HousingLogic housingLogic = new HousingLogic();
+
+        if(housingLogic.checkForHasAllOfFamily(this, owner.getId())&&buildings==0){
+            temp =10;
+        }
+
+
         switch (temp){
             case 0:
                 activeRent = property.getRentNormal();
@@ -119,6 +126,9 @@ public class FieldProperty extends BuyableFields{
                 return activeRent;
             case 5:
                 activeRent = property.getRentHotel();
+                return activeRent;
+            case 10:
+                activeRent = 2*property.getRentNormal();
                 return activeRent;
         }
         return activeRent;
