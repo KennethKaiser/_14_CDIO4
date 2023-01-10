@@ -104,8 +104,6 @@ public class PropertyMenuController {
     Text hotel1;
     @FXML
     Text husPris1;
-    @FXML
-    Text pant1;
 
     @FXML
     Text leje2;
@@ -121,8 +119,6 @@ public class PropertyMenuController {
     Text hotel2;
     @FXML
     Text husPris2;
-    @FXML
-    Text pant2;
 
     @FXML
     Text leje3;
@@ -138,8 +134,6 @@ public class PropertyMenuController {
     Text hotel3;
     @FXML
     Text husPris3;
-    @FXML
-    Text pant3;
     //endregion
     //region pantsætning
 
@@ -161,6 +155,24 @@ public class PropertyMenuController {
     VBox pansatSoda1;
     @FXML
     VBox pansatSoda2;
+    @FXML
+    Button pledgeButtonProp1;
+    @FXML
+    Button pledgeButtonProp2;
+    @FXML
+    Button pledgeButtonProp3;
+    @FXML
+    Button pledgeButtonFerry1;
+    @FXML
+    Button pledgeButtonFerry2;
+    @FXML
+    Button pledgeButtonFerry3;
+    @FXML
+    Button pledgeButtonFerry4;
+    @FXML
+    Button pledgeButtonSoda1;
+    @FXML
+    Button pledgeButtonSoda2;
 
 
     //endregion
@@ -210,7 +222,7 @@ public class PropertyMenuController {
     Text[] house4Rent;
     Text[] hotelRent;
     Text[] housePrice;
-    Text[] pledgeValue;
+    Button[] pledgeButtons;
     HBox[] colors;
     VBox[] pledgeValueIcons;
     VBox[] cards;
@@ -230,6 +242,16 @@ public class PropertyMenuController {
         parent.getChildren().add(property1);
     }
     private void initButtons(){
+        pledgeButtons = new Button[9];
+        pledgeButtons[0] = pledgeButtonProp1;
+        pledgeButtons[1] = pledgeButtonProp2;
+        pledgeButtons[2] = pledgeButtonProp3;
+        pledgeButtons[3] = pledgeButtonFerry1;
+        pledgeButtons[4] = pledgeButtonFerry2;
+        pledgeButtons[5] = pledgeButtonFerry3;
+        pledgeButtons[6] = pledgeButtonFerry4;
+        pledgeButtons[7] = pledgeButtonSoda1;
+        pledgeButtons[8] = pledgeButtonSoda2;
         minusButtons[0] = minusButton1;
         minusButtons[1] = minusButton2;
         minusButtons[2] = minusButton3;
@@ -306,10 +328,6 @@ public class PropertyMenuController {
         hotelRent[0] = hotel1;
         hotelRent[1] = hotel2;
         hotelRent[2] = hotel3;
-        pledgeValue = new Text[3];
-        pledgeValue[0] = pant1;
-        pledgeValue[1] = pant2;
-        pledgeValue[2] = pant3;
         housePrice = new Text[3];
         housePrice[0] = husPris1;
         housePrice[1] = husPris2;
@@ -355,6 +373,7 @@ public class PropertyMenuController {
         }
     }
     public void showProperties(Field[] properties, int player){
+        if(playerHandler == null) playerHandler = ControllerHandler.getInstance().getBoardController().playerHandler;
         parent.getChildren().clear();
         hideButtons();
         Field field;
@@ -372,7 +391,17 @@ public class PropertyMenuController {
                 house3Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent3House()));
                 house4Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent4House()));
                 housePrice[i].setText(numbersToString(fieldProperty.getProperty().getHousePrice()));
-                pledgeValue[i].setText(numbersToString(fieldProperty.getProperty().getPledge()));
+                setPledgeValueSign(fieldProperty.isPledgeState(), i);
+                System.out.println("State: " + fieldProperty.isPledgeState());
+                if(fieldProperty.isPledgeState()) {
+                    System.out.println("Åben for");
+                    pledgeButtons[i].setText("Åben for: " + numbersToString(fieldProperty.getProperty().getPledge() + playerHandler.nonPledgeTax(fieldProperty.getProperty().getPledge())));
+                }
+                else {
+                    System.out.println("Pantsæt og få");
+                    pledgeButtons[i].setText("Pantsæt og få: " + numbersToString(fieldProperty.getProperty().getPledge()));
+                }
+                pledgeButtons[i].setOnAction(e -> doPledge(fieldProperty, !fieldProperty.isPledgeState(), player, properties));
                 setColorOf(colors[i], fieldProperty.getProperty().getFamilie());
                 setHouseIcon(i, fieldProperty.getBuildings());
                 if(player != -1){
@@ -510,5 +539,23 @@ public class PropertyMenuController {
         }
 
     }
+
+    //region pantsætning
+    public void doPledge(Field property, boolean toState, int player, Field[] initialProperties){
+        switch(property.type()){
+            case "buyablefield":
+                ((FieldProperty)property).setPledgeState(toState);
+                break;
+            case "ferry":
+                ((FerryField)property).setPledgeState(toState);
+                break;
+            case "brewery":
+                ((BreweryField)property).setPledgeState(toState);
+                break;
+        }
+        showProperties(initialProperties, player);
+    }
+
+    //endregion
 
 }
