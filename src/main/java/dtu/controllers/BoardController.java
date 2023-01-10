@@ -169,6 +169,8 @@ public class BoardController {
     //endregion
     //region Field Buttons
     @FXML
+    Button backgroundButton;
+    @FXML
     Button bField0;
     @FXML
     Button bField1;
@@ -363,6 +365,7 @@ public class BoardController {
 
     //region Initialize Fields and buttons to fields
     private void initFields(){
+        backgroundButton.setOnAction(e -> removeOnScreen());
         fields = new StackPane[40];
         fields[0] = field0;
         fields[1] = field1;
@@ -561,6 +564,7 @@ public class BoardController {
             cars[i].setImage(carImageColors[i]);
         }
         playerHandler.currentPlayer();
+        ControllerHandler.getInstance().getPlayerViewController().updatePlayerTurn();
 
 
     }
@@ -685,7 +689,9 @@ public class BoardController {
     public void endTurn(){
         playerHandler.currentPlayer();
         String playerName = playerHandler.getCurrentPlayer().getName();
+        playerViewController.updatePlayerTurn();
         communicationController.playerTurnStart(playerName);
+
     }
 
 
@@ -861,6 +867,9 @@ public class BoardController {
         node.setStyle(node.getStyle() + ";-fx-border-color: #000000;");
     }
 
+    public void removeOnScreen(){
+        ControllerHandler.getInstance().getSceneSwitch().showChanceCardPileInMiddle();
+    }
     //endregion
 
     //region cheating

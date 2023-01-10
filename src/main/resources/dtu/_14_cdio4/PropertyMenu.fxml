@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PropertyMenuController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PropertyMenuController">
    <children>
       <HBox fx:id="parent" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="3.0">
          <VBox fx:id="ferry1" alignment="TOP_CENTER" layoutX="324.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="190.0" prefWidth="121.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">

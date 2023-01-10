@@ -28,6 +28,7 @@ public class ChanceCardsController {
     }
 
     public void showChanceCard(String title, String text){
+        ControllerHandler.getInstance().getSceneSwitch().showChanceCardPileInMiddle();
         chanceCardText.setText(text);
         chanceCardTitle.setText(title);
         chanceCardShown.setOpacity(1);

@@ -481,8 +481,8 @@ public class PlayerViewController {
         if(playerHandler != null){
             int player = playerHandler.getCurrentPlayer().getId();
             for(int i = 0; i < areas.length; i++){
-                if(i == player) areas[i].setStyle("-fx-background-color: #00dd00; -fx-border-color: yellow");
-                else areas[i].setStyle("-fx-background-color: #00dd00");
+                if(i == player) areas[i].setStyle("-fx-background-color: #00dd00; -fx-border-color: yellow; -fx-border-width: 3");
+                else areas[i].setStyle("-fx-background-color: #00dd00; -fx-border-color: #00aa00;-fx-border-width: 3");
             }
         }
         else System.out.println("No playerhandler instantiated yet");

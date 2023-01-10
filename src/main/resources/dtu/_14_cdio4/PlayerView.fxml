@@ -61,7 +61,7 @@
                     </HBox>
                     <HBox prefHeight="150.0" prefWidth="396.0">
                         <children>
-                            <FlowPane fx:id="propAreaP1" alignment="TOP_CENTER" hgap="2.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="2.0">
+                            <FlowPane fx:id="propAreaP1" alignment="TOP_CENTER" hgap="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="18.0">
                         <children>
                            <StackPane prefHeight="150.0" prefWidth="180.0">
                               <children>
@@ -131,7 +131,7 @@
                     </HBox>
                     <HBox prefHeight="150.0" prefWidth="396.0">
                         <children>
-                            <FlowPane fx:id="propAreaP3" alignment="TOP_CENTER" hgap="2.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="2.0" />
+                            <FlowPane fx:id="propAreaP3" alignment="TOP_CENTER" hgap="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="18.0" />
                             <FlowPane fx:id="moneyAreaP3" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="180.0" vgap="20.0" />
                         </children>
                     </HBox>
@@ -189,7 +189,7 @@
                     </HBox>
                     <HBox prefHeight="150.0" prefWidth="396.0">
                         <children>
-                            <FlowPane fx:id="propAreaP5" alignment="TOP_CENTER" hgap="2.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="2.0" />
+                            <FlowPane fx:id="propAreaP5" alignment="TOP_CENTER" hgap="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="18.0" />
                             <FlowPane fx:id="moneyAreaP5" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="180.0" vgap="20.0" />
                         </children>
                     </HBox>
@@ -251,7 +251,7 @@
                     </HBox>
                     <HBox prefHeight="150.0" prefWidth="396.0">
                         <children>
-                            <FlowPane fx:id="propAreaP2" alignment="TOP_CENTER" hgap="2.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="2.0" />
+                            <FlowPane fx:id="propAreaP2" alignment="TOP_CENTER" hgap="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="18.0" />
                             <FlowPane fx:id="moneyAreaP2" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="180.0" vgap="20.0" />
                         </children>
                     </HBox>
@@ -309,7 +309,7 @@
                     </HBox>
                     <HBox prefHeight="150.0" prefWidth="396.0">
                         <children>
-                            <FlowPane fx:id="propAreaP4" alignment="TOP_CENTER" hgap="2.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="2.0" />
+                            <FlowPane fx:id="propAreaP4" alignment="TOP_CENTER" hgap="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="18.0" />
                             <FlowPane fx:id="moneyAreaP4" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="180.0" vgap="20.0" />
                         </children>
                     </HBox>
@@ -367,7 +367,7 @@
                     </HBox>
                     <HBox prefHeight="150.0" prefWidth="396.0">
                         <children>
-                            <FlowPane fx:id="propAreaP6" alignment="TOP_CENTER" hgap="2.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="2.0" />
+                            <FlowPane fx:id="propAreaP6" alignment="TOP_CENTER" hgap="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="220.0" vgap="18.0" />
                             <FlowPane fx:id="moneyAreaP6" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="180.0" vgap="20.0">
                                 <children>
                                     <StackPane alignment="TOP_LEFT" prefHeight="60.0" prefWidth="1.0">

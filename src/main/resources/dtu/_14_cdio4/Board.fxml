@@ -683,7 +683,9 @@
                                         <ImageView fx:id="dice2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
                                     </children>
                                 </AnchorPane>
-                                <VBox fx:id="middleVBOX" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="564.0" translateY="-60.0">
+                        <Button fx:id="backgroundButton" mnemonicParsing="false" opacity="0.0" prefHeight="568.0" prefWidth="568.0" text="BackgroundButton" />
+                        <VBox alignment="CENTER" layoutX="10.0" layoutY="574.0" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="564.0" />
+                                <VBox fx:id="middleVBOX" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="1.0" translateY="-280.0">
 
                                 </VBox>
                         <HBox fx:id="cheatBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="530.0" translateY="-530.0">

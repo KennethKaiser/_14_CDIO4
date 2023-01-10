@@ -11,7 +11,7 @@
         <children>
             <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="150.0">
                 <children>
-                    <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: #00aa00; -fx-background-color: #404040; -fx-background-radius: 15; -fx-border-width: 5; -fx-border-radius: 10;">
+                    <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="190.0" prefWidth="121.0" style="-fx-border-color: #00aa00; -fx-background-color: #404040; -fx-background-radius: 15; -fx-border-width: 5; -fx-border-radius: 10;">
                <children>
                           <Text fill="#00aa00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" translateY="-5.0">
                               <font>
@@ -19,14 +19,14 @@
                               </font>
                           </Text>
                </children></VBox>
-            <VBox fx:id="chanceCardShown" alignment="TOP_CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: #00aa00; -fx-background-color: #ffffff; -fx-background-radius: 15; -fx-border-width: 5; -fx-border-radius: 10;">
+            <VBox fx:id="chanceCardShown" alignment="TOP_CENTER" layoutX="10.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="190.0" prefWidth="121.0" style="-fx-border-color: #00aa00; -fx-background-color: #ffffff; -fx-background-radius: 15; -fx-border-width: 5; -fx-border-radius: 10;">
                <children>
                   <Text fx:id="chanceCardTitle" fill="#00aa00" strokeType="OUTSIDE" strokeWidth="0.0" text="Chancekort" translateY="-5.0" underline="true">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Text>
-                  <Text fx:id="chanceCardText" strokeType="OUTSIDE" strokeWidth="0.0" text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" wrappingWidth="132.53673934936523">
+                  <Text fx:id="chanceCardText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="100.0">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -39,7 +39,7 @@
                   <Insets top="10.0" />
                </padding>
             </VBox>
-                    <Button fx:id="pileButton" mnemonicParsing="false" opacity="0.0" prefHeight="140.0" prefWidth="100.0" style="-fx-background-color: #404040;" textFill="#00aa00">
+                    <Button fx:id="pileButton" mnemonicParsing="false" opacity="0.0" prefHeight="190.0" prefWidth="121.0" style="-fx-background-color: #404040;" textFill="#00aa00">
                         <font>
                             <Font size="40.0" />
                         </font>
