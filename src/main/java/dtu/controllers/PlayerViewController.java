@@ -793,6 +793,7 @@ public class PlayerViewController {
 
     }
     private void setBackgroundColorOf(Node node, int family) {
+
         family--;
         switch (family) {
             case 0: //Blue
@@ -1004,30 +1005,29 @@ public class PlayerViewController {
         }
     }
     //endregion
+
+
     //region remove player
     public void removePlayerFromPlayerView(int player){
-        System.out.println("Removed player nr: " + player);
-        switch (player){
-            case 0:
-                parts[0].getChildren().remove(0);
-                break;
-            case 1:
-                parts[1].getChildren().remove(0);
-                break;
-            case 2:
-                parts[0].getChildren().remove(1);
-                break;
-            case 3:
-                parts[1].getChildren().remove(1);
-                break;
-            case 4:
-                parts[0].getChildren().remove(2);
-                break;
-            case 5:
-                parts[1].getChildren().remove(2);
-                break;
+        if(parts[0].getChildren().contains(areas[player]) || parts[1].getChildren().contains(areas[player])){
+            switch (player){
+                case 0:
+                case 2:
+                case 4:
+                    parts[0].getChildren().remove(areas[player]);
+                    System.out.println("Removed player nr: " + player);
+                    break;
+                case 1:
+                case 3:
+                case 5:
+                    parts[1].getChildren().remove(areas[player]);
+                    System.out.println("Removed player nr: " + player);
+                    break;
 
+            }
         }
+        else System.out.println("Player is already removed");
+
 
     }
     //endregion
