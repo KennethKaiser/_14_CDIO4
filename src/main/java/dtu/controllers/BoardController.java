@@ -583,6 +583,7 @@ public class BoardController {
         rollDiceAnimation(playerRoll[0],playerRoll[1]);
 
         int playerId = currentPlayer.getId();
+        System.out.println("playerid:"+playerId);
         int playerPosition = currentPlayer.getPosition();
 
         movePLayerOnGUI(playerId, playerPosition);
@@ -674,10 +675,65 @@ public class BoardController {
     }
 
     public void endTurn(){
+
+
+        playerHandler.isPlayerBankrupt(playerHandler.getCurrentPlayer());
+
+        if(playerHandler.getCurrentPlayer().isBankrupt()){
+            communicationController.playerIsBankrupt(playerHandler.getCurrentPlayer());
+        }
+        else {
+            System.out.println("Dette her");
+
+
+            playerHandler.currentPlayer();
+            while(playerHandler.getCurrentPlayer().isBankrupt()){
+                playerHandler.currentPlayer();
+            }
+            String playerName = playerHandler.getCurrentPlayer().getName();
+            playerViewController.updatePlayerTurn();
+
+            if(playerHandler.checkForChickenDinner()){
+                communicationController.endGameTextBox(playerName);
+            }else{
+                communicationController.playerTurnStart(playerName);
+            }
+
+
+
+
+        }
+
+
+
+
+    }
+
+    public void endTurnAfterBankrupt(){
+
+        int temp = playerHandler.getCurrentPlayer().getId();
+
+
+        //playerHandler.changePlayerArray();
+
+        playerViewController.removePlayerFromPlayerView(temp);
+        removeCarPlayer(temp);
+
         playerHandler.currentPlayer();
+        while(playerHandler.getCurrentPlayer().isBankrupt()){
+            playerHandler.currentPlayer();
+        }
         String playerName = playerHandler.getCurrentPlayer().getName();
         playerViewController.updatePlayerTurn();
-        communicationController.playerTurnStart(playerName);
+
+        if(playerHandler.checkForChickenDinner()){
+            communicationController.endGameTextBox(playerName);
+        }else{
+            communicationController.playerTurnStart(playerName);
+        }
+
+
+
 
     }
 
@@ -992,6 +1048,16 @@ public class BoardController {
     }
     //endregion
 
+    //region remove car
+    public void removeCarPlayer(int playerID){
+        StackPane parent;
+        for(int i = 0; i < fields.length; i++){
+            if(fields[i].getChildren().contains(playerCars[playerID])){
+                fields[i].getChildren().remove(playerCars[playerID]);
+            }
+        }
+    }
+    //endregion
 
     //Getter dice
     public RaffleCup getDice() {

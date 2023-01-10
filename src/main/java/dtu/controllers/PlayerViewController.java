@@ -496,8 +496,12 @@ public class PlayerViewController {
     //region show turn
     public void updatePlayerTurn(){
         if(playerHandler != null){
+
+
+
             int player = playerHandler.getCurrentPlayer().getId();
             for(int i = 0; i < areas.length; i++){
+                System.out.println(i);
                 if(i == player) areas[i].setStyle("-fx-background-color: #00dd00; -fx-border-color: yellow; -fx-border-width: 3");
                 else areas[i].setStyle("-fx-background-color: #00dd00; -fx-border-color: #00aa00;-fx-border-width: 3");
             }
@@ -1044,16 +1048,19 @@ public class PlayerViewController {
             switch (player){
                 case 0:
                 case 2:
-                case 4:
+                case 4:{
                     parts[0].getChildren().remove(areas[player]);
                     System.out.println("Removed player nr: " + player);
                     break;
+                }
                 case 1:
                 case 3:
-                case 5:
+                case 5: {
+
                     parts[1].getChildren().remove(areas[player]);
                     System.out.println("Removed player nr: " + player);
                     break;
+                }
 
             }
         }
@@ -1061,5 +1068,6 @@ public class PlayerViewController {
 
 
     }
+
     //endregion
 }

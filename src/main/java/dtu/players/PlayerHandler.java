@@ -51,9 +51,11 @@ public class PlayerHandler {
      * @param deltaMove
      */
     public void movePlayer(Player player, int deltaMove){
-        int nextFieldPlacement = getPlayers()[player.getId()].getPosition() + deltaMove;
+        int nextFieldPlacement = player.getPosition() + deltaMove;
 
-        getPlayers()[player.getId()].setPosition(nextFieldPlacement);
+        player.setPosition(nextFieldPlacement);
+
+        //getPlayers()[player.getId()].setPosition(nextFieldPlacement);
 
     }
 
@@ -135,9 +137,8 @@ public class PlayerHandler {
         if (getPlayers() != null){
             for (int i=0; i<player.getProperties().size();i++) {
                 ((FieldProperty)player.getProperties().get(i)).setOwner(null);
-                //((FieldProperty)player.getProperties().get(i)).getProperty().setOwned(false);
-                //((FieldProperty)player.getProperties().get(i)).getProperty().setActiveRent(0);
-                //((FieldProperty)player.getProperties().get(i)).getProperty().setBuildings(0);
+                ((FieldProperty)player.getProperties().get(i)).setOwned(false);
+                ((FieldProperty)player.getProperties().get(i)).setBuildings(0);
         }
 
         }
@@ -319,6 +320,23 @@ public class PlayerHandler {
 
         allAssetsValue = player.getMoney() + getValueOfPlayersProperties(player) + valueOfAllHousesOnPlayerProperties(player);
         return allAssetsValue;
+    }
+
+    public boolean checkForChickenDinner(){
+        int temp = 0;
+        for(int i = 0; i < players.length; i++){
+            if(players[i].isBankrupt() != true){
+                temp++;
+            }
+        }
+        if(temp == 1){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+
     }
 
 
