@@ -27,6 +27,7 @@ public class Property {
         this.rent4House = rent4House;
         this.rentHotel = rentHotel;
         this.pledge = pledge;
+
     }
 
     //Change the rent after the amount of buildings

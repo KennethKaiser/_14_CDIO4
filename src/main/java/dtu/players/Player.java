@@ -1,10 +1,10 @@
 package dtu.players;
 
 import dtu.board.Field;
-import dtu.board.FieldProperty;
 
-import java.text.FieldPosition;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Player {
 
@@ -15,6 +15,7 @@ public class Player {
     private ArrayList<Field> properties = new ArrayList<>();
     private ArrayList<Field> ferries = new ArrayList<>();
     private ArrayList<Field> breweries = new ArrayList<>();
+    private ArrayList<Field> families = new ArrayList<>();
     private String color;
 
     private boolean bankrupt;
@@ -121,5 +122,9 @@ public class Player {
 
     public void setBreweries(ArrayList<Field> breweries) {
         this.breweries = breweries;
+    }
+
+    public void setFamilies(ArrayList<Field> families) {
+        this.families = families;
     }
 }

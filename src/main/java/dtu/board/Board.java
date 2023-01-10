@@ -10,59 +10,59 @@ public class Board {
     private Field[] currentBoard;
     private CSVFileReader csvFileReader = new CSVFileReader();
 
-    private Property[] familie1 = new Property[2];
+    private FieldProperty[] familie1 = new FieldProperty[2];
     int f1 = 0;
 
-    public Property[] getFamilie1() {
+    public FieldProperty[] getFamilie1() {
         return familie1;
     }
 
-    private Property[] familie2 = new Property[3];
+    private FieldProperty[] familie2 = new FieldProperty[3];
     int f2 = 0;
 
-    public Property[] getFamilie2() {
+    public FieldProperty[] getFamilie2() {
         return familie2;
     }
 
-    private Property[] familie3 = new Property[3];
+    private FieldProperty[] familie3 = new FieldProperty[3];
     int f3 = 0;
 
-    public Property[] getFamilie3() {
+    public FieldProperty[] getFamilie3() {
         return familie3;
     }
 
-    private Property[] familie4 = new Property[3];
+    private FieldProperty[] familie4 = new FieldProperty[3];
     int f4 = 0;
 
-    public Property[] getFamilie4() {
+    public FieldProperty[] getFamilie4() {
         return familie4;
     }
 
-    private Property[] familie5 = new Property[3];
+    private FieldProperty[] familie5 = new FieldProperty[3];
     int f5 = 0;
 
-    public Property[] getFamilie5() {
+    public FieldProperty[] getFamilie5() {
         return familie5;
     }
 
-    private Property[] familie6 = new Property[3];
+    private FieldProperty[] familie6 = new FieldProperty[3];
     int f6 = 0;
 
-    public Property[] getFamilie6() {
+    public FieldProperty[] getFamilie6() {
         return familie6;
     }
 
-    private Property[] familie7 = new Property[3];
+    private FieldProperty[] familie7 = new FieldProperty[3];
     int f7 = 0;
 
-    public Property[] getFamilie7() {
+    public FieldProperty[] getFamilie7() {
         return familie7;
     }
 
-    private Property[] familie8 = new Property[2];
+    private FieldProperty[] familie8 = new FieldProperty[2];
     int f8 = 0;
 
-    public Property[] getFamilie8() {
+    public FieldProperty[] getFamilie8() {
         return familie8;
     }
 
@@ -79,42 +79,46 @@ public class Board {
                             Integer.parseInt(fieldText.get(i)[7]),Integer.parseInt(fieldText.get(i)[8]), Integer.parseInt(fieldText.get(i)[9]),
                             Integer.parseInt(fieldText.get(i)[10]),Integer.parseInt(fieldText.get(i)[11]), 0));
 
+                /*
                 //Udedigere street til deres familie
                 switch(Integer.parseInt(fieldText.get(i)[3])){
                     case 1:
-                        familie1[f1] = (((FieldProperty)currentBoard[i-1]).getProperty());
+                        familie1[f1] = (((FieldProperty)currentBoard[i-1]));
                         f1++;
                         break;
                     case 2:
-                        familie2[f2] = (((FieldProperty)currentBoard[i-1]).getProperty());
+                        familie2[f2] = (((FieldProperty)currentBoard[i-1]));
                         f2++;
                         break;
                     case 3:
-                        familie3[f3] = (((FieldProperty)currentBoard[i-1]).getProperty());
+                        familie3[f3] = (((FieldProperty)currentBoard[i-1]));
                         f3++;
                         break;
                     case 4:
-                        familie4[f4] = (((FieldProperty)currentBoard[i-1]).getProperty());
+                        familie4[f4] = (((FieldProperty)currentBoard[i-1]));
                         f4++;
                         break;
                     case 5:
-                        familie5[f5] = (((FieldProperty)currentBoard[i-1]).getProperty());
+                        familie5[f5] = (((FieldProperty)currentBoard[i-1]));
                         f5++;
                         break;
                     case 6:
-                        familie6[f6] = (((FieldProperty)currentBoard[i-1]).getProperty());
+                        familie6[f6] = (((FieldProperty)currentBoard[i-1]));
                         f6++;
                         break;
                     case 7:
-                        familie7[f7] = (((FieldProperty)currentBoard[i-1]).getProperty());
+                        familie7[f7] = (((FieldProperty)currentBoard[i-1]));
                         f7++;
                         break;
                     case 8:
-                        familie8[f8] = (((FieldProperty)currentBoard[i-1]).getProperty());
+                        familie8[f8] = (((FieldProperty)currentBoard[i-1]));
                         f8++;
                         break;
                 }
+
+                 */
             }
+
             else if(fieldText.get(i)[2].equals("ferry")){
                 currentBoard[i-1] = new FerryField(new Ferry(Integer.parseInt(fieldText.get(i)[1]),fieldText.get(i)[0],Integer.parseInt(fieldText.get(i)[3]),
                         Integer.parseInt(fieldText.get(i)[4]),Integer.parseInt(fieldText.get(i)[6]),Integer.parseInt(fieldText.get(i)[7]),Integer.parseInt(fieldText.get(i)[8]),
@@ -158,8 +162,8 @@ public class Board {
     }
 
     //Metode til at skaffe familie
-    public Property[] getFamilieList(int familieNum){
-        Property[] send = new Property[0];
+    public FieldProperty[] getFamilieList(int familieNum){
+        FieldProperty[] send = new FieldProperty[0];
         switch (familieNum) {
             case 1:
                 send = familie1;

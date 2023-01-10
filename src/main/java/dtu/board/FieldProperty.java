@@ -2,10 +2,12 @@ package dtu.board;
 
 import dtu.players.Player;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class FieldProperty extends BuyableFields{
 
     protected Property property;
-    //Har skrevet så disse to variable bruges mest i Property klassen
     private Boolean owned;
     private Player owner;
 
@@ -16,6 +18,24 @@ public class FieldProperty extends BuyableFields{
 
     private int familie;
 
+
+    private ArrayList<Property> familieList1;
+    int f1 = 0;
+    private ArrayList<Property> familieList2;
+    int f2 = 0;
+    private ArrayList<Property> familieList3;
+    int f3 = 0;
+    private ArrayList<Property> familieList4;
+    int f4 = 0;
+    private ArrayList<Property> familieList5;
+    int f5 = 0;
+    private ArrayList<Property> familieList6;
+    int f6 = 0;
+    private ArrayList<Property> familieList7;
+    int f7 = 0;
+    private ArrayList<Property> familieList8;
+    int f8 = 0;
+
     private boolean pledgeState;
 
     //PropertyHandler propertyHandler = new PropertyHandler();
@@ -25,6 +45,34 @@ public class FieldProperty extends BuyableFields{
         this.owned = false;
         this.property = property;
         this.familie = property.getFamilie();
+
+        //Eksperiment med familie
+        switch(property.getFamilie()){
+            case 1:
+                familieList1.add(property);
+                break;
+            case 2:
+                familieList2.add(property);
+                break;
+            case 3:
+                familieList3.add(property);
+                break;
+            case 4:
+                familieList4.add(property);
+                break;
+            case 5:
+                familieList5.add(property);
+                break;
+            case 6:
+                familieList6.add(property);
+                break;
+            case 7:
+                familieList7.add(property);
+                break;
+            case 8:
+                familieList8.add(property);
+                break;
+        }
     }
 
 
@@ -75,6 +123,37 @@ public class FieldProperty extends BuyableFields{
         return this.owned;
     }
 
+    private ArrayList getFamilie(int familieNr){
+        ArrayList respond = new ArrayList(0);
+        switch(familieNr) {
+            case 1:
+                respond = familieList1;
+            break;
+            case 2:
+                respond = familieList2;
+                break;
+            case 3:
+                respond = familieList3;
+                break;
+            case 4:
+                respond = familieList4;
+                break;
+            case 5:
+                respond = familieList5;
+                break;
+            case 6:
+                respond = familieList6;
+                break;
+            case 7:
+                respond = familieList7;
+                break;
+            case 8:
+                respond = familieList8;
+                break;
+        }
+        return respond;
+    }
+
 
     @Override
     public Boolean buy(Player player) {
@@ -85,6 +164,8 @@ public class FieldProperty extends BuyableFields{
             this.activeRent = 0;
             this.pledgeState = false;
             player.getProperties().add(this);
+
+
             return true;
         }
         else{
@@ -94,9 +175,14 @@ public class FieldProperty extends BuyableFields{
 
     @Override
     public void rent(Player player) {
-        player.setMoney(player.getMoney() - activeRent);
-        owner.setMoney(owner.getMoney() + activeRent);
-
+        if(doubleRent(player) == true){
+            player.setMoney(player.getMoney() - (activeRent * 2));
+            owner.setMoney(owner.getMoney() + (activeRent * 2));
+        }
+        else {
+            player.setMoney(player.getMoney() - activeRent);
+            owner.setMoney(owner.getMoney() + activeRent);
+        }
     }
 
     //Maybe needs changes
@@ -130,6 +216,24 @@ public class FieldProperty extends BuyableFields{
         }
     }
 
+    private Boolean doubleRent(Player player) {
+        Boolean respond = null;
+        if (familie == 1 || familie == 8) {
+            if (buildings == 0
+                    && player.getProperties().contains(getFamilie(familie).get(0))
+                    && player.getProperties().contains(getFamilie(familie).get(1))) {
+                respond = true;
+            } }else if (buildings == 0
+                    && player.getProperties().contains(getFamilie(familie).get(0))
+                && player.getProperties().contains(getFamilie(familie).get(1))
+                && player.getProperties().contains(getFamilie(familie).get(2))) {
+                respond = true;
+            } else{
+        respond = false;}
+        return respond;
+    }
+
+
 
     public boolean isPledgeState() {
         return pledgeState;
@@ -146,4 +250,6 @@ public class FieldProperty extends BuyableFields{
     public int getActiveRent() {
         return activeRent;
     }
+
+    public int getFamilie(){return familie;}
 }
