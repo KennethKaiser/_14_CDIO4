@@ -1,16 +1,21 @@
 package dtu.board;
 
+import dtu.dice.RaffleCup;
 import dtu.players.Player;
-import dtu.players.PlayerHandler;
 
-public class PrisonField extends Field {
+public class PrisonField {
 
+    private Dummy dummy;
+    int die1, die2;
+    final int BAIL = 1000;
 
-
+    public PrisonField(Dummy dummy) {
+        this.dummy = dummy;
+    }
 
     @Override
     public String landedLabel() {
-        return "Du ryger direkte i fængsel!";
+        return "Du er landet på " + dummy.getName() + ".";
     }
 
     @Override
@@ -18,11 +23,58 @@ public class PrisonField extends Field {
         return "prison";
     }
 
+    public Dummy getDummy() {
+        return dummy;
+    }
 
-    public void moveToPrison(Player player){
-        PlayerHandler playerHandler = new PlayerHandler();
-        playerHandler.movePlayerChanceCard(player, 10);
+    //Ways to get out of jail
+    //Bail
+    //Double
+    //Card
+
+public void BailOut(Player player){
+        if(player.isJail() == true){
+            if(player.getMoney() >= BAIL) {
+                player.setMoney(player.getMoney() - BAIL);
+                player.setJail(false);
+            }else
+                System.out.println("Du har ikke penge nok til at løslades");
+        }
+}
+
+    public void doubleOut(Player player) {
+        if (player.isJail() == true) {
+        if(player.getJailTurns() < 3){
+            RaffleCup getOut = new RaffleCup();
+            getOut.roll();
+            die1 = Integer.valueOf(getOut.getOurRolls()[0]);
+            die2 = Integer.valueOf(getOut.getOurRolls()[1]);
+            if (die1 == die2) {
+                player.setJail(false);
+                player.setJailTurns(0);
+                player.setPosition(player.getPosition() + (die1 + die2));
+            }
+            else{
+                System.out.println("Du slog ikke to ens og må forblive i fængsel");
+                player.setJailTurns(player.getJailTurns() + 1);
+                //Next players turn
+            }}
+        else
+        System.out.println("Du kan ikke slå terning fler gange, betal eller brug et kort");
+        }
+    }
+
+    public void cardOut(Player player){
+        if(player.isJail() == true){
+            if(player.isGetOutOfJailCard() == true){
+                player.setJail(false);
+                player.setGetOutOfJailCard(false);
+            }
+            else
+                System.out.println("Du har intet \"Get out of jail\" card");
+        }
     }
 
 
 }
+
