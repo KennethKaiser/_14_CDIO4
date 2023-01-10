@@ -42,11 +42,51 @@ public class PlayerHandler {
      * @param deltaMove
      */
     public void movePlayer(Player player, int deltaMove){
+        int nextFieldPlacement = getPlayers()[player.getId()].getPosition() + deltaMove;
 
-        int nextFieldPlacement = player.getPosition() + deltaMove;
+        getPlayers()[player.getId()].setPosition(nextFieldPlacement);
 
-        player.setPosition(nextFieldPlacement);
+    }
 
+    /**
+     * Takes players position, and calculates the difference between the fieldID you want to move player to.
+     * Needed for awarding player money over START.
+     * @param player
+     * @param ID
+     */
+    public void movePlayerChanceCard(Player player, int ID){
+        int moveChanceCard;
+        if(player.getPosition()<ID) {
+            moveChanceCard = ID - player.getPosition();
+            player.setPosition(player.getPosition()+moveChanceCard);
+        }
+        if(player.getPosition()>ID){
+            moveChanceCard = (40-player.getPosition())+ID;
+            player.setPosition(player.getPosition()+moveChanceCard);
+        }
+    }
+
+    /**
+     * Method for determining what ferry a player should move to when drawing a chancecard that says "Move to the nearest ferry".
+     * @param player
+     */
+    public void nearestFerry(Player player){
+        int ferry1 = 5;
+        int ferry2 = 15;
+        int ferry3 = 25;
+        int ferry4 = 35;
+        if (player.getPosition()>=35 || player.getPosition()<5){
+            movePlayerChanceCard(player, ferry1);
+        }
+        else if (player.getPosition()>=5 && player.getPosition()<15){
+            movePlayerChanceCard(player, ferry2);
+        }
+        else if (player.getPosition()>=15 && player.getPosition()<25){
+            movePlayerChanceCard(player, ferry3);
+        }
+        else if (player.getPosition()>=25 && player.getPosition()<35){
+            movePlayerChanceCard(player, ferry4);
+        }
     }
 
 
@@ -58,9 +98,9 @@ public class PlayerHandler {
      * in class PlayerHandler to change startmoney amount.
      * @param player
      */
-    public void PlayerStartMoney(Player player){
+    public void playerStartMoney(Player player){
         for (int i=0; i<players.length; i++){
-            changePlayerBalance(player, STARTMONEY);
+            changePlayerBalance(getPlayers()[i], STARTMONEY);
         }
     }
 
@@ -118,40 +158,9 @@ public class PlayerHandler {
         players = newPlayers;
     }
 
-    /**
-     * Method for determining what ferry a player should move to when drawing a chancecard that says "Move to the nearest ferry".
-     * @param player
-     */
-    public void nearestFerry(Player player){
-        int ferry1 = 5;
-        int ferry2 = 15;
-        int ferry3 = 25;
-        int ferry4 = 35;
-        if (player.getPosition()>=35 || player.getPosition()<5){
-            movePlayerChanceCard(player, ferry1);
-        }
-        else if (player.getPosition()>=5 && player.getPosition()<15){
-            movePlayerChanceCard(player, ferry2);
-        }
-        else if (player.getPosition()>=15 && player.getPosition()<25){
-            movePlayerChanceCard(player, ferry3);
-        }
-        else if (player.getPosition()>=25 && player.getPosition()<35){
-            movePlayerChanceCard(player, ferry4);
-        }
-    }
 
-    public void movePlayerChanceCard(Player player, int ID){
-        int moveChanceCard;
-        if(player.getPosition()<ID) {
-            moveChanceCard = ID - player.getPosition();
-            player.setPosition(player.getPosition()+moveChanceCard);
-        }
-        if(player.getPosition()>ID){
-            moveChanceCard = (40-player.getPosition())+ID;
-            player.setPosition(player.getPosition()+moveChanceCard);
-        }
-    }
+
+
 
     /**
      *
@@ -162,11 +171,17 @@ public class PlayerHandler {
      * @param amount
      */
     public void getMoneyFromOtherPlayers(Player player, int amount) {
-        player.setMoney(player.getMoney()+(getPlayers().length*amount));
-        for (int i=0; i<getPlayers().length; i++){
-            getPlayers()[i].setMoney(player.getMoney()-amount);
+            changePlayerBalance(getPlayers()[player.getId()], amount*getPlayers().length);
+            for(int i=0; i < getPlayers().length; i++){
+                changePlayerBalance(getPlayers()[i], -(amount));
         }
-    }
+        }
+        /*
+        player.setMoney(player.getMoney()+(players.length*amount));
+        for (int i=0; i<players.length; i++){
+        getPlayers()[i].setMoney(getPlayers()[i].getMoney()-amount);
+
+         */
 
     /**
      * True = flattax
@@ -186,8 +201,8 @@ public class PlayerHandler {
     }
 
     public void tenPercentTax(Player player){
-        double roundUpTenPercent = (((player.getMoney()/100*10)/50));
-        double roundUpFifty = Math.ceil(roundUpTenPercent*50);
+        double roundUpTenPercent = (((player.getMoney()*0.10)/50));
+        double roundUpFifty = Math.ceil(roundUpTenPercent)*50;
         int roundedToFifty = (int)roundUpFifty;
         changePlayerBalance(player, -roundedToFifty);
     }
@@ -204,7 +219,6 @@ public class PlayerHandler {
      */
     public int valueOfAllHousesOnPlayerProperties(Player player) {
         Board board = new Board();
-        PlayerHandler playerHandler = new PlayerHandler();
         int valueOfAllHouses;
         int familie1 = 0;
         int familie1HousePrice = ((FieldProperty) board.getCurrentBoard()[1]).getProperty().getHousePrice();
@@ -222,11 +236,10 @@ public class PlayerHandler {
         int familie7HousePrice = ((FieldProperty) board.getCurrentBoard()[31]).getProperty().getHousePrice();
         int familie8 = 0;
         int familie8HousePrice = ((FieldProperty) board.getCurrentBoard()[37]).getProperty().getHousePrice();
-        ArrayList<Field> playerProperties = playerHandler.getPlayers()[player.getId()].getProperties();
-        if (playerHandler.getPlayers() != null) {
-            for (int i = 0; i < playerProperties.size(); i++) {
-                int getBuildings = ((FieldProperty) playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getBuildings();
-                int getFamily = ((FieldProperty) playerHandler.getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie();
+
+            for (int i = 0; i < getPlayers()[player.getId()].getProperties().size(); i++) {
+                int getBuildings = ((FieldProperty) getPlayers()[player.getId()].getProperties().get(i)).getBuildings();
+                int getFamily = ((FieldProperty) getPlayers()[player.getId()].getProperties().get(i)).getProperty().getFamilie();
                 if (getFamily == 1) {
                     familie1 += getBuildings * familie1HousePrice;
                 } else if (getFamily == 2) {
@@ -245,9 +258,28 @@ public class PlayerHandler {
                     familie8 += getBuildings * familie8HousePrice;
                 }
             }
-        }
         valueOfAllHouses = familie1 + familie2 + familie3 + familie4 + familie5 + familie6 + familie7 + familie8;
         return valueOfAllHouses;
+    }
+
+    public int amountOfHouses(Player player){
+        int amountOfHouses = 0;
+        for(int i = 0; i<getPlayers()[player.getId()].getProperties().size();i++){
+            if(((FieldProperty) getPlayers()[player.getId()].getProperties().get(i)).getBuildings() < 5) {
+                amountOfHouses += ((FieldProperty) getPlayers()[player.getId()].getProperties().get(i)).getBuildings();
+            }
+        }
+        return amountOfHouses;
+    }
+    public int amountOfHotels(Player player){
+        int amountOfHotels = 0;
+        for(int i = 0; i<getPlayers()[player.getId()].getProperties().size();i++){
+            if(((FieldProperty) getPlayers()[player.getId()].getProperties().get(i)).getBuildings() == 5) {
+                amountOfHotels += ((FieldProperty) getPlayers()[player.getId()].getProperties().get(i)).getBuildings();
+            }
+        }
+        return amountOfHotels/5;
+
     }
 
     /**
@@ -258,10 +290,9 @@ public class PlayerHandler {
      */
     public int getValueOfPlayersProperties(Player player) {
         int valueOfProperties = 0;
-        int priceOfProperties = ((FieldProperty)getPlayers()[player.getId()].getProperties().get(player.getId())).getProperty().getPrice();
         if (getPlayers() != null) {
             for (int i = 0; i < getPlayers()[player.getId()].getProperties().size(); i++) {
-                valueOfProperties += priceOfProperties;
+                valueOfProperties += ((FieldProperty)getPlayers()[player.getId()].getProperties().get(i)).getProperty().getPrice();
             }
         }
         return valueOfProperties;

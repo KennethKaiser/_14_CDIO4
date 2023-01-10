@@ -21,12 +21,5 @@ class PropertyHandlerTest {
 
     }
 
-    @Test
-    void nearestFerryTest(){
-        Player player = new Player(1, "tis", 4000, "black");
-        PlayerHandler playerHandler = new PlayerHandler();
-        player.setPosition(38);
-        playerHandler.nearestFerry(player);
-        System.out.println(player.getPosition());
-    }
+
 }
