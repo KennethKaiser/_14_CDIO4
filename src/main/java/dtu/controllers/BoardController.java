@@ -808,16 +808,16 @@ public class BoardController {
         double y = 0;
         switch (cases){
             case 1:
-                x = rnd.nextDouble(0, 120);
-                y = rnd.nextDouble(0, 380);
+                x = rnd.nextDouble(10, 160);
+                y = rnd.nextDouble(10, 380);
                 break;
             case 2:
-                x = rnd.nextDouble(0, 400);
-                y = rnd.nextDouble(0, 100);
+                x = rnd.nextDouble(10, 560);
+                y = rnd.nextDouble(10, 100);
                 break;
             case 3:
-                x = rnd.nextDouble(350, 400);
-                y = rnd.nextDouble(0, 380);
+                x = rnd.nextDouble(410, 560);
+                y = rnd.nextDouble(10, 380);
                 break;
         }
         dice.setTranslateX(x);
