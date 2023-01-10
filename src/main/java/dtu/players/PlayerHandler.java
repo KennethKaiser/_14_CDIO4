@@ -73,8 +73,6 @@ public class PlayerHandler {
             player.setBankrupt(true);
             playerIsBankrupt(player);
 
-            changePlayerArray();
-
         }
 
     }
@@ -85,11 +83,13 @@ public class PlayerHandler {
      * @param player
      */
     public void playerIsBankrupt(Player player){
-        for (int i=0; i<player.getProperties().size();i++) {
-            ((FieldProperty)player.getProperties().get(i)).setOwner(null);
-            //((FieldProperty)player.getProperties().get(i)).getProperty().setOwned(false);
-            //((FieldProperty)player.getProperties().get(i)).getProperty().setActiveRent(0);
-            //player.getProperties().get(i).getProperty().setBuildings(0);
+        if (getPlayers() != null){
+            for (int i=0; i<player.getProperties().size();i++) {
+                ((FieldProperty)player.getProperties().get(i)).setOwner(null);
+                //((FieldProperty)player.getProperties().get(i)).getProperty().setOwned(false);
+                //((FieldProperty)player.getProperties().get(i)).getProperty().setActiveRent(0);
+                //((FieldProperty)player.getProperties().get(i)).getProperty().setBuildings(0);
+        }
 
         }
     }
