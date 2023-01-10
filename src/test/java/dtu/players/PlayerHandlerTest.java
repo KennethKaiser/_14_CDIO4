@@ -282,6 +282,11 @@ class PlayerHandlerTest {
         playerHandler.changePlayerArray();
         System.out.println(playerHandler.getPlayers().length);
 
+    }
 
+    @Test
+    void nonPledgeTest(){
+        PlayerHandler playerHandler = new PlayerHandler();
+        assertEquals(400, playerHandler.nonPledgeTax(3100));
     }
 }

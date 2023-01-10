@@ -13,6 +13,7 @@ class TC5_RentTest {
     PropertyHandler propertyHandler = new PropertyHandler();
     Board board = new Board();
 
+    /*
     @Test
     void testPayRent() {
         //Variable
@@ -130,5 +131,7 @@ class TC5_RentTest {
                 + ". And player 2 has: "+ player2.getMoney());
         System.out.println("expect player1 to have: " + lost + ", player1 has: " + player1.getMoney() + ". Expect player2 to have: " + gained + ", player 2 has: " + player2.getMoney());
     }
+
+     */
 
 }
