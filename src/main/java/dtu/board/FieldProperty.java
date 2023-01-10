@@ -8,9 +8,6 @@ public class FieldProperty extends BuyableFields{
     //Har skrevet så disse to variable bruges mest i Property klassen
     private Boolean owned;
     private Player owner;
-
-    private int activeRent;
-
     private int buildings;
 
 
@@ -82,7 +79,7 @@ public class FieldProperty extends BuyableFields{
             player.setMoney(player.getMoney() - property.getPrice());
             this.owner = player;
             this.owned = true;
-            this.activeRent = 0;
+            this.buildings = 0;
             this.pledgeState = false;
             player.getProperties().add(this);
             return true;
@@ -93,41 +90,38 @@ public class FieldProperty extends BuyableFields{
     }
 
     @Override
-    public void rent(Player player) {
-        player.setMoney(player.getMoney() - activeRent);
-        owner.setMoney(owner.getMoney() + activeRent);
-
+    public void rent(Player player, int rent) {
+        player.setMoney(player.getMoney() - rent);
+        owner.setMoney(owner.getMoney() + rent);
     }
 
     //Maybe needs changes
-    public void setActiveRent(int rentNumber){
+    public int findActiveRent(){
 
-        switch (rentNumber){
+        int temp = buildings;
+        int activeRent = 0;
+
+        switch (temp){
             case 0:
                 activeRent = property.getRentNormal();
-                buildings = 0;
-                break;
+                return activeRent;
             case 1:
                 activeRent = property.getRent1House();
-                buildings = 1;
-                break;
+                return activeRent;
             case 2:
                 activeRent = property.getRent2House();
-                buildings = 2;
-                break;
+                return activeRent;
             case 3:
                 activeRent = property.getRent3House();
-                buildings = 3;
-                break;
+                return activeRent;
             case 4:
                 activeRent = property.getRent4House();
-                buildings = 4;
-                break;
+                return activeRent;
             case 5:
                 activeRent = property.getRentHotel();
-                buildings = 5;
-                break;
+                return activeRent;
         }
+        return activeRent;
     }
 
 
@@ -143,7 +137,4 @@ public class FieldProperty extends BuyableFields{
         return owner;
     }
 
-    public int getActiveRent() {
-        return activeRent;
-    }
 }

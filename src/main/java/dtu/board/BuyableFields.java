@@ -11,7 +11,7 @@ public abstract class BuyableFields extends Field {
 
     public abstract Boolean buy(Player player);
 
-    public abstract void rent(Player player);
+    public abstract void rent(Player player, int rent);
 
 
 

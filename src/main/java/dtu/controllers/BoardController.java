@@ -568,18 +568,6 @@ public class BoardController {
 
 
     }
-
-    /**
-     * Updates playerview at start
-     */
-    public void initializingPlayerViewStart(){
-
-        playerViewController.updatePlayerName();
-        playerViewController.updatePlayerMoney();
-
-    }
-
-
     //region game loop actions
 
     /**
@@ -645,10 +633,8 @@ public class BoardController {
 
         if(fieldProperty.buy(currentPlayer)){
 
-            fieldProperty.setActiveRent(0);
             int temp = fieldProperty.getProperty().getFamilie();
 
-            playerViewController.updatePlayerMoney();
             playerViewController.addCard(temp, currentPlayer.getId());
             communicationController.playerBoughtProperty(fieldProperty, currentPlayer);
         }
@@ -698,8 +684,7 @@ public class BoardController {
     public void buyOrRentCheckerProperty(Field field){
         FieldProperty fieldProperty = (FieldProperty) field;
         if(fieldProperty.isOwned()){
-            fieldProperty.rent(playerHandler.getCurrentPlayer());
-            playerViewController.updatePlayerMoney();
+
             communicationController.payRentProperty(fieldProperty, playerHandler.getCurrentPlayer());
         }
         else{
@@ -710,8 +695,7 @@ public class BoardController {
     public void buyOrRentCheckerFerry(Field field){
         FerryField ferryField = (FerryField) field;
         if(ferryField.getOwned()){
-
-
+            communicationController.payRentFerry(ferryField,playerHandler.getCurrentPlayer());
         }
         else{
             communicationController.wantToBuyFerry(ferryField);
@@ -721,8 +705,7 @@ public class BoardController {
     public void buyOrRentCheckerBrewery(Field field){
         BreweryField breweryField = (BreweryField) field;
         if(breweryField.getOwned()){
-
-
+            communicationController.payRentBrewery(breweryField,playerHandler.getCurrentPlayer());
         }
         else{
             communicationController.wantToBuyBrewery(breweryField);
@@ -972,6 +955,10 @@ public class BoardController {
             }
             String stepsString = cheatInput.getText();
             int steps = parseInt(stepsString);
+
+            //setting the dice sum, not possible to set individual dice with cheats
+            dice.setSum(steps);
+
             System.out.println(steps);
 
 
@@ -994,4 +981,8 @@ public class BoardController {
     //endregion
 
 
+    //Getter dice
+    public RaffleCup getDice() {
+        return dice;
+    }
 }
