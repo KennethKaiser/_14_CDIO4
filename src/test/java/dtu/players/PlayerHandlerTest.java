@@ -266,4 +266,27 @@ class PlayerHandlerTest {
 
         assertEquals(1, playerHandler.amountOfHotels(playerHandler.getPlayers()[0]));
     }
+
+    @Test
+    void whoWonTest(){
+        PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.initializePlayers(3);
+        playerHandler.initializePlayerInPlayers(0,"Niels", 42000, "black");
+        playerHandler.initializePlayerInPlayers(1, "Karl", 10000, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Hans", 10000, "red");
+
+        playerHandler.getPlayers()[0].setMoney(-1);
+        playerHandler.isPlayerBankrupt(playerHandler.getPlayers()[0]);
+        playerHandler.getPlayers()[2].setMoney(-1);
+        playerHandler.isPlayerBankrupt(playerHandler.getPlayers()[2]);
+        playerHandler.changePlayerArray();
+        System.out.println(playerHandler.getPlayers().length);
+
+    }
+
+    @Test
+    void nonPledgeTest(){
+        PlayerHandler playerHandler = new PlayerHandler();
+        assertEquals(400, playerHandler.nonPledgeTax(3100));
+    }
 }

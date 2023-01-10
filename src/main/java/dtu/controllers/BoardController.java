@@ -84,6 +84,7 @@ public class BoardController {
     @FXML
     ImageView car6;
 
+    ImageView[] playerCars;
     //endregion
     //region Field StackPanes
     @FXML
@@ -346,7 +347,6 @@ public class BoardController {
         initPics();
         setCars();
         initFields();
-        startCars();
         initHouses();
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
@@ -470,12 +470,6 @@ public class BoardController {
             policeImage.setImage(image("src/textures/police_man_card.png"));
             prisonImage.setImage(image("src/textures/jail_card.png"));
             parkingImage.setImage(image("src/textures/parking_field.png"));
-            car2.setImage(image("src/textures/blueCar.png"));
-            car1.setImage(image("src/textures/blackCar.png"));
-            car3.setImage(image("src/textures/orangeCar.png"));
-            car5.setImage(image("src/textures/yellowCar.png"));
-            car4.setImage(image("src/textures/redCar.png"));
-            car6.setImage(image("src/textures/greenCar.png"));
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -502,7 +496,9 @@ public class BoardController {
         cars[5] = car6;
     }
     public void startCars(){
-
+        int amount = ControllerHandler.getInstance().getMenuScreenController().getMenuAmountOfPlayers();
+        Image[] carImages = ControllerHandler.getInstance().getMenuScreenController().getMenuCarColorImages();
+        playerCars = new ImageView[amount];
         for(int car = 0; car < cars.length; car++){
             for(int i = 0; i < fields.length; i++){
                 if(fields[i].getChildren().contains(cars[car])){
@@ -510,7 +506,13 @@ public class BoardController {
                     break;
                 }
             }
-            fields[39].getChildren().add(cars[car]);
+        }
+        for(int i = 0; i < playerCars.length; i++){
+            playerCars[i] = cars[i];
+            playerCars[i].setImage(carImages[i]);
+            ControllerHandler.getInstance().getPlayerViewController().setColorOfPlayer(carImages[i], i);
+            fields[0].getChildren().add(cars[i]);
+            multipleCars(i, 0);
         }
     }
     //endregion
@@ -555,13 +557,12 @@ public class BoardController {
     /**
      * Initializing 4 players in "players" array. Start GUI should do this later. Also calling currentPlayer method.
      */
-    public void initializingPlayers(int playersAdded, String names[], Image[] carImageColors, String[] colorNames){
+    public void initializingPlayers(int playersAdded, String names[], String[] colorNames){
 
         playerHandler.initializePlayers(playersAdded);
 
         for(int i = 0; i < playersAdded; i++){
             playerHandler.initializePlayerInPlayers(i, names[i],30000,colorNames[i]);
-            cars[i].setImage(carImageColors[i]);
         }
         playerHandler.currentPlayer();
         ControllerHandler.getInstance().getPlayerViewController().updatePlayerTurn();
@@ -779,20 +780,31 @@ public class BoardController {
 
     //region car gui methods
     public void movePLayerOnGUI(int player, int fieldPlacement){
-        fields[fieldPlacement].getChildren().add(cars[player]);
+        fields[fieldPlacement].getChildren().add(playerCars[player]);
     }
 
     public void multipleCars(int player, int position){
         if(fields == null) initFields();
         int total = 0;
-        if(fields[position].getChildren().contains(cars[0])) total++;
-        if(fields[position].getChildren().contains(cars[1])) total++;
-        if(fields[position].getChildren().contains(cars[2])) total++;
-        if(fields[position].getChildren().contains(cars[3])) total++;
-        if(fields[position].getChildren().contains(cars[4])) total++;
-        if(fields[position].getChildren().contains(cars[5])) total++;
+        for(int i = 0; i < cars.length; i++){
+            if(fields[position].getChildren().contains(cars[i])) total++;
+        }
+        if(total < 3){
+            cars[player].setTranslateY((total+2)*8);
+        }
+        else{
+            int newTotal = 1;
+            for(int n = 0; n < cars.length; n++){
+                if(fields[position].getChildren().contains(cars[n])) {
+                    cars[n].setTranslateY(newTotal*8+(6-total)*4);
+                    newTotal++;
+                }
+            }
 
-        cars[player].setTranslateY(total*8);
+        }
+
+
+
     }
     //endregion
 

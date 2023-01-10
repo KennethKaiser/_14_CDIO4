@@ -24,11 +24,13 @@ public class PlayerHandler {
         currentPlayer = players[nID];
     }
 
-    public void currentPlayerAfterBankrupt(){
-        if(nID > players.length){
-            nID = 0;
+    public boolean wonGame(){
+        if (players.length == 1){
+            return true;
         }
-        currentPlayer = players[nID];
+        else {
+            return false;
+        }
     }
 
     //Should be called when the game ask how many are playing
@@ -213,6 +215,13 @@ public class PlayerHandler {
         double roundUpFifty = Math.ceil(roundUpTenPercent)*50;
         int roundedToFifty = (int)roundUpFifty;
         changePlayerBalance(player, -roundedToFifty);
+    }
+    public int nonPledgeTax(int pledgeAmount){
+        double nonPledgeTax = (((pledgeAmount*0.10)/100));
+        double roundUpHundred = Math.ceil(nonPledgeTax)*100;
+        int roundedToHundred = (int)roundUpHundred;
+
+        return roundedToHundred;
     }
 
     public void changePlayerBalance(Player player, int amount){
