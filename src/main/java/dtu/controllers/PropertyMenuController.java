@@ -467,28 +467,28 @@ public class PropertyMenuController {
     private void setColorOf(Node node, int family){
         switch (family-1){
             case 0: //Blue
-                node.setStyle("-fx-background-color: #0000ff;");
+                node.setStyle(node.getStyle() + "-fx-background-color: #0000ff;");
                 break;
             case 1: //Orange
-                node.setStyle("-fx-background-color: #FFA500;");
+                node.setStyle(node.getStyle() +"-fx-background-color: #FFA500;");
                 break;
             case 2: //Green
-                node.setStyle("-fx-background-color:  #32cd32;");
+                node.setStyle(node.getStyle() +"-fx-background-color:  #32cd32;");
                 break;
             case 3: //Grey
-                node.setStyle("-fx-background-color:  #aaaaaa;");
+                node.setStyle(node.getStyle() +"-fx-background-color:  #aaaaaa;");
                 break;
             case 4: //Red
-                node.setStyle("-fx-background-color: #ff0000;");
+                node.setStyle(node.getStyle() +"-fx-background-color: #ff0000;");
                 break;
             case 5: //White
-                node.setStyle("-fx-background-color: #ffffff;");
+                node.setStyle(node.getStyle() +"-fx-background-color: #ffffff;");
                 break;
             case 6: //Yellow
-                node.setStyle("-fx-background-color: #FFFF00;");
+                node.setStyle(node.getStyle() +"-fx-background-color: #FFFF00;");
                 break;
             case 7: //Purple
-                node.setStyle("-fx-background-color:  #BF40BF;");
+                node.setStyle(node.getStyle() +"-fx-background-color:  #BF40BF;");
                 break;
             default:
                 System.out.println("family is outside of known cases");
