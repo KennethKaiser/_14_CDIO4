@@ -216,6 +216,14 @@ public class PlayerHandler {
         changePlayerBalance(player, -roundedToFifty);
     }
 
+    public int nonPledgeTax(int pledgeAmount){
+        double nonPledgeTax = (((pledgeAmount*0.10)/100));
+        double roundUpHundred = Math.ceil(nonPledgeTax)*100;
+        int roundedToHundred = (int)roundUpHundred;
+
+        return roundedToHundred;
+    }
+
     public void changePlayerBalance(Player player, int amount){
         player.setMoney(player.getMoney()+amount);
     }
