@@ -13,6 +13,9 @@ public class FieldProperty extends BuyableFields{
 
     private int buildings;
 
+
+    private int familie;
+
     private boolean pledgeState;
 
     //PropertyHandler propertyHandler = new PropertyHandler();
@@ -21,6 +24,7 @@ public class FieldProperty extends BuyableFields{
     public FieldProperty(Property property){
         this.owned = false;
         this.property = property;
+        this.familie = property.getFamilie();
     }
 
 
@@ -90,7 +94,6 @@ public class FieldProperty extends BuyableFields{
 
     @Override
     public void rent(Player player) {
-
         player.setMoney(player.getMoney() - activeRent);
         owner.setMoney(owner.getMoney() + activeRent);
 
