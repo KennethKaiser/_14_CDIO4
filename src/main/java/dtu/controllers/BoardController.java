@@ -689,10 +689,18 @@ public class BoardController {
             while(playerHandler.getCurrentPlayer().isBankrupt()){
                 playerHandler.currentPlayer();
             }
-
-            playerViewController.updatePlayerTurn();
             String playerName = playerHandler.getCurrentPlayer().getName();
-            communicationController.playerTurnStart(playerName);
+            playerViewController.updatePlayerTurn();
+
+            if(playerHandler.checkForChickenDinner()){
+                communicationController.endGameTextBox(playerName);
+            }else{
+                communicationController.playerTurnStart(playerName);
+            }
+
+
+
+
         }
 
 
@@ -713,10 +721,14 @@ public class BoardController {
         while(playerHandler.getCurrentPlayer().isBankrupt()){
             playerHandler.currentPlayer();
         }
-
-        playerViewController.updatePlayerTurn();
         String playerName = playerHandler.getCurrentPlayer().getName();
-        communicationController.playerTurnStart(playerName);
+        playerViewController.updatePlayerTurn();
+
+        if(playerHandler.checkForChickenDinner()){
+            communicationController.endGameTextBox(playerName);
+        }else{
+            communicationController.playerTurnStart(playerName);
+        }
 
 
 

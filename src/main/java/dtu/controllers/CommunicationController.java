@@ -48,9 +48,14 @@ public class CommunicationController {
         this.text.setText(text);
         buttonVBox.getChildren().clear();
         parent.setOpacity(1);
-        for(int i = 0; i < options.length; i++){
-            buttonVBox.getChildren().add(choices[i]);
-            choices[i].setText(options[i]);
+        if(options != null) {
+            for (int i = 0; i < options.length; i++) {
+
+                buttonVBox.getChildren().add(choices[i]);
+                choices[i].setText(options[i]);
+
+
+            }
         }
     }
     public void choiceBuyField(String field, int price, String player){
@@ -65,15 +70,20 @@ public class CommunicationController {
     }
     public void playerTurnStart(String playerName){
 
-
-
-
         String[] choiceOptions = new String[1];
         choiceOptions[0] = "Rul terning";
         String textField = "Det er spiller " + playerName + "'s tur";
         showCommunicationBox(textField, choiceOptions);
         choices[0].setOnAction(e -> boardController.moveAndRoll());
 
+
+    }
+
+    public void endGameTextBox(String playerName){
+
+        String[] choiceOptions = null;
+        String textField = "TILLYKKE!!! " + playerName + " har vundet spillet!";
+        showCommunicationBox(textField, choiceOptions);
 
     }
 
