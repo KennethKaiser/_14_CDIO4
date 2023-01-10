@@ -21,8 +21,7 @@ public class GoPrisonField extends Field {
 
 
     public void moveToPrison(Player player){
-        PlayerHandler playerHandler = new PlayerHandler();
-        playerHandler.movePlayerChanceCard(player, 10);
+        player.setPosition(10);
         //Tror ikke spilleren modtager penge for at gå forbi start.
         //Så der er fjernet nogen penge heller, for at kompensere.
         player.setJail(true);
