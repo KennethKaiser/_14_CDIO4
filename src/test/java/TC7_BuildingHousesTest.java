@@ -1,3 +1,4 @@
+import dtu.board.Board;
 import dtu.board.FieldProperty;
 import dtu.board.Property;
 import dtu.board.PropertyHandler;
@@ -8,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TC7_BuildingHousesTest {
 
-    /*PropertyHandler propertyHandler = new PropertyHandler();
+    Board board = new Board();
 
     @Test
     void testBuyHouseHasCash() {
@@ -26,8 +27,8 @@ class TC7_BuildingHousesTest {
         Property property = new Property(0,1,"DTU",PROPERTY_PRICE,HOUSE_PRICE,100,RENT_HOUSE,600,700,800,900,5);
 
         FieldProperty propertyField = new FieldProperty(property);
-        property.setOwned(false);
-        propertyField.action(player);
+        propertyField.setOwned(false);
+        propertyField.setBuildings(1);
 
         propertyHandler.buildHouse(player,property);
 

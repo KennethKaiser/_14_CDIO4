@@ -1,3 +1,5 @@
+import dtu.board.Board;
+import dtu.board.FieldProperty;
 import dtu.board.PropertyList;
 import dtu.board.PropertyHandler;
 import dtu.players.Player;
@@ -8,12 +10,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TC8_PropertyTest {
 
-    PropertyHandler propertyHandler = new PropertyHandler();
+    Board board = new Board();
 
 
     @Test
     void testBuyingRødovrevej() {
         //Variable
+        FieldProperty Rødovrevej;
+        Rødovrevej = (FieldProperty) board.getCurrentBoard()[1];
         final int START_MONEY = 4400;
         final int RØD_PRICE = 1200;
         //Expected
@@ -21,17 +25,20 @@ class TC8_PropertyTest {
 
        Player player = new Player(0,"Nicklas",START_MONEY,"Black");
 
+        Rødovrevej.buy(player);
        //propertyHandler.buyProperty(player, PropertyList.getRødovrevej());
 
 
         //Ser om player er blevet ejer og mistet rette mængde penge penge
         assertEquals(player.getMoney(),moneyAfterBuying,"Spilleren burde have: " + moneyAfterBuying + ". Spilleren har: "+ player.getMoney());
-        //assertEquals(PropertyList.getRødovrevej().getOwner(),player,"Spilleren: " + player + " skulle gerne være ejer. Ejeren er: " + PropertyList.getRødovrevej().getOwner());
+        assertEquals(Rødovrevej.getOwner(),player,"Spilleren: " + player + " skulle gerne være ejer. Ejeren er: " + Rødovrevej.getOwner());
     }
 
     @Test
     void testBuildingFailHouseRødovrevej() {
         //Variable
+        FieldProperty Rødovrevej;
+        Rødovrevej = (FieldProperty) board.getCurrentBoard()[1];
         final int START_MONEY = 4400;
         final int RØD_PRICE = 1200;
         final int RØD_HOUSEPRICE = 1000;
@@ -39,6 +46,7 @@ class TC8_PropertyTest {
         int moneyAfterBuying = START_MONEY - RØD_PRICE;
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
+
 
         //propertyHandler.buyProperty(player, PropertyList.getRødovrevej());
         //propertyHandler.buildHouse(player,PropertyList.getRødovrevej());
@@ -73,6 +81,8 @@ class TC8_PropertyTest {
     @Test
     void testRentRødovrevej() {
         //Variable
+        FieldProperty Rødovrevej;
+        Rødovrevej = (FieldProperty) board.getCurrentBoard()[1];
         final int START_MONEY = 4400;
         final int RØD_PRICE = 1200;
         final int RØD_RENT = 50;
@@ -83,6 +93,9 @@ class TC8_PropertyTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
+        Rødovrevej.buy(player1);
+        Rødovrevej.setActiveRent(0);
+        Rødovrevej.rent(player2);
         //propertyHandler.buyProperty(player1, PropertyList.getRødovrevej());
         //propertyHandler.payRent(player2,PropertyList.getRødovrevej());
 
@@ -96,6 +109,10 @@ class TC8_PropertyTest {
     @Test
     void test2XRentRødovrevej() {
         //Variable
+        FieldProperty Rødovrevej;
+        Rødovrevej = (FieldProperty) board.getCurrentBoard()[1];
+        FieldProperty Hvidovrevej;
+        Hvidovrevej = (FieldProperty) board.getCurrentBoard()[3];
         final int START_MONEY = 4400;
         final int RØDnHVID_PRICE = 1200;
         final int RØD_RENT = 50;
@@ -106,6 +123,10 @@ class TC8_PropertyTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
+        Rødovrevej.buy(player1);
+        Hvidovrevej.buy(player1);
+        Rødovrevej.setActiveRent(0);
+        Rødovrevej.rent(player2);
         //propertyHandler.buyProperty(player1, PropertyList.getRødovrevej());
         //propertyHandler.buyProperty(player1, PropertyList.getHvidovrevej());
         //propertyHandler.payRent(player2,PropertyList.getRødovrevej());
@@ -120,12 +141,17 @@ class TC8_PropertyTest {
     @Test
     void testPledgingRødovrevej() {
         //Variable
+        FieldProperty Rødovrevej;
+        Rødovrevej = (FieldProperty) board.getCurrentBoard()[1];
         final int START_MONEY = 4400;
         final int REDnWHITE_PRICE = 1200;
         //Expected
         int moneyAfterBuying = START_MONEY - REDnWHITE_PRICE + (REDnWHITE_PRICE / 2);
 
         Player player = new Player(0,"Nicklas",START_MONEY,"Black");
+
+        Rødovrevej.buy(player);
+        //Rødovrevej.pledge(player)
 
         //propertyHandler.buyProperty(player, PropertyList.getRødovrevej());
         //propertyHandler.pledgeProperty(player, PropertyList.getRødovrevej());
@@ -139,6 +165,8 @@ class TC8_PropertyTest {
     @Test
     void testRentPledgingRødovrevej() {
         //Variable
+        FieldProperty Rødovrevej;
+        Rødovrevej = (FieldProperty) board.getCurrentBoard()[1];
         final int START_MONEY = 4400;
         final int REDnWHITE_PRICE = 1200;
         //expected
@@ -147,6 +175,9 @@ class TC8_PropertyTest {
         Player player1 = new Player(0,"Nicklas",START_MONEY,"Black");
         Player player2 = new Player(1,"Andreas",START_MONEY,"Red");
 
+        Rødovrevej.buy(player1);
+        //Rødovrevej.pledge(player1);
+        Rødovrevej.rent(player2);
         //propertyHandler.buyProperty(player1, PropertyList.getRødovrevej());
         //propertyHandler.pledgeProperty(player1, PropertyList.getRødovrevej());
         //propertyHandler.payRent(player2,PropertyList.getRødovrevej());
