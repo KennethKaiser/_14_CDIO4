@@ -64,6 +64,10 @@ public class CommunicationController {
 
     }
     public void playerTurnStart(String playerName){
+
+
+
+
         String[] choiceOptions = new String[1];
         choiceOptions[0] = "Rul terning";
         String textField = "Det er spiller " + playerName + "'s tur";

@@ -683,8 +683,14 @@ public class BoardController {
         }
         else {
             System.out.println("Dette her");
-            playerViewController.updatePlayerTurn();
+
+
             playerHandler.currentPlayer();
+            while(playerHandler.getCurrentPlayer().isBankrupt()){
+                playerHandler.currentPlayer();
+            }
+
+            playerViewController.updatePlayerTurn();
             String playerName = playerHandler.getCurrentPlayer().getName();
             communicationController.playerTurnStart(playerName);
         }
@@ -699,11 +705,16 @@ public class BoardController {
         int temp = playerHandler.getCurrentPlayer().getId();
 
 
-        playerHandler.changePlayerArray();
+        //playerHandler.changePlayerArray();
 
         playerViewController.removePlayerFromPlayerView(temp);
 
-        playerHandler.currentPlayerAfterBankrupt();
+        playerHandler.currentPlayer();
+        while(playerHandler.getCurrentPlayer().isBankrupt()){
+            playerHandler.currentPlayer();
+        }
+
+        playerViewController.updatePlayerTurn();
         String playerName = playerHandler.getCurrentPlayer().getName();
         communicationController.playerTurnStart(playerName);
 

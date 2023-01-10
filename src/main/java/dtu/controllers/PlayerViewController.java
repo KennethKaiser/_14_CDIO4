@@ -479,6 +479,9 @@ public class PlayerViewController {
     //region show turn
     public void updatePlayerTurn(){
         if(playerHandler != null){
+
+
+
             int player = playerHandler.getCurrentPlayer().getId();
             for(int i = 0; i < areas.length; i++){
                 System.out.println(i);
@@ -1015,40 +1018,15 @@ public class PlayerViewController {
                 case 0:
                 case 2:
                 case 4:{
-                    VBox[] newAreas = new VBox[areas.length - 1];
-                    for (int i = 0; i < areas.length - 1; i++) {
-                        if (areas[i] != areas[player]) {
-                            for (int n = 0; n < newAreas.length; n++) {
-                                if (newAreas[n] == null) {
-                                    newAreas[n] = areas[i];
-                                    break;
-                                }
-                            }
-                        }
-                    }
                     parts[0].getChildren().remove(areas[player]);
-                    areas = new VBox[areas.length-1];
-                    areas = newAreas;
                     System.out.println("Removed player nr: " + player);
                     break;
                 }
                 case 1:
                 case 3:
                 case 5: {
-                    VBox[] newAreas = new VBox[areas.length - 1];
-                    for (int i = 0; i < areas.length - 1; i++) {
-                        if (areas[i] != areas[player]) {
-                            for (int n = 0; n < newAreas.length; n++) {
-                                if (newAreas[n] == null) {
-                                    newAreas[n] = areas[i];
-                                    break;
-                                }
-                            }
-                        }
-                    }
+
                     parts[1].getChildren().remove(areas[player]);
-                    areas = new VBox[areas.length-1];
-                    areas = newAreas;
                     System.out.println("Removed player nr: " + player);
                     break;
                 }
