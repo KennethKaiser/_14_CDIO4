@@ -717,6 +717,7 @@ public class BoardController {
         //playerHandler.changePlayerArray();
 
         playerViewController.removePlayerFromPlayerView(temp);
+        removeCarPlayer(temp);
 
         playerHandler.currentPlayer();
         while(playerHandler.getCurrentPlayer().isBankrupt()){
@@ -1047,6 +1048,16 @@ public class BoardController {
     }
     //endregion
 
+    //region remove car
+    public void removeCarPlayer(int playerID){
+        StackPane parent;
+        for(int i = 0; i < fields.length; i++){
+            if(fields[i].getChildren().contains(playerCars[playerID])){
+                fields[i].getChildren().remove(playerCars[playerID]);
+            }
+        }
+    }
+    //endregion
 
     //Getter dice
     public RaffleCup getDice() {

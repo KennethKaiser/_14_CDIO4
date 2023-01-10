@@ -159,9 +159,7 @@ public class FieldProperty extends BuyableFields{
         this.familie = familie;
     }
 
-    public void setPledgeState(boolean pledgeState) {
-        this.pledgeState = pledgeState;
-    }
+
 
 
 }
