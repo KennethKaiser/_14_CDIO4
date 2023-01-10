@@ -12,7 +12,7 @@ public class FerryField extends BuyableFields{
 
     private Player owner;
 
-    private int activeRent;
+    //private int activeRent;
 
 
     private boolean pledgeState;
@@ -29,7 +29,6 @@ public class FerryField extends BuyableFields{
             player.setMoney(player.getMoney() - ferry.getPrice());
             this.owner = player;
             this.owned = true;
-            this.activeRent = 0;
             this.pledgeState = false;
             player.getFerries().add(this);
             return true;
@@ -40,8 +39,9 @@ public class FerryField extends BuyableFields{
     }
 
     @Override
-    public void rent(Player player) {
-
+    public void rent(Player player, int rent) {
+        player.setMoney(player.getMoney() - rent);
+        owner.setMoney(owner.getMoney() + rent);
     }
 
 
@@ -53,6 +53,30 @@ public class FerryField extends BuyableFields{
     @Override
     public String type() {
         return "ferry";
+    }
+
+    public int findActiveRent(){
+
+        int temp = owner.getFerries().size();
+        int activeRent = 0;
+
+
+        switch (temp){
+            case 1:
+                activeRent = ferry.getRent1();
+                return activeRent;
+            case 2:
+                activeRent = ferry.getRent2();
+                return  activeRent;
+            case 3:
+                activeRent = ferry.getRent3();
+                return  activeRent;
+            case 4:
+                activeRent = ferry.getRent4();
+                return  activeRent;
+
+        }
+        return  activeRent;
     }
 
 
@@ -78,14 +102,6 @@ public class FerryField extends BuyableFields{
 
     public void setOwner(Player owner) {
         this.owner = owner;
-    }
-
-    public int getActiveRent() {
-        return activeRent;
-    }
-
-    public void setActiveRent(int activeRent) {
-        this.activeRent = activeRent;
     }
 
     public boolean isPledgeState() {

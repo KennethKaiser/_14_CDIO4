@@ -14,6 +14,7 @@ public class CommunicationController {
 
     //Controllers
     BoardController boardController = ControllerHandler.controllerHandler.getBoardController();
+    PlayerViewController playerViewController = ControllerHandler.getInstance().getPlayerViewController();
 
     //region FXML
     @FXML
@@ -163,6 +164,8 @@ public class CommunicationController {
         String fieldName = fieldProperty.getProperty().getName();
 
 
+        playerViewController.updatePlayerMoney();
+
         String textField = fieldName + " er købt af " + playerName + ".";
         showCommunicationBox(textField, choiceOptions);
 
@@ -177,6 +180,7 @@ public class CommunicationController {
         String playerName = player.getName();
         String breweryName = breweryField.getBrewery().getName();
 
+        playerViewController.updatePlayerMoney();
 
         String textField = breweryName + " er købt af " + playerName + ".";
         showCommunicationBox(textField, choiceOptions);
@@ -192,6 +196,7 @@ public class CommunicationController {
         String playerName = player.getName();
         String ferryName = ferryField.getFerry().getName();
 
+        playerViewController.updatePlayerMoney();
 
         String textField = ferryName + " er købt af " + playerName + ".";
         showCommunicationBox(textField, choiceOptions);
@@ -208,10 +213,32 @@ public class CommunicationController {
         String playerName = player.getName();
         String propertyName = fieldProperty.getProperty().getName();
         String propertyOwner = fieldProperty.getOwner().getName();
-        int rent = fieldProperty.getActiveRent();
+        int rent = fieldProperty.findActiveRent();
+
+        fieldProperty.rent(player, rent);
+        playerViewController.updatePlayerMoney();
 
 
         String textField = propertyName + " er ejet af " + propertyOwner + ". Betal " + rent + " i leje."  ;
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurn());
+    }
+    public void payRentFerry(FerryField ferryField, Player player){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        String playerName = player.getName();
+        String ferryName = ferryField.getFerry().getName();
+        String ferryOwner = ferryField.getOwner().getName();
+        int rent = ferryField.findActiveRent();
+
+        ferryField.rent(player, rent);
+        playerViewController.updatePlayerMoney();
+
+
+        String textField = ferryName + " er ejet af " + ferryOwner + ". Betal " + rent + " i leje."  ;
         showCommunicationBox(textField, choiceOptions);
 
         choices[0].setOnAction(e -> boardController.endTurn());

@@ -564,18 +564,6 @@ public class BoardController {
 
 
     }
-
-    /**
-     * Updates playerview at start
-     */
-    public void initializingPlayerViewStart(){
-
-        playerViewController.updatePlayerName();
-        playerViewController.updatePlayerMoney();
-
-    }
-
-
     //region game loop actions
 
     /**
@@ -641,10 +629,8 @@ public class BoardController {
 
         if(fieldProperty.buy(currentPlayer)){
 
-            fieldProperty.setActiveRent(0);
             int temp = fieldProperty.getProperty().getFamilie();
 
-            playerViewController.updatePlayerMoney();
             playerViewController.addCard(temp, currentPlayer.getId());
             communicationController.playerBoughtProperty(fieldProperty, currentPlayer);
         }
@@ -692,8 +678,7 @@ public class BoardController {
     public void buyOrRentCheckerProperty(Field field){
         FieldProperty fieldProperty = (FieldProperty) field;
         if(fieldProperty.isOwned()){
-            fieldProperty.rent(playerHandler.getCurrentPlayer());
-            playerViewController.updatePlayerMoney();
+
             communicationController.payRentProperty(fieldProperty, playerHandler.getCurrentPlayer());
         }
         else{
@@ -704,8 +689,7 @@ public class BoardController {
     public void buyOrRentCheckerFerry(Field field){
         FerryField ferryField = (FerryField) field;
         if(ferryField.getOwned()){
-
-
+            communicationController.payRentFerry(ferryField,playerHandler.getCurrentPlayer());
         }
         else{
             communicationController.wantToBuyFerry(ferryField);

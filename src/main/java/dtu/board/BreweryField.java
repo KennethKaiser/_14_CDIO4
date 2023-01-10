@@ -38,7 +38,7 @@ public class BreweryField extends BuyableFields{
     }
 
     @Override
-    public void rent(Player player) {
+    public void rent(Player player, int rent) {
 
     }
 
