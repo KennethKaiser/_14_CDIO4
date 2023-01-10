@@ -17,7 +17,7 @@ public class Player {
     private ArrayList<Field> breweries = new ArrayList<>();
     private String color;
 
-    private boolean bankrupt;
+    private boolean bankrupt = false;
     private boolean jail = false;
     private boolean getOutOfJailCard = false;
 
