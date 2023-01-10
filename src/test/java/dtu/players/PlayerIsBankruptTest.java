@@ -27,8 +27,8 @@ class PlayerIsBankruptTest {
         playerHandler.getPlayers()[0].setProperties(properties);
         FieldProperty fieldProperty = (FieldProperty) playerHandler.getPlayers()[0].getProperties().get(0);
         fieldProperty.setOwner(playerHandler.getPlayers()[0]);
-        fieldProperty.setOwned(true);
-        fieldProperty.setActiveRent(500);
+        //fieldProperty.setOwned(true);
+        //fieldProperty.setActiveRent(500);
         //fieldProperty.setBuildings(1);
 
         playerHandler.playerIsBankrupt(playerHandler.getPlayers()[0]);
