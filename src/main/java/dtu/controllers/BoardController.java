@@ -887,36 +887,47 @@ public class BoardController {
             String fieldStringID = cheatInput.getText();
             int fieldID = parseInt(fieldStringID);
 
-            Field field = ControllerHandler.getInstance().getBoard().getCurrentBoard()[fieldID];;
-            String type = field.type();
-            if(type.equals("buyablefield")) {
-                FieldProperty fieldProperty = (FieldProperty)field;
-                Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
-                if(fieldProperty.buy(cheatPlayer)){
-                    int temp = fieldProperty.getProperty().getFamilie();
-                    playerViewController.updatePlayerMoney();
-                    playerViewController.addCard(temp, cheatPlayer.getId());
-                    communicationController.playerBoughtProperty(fieldProperty, cheatPlayer);
-                }
+            Field field = ControllerHandler.getInstance().getBoard().getCurrentBoard()[fieldID];
+            boolean playerAlreadyOwns = false;
+            for(int i = 0; i < playerHandler.getPlayers().length;i++){
+                if(playerHandler.getPlayers()[i].getProperties().contains(field)) playerAlreadyOwns = true;
+                if(playerHandler.getPlayers()[i].getFerries().contains(field)) playerAlreadyOwns = true;
+                if(playerHandler.getPlayers()[i].getBreweries().contains(field)) playerAlreadyOwns = true;
             }
-            if(type.equals("ferry")) {
-                FerryField ferryField = (FerryField)field;
-                Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
-                if(ferryField.buy(cheatPlayer)){
-                    int temp = ferryField.getFerry().getFamilie();
-                    playerViewController.updatePlayerMoney();
-                    playerViewController.addCard(temp, cheatPlayer.getId());
-                    communicationController.playerBoughtFerry(ferryField, cheatPlayer);
-                }
+            if(playerAlreadyOwns){
+                System.out.println("Cannot add field [" + fieldID + "] because it is already owned by a player");
             }
-            if(type.equals("brewery")) {
-                BreweryField breweryField = (BreweryField)field;
-                Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
-                if(breweryField.buy(cheatPlayer)){
-                    int temp = breweryField.getBrewery().getFamily();
-                    playerViewController.updatePlayerMoney();
-                    playerViewController.addCard(temp, cheatPlayer.getId());
-                    communicationController.playerBoughtBrewery(breweryField, cheatPlayer);
+            else{
+                String type = field.type();
+                if(type.equals("buyablefield")) {
+                    FieldProperty fieldProperty = (FieldProperty)field;
+                    Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+                    if(fieldProperty.buy(cheatPlayer)){
+                        int temp = fieldProperty.getProperty().getFamilie();
+                        playerViewController.updatePlayerMoney();
+                        playerViewController.addCard(temp, cheatPlayer.getId());
+                        communicationController.playerBoughtProperty(fieldProperty, cheatPlayer);
+                    }
+                }
+                if(type.equals("ferry")) {
+                    FerryField ferryField = (FerryField)field;
+                    Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+                    if(ferryField.buy(cheatPlayer)){
+                        int temp = ferryField.getFerry().getFamilie();
+                        playerViewController.updatePlayerMoney();
+                        playerViewController.addCard(temp, cheatPlayer.getId());
+                        communicationController.playerBoughtFerry(ferryField, cheatPlayer);
+                    }
+                }
+                if(type.equals("brewery")) {
+                    BreweryField breweryField = (BreweryField)field;
+                    Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+                    if(breweryField.buy(cheatPlayer)){
+                        int temp = breweryField.getBrewery().getFamily();
+                        playerViewController.updatePlayerMoney();
+                        playerViewController.addCard(temp, cheatPlayer.getId());
+                        communicationController.playerBoughtBrewery(breweryField, cheatPlayer);
+                    }
                 }
             }
         }
