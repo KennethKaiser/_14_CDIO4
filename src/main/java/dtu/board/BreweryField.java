@@ -11,8 +11,6 @@ public class BreweryField extends BuyableFields{
 
     private Player owner;
 
-    private int activeRent;
-
     private boolean pledgeState;
 
 
@@ -27,7 +25,6 @@ public class BreweryField extends BuyableFields{
             player.setMoney(player.getMoney() - brewery.getPrice());
             this.owner = player;
             this.owned = true;
-            this.activeRent = 0;
             this.pledgeState = false;
             player.getBreweries().add(this);
             return true;
@@ -39,7 +36,8 @@ public class BreweryField extends BuyableFields{
 
     @Override
     public void rent(Player player, int rent) {
-
+        player.setMoney(player.getMoney() - rent);
+        owner.setMoney(owner.getMoney() + rent);
     }
 
 
@@ -51,6 +49,23 @@ public class BreweryField extends BuyableFields{
     @Override
     public String type() {
         return "brewery";
+    }
+
+    public int findActiveRent(int currentRoll){
+
+        int temp = owner.getBreweries().size();
+        int activeRent = 0;
+
+
+        switch (temp){
+            case 1:
+                activeRent = brewery.getRent1() * currentRoll;
+                return activeRent;
+            case 2:
+                activeRent = brewery.getRent2() * currentRoll;
+                return  activeRent;
+        }
+        return  activeRent;
     }
 
 
@@ -76,14 +91,6 @@ public class BreweryField extends BuyableFields{
 
     public void setOwner(Player owner) {
         this.owner = owner;
-    }
-
-    public int getActiveRent() {
-        return activeRent;
-    }
-
-    public void setActiveRent(int activeRent) {
-        this.activeRent = activeRent;
     }
 
     public boolean isPledgeState() {
