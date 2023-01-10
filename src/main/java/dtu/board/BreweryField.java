@@ -53,7 +53,7 @@ public class BreweryField extends BuyableFields{
 
     public int findActiveRent(int currentRoll){
 
-        int temp = owner.getFerries().size();
+        int temp = owner.getBreweries().size();
         int activeRent = 0;
 
 

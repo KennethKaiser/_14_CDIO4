@@ -699,8 +699,7 @@ public class BoardController {
     public void buyOrRentCheckerBrewery(Field field){
         BreweryField breweryField = (BreweryField) field;
         if(breweryField.getOwned()){
-
-
+            communicationController.payRentBrewery(breweryField,playerHandler.getCurrentPlayer());
         }
         else{
             communicationController.wantToBuyBrewery(breweryField);
@@ -947,6 +946,10 @@ public class BoardController {
             }
             String stepsString = cheatInput.getText();
             int steps = parseInt(stepsString);
+
+            //setting the dice sum, not possible to set individual dice with cheats
+            dice.setSum(steps);
+
             System.out.println(steps);
 
 
@@ -969,4 +972,8 @@ public class BoardController {
     //endregion
 
 
+    //Getter dice
+    public RaffleCup getDice() {
+        return dice;
+    }
 }

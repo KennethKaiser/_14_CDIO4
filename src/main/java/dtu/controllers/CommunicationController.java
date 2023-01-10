@@ -243,6 +243,29 @@ public class CommunicationController {
 
         choices[0].setOnAction(e -> boardController.endTurn());
     }
+
+    public void payRentBrewery(BreweryField breweryField, Player player){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        String playerName = player.getName();
+        String breweryName = breweryField.getBrewery().getName();
+        String breweryOwner = breweryField.getOwner().getName();
+
+        int turnRollSum = boardController.getDice().getSum();
+
+        int rent = breweryField.findActiveRent(turnRollSum);
+
+        breweryField.rent(player, rent);
+        playerViewController.updatePlayerMoney();
+
+
+        String textField = breweryName + " er ejet af " + breweryOwner + ". Betal " + rent + " i leje."  ;
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurn());
+    }
     //endregion
 
 
