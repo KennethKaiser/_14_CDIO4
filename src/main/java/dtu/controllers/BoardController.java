@@ -878,62 +878,98 @@ public class BoardController {
     }
     public void cheatAddField(){
         System.out.println("Cheating for field");
-        String player = cheatDropDown.getValue().toString();
-        int playerIndex = 0;
-        for(int i = 0; i < 6; i++){
-            if(player.equals(("Spiller " + (i+1)))) playerIndex = i;
+        if(cheatDropDown.getValue() != null){
+            String player = cheatDropDown.getValue().toString();
+            int playerIndex = 0;
+            for(int i = 0; i < 6; i++){
+                if(player.equals(("Spiller " + (i+1)))) playerIndex = i;
+            }
+            String fieldStringID = cheatInput.getText();
+            int fieldID = parseInt(fieldStringID);
+
+            Field field = ControllerHandler.getInstance().getBoard().getCurrentBoard()[fieldID];;
+            String type = field.type();
+            if(type.equals("buyablefield")) {
+                FieldProperty fieldProperty = (FieldProperty)field;
+                Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+                if(fieldProperty.buy(cheatPlayer)){
+                    int temp = fieldProperty.getProperty().getFamilie();
+                    playerViewController.updatePlayerMoney();
+                    playerViewController.addCard(temp, cheatPlayer.getId());
+                    communicationController.playerBoughtProperty(fieldProperty, cheatPlayer);
+                }
+            }
+            if(type.equals("ferry")) {
+                FerryField ferryField = (FerryField)field;
+                Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+                if(ferryField.buy(cheatPlayer)){
+                    int temp = ferryField.getFerry().getFamilie();
+                    playerViewController.updatePlayerMoney();
+                    playerViewController.addCard(temp, cheatPlayer.getId());
+                    communicationController.playerBoughtFerry(ferryField, cheatPlayer);
+                }
+            }
+            if(type.equals("brewery")) {
+                BreweryField breweryField = (BreweryField)field;
+                Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+                if(breweryField.buy(cheatPlayer)){
+                    int temp = breweryField.getBrewery().getFamily();
+                    playerViewController.updatePlayerMoney();
+                    playerViewController.addCard(temp, cheatPlayer.getId());
+                    communicationController.playerBoughtBrewery(breweryField, cheatPlayer);
+                }
+            }
         }
-        String fieldStringID = cheatInput.getText();
-        int fieldID = parseInt(fieldStringID);
-        FieldProperty fieldProperty = (FieldProperty)ControllerHandler.getInstance().getBoard().getCurrentBoard()[fieldID];
-        Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
-        if(fieldProperty.buy(cheatPlayer)){
-            int temp = fieldProperty.getProperty().getFamilie();
-            playerViewController.updatePlayerMoney();
-            playerViewController.addCard(temp, cheatPlayer.getId());
-            communicationController.playerBoughtProperty(fieldProperty, cheatPlayer);
-        }
+        else System.out.println("No player selected");
     }
     public void cheatAddMoney(){
         System.out.println("Cheating for money");
-        String player = cheatDropDown.getValue().toString();
-        int playerIndex = 0;
-        for(int i = 0; i < 6; i++){
-            if(player.equals(("Spiller " + (i+1)))) playerIndex = i;
+        if(cheatDropDown.getValue() != null){
+            String player = cheatDropDown.getValue().toString();
+            int playerIndex = 0;
+            for(int i = 0; i < 6; i++){
+                if(player.equals(("Spiller " + (i+1)))) playerIndex = i;
+            }
+            String moneyString = cheatInput.getText();
+            int money = parseInt(moneyString);
+            System.out.println(money);
+            Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+            playerHandler.changePlayerBalance(cheatPlayer, money);
+            playerViewController.updatePlayerMoney();
+            System.out.println(cheatPlayer.getMoney());
         }
-        String moneyString = cheatInput.getText();
-        int money = parseInt(moneyString);
-        System.out.println(money);
-        Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
-        playerHandler.changePlayerBalance(cheatPlayer, money);
-        playerViewController.updatePlayerMoney();
-        System.out.println(cheatPlayer.getMoney());
+        else System.out.println("No player selected");
+
 
     }
     public void cheatMovePlayer(){
         System.out.println("Cheating for movement");
-        String player = cheatDropDown.getValue().toString();
-        int playerIndex = 0;
-        for(int i = 0; i < 6; i++){
-            if(player.equals(("Spiller " + (i+1)))) playerIndex = i;
+        if(cheatDropDown.getValue() != null){
+            String player = cheatDropDown.getValue().toString();
+            int playerIndex = 0;
+            for(int i = 0; i < 6; i++){
+                if(player.equals(("Spiller " + (i+1)))) playerIndex = i;
+            }
+            String stepsString = cheatInput.getText();
+            int steps = parseInt(stepsString);
+            System.out.println(steps);
+
+
+            Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+            playerHandler.movePlayer(cheatPlayer, steps);
+
+            int playerId = cheatPlayer.getId();
+            int playerPosition = cheatPlayer.getPosition();
+
+            movePLayerOnGUI(playerId, playerPosition);
+            multipleCars(playerId, playerPosition);
+            int[] toIntArray = new int[1];
+            toIntArray[0] = steps;
+            //Switch decision box
+            communicationController.whatRolled(toIntArray);
         }
-        String stepsString = cheatInput.getText();
-        int steps = parseInt(stepsString);
-        System.out.println(steps);
+        else System.out.println("No player selected");
 
-
-        Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
-        playerHandler.movePlayer(cheatPlayer, steps);
-
-        int playerId = cheatPlayer.getId();
-        int playerPosition = cheatPlayer.getPosition();
-
-        movePLayerOnGUI(playerId, playerPosition);
-        multipleCars(playerId, playerPosition);
-        int[] toIntArray = new int[1];
-        toIntArray[0] = steps;
-        //Switch decision box
-        communicationController.whatRolled(toIntArray);
     }
     //endregion
 

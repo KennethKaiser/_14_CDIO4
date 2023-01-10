@@ -94,7 +94,11 @@ public class HousingLogic {
         return canRemove;
     }
     public boolean canAfford(FieldProperty property, int player){
-        return true;
+        if(property.getProperty().getHousePrice() < playerHandler.getPlayers()[player].getMoney()){
+            return true;
+        }
+        else return false;
+
     }
 
 }

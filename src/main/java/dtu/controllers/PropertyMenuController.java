@@ -1,9 +1,6 @@
 package dtu.controllers;
 
-import dtu.board.Field;
-import dtu.board.FieldProperty;
-import dtu.board.HousingLogic;
-import dtu.board.Property;
+import dtu.board.*;
 import dtu.players.PlayerHandler;
 import javafx.css.Style;
 import javafx.fxml.FXML;
@@ -341,8 +338,8 @@ public class PropertyMenuController {
         ferryImage2.setImage(image("src/textures/ferry_card.png"));
         ferryImage3.setImage(image("src/textures/ferry_card.png"));
         ferryImage4.setImage(image("src/textures/ferry_card.png"));
-        sodaImage1.setImage(image("src/textures/colaflaske.png"));
         sodaImage1.setImage(image("src/textures/squash_card.png"));
+        sodaImage2.setImage(image("src/textures/colaflaske.png"));
     }
 
     private void setPledgeValueSign(boolean isPledgeValue, int spot){
@@ -360,45 +357,67 @@ public class PropertyMenuController {
     public void showProperties(Field[] properties, int player){
         parent.getChildren().clear();
         hideButtons();
-        HousingLogic houseLogic = ControllerHandler.getInstance().getHousingLogic();
-        for(int i = 0; i < properties.length; i++){
-            FieldProperty fieldProperty = (FieldProperty)properties[i];
-            parent.getChildren().add(cards[i]);
-            names[i].setText(fieldProperty.getProperty().getName());
-            normalRent[i].setText(numbersToString(fieldProperty.getProperty().getRentNormal()));
-            house1Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent1House()));
-            house2Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent2House()));
-            house3Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent3House()));
-            house4Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent4House()));
-            housePrice[i].setText(numbersToString(fieldProperty.getProperty().getHousePrice()));
-            pledgeValue[i].setText(numbersToString(fieldProperty.getProperty().getPledge()));
-            setColorOf(colors[i], fieldProperty.getProperty().getFamilie());
-            setHouseIcon(i, fieldProperty.getBuildings());
-            if(player != -1){
-                if(houseLogic.checkForHasAllOfFamily(fieldProperty, player)){
-                    if(houseLogic.canBuild(fieldProperty, player)){
-                        if(fieldProperty.getBuildings()<5){
-                            plusStackPanes[i].setOpacity(1);
-                            plusButtons[i].setDisable(false);
-                            int index = i;
-                            plusButtons[i].setOnAction(e -> buildOrRemoveHouse(fieldProperty, 1, player, properties));
+        Field field;
+        field = properties[0];
+        String type = field.type();
+        if(type.equals("buyablefield")){
+            HousingLogic houseLogic = ControllerHandler.getInstance().getHousingLogic();
+            for(int i = 0; i < properties.length; i++){
+                FieldProperty fieldProperty = (FieldProperty)properties[i];
+                parent.getChildren().add(cards[i]);
+                names[i].setText(fieldProperty.getProperty().getName());
+                normalRent[i].setText(numbersToString(fieldProperty.getProperty().getRentNormal()));
+                house1Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent1House()));
+                house2Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent2House()));
+                house3Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent3House()));
+                house4Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent4House()));
+                housePrice[i].setText(numbersToString(fieldProperty.getProperty().getHousePrice()));
+                pledgeValue[i].setText(numbersToString(fieldProperty.getProperty().getPledge()));
+                setColorOf(colors[i], fieldProperty.getProperty().getFamilie());
+                setHouseIcon(i, fieldProperty.getBuildings());
+                if(player != -1){
+                    if(houseLogic.checkForHasAllOfFamily(fieldProperty, player)){
+                        if(houseLogic.canBuild(fieldProperty, player)){
+                            if(fieldProperty.getBuildings()<5){
+                                plusStackPanes[i].setOpacity(1);
+                                plusButtons[i].setDisable(false);
+                                int index = i;
+                                plusButtons[i].setOnAction(e -> buildOrRemoveHouse(fieldProperty, 1, player, properties));
+                            }
                         }
-                    }
-                    if(houseLogic.canRemove(fieldProperty, player)){
-                        if(fieldProperty.getBuildings()>0){
-                            minusStackPanes[i].setOpacity(1);
-                            minusButtons[i].setDisable(false);
-                            int index = i;
-                            minusButtons[i].setOnAction(e -> buildOrRemoveHouse(fieldProperty, -1, player, properties));
+                        if(houseLogic.canRemove(fieldProperty, player)){
+                            if(fieldProperty.getBuildings()>0){
+                                minusStackPanes[i].setOpacity(1);
+                                minusButtons[i].setDisable(false);
+                                int index = i;
+                                minusButtons[i].setOnAction(e -> buildOrRemoveHouse(fieldProperty, -1, player, properties));
+                            }
                         }
                     }
                 }
-            }
 
-            if(fieldProperty.isPledgeState())pledgeValueIcons[i].setOpacity(84);
-            else pledgeValueIcons[i].setOpacity(0);
+                if(fieldProperty.isPledgeState())pledgeValueIcons[i].setOpacity(84);
+                else pledgeValueIcons[i].setOpacity(0);
+            }
         }
+        if(type.equals("ferry")){
+            for(int i = 0; i < properties.length; i++) {
+                FerryField ferry = (FerryField) properties[i];
+                parent.getChildren().add(cards[i+3]);
+                System.out.println(i);
+                names[i+3].setText(ferry.getFerry().getName());
+            }
+        }
+        if(type.equals("brewery")){
+            for(int i = 0; i < properties.length; i++) {
+                BreweryField breweryField = (BreweryField) properties[i];
+                parent.getChildren().add(cards[i+7]);
+                names[i+7].setText(breweryField.getBrewery().getName());
+            }
+        }
+        //working
     }
+
     private void buildOrRemoveHouse(FieldProperty property, int amountOfHouses, int player, Field[] initialProperties){
         if(playerHandler == null) playerHandler = ControllerHandler.getInstance().getBoardController().playerHandler;
         if(amountOfHouses<0){ //Sells a house
