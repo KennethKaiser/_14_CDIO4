@@ -571,10 +571,8 @@ public class BoardController {
     }
     //region game loop actions
 
-    /**
-     * This method is called when player clicks button "Roll and Move"
-     */
-    @FXML
+
+    /*@FXML
     public void moveAndRoll(){
         int[] playerRoll = dice.roll();
         Player currentPlayer = playerHandler.getCurrentPlayer();
@@ -593,7 +591,27 @@ public class BoardController {
         communicationController.whatRolled(playerRoll);
 
 
+    }*/
+
+    public void roll(){
+        int[] playerRoll = dice.roll();
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+
+        playerHandler.movePlayer(currentPlayer, playerRoll[0]+playerRoll[1]);
+        rollDiceAnimation(playerRoll[0],playerRoll[1]);
+        communicationController.whatRolled(playerRoll, currentPlayer);
     }
+
+    public void turnMove(){
+        int playerId = playerHandler.getCurrentPlayer().getId();
+        int playerPosition = playerHandler.getCurrentPlayer().getPosition();
+
+        movePLayerOnGUI(playerId, playerPosition);
+        multipleCars(playerId, playerPosition);
+
+        whatField();
+    }
+
 
     public void whatField(){
         String landedLabel = ControllerHandler.getInstance().getBoard().getCurrentBoard()[playerHandler.getCurrentPlayer().getPosition()].landedLabel();
@@ -693,8 +711,19 @@ public class BoardController {
 
     //region prison
 
-    public void rollDouble(){
+    public void rollDoublePrison(){
+        int[] ourRoll = dice.roll();
+        rollDiceAnimation(ourRoll[0], ourRoll[1]);
 
+        if(dice.rolledDouble()){
+            playerHandler.getCurrentPlayer().setJail(false);
+            communicationController.luckInJail();
+        }
+        else{
+
+
+            communicationController.noLuckJail();
+        }
     }
 
     public void payForPrison(){
@@ -1073,7 +1102,7 @@ public class BoardController {
             int[] toIntArray = new int[1];
             toIntArray[0] = steps;
             //Switch decision box
-            communicationController.whatRolled(toIntArray);
+            communicationController.whatRolled(toIntArray, cheatPlayer);
         }
         else System.out.println("No player selected");
 
