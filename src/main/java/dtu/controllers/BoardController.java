@@ -667,7 +667,7 @@ public class BoardController {
             int temp = breweryField.getBrewery().getFamily();
 
             playerViewController.updatePlayerMoney();
-            //playerViewController.addCard(temp, currentPlayer.getId());
+            playerViewController.addCard(temp, currentPlayer.getId());
             communicationController.playerBoughtBrewery(breweryField, currentPlayer);
         }
 
