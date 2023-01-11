@@ -36,6 +36,10 @@ public class RaffleCup {
         sum = lastRoll[0] + lastRoll[1];
     }
 
+    /**
+     * Method for checking if the dice rolled are double.
+     * @return
+     */
     public boolean rolledDouble (){
         if(ourRolls[0] == ourRolls[1]){
             numberOfDoubles++;
