@@ -747,7 +747,7 @@ public class BoardController {
     public void payForPrison(){
         Player currentPlayer = playerHandler.getCurrentPlayer();
         currentPlayer.setJail(false);
-        playerHandler.changePlayerBalance(currentPlayer, 1000);
+        playerHandler.changePlayerBalance(currentPlayer, -1000);
         playerViewController.updatePlayerMoney();
         communicationController.payedForPrison();
 
