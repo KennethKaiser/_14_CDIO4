@@ -33,6 +33,7 @@ public class SceneSwitch {
     StackPane chanceCards;
     StackPane propertyMenu;
     HBox communication;
+    VBox tradeMenu;
     //endregion
     Scene menuScene;
     Scene boardScene;
@@ -73,6 +74,10 @@ public class SceneSwitch {
         communication = (HBox) fxmlLoader.load();
         communicationController = fxmlLoader.getController();
         ControllerHandler.getInstance().setCommunicationController(communicationController);
+        fxmlLoader = new FXMLLoader(MainApplication.class.getResource("TradeMenu.fxml"));
+        tradeMenu = (VBox) fxmlLoader.load();
+        tradingMenuController = fxmlLoader.getController();
+        ControllerHandler.getInstance().setTradingMenuController(tradingMenuController);
     }
     private void collectBoard(){
         showChanceCardPileInMiddle();
@@ -106,6 +111,10 @@ public class SceneSwitch {
     public void showChanceCardPileInMiddle(){
         boardController.getMiddleMenuVBox().getChildren().clear();
         boardController.getMiddleMenuVBox().getChildren().add(chanceCards);
+    }
+    public void showTradingMenu(){
+        boardController.getMiddleMenuVBox().getChildren().clear();
+        boardController.getMiddleMenuVBox().getChildren().add(tradeMenu);
     }
 
 }
