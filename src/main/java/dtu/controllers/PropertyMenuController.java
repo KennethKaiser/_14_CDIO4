@@ -252,6 +252,13 @@ public class PropertyMenuController {
         pledgeButtons[6] = pledgeButtonFerry4;
         pledgeButtons[7] = pledgeButtonSoda1;
         pledgeButtons[8] = pledgeButtonSoda2;
+        for(int i = 0; i < pledgeButtons.length; i++){
+            int temp = i;
+            lineOn(pledgeButtons[temp]);
+            pledgeButtons[i].setOnMouseEntered(e -> lineOff(pledgeButtons[temp]));
+            pledgeButtons[i].setOnMouseExited(e -> lineOn(pledgeButtons[temp]));
+
+        }
         minusButtons[0] = minusButton1;
         minusButtons[1] = minusButton2;
         minusButtons[2] = minusButton3;
@@ -396,21 +403,22 @@ public class PropertyMenuController {
                 house2Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent2House()));
                 house3Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent3House()));
                 house4Rent[i].setText(numbersToString(fieldProperty.getProperty().getRent4House()));
+                hotelRent[i].setText(numbersToString(fieldProperty.getProperty().getRentHotel()));
                 housePrice[i].setText(numbersToString(fieldProperty.getProperty().getHousePrice()));
                 setPledgeValueSign(fieldProperty.isPledgeState(), i);
-                System.out.println("State: " + fieldProperty.isPledgeState());
-                if(fieldProperty.isPledgeState()) {
-                    System.out.println("Åben for");
-                    pledgeButtons[i].setText("Åben for: " + numbersToString(fieldProperty.getProperty().getPledge() + playerHandler.nonPledgeTax(fieldProperty.getProperty().getPledge())));
-                }
-                else {
-                    System.out.println("Pantsæt og få");
-                    pledgeButtons[i].setText("Pantsæt og få: " + numbersToString(fieldProperty.getProperty().getPledge()));
-                }
-                pledgeButtons[i].setOnAction(e -> doPledge(fieldProperty, !fieldProperty.isPledgeState(), player, properties));
                 setColorOf(colors[i], fieldProperty.getProperty().getFamilie());
                 setHouseIcon(i, fieldProperty.getBuildings());
                 if(player != -1){
+                    pledgeButtons[i].setDisable(false);
+                    pledgeButtons[i].setOpacity(1);
+                    if(fieldProperty.isPledgeState()) {
+                        pledgeButtons[i].setText("Åben for: " + numbersToString(fieldProperty.getProperty().getPrice()/2 + playerHandler.nonPledgeTax(fieldProperty.getProperty().getPrice()/2)));
+                    }
+                    else {
+                        pledgeButtons[i].setText("Pantsæt og få: " + numbersToString(fieldProperty.getProperty().getPrice()/2));
+                    }
+                    pledgeButtons[i].setOnAction(e -> doPledge(fieldProperty, !fieldProperty.isPledgeState(), player, properties));
+
                     if(houseLogic.checkForHasAllOfFamily(fieldProperty, player)){
                         if(houseLogic.canBuild(fieldProperty, player)){
                             if(fieldProperty.getBuildings()<5){
@@ -430,6 +438,10 @@ public class PropertyMenuController {
                         }
                     }
                 }
+                else{
+                    pledgeButtons[i].setDisable(true);
+                    pledgeButtons[i].setOpacity(0);
+                }
 
                 if(fieldProperty.isPledgeState())pledgeValueIcons[i].setOpacity(84);
                 else pledgeValueIcons[i].setOpacity(0);
@@ -441,6 +453,14 @@ public class PropertyMenuController {
                 parent.getChildren().add(cards[i+3]);
                 System.out.println(i);
                 names[i+3].setText(ferry.getFerry().getName());
+                if(player != -1) {
+                    if (ferry.isPledgeState()) {
+                        pledgeButtons[i].setText("Åben for: " + numbersToString(ferry.getFerry().getPrice()/2 + playerHandler.nonPledgeTax(ferry.getFerry().getPrice()/2)));
+                    } else {
+                        pledgeButtons[i].setText("Pantsæt og få: " + numbersToString(ferry.getFerry().getPrice()/2));
+                    }
+                    pledgeButtons[i].setOnAction(e -> doPledge(ferry, !ferry.isPledgeState(), player, properties));
+                }
             }
         }
         if(type.equals("brewery")){
@@ -455,6 +475,14 @@ public class PropertyMenuController {
                     cardImages[i+7].setImage(image("src/textures/squash_card.png"));
                 }
                 names[i+7].setText(breweryField.getBrewery().getName());
+                if(player != -1) {
+                    if (breweryField.isPledgeState()) {
+                        pledgeButtons[i].setText("Åben for: " + numbersToString(breweryField.getBrewery().getPrice()/2 + playerHandler.nonPledgeTax(breweryField.getBrewery().getPrice()/2)));
+                    } else {
+                        pledgeButtons[i].setText("Pantsæt og få: " + numbersToString(breweryField.getBrewery().getPrice()/2));
+                    }
+                    pledgeButtons[i].setOnAction(e -> doPledge(breweryField, !breweryField.isPledgeState(), player, properties));
+                }
             }
         }
         //working
@@ -541,6 +569,12 @@ public class PropertyMenuController {
     }
     private void setHouseIcon(int card, int amount){
         cardImages[card].setImage(houseIcons[amount]);
+    }
+    private void lineOn(Node node){
+        node.setStyle(node.getStyle() + ";-fx-border-color: #ffffff; -fx-border-radius: 3; -fx-background-radius: 4;");
+    }
+    private void lineOff(Node node){
+        node.setStyle(node.getStyle() + ";-fx-border-color: #707070;-fx-border-radius: 3; -fx-background-radius: 4;");
     }
     private Image image(String url){
         try{

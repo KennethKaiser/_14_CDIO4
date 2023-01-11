@@ -81,7 +81,7 @@
                            </HBox>
                            <HBox alignment="CENTER" layoutX="10.0" layoutY="99.0" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Button fx:id="pledgeButtonSoda1" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="117.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" translateY="6.0">
+                                 <Button fx:id="pledgeButtonSoda1" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="122.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" textOverrun="CLIP" translateX="-1.0" translateY="6.0">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -178,7 +178,7 @@
                                  <Insets left="3.0" right="1.0" />
                               </padding>
                               <children>
-                                 <Button fx:id="pledgeButtonSoda2" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="117.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" translateY="6.0">
+                                 <Button fx:id="pledgeButtonSoda2" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="122.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" textOverrun="CLIP" translateX="-1.0" translateY="6.0">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -390,7 +390,7 @@
                            </HBox>
                            <HBox alignment="CENTER" layoutX="10.0" layoutY="100.0" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Button fx:id="pledgeButtonProp1" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="117.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" translateY="4.0">
+                                 <Button fx:id="pledgeButtonProp1" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="122.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" textOverrun="CLIP" translateX="-1.0" translateY="4.0">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -605,7 +605,7 @@
                            </HBox>
                            <HBox alignment="CENTER" layoutX="10.0" layoutY="100.0" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Button fx:id="pledgeButtonProp2" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="117.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" translateY="4.0">
+                                 <Button fx:id="pledgeButtonProp2" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="122.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" textOverrun="CLIP" translateX="-1.0" translateY="4.0">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -820,7 +820,7 @@
                            </HBox>
                            <HBox alignment="CENTER" layoutX="10.0" layoutY="100.0" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Button fx:id="pledgeButtonProp3" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="117.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" translateY="4.0">
+                                 <Button fx:id="pledgeButtonProp3" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="122.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" textOverrun="CLIP" translateX="-1.0" translateY="4.0">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -980,7 +980,7 @@
                            </HBox>
                            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Button fx:id="pledgeButtonFerry1" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="117.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" translateY="6.0">
+                                 <Button fx:id="pledgeButtonFerry1" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="122.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" textOverrun="CLIP" translateX="-1.0" translateY="6.0">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -1140,7 +1140,7 @@
                            </HBox>
                            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Button fx:id="pledgeButtonFerry2" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="117.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" translateY="6.0">
+                                 <Button fx:id="pledgeButtonFerry2" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="122.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" textOverrun="CLIP" translateX="-1.0" translateY="6.0">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -1300,7 +1300,7 @@
                            </HBox>
                            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Button fx:id="pledgeButtonFerry3" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="117.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" translateY="6.0">
+                                 <Button fx:id="pledgeButtonFerry3" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="122.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" textOverrun="CLIP" translateX="-1.0" translateY="6.0">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
@@ -1460,7 +1460,7 @@
                            </HBox>
                            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Button fx:id="pledgeButtonFerry4" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="117.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" translateY="6.0">
+                                 <Button fx:id="pledgeButtonFerry4" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="122.0" style="-fx-background-color: #eeeeee;" text="Pantsæt for xxx" textOverrun="CLIP" translateX="-1.0" translateY="6.0">
                                     <font>
                                        <Font size="10.0" />
                                     </font>
