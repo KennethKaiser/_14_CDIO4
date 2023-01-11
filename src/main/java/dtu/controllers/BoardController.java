@@ -654,6 +654,7 @@ public class BoardController {
         int playerID = currentPlayer.getId();
         int playerPosition = currentPlayer.getPosition();
         movePLayerOnGUI(playerID, playerPosition);
+        multipleCars(playerID, playerPosition);
         endTurn();
     }
 
@@ -720,8 +721,6 @@ public class BoardController {
             communicationController.luckInJail();
         }
         else{
-
-
             communicationController.noLuckJail();
         }
     }
@@ -842,6 +841,9 @@ public class BoardController {
 
     //region car gui methods
     public void movePLayerOnGUI(int player, int fieldPlacement){
+        //Just a cheat implementation
+        cheatRemoveCarFromBoard(player);
+
         fields[fieldPlacement].getChildren().add(playerCars[player]);
     }
 
@@ -1102,7 +1104,7 @@ public class BoardController {
             int[] toIntArray = new int[1];
             toIntArray[0] = steps;
             //Switch decision box
-            communicationController.whatRolled(toIntArray, cheatPlayer);
+            communicationController.whatRolled(toIntArray, playerHandler.getCurrentPlayer());
         }
         else System.out.println("No player selected");
 
@@ -1119,6 +1121,13 @@ public class BoardController {
         }
     }
     //endregion
+
+    public void cheatRemoveCarFromBoard(int player){
+        for(int n = 0; n < fields.length; n++){
+            fields[n].getChildren().remove(playerCars[player]);
+        }
+    }
+
 
     //Getter dice
     public RaffleCup getDice() {

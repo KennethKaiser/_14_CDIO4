@@ -106,7 +106,7 @@ public class CommunicationController {
         String[] choiceOptions = new String[1];
         choiceOptions[0] = "Okay";
 
-        String textField = "Du slog desværre i dobbeltslag.";
+        String textField = "Du slog desværre ikke et dobbeltslag.";
         showCommunicationBox(textField, choiceOptions);
         choices[0].setOnAction(e -> boardController.endTurn());
 
