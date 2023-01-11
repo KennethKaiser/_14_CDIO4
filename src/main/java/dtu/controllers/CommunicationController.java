@@ -154,6 +154,16 @@ public class CommunicationController {
 
     }
 
+    public void ownerIsInPrison(String owner){
+        String[] choiceOptions = new String[1];
+        choiceOptions[0] = "Okay";
+
+        String textField = owner + " er i fængsel og der skal derfor ikke betales leje";
+
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> boardController.endTurn());
+    }
+
     public void endGameTextBox(String playerName){
 
         String[] choiceOptions = null;

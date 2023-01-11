@@ -825,8 +825,13 @@ public class BoardController {
     public void buyOrRentCheckerProperty(Field field){
         FieldProperty fieldProperty = (FieldProperty) field;
         if(fieldProperty.isOwned()){
+            if(fieldProperty.getOwner().isJail()){
+                communicationController.ownerIsInPrison(fieldProperty.getOwner().getName());
+            }
+            else {
+                communicationController.payRentProperty(fieldProperty, playerHandler.getCurrentPlayer());
+            }
 
-            communicationController.payRentProperty(fieldProperty, playerHandler.getCurrentPlayer());
         }
         else{
             communicationController.wantToBuyProperty(fieldProperty);
@@ -836,7 +841,13 @@ public class BoardController {
     public void buyOrRentCheckerFerry(Field field){
         FerryField ferryField = (FerryField) field;
         if(ferryField.getOwned()){
-            communicationController.payRentFerry(ferryField,playerHandler.getCurrentPlayer());
+            if(ferryField.getOwner().isJail()){
+                communicationController.ownerIsInPrison(ferryField.getOwner().getName());
+            }
+            else {
+                communicationController.payRentFerry(ferryField,playerHandler.getCurrentPlayer());
+            }
+
         }
         else{
             communicationController.wantToBuyFerry(ferryField);
@@ -846,7 +857,12 @@ public class BoardController {
     public void buyOrRentCheckerBrewery(Field field){
         BreweryField breweryField = (BreweryField) field;
         if(breweryField.getOwned()){
-            communicationController.payRentBrewery(breweryField,playerHandler.getCurrentPlayer());
+            if(breweryField.getOwner().isJail()){
+                communicationController.ownerIsInPrison(breweryField.getOwner().getName());
+            }
+            else {
+                communicationController.payRentBrewery(breweryField,playerHandler.getCurrentPlayer());
+            }
         }
         else{
             communicationController.wantToBuyBrewery(breweryField);
