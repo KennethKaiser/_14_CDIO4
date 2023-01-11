@@ -69,5 +69,6 @@ class BreweryFieldTest {
 
     @Test
     void type() {
+
     }
 }
