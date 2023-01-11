@@ -680,7 +680,7 @@
                         <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00dd00;" />
                                 <AnchorPane fx:id="diceBox" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="639.0" prefWidth="636.0">
                                     <children>
-                                        <ImageView fx:id="dice1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                                        <ImageView fx:id="dice1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" translateX="450.0" translateY="350.0" />
                                         <ImageView fx:id="dice2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
                                     </children>
                                 </AnchorPane>

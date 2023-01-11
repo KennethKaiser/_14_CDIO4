@@ -352,12 +352,18 @@ public class PropertyMenuController {
         propertyImage1.setImage(houseIcons[0]);
         propertyImage2.setImage(houseIcons[0]);
         propertyImage3.setImage(houseIcons[0]);
-        ferryImage1.setImage(image("src/textures/ferry_card.png"));
-        ferryImage2.setImage(image("src/textures/ferry_card.png"));
-        ferryImage3.setImage(image("src/textures/ferry_card.png"));
-        ferryImage4.setImage(image("src/textures/ferry_card.png"));
-        sodaImage1.setImage(image("src/textures/squash_card.png"));
-        sodaImage2.setImage(image("src/textures/colaflaske.png"));
+        cardImages[3] = ferryImage1;
+        cardImages[4] = ferryImage2;
+        cardImages[5] = ferryImage3;
+        cardImages[6] = ferryImage4;
+        cardImages[7] = sodaImage1;
+        cardImages[8] = sodaImage2;
+        cardImages[3].setImage(image("src/textures/ferry_card.png"));
+        cardImages[4].setImage(image("src/textures/ferry_card.png"));
+        cardImages[5].setImage(image("src/textures/ferry_card.png"));
+        cardImages[6].setImage(image("src/textures/ferry_card.png"));
+        cardImages[7].setImage(image("src/textures/squash_card.png"));
+        cardImages[8].setImage(image("src/textures/colaflaske.png"));
     }
 
     private void setPledgeValueSign(boolean isPledgeValue, int spot){
@@ -441,6 +447,13 @@ public class PropertyMenuController {
             for(int i = 0; i < properties.length; i++) {
                 BreweryField breweryField = (BreweryField) properties[i];
                 parent.getChildren().add(cards[i+7]);
+                if(breweryField.getBrewery().getName().equals("Coca Cola")){
+
+                    cardImages[i+7].setImage(image("src/textures/colaflaske.png"));
+                }
+                else{
+                    cardImages[i+7].setImage(image("src/textures/squash_card.png"));
+                }
                 names[i+7].setText(breweryField.getBrewery().getName());
             }
         }
