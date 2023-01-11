@@ -612,6 +612,22 @@ public class BoardController {
         whatField();
     }
 
+    public void moveAfterDoubleInPrison(){
+
+        int[] playerRoll = dice.getOurRolls();
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+
+        playerHandler.movePlayer(currentPlayer, playerRoll[0]+playerRoll[1]);
+
+        int playerId = playerHandler.getCurrentPlayer().getId();
+        int playerPosition = playerHandler.getCurrentPlayer().getPosition();
+
+        movePLayerOnGUI(playerId, playerPosition);
+        multipleCars(playerId, playerPosition);
+
+        whatField();
+    }
+
 
     public void whatField(){
         String landedLabel = ControllerHandler.getInstance().getBoard().getCurrentBoard()[playerHandler.getCurrentPlayer().getPosition()].landedLabel();

@@ -119,7 +119,7 @@ public class CommunicationController {
 
         String textField = "Du slog et dobbeltslag og ryger ud af fængslet. Du rykker det antal felter du har slået";
         showCommunicationBox(textField, choiceOptions);
-        choices[0].setOnAction(e -> boardController.endTurn());
+        choices[0].setOnAction(e -> boardController.moveAfterDoubleInPrison());
 
     }
 
