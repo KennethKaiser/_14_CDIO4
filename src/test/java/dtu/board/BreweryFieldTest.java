@@ -68,7 +68,24 @@ class BreweryFieldTest {
     }
 
     @Test
-    void type() {
+    void activeRent() {
+        PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.initializePlayers(4);
+        playerHandler.initializePlayerInPlayers(0, "Niels", 40000, "black");
+        playerHandler.initializePlayerInPlayers(1, "Karl", 40000, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Hans", 40000, "red");
+        playerHandler.initializePlayerInPlayers(3, "test", 0, "green");
+        Brewery brewery = new Brewery(0, "test", 0, 10, 20, 30);
+        BreweryField breweryField1 = new BreweryField(new Brewery(1, "test2", 1, 20,30,40));
+        BreweryField breweryField = new BreweryField(brewery);
+
+        breweryField.buy(playerHandler.getPlayers()[0]);
+        assertEquals(200, breweryField.findActiveRent(10));
+
+        breweryField.buy(playerHandler.getPlayers()[0]);
+        assertEquals(300, breweryField.findActiveRent(10));
+
+
 
     }
 }
