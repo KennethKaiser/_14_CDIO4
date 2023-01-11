@@ -314,10 +314,10 @@ class PlayerHandlerTest {
     void checkNIDeqZero(){
         PlayerHandler playerHandler = new PlayerHandler();
         playerHandler.initializePlayers(4);
-        playerHandler.initializePlayerInPlayers(0, "Niels", 0, "black");
-        playerHandler.initializePlayerInPlayers(1, "Karl", 0, "blue");
-        playerHandler.initializePlayerInPlayers(2, "Hans", 0, "red");
-        playerHandler.initializePlayerInPlayers(3, "test", 0, "green");
+        playerHandler.initializePlayerInPlayers(0, "Niels", 40000, "black");
+        playerHandler.initializePlayerInPlayers(1, "Karl", 40000, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Hans", 40000, "red");
+        playerHandler.initializePlayerInPlayers(3, "test", 40000, "green");
         playerHandler.currentPlayer();
         playerHandler.currentPlayer();
         playerHandler.currentPlayer();
