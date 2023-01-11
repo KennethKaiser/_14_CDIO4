@@ -62,6 +62,8 @@ class BreweryFieldTest {
 
         BreweryField breweryField = new BreweryField(brewery);
 
+        assertEquals("Du er landet på test.", breweryField.landedLabel());
+
 
     }
 
