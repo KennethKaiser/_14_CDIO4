@@ -14,8 +14,6 @@ public class RaffleCup {
     private int numberOfDoubles = 0;
     private Die die = new Die();
 
-    PlayerHandler playerHandler = new PlayerHandler();
-
     /**
      * Method for rolling dice. Returns 2 random numbers in an int array.
      * @return
@@ -59,5 +57,37 @@ public class RaffleCup {
 
     public void setSum(int sum) {
         this.sum = sum;
+    }
+
+    public int getNUMBER_OF_ROLLS() {
+        return NUMBER_OF_ROLLS;
+    }
+
+    public void setOurRolls(int[] ourRolls) {
+        this.ourRolls = ourRolls;
+    }
+
+    public boolean isRolledDouble() {
+        return rolledDouble;
+    }
+
+    public void setRolledDouble(boolean rolledDouble) {
+        this.rolledDouble = rolledDouble;
+    }
+
+    public int getNumberOfDoubles() {
+        return numberOfDoubles;
+    }
+
+    public void setNumberOfDoubles(int numberOfDoubles) {
+        this.numberOfDoubles = numberOfDoubles;
+    }
+
+    public Die getDie() {
+        return die;
+    }
+
+    public void setDie(Die die) {
+        this.die = die;
     }
 }
