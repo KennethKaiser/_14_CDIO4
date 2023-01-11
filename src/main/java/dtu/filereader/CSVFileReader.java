@@ -15,18 +15,6 @@ public class CSVFileReader {
         fieldinfo = readCSV( "src/main/java/dtu/board/fields.csv", ";");
     }
 
-    public void readRow(int index, ArrayList<String[]> file){
-
-        for (int i =0; i<file.get(index).length; i++){
-            System.out.println(file.get(index)[i]);
-        }
-
-    }
-
-
-
-
-
     /**
      * readColon takes the data from fileReader + and handles data, split the data and adds all the data into an ArrayList colData.
      * @param filepath
