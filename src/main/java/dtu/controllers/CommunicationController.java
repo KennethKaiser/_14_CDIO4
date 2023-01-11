@@ -79,6 +79,21 @@ public class CommunicationController {
 
     }
 
+    public void playerTurnInJail(String playerName){
+        String[] choiceOptions = new String[3];
+        choiceOptions[0] = "Betal 1000 kr";
+        choiceOptions[1] = "Prøv at slå dobbeltslag";
+        choiceOptions[2] = "Brug 'get out a jail card'";
+
+        String textField = playerName + "er i fængsel. Du har nu følgende valgmuligheder.";
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> boardController.payForPrison());
+        choices[1].setOnAction(e -> boardController.rollDouble());
+        choices[2].setOnAction(e -> boardController.useGetOutOfJailCard());
+
+
+    }
+
     public void endGameTextBox(String playerName){
 
         String[] choiceOptions = null;

@@ -691,8 +691,24 @@ public class BoardController {
 
     }
 
-    public void endTurn(){
+    //region prison
 
+    public void rollDouble(){
+
+    }
+
+    public void payForPrison(){
+
+    }
+
+    public void useGetOutOfJailCard(){
+
+    }
+
+
+    //endregion
+
+    public void endTurn(){
 
         playerHandler.isPlayerBankrupt(playerHandler.getCurrentPlayer());
 
@@ -700,29 +716,28 @@ public class BoardController {
             communicationController.playerIsBankrupt(playerHandler.getCurrentPlayer());
         }
         else {
-            System.out.println("Dette her");
-
-
+            //Gets next player and if next player is bankrupt get next player again
             playerHandler.currentPlayer();
             while(playerHandler.getCurrentPlayer().isBankrupt()){
                 playerHandler.currentPlayer();
             }
+
             String playerName = playerHandler.getCurrentPlayer().getName();
             playerViewController.updatePlayerTurn();
 
             if(playerHandler.checkForChickenDinner()){
                 communicationController.endGameTextBox(playerName);
             }else{
-                communicationController.playerTurnStart(playerName);
+                if(playerHandler.getCurrentPlayer().isJail()){
+                    communicationController.playerTurnInJail(playerName);
+                }
+                else{
+                    communicationController.playerTurnStart(playerName);
+                }
+
             }
 
-
-
-
         }
-
-
-
 
     }
 
