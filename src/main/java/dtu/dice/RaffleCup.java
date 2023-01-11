@@ -1,5 +1,7 @@
 package dtu.dice;
 
+import dtu.players.PlayerHandler;
+
 import java.util.Random;
 
 public class RaffleCup {
@@ -7,7 +9,12 @@ public class RaffleCup {
     private final int NUMBER_OF_ROLLS = 2;
     private int[] ourRolls;
     private int sum;
+
+    private boolean rolledDouble = false;
+    private int numberOfDoubles = 0;
     private Die die = new Die();
+
+    PlayerHandler playerHandler = new PlayerHandler();
 
     /**
      * Method for rolling dice. Returns 2 random numbers in an int array.
@@ -29,6 +36,18 @@ public class RaffleCup {
         sum = lastRoll[0] + lastRoll[1];
     }
 
+    public boolean rolledDouble (){
+        if(ourRolls[0] == ourRolls[1]){
+            numberOfDoubles++;
+            rolledDouble = true;
+            return true;
+        }
+        else{
+            numberOfDoubles = 0;
+            rolledDouble = false;
+            return false;
+        }
+    }
 
     public int[] getOurRolls() {
         return ourRolls;
