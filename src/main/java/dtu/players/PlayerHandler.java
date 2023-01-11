@@ -339,6 +339,11 @@ public class PlayerHandler {
 
     }
 
+    public void moveToPrison(Player player){
+        player.setPosition(10);
+        player.setJail(true);
+    }
+
 
 
 

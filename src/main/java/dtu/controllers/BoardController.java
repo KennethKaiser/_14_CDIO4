@@ -624,10 +624,19 @@ public class BoardController {
             endTurn();
         }
         else if(type.equals("jail")){
-            endTurn();
+            goToJail();
         }
 
 
+    }
+
+    public void goToJail(){
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+        playerHandler.moveToPrison(currentPlayer);
+        int playerID = currentPlayer.getId();
+        int playerPosition = currentPlayer.getPosition();
+        movePLayerOnGUI(playerID, playerPosition);
+        endTurn();
     }
 
     public void buyProperty(FieldProperty fieldProperty){
