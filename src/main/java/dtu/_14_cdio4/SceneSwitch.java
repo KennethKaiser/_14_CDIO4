@@ -113,8 +113,10 @@ public class SceneSwitch {
         boardController.getMiddleMenuVBox().getChildren().add(chanceCards);
     }
     public void showTradingMenu(){
+        System.out.println("Switching to trade Menu");
         boardController.getMiddleMenuVBox().getChildren().clear();
         boardController.getMiddleMenuVBox().getChildren().add(tradeMenu);
+        tradingMenuController.onSwitched();
     }
 
 }

@@ -312,6 +312,13 @@ public class BoardController {
     @FXML
     ImageView housePurple2;
     //endregion
+    //region trade
+    @FXML
+    ImageView tradeMenuImage;
+    @FXML
+    Button tradeMenuButton;
+
+    //endregion
 
     //region VBOX that needs access because we need to put chancecards and the property menu inside it.
     @FXML
@@ -350,6 +357,7 @@ public class BoardController {
         initHouses();
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
+        initTradeMenu();
     }
 
     //region delegate model objects to other controller
@@ -569,6 +577,17 @@ public class BoardController {
 
 
     }
+    //region trade menu
+    private void initTradeMenu() {
+        tradeMenuButton.setOnAction(e -> ControllerHandler.getInstance().getSceneSwitch().showTradingMenu());
+        try{
+            tradeMenuImage.setImage(image("src/textures/shakeHandsIcon.png"));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    //endregion
     //region game loop actions
 
     /**
