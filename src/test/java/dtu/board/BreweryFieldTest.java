@@ -85,6 +85,9 @@ class BreweryFieldTest {
         breweryField.buy(playerHandler.getPlayers()[0]);
         assertEquals(300, breweryField.findActiveRent(10));
 
+        breweryField.setPledgeState(true);
+        assertTrue(breweryField.isPledgeState());
+
 
 
     }
