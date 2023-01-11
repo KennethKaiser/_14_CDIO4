@@ -736,12 +736,20 @@ public class BoardController {
             playerHandler.getCurrentPlayer().setJail(false);
             communicationController.luckInJail();
         }
+        else if(dice.getNumberOfDoubles() == 3){
+            communicationController.forcedToPay();
+        }
         else{
             communicationController.noLuckJail();
         }
     }
 
     public void payForPrison(){
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+        currentPlayer.setJail(false);
+        playerHandler.changePlayerBalance(currentPlayer, 1000);
+        playerViewController.updatePlayerMoney();
+        communicationController.payedForPrison();
 
     }
 
