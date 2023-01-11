@@ -7,8 +7,8 @@ import dtu.players.PlayerHandler;
 public class PrisonField extends Field {
 
     private Dummy dummy;
-    int die1, die2;
-    final int BAIL = 1000;
+    private int die1, die2;
+    private final int BAIL = 1000;
 
     public PrisonField(Dummy dummy) {
         this.dummy = dummy;
@@ -33,7 +33,7 @@ public class PrisonField extends Field {
     //Double
     //Card
 
-public void BailOut(Player player){
+public void bailOut(Player player){
         if(player.isJail() == true){
             if(player.getMoney() >= BAIL) {
                 player.setMoney(player.getMoney() - BAIL);
