@@ -670,8 +670,6 @@ public class BoardController {
             playerViewController.addCard(temp, currentPlayer.getId());
             communicationController.playerBoughtBrewery(breweryField, currentPlayer);
         }
-
-
     }
 
     public void endTurn(){
