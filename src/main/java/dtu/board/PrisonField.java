@@ -21,7 +21,7 @@ public class PrisonField extends Field {
 
     @Override
     public String type() {
-        return "jailvisit";
+        return "jail";
     }
 
     public Dummy getDummy() {
