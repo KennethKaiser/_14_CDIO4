@@ -16,7 +16,7 @@ public class PrisonField extends Field {
 
     @Override
     public String landedLabel() {
-        return "Du er landet på " + dummy.getName() + ".";
+        return "Du er ryger direkte i fængsel.";
     }
 
     @Override

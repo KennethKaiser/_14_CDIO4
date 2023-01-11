@@ -74,25 +74,94 @@ public class CommunicationController {
             }
         }
     }
-    public void choiceBuyField(String field, int price, String player){
-        String[] choiceOptions = new String[2];
-        String textField = (player + " er landet på " + field);
-        choiceOptions[0] = ("køb for " + price);
-        choiceOptions[1] = ("køb ikke grund");
-        showCommunicationBox(textField, choiceOptions);
-        choices[0].setOnAction(e -> buyField());
-        choices[1].setOnAction(e -> doNotBuy());
 
-    }
     public void playerTurnStart(String playerName){
 
         String[] choiceOptions = new String[1];
         choiceOptions[0] = "Rul terning";
         String textField = "Det er spiller " + playerName + "'s tur";
         showCommunicationBox(textField, choiceOptions);
-        choices[0].setOnAction(e -> boardController.moveAndRoll());
+        choices[0].setOnAction(e -> boardController.roll());
 
 
+    }
+
+    public void playerTurnInJail(String playerName){
+        String[] choiceOptions = new String[3];
+        choiceOptions[0] = "Betal 1000 kr";
+        choiceOptions[1] = "Prøv at slå dobbeltslag";
+        choiceOptions[2] = "Brug 'get out a jail card'";
+
+        String textField = playerName + "er i fængsel. Du har nu følgende valgmuligheder.";
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> boardController.payForPrison());
+        choices[1].setOnAction(e -> boardController.rollDoublePrison());
+        choices[2].setOnAction(e -> boardController.useGetOutOfJailCard());
+
+
+    }
+
+    public void payedForPrisonDouble(){
+        String[] choiceOptions = new String[1];
+        choiceOptions[0] = "Okay";
+
+        String textField = "Du har nu betalt for fængsel. Tryk okay for at rykke det antal felter du har slået";
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> boardController.moveAfterDoubleInPrison());
+    }
+
+    public void payedForPrison(){
+        String[] choiceOptions = new String[1];
+        choiceOptions[0] = "Okay";
+
+        String textField = "Du har nu betalt for fængsel.";
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> boardController.roll());
+    }
+
+    public void noLuckJail(){
+
+        String[] choiceOptions = new String[1];
+        choiceOptions[0] = "Okay";
+
+        String textField = "Du slog desværre ikke et dobbeltslag.";
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> boardController.endTurn());
+
+    }
+
+    public void luckInJail(){
+
+        String[] choiceOptions = new String[1];
+        choiceOptions[0] = "Okay";
+
+        String textField = "Du slog et dobbeltslag og ryger ud af fængslet. Du rykker det antal felter du har slået";
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> boardController.moveAfterDoubleInPrison());
+
+    }
+
+    public void forcedToPay(){
+
+        String[] choiceOptions = new String[1];
+        choiceOptions[0] = "Okay";
+
+        String textField = "Du slog desværre ikke dobbelt. Du har nu brugt 3 forsøg og skal nu betale 1000 kr" +
+                " og rykke det antal felter du har slået";
+
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> boardController.payForPrison());
+
+    }
+
+    public void ownerIsInPrison(String owner){
+        String[] choiceOptions = new String[1];
+        choiceOptions[0] = "Okay";
+
+        String textField = owner + " er i fængsel og der skal derfor ikke betales leje";
+
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> boardController.endTurn());
     }
 
     public void endGameTextBox(String playerName){
@@ -103,7 +172,7 @@ public class CommunicationController {
 
     }
 
-    public void whatRolled(int[] roll){
+    public void whatRolled(int[] roll, Player currentPlayer){
         String[] choiceOptions = new String[1];
 
         int total;
@@ -112,7 +181,14 @@ public class CommunicationController {
         choiceOptions[0] = "Okay";
         String textField = "Du slog " + total + ". Tryk 'Okay' for at rykke " + total + " felter.";
         showCommunicationBox(textField, choiceOptions);
-        choices[0].setOnAction(e -> boardController.whatField());
+
+        if(currentPlayer.isJail()){
+
+        }
+        else {
+            choices[0].setOnAction(e -> boardController.turnMove());
+        }
+
 
     }
 

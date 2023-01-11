@@ -571,10 +571,8 @@ public class BoardController {
     }
     //region game loop actions
 
-    /**
-     * This method is called when player clicks button "Roll and Move"
-     */
-    @FXML
+
+    /*@FXML
     public void moveAndRoll(){
         int[] playerRoll = dice.roll();
         Player currentPlayer = playerHandler.getCurrentPlayer();
@@ -593,7 +591,43 @@ public class BoardController {
         communicationController.whatRolled(playerRoll);
 
 
+    }*/
+
+    public void roll(){
+        int[] playerRoll = dice.roll();
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+
+        playerHandler.movePlayer(currentPlayer, playerRoll[0]+playerRoll[1]);
+        rollDiceAnimation(playerRoll[0],playerRoll[1]);
+        communicationController.whatRolled(playerRoll, currentPlayer);
     }
+
+    public void turnMove(){
+        int playerId = playerHandler.getCurrentPlayer().getId();
+        int playerPosition = playerHandler.getCurrentPlayer().getPosition();
+
+        movePLayerOnGUI(playerId, playerPosition);
+        multipleCars(playerId, playerPosition);
+
+        whatField();
+    }
+
+    public void moveAfterDoubleInPrison(){
+
+        int[] playerRoll = dice.getOurRolls();
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+
+        playerHandler.movePlayer(currentPlayer, playerRoll[0]+playerRoll[1]);
+
+        int playerId = playerHandler.getCurrentPlayer().getId();
+        int playerPosition = playerHandler.getCurrentPlayer().getPosition();
+
+        movePLayerOnGUI(playerId, playerPosition);
+        multipleCars(playerId, playerPosition);
+
+        whatField();
+    }
+
 
     public void whatField(){
         String landedLabel = ControllerHandler.getInstance().getBoard().getCurrentBoard()[playerHandler.getCurrentPlayer().getPosition()].landedLabel();
@@ -624,10 +658,20 @@ public class BoardController {
             endTurn();
         }
         else if(type.equals("jail")){
-            endTurn();
+            goToJail();
         }
 
 
+    }
+
+    public void goToJail(){
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+        playerHandler.moveToPrison(currentPlayer);
+        int playerID = currentPlayer.getId();
+        int playerPosition = currentPlayer.getPosition();
+        movePLayerOnGUI(playerID, playerPosition);
+        multipleCars(playerID, playerPosition);
+        endTurn();
     }
 
     public void buyProperty(FieldProperty fieldProperty){
@@ -682,8 +726,41 @@ public class BoardController {
 
     }
 
-    public void endTurn(){
+    //region prison
 
+    public void rollDoublePrison(){
+        int[] ourRoll = dice.roll();
+        rollDiceAnimation(ourRoll[0], ourRoll[1]);
+
+        if(dice.rolledDouble()){
+            playerHandler.getCurrentPlayer().setJail(false);
+            communicationController.luckInJail();
+        }
+        else if(dice.getNumberOfDoubles() == 3){
+            communicationController.forcedToPay();
+        }
+        else{
+            communicationController.noLuckJail();
+        }
+    }
+
+    public void payForPrison(){
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+        currentPlayer.setJail(false);
+        playerHandler.changePlayerBalance(currentPlayer, 1000);
+        playerViewController.updatePlayerMoney();
+        communicationController.payedForPrison();
+
+    }
+
+    public void useGetOutOfJailCard(){
+
+    }
+
+
+    //endregion
+
+    public void endTurn(){
 
         playerHandler.isPlayerBankrupt(playerHandler.getCurrentPlayer());
 
@@ -691,29 +768,28 @@ public class BoardController {
             communicationController.playerIsBankrupt(playerHandler.getCurrentPlayer());
         }
         else {
-            System.out.println("Dette her");
-
-
+            //Gets next player and if next player is bankrupt get next player again
             playerHandler.currentPlayer();
             while(playerHandler.getCurrentPlayer().isBankrupt()){
                 playerHandler.currentPlayer();
             }
+
             String playerName = playerHandler.getCurrentPlayer().getName();
             playerViewController.updatePlayerTurn();
 
             if(playerHandler.checkForChickenDinner()){
                 communicationController.endGameTextBox(playerName);
             }else{
-                communicationController.playerTurnStart(playerName);
+                if(playerHandler.getCurrentPlayer().isJail()){
+                    communicationController.playerTurnInJail(playerName);
+                }
+                else{
+                    communicationController.playerTurnStart(playerName);
+                }
+
             }
 
-
-
-
         }
-
-
-
 
     }
 
@@ -749,8 +825,13 @@ public class BoardController {
     public void buyOrRentCheckerProperty(Field field){
         FieldProperty fieldProperty = (FieldProperty) field;
         if(fieldProperty.isOwned()){
+            if(fieldProperty.getOwner().isJail()){
+                communicationController.ownerIsInPrison(fieldProperty.getOwner().getName());
+            }
+            else {
+                communicationController.payRentProperty(fieldProperty, playerHandler.getCurrentPlayer());
+            }
 
-            communicationController.payRentProperty(fieldProperty, playerHandler.getCurrentPlayer());
         }
         else{
             communicationController.wantToBuyProperty(fieldProperty);
@@ -760,7 +841,13 @@ public class BoardController {
     public void buyOrRentCheckerFerry(Field field){
         FerryField ferryField = (FerryField) field;
         if(ferryField.getOwned()){
-            communicationController.payRentFerry(ferryField,playerHandler.getCurrentPlayer());
+            if(ferryField.getOwner().isJail()){
+                communicationController.ownerIsInPrison(ferryField.getOwner().getName());
+            }
+            else {
+                communicationController.payRentFerry(ferryField,playerHandler.getCurrentPlayer());
+            }
+
         }
         else{
             communicationController.wantToBuyFerry(ferryField);
@@ -770,7 +857,12 @@ public class BoardController {
     public void buyOrRentCheckerBrewery(Field field){
         BreweryField breweryField = (BreweryField) field;
         if(breweryField.getOwned()){
-            communicationController.payRentBrewery(breweryField,playerHandler.getCurrentPlayer());
+            if(breweryField.getOwner().isJail()){
+                communicationController.ownerIsInPrison(breweryField.getOwner().getName());
+            }
+            else {
+                communicationController.payRentBrewery(breweryField,playerHandler.getCurrentPlayer());
+            }
         }
         else{
             communicationController.wantToBuyBrewery(breweryField);
@@ -789,6 +881,9 @@ public class BoardController {
 
     //region car gui methods
     public void movePLayerOnGUI(int player, int fieldPlacement){
+        //Just a cheat implementation
+        cheatRemoveCarFromBoard(player);
+
         fields[fieldPlacement].getChildren().add(playerCars[player]);
     }
 
@@ -1049,7 +1144,7 @@ public class BoardController {
             int[] toIntArray = new int[1];
             toIntArray[0] = steps;
             //Switch decision box
-            communicationController.whatRolled(toIntArray);
+            communicationController.whatRolled(toIntArray, playerHandler.getCurrentPlayer());
         }
         else System.out.println("No player selected");
 
@@ -1066,6 +1161,13 @@ public class BoardController {
         }
     }
     //endregion
+
+    public void cheatRemoveCarFromBoard(int player){
+        for(int n = 0; n < fields.length; n++){
+            fields[n].getChildren().remove(playerCars[player]);
+        }
+    }
+
 
     //Getter dice
     public RaffleCup getDice() {
