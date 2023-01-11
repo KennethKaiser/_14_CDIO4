@@ -88,7 +88,8 @@ class BreweryFieldTest {
         breweryField.setPledgeState(true);
         assertTrue(breweryField.isPledgeState());
 
-
+        breweryField.setOwner(playerHandler.getPlayers()[1]);
+        assertEquals(playerHandler.getPlayers()[1], breweryField.getOwner());
 
     }
 }
