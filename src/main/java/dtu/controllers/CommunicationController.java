@@ -129,6 +129,7 @@ public class CommunicationController {
         showCommunicationBox(textField, choiceOptions);
 
         choices[0].setOnAction(e -> boardController.buyProperty(property));
+        choices[1].setOnAction(e-> boardController.endTurn());
     }
 
     public void wantToBuyFerry(FerryField ferry){
@@ -147,6 +148,7 @@ public class CommunicationController {
         showCommunicationBox(textField, choiceOptions);
 
         choices[0].setOnAction(e -> boardController.buyFerry(ferry));
+        choices[1].setOnAction(e-> boardController.endTurn());
     }
 
     public void wantToBuyBrewery(BreweryField breweryField){
@@ -165,6 +167,7 @@ public class CommunicationController {
         showCommunicationBox(textField, choiceOptions);
 
         choices[0].setOnAction(e -> boardController.buyBrewery(breweryField));
+        choices[1].setOnAction(e-> boardController.endTurn());
     }
 
 
@@ -213,6 +216,17 @@ public class CommunicationController {
         playerViewController.updatePlayerMoney();
 
         String textField = ferryName + " er købt af " + playerName + ".";
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurn());
+    }
+
+    public void playerNotEnoughMoney(){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        String textField = "Du har desværre ikke nok penge til at købe.";
         showCommunicationBox(textField, choiceOptions);
 
         choices[0].setOnAction(e -> boardController.endTurn());

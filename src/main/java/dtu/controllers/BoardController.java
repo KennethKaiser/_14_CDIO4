@@ -640,6 +640,9 @@ public class BoardController {
             playerViewController.addCard(temp, currentPlayer.getId());
             communicationController.playerBoughtProperty(fieldProperty, currentPlayer);
         }
+        else{
+            communicationController.playerNotEnoughMoney();
+        }
 
 
     }
@@ -655,7 +658,9 @@ public class BoardController {
             playerViewController.addCard(temp, currentPlayer.getId());
             communicationController.playerBoughtFerry(ferryField, currentPlayer);
         }
-
+        else{
+            communicationController.playerNotEnoughMoney();
+        }
 
     }
 
@@ -669,6 +674,9 @@ public class BoardController {
             playerViewController.updatePlayerMoney();
             playerViewController.addCard(temp, currentPlayer.getId());
             communicationController.playerBoughtBrewery(breweryField, currentPlayer);
+        }
+        else{
+            communicationController.playerNotEnoughMoney();
         }
 
 
