@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -29,6 +30,14 @@ public class CommunicationController {
     HBox parent;
     @FXML
     VBox buttonVBox;
+    @FXML
+    StackPane holder;
+    @FXML
+    Text text2;
+    @FXML
+    Button okButton;
+    @FXML
+    VBox okBox;
     Button[] choices;
 
     //endregion
@@ -43,6 +52,13 @@ public class CommunicationController {
         choices[0] = choice1;
         choices[1] = choice2;
         choices[2] = choice3;
+        okButton.setOnAction(e -> holder.getChildren().remove(okBox));
+        holder.getChildren().remove(okBox);
+    }
+    public void showOkBox(String text){
+        holder.getChildren().remove(okBox);
+        holder.getChildren().add(1, okBox);
+        text2.setText(text);
     }
     public void showCommunicationBox(String text, String[] options){
         this.text.setText(text);

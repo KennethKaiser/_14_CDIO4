@@ -570,12 +570,6 @@ public class PropertyMenuController {
     private void setHouseIcon(int card, int amount){
         cardImages[card].setImage(houseIcons[amount]);
     }
-    private void lineOn(Node node){
-        node.setStyle(node.getStyle() + ";-fx-border-color: #ffffff; -fx-border-radius: 3; -fx-background-radius: 4;");
-    }
-    private void lineOff(Node node){
-        node.setStyle(node.getStyle() + ";-fx-border-color: #707070;-fx-border-radius: 3; -fx-background-radius: 4;");
-    }
     private Image image(String url){
         try{
             InputStream stream = new FileInputStream(url);
@@ -589,20 +583,100 @@ public class PropertyMenuController {
 
     //region pantsætning
     public void doPledge(Field property, boolean toState, int player, Field[] initialProperties){
+        int moneyToChange = 0;
+        CommunicationController coms = ControllerHandler.getInstance().getCommunicationController();
         switch(property.type()){
             case "buyablefield":
-                ((FieldProperty)property).setPledgeState(toState);
+
+                if(toState){
+                    //Resieve Money
+                    if(((FieldProperty)property).getBuildings() > 0){
+                        //Du kan ikke pantsætte da der er bygninger på grunden.
+                        coms.showOkBox("Du kan ikke pantsætte da der er bygninger på grunden");
+                    }
+                    else{
+                        moneyToChange = ((FieldProperty)property).getProperty().getPrice()/2;
+                        ((FieldProperty)property).setPledgeState(true);
+                        coms.showOkBox("Du pantsatte " + ((FieldProperty)property).getProperty().getName());
+                    }
+                }
+                else{
+                    //Use Money
+                    moneyToChange = -((FieldProperty)property).getProperty().getPrice()/2;
+                    moneyToChange -= playerHandler.nonPledgeTax(((FieldProperty)property).getProperty().getPrice()/2);
+                    if(playerHandler.getPlayers()[player].getMoney() < -moneyToChange){
+                        moneyToChange = 0;
+                        //Du har ikke råd
+                        coms.showOkBox("Du har ikke råd til at åbne " + ((FieldProperty)property).getProperty().getName());
+                    }
+                    else{
+                        ((FieldProperty)property).setPledgeState(false); //du havde råd
+                        coms.showOkBox("Du har åbnet " + ((FieldProperty)property).getProperty().getName());
+                    }
+                }
                 break;
             case "ferry":
-                ((FerryField)property).setPledgeState(toState);
+
+                if(toState){
+                    //Resieve Money
+                    moneyToChange = ((FerryField)property).getFerry().getPrice()/2;
+                    ((FerryField)property).setPledgeState(true);
+                    coms.showOkBox("Du pantsatte " + ((FerryField)property).getFerry().getName());
+
+                }
+                else{
+                    //Use Money
+                    moneyToChange = -((FerryField)property).getFerry().getPrice()/2;
+                    moneyToChange -= playerHandler.nonPledgeTax(((FerryField)property).getFerry().getPrice()/2);
+                    if(playerHandler.getPlayers()[player].getMoney() < -moneyToChange){
+                        moneyToChange = 0;
+                        //Du har ikke råd
+                        coms.showOkBox("Du har ikke råd til at åbne " + ((FerryField)property).getFerry().getName());
+
+                    }
+                    else {
+                        ((FerryField)property).setPledgeState(false); //du havde råd
+                        coms.showOkBox("Du har åbnet " + ((FerryField)property).getFerry().getName());
+
+                    }
+                }
                 break;
             case "brewery":
-                ((BreweryField)property).setPledgeState(toState);
+
+                if(toState){
+                    //Resieve Money
+                    moneyToChange = ((BreweryField)property).getBrewery().getPrice()/2;
+                    ((BreweryField)property).setPledgeState(true);
+                    coms.showOkBox("Du pantsatte " + ((BreweryField)property).getBrewery().getName());
+                }
+                else{
+                    //Use Money
+                    moneyToChange = -((BreweryField)property).getBrewery().getPrice()/2;
+                    moneyToChange -= playerHandler.nonPledgeTax(((BreweryField)property).getBrewery().getPrice()/2);
+                    if(playerHandler.getPlayers()[player].getMoney() < -moneyToChange){
+                        moneyToChange = 0;
+                        //Du har ikke råd
+                        coms.showOkBox("Du har ikke råd til at åbne " + ((BreweryField)property).getBrewery().getName());
+
+                    }
+                    else {
+                        ((BreweryField)property).setPledgeState(false); //du havde råd
+                        coms.showOkBox("Du har åbnet " + ((BreweryField)property).getBrewery().getName());
+
+                    }
+                }
                 break;
         }
+        playerHandler.changePlayerBalance(playerHandler.getPlayers()[player], moneyToChange);
+        ControllerHandler.getInstance().getPlayerViewController().updatePlayerMoney();
         showProperties(initialProperties, player);
     }
-
+    private void lineOn(Node node){
+        node.setStyle(node.getStyle() + ";-fx-border-color: #ffffff; -fx-border-radius: 3; -fx-background-radius: 4;");
+    }
+    private void lineOff(Node node){
+        node.setStyle(node.getStyle() + ";-fx-border-color: #707070;-fx-border-radius: 3; -fx-background-radius: 4;");
+    }
     //endregion
 
 }

@@ -24,15 +24,6 @@ public class PlayerHandler {
         currentPlayer = players[nID];
     }
 
-    public boolean wonGame(){
-        if (players.length == 1){
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
     //Should be called when the game ask how many are playing
     public void initializePlayers(int size){
         players = new Player[size];

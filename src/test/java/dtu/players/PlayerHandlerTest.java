@@ -289,4 +289,39 @@ class PlayerHandlerTest {
         PlayerHandler playerHandler = new PlayerHandler();
         assertEquals(400, playerHandler.nonPledgeTax(3100));
     }
+
+    @Test
+    void winnerWinnerChickenDinnerTest() {
+        PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.initializePlayers(4);
+        playerHandler.initializePlayerInPlayers(0, "Niels", 0, "black");
+        playerHandler.initializePlayerInPlayers(1, "Karl", 0, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Hans", 0, "red");
+        playerHandler.initializePlayerInPlayers(3, "test", 0, "green");
+        playerHandler.getPlayers()[0].setMoney(-1);
+
+        playerHandler.getPlayers()[3].setMoney(-1);
+        for (int i = 0; i<playerHandler.getPlayers().length; i++){
+            playerHandler.isPlayerBankrupt(playerHandler.getPlayers()[i]);
+        }
+        assertFalse(playerHandler.checkForChickenDinner());
+        playerHandler.getPlayers()[1].setMoney(-1);
+        playerHandler.isPlayerBankrupt(playerHandler.getPlayers()[1]);
+        assertTrue(playerHandler.checkForChickenDinner());
+    }
+
+    @Test
+    void checkNIDeqZero(){
+        PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.initializePlayers(4);
+        playerHandler.initializePlayerInPlayers(0, "Niels", 0, "black");
+        playerHandler.initializePlayerInPlayers(1, "Karl", 0, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Hans", 0, "red");
+        playerHandler.initializePlayerInPlayers(3, "test", 0, "green");
+        playerHandler.currentPlayer();
+        playerHandler.currentPlayer();
+        playerHandler.currentPlayer();
+        playerHandler.currentPlayer();
+        assertEquals(playerHandler.getPlayers()[3], playerHandler.getCurrentPlayer());
+    }
 }
