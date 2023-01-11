@@ -92,8 +92,6 @@ public class TradingMenuController {
     public void initialize(){
         player1DropDown.setOnAction(e -> updatePlayer());
         player2DropDown.setOnAction(e -> updatePlayer());
-        add1.setOnAction(e -> addCardToTrade(0));
-        add2.setOnAction(e -> addCardToTrade(1));
     }
     public void onSwitched(){
         playerName1.setText("");
@@ -156,7 +154,8 @@ public class TradingMenuController {
     public void showCard(int area, Field field){
         String name = "";
         int family = 0;
-        Image image = new Image();
+        Image image = image("src/textures/houseNulIcon.png");
+
         switch (field.type()){
             case "buyablefield":
                 name = ((FieldProperty)field).getProperty().getName();
@@ -181,7 +180,7 @@ public class TradingMenuController {
             name1.setText(name);
             setColorOf(color1, family);
             image1.setImage(image);
-            add1.setOnAction(e -> addCardToTrade(field, area);
+            add1.setOnAction(e -> addCardToTrade(field, area));
         }
         else if(area == 1){
             cardHolder2.getChildren().clear();
@@ -189,7 +188,7 @@ public class TradingMenuController {
             name2.setText(name);
             setColorOf(color2, family);
             image2.setImage(image);
-            add2.setOnAction(e -> addCardToTrade(field, area);
+            add2.setOnAction(e -> addCardToTrade(field, area));
         }
     }
     private void addCardToTrade(Field field, int player){
