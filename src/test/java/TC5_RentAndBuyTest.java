@@ -299,4 +299,72 @@ class TC5_RentAndBuyTest {
         assertEquals(START_MONEY,playerHandler.getPlayers()[1].getMoney(),"expect player2 to have: " + START_MONEY + ". Player 2 has: "+ playerHandler.getPlayers()[1].getMoney());
     }
 
+    @Test
+    void testOtherSetFunctions() {
+        //Variable
+        final int RENT = 250;
+        final int PLEDGE = 0;
+        final int START_MONEY = 4000;
+        final int PRICE = 1200;
+        final int ID = 1;
+        final int FAMILY = 1;
+        final int HOUSEPRICE = 1000;
+        int newPledge = 900;
+        int newID = 2;
+        int newFamilie = 3;
+        int newPrice = 1500;
+        int newHousePrice = 350;
+        BoardController boardController = new BoardController();
+        Board board = new Board();
+        PlayerHandler playerHandler = new PlayerHandler();
+        //Expected
+        int afterbuy = (START_MONEY - PRICE) + (PRICE / 2);
+
+        playerHandler.initializePlayers(3);
+        playerHandler.initializePlayerInPlayers(0,"Niels", START_MONEY, "black");
+        playerHandler.initializePlayerInPlayers(1, "Karl", START_MONEY, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Hans", START_MONEY, "red");
+
+
+        FieldProperty fieldProperty1 = (FieldProperty) board.getCurrentBoard()[1];
+        fieldProperty1.buy(playerHandler.getPlayers()[0]);
+
+        //Tester Pledge
+        assertEquals(PLEDGE,fieldProperty1.getProperty().getPledge(),"expect property to pledge have: " + PLEDGE + ". property has " + fieldProperty1.getProperty().getPledge());
+
+        fieldProperty1.getProperty().setPledge(newPledge);
+
+        assertEquals(newPledge,fieldProperty1.getProperty().getPledge(),"expect property to pledge have: " + newPledge + ". property has " + fieldProperty1.getProperty().getPledge());
+
+        //Tester ID
+        assertEquals(ID,fieldProperty1.getProperty().getID(),"expect property to have ID: " + PLEDGE + ". property has " + fieldProperty1.getProperty().getID());
+
+        fieldProperty1.getProperty().setID(newID);
+
+        assertEquals(newID,fieldProperty1.getProperty().getID(),"expect property to have ID: " + newID + ". property has " + fieldProperty1.getProperty().getID());
+
+        //Tester Family
+        assertEquals(FAMILY,fieldProperty1.getProperty().getFamilie(),"expect property to have family: " + FAMILY + ". property has " + fieldProperty1.getProperty().getFamilie());
+
+        fieldProperty1.getProperty().setFamilie(newFamilie);
+
+        assertEquals(newFamilie,fieldProperty1.getProperty().getFamilie(),"expect property to have family: " + newFamilie + ". property has " + fieldProperty1.getProperty().getFamilie());
+
+        //Tester Price
+        assertEquals(PRICE,fieldProperty1.getProperty().getPrice(),"expect property to have price: " + PRICE + ". property has " + fieldProperty1.getProperty().getPrice());
+
+        fieldProperty1.getProperty().setPrice(newPrice);
+
+        assertEquals(newPrice,fieldProperty1.getProperty().getPrice(),"expect property to have: price" + newPrice + ". property has " + fieldProperty1.getProperty().getPrice());
+
+        //Tester HousePrice
+        assertEquals(HOUSEPRICE,fieldProperty1.getProperty().getHousePrice(),"expect property to have price: " + HOUSEPRICE + ". property has " + fieldProperty1.getProperty().getHousePrice());
+
+        fieldProperty1.getProperty().setHousePrice(newHousePrice);
+
+        assertEquals(newHousePrice,fieldProperty1.getProperty().getHousePrice(),"expect property to pledge have: " + newHousePrice + ". property has " + fieldProperty1.getProperty().getHousePrice());
+
+
+    }
+
 }

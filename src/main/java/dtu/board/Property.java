@@ -36,8 +36,8 @@ public class Property {
         return price;
     }
 
-    public int setPrice(){
-        return price;
+    public void setPrice(int newPrice){
+        price = newPrice;
     }
 
     public int getHousePrice() {
