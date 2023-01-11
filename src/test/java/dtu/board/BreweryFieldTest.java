@@ -65,6 +65,8 @@ class BreweryFieldTest {
         assertEquals("Du er landet på test.", breweryField.landedLabel());
 
 
+
+
     }
 
     @Test
@@ -82,7 +84,7 @@ class BreweryFieldTest {
         breweryField.buy(playerHandler.getPlayers()[0]);
         assertEquals(200, breweryField.findActiveRent(10));
 
-        breweryField.buy(playerHandler.getPlayers()[0]);
+        breweryField1.buy(playerHandler.getPlayers()[0]);
         assertEquals(300, breweryField.findActiveRent(10));
 
         breweryField.setPledgeState(true);
@@ -90,8 +92,6 @@ class BreweryFieldTest {
 
         breweryField.setOwner(playerHandler.getPlayers()[1]);
         assertEquals(playerHandler.getPlayers()[1], breweryField.getOwner());
-
-        System.out.println(breweryField.getBrewery());
 
     }
 }
