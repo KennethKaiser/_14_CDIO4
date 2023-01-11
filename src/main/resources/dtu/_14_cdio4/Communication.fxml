@@ -3,50 +3,92 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="parent" alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.CommunicationController">
+<HBox fx:id="parent" alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.CommunicationController">
    <children>
-      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="500.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-border-color: #00aa00; -fx-border-radius: 8; -fx-border-width: 5;">
+      <StackPane fx:id="holder" prefHeight="150.0" prefWidth="200.0">
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="278.0">
+            <VBox prefHeight="188.0" prefWidth="500.0">
                <children>
-                  <Text fx:id="text" strokeType="OUTSIDE" strokeWidth="0.0" text="Det er spiller xxxx's tur." wrappingWidth="238.49456024169922">
-                     <font>
-                        <Font name="Century Gothic" size="14.0" />
-                     </font>
-                  </Text>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="500.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-border-color: #00aa00; -fx-border-radius: 8; -fx-border-width: 5;">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="278.0">
+                           <children>
+                              <Text fx:id="text" strokeType="OUTSIDE" strokeWidth="0.0" text="Det er spiller xxxx's tur." wrappingWidth="238.49456024169922">
+                                 <font>
+                                    <Font name="Century Gothic" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox prefHeight="90.0" prefWidth="34.0" />
+                        <VBox fx:id="buttonVBox" alignment="CENTER_RIGHT" prefHeight="92.0" prefWidth="167.0" spacing="3.0">
+                           <children>
+                              <Button fx:id="choice1" mnemonicParsing="false" prefHeight="18.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #00dd00; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 8;" text="Button">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="choice2" mnemonicParsing="false" prefHeight="18.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #00dd00; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 8;" text="Button">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="choice3" mnemonicParsing="false" prefHeight="18.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #00dd00; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 8;" text="Button">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="3.0" right="3.0" top="3.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
                </children>
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-            </HBox>
-            <HBox prefHeight="90.0" prefWidth="34.0" />
-            <VBox fx:id="buttonVBox" alignment="CENTER_RIGHT" prefHeight="92.0" prefWidth="167.0" spacing="3.0">
+            </VBox>
+            <VBox fx:id="okBox" layoutX="10.0" layoutY="10.0" prefHeight="188.0" prefWidth="500.0">
                <children>
-                  <Button fx:id="choice1" mnemonicParsing="false" prefHeight="18.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #00dd00; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 8;" text="Button">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="choice2" mnemonicParsing="false" prefHeight="18.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #00dd00; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 8;" text="Button">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="choice3" mnemonicParsing="false" prefHeight="18.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #00dd00; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 8;" text="Button">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Button>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="500.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-border-color: #00aa00; -fx-border-radius: 8; -fx-border-width: 5;">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="278.0">
+                           <children>
+                              <Text fx:id="text2" strokeType="OUTSIDE" strokeWidth="0.0" text="Det er spiller xxxx's tur." wrappingWidth="238.49456024169922">
+                                 <font>
+                                    <Font name="Century Gothic" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox prefHeight="90.0" prefWidth="34.0" />
+                        <VBox alignment="CENTER_RIGHT" prefHeight="92.0" prefWidth="167.0" spacing="3.0">
+                           <children>
+                              <Button fx:id="okButton" mnemonicParsing="false" prefHeight="18.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #00dd00; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 8;" text="Okay">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="3.0" right="3.0" top="3.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
                </children>
-               <padding>
-                  <Insets bottom="3.0" right="3.0" top="3.0" />
-               </padding>
             </VBox>
          </children>
-      </HBox>
+      </StackPane>
    </children>
 </HBox>
