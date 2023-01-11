@@ -91,5 +91,7 @@ class BreweryFieldTest {
         breweryField.setOwner(playerHandler.getPlayers()[1]);
         assertEquals(playerHandler.getPlayers()[1], breweryField.getOwner());
 
+        System.out.println(breweryField.getBrewery());
+
     }
 }

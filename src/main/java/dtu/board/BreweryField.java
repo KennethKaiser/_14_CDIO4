@@ -73,10 +73,6 @@ public class BreweryField extends BuyableFields{
         return brewery;
     }
 
-    public void setBrewery(Brewery brewery) {
-        this.brewery = brewery;
-    }
-
     public Boolean getOwned() {
         return owned;
     }
