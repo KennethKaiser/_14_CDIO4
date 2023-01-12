@@ -447,6 +447,37 @@ public class CommunicationController {
         choices[0].setOnAction(e -> boardController.endTurnAfterBankrupt());
     }
 
+    //region tax
+    public void taxChoice(TaxField taxField){
+        String[] choiceOptions = new String[2];
+
+        choiceOptions[0] = "4000";
+        choiceOptions[1] = "10%";
+
+        String textField = "Vil du betale 4000 eller 10% i skat?";
+
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.payYourTaxes(taxField, true));
+        choices[1].setOnAction(e -> boardController.payYourTaxes(taxField, false));
+    }
+
+    public void payTenPercentTax(TaxField taxField){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+
+        String textField = "Du skal betale 2000 kr i skat";
+
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.payYourExtraTax(taxField));
+    }
+
+
+    //endregion
+
 
     private void rollDice(){
 

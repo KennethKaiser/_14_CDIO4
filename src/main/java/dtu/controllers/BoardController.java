@@ -1,10 +1,6 @@
 package dtu.controllers;
 
-import dtu.board.BreweryField;
-import dtu.board.FerryField;
-import dtu.board.Field;
-
-import dtu.board.FieldProperty;
+import dtu.board.*;
 
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
@@ -689,11 +685,42 @@ public class BoardController {
             endTurn();
         }
         else if(type.equals("tax")){
-            endTurn();
+            whatYourTaxes(field);
         }
         else if(type.equals("jail")){
             goToJail();
         }
+
+
+    }
+
+    public void whatYourTaxes(Field field){
+        TaxField taxField = (TaxField) field;
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+
+
+        if (taxField.getTax().getID() == 4){
+            communicationController.taxChoice(taxField);
+        }
+        else if(taxField.getTax().getID() == 38){
+            communicationController.payTenPercentTax(taxField);
+        }
+
+    }
+
+    public void payYourTaxes(TaxField taxField, Boolean choice){
+
+        taxField.taxing(playerHandler.getCurrentPlayer(), choice);
+        playerViewController.updatePlayerMoney();
+        endTurn();
+
+
+    }
+    public void payYourExtraTax(TaxField taxField){
+
+        taxField.taxing(playerHandler.getCurrentPlayer(), true);
+        playerViewController.updatePlayerMoney();
+        endTurn();
 
 
     }
