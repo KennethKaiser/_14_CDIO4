@@ -1,3 +1,5 @@
+package dtu.board;
+
 import dtu.board.Board;
 import dtu.board.FieldProperty;
 import dtu.controllers.BoardController;
