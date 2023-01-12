@@ -84,7 +84,7 @@ public class SceneSwitch {
         boardController.getMiddleParent().getChildren().add(4, communication);
         playerView.getChildren().add(1, board);
         root.getChildren().add(playerView);
-        boardScene = new Scene(root, 1600, 700);
+        boardScene = new Scene(root, 400, 400);
     }
     public void switchToMenu(){
         stage.setTitle("Matador");
