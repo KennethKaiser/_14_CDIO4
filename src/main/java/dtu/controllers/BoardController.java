@@ -68,6 +68,9 @@ public class BoardController {
     @FXML
     ImageView ferry4;
 
+    @FXML
+    ImageView centerGraphics;
+
 
     //endregion
     //region Cars Imageview that Moves Across the fields
@@ -470,6 +473,7 @@ public class BoardController {
             policeImage.setImage(image("src/textures/police_man_card.png"));
             prisonImage.setImage(image("src/textures/jail_card.png"));
             parkingImage.setImage(image("src/textures/parking_field.png"));
+            centerGraphics.setImage(image("src/textures/centerGraphics.png"));
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);

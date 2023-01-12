@@ -50,7 +50,7 @@ public class MainApplication extends Application {
         Chance chance = (Chance) board.getCurrentBoard()[22];
 
         System.out.println(chance.drawCard());
-
+        System.setProperty("prism.allowhidpi", "false");
         launch();
     }
 
