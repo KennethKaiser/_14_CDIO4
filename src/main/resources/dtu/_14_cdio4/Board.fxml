@@ -844,6 +844,12 @@
                                               <ImageView fx:id="dice1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" translateX="450.0" translateY="350.0" />
                                               <ImageView fx:id="dice2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
                                     <Button fx:id="backgroundButton" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" opacity="0.0" prefHeight="637.0" prefWidth="765.0" text="BackgroundButton" />
+                                    <StackPane layoutX="667.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="50.0">
+                                       <children>
+                                          <ImageView fx:id="tradeMenuImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="tradeMenuButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.0" />
+                                       </children>
+                                    </StackPane>
                                           </children>
                                       </AnchorPane>
                            </children>
