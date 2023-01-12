@@ -665,6 +665,18 @@ public class BoardController {
 
 
     }
+    public void buyPropertyTrade(FieldProperty fieldProperty, Player player){
+        Player currentPlayer = player;
+
+        if(fieldProperty.buy(currentPlayer)){
+
+            int temp = fieldProperty.getProperty().getFamilie();
+
+            playerViewController.addCard(temp, currentPlayer.getId());
+        }
+
+
+    }
 
     public void buyFerry(FerryField ferryField){
         Player currentPlayer = playerHandler.getCurrentPlayer();
@@ -682,6 +694,18 @@ public class BoardController {
         }
 
     }
+    public void buyFerryTrade(FerryField ferryField, Player player){
+        Player currentPlayer = player;
+
+        if(ferryField.buy(currentPlayer)){
+
+            int temp = ferryField.getFerry().getFamilie();
+
+            playerViewController.updatePlayerMoney();
+            playerViewController.addCard(temp, currentPlayer.getId());
+        }
+
+    }
 
     public void buyBrewery(BreweryField breweryField){
         Player currentPlayer = playerHandler.getCurrentPlayer();
@@ -696,6 +720,19 @@ public class BoardController {
         }
         else{
             communicationController.playerNotEnoughMoney();
+        }
+
+
+    }
+    public void buyBreweryTrade(BreweryField breweryField, Player player){
+        Player currentPlayer = player;
+
+        if(breweryField.buy(currentPlayer)){
+
+            int temp = breweryField.getBrewery().getFamily();
+
+            playerViewController.updatePlayerMoney();
+            playerViewController.addCard(temp, currentPlayer.getId());
         }
 
 
