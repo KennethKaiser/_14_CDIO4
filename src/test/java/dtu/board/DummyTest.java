@@ -9,28 +9,34 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class DummyTest {
 
     @Test
-    void LabelAndType() {
-       final String LABEL = "Du er landet på prøv lykken";
-       final String TYPE = "chance";
+    void testIDAndName() {
+       final int ID = 2;
+       final String NAME = "Jigsaw";
+       Board board = new Board();
 
-       Chance chance = new Chance();
+       Dummy dummy = new Dummy(ID,NAME);
 
        //Tester at label på Chance er rigtigt
-        assertEquals(LABEL, chance.landedLabel(),"Expect Chance to have label: "+ LABEL +". Chance has label: "+chance.landedLabel());
+        assertEquals(NAME, dummy.getName(),"Expect Dummy to have name: "+ NAME +". dummy has name: "+dummy.getName());
         //Tester at Type på chance er rigtigt
-        assertEquals(TYPE, chance.type(),"Expect chance to have type: "+ TYPE +". Chance has type as: "+ chance.type());
+        assertEquals(ID, dummy.getID(),"Expect dummy to have ID: "+ ID +". dummy has ID as: "+ dummy.getID());
 
     }
 
     @Test
-    void DrawCard() {
-        String card;
-        ChanceCardDeck chanceCardDeck = new ChanceCardDeck();
-        Chance chance = new Chance();
-        card = chance.getChanceCardDeck().getDeck()[0];
+    void testLabelAndType() {
+        final String LABEL = "Du er landet på Jigsaw.";
+        final String TYPE = "dummy";
+        Board board = new Board();
 
-        //Tester at kortet der trækkes er det første i bunken
-        assertEquals(card, chance.drawCard(),"Expect Chance to draw card: "+ card +". Chance draws card: "+chance.drawCard());
+        Dummy dummy = new Dummy(2,"Jigsaw");
+        DummyField dummyField = new DummyField(dummy);
+
+        //Tester at label på Chance er rigtigt
+        assertEquals(LABEL, dummyField.landedLabel(),"Expect dummyField to have label: "+ LABEL +". dummyField has label: "+dummyField.landedLabel());
+        //Tester at Type på chance er rigtigt
+        assertEquals(TYPE, dummyField.type(),"Expect dummyField to have type: "+ TYPE +". dummyField has type as: "+ dummyField.type());
+
     }
 
 }
