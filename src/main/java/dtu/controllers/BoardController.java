@@ -572,34 +572,40 @@ public class BoardController {
     //region game loop actions
 
 
-    /*@FXML
-    public void moveAndRoll(){
-        int[] playerRoll = dice.roll();
-        Player currentPlayer = playerHandler.getCurrentPlayer();
-
-        playerHandler.movePlayer(currentPlayer, playerRoll[0]+playerRoll[1]);
-        rollDiceAnimation(playerRoll[0],playerRoll[1]);
-
-        int playerId = currentPlayer.getId();
-        System.out.println("playerid:"+playerId);
-        int playerPosition = currentPlayer.getPosition();
-
-        movePLayerOnGUI(playerId, playerPosition);
-        multipleCars(playerId, playerPosition);
-
-        //Switch decision box
-        communicationController.whatRolled(playerRoll);
-
-
-    }*/
-
     public void roll(){
         int[] playerRoll = dice.roll();
+
+
+        //If you want to hit double roll everytime
+        //playerRoll[0] = 1;
+        //playerRoll[1] = 1;
+
+        dice.rolledDouble();
+
+
         Player currentPlayer = playerHandler.getCurrentPlayer();
 
         playerHandler.movePlayer(currentPlayer, playerRoll[0]+playerRoll[1]);
         rollDiceAnimation(playerRoll[0],playerRoll[1]);
-        communicationController.whatRolled(playerRoll, currentPlayer);
+
+        System.out.println("Number of roles: " + dice.getNumberOfDoubles());
+
+        thirdTimeRolledToPrisonOrNot(playerRoll, currentPlayer);
+
+
+    }
+
+    public void thirdTimeRolledToPrisonOrNot(int[] playerRoll, Player currentPlayer){
+        if(dice.getNumberOfDoubles() == 3){
+            dice.setNumberOfDoubles(0);
+            dice.setRolledDouble(false);
+            dice.setOurRolls(null);
+            playerHandler.movePlayerChanceCard(playerHandler.getCurrentPlayer(), 10);
+            movePLayerOnGUI(playerHandler.getCurrentPlayer().getId(), 10);
+            communicationController.thirdDoublePrison(playerHandler.getCurrentPlayer().getName());
+        }else{
+            communicationController.whatRolled(playerRoll, currentPlayer);
+        }
     }
 
     public void turnMove(){
@@ -731,12 +737,15 @@ public class BoardController {
     public void rollDoublePrison(){
         int[] ourRoll = dice.roll();
         rollDiceAnimation(ourRoll[0], ourRoll[1]);
+        playerHandler.getCurrentPlayer().setJailTurns(playerHandler.getCurrentPlayer().getJailTurns()+1);
 
-        if(dice.rolledDouble()){
+        if(dice.isRolledDouble()){
             playerHandler.getCurrentPlayer().setJail(false);
+            playerHandler.getCurrentPlayer().setJailTurns(0);
             communicationController.luckInJail();
         }
-        else if(dice.getNumberOfDoubles() == 3){
+        else if(playerHandler.getCurrentPlayer().getJailTurns() == 3){
+            playerHandler.getCurrentPlayer().setJailTurns(0);
             communicationController.forcedToPay();
         }
         else{
@@ -753,6 +762,17 @@ public class BoardController {
 
     }
 
+    public void payForPrisonDouble(){
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+        currentPlayer.setJail(false);
+        playerHandler.changePlayerBalance(currentPlayer, -1000);
+        playerViewController.updatePlayerMoney();
+        communicationController.payedForPrisonDouble();
+
+    }
+
+
+
     public void useGetOutOfJailCard(){
 
     }
@@ -767,10 +787,12 @@ public class BoardController {
         if(playerHandler.getCurrentPlayer().isBankrupt()){
             communicationController.playerIsBankrupt(playerHandler.getCurrentPlayer());
         }
-        else if(dice.rolledDouble()){
-            communicationController.extraTurn(playerHandler.getCurrentPlayer().getName());
+        else if(dice.isRolledDouble() && !playerHandler.getCurrentPlayer().isJail()){
+                communicationController.extraTurn(playerHandler.getCurrentPlayer().getName());
         }
         else {
+            //Ensure double rolls is 0
+            dice.setNumberOfDoubles(0);
             //Gets next player and if next player is bankrupt get next player again
             playerHandler.currentPlayer();
             while(playerHandler.getCurrentPlayer().isBankrupt()){
@@ -1146,6 +1168,20 @@ public class BoardController {
     }
     public void cheatMovePlayer(){
         System.out.println("Cheating for movement");
+
+        /*
+        //You can test for double roll but if you want to test for third double roll to prison you need to test in roll() instead
+        int[] cheatRoll = new int[2];
+
+        cheatRoll[0] = 2;
+        cheatRoll[1] = 2;
+
+        dice.setOurRolls(cheatRoll);
+        dice.rolledDouble();
+
+        System.out.println("n:" + dice.getNumberOfDoubles());
+
+        */
         if(cheatDropDown.getValue() != null){
             String player = cheatDropDown.getValue().toString();
             int playerIndex = 0;
