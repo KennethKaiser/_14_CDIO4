@@ -1,38 +1,40 @@
 package dtu.controllers;
 
-import dtu.filereader.SaveAndLoad;
+import dtu.SaveAndLoad.SaveAndLoad;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 public class PauseMenuController {
 
     @FXML
-    Button saveButton;
+    Button deleteButton;
     @FXML
     Button saveAsButton;
     @FXML
     Button loadButton;
     @FXML
-    TextField saveInput;
+    TextArea saveInput;
     @FXML
-    TextField loadInput;
+    TextArea loadInput;
     @FXML
-    TextField exitSaveButton;
+    TextArea deleteInput;
     @FXML
-    TextField exitNoSaveButton;
+    Button exitSaveButton;
+    @FXML
+    Button exitNoSaveButton;
     @FXML
     Button resumeButton;
 
     SaveAndLoad saveAndLoad = new SaveAndLoad();
-    String save = "";
 
     @FXML
     public void initialize(){
         resumeButton.setOnAction(e -> resumeGame());
         exitNoSaveButton.setOnAction(e -> exitWithoutSaving());
-        exitSaveButton.setOnAction(e -> saveAndExit());
-        saveButton.setOnAction(e -> save());
+        deleteButton.setOnAction(e -> deleteSave());
         saveAsButton.setOnAction(e -> saveAs());
         loadButton.setOnAction(e -> load());
     }
@@ -48,19 +50,14 @@ public class PauseMenuController {
         }
         else sendText("Du skal skrive et navn til dit save");
     }
-    public void save(){
-        if(saveAndLoad.save(save)){
-            sendText("Succesfully saved game: " + save);
+    public void deleteSave(){
+        if(!deleteInput.getText().equals("")){
+            saveAndLoad.delete(saveInput.getText());
         }
+        else sendText("Du skal skrive et navn til dit save");
     }
     private void sendText(String text){
         ControllerHandler.getInstance().getCommunicationController().showOkBox(text);
-    }
-
-    public void saveAndExit(){
-        if(saveAndLoad.save(save)){
-            System.exit(0);
-        }
     }
     public void exitWithoutSaving(){
         System.exit(0);

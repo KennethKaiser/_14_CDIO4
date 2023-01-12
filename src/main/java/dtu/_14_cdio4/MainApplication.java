@@ -1,10 +1,12 @@
 package dtu._14_cdio4;
 
 import dtu.board.*;
+import dtu.filereader.CSVFileReader;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainApplication extends Application {
 
@@ -16,7 +18,9 @@ public class MainApplication extends Application {
     public static void main(String[] args) {
 
         Board board = new Board();
-
+        CSVFileReader fileReader = new CSVFileReader();
+        ArrayList<String[]> data = null;
+        fileReader.writeCSV("src/main/java/dtu/SaveAndLoad/SavedGames.csv", "Test", data);
         /*FerryField ferryField = (FerryField)board.getCurrentBoard()[15];
         FerryField ferryField2 = (FerryField)board.getCurrentBoard()[5];
         FerryField ferryField3 = (FerryField)board.getCurrentBoard()[25];
