@@ -787,7 +787,45 @@ public class PlayerViewController {
         button.setOnMouseExited(e -> lineOff(button));
         propertyStackPanes[player][family-1].getChildren().add(button);
     }
-    public void removeCard(int family, int player){
+    public void removeCard(Field field){
+        int family = 0;
+        int player = 0;
+        switch (field.type()){
+            case "buyablefield":
+                ((FieldProperty)field).setOwner(null);
+                ((FieldProperty)field).setOwned(false);
+                family = ((FieldProperty)field).getProperty().getFamilie();
+                for(int i = 0; i < playerHandler.getPlayers().length; i++){
+                    if(playerHandler.getPlayers()[i].getProperties().contains(field)){
+                        playerHandler.getPlayers()[i].getProperties().remove(field);
+                        player = playerHandler.getPlayers()[i].getId();
+                    }
+                }
+                break;
+            case "ferry":
+                ((FerryField)field).setOwner(null);
+                ((FerryField)field).setOwned(false);
+                family = ((FerryField)field).getFerry().getFamilie();
+                for(int i = 0; i < playerHandler.getPlayers().length; i++){
+                    if(playerHandler.getPlayers()[i].getFerries().contains(field)){
+                        playerHandler.getPlayers()[i].getFerries().remove(field);
+                        player = playerHandler.getPlayers()[i].getId();
+                    }
+                }
+                break;
+            case "brewery":
+                ((BreweryField)field).setOwner(null);
+                ((BreweryField)field).setOwned(false);
+                family = ((BreweryField)field).getBrewery().getFamily();
+                for(int i = 0; i < playerHandler.getPlayers().length; i++){
+                    if(playerHandler.getPlayers()[i].getBreweries().contains(field)){
+                        playerHandler.getPlayers()[i].getBreweries().remove(field);
+                        player = playerHandler.getPlayers()[i].getId();
+                    }
+                }
+                break;
+        }
+
         int size = propertyStackPanes[player][family-1].getChildren().size();
         if(size > 0) propertyStackPanes[player][family-1].getChildren().remove(size-1);
         else System.out.println("no card to remove");

@@ -312,6 +312,13 @@ public class BoardController {
     @FXML
     ImageView housePurple2;
     //endregion
+    //region trade
+    @FXML
+    ImageView tradeMenuImage;
+    @FXML
+    Button tradeMenuButton;
+
+    //endregion
 
     //region VBOX that needs access because we need to put chancecards and the property menu inside it.
     @FXML
@@ -350,6 +357,7 @@ public class BoardController {
         initHouses();
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
+        initTradeMenu();
     }
 
     //region delegate model objects to other controller
@@ -569,6 +577,17 @@ public class BoardController {
 
 
     }
+    //region trade menu
+    private void initTradeMenu() {
+        tradeMenuButton.setOnAction(e -> ControllerHandler.getInstance().getSceneSwitch().showTradingMenu());
+        try{
+            tradeMenuImage.setImage(image("src/textures/shakeHandsIcon.png"));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    //endregion
     //region game loop actions
 
 
@@ -696,6 +715,18 @@ public class BoardController {
 
 
     }
+    public void buyPropertyTrade(FieldProperty fieldProperty, Player player){
+        Player currentPlayer = player;
+
+        if(fieldProperty.buy(currentPlayer)){
+
+            int temp = fieldProperty.getProperty().getFamilie();
+
+            playerViewController.addCard(temp, currentPlayer.getId());
+        }
+
+
+    }
 
     public void buyFerry(FerryField ferryField){
         Player currentPlayer = playerHandler.getCurrentPlayer();
@@ -713,6 +744,18 @@ public class BoardController {
         }
 
     }
+    public void buyFerryTrade(FerryField ferryField, Player player){
+        Player currentPlayer = player;
+
+        if(ferryField.buy(currentPlayer)){
+
+            int temp = ferryField.getFerry().getFamilie();
+
+            playerViewController.updatePlayerMoney();
+            playerViewController.addCard(temp, currentPlayer.getId());
+        }
+
+    }
 
     public void buyBrewery(BreweryField breweryField){
         Player currentPlayer = playerHandler.getCurrentPlayer();
@@ -727,6 +770,19 @@ public class BoardController {
         }
         else{
             communicationController.playerNotEnoughMoney();
+        }
+
+
+    }
+    public void buyBreweryTrade(BreweryField breweryField, Player player){
+        Player currentPlayer = player;
+
+        if(breweryField.buy(currentPlayer)){
+
+            int temp = breweryField.getBrewery().getFamily();
+
+            playerViewController.updatePlayerMoney();
+            playerViewController.addCard(temp, currentPlayer.getId());
         }
 
 
