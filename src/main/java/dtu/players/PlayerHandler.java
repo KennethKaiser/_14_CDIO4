@@ -130,6 +130,9 @@ public class PlayerHandler {
                 ((FieldProperty)player.getProperties().get(i)).setOwner(null);
                 ((FieldProperty)player.getProperties().get(i)).setOwned(false);
                 ((FieldProperty)player.getProperties().get(i)).setBuildings(0);
+                if(((FieldProperty)player.getProperties().get(i)).getProperty().getFamilie() <9){
+                    ControllerHandler.getInstance().getBoardController().setHousesOn(0, ((FieldProperty)player.getProperties().get(i)).getProperty().getID());
+                }
         }
 
         }
