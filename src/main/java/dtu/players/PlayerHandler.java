@@ -338,6 +338,17 @@ public class PlayerHandler {
         player.setJail(true);
     }
 
+    /**
+     * Method that allows the player to quit the game
+     * @param player
+     */
+    public void quitGame(Player player){
+        player.setBankrupt(true);
+        playerIsBankrupt(player);
+        player.setMoney(0);
+        changePlayerArray();
+    }
+
 
 
 

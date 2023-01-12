@@ -39,7 +39,10 @@ public class RaffleCup {
      * @return
      */
     public boolean rolledDouble (){
-        if(ourRolls[0] == ourRolls[1]){
+        if(ourRolls == null){
+            return false;
+        }
+        else if(ourRolls[0] == ourRolls[1]){
             numberOfDoubles++;
             rolledDouble = true;
             return true;
