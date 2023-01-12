@@ -386,6 +386,16 @@ public class CommunicationController {
 
         choices[0].setOnAction(e -> boardController.endTurn());
     }
+    public void playerAlreadyOwn(String fieldName, String playerName){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        String textField = playerName + " ejer allerede " + fieldName + fieldName;
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurn());
+    }
     //endregion
 
     public void playerIsBankrupt(Player player){

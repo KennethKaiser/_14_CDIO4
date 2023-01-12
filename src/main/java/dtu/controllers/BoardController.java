@@ -829,7 +829,13 @@ public class BoardController {
                 communicationController.ownerIsInPrison(fieldProperty.getOwner().getName());
             }
             else {
-                communicationController.payRentProperty(fieldProperty, playerHandler.getCurrentPlayer());
+                if(fieldProperty.getOwner() == playerHandler.getCurrentPlayer()){
+                    communicationController.playerAlreadyOwn(fieldProperty.getProperty().getName(), playerHandler.getCurrentPlayer().getName());
+                }
+                else {
+                    communicationController.payRentProperty(fieldProperty, playerHandler.getCurrentPlayer());
+                }
+
             }
 
         }
@@ -845,7 +851,12 @@ public class BoardController {
                 communicationController.ownerIsInPrison(ferryField.getOwner().getName());
             }
             else {
-                communicationController.payRentFerry(ferryField,playerHandler.getCurrentPlayer());
+                if(ferryField.getOwner() == playerHandler.getCurrentPlayer()){
+                    communicationController.playerAlreadyOwn(ferryField.getFerry().getName(), playerHandler.getCurrentPlayer().getName());
+                }
+                else {
+                    communicationController.payRentFerry(ferryField, playerHandler.getCurrentPlayer());
+                }
             }
 
         }
@@ -861,7 +872,12 @@ public class BoardController {
                 communicationController.ownerIsInPrison(breweryField.getOwner().getName());
             }
             else {
-                communicationController.payRentBrewery(breweryField,playerHandler.getCurrentPlayer());
+                if(breweryField.getOwner() == playerHandler.getCurrentPlayer()){
+                    communicationController.playerAlreadyOwn(breweryField.getBrewery().getName(), playerHandler.getCurrentPlayer().getName());
+                }
+                else {
+                    communicationController.payRentBrewery(breweryField, playerHandler.getCurrentPlayer());
+                }
             }
         }
         else{
