@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
@@ -13,13 +14,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.BoardController">
+<StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="837.6" prefWidth="837.6" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.BoardController">
     <children>
         <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="780.0" style="-fx-background-color: #000000;">
             <children>
-                <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="71.0" prefWidth="779.0">
+                <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="837.6">
                     <children>
-                        <StackPane fx:id="field20" alignment="TOP_CENTER" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field20" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0020ff;">
                                     <children>
@@ -30,7 +31,7 @@
                                         </ImageView>
                                     </children>
                                 </VBox>
-                                <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: black; -fx-border-width: 2;">
+                                <VBox alignment="CENTER" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: black; -fx-border-width: 2;">
                                     <children>
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gratis " textAlignment="CENTER" wrappingWidth="62.05127239227295">
                                             <font>
@@ -45,16 +46,16 @@
                                         </Text>
                                     </children>
                                 </VBox>
-                                <Button fx:id="bField20" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                <Button fx:id="bField20" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01">
                                     <font>
                                         <Font size="9.0" />
                                     </font>
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field21" alignment="TOP_CENTER" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field21" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8">
                             <children>
-                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: red;">
+                                <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-background-color: red;">
                                     <children>
                                         <ImageView fx:id="houseRed1" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -63,7 +64,7 @@
                                         </ImageView>
                                     </children>
                                 </VBox>
-                                <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: black; -fx-border-width: 2;">
+                                <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 2;">
                                     <children>
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Trianglen" textAlignment="CENTER" wrappingWidth="65.0">
                                             <font>
@@ -85,9 +86,9 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field22" alignment="TOP_CENTER" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field22" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8">
                             <children>
-                                <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 2;">
+                                <VBox alignment="CENTER" prefHeight="60.0" prefWidth="70.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 2;">
                                     <children>
                                         <Text fill="#aaaa00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" translateX="-3.0" wrappingWidth="8.851318359375">
                                             <font>
@@ -108,7 +109,7 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field23" alignment="TOP_CENTER" layoutX="73.0" layoutY="10.0" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field23" alignment="TOP_CENTER" layoutX="73.0" layoutY="10.0" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: red;">
                                     <children>
@@ -141,7 +142,7 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field24" alignment="TOP_CENTER" layoutX="263.0" layoutY="10.0" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field24" alignment="TOP_CENTER" layoutX="263.0" layoutY="10.0" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: red;">
                                     <children>
@@ -174,7 +175,7 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field25" alignment="TOP_CENTER" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field25" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
                                     <children>
@@ -212,7 +213,7 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field26" alignment="TOP_CENTER" layoutX="263.0" layoutY="10.0" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field26" alignment="TOP_CENTER" layoutX="263.0" layoutY="10.0" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;">
                                     <children>
@@ -245,7 +246,7 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field27" alignment="TOP_CENTER" layoutX="452.0" layoutY="10.0" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field27" alignment="TOP_CENTER" layoutX="452.0" layoutY="10.0" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;">
                                     <children>
@@ -278,9 +279,9 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field28" alignment="TOP_CENTER" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field28" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8">
                             <children>
-                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FF69B4;">
+                                <VBox alignment="CENTER" prefHeight="100.0" prefWidth="71.0" style="-fx-background-color: #FF69B4;">
                                     <children>
                                         <ImageView fx:id="colaImage" fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -289,7 +290,7 @@
                                         </ImageView>
                                     </children>
                                 </VBox>
-                                <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: black; -fx-border-width: 2;">
+                                <VBox alignment="CENTER" prefHeight="100.0" prefWidth="71.0" style="-fx-border-color: black; -fx-border-width: 2;">
                                     <children>
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Coca Cola" textAlignment="CENTER" wrappingWidth="54.05127239227295">
                                             <font>
@@ -311,7 +312,7 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field29" alignment="TOP_CENTER" layoutX="516.0" layoutY="10.0" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field29" alignment="TOP_CENTER" layoutX="516.0" layoutY="10.0" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;">
                                     <children>
@@ -344,9 +345,9 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field30" alignment="TOP_CENTER" layoutX="73.0" layoutY="10.0" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field30" alignment="TOP_CENTER" layoutX="73.0" layoutY="10.0" prefHeight="100.0" prefWidth="100.0">
                             <children>
-                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0080ff;">
+                                <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #0080ff;">
                                     <children>
                                         <ImageView fx:id="policeImage" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -355,7 +356,7 @@
                                         </ImageView>
                                     </children>
                                 </VBox>
-                                <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: black; -fx-border-width: 2;">
+                                <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: black; -fx-border-width: 2;">
                                     <children>
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Politi" textAlignment="CENTER" wrappingWidth="54.05127239227295">
                                             <font>
@@ -374,15 +375,18 @@
                                     <font>
                                         <Font size="9.0" />
                                     </font>
+                           <rotationAxis>
+                              <Point3D />
+                           </rotationAxis>
                                 </Button>
                             </children>
                         </StackPane>
                     </children></HBox>
-                <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="638.0" prefWidth="780.0">
+                <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="638.0" prefWidth="837.0">
                     <children>
-                        <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="638.0" prefWidth="71.0">
+                        <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="638.0" prefWidth="100.0">
                             <children>
-                                <StackPane fx:id="field19" alignment="TOP_CENTER" layoutX="10.0" layoutY="136.0" prefHeight="71.0" prefWidth="71.0">
+                                <StackPane fx:id="field19" alignment="TOP_LEFT" layoutX="10.0" layoutY="136.0" prefHeight="70.8" prefWidth="100.0">
                                     <children>
                                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #aaaaaa;">
                                             <children>
@@ -414,8 +418,11 @@
                                             </font>
                                         </Button>
                                     </children>
+                           <VBox.margin>
+                              <Insets right="1.0" />
+                           </VBox.margin>
                                 </StackPane>
-                                <StackPane fx:id="field18" alignment="TOP_CENTER" prefHeight="71.0" prefWidth="71.0">
+                                <StackPane fx:id="field18" alignment="TOP_CENTER" prefHeight="70.8" prefWidth="100.0">
                                     <children>
                                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #aaaaaa;">
                                             <children>
@@ -448,7 +455,7 @@
                                         </Button>
                                     </children>
                                 </StackPane>
-                                <StackPane fx:id="field17" alignment="TOP_CENTER" prefHeight="71.0" prefWidth="71.0">
+                                <StackPane fx:id="field17" alignment="TOP_CENTER" prefHeight="70.8" prefWidth="100.0">
                                     <children>
                                         <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 2;">
                                             <children>
@@ -464,14 +471,14 @@
                                                 </Text>
                                             </children>
                                         </VBox>
-                                        <Button fx:id="bField17" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                        <Button fx:id="bField17" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.0">
                                             <font>
                                                 <Font size="9.0" />
                                             </font>
                                         </Button>
                                     </children>
                                 </StackPane>
-                                <StackPane fx:id="field16" alignment="TOP_CENTER" layoutX="10.0" layoutY="136.0" prefHeight="71.0" prefWidth="71.0">
+                                <StackPane fx:id="field16" alignment="TOP_CENTER" layoutX="10.0" layoutY="136.0" prefHeight="70.8" prefWidth="100.0">
                                     <children>
                                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #aaaaaa;">
                                             <children>
@@ -504,7 +511,7 @@
                                         </Button>
                                     </children>
                                 </StackPane>
-                                <StackPane fx:id="field15" alignment="TOP_CENTER" prefHeight="71.0" prefWidth="71.0">
+                                <StackPane fx:id="field15" alignment="TOP_CENTER" prefHeight="70.8" prefWidth="100.0">
                                     <children>
                                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
                                             <children>
@@ -542,7 +549,7 @@
                                         </Button>
                                     </children>
                                 </StackPane>
-                                <StackPane fx:id="field14" alignment="TOP_CENTER" prefHeight="71.0" prefWidth="71.0">
+                                <StackPane fx:id="field14" alignment="TOP_CENTER" prefHeight="70.8" prefWidth="100.0">
                                     <children>
                                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #32cd32;">
                                             <children>
@@ -575,7 +582,7 @@
                                         </Button>
                                     </children>
                                 </StackPane>
-                                <StackPane fx:id="field13" alignment="TOP_CENTER" layoutX="10.0" layoutY="263.0" prefHeight="71.0" prefWidth="71.0">
+                                <StackPane fx:id="field13" alignment="TOP_CENTER" layoutX="10.0" layoutY="263.0" prefHeight="70.8" prefWidth="100.0">
                                     <children>
                                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #32cd32;">
                                             <children>
@@ -608,7 +615,7 @@
                                         </Button>
                                     </children>
                                 </StackPane>
-                                <StackPane fx:id="field12" alignment="TOP_CENTER" layoutX="10.0" layoutY="326.0" prefHeight="71.0" prefWidth="71.0">
+                                <StackPane fx:id="field12" alignment="TOP_CENTER" layoutX="10.0" layoutY="326.0" prefHeight="70.8" prefWidth="100.0">
                                     <children>
                                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FF69B4;">
                                             <children>
@@ -641,7 +648,7 @@
                                         </Button>
                                     </children>
                                 </StackPane>
-                                <StackPane fx:id="field11" alignment="TOP_CENTER" layoutX="10.0" layoutY="389.0" prefHeight="71.0" prefWidth="71.0">
+                                <StackPane fx:id="field11" alignment="TOP_CENTER" layoutX="10.0" layoutY="389.0" prefHeight="70.8" prefWidth="100.0">
                                     <children>
                                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #32cd32;">
                                             <children>
@@ -674,17 +681,22 @@
                                         </Button>
                                     </children>
                                 </StackPane>
-                            </children></VBox>
-                        <StackPane fx:id="middleParent" alignment="BOTTOM_CENTER" maxWidth="-Infinity" prefHeight="638.0" prefWidth="638.0">
+                            </children>
+                     <HBox.margin>
+                        <Insets left="-1.0" />
+                     </HBox.margin></VBox>
+                        <StackPane fx:id="middleParent" alignment="BOTTOM_CENTER" maxWidth="-Infinity" prefHeight="637.6" prefWidth="637.6">
                             <children>
-                        <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00dd00;" />
-                                <AnchorPane fx:id="diceBox" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="639.0" prefWidth="636.0">
-                                    <children>
-                                        <ImageView fx:id="dice1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" translateX="450.0" translateY="350.0" />
-                                        <ImageView fx:id="dice2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-                                    </children>
-                                </AnchorPane>
-                        <Button fx:id="backgroundButton" mnemonicParsing="false" opacity="0.0" prefHeight="642.0" prefWidth="638.0" text="BackgroundButton" />
+                        <VBox prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #00dd00;">
+                           <children>
+                                      <AnchorPane fx:id="diceBox" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="637.6" prefWidth="637.6">
+                                          <children>
+                                              <ImageView fx:id="dice1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" translateX="450.0" translateY="350.0" />
+                                              <ImageView fx:id="dice2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Button fx:id="backgroundButton" layoutX="1.0" layoutY="-3.0" mnemonicParsing="false" opacity="0.0" prefHeight="637.0" prefWidth="637.0" text="BackgroundButton" />
+                                          </children>
+                                      </AnchorPane>
+                           </children></VBox>
                         <VBox alignment="CENTER" layoutX="10.0" layoutY="96.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="564.0" />
                                 <VBox fx:id="middleVBOX" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" translateY="-319.0">
 
@@ -716,7 +728,7 @@
                         </HBox>
                             </children>
                         </StackPane>
-                        <VBox minWidth="-Infinity" prefHeight="638.0" prefWidth="71.0">
+                        <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.6" prefWidth="100.0">
                             <children>
                                 <StackPane fx:id="field31" alignment="TOP_CENTER" layoutX="10.0" layoutY="200.0" prefHeight="71.0" prefWidth="71.0">
                                     <children>
@@ -807,7 +819,7 @@
                                         </Button>
                                     </children>
                                 </StackPane>
-                                <StackPane fx:id="field34" alignment="TOP_CENTER" prefHeight="71.0" prefWidth="71.0">
+                                <StackPane fx:id="field34" alignment="TOP_CENTER" prefHeight="71.0" prefWidth="100.0">
                                     <children>
                                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: yellow;">
                                             <children>
@@ -1025,18 +1037,15 @@
                             </children>
                         </VBox>
                     </children>
-               <padding>
-                  <Insets left="1.0" right="1.0" />
-               </padding>
                <VBox.margin>
                   <Insets left="1.0" right="1.0" />
                </VBox.margin>
                 </HBox>
-                <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" maxWidth="-Infinity" prefHeight="71.0" prefWidth="779.0" style="-fx-background-color: black;">
+                <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="837.6" style="-fx-background-color: black;">
                     <children>
-                        <StackPane fx:id="field10" alignment="TOP_CENTER" layoutX="544.0" layoutY="10.0" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field10" alignment="TOP_CENTER" layoutX="544.0" layoutY="10.0" prefHeight="100.0" prefWidth="100.0">
                             <children>
-                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #808080;">
+                                <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #808080;">
                                     <children>
                                         <ImageView fx:id="prisonImage" fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -1045,7 +1054,7 @@
                                         </ImageView>
                                     </children>
                                 </VBox>
-                                <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: black; -fx-border-width: 2;">
+                                <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: black; -fx-border-width: 2;">
                                     <children>
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Fængsel" textAlignment="CENTER" wrappingWidth="54.05127239227295">
                                             <font>
@@ -1060,14 +1069,14 @@
                                         </Text>
                                     </children>
                                 </VBox>
-                                <Button fx:id="bField10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                <Button fx:id="bField10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01">
                                     <font>
                                         <Font size="9.0" />
                                     </font>
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field9" alignment="TOP_CENTER" layoutX="39.0" layoutY="10.0" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field9" alignment="TOP_CENTER" layoutX="39.0" layoutY="10.0" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: orange;">
                                     <children>
@@ -1100,7 +1109,7 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field8" alignment="TOP_CENTER" layoutX="576.0" layoutY="10.0" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field8" alignment="TOP_CENTER" layoutX="576.0" layoutY="10.0" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: orange;">
                                     <children>
@@ -1133,7 +1142,7 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field7" alignment="TOP_CENTER" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field7" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 2;">
                                     <children>
@@ -1156,7 +1165,7 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field6" alignment="TOP_CENTER" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field6" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: orange;">
                                     <children>
@@ -1189,7 +1198,7 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field5" alignment="TOP_CENTER" layoutX="292.0" layoutY="10.0" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field5" alignment="TOP_CENTER" layoutX="292.0" layoutY="10.0" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
                                     <children>
@@ -1227,7 +1236,7 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field4" alignment="TOP_CENTER" layoutX="418.0" layoutY="10.0" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field4" alignment="TOP_CENTER" layoutX="418.0" layoutY="10.0" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #dddddd;" />
                                 <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: black; -fx-border-width: 2;">
@@ -1252,7 +1261,7 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field3" alignment="TOP_CENTER" layoutX="387.0" layoutY="10.0" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field3" alignment="TOP_CENTER" layoutX="387.0" layoutY="10.0" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0000ff;">
                                     <children>
@@ -1285,7 +1294,7 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field2" alignment="TOP_CENTER" layoutX="292.0" layoutY="10.0" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field2" alignment="TOP_CENTER" layoutX="292.0" layoutY="10.0" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 2;">
                                     <children>
@@ -1308,7 +1317,7 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field1" alignment="TOP_CENTER" layoutX="387.0" layoutY="10.0" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field1" alignment="TOP_CENTER" layoutX="387.0" layoutY="10.0" prefHeight="100.0" prefWidth="70.8">
                             <children>
                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0000ff;">
                                     <children>
@@ -1341,9 +1350,9 @@
                                 </Button>
                             </children>
                         </StackPane>
-                        <StackPane fx:id="field0" alignment="TOP_CENTER" prefHeight="71.0" prefWidth="71.0">
+                        <StackPane fx:id="field0" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="100.0">
                             <children>
-                                <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: red; -fx-border-color: black; -fx-border-width: 2;">
+                                <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: red; -fx-border-color: black; -fx-border-width: 2;">
                                     <children>
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Start" textAlignment="CENTER" wrappingWidth="61.25133800506592">
                                             <font>
