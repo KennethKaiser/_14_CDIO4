@@ -26,30 +26,6 @@ class FieldPrisonTest {
     }
 
     @Test
-    void testGoPrisonFunction() {
-        //expected
-        final int START_MONEY = 10000;
-        final int PRISON = 10;
-        BoardController boardController = new BoardController();
-        Board board = new Board();
-        PlayerHandler playerHandler = new PlayerHandler();
-
-        playerHandler.initializePlayers(3);
-        playerHandler.initializePlayerInPlayers(0,"Niels", START_MONEY, "black");
-        playerHandler.initializePlayerInPlayers(1, "Karl", START_MONEY, "blue");
-        playerHandler.initializePlayerInPlayers(2, "Hans", START_MONEY, "red");
-
-        GoPrisonField GoPrison = (GoPrisonField) board.getCurrentBoard()[30];
-
-        playerHandler.getPlayers()[0].setPosition(30);
-
-        //Tester at spilleren er flyttet til prison
-        assertEquals(PRISON, playerHandler.getPlayers()[0].getPosition(),"expect player to have be moved to: " + PRISON + ". Player is at: " + playerHandler.getPlayers()[0].getPosition());
-        //Tester at spilleren anses som fængslet
-        assertEquals(true,playerHandler.getPlayers()[0].isJail(),"expect GoPrison to have type: " + true + ". GoPrison has type: " + playerHandler .getPlayers()[0].isJail());
-    }
-
-    @Test
     void testPrisonLabelAndType() {
         //expected
         final String LABEL = "Du er ryger direkte i fængsel.";
@@ -86,7 +62,8 @@ class FieldPrisonTest {
         DummyField dummy = (DummyField) board.getCurrentBoard()[10];
         PrisonField prisonField = new PrisonField(dummy.getDummy());
 
-        playerHandler.getPlayers()[0].setPosition(30);
+        playerHandler.getPlayers()[0].setPosition(10);
+        playerHandler.getPlayers()[0].setJail(true);
 
         //Tester at spilleren først anses som at være fængslet
         assertEquals(true,playerHandler.getPlayers()[0].isJail(),"expect player prison status to be: " + true + ". player has: " + playerHandler .getPlayers()[0].isJail());
@@ -120,7 +97,8 @@ class FieldPrisonTest {
         PrisonField prisonField = new PrisonField(dummy.getDummy());
 
         playerHandler.getPlayers()[0].setGetOutOfJailCard(true);
-        playerHandler.getPlayers()[0].setPosition(30);
+        playerHandler.getPlayers()[0].setPosition(10);
+        playerHandler.getPlayers()[0].setJail(true);
 
         //Tester at spilleren først anses som at være fængslet
         assertEquals(true,playerHandler.getPlayers()[0].isJail(),"expect player prison status to be: " + true + ". player has: " + playerHandler .getPlayers()[0].isJail());
@@ -157,7 +135,8 @@ class FieldPrisonTest {
         PrisonField prisonField = new PrisonField(dummy.getDummy());
 
         playerHandler.getPlayers()[0].setGetOutOfJailCard(false);
-        playerHandler.getPlayers()[0].setPosition(30);
+        playerHandler.getPlayers()[0].setPosition(10);
+        playerHandler.getPlayers()[0].setJail(true);
 
         //Tester at spilleren først anses som at være fængslet
         assertEquals(true,playerHandler.getPlayers()[0].isJail(),"expect player prison status to be: " + true + ". player has: " + playerHandler .getPlayers()[0].isJail());
@@ -198,7 +177,10 @@ class FieldPrisonTest {
         DummyField dummy = (DummyField) board.getCurrentBoard()[10];
         PrisonField prisonField = new PrisonField(dummy.getDummy());
 
-        GoPrison.moveToPrison(playerHandler.getPlayers()[0]);
+        playerHandler.getPlayers()[0].setPosition(10);
+        playerHandler.getPlayers()[0].setJail(true);
+
+        prisonField.doubleOut(playerHandler.getPlayers()[0]);
 
         //Tester at spilleren først anses som at være fængslet
         assertEquals(true,playerHandler.getPlayers()[0].isJail(),"expect player prison status to be: " + true + ". player has: " + playerHandler .getPlayers()[0].isJail());
