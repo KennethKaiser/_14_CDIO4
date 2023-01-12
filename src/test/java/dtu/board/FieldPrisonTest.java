@@ -2,6 +2,7 @@ package dtu.board;
 
 import dtu.controllers.BoardController;
 import dtu.controllers.PlayerViewController;
+import dtu.dice.RaffleCup;
 import dtu.players.PlayerHandler;
 import org.junit.jupiter.api.Test;
 
@@ -45,7 +46,175 @@ class FieldPrisonTest {
         //Tester at spilleren er flyttet til prison
         assertEquals(PRISON, playerHandler.getPlayers()[0].getPosition(),"expect player to have be moved to: " + PRISON + ". Player is at: " + playerHandler.getPlayers()[0].getPosition());
         //Tester at spilleren anses som fængslet
-        assertEquals(true,playerHandler .getPlayers()[0].isJail(),"expect GoPrison to have type: " + true + ". GoPrison has type: " + playerHandler .getPlayers()[0].isJail());
+        assertEquals(true,playerHandler.getPlayers()[0].isJail(),"expect GoPrison to have type: " + true + ". GoPrison has type: " + playerHandler .getPlayers()[0].isJail());
     }
+
+    @Test
+    void testPrisonLabelAndType() {
+        //expected
+        final String LABEL = "Du er landet på I fængsel / På besøg.";
+        final String TYPE = "jail";
+        BoardController boardController = new BoardController();
+        Board board = new Board();
+
+        DummyField dummy = (DummyField) board.getCurrentBoard()[10];
+        PrisonField prisonField = new PrisonField(dummy.getDummy());
+
+        //Tester at FieldProperty kan give label og type
+        assertEquals(LABEL, prisonField.landedLabel(),"expect Prison to have label: " + LABEL + ". Prison has: " + prisonField.landedLabel());
+        assertEquals(TYPE,prisonField.type(),"expect Prison to have type: " + TYPE + ". Prison has type: " + prisonField.type());
+    }
+
+    @Test
+    void testPrisonBailFunction() {
+        //variabel
+        final int START_MONEY = 10000;
+        final int PRISON = 10;
+        //expected
+        final int BAIL = (START_MONEY - 1000);
+        BoardController boardController = new BoardController();
+        Board board = new Board();
+        PlayerHandler playerHandler = new PlayerHandler();
+
+        playerHandler.initializePlayers(3);
+        playerHandler.initializePlayerInPlayers(0,"Niels", START_MONEY, "black");
+        playerHandler.initializePlayerInPlayers(1, "Karl", START_MONEY, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Hans", START_MONEY, "red");
+
+        GoPrisonField GoPrison = (GoPrisonField) board.getCurrentBoard()[30];
+
+        DummyField dummy = (DummyField) board.getCurrentBoard()[10];
+        PrisonField prisonField = new PrisonField(dummy.getDummy());
+
+        GoPrison.moveToPrison(playerHandler.getPlayers()[0]);
+
+        //Tester at spilleren først anses som at være fængslet
+        assertEquals(true,playerHandler.getPlayers()[0].isJail(),"expect player prison status to be: " + true + ". player has: " + playerHandler .getPlayers()[0].isJail());
+
+
+        prisonField.bailOut(playerHandler.getPlayers()[0]);
+
+        //Tester at spilleren har mistet penge
+        assertEquals(BAIL, playerHandler.getPlayers()[0].getMoney(),"expect player to after bail have money: " + BAIL + ". Player has money: " + playerHandler.getPlayers()[0].getMoney());
+        //Tester at spilleren anses som ikke længere at være fængslet
+        assertEquals(false,playerHandler.getPlayers()[0].isJail(),"expect player prison status to be: " + false + ". player has: " + playerHandler .getPlayers()[0].isJail());
+    }
+
+    @Test
+    void testPrisonCardFunction() {
+        //variabel
+        final int START_MONEY = 10000;
+        final int PRISON = 10;
+        BoardController boardController = new BoardController();
+        Board board = new Board();
+        PlayerHandler playerHandler = new PlayerHandler();
+
+        playerHandler.initializePlayers(3);
+        playerHandler.initializePlayerInPlayers(0,"Niels", START_MONEY, "black");
+        playerHandler.initializePlayerInPlayers(1, "Karl", START_MONEY, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Hans", START_MONEY, "red");
+
+        GoPrisonField GoPrison = (GoPrisonField) board.getCurrentBoard()[30];
+
+        DummyField dummy = (DummyField) board.getCurrentBoard()[10];
+        PrisonField prisonField = new PrisonField(dummy.getDummy());
+
+        playerHandler.getPlayers()[0].setGetOutOfJailCard(true);
+        GoPrison.moveToPrison(playerHandler.getPlayers()[0]);
+
+        //Tester at spilleren først anses som at være fængslet
+        assertEquals(true,playerHandler.getPlayers()[0].isJail(),"expect player prison status to be: " + true + ". player has: " + playerHandler .getPlayers()[0].isJail());
+
+
+        prisonField.cardOut(playerHandler.getPlayers()[0]);
+
+        //Tester at spilleren ikke har mistet penge
+        assertEquals(START_MONEY, playerHandler.getPlayers()[0].getMoney(),"expect player to still have money as: " + START_MONEY + ". Player has money: " + playerHandler.getPlayers()[0].getMoney());
+        //Tester at spilleren anses som ikke længere at være fængslet
+        assertEquals(false,playerHandler.getPlayers()[0].isJail(),"expect player prison status to be: " + false + ". player has: " + playerHandler .getPlayers()[0].isJail());
+       //Tester at spilleren har mistet kortet
+        assertEquals(false,playerHandler.getPlayers()[0].isGetOutOfJailCard(),"expect player prison status to be: " + false + ". player has: " + playerHandler .getPlayers()[0].isJail());
+
+    }
+
+    @Test
+    void testPrisonNoCardFunction() {
+        //variabel
+        final int START_MONEY = 10000;
+        final int PRISON = 10;
+        BoardController boardController = new BoardController();
+        Board board = new Board();
+        PlayerHandler playerHandler = new PlayerHandler();
+
+        playerHandler.initializePlayers(3);
+        playerHandler.initializePlayerInPlayers(0,"Niels", START_MONEY, "black");
+        playerHandler.initializePlayerInPlayers(1, "Karl", START_MONEY, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Hans", START_MONEY, "red");
+
+        GoPrisonField GoPrison = (GoPrisonField) board.getCurrentBoard()[30];
+
+        DummyField dummy = (DummyField) board.getCurrentBoard()[10];
+        PrisonField prisonField = new PrisonField(dummy.getDummy());
+
+        playerHandler.getPlayers()[0].setGetOutOfJailCard(false);
+        GoPrison.moveToPrison(playerHandler.getPlayers()[0]);
+
+        //Tester at spilleren først anses som at være fængslet
+        assertEquals(true,playerHandler.getPlayers()[0].isJail(),"expect player prison status to be: " + true + ". player has: " + playerHandler .getPlayers()[0].isJail());
+
+
+        prisonField.cardOut(playerHandler.getPlayers()[0]);
+
+        //Tester at spilleren ikke har mistet penge
+        assertEquals(START_MONEY, playerHandler.getPlayers()[0].getMoney(),"expect player to still have money as: " + START_MONEY + ". Player has money: " + playerHandler.getPlayers()[0].getMoney());
+        //Tester at spilleren anses som stadig at være i fængslet
+        assertEquals(true,playerHandler.getPlayers()[0].isJail(),"expect player prison status to be: " + true + ". player has: " + playerHandler .getPlayers()[0].isJail());
+        //Tester at spilleren stadig ikke har kortet
+        assertEquals(false,playerHandler.getPlayers()[0].isGetOutOfJailCard(),"expect player prison status to be: " + false + ". player has: " + playerHandler .getPlayers()[0].isJail());
+
+    }
+
+    /*
+    @Test
+    void testPrisonDoubleFunction() {
+        //variabel
+        final int START_MONEY = 10000;
+        final int PRISON = 10;
+        BoardController boardController = new BoardController();
+        Board board = new Board();
+        PlayerHandler playerHandler = new PlayerHandler();
+        RaffleCup raffleCup = new RaffleCup();
+
+        int[] dobbelt = {3,3};
+        raffleCup.setOurRolls(dobbelt);
+
+        playerHandler.initializePlayers(3);
+        playerHandler.initializePlayerInPlayers(0,"Niels", START_MONEY, "black");
+        playerHandler.initializePlayerInPlayers(1, "Karl", START_MONEY, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Hans", START_MONEY, "red");
+
+        GoPrisonField GoPrison = (GoPrisonField) board.getCurrentBoard()[30];
+
+        DummyField dummy = (DummyField) board.getCurrentBoard()[10];
+        PrisonField prisonField = new PrisonField(dummy.getDummy());
+
+        GoPrison.moveToPrison(playerHandler.getPlayers()[0]);
+
+        //Tester at spilleren først anses som at være fængslet
+        assertEquals(true,playerHandler.getPlayers()[0].isJail(),"expect player prison status to be: " + true + ". player has: " + playerHandler .getPlayers()[0].isJail());
+
+
+        prisonField.cardOut(playerHandler.getPlayers()[0]);
+
+        //Tester at spilleren ikke har mistet penge
+        assertEquals(START_MONEY, playerHandler.getPlayers()[0].getMoney(),"expect player to still have money as: " + START_MONEY + ". Player has money: " + playerHandler.getPlayers()[0].getMoney());
+        //Tester at spilleren anses som ikke længere at være fængslet
+        assertEquals(false,playerHandler.getPlayers()[0].isJail(),"expect player prison status to be: " + false + ". player has: " + playerHandler .getPlayers()[0].isJail());
+        //Tester at spilleren har mistet kortet
+        assertEquals(false,playerHandler.getPlayers()[0].isGetOutOfJailCard(),"expect player prison status to be: " + false + ". player has: " + playerHandler .getPlayers()[0].isJail());
+
+    }
+
+     */
 
 }
