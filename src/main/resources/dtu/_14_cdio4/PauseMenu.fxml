@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PauseMenuController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="305.0" prefWidth="300.0" spacing="10.0">
+         <children>
+            <Button fx:id="resumeButton" mnemonicParsing="false" prefWidth="210.0" text="Resume" />
+            <Button fx:id="saveButton" mnemonicParsing="false" prefWidth="210.0" text="Save" />
+            <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button fx:id="saveAsButton" mnemonicParsing="false" prefWidth="100.0" text="Save As" />
+                  <TextArea fx:id="saveInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="100.0" promptText="Save Name" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button fx:id="loadButton" mnemonicParsing="false" prefWidth="100.0" text="Load" />
+                  <TextArea fx:id="loadInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="100.0" promptText="Save Name" />
+               </children>
+            </HBox>
+            <Button fx:id="exitSaveButton" mnemonicParsing="false" prefWidth="210.0" text="Exit And Save" />
+            <Button fx:id="exitNoSaveButton" layoutX="55.0" layoutY="252.0" mnemonicParsing="false" prefWidth="210.0" text="Exit Without Saving" />
+         </children>
+      </VBox>
+   </children>
+</StackPane>

@@ -15,6 +15,9 @@ public class ControllerHandler {
     private StartGameController startGameController;
     private TradingMenuController tradingMenuController;
     private MenuScreenController menuScreenController;
+    private PauseMenuController pauseMenuController;
+
+
     private SceneSwitch sceneSwitch;
     private Board board;
     private HousingLogic housingLogic = new HousingLogic();
@@ -64,6 +67,13 @@ public class ControllerHandler {
 
 
     //region getters and setters
+    public PauseMenuController getPauseMenuController() {
+        return pauseMenuController;
+    }
+
+    public void setPauseMenuController(PauseMenuController pauseMenuController) {
+        this.pauseMenuController = pauseMenuController;
+    }
 
     public HousingLogic getHousingLogic() {
         return housingLogic;

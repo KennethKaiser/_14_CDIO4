@@ -24,6 +24,7 @@ public class SceneSwitch {
     private TradingMenuController tradingMenuController;
     private MenuScreenController menuScreenController;
     private CommunicationController communicationController;
+    private PauseMenuController pauseMenuController;
     //endregion
     //region loads
     VBox menu;
@@ -34,6 +35,7 @@ public class SceneSwitch {
     StackPane propertyMenu;
     HBox communication;
     VBox tradeMenu;
+    StackPane pauseMenu;
     //endregion
     Scene menuScene;
     Scene boardScene;
@@ -78,6 +80,10 @@ public class SceneSwitch {
         tradeMenu = (VBox) fxmlLoader.load();
         tradingMenuController = fxmlLoader.getController();
         ControllerHandler.getInstance().setTradingMenuController(tradingMenuController);
+        fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PauseMenu.fxml"));
+        pauseMenu = (StackPane) fxmlLoader.load();
+        pauseMenuController = fxmlLoader.getController();
+        ControllerHandler.getInstance().setPauseMenuController(pauseMenuController);
     }
     private void collectBoard(){
         showChanceCardPileInMiddle();
@@ -111,6 +117,12 @@ public class SceneSwitch {
     public void showChanceCardPileInMiddle(){
         boardController.getMiddleMenuVBox().getChildren().clear();
         boardController.getMiddleMenuVBox().getChildren().add(chanceCards);
+    }
+    public void switchToPauseMenu(){
+        boardController.getMiddleMenuVBox().getChildren().add(pauseMenu);
+    }
+    public void removePauseMenu(){
+        boardController.getMiddleMenuVBox().getChildren().remove(pauseMenu);
     }
     public void showTradingMenu(){
         System.out.println("Switching to trade Menu");
