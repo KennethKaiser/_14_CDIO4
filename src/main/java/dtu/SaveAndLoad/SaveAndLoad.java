@@ -42,7 +42,7 @@ public class SaveAndLoad {
             return true;
         }
         else{
-            sendText("Could not find save to delete");
+            sendText("Could not find the save " + name + " to delete");
             return false;
         }
     }
