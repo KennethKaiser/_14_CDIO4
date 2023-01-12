@@ -94,4 +94,46 @@ class BreweryFieldTest {
         assertEquals(playerHandler.getPlayers()[1], breweryField.getOwner());
 
     }
+
+    @Test
+    void Messages() {
+        //expected
+        final String TYPE = "brewery";
+
+        PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.initializePlayers(4);
+        playerHandler.initializePlayerInPlayers(0, "Niels", 20, "black");
+        playerHandler.initializePlayerInPlayers(1, "Karl", 20, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Hans", 20, "red");
+        playerHandler.initializePlayerInPlayers(3, "test", 20, "green");
+        Brewery brewery = new Brewery(0, "test", 0, 10, 20, 30);
+
+        BreweryField breweryField = new BreweryField(brewery);
+
+        //Tester at brewery er rette type
+        assertEquals(TYPE, breweryField.type(), "Expect BreweryField to have type: " + TYPE + ". type is: " + breweryField.type());
+        //Tester at det det rette brewery i BreweryField
+        assertEquals(brewery, breweryField.getBrewery(), "Expect BreweryField to have brewery: " + brewery + ". BreweryField has: " + breweryField.getBrewery());
+    }
+
+    @Test
+    void SetOwned() {
+        PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.initializePlayers(4);
+        playerHandler.initializePlayerInPlayers(0, "Niels", 20, "black");
+        playerHandler.initializePlayerInPlayers(1, "Karl", 20, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Hans", 20, "red");
+        playerHandler.initializePlayerInPlayers(3, "test", 20, "green");
+        Brewery brewery = new Brewery(0, "test", 0, 10, 20, 30);
+
+        BreweryField breweryField = new BreweryField(brewery);
+
+        //Tester at brewery ikker er ejet
+        assertEquals(false, breweryField.getOwned(), "Expect BreweryField to have ownership: " + false + ". ownership is: " + breweryField.getOwned());
+
+        breweryField.setOwned(true);
+
+        //Tester at BreweryField nu er ejet
+        assertEquals(true, breweryField.getOwned(), "Expect BreweryField to have ownership: " + true + ". ownership is: " + breweryField.getOwned());
+    }
 }
