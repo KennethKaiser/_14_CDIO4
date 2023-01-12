@@ -391,11 +391,23 @@ public class CommunicationController {
 
         choiceOptions[0] = "Okay";
 
-        String textField = playerName + " ejer allerede " + fieldName + fieldName;
+        String textField = playerName + " ejer allerede " + fieldName;
         showCommunicationBox(textField, choiceOptions);
 
         choices[0].setOnAction(e -> boardController.endTurn());
     }
+    public void fieldIsPledged(String fieldName){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        String textField = fieldName + " er pantsat og der skal derfor ikke betales leje";
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurn());
+    }
+
+
     //endregion
 
     public void playerIsBankrupt(Player player){

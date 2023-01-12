@@ -832,6 +832,9 @@ public class BoardController {
                 if(fieldProperty.getOwner() == playerHandler.getCurrentPlayer()){
                     communicationController.playerAlreadyOwn(fieldProperty.getProperty().getName(), playerHandler.getCurrentPlayer().getName());
                 }
+                else if(fieldProperty.isPledgeState()){
+                    communicationController.fieldIsPledged(fieldProperty.getProperty().getName());
+                }
                 else {
                     communicationController.payRentProperty(fieldProperty, playerHandler.getCurrentPlayer());
                 }
@@ -854,6 +857,9 @@ public class BoardController {
                 if(ferryField.getOwner() == playerHandler.getCurrentPlayer()){
                     communicationController.playerAlreadyOwn(ferryField.getFerry().getName(), playerHandler.getCurrentPlayer().getName());
                 }
+                else if(ferryField.isPledgeState()){
+                    communicationController.fieldIsPledged(ferryField.getFerry().getName());
+                }
                 else {
                     communicationController.payRentFerry(ferryField, playerHandler.getCurrentPlayer());
                 }
@@ -874,6 +880,9 @@ public class BoardController {
             else {
                 if(breweryField.getOwner() == playerHandler.getCurrentPlayer()){
                     communicationController.playerAlreadyOwn(breweryField.getBrewery().getName(), playerHandler.getCurrentPlayer().getName());
+                }
+                else if(breweryField.isPledgeState()){
+                    communicationController.fieldIsPledged(breweryField.getBrewery().getName());
                 }
                 else {
                     communicationController.payRentBrewery(breweryField, playerHandler.getCurrentPlayer());
