@@ -767,6 +767,9 @@ public class BoardController {
         if(playerHandler.getCurrentPlayer().isBankrupt()){
             communicationController.playerIsBankrupt(playerHandler.getCurrentPlayer());
         }
+        else if(dice.rolledDouble()){
+            communicationController.extraTurn(playerHandler.getCurrentPlayer().getName());
+        }
         else {
             //Gets next player and if next player is bankrupt get next player again
             playerHandler.currentPlayer();

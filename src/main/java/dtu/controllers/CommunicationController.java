@@ -86,6 +86,16 @@ public class CommunicationController {
 
     }
 
+    public void extraTurn(String playerName){
+
+        String[] choiceOptions = new String[1];
+        choiceOptions[0] = "Okay";
+        String textField = playerName + " slog et dobbeltslag og får derfor en ekstra tur!";
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> playerTurnStart(playerName));
+
+    }
+
     public void playerTurnInJail(String playerName){
         String[] choiceOptions = new String[3];
         choiceOptions[0] = "Betal 1000 kr";
