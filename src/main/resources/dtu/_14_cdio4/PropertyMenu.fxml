@@ -1488,4 +1488,7 @@
 
       </HBox>
    </children>
+   <opaqueInsets>
+      <Insets top="-100.0" />
+   </opaqueInsets>
 </StackPane>

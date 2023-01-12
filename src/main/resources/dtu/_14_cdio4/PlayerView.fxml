@@ -11,10 +11,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="wholeArea" alignment="CENTER" prefHeight="900.0" prefWidth="1600.0" spacing="5.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PlayerViewController">
-    <VBox fx:id="part1" maxHeight="-Infinity" prefHeight="900.0" prefWidth="400.0" spacing="5.0">
+<HBox fx:id="wholeArea" alignment="CENTER" prefHeight="990.0" prefWidth="1600.0" spacing="5.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PlayerViewController">
+    <VBox fx:id="part1" maxHeight="-Infinity" prefHeight="990.0" prefWidth="400.0" spacing="5.0">
         <children>
-            <VBox fx:id="area1" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
+            <VBox fx:id="area1" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
@@ -73,7 +73,7 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area3" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
+            <VBox fx:id="area3" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="386.0" spacing="8.0">
                         <children>
@@ -132,7 +132,7 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area5" alignment="TOP_CENTER" layoutX="10.0" layoutY="352.0" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
+            <VBox fx:id="area5" alignment="TOP_CENTER" layoutX="10.0" layoutY="352.0" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
@@ -193,9 +193,9 @@
             </VBox>
         </children>
     </VBox>
-    <VBox fx:id="part2" maxHeight="-Infinity" prefHeight="900.0" prefWidth="400.0" spacing="5.0">
+    <VBox fx:id="part2" maxHeight="-Infinity" prefHeight="990.0" prefWidth="400.0" spacing="5.0">
         <children>
-            <VBox fx:id="area2" alignment="TOP_CENTER" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
+            <VBox fx:id="area2" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
@@ -254,7 +254,7 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area4" alignment="TOP_CENTER" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
+            <VBox fx:id="area4" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
@@ -313,7 +313,7 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area6" alignment="TOP_CENTER" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
+            <VBox fx:id="area6" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>

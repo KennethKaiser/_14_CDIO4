@@ -15,9 +15,9 @@
    <children>
       <HBox alignment="CENTER" prefHeight="167.0" prefWidth="1500.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Matador" textAlignment="CENTER">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MATADOR" textAlignment="CENTER">
                <font>
-                  <Font name="Century Gothic Bold" size="96.0" />
+                  <Font name="Century Gothic" size="96.0" />
                </font>
             </Text>
          </children>
