@@ -12,6 +12,8 @@ public class PlayerHandler {
     private Player[] players;
     private Player currentPlayer;
     private int nID = -1;
+
+    private boolean overStart = false;
     private static final int STARTMONEY = 30000;
 
 
@@ -44,9 +46,31 @@ public class PlayerHandler {
     public void movePlayer(Player player, int deltaMove){
         int nextFieldPlacement = player.getPosition() + deltaMove;
 
-        player.setPosition(nextFieldPlacement);
+        newSetPosition(player, nextFieldPlacement);
 
         //getPlayers()[player.getId()].setPosition(nextFieldPlacement);
+
+    }
+
+    public void newSetPosition(Player player, int nextFieldPlacement){
+
+        overStart = false;
+
+        int position = nextFieldPlacement;
+
+        if(position > 39){
+            position = position - 40;
+            if(!player.isJail()){
+                overStart = true;
+            }
+
+        }
+        else if(position<0){
+            position = position + 40;
+        }
+
+        player.setPosition(position);
+
 
     }
 
@@ -60,11 +84,11 @@ public class PlayerHandler {
         int moveChanceCard;
         if(player.getPosition()<ID) {
             moveChanceCard = ID - player.getPosition();
-            player.setPosition(player.getPosition()+moveChanceCard);
+            newSetPosition(player, player.getPosition()+moveChanceCard);
         }
         if(player.getPosition()>ID){
             moveChanceCard = (40-player.getPosition())+ID;
-            player.setPosition(player.getPosition()+moveChanceCard);
+            newSetPosition(player, player.getPosition()+moveChanceCard);
         }
     }
 
@@ -362,5 +386,13 @@ public class PlayerHandler {
 
     public void setCurrentPlayer(Player currentPlayer) {
         this.currentPlayer = currentPlayer;
+    }
+
+    public boolean isOverStart() {
+        return overStart;
+    }
+
+    public void setOverStart(boolean overStart) {
+        this.overStart = overStart;
     }
 }

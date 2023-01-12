@@ -12,9 +12,11 @@ class PropertyHandlerTest {
     void movePlayerChanceCard() {
         Player player = new Player(1, "tis", 4000, "black");
         PlayerHandler playerHandler = new PlayerHandler();
-        player.setPosition(2);
+
+        playerHandler.newSetPosition(player, 2);
 
         playerHandler.movePlayerChanceCard(player, 10);
+
 
         assertEquals(10, player.getPosition(), "test");
 

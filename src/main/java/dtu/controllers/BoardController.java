@@ -634,7 +634,16 @@ public class BoardController {
         movePLayerOnGUI(playerId, playerPosition);
         multipleCars(playerId, playerPosition);
 
-        whatField();
+        if(playerHandler.isOverStart()){
+            playerHandler.changePlayerBalance(playerHandler.getCurrentPlayer(),4000);
+            playerViewController.updatePlayerMoney();
+            communicationController.moneyOverStart(playerHandler.getCurrentPlayer().getName());
+        }
+        else{
+            whatField();
+        }
+
+
     }
 
     public void moveAfterDoubleInPrison(){

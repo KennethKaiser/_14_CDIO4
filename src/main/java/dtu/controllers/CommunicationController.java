@@ -204,6 +204,17 @@ public class CommunicationController {
 
     }
 
+    public void moneyOverStart(String name){
+
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+        String textField = name + " rykkede over start og modtager 4000 kr.";
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> boardController.whatField());
+
+    }
+
     public void whatLandedOn(String label){
         String[] choiceOptions = new String[1];
 
