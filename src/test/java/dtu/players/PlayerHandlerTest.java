@@ -150,16 +150,17 @@ class PlayerHandlerTest {
         playerHandler.initializePlayerInPlayers(1, "Karl", 10000, "blue");
         playerHandler.initializePlayerInPlayers(2, "Hans", 10000, "red");
 
-        playerHandler.getPlayers()[0].setPosition(38);
+
+        playerHandler.newSetPosition(playerHandler.getPlayers()[0], 38);
         playerHandler.nearestFerry(playerHandler.getPlayers()[0]);
         assertEquals(5, playerHandler.getPlayers()[0].getPosition());
-        playerHandler.getPlayers()[0].setPosition(6);
+        playerHandler.newSetPosition(playerHandler.getPlayers()[0], 6);
         playerHandler.nearestFerry(playerHandler.getPlayers()[0]);
         assertEquals(15, playerHandler.getPlayers()[0].getPosition());
-        playerHandler.getPlayers()[0].setPosition(16);
+        playerHandler.newSetPosition(playerHandler.getPlayers()[0], 16);
         playerHandler.nearestFerry(playerHandler.getPlayers()[0]);
         assertEquals(25, playerHandler.getPlayers()[0].getPosition());
-        playerHandler.getPlayers()[0].setPosition(26);
+        playerHandler.newSetPosition(playerHandler.getPlayers()[0], 26);
         playerHandler.nearestFerry(playerHandler.getPlayers()[0]);
         assertEquals(35, playerHandler.getPlayers()[0].getPosition());
     }

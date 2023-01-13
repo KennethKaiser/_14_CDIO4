@@ -62,7 +62,7 @@ class FieldPrisonTest {
         DummyField dummy = (DummyField) board.getCurrentBoard()[10];
         PrisonField prisonField = new PrisonField(dummy.getDummy());
 
-        playerHandler.getPlayers()[0].setPosition(10);
+        playerHandler.newSetPosition(playerHandler.getPlayers()[0], 10);
         playerHandler.getPlayers()[0].setJail(true);
 
         //Tester at spilleren først anses som at være fængslet
@@ -97,7 +97,7 @@ class FieldPrisonTest {
         PrisonField prisonField = new PrisonField(dummy.getDummy());
 
         playerHandler.getPlayers()[0].setGetOutOfJailCard(true);
-        playerHandler.getPlayers()[0].setPosition(10);
+        playerHandler.newSetPosition(playerHandler.getPlayers()[0], 10);
         playerHandler.getPlayers()[0].setJail(true);
 
         //Tester at spilleren først anses som at være fængslet
@@ -135,7 +135,7 @@ class FieldPrisonTest {
         PrisonField prisonField = new PrisonField(dummy.getDummy());
 
         playerHandler.getPlayers()[0].setGetOutOfJailCard(false);
-        playerHandler.getPlayers()[0].setPosition(10);
+        playerHandler.newSetPosition(playerHandler.getPlayers()[0], 10);
         playerHandler.getPlayers()[0].setJail(true);
 
         //Tester at spilleren først anses som at være fængslet

@@ -1,10 +1,6 @@
 package dtu.controllers;
 
-import dtu.board.BreweryField;
-import dtu.board.FerryField;
-import dtu.board.Field;
-
-import dtu.board.FieldProperty;
+import dtu.board.*;
 
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
@@ -67,6 +63,11 @@ public class BoardController {
     ImageView ferry3;
     @FXML
     ImageView ferry4;
+
+    @FXML
+    ImageView centerGraphics;
+
+
 
 
     //endregion
@@ -468,7 +469,6 @@ public class BoardController {
     //region Initialize pictures on board
     //set the pictures on the board along with cars.
     public void initPics() {
-        try{
             ferry1.setImage(image("src/textures/ferry_card.png"));
             ferry2.setImage(image("src/textures/ferry_card.png"));
             ferry3.setImage(image("src/textures/ferry_card.png"));
@@ -478,16 +478,19 @@ public class BoardController {
             policeImage.setImage(image("src/textures/police_man_card.png"));
             prisonImage.setImage(image("src/textures/jail_card.png"));
             parkingImage.setImage(image("src/textures/parking_field.png"));
-
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+            centerGraphics.setImage(image("src/textures/centerGraphics.png"));
 
     }
-    public Image image(String url) throws FileNotFoundException {
-        InputStream stream = new FileInputStream(url);
-        Image image = new Image(stream);
-        return image;
+    public Image image(String url) {
+        try {
+            InputStream stream = new FileInputStream(url);
+            Image image = new Image(stream);
+            return image;
+
+        } catch (Exception e) {
+
+        }
+        return null;
     }
 
 
@@ -551,13 +554,9 @@ public class BoardController {
         propHouses[37] = housePurple1;
         propHouses[39] = housePurple2;
         for(int i = 0; i < propHouses.length; i++){
-            try{
                 if(propHouses[i] != null){
                     propHouses[i].setImage(image("src/textures/houseNulIcon.png"));
                 }
-            } catch (FileNotFoundException e) {
-                throw new RuntimeException(e);
-            }
         }
     }
     //endregion
@@ -580,11 +579,9 @@ public class BoardController {
     //region trade menu
     private void initTradeMenu() {
         tradeMenuButton.setOnAction(e -> ControllerHandler.getInstance().getSceneSwitch().showTradingMenu());
-        try{
             tradeMenuImage.setImage(image("src/textures/shakeHandsIcon.png"));
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+            tradeMenuButton.setOnMouseEntered(e -> tradeMenuImage.setImage(image("src/textures/shakeHandsIconMouseOver.png")));
+            tradeMenuButton.setOnMouseExited(e -> tradeMenuImage.setImage(image("src/textures/shakeHandsIcon.png")));
 
     }
     //endregion
@@ -634,7 +631,16 @@ public class BoardController {
         movePLayerOnGUI(playerId, playerPosition);
         multipleCars(playerId, playerPosition);
 
-        whatField();
+        if(playerHandler.isOverStart()){
+            playerHandler.changePlayerBalance(playerHandler.getCurrentPlayer(),4000);
+            playerViewController.updatePlayerMoney();
+            communicationController.moneyOverStart(playerHandler.getCurrentPlayer().getName());
+        }
+        else{
+            whatField();
+        }
+
+
     }
 
     public void moveAfterDoubleInPrison(){
@@ -680,11 +686,42 @@ public class BoardController {
             endTurn();
         }
         else if(type.equals("tax")){
-            endTurn();
+            whatYourTaxes(field);
         }
         else if(type.equals("jail")){
             goToJail();
         }
+
+
+    }
+
+    public void whatYourTaxes(Field field){
+        TaxField taxField = (TaxField) field;
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+
+
+        if (taxField.getTax().getID() == 4){
+            communicationController.taxChoice(taxField);
+        }
+        else if(taxField.getTax().getID() == 38){
+            communicationController.payTenPercentTax(taxField);
+        }
+
+    }
+
+    public void payYourTaxes(TaxField taxField, Boolean choice){
+
+        taxField.taxing(playerHandler.getCurrentPlayer(), choice);
+        playerViewController.updatePlayerMoney();
+        endTurn();
+
+
+    }
+    public void payYourExtraTax(TaxField taxField){
+
+        taxField.taxing(playerHandler.getCurrentPlayer(), true);
+        playerViewController.updatePlayerMoney();
+        endTurn();
 
 
     }
@@ -1028,11 +1065,7 @@ public class BoardController {
         houseURLS[3] = "src/textures/house3Icon.png";
         houseURLS[4] = "src/textures/house4Icon.png";
         houseURLS[5] = "src/textures/hotelIcon.png";
-        try{
             propHouses[propertyID].setImage(image(houseURLS[totalAmount]));
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
     }
 
 
@@ -1047,12 +1080,8 @@ public class BoardController {
         dice[3] = "src/textures/d4.png";
         dice[4] = "src/textures/d5.png";
         dice[5] = "src/textures/d6.png";
-        try {
             dice1.setImage(image(dice[die1-1]));
             dice2.setImage(image(dice[die2-1]));
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
         Random rnd = new Random();
         //Position of dice can be between 10 and 500
         setRandomPosition(dice1);

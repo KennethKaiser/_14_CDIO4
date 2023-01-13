@@ -11,10 +11,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="wholeArea" alignment="CENTER" prefHeight="900.0" prefWidth="1600.0" spacing="5.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PlayerViewController">
-    <VBox fx:id="part1" maxHeight="-Infinity" prefHeight="900.0" prefWidth="400.0" spacing="5.0">
+<HBox fx:id="wholeArea" alignment="CENTER" prefHeight="990.0" prefWidth="1600.0" spacing="5.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PlayerViewController">
+    <VBox fx:id="part1" maxHeight="-Infinity" prefHeight="990.0" prefWidth="400.0" spacing="5.0">
         <children>
-            <VBox fx:id="area1" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area1" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
@@ -34,19 +34,19 @@
                                     <ColorAdjust brightness="1.0" />
                                 </effect>
                             </ImageView>
-                            <Text fx:id="p1Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PlayerName" textAlignment="CENTER" wrappingWidth="160.0">
+                            <Text fx:id="p1Name" strokeType="OUTSIDE" strokeWidth="0.0" text="PlayerName" textAlignment="CENTER" wrappingWidth="160.0">
                                 <font>
                                     <Font name="System Bold" size="16.0" />
                                 </font>
                             </Text>
                             <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
                                 <children>
-                                    <Text fx:id="p1Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
+                                    <Text fx:id="p1Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
                                         <font>
                                             <Font size="16.0" />
                                         </font>
                                     </Text>
-                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                         <font>
                                             <Font size="16.0" />
                                         </font>
@@ -73,7 +73,7 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area3" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area3" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="386.0" spacing="8.0">
                         <children>
@@ -93,19 +93,19 @@
                                     <ColorAdjust brightness="1.0" />
                                 </effect>
                             </ImageView>
-                            <Text fx:id="p3Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
+                            <Text fx:id="p3Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
                                 <font>
                                     <Font name="System Bold" size="16.0" />
                                 </font>
                             </Text>
                             <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
                                 <children>
-                                    <Text fx:id="p3Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
+                                    <Text fx:id="p3Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
                                         <font>
                                             <Font size="16.0" />
                                         </font>
                                     </Text>
-                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                         <font>
                                             <Font size="16.0" />
                                         </font>
@@ -132,7 +132,7 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area5" alignment="TOP_CENTER" layoutX="10.0" layoutY="352.0" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area5" alignment="TOP_CENTER" layoutX="10.0" layoutY="352.0" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
@@ -152,19 +152,19 @@
                                     <ColorAdjust brightness="1.0" />
                                 </effect>
                             </ImageView>
-                            <Text fx:id="p5Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
+                            <Text fx:id="p5Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
                                 <font>
                                     <Font name="System Bold" size="16.0" />
                                 </font>
                             </Text>
                             <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
                                 <children>
-                                    <Text fx:id="p5Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
+                                    <Text fx:id="p5Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
                                         <font>
                                             <Font size="16.0" />
                                         </font>
                                     </Text>
-                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                         <font>
                                             <Font size="16.0" />
                                         </font>
@@ -193,9 +193,9 @@
             </VBox>
         </children>
     </VBox>
-    <VBox fx:id="part2" maxHeight="-Infinity" prefHeight="900.0" prefWidth="400.0" spacing="5.0">
+    <VBox fx:id="part2" maxHeight="-Infinity" prefHeight="990.0" prefWidth="400.0" spacing="5.0">
         <children>
-            <VBox fx:id="area2" alignment="TOP_CENTER" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area2" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
@@ -215,19 +215,19 @@
                                     <ColorAdjust brightness="1.0" />
                                 </effect>
                             </ImageView>
-                            <Text fx:id="p2Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
+                            <Text fx:id="p2Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
                                 <font>
                                     <Font name="System Bold" size="16.0" />
                                 </font>
                             </Text>
                             <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
                                 <children>
-                                    <Text fx:id="p2Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
+                                    <Text fx:id="p2Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
                                         <font>
                                             <Font size="16.0" />
                                         </font>
                                     </Text>
-                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                         <font>
                                             <Font size="16.0" />
                                         </font>
@@ -254,7 +254,7 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area4" alignment="TOP_CENTER" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area4" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
@@ -274,19 +274,19 @@
                                     <ColorAdjust brightness="1.0" />
                                 </effect>
                             </ImageView>
-                            <Text fx:id="p4Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
+                            <Text fx:id="p4Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
                                 <font>
                                     <Font name="System Bold" size="16.0" />
                                 </font>
                             </Text>
                             <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
                                 <children>
-                                    <Text fx:id="p4Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
+                                    <Text fx:id="p4Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
                                         <font>
                                             <Font size="16.0" />
                                         </font>
                                     </Text>
-                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                         <font>
                                             <Font size="16.0" />
                                         </font>
@@ -313,7 +313,7 @@
                     <Insets top="5.0" />
                 </opaqueInsets>
             </VBox>
-            <VBox fx:id="area6" alignment="TOP_CENTER" prefHeight="900.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #00dd00;">
+            <VBox fx:id="area6" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
@@ -333,19 +333,19 @@
                                     <ColorAdjust brightness="1.0" />
                                 </effect>
                             </ImageView>
-                            <Text fx:id="p6Name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
+                            <Text fx:id="p6Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
                                 <font>
                                     <Font name="System Bold" size="16.0" />
                                 </font>
                             </Text>
                             <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
                                 <children>
-                                    <Text fx:id="p6Money" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
+                                    <Text fx:id="p6Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
                                         <font>
                                             <Font size="16.0" />
                                         </font>
                                     </Text>
-                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
                                         <font>
                                             <Font size="16.0" />
                                         </font>

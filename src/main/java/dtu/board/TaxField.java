@@ -1,5 +1,8 @@
 package dtu.board;
 
+import dtu.players.Player;
+import dtu.players.PlayerHandler;
+
 public class TaxField extends Field{
 
     private Tax tax;
@@ -22,4 +25,17 @@ public class TaxField extends Field{
     public Tax getTax() {
         return tax;
     }
+
+    public void taxing(Player player, boolean choice){
+        PlayerHandler playerHandler = new PlayerHandler();
+
+        if(tax.getID() == 4){
+            playerHandler.incomeTax(player, choice);
+        }
+        else if(tax.getID() == 38){
+            playerHandler.changePlayerBalance(player, -2000);
+        }
+
+    }
+
 }

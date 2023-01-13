@@ -35,7 +35,8 @@ class TC3_MovePlayerTest {
 
     @Test
     void testMoving4Forward() {
-        player.setPosition(START_POS);
+
+        playerHandler.newSetPosition(player, START_POS);
 
         playerHandler.movePlayer(player, MOVE);
 
@@ -45,7 +46,8 @@ class TC3_MovePlayerTest {
 
     @Test
     void testMoving12Forward() {
-        player.setPosition(START_POS);
+
+        playerHandler.newSetPosition(player, START_POS);
 
         playerHandler.movePlayer(player, BIG_MOVE);
 
@@ -55,7 +57,8 @@ class TC3_MovePlayerTest {
 
     @Test
     void testMovingPastStartForward() {
-        player.setPosition(START_POS);
+        playerHandler.newSetPosition(player, START_POS);
+
 
         playerHandler.movePlayer(player, BIGGER_MOVE);
 
@@ -65,7 +68,7 @@ class TC3_MovePlayerTest {
 
     @Test
     void testMoving0() {
-        player.setPosition(START_POS);
+        playerHandler.newSetPosition(player, START_POS);
 
         playerHandler.movePlayer(player, NO_MOVE);
 
@@ -75,7 +78,8 @@ class TC3_MovePlayerTest {
 
     @Test
     void testMoving4Backward() {
-        player.setPosition(START_POS);
+
+        playerHandler.newSetPosition(player, START_POS);
 
         playerHandler.movePlayer(player, BACK_MOVE);
 
@@ -85,7 +89,7 @@ class TC3_MovePlayerTest {
 
     @Test
     void testMovingPastStartBackward() {
-        player.setPosition(START_POS);
+        playerHandler.newSetPosition(player, START_POS);
 
         playerHandler.movePlayer(player, B_BACK_MOVE);
 
@@ -96,7 +100,7 @@ class TC3_MovePlayerTest {
     @Test
     void testMoveChanceCardIDgreaterPlayerPos() {
 
-        player.setPosition(30);
+        playerHandler.newSetPosition(player, 30);
         playerHandler.movePlayerChanceCard(player, 38);
         boolean expected = false;
         if (player.getPosition() == 38) {
@@ -108,7 +112,7 @@ class TC3_MovePlayerTest {
     @Test
     void testMoveChanceCardIDlessPlayerPos(){
         boolean expected = false;
-        player.setPosition(38);
+        playerHandler.newSetPosition(player, 38);
         playerHandler.movePlayerChanceCard(player, 30);
         if (player.getPosition() == 30) {
             expected = true;
@@ -129,11 +133,13 @@ class TC3_MovePlayerTest {
         Player player4 = new Player(3, "Nicklas", 4000, "Black");
         Player player5 = new Player(4, "Nicklas", 4000, "Black");
 
-        player1.setPosition(36);
-        player2.setPosition(4);
-        player3.setPosition(14);
-        player4.setPosition(24);
-        player5.setPosition(34);
+        playerHandler.newSetPosition(player1, 36);
+        playerHandler.newSetPosition(player2, 4);
+        playerHandler.newSetPosition(player3, 14);
+        playerHandler.newSetPosition(player4, 24);
+        playerHandler.newSetPosition(player5, 34);
+
+
 
         playerHandler.nearestFerry(player1);
         assertEquals(5, player1.getPosition());
