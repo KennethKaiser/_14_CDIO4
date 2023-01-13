@@ -1,5 +1,6 @@
 package dtu.controllers;
 
+import dtu.SaveAndLoad.SaveAndLoad;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -68,6 +69,10 @@ public class MenuScreenController {
     ComboBox colorPicker;
     @FXML
     TextField nameInput;
+    @FXML
+    TextField loadInput;
+    @FXML
+    Button loadButton;
 
     int playersAdded;
     String[] playerNamesAdded;
@@ -82,12 +87,15 @@ public class MenuScreenController {
     Button[] buttons;
     int[] numbers;
     boolean isCheat = false;
+    String[] colorsLoaded;
+    Image[] imagesLoaded;
 
 
 
 
     @FXML
     public void initialize() {
+        loadButton.setOnAction(e -> load());
         carImages = new Image[6];
         carImages[0] = image("src/textures/greenCar.png");
         carImages[1] = image("src/textures/blueCar.png");
@@ -183,6 +191,21 @@ public class MenuScreenController {
                 colorPicker.getItems().add(colorDanishfy(colors[i]));
             }
         }
+    }
+    public void load(){
+        SaveAndLoad saveAndLoad = new SaveAndLoad();
+
+
+        if(!loadInput.getText().equals("")){
+            if(saveAndLoad.getSaves() == null){
+                communicator.setText("Der er ingen gemte spil");
+            }
+            else if(saveAndLoad.getSaves().contains(loadInput.getText())){
+                saveAndLoad.load(loadInput.getText());
+            }
+            else communicator.setText("Kan ikke finde et gemt spil med det navn");
+        }
+        else communicator.setText("Du skal skrive et navn til dit load");
     }
     private String colorDanishfy(String color){
         switch (color){
@@ -284,6 +307,11 @@ public class MenuScreenController {
         playersAdded--;
         updateColorPicker();
     }
+
+    public void setCommunicator(Text communicator) {
+        this.communicator = communicator;
+    }
+
     private void moveDown(int playerNumber, String color){
         names[playerNumber-1].setText(names[playerNumber].getText());
         cars[playerNumber-1].setImage(cars[playerNumber].getImage());
@@ -319,39 +347,70 @@ public class MenuScreenController {
                 playerNamesAdded[i] = names[i].getText();
             }
 
-            ControllerHandler.getInstance().switchToBoard();
+            ControllerHandler.getInstance().switchToBoard(false);
         }
 
     }
     public String[] getMenuNames(){
         return playerNamesAdded;
     }
-    public Image[] getMenuCarColorImages(){
-        Image[] carColors = new Image[playersAdded];
-        for(int i = 0; i <carColors.length; i++){
-            carColors[i] = cars[i].getImage();
+    public Image[] getMenuCarColorImages(boolean isLoad){
+        if(isLoad){
+            return  imagesLoaded;
+        }
+        else{
+            Image[] carColors = new Image[playersAdded];
+            for(int i = 0; i <carColors.length; i++){
+                carColors[i] = cars[i].getImage();
+            }
+
+            return carColors;
         }
 
-        return carColors;
     }
-    public String[] getColorNames(){
-        String[] colors = new String[playersAdded];
-        for(int i = 0; i < playersAdded; i++){
-            if(cars[i].getImage() == carImages[0]){
-                colors[i] = "Green";
-            } else if(cars[i].getImage() == carImages[1]){
-                colors[i] = "Blue";
-            } else if(cars[i].getImage() == carImages[2]){
-                colors[i] = "Yellow";
-            } else if(cars[i].getImage() == carImages[3]){
-                colors[i] = "Red";
-            } else if(cars[i].getImage() == carImages[4]){
-                colors[i] = "Orange";
-            } else if(cars[i].getImage() == carImages[5]){
-                colors[i] = "Black";
+    public String[] getColorNames(boolean isLoad){
+        if(!isLoad){
+            String[] colors = new String[playersAdded];
+            for(int i = 0; i < playersAdded; i++){
+                if(cars[i].getImage() == carImages[0]){
+                    colors[i] = "Green";
+                } else if(cars[i].getImage() == carImages[1]){
+                    colors[i] = "Blue";
+                } else if(cars[i].getImage() == carImages[2]){
+                    colors[i] = "Yellow";
+                } else if(cars[i].getImage() == carImages[3]){
+                    colors[i] = "Red";
+                } else if(cars[i].getImage() == carImages[4]){
+                    colors[i] = "Orange";
+                } else if(cars[i].getImage() == carImages[5]){
+                    colors[i] = "Black";
+                }
             }
+            return colors;
         }
-        return colors;
+        else
+        {
+            return colorsLoaded;
+        }
+
+
+    }
+
+    public void loadInfo(String[] colorNames, String[] playerNames, int amount){
+        playersAdded = amount;
+        playerNamesAdded = new String[amount];
+        colorsLoaded = new String[amount];
+        imagesLoaded = new Image[amount];
+        for(int i = 0; i < amount; i++){
+            playerNamesAdded[i] = playerNames[i];
+            colorsLoaded[i] = colorNames[i];
+            imagesLoaded[i] = getCarImage(colorNames[i]);
+        }
+
+        //getMenuAmountOfPlayers - DONE
+        //getMenuNames - DONE
+        //getMenuCarColorImages - DONE
+        //getColorNames - DONE
     }
 
     public int getMenuAmountOfPlayers(){

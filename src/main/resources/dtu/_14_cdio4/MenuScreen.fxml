@@ -172,6 +172,9 @@
       </VBox>
       <HBox alignment="CENTER" prefHeight="52.0" prefWidth="600.0">
          <children>
+            <Button fx:id="loadButton" mnemonicParsing="false" text="Load Save" />
+            <TextField fx:id="loadInput" prefHeight="25.0" prefWidth="122.0" promptText="Save Name" />
+            <HBox prefHeight="51.0" prefWidth="106.0" />
             <Button mnemonicParsing="false" onAction="#startGamePressed" prefHeight="23.0" prefWidth="150.0" text="Start Spil">
                <font>
                   <Font name="Century Gothic" size="12.0" />

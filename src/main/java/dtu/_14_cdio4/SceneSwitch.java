@@ -104,9 +104,9 @@ public class SceneSwitch {
         stage.setMaximized(true);
         stage.setResizable(false);
         stage.show();
-        boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getColorNames());
+        boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getColorNames(false));
         boardController.giveButtonsFunctions();
-        boardController.startCars();
+        boardController.startCars(false);
         boardController.initializeStartPlayerTurn();
         boardController.initCheating();
     }

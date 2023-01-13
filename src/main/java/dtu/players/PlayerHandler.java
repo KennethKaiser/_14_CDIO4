@@ -130,6 +130,10 @@ public class PlayerHandler {
         }
     }
 
+    public void setPlayers(Player[] players) {
+        this.players = players;
+    }
+
     /**
      * Method for checking if player is bankrupt.
      * @param player

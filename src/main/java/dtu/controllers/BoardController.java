@@ -506,9 +506,9 @@ public class BoardController {
         cars[4] = car5;
         cars[5] = car6;
     }
-    public void startCars(){
+    public void startCars(boolean isLoad){
         int amount = ControllerHandler.getInstance().getMenuScreenController().getMenuAmountOfPlayers();
-        Image[] carImages = ControllerHandler.getInstance().getMenuScreenController().getMenuCarColorImages();
+        Image[] carImages = ControllerHandler.getInstance().getMenuScreenController().getMenuCarColorImages(isLoad);
         playerCars = new ImageView[amount];
         for(int car = 0; car < cars.length; car++){
             for(int i = 0; i < fields.length; i++){
@@ -522,9 +522,14 @@ public class BoardController {
             playerCars[i] = cars[i];
             playerCars[i].setImage(carImages[i]);
             ControllerHandler.getInstance().getPlayerViewController().setColorOfPlayer(carImages[i], i);
-            fields[0].getChildren().add(cars[i]);
+            fields[0].getChildren().add(playerCars[i]);
             multipleCars(i, 0);
         }
+    }
+    public void loadCarPosition(int player, int position){
+        fields[0].getChildren().remove(playerCars[player]);
+        fields[position].getChildren().add(playerCars[player]);
+        multipleCars(player, position);
     }
     //endregion
 

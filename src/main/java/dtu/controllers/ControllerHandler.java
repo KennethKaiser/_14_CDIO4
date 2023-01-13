@@ -42,15 +42,25 @@ public class ControllerHandler {
     public void switchToMenu(){
         sceneSwitch.switchToMenu();
     }
-    public void switchToBoard(){
-        board = new Board();
-        sceneSwitch.switchToBoard();
-        playerViewController.updatePlayerName();
-        playerViewController.updatePlayerMoney();
+    public void switchToBoard(boolean isLoad){
+        if(isLoad){
+            sceneSwitch.switchToBoard();
+            playerViewController.updatePlayerName();
+            playerViewController.updatePlayerMoney();
+        }
+        else{
+            board = new Board();
+        }
+    }
+    public void switchToLoadedBoard(){
+
     }
 
     public Board getBoard() {
         return board;
+    }
+    public void setBoard(Board board){
+        this.board = board;
     }
 
     public void showCardOnBoard(Field[] properties, int player){
