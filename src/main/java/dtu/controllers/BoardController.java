@@ -690,7 +690,7 @@ public class BoardController {
             endTurn();
         }
         else if(type.equals("chance")){
-            whatChanceCard();
+            whatChanceCard(field);
         }
         else if(type.equals("tax")){
             whatYourTaxes(field);
@@ -839,8 +839,15 @@ public class BoardController {
 
     }
 
-    public void whatChanceCard(){
+    public void whatChanceCard(Field field){
+        Chance chance = (Chance) field;
 
+        String[] drawnCard = chance.drawCard();
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+
+        //chanceCardFunctionality.chanceCardFunction(Integer.parseInt(drawnCard[0]),currentPlayer);
+
+        communicationController.chanceCardTurn(String cardText, Player player);
 
     }
     //endregion
