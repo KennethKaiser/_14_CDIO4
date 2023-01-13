@@ -23,7 +23,7 @@ public class ChanceCardFunctionality {
             case 1: {
                 //Ejendomsskatten er steget. Ekstraudgifterne er: 800,- pr. hus og 2300,- pr. hotel.
                 int houses = playerHandler.amountOfHouses(playerHandler.getPlayers()[player.getId()]);
-                int hotels = playerHandler.amountOfHouses(playerHandler.getPlayers()[player.getId()]);
+                int hotels = playerHandler.amountOfHotels(playerHandler.getPlayers()[player.getId()]);
                 playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(houses*800));
                 playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(hotels*2300));
                 break;
