@@ -44,12 +44,15 @@ public class ControllerHandler {
     }
     public void switchToBoard(boolean isLoad){
         if(isLoad){
-            sceneSwitch.switchToBoard();
+            sceneSwitch.switchToBoard(true);
             playerViewController.updatePlayerName();
             playerViewController.updatePlayerMoney();
         }
         else{
             board = new Board();
+            sceneSwitch.switchToBoard(false);
+            playerViewController.updatePlayerName();
+            playerViewController.updatePlayerMoney();
         }
     }
     public void switchToLoadedBoard(){

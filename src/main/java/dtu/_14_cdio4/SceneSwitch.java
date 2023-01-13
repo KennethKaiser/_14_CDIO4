@@ -54,38 +54,47 @@ public class SceneSwitch {
         menu = (VBox) fxmlLoader.load();
         menuScreenController = fxmlLoader.getController();
         ControllerHandler.getInstance().setMenuScreenController(menuScreenController);
-        fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Background.fxml"));
-        root = (HBox) fxmlLoader.load();
-        fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PlayerView.fxml"));
-        playerView = (HBox) fxmlLoader.load();
-        playerViewController = fxmlLoader.getController();
-        ControllerHandler.getInstance().setPlayerViewController(playerViewController);
-        fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Board.fxml"));
-        board = (StackPane) fxmlLoader.load();
-        boardController = fxmlLoader.getController();
-        ControllerHandler.getInstance().setBoardController(boardController);
-        fxmlLoader = new FXMLLoader(MainApplication.class.getResource("ChanceCards.fxml"));
-        chanceCards = (StackPane) fxmlLoader.load();
-        chanceCardsController = fxmlLoader.getController();
-        ControllerHandler.getInstance().setChanceCardsController(chanceCardsController);
-        fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PropertyMenu.fxml"));
-        propertyMenu = (StackPane) fxmlLoader.load();
-        propertyMenuController = fxmlLoader.getController();
-        ControllerHandler.getInstance().setPropertyMenuController(propertyMenuController);
-        fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Communication.fxml"));
-        communication = (HBox) fxmlLoader.load();
-        communicationController = fxmlLoader.getController();
-        ControllerHandler.getInstance().setCommunicationController(communicationController);
-        fxmlLoader = new FXMLLoader(MainApplication.class.getResource("TradeMenu.fxml"));
-        tradeMenu = (VBox) fxmlLoader.load();
-        tradingMenuController = fxmlLoader.getController();
-        ControllerHandler.getInstance().setTradingMenuController(tradingMenuController);
-        fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PauseMenu.fxml"));
-        pauseMenu = (StackPane) fxmlLoader.load();
-        pauseMenuController = fxmlLoader.getController();
-        ControllerHandler.getInstance().setPauseMenuController(pauseMenuController);
+    }
+    public void loadNew() {
+        try{
+            FXMLLoader fxmlLoader;
+            fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Background.fxml"));
+            root = (HBox) fxmlLoader.load();
+            fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PlayerView.fxml"));
+            playerView = (HBox) fxmlLoader.load();
+            playerViewController = fxmlLoader.getController();
+            ControllerHandler.getInstance().setPlayerViewController(playerViewController);
+            fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Board.fxml"));
+            board = (StackPane) fxmlLoader.load();
+            boardController = fxmlLoader.getController();
+            ControllerHandler.getInstance().setBoardController(boardController);
+            fxmlLoader = new FXMLLoader(MainApplication.class.getResource("ChanceCards.fxml"));
+            chanceCards = (StackPane) fxmlLoader.load();
+            chanceCardsController = fxmlLoader.getController();
+            ControllerHandler.getInstance().setChanceCardsController(chanceCardsController);
+            fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PropertyMenu.fxml"));
+            propertyMenu = (StackPane) fxmlLoader.load();
+            propertyMenuController = fxmlLoader.getController();
+            ControllerHandler.getInstance().setPropertyMenuController(propertyMenuController);
+            fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Communication.fxml"));
+            communication = (HBox) fxmlLoader.load();
+            communicationController = fxmlLoader.getController();
+            ControllerHandler.getInstance().setCommunicationController(communicationController);
+            fxmlLoader = new FXMLLoader(MainApplication.class.getResource("TradeMenu.fxml"));
+            tradeMenu = (VBox) fxmlLoader.load();
+            tradingMenuController = fxmlLoader.getController();
+            ControllerHandler.getInstance().setTradingMenuController(tradingMenuController);
+            fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PauseMenu.fxml"));
+            pauseMenu = (StackPane) fxmlLoader.load();
+            pauseMenuController = fxmlLoader.getController();
+            ControllerHandler.getInstance().setPauseMenuController(pauseMenuController);
+        } catch (Exception e){
+            System.out.println("Failed To load");
+        }
+
     }
     private void collectBoard(){
+        loadNew();
         showChanceCardPileInMiddle();
         switchToPauseMenu();
         boardController.getMiddleParent().getChildren().add(3, communication);
@@ -99,14 +108,14 @@ public class SceneSwitch {
         stage.setScene(menuScene);
         stage.show();
     }
-    public void switchToBoard(){
+    public void switchToBoard(boolean isLoad){
         stage.setScene(boardScene);
         stage.setMaximized(true);
         stage.setResizable(false);
         stage.show();
-        boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getColorNames(false));
+        boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getColorNames(isLoad));
         boardController.giveButtonsFunctions();
-        boardController.startCars(false);
+        boardController.startCars(isLoad);
         boardController.initializeStartPlayerTurn();
         boardController.initCheating();
     }

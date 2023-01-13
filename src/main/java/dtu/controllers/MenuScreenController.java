@@ -8,11 +8,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public class MenuScreenController {
     @FXML
@@ -73,6 +75,12 @@ public class MenuScreenController {
     TextField loadInput;
     @FXML
     Button loadButton;
+    @FXML
+    VBox savedGamesVBOX;
+    @FXML
+    TextField deleteSaveInput;
+    @FXML
+    Button deleteSaveButton;
 
     int playersAdded;
     String[] playerNamesAdded;
@@ -92,9 +100,23 @@ public class MenuScreenController {
 
 
 
-
     @FXML
     public void initialize() {
+
+        SaveAndLoad saveAndLoad = new SaveAndLoad();
+        if(saveAndLoad.getSaves() == null){
+            savedGamesVBOX.setOpacity(0);
+        }
+        else{
+            ArrayList<String> saves = saveAndLoad.getSaves();
+            savedGamesVBOX.setOpacity(1);
+            for(int i = 0; i < saves.size(); i++){
+                Text newSave = new Text(saves.get(i));
+                newSave.setStyle("-fx-font-size: 15");
+                savedGamesVBOX.getChildren().add(newSave);
+            }
+        }
+        deleteSaveButton.setOnAction(e -> deleteSave());
         loadButton.setOnAction(e -> load());
         carImages = new Image[6];
         carImages[0] = image("src/textures/greenCar.png");
@@ -206,6 +228,23 @@ public class MenuScreenController {
             else communicator.setText("Kan ikke finde et gemt spil med det navn");
         }
         else communicator.setText("Du skal skrive et navn til dit load");
+    }
+
+    public void deleteSave(){
+        if(!deleteSaveInput.getText().equals("")){
+            SaveAndLoad saveAndLoad = new SaveAndLoad();
+            saveAndLoad.delete(deleteSaveInput.getText());
+            savedGamesVBOX.getChildren().clear();
+            ArrayList<String> saves = saveAndLoad.getSaves();
+            savedGamesVBOX.setOpacity(1);
+            if(saves != null){
+                for(int i = 0; i < saves.size(); i++){
+                    Text newSave = new Text(saves.get(i));
+                    newSave.setStyle("-fx-font-size: 15");
+                    savedGamesVBOX.getChildren().add(newSave);
+                }
+            }
+        }
     }
     private String colorDanishfy(String color){
         switch (color){
@@ -346,7 +385,7 @@ public class MenuScreenController {
                 playerColorsAdded[i] = cars[i].getImage();
                 playerNamesAdded[i] = names[i].getText();
             }
-
+            System.out.println("Check - Startgame is pressed and switches to board");
             ControllerHandler.getInstance().switchToBoard(false);
         }
 
@@ -417,6 +456,7 @@ public class MenuScreenController {
         return playersAdded;
     }
     private void cheat(){
+        playersAdded = 0;
         for(int i = 0; i < 6; i++){
             playersAdded++;
             names[i].setText("Spiller " + (i+1));
