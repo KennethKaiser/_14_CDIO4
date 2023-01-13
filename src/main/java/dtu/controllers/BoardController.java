@@ -2,6 +2,8 @@ package dtu.controllers;
 
 import dtu.board.*;
 
+import dtu.chancecard.ChanceCardDeck;
+import dtu.chancecard.ChanceCardFunctionality;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
@@ -34,6 +36,8 @@ public class BoardController {
 
 
     //Model variables
+    ChanceCardDeck chanceCardDeck = new ChanceCardDeck();
+    ChanceCardFunctionality chanceCardFunctionality = new ChanceCardFunctionality();
     RaffleCup dice = new RaffleCup();
     PlayerHandler playerHandler = new PlayerHandler();
 
@@ -359,6 +363,7 @@ public class BoardController {
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
         initTradeMenu();
+        initializeChanceCardDeck();
     }
 
     //region delegate model objects to other controller
@@ -683,7 +688,7 @@ public class BoardController {
             endTurn();
         }
         else if(type.equals("chance")){
-            endTurn();
+            whatChanceCard();
         }
         else if(type.equals("tax")){
             whatYourTaxes(field);
@@ -824,6 +829,20 @@ public class BoardController {
 
 
     }
+
+    //region chancecard
+
+    public void initializeChanceCardDeck(){
+        chanceCardFunctionality.setPlayerHandler(playerHandler);
+
+    }
+
+    public void whatChanceCard(){
+
+
+    }
+    //endregion
+
 
     //region prison
 
