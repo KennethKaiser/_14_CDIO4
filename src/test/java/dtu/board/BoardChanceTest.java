@@ -27,7 +27,7 @@ class BoardChanceTest {
         String card;
         ChanceCardDeck chanceCardDeck = new ChanceCardDeck();
         Chance chance = new Chance();
-        card = chance.getChanceCardDeck().getDeck()[0];
+        card = chance.getChanceCardDeck().getDeck().get(0)[1];
 
         //Tester at kortet der trækkes er det første i bunken
         assertEquals(card, chance.drawCard(),"Expect Chance to draw card: "+ card +". Chance draws card: "+chance.drawCard());

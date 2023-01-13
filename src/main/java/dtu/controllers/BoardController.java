@@ -34,6 +34,8 @@ public class BoardController {
     PlayerViewController playerViewController = ControllerHandler.getInstance().getPlayerViewController();
     CommunicationController communicationController;
 
+    ChanceCardsController chanceCardsController = ControllerHandler.getInstance().getChanceCardsController();
+
 
     //Model variables
     ChanceCardDeck chanceCardDeck = new ChanceCardDeck();
