@@ -52,7 +52,7 @@ public class PauseMenuController {
     }
     public void deleteSave(){
         if(!deleteInput.getText().equals("")){
-            saveAndLoad.delete(saveInput.getText());
+            saveAndLoad.delete(deleteInput.getText());
         }
         else sendText("Du skal skrive et navn til dit save");
     }

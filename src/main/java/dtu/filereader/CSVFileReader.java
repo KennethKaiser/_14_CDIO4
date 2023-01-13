@@ -41,7 +41,7 @@ public class CSVFileReader {
         return colData;
     }
     public ArrayList<String[]> getSavedGame(String name){
-        ArrayList<String[]> allData = readCSV("src/main/java/dtu/SaveAndLoad/SavedGames.csv", ";");
+        ArrayList<String[]> allData = readCSV("src/main/java/dtu/SaveAndLoad/savedGames.csv", ";");
         ArrayList<String[]> saveData = null;
         for(int i = 0; i < allData.size(); i++){
             if(allData.get(i)[0].equals("NEXT_LOAD")){
@@ -63,7 +63,6 @@ public class CSVFileReader {
             }
         }
         if(saveData == null) {
-            System.out.println("No save with that name");
             return null;
         }
         else return saveData;
@@ -73,9 +72,9 @@ public class CSVFileReader {
     }
     public void saveGame(ArrayList<String[]> newSaveData, String name){
         try{
-            FileWriter writer = new FileWriter("src/main/java/dtu/SaveAndLoad/SavedGames.csv");
-
-            ArrayList<String[]> allData = readCSV("src/main/java/dtu/SaveAndLoad/SavedGames.csv", ";");
+            ArrayList<String[]> allData = readCSV("src/main/java/dtu/SaveAndLoad/savedGames.csv", ";");
+            FileWriter writer = new FileWriter("src/main/java/dtu/SaveAndLoad/savedGames.csv");
+            BufferedWriter bw = new BufferedWriter(writer);
             boolean foundName = false;
             for(int i = 0; i < allData.size(); i++){ //Deletes Current Version
                 if(allData.get(i)[0].equals("NEXT_LOAD")){
@@ -98,31 +97,36 @@ public class CSVFileReader {
                     }
                 }
             }//Deletes Current Version
-            if(foundName) System.out.println("Found and updated old file with this save name");
-            else System.out.println("Did not find a save with this name, creating new save");
-            allData.remove(allData.size()-1);
+            if(allData.size()>0) allData.remove(allData.size()-1);
             for(int i = 0; i < allData.size(); i++){ //Writes old data
                 String line = "";
                 for(int n = 0; n < allData.get(i).length; n++){
                     line += allData.get(i)[n] + ";";
                 }
-                writer.write(line);
+                bw.write(line);
+                bw.newLine();
             } //Writes old data
-            writer.write("NEXT_LOAD;" + name + ";"); //Starts new Save data
+            bw.write("NEXT_LOAD;" + name + ";"); //Starts new Save data
+            bw.newLine();
             for(int i = 0; i < newSaveData.size(); i++){ //Writes new Save data
                 String line = "";
                 for(int n = 0; n < newSaveData.get(i).length; n++){
                     line += newSaveData.get(i)[n] + ";";
                 }
-                writer.write(line);
+                bw.write(line);
+                bw.newLine();
             }
-            writer.write("END");
-        }catch (Exception e){
-            System.out.println("File not found");
-        }
+            bw.write("END");
+            bw.newLine();
+            bw.close();
+        } catch (FileNotFoundException ex) {
+        ex.printStackTrace();
+    } catch (IOException ex2) {
+        ex2.printStackTrace();
+    }
     }
     public ArrayList<String> getSaves(){
-        ArrayList<String[]> allData = readCSV("src/main/java/dtu/SaveAndLoad/SavedGames.csv", ";");
+        ArrayList<String[]> allData = readCSV("src/main/java/dtu/SaveAndLoad/savedGames.csv", ";");
         ArrayList<String> names = null;
         for(int i = 0; i < allData.size(); i++){ //Saves names
             if(allData.get(i)[0].equals("NEXT_LOAD")){
@@ -134,7 +138,7 @@ public class CSVFileReader {
     }
     public boolean deleteSave(String name){
 
-        ArrayList<String[]> allData = readCSV("src/main/java/dtu/SaveAndLoad/SavedGames.csv", ";");
+        ArrayList<String[]> allData = readCSV("src/main/java/dtu/SaveAndLoad/savedGames.csv", ";");
         boolean found = false;
         for(int i = 0; i < allData.size(); i++){ //Deletes Current Version
             if(allData.get(i)[0].equals("NEXT_LOAD")){
@@ -146,6 +150,7 @@ public class CSVFileReader {
                             break;
                         }
                         else if(allData.get(n)[0].equals("END")){
+                            allData.remove(n);
                             break;
                         }
                         else{
@@ -157,6 +162,27 @@ public class CSVFileReader {
                 }
             }
         }//Deletes Current Version
+        try{
+            FileWriter writer = new FileWriter("src/main/java/dtu/SaveAndLoad/savedGames.csv");
+            BufferedWriter bw = new BufferedWriter(writer);
+
+
+            for(int i = 0; i < allData.size(); i++){ //Writes new Save data
+                String line = "";
+                for(int n = 0; n < allData.get(i).length; n++){
+                    line += allData.get(i)[n] + ";";
+                }
+                bw.write(line);
+                bw.newLine();
+            }
+            bw.close();
+
+        } catch (FileNotFoundException ex) {
+        ex.printStackTrace();
+        } catch (IOException ex2) {
+        ex2.printStackTrace();
+        }
+
         return found;
     }
     public ArrayList<String[]> getChancecarddesc() {

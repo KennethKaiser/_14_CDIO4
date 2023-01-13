@@ -86,7 +86,7 @@ public class SceneSwitch {
         ControllerHandler.getInstance().setPauseMenuController(pauseMenuController);
     }
     private void collectBoard(){
-        showChanceCardPileInMiddle();
+        switchToPauseMenu();
         boardController.getMiddleParent().getChildren().add(4, communication);
         playerView.getChildren().add(1, board);
         root.getChildren().add(playerView);
