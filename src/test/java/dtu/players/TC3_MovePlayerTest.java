@@ -1,8 +1,5 @@
 package dtu.players;
 
-import dtu.board.PropertyHandler;
-import dtu.players.Player;
-import dtu.players.PlayerHandler;
 import org.junit.jupiter.api.Test;
 
 
