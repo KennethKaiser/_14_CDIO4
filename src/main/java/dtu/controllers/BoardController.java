@@ -34,7 +34,7 @@ public class BoardController {
     PlayerViewController playerViewController = ControllerHandler.getInstance().getPlayerViewController();
     CommunicationController communicationController;
 
-    ChanceCardsController chanceCardsController = ControllerHandler.getInstance().getChanceCardsController();
+
 
 
     //Model variables
@@ -845,9 +845,9 @@ public class BoardController {
         String[] drawnCard = chance.drawCard();
         Player currentPlayer = playerHandler.getCurrentPlayer();
 
-        //chanceCardFunctionality.chanceCardFunction(Integer.parseInt(drawnCard[0]),currentPlayer);
+        chanceCardFunctionality.chanceCardFunction(Integer.parseInt(drawnCard[0]),currentPlayer);
 
-        communicationController.chanceCardTurn(String cardText, Player player);
+        communicationController.chanceCardTurn(drawnCard[1]);
 
     }
     //endregion

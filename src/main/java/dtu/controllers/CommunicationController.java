@@ -17,6 +17,8 @@ public class CommunicationController {
     BoardController boardController = ControllerHandler.controllerHandler.getBoardController();
     PlayerViewController playerViewController = ControllerHandler.getInstance().getPlayerViewController();
 
+    ChanceCardsController chanceCardsController = ControllerHandler.getInstance().getChanceCardsController();
+
     //region FXML
     @FXML
     Button choice1;
@@ -479,6 +481,22 @@ public class CommunicationController {
     //endregion
 
     //region
+    public void chanceCardTurn(String cardText){
+
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+
+        String textField = cardText;
+
+        chanceCardsController.showChanceCard(cardText,"Prøv lykken");
+
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.updateAfterChanceCard());
+
+    }
     //endregion
 
     private void rollDice(){
