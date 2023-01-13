@@ -122,7 +122,6 @@ class TC3_MovePlayerTest {
      */
     @Test
     void testNearestFerry() {
-        PropertyHandler propertyHandler = new PropertyHandler();
 
         Player player1 = new Player(0, "Nicklas", 4000, "Black");
         Player player2 = new Player(1, "Nicklas", 4000, "Black");
