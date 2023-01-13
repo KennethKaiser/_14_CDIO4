@@ -850,6 +850,19 @@ public class BoardController {
         communicationController.chanceCardTurn(drawnCard[1]);
 
     }
+
+    public void updateAfterChanceCard(){
+        playerViewController.updatePlayerMoney();
+
+        if(chanceCardFunctionality.isDidPlayerMove()){
+            chanceCardFunctionality.setDidPlayerMove(false);
+            turnMove();
+        }
+
+        endTurn();
+
+    }
+
     //endregion
 
 

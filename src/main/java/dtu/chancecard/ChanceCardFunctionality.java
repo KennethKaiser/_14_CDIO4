@@ -10,6 +10,8 @@ import java.util.ArrayList;
 public class ChanceCardFunctionality {
     PlayerHandler playerHandler;
 
+    private boolean didPlayerMove = false;
+
     public String chanceCardFunction(int id, Player player) {
         switch (id) {
             case 0: {
@@ -147,71 +149,85 @@ public class ChanceCardFunctionality {
             case 28: {
                 //Ryk frem til START
                 playerHandler.movePlayerChanceCard(player, 0);
+                didPlayerMove = true;
                 break;
             }
             case 29: {
                 //Ryk frem til START
                 playerHandler.movePlayerChanceCard(player, 0);
+                didPlayerMove = true;
                 break;
             }
             case 30: {
                 //Ryk tre felter frem
                 playerHandler.movePlayer(player, 3);
+                didPlayerMove = true;
                 break;
             }
             case 31: {
                 //Ryk tre felter tilbage
                 playerHandler.movePlayer(player, -3);
+                didPlayerMove = true;
                 break;
             }
             case 32: {
                 ////Ryk tre felter tilbage
                 playerHandler.movePlayer(player, -3);
+                didPlayerMove = true;
                 break;
             }
             case 33: {
                 //Ryk frem til Frederiksberg Allé. Hvis De passere START  indkasser da 4000 kr.
                 playerHandler.movePlayerChanceCard(player, 11);
+                didPlayerMove = true;
                 break;
             }
             case 34: {
                 //Ryk frem til det nærmeste rederi og betal ejeren to gange den leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
                 playerHandler.nearestFerry(player);
+                didPlayerMove = true;
                 break;
             }
             case 35: {
                 //Ryk frem til det nærmeste rederi og betal ejeren to gange den leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
                 playerHandler.nearestFerry(player);
+                didPlayerMove = true;
                 break;
             }
             case 36: {
                 //Tag med Mols-Linien flyt brikken frem og hvis De passerer START indkassér da 4000,-.
                 playerHandler.movePlayerChanceCard(player, 15);
+                didPlayerMove = true;
                 break;
             }
             case 37: {
                 //Ryk frem til Grønningen hvis De passerer START indkasser da 4000,-.
                 playerHandler.movePlayerChanceCard(player, 24);
+                didPlayerMove = true;
                 break;
             }
             case 38: {
                 //Ryk frem til Vimmelskaftet hvis de passerer START indkasser da 4000,-.
                 playerHandler.movePlayerChanceCard(player, 32);
+                didPlayerMove = true;
                 break;
             }
             case 39: {
                 //Tag med den nærmeste færge. Hvis de passerer START indkasser da 4000,-.
                 playerHandler.nearestFerry(player);
+                didPlayerMove = true;
                 break;
             }
             case 40: {
                 //Ryk frem til Strandvejen. Hvis De passere START  indkasser da 4000,-.
                 playerHandler.movePlayerChanceCard(player, 19);
+                didPlayerMove = true;
                 break;
             }
             case 41: {
                 //Tag til Rådhuspladsen
                 playerHandler.movePlayerChanceCard(player, 39);
+                didPlayerMove = true;
                 break;
             }
             case 42: {
@@ -239,6 +255,14 @@ public class ChanceCardFunctionality {
 
     public void setPlayerHandler(PlayerHandler playerHandler) {
         this.playerHandler = playerHandler;
+    }
+
+    public boolean isDidPlayerMove() {
+        return didPlayerMove;
+    }
+
+    public void setDidPlayerMove(boolean didPlayerMove) {
+        this.didPlayerMove = didPlayerMove;
     }
 }
 
