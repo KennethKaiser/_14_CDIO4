@@ -494,9 +494,18 @@ public class CommunicationController {
 
         showCommunicationBox(textField, choiceOptions);
 
-        choices[0].setOnAction(e -> boardController.updateAfterChanceCard());
+        choices[0].setOnAction(e -> removerOfChanceCard());
 
     }
+
+    public void removerOfChanceCard(){
+
+        chanceCardsController.hideChanceCard();
+        boardController.updateAfterChanceCard();
+
+    }
+
+
     //endregion
 
     private void rollDice(){
