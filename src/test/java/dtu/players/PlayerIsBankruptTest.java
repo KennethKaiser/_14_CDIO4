@@ -4,6 +4,7 @@ import dtu.board.Board;
 import dtu.board.Field;
 import dtu.board.FieldProperty;
 import dtu.board.Property;
+import dtu.controllers.ControllerHandler;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -34,5 +35,34 @@ class PlayerIsBankruptTest {
         playerHandler.playerIsBankrupt(playerHandler.getPlayers()[0]);
         assertEquals(false, playerHandler.getPlayers()[0].isBankrupt());
     }
+
+    @Test
+    void playerIsBankruptTest2() {
+        //ArrayList<Field> properties = new ArrayList<>();
+        PlayerHandler playerHandler = new PlayerHandler();
+        Board board = new Board();
+        //Player player = new Player(0, "test0", 4000, "black");
+
+        playerHandler.initializePlayers(4);
+        playerHandler.initializePlayerInPlayers(0, "Test1", 4000, "black");
+        playerHandler.initializePlayerInPlayers(1, "Test2", 4000, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Test3", 4000, "red");
+        playerHandler.initializePlayerInPlayers(3, "Test4", 4000, "green");
+
+        FieldProperty fieldProperty1 = (FieldProperty) board.getCurrentBoard()[1];
+        fieldProperty1.buy(playerHandler.getPlayers()[0]);
+        fieldProperty1.setBuildings(3);
+        FieldProperty fieldProperty34 = (FieldProperty) board.getCurrentBoard()[34];
+        fieldProperty34.buy(playerHandler.getPlayers()[0]);
+        fieldProperty34.setBuildings(3);
+
+        System.out.println(playerHandler.getPlayers()[0].getProperties().size());
+
+        playerHandler.playerIsBankrupt(playerHandler.getPlayers()[0]);
+
+
+    }
 }
+
+
 

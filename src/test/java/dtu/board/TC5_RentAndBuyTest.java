@@ -3,6 +3,7 @@ package dtu.board;
 import dtu.board.FieldProperty;
 import dtu.board.Board;
 import dtu.controllers.BoardController;
+import dtu.controllers.ControllerHandler;
 import dtu.players.PlayerHandler;
 import org.junit.jupiter.api.Test;
 
@@ -99,6 +100,7 @@ class TC5_RentAndBuyTest {
         BoardController boardController = new BoardController();
         Board board = new Board();
         PlayerHandler playerHandler = new PlayerHandler();
+        HousingLogic housingLogic = new HousingLogic();
         //Expected
         int lost = START_MONEY - (RENT * 2);
         int gained = (START_MONEY - (PRICE * 2)) + (RENT * 2);
@@ -113,7 +115,7 @@ class TC5_RentAndBuyTest {
         FieldProperty fieldProperty2 = (FieldProperty) board.getCurrentBoard()[3];
         fieldProperty1.buy(playerHandler.getPlayers()[0]);
         fieldProperty2.buy(playerHandler.getPlayers()[0]);
-        fieldProperty1.rent(playerHandler.getPlayers()[1], fieldProperty1.getProperty().getRentNormal());
+        fieldProperty1.rent(playerHandler.getPlayers()[1], fieldProperty1.findActiveRent());
 
 
         //Tester at den ene spiller mistede penge og den anden fik
@@ -278,6 +280,7 @@ class TC5_RentAndBuyTest {
         int RENT = 250;
         final int START_MONEY = 4000;
         final int PRICE = 1200;
+        ControllerHandler controllerHandler = new ControllerHandler();
         BoardController boardController = new BoardController();
         Board board = new Board();
         PlayerHandler playerHandler = new PlayerHandler();
@@ -293,7 +296,8 @@ class TC5_RentAndBuyTest {
         FieldProperty fieldProperty1 = (FieldProperty) board.getCurrentBoard()[1];
         fieldProperty1.buy(playerHandler.getPlayers()[0]);
         //Spiller1 skal nu sætte property til pledge
-        fieldProperty1.rent(playerHandler.getPlayers()[1], fieldProperty1.getProperty().getRent1House());
+        fieldProperty1.setPledgeState(true);
+        fieldProperty1.rent(playerHandler.getPlayers()[1], fieldProperty1.findActiveRent());
 
 
         //Tester at den ene spiller mistede penge og den anden fik

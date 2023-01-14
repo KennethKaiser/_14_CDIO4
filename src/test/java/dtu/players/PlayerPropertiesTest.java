@@ -3,7 +3,6 @@ package dtu.players;
 import dtu.board.Board;
 import dtu.board.Field;
 import dtu.board.FieldProperty;
-import dtu.board.PropertyHandler;
 import dtu.chancecard.ChanceCardFunctionality;
 import org.junit.jupiter.api.Test;
 
