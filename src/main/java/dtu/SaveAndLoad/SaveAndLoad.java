@@ -194,6 +194,7 @@ public class SaveAndLoad {
                     if(fields.get(i)[2].equals("true")) ((FieldProperty)board.getCurrentBoard()[i]).setPledgeState(true); //PledgeState
                     else if(fields.get(i)[2].equals("false")) ((FieldProperty)board.getCurrentBoard()[i]).setPledgeState(false);
                     ((FieldProperty)board.getCurrentBoard()[i]).setBuildings(parseInt(fields.get(i)[3])); //Amount of buildings
+                    ControllerHandler.getInstance().getBoardController().setHousesOn(parseInt(fields.get(i)[3]), i);
                     break;
                 case "2": //ferry
                     if(!fields.get(i)[1].equals("null")) {
@@ -239,8 +240,10 @@ public class SaveAndLoad {
 
         }
         ControllerHandler.getInstance().getPlayerViewController().updatePlayerMoney();
+        ControllerHandler.getInstance().getPlayerViewController().removePlayerBankruptOnLoad();
         ControllerHandler.getInstance().getPlayerViewController().updatePlayerTurn();
         ControllerHandler.getInstance().getCommunicationController().playerTurnStart(playerHandler.getCurrentPlayer().getName());
+
         return true;
     }
     private void stopper(ArrayList<String[]> list, String text){

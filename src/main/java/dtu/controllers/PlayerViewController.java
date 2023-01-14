@@ -1103,8 +1103,13 @@ public class PlayerViewController {
             }
         }
         else System.out.println("Player is already removed");
-
-
+    }
+    public void removePlayerBankruptOnLoad(){
+        for(int i = 0; i < playerHandler.getPlayers().length; i++){
+            if(playerHandler.getPlayers()[i].getMoney() < 0){
+                removePlayerFromPlayerView(i);
+            }
+        }
     }
 
     //endregion

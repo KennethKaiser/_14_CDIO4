@@ -96,7 +96,6 @@ public class SceneSwitch {
     private void collectBoard(){
         loadNew();
         showChanceCardPileInMiddle();
-        switchToPauseMenu();
         boardController.getMiddleParent().getChildren().add(3, communication);
         playerView.getChildren().add(1, board);
         root.getChildren().add(playerView);
@@ -129,10 +128,12 @@ public class SceneSwitch {
         boardController.getMiddleMenuVBox().getChildren().add(chanceCards);
     }
     public void switchToPauseMenu(){
-        boardController.getMiddleMenuVBox().getChildren().add(pauseMenu);
+        if(!boardController.getMiddleParent().getChildren().contains(pauseMenu)){
+            boardController.getMiddleParent().getChildren().add(pauseMenu);
+        }
     }
     public void removePauseMenu(){
-        boardController.getMiddleMenuVBox().getChildren().remove(pauseMenu);
+        boardController.getMiddleParent().getChildren().remove(pauseMenu);
     }
     public void showTradingMenu(){
         System.out.println("Switching to trade Menu");

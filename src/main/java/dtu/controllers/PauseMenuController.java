@@ -28,7 +28,11 @@ public class PauseMenuController {
     }
     public void saveAs(){
         if(!saveInput.getText().equals("")){
-            saveAndLoad.saveAs(saveInput.getText());
+            if(saveInput.getText().equals("CHEAT")){
+                ControllerHandler.getInstance().getMenuScreenController().setIsCheating(true);
+                ControllerHandler.getInstance().getBoardController().initCheating();
+            }
+            else saveAndLoad.saveAs(saveInput.getText());
         }
         else sendText("Du skal skrive et navn til dit save");
     }

@@ -886,6 +886,7 @@
                                           <Insets top="-2.0" />
                                        </padding>
                                     </HBox>
+                                    <Button fx:id="pauseButton" layoutX="-1.0" layoutY="2.0" mnemonicParsing="false" text="Pause" />
                                           </children>
                                       </AnchorPane>
                            </children>
@@ -909,7 +910,7 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
                                  <children>
-                                    <ImageView fx:id="houseYellow" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="houseYellow1" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/houseNulIcon.png" />
                                        </image>

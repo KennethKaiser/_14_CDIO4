@@ -344,6 +344,9 @@ public class BoardController {
     Button cheatMoneyButton;
     @FXML
     Button cheatMoveButton;
+
+    @FXML
+    Button pauseButton;
     //endregion
 
     //Methods:
@@ -359,6 +362,7 @@ public class BoardController {
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
         initTradeMenu();
+        pauseButton.setOnAction(e -> ControllerHandler.getInstance().getSceneSwitch().switchToPauseMenu());
     }
 
     //region delegate model objects to other controller
@@ -527,9 +531,12 @@ public class BoardController {
         }
     }
     public void loadCarPosition(int player, int position){
-        fields[0].getChildren().remove(playerCars[player]);
-        fields[position].getChildren().add(playerCars[player]);
-        multipleCars(player, position);
+        if(playerHandler.getPlayers()[player].getMoney() > 0){
+            fields[0].getChildren().remove(playerCars[player]);
+            fields[position].getChildren().add(playerCars[player]);
+            multipleCars(player, position);
+        }
+
     }
     //endregion
 
@@ -938,11 +945,8 @@ public class BoardController {
         }else{
             communicationController.playerTurnStart(playerName);
         }
-
-
-
-
     }
+
 
 
     public void buyOrRentCheckerProperty(Field field){
@@ -1169,6 +1173,8 @@ public class BoardController {
     //region cheating
     public void initCheating(){
         if(ControllerHandler.getInstance().getMenuScreenController().getIsCheating()){
+            cheatBox.getChildren().addAll(cheatDropDown, cheatInput ,cheatFieldButton, cheatMoneyButton, cheatMoveButton);
+            System.out.println("Engaging");
             cheatDropDown.getItems().addAll("Spiller 1", "Spiller 2", "Spiller 3", "Spiller 4", "Spiller 5", "Spiller 6");
             cheatFieldButton.setOnAction(e -> cheatAddField());
             cheatMoneyButton.setOnAction(e -> cheatAddMoney());
@@ -1176,6 +1182,7 @@ public class BoardController {
             System.out.println("Cheating Engaged");
         }
         else{
+            System.out.println("Clearing cheat");
             cheatBox.getChildren().clear();
         }
     }

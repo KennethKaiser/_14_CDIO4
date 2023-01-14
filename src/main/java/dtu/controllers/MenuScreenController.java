@@ -81,6 +81,9 @@ public class MenuScreenController {
     TextField deleteSaveInput;
     @FXML
     Button deleteSaveButton;
+    @FXML
+    VBox savedHolder;
+
 
     int playersAdded;
     String[] playerNamesAdded;
@@ -104,12 +107,13 @@ public class MenuScreenController {
     public void initialize() {
 
         SaveAndLoad saveAndLoad = new SaveAndLoad();
-        if(saveAndLoad.getSaves() == null){
-            savedGamesVBOX.setOpacity(0);
+        ArrayList<String> saves = saveAndLoad.getSaves();
+        if(saves == null){
+            savedHolder.setOpacity(0);
         }
         else{
-            ArrayList<String> saves = saveAndLoad.getSaves();
-            savedGamesVBOX.setOpacity(1);
+
+            savedHolder.setOpacity(1);
             for(int i = 0; i < saves.size(); i++){
                 Text newSave = new Text(saves.get(i));
                 newSave.setStyle("-fx-font-size: 15");
@@ -236,13 +240,18 @@ public class MenuScreenController {
             saveAndLoad.delete(deleteSaveInput.getText());
             savedGamesVBOX.getChildren().clear();
             ArrayList<String> saves = saveAndLoad.getSaves();
-            savedGamesVBOX.setOpacity(1);
             if(saves != null){
                 for(int i = 0; i < saves.size(); i++){
                     Text newSave = new Text(saves.get(i));
                     newSave.setStyle("-fx-font-size: 15");
                     savedGamesVBOX.getChildren().add(newSave);
                 }
+                savedHolder.setOpacity(1);
+
+            }
+            else{
+                savedHolder.setOpacity(0);
+
             }
         }
     }
@@ -469,6 +478,9 @@ public class MenuScreenController {
     }
     public boolean getIsCheating(){
         return  isCheat;
+    }
+    public void setIsCheating(boolean cheat){
+        this.isCheat = cheat;
     }
 
 }

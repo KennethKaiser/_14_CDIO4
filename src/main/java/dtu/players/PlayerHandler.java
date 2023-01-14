@@ -1,8 +1,6 @@
 package dtu.players;
 
-import dtu.board.Board;
-import dtu.board.Field;
-import dtu.board.FieldProperty;
+import dtu.board.*;
 import dtu.controllers.ControllerHandler;
 
 import java.util.ArrayList;
@@ -142,9 +140,7 @@ public class PlayerHandler {
         if (player.getMoney() < 0){
             player.setBankrupt(true);
             playerIsBankrupt(player);
-
         }
-
     }
 
 
@@ -158,11 +154,22 @@ public class PlayerHandler {
                 ((FieldProperty)player.getProperties().get(i)).setOwner(null);
                 ((FieldProperty)player.getProperties().get(i)).setOwned(false);
                 ((FieldProperty)player.getProperties().get(i)).setBuildings(0);
+                ((FieldProperty)player.getProperties().get(i)).setPledgeState(false);
+
                 if(((FieldProperty)player.getProperties().get(i)).getProperty().getFamilie() <9){
                     ControllerHandler.getInstance().getBoardController().setHousesOn(0, ((FieldProperty)player.getProperties().get(i)).getProperty().getID());
                 }
-        }
-
+            }
+            for(int i = 0; i < player.getFerries().size(); i++){
+                ((FerryField)player.getFerries().get(i)).setOwner(null);
+                ((FerryField)player.getFerries().get(i)).setOwned(false);
+                ((FerryField)player.getFerries().get(i)).setPledgeState(false);
+            }
+            for(int i = 0; i < player.getBreweries().size(); i++){
+                ((BreweryField)player.getBreweries().get(i)).setOwner(null);
+                ((BreweryField)player.getBreweries().get(i)).setOwned(false);
+                ((BreweryField)player.getBreweries().get(i)).setPledgeState(false);
+            }
         }
     }
 

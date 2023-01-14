@@ -28,13 +28,13 @@
          </font></Text>
       <HBox alignment="CENTER" prefHeight="68.0" prefWidth="1500.0" spacing="10.0">
          <children>
-            <TextField fx:id="nameInput" prefWidth="200.0" promptText="Spiller navn">
+            <TextField fx:id="nameInput" prefHeight="23.0" prefWidth="275.0" promptText="Spiller navn">
                <font>
                   <Font name="Century Gothic" size="12.0" />
                </font>
             </TextField>
-            <ComboBox fx:id="colorPicker" prefWidth="150.0" promptText="Vælg Farve" />
-            <Button mnemonicParsing="false" onAction="#addPlayerPressed" text="Tilføj Spiller">
+            <ComboBox fx:id="colorPicker" prefHeight="25.0" prefWidth="147.0" promptText="Vælg Farve" />
+            <Button mnemonicParsing="false" onAction="#addPlayerPressed" prefHeight="23.0" prefWidth="136.0" text="Tilføj Spiller">
                <font>
                   <Font name="Century Gothic" size="12.0" />
                </font>
@@ -49,7 +49,7 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <VBox prefHeight="200.0" prefWidth="200.0">
+            <VBox fx:id="savedHolder" prefHeight="200.0" prefWidth="200.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Saved Games:" wrappingWidth="199.13671875">
                      <font>
@@ -196,7 +196,7 @@
             <HBox layoutX="829.0" layoutY="10.0" prefHeight="52.0" prefWidth="21.0" />
             <Button fx:id="loadButton" mnemonicParsing="false" text="Load Save" />
             <TextField fx:id="loadInput" prefHeight="25.0" prefWidth="122.0" promptText="Save Name" />
-            <HBox prefHeight="51.0" prefWidth="106.0" />
+            <HBox layoutX="679.0" layoutY="10.0" prefHeight="52.0" prefWidth="21.0" />
             <Button mnemonicParsing="false" onAction="#startGamePressed" prefHeight="23.0" prefWidth="150.0" text="Start Spil">
                <font>
                   <Font name="Century Gothic" size="12.0" />
