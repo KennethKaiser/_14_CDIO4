@@ -25,10 +25,10 @@ public class CSVFileReader {
         ArrayList<String[]> colData = new ArrayList<>();
 
         try
-        {   FileReader read = new FileReader(filepath);
-
-              BufferedReader bRead = new BufferedReader(read);
-            while((currentLine = bRead.readLine()) != null)
+        {
+            FileReader read = new FileReader(filepath);
+            BufferedReader bread = new BufferedReader(read);
+            while((currentLine = bread.readLine()) != null)
             {
                 data = currentLine.split(delimiter);
                 colData.add(data);

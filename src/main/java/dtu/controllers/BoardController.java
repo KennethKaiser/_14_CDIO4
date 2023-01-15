@@ -2,6 +2,8 @@ package dtu.controllers;
 
 import dtu.board.*;
 
+import dtu.chancecard.ChanceCardDeck;
+import dtu.chancecard.ChanceCardFunctionality;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
@@ -33,7 +35,11 @@ public class BoardController {
     CommunicationController communicationController;
 
 
+
+
     //Model variables
+    ChanceCardDeck chanceCardDeck = new ChanceCardDeck();
+    ChanceCardFunctionality chanceCardFunctionality = new ChanceCardFunctionality();
     RaffleCup dice = new RaffleCup();
     PlayerHandler playerHandler = new PlayerHandler();
 
@@ -362,7 +368,6 @@ public class BoardController {
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
         initTradeMenu();
-        pauseButton.setOnAction(e -> ControllerHandler.getInstance().getSceneSwitch().switchToPauseMenu());
     }
 
     //region delegate model objects to other controller
@@ -695,7 +700,7 @@ public class BoardController {
             endTurn();
         }
         else if(type.equals("chance")){
-            endTurn();
+            whatChanceCard(field);
         }
         else if(type.equals("tax")){
             whatYourTaxes(field);
@@ -837,11 +842,51 @@ public class BoardController {
 
     }
 
+    //region chancecard
+
+    public void initializeChanceCardDeck(){
+        chanceCardFunctionality.setPlayerHandler(playerHandler);
+
+    }
+
+    public void whatChanceCard(Field field){
+        Chance chance = (Chance) field;
+
+        String[] drawnCard = chance.drawCard();
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+
+        chanceCardFunctionality.chanceCardFunction(Integer.parseInt(drawnCard[0]),currentPlayer);
+
+        communicationController.chanceCardTurn(drawnCard[1]);
+
+    }
+
+    public void updateAfterChanceCard(){
+        playerViewController.updatePlayerMoney();
+
+        if(chanceCardFunctionality.isDidPlayerMove()){
+            chanceCardFunctionality.setDidPlayerMove(false);
+            turnMove();
+        }
+        else{
+            endTurn();
+        }
+
+
+
+    }
+
+    //endregion
+
+
     //region prison
 
     public void rollDoublePrison(){
         int[] ourRoll = dice.roll();
         rollDiceAnimation(ourRoll[0], ourRoll[1]);
+        dice.rolledDouble();
+
+
         playerHandler.getCurrentPlayer().setJailTurns(playerHandler.getCurrentPlayer().getJailTurns()+1);
 
         if(dice.isRolledDouble()){
@@ -879,6 +924,10 @@ public class BoardController {
 
 
     public void useGetOutOfJailCard(){
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+        currentPlayer.setJail(false);
+        currentPlayer.setGetOutOfJailCard(false);
+        communicationController.usedCardForPrison();
 
     }
 
@@ -911,7 +960,13 @@ public class BoardController {
                 communicationController.endGameTextBox(playerName);
             }else{
                 if(playerHandler.getCurrentPlayer().isJail()){
-                    communicationController.playerTurnInJail(playerName);
+                    if(playerHandler.getCurrentPlayer().isGetOutOfJailCard()){
+                        communicationController.playerTurnInJailCard(playerName);
+                    }
+                    else{
+                        communicationController.playerTurnInJail(playerName);
+                    }
+
                 }
                 else{
                     communicationController.playerTurnStart(playerName);
@@ -946,7 +1001,6 @@ public class BoardController {
             communicationController.playerTurnStart(playerName);
         }
     }
-
 
 
     public void buyOrRentCheckerProperty(Field field){

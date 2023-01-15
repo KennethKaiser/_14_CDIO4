@@ -50,9 +50,10 @@ public class MainApplication extends Application {
         System.out.println(breweryField.getBrewery().getName());
         System.out.println(breweryField2.getBrewery().getName());*/
 
-        Chance chance = (Chance) board.getCurrentBoard()[22];
+        /*Chance chance = (Chance) board.getCurrentBoard()[22];
+        String[] draw = chance.drawCard();
 
-        System.out.println(chance.drawCard());
+        System.out.println(draw[0] + " " + draw[1]);*/
         launch();
     }
 
