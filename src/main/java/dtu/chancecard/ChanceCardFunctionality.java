@@ -10,6 +10,8 @@ import java.util.ArrayList;
 public class ChanceCardFunctionality {
     PlayerHandler playerHandler;
 
+    private boolean didPlayerMove = false;
+
     public String chanceCardFunction(int id, Player player) {
         switch (id) {
             case 0: {
@@ -20,7 +22,7 @@ public class ChanceCardFunctionality {
                 playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(hotels*2000));
                 break;
             }
-            case 1: {
+            case 27: {
                 //Ejendomsskatten er steget. Ekstraudgifterne er: 800,- pr. hus og 2300,- pr. hotel.
                 int houses = playerHandler.amountOfHouses(playerHandler.getPlayers()[player.getId()]);
                 int hotels = playerHandler.amountOfHotels(playerHandler.getPlayers()[player.getId()]);
@@ -28,19 +30,24 @@ public class ChanceCardFunctionality {
                 playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(hotels*2300));
                 break;
             }
-            case 2: {
+            case 1: {
                 //De har kørt overfor "rødt lys". Betal 1000 kroner i bøde.
                 playerHandler.changePlayerBalance(player, -1000);
                 break;
             }
-            case 3: {
+            case 2: {
                 //Betal for vognvask og smøring 300,-
                 playerHandler.changePlayerBalance(player, -300);
                 break;
             }
-            case 4: {
+            case 3: {
                 //Betal 200,- for levering af 2 kasser øl.
                 playerHandler.changePlayerBalance(player, -200);
+                break;
+            }
+            case 4: {
+                //Betal 3000,- for reparation af deres vogn.
+                playerHandler.changePlayerBalance(player, -3000);
                 break;
             }
             case 5: {
@@ -49,97 +56,92 @@ public class ChanceCardFunctionality {
                 break;
             }
             case 6: {
-                //Betal 3000,- for reparation af deres vogn.
-                playerHandler.changePlayerBalance(player, -3000);
-                break;
-            }
-            case 7: {
                 //De har købt 4 nye dæk til Deres vogn. Betal 1000,-.
                 playerHandler.changePlayerBalance(player, -1000);
                 break;
             }
-            case 8: {
+            case 7: {
                 //De har fået en parkeringsbøde. Betal 200,- i bøde.
                 playerHandler.changePlayerBalance(player, -200);
                 break;
             }
-            case 9: {
+            case 8: {
                 //Betal deres bilforsikring 1000,-
                 playerHandler.changePlayerBalance(player, -1000);
                 break;
             }
-            case 10: {
+            case 9: {
                 //De har været udenlands og købt for mange Cult Shaker bedre kendt som "Son of a Bitch".  Betal 200,- i told.
                 playerHandler.changePlayerBalance(player, -200);
                 break;
             }
-            case 11: {
+            case 10: {
                 //Tandlægeregning. Betal 2000,-
                 playerHandler.changePlayerBalance(player, -2000);
                 break;
             }
-            case 12:
-            case 13: {
+            case 11:
+            case 12: {
                 //De har vundet i klasselotteriet. Modtag 500,-.
                 playerHandler.changePlayerBalance(player, 500);
                 break;
             }
+            case 13:
             case 14:
-            case 15:
-            case 16: {
+            case 15: {
                 //De modtager Deres aktieudbytte. Modtag 1000,- af banken.
                 playerHandler.changePlayerBalance(player, 1000);
                 break;
             }
-            case 17: {
+            case 16: {
                 //Kommunen har eftergivet et kvartals skat. Hæv i banken 3000,-.
                 playerHandler.changePlayerBalance(player, 3000);
                 break;
             }
-            case 18: {
+            case 17: {
                 //De have en række med elleve rigtige i tipning. Modtag 1000,-.
                 playerHandler.changePlayerBalance(player, 1000);
                 break;
             }
-            case 19: {
+            case 18: {
                 //Grundet en veloverstået lønsamtale har De fået lønforhøjelse. Modtag 1000,-.
                 playerHandler.changePlayerBalance(player, 1000);
                 break;
             }
-            case 20:
-            case 21: {
+            case 19:
+            case 20: {
                 //Deres præmieobligation er udtrykket. De modtager 1000,- af banken.
                 playerHandler.changePlayerBalance(player, 1000);
                 break;
             }
-            case 22: {
+            case 21: {
                 //De har solgt nogle gamle møbler på auktion. Modtag 1000,- af banken.
                 playerHandler.changePlayerBalance(player, 1000);
                 break;
             }
-            case 23: {
+            case 22: {
                 //Værdien af egen avl fra nyttehaven udgør 200,- som de modtager af banken.
                 playerHandler.changePlayerBalance(player, 200);
                 break;
             }
-            case 24: {
+            case 26: {
                 //De modtager “Matador-legatet” på 40.000,-  men kun hvis værdier ikke overstiger 15.000,-
                 if (playerHandler.valueOfAllAssets(player)<15000){
                     playerHandler.changePlayerBalance(player, 40000);
                 }
                 break;
             }
-            case 25: {
+            case 23: {
                 //Det er deres fødselsdag. Modtag af hver medspiller 200,-.
                 playerHandler.getMoneyFromOtherPlayers(player, 200);
                 break;
             }
-            case 26: {
+            case 24: {
                 //De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag fra hver medspiller 500 kr.
                 playerHandler.getMoneyFromOtherPlayers(player, 500);
                 break;
             }
-            case 27: {
+            case 25: {
                 //De skal holde familiefest og får et tilskud fra hver medspiller på 500,-.
                 playerHandler.getMoneyFromOtherPlayers(player, 500);
                 break;
@@ -147,89 +149,105 @@ public class ChanceCardFunctionality {
             case 28: {
                 //Ryk frem til START
                 playerHandler.movePlayerChanceCard(player, 0);
+                didPlayerMove = true;
                 break;
             }
             case 29: {
                 //Ryk frem til START
                 playerHandler.movePlayerChanceCard(player, 0);
+                didPlayerMove = true;
                 break;
             }
             case 30: {
                 //Ryk tre felter frem
                 playerHandler.movePlayer(player, 3);
+                didPlayerMove = true;
                 break;
             }
             case 31: {
                 //Ryk tre felter tilbage
                 playerHandler.movePlayer(player, -3);
+                didPlayerMove = true;
                 break;
             }
             case 32: {
                 ////Ryk tre felter tilbage
                 playerHandler.movePlayer(player, -3);
+                didPlayerMove = true;
                 break;
             }
             case 33: {
                 //Ryk frem til Frederiksberg Allé. Hvis De passere START  indkasser da 4000 kr.
                 playerHandler.movePlayerChanceCard(player, 11);
-                break;
-            }
-            case 34: {
-                //Ryk frem til det nærmeste rederi og betal ejeren to gange den leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
-                playerHandler.nearestFerry(player);
-                break;
-            }
-            case 35: {
-                //Ryk frem til det nærmeste rederi og betal ejeren to gange den leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
-                playerHandler.nearestFerry(player);
-                break;
-            }
-            case 36: {
-                //Tag med Mols-Linien flyt brikken frem og hvis De passerer START indkassér da 4000,-.
-                playerHandler.movePlayerChanceCard(player, 15);
-                break;
-            }
-            case 37: {
-                //Ryk frem til Grønningen hvis De passerer START indkasser da 4000,-.
-                playerHandler.movePlayerChanceCard(player, 24);
-                break;
-            }
-            case 38: {
-                //Ryk frem til Vimmelskaftet hvis de passerer START indkasser da 4000,-.
-                playerHandler.movePlayerChanceCard(player, 32);
-                break;
-            }
-            case 39: {
-                //Tag med den nærmeste færge. Hvis de passerer START indkasser da 4000,-.
-                playerHandler.nearestFerry(player);
-                break;
-            }
-            case 40: {
-                //Ryk frem til Strandvejen. Hvis De passere START  indkasser da 4000,-.
-                playerHandler.movePlayerChanceCard(player, 19);
-                break;
-            }
-            case 41: {
-                //Tag til Rådhuspladsen
-                playerHandler.movePlayerChanceCard(player, 39);
+                didPlayerMove = true;
                 break;
             }
             case 42: {
+                //Ryk frem til det nærmeste rederi og betal ejeren to gange den leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
+                playerHandler.nearestFerry(player);
+                didPlayerMove = true;
+                break;
+            }
+            case 43: {
+                //Ryk frem til det nærmeste rederi og betal ejeren to gange den leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
+                playerHandler.nearestFerry(player);
+                didPlayerMove = true;
+                break;
+            }
+            case 34: {
+                //Tag med Mols-Linien flyt brikken frem og hvis De passerer START indkassér da 4000,-.
+                playerHandler.movePlayerChanceCard(player, 15);
+                didPlayerMove = true;
+                break;
+            }
+            case 35: {
+                //Ryk frem til Grønningen hvis De passerer START indkasser da 4000,-.
+                playerHandler.movePlayerChanceCard(player, 24);
+                didPlayerMove = true;
+                break;
+            }
+            case 36: {
+                //Ryk frem til Vimmelskaftet hvis de passerer START indkasser da 4000,-.
+                playerHandler.movePlayerChanceCard(player, 32);
+                didPlayerMove = true;
+                break;
+            }
+            case 37: {
+                //Tag med den nærmeste færge. Hvis de passerer START indkasser da 4000,-.
+                playerHandler.nearestFerry(player);
+                didPlayerMove = true;
+                break;
+            }
+            case 38: {
+                //Ryk frem til Strandvejen. Hvis De passere START  indkasser da 4000,-.
+                playerHandler.movePlayerChanceCard(player, 19);
+                didPlayerMove = true;
+                break;
+            }
+            case 39: {
+                //Tag til Rådhuspladsen
+                playerHandler.movePlayerChanceCard(player, 39);
+                didPlayerMove = true;
+                break;
+            }
+            case 40: {
                 //I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares indtil De får brug for det  eller De kan sælge det.
                 player.setGetOutOfJailCard(true);
                 break;
             }
-            case 43: {
+            case 41: {
                 //I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares indtil De får brug for det  eller De kan sælge det.
                 player.setGetOutOfJailCard(true);
                 break;
             }
             case 44: {
-                player.setJail(true);
+                playerHandler.moveToPrison(player);
+                didPlayerMove = true;
                 break;
             }
             case 45: {
-                player.setJail(true);
+                playerHandler.moveToPrison(player);
+                didPlayerMove = true;
                 break;
             }
         }
@@ -239,6 +257,14 @@ public class ChanceCardFunctionality {
 
     public void setPlayerHandler(PlayerHandler playerHandler) {
         this.playerHandler = playerHandler;
+    }
+
+    public boolean isDidPlayerMove() {
+        return didPlayerMove;
+    }
+
+    public void setDidPlayerMove(boolean didPlayerMove) {
+        this.didPlayerMove = didPlayerMove;
     }
 }
 
