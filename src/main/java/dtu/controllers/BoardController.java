@@ -842,7 +842,7 @@ public class BoardController {
     public void whatChanceCard(Field field){
         Chance chance = (Chance) field;
 
-        String[] drawnCard = chance.drawCard(30);
+        String[] drawnCard = chance.drawCard(40);
         Player currentPlayer = playerHandler.getCurrentPlayer();
 
         chanceCardFunctionality.chanceCardFunction(Integer.parseInt(drawnCard[0]),currentPlayer);
@@ -911,6 +911,10 @@ public class BoardController {
 
 
     public void useGetOutOfJailCard(){
+        Player currentPlayer = playerHandler.getCurrentPlayer();
+        currentPlayer.setJail(false);
+        currentPlayer.setGetOutOfJailCard(false);
+        communicationController.usedCardForPrison();
 
     }
 
@@ -943,7 +947,13 @@ public class BoardController {
                 communicationController.endGameTextBox(playerName);
             }else{
                 if(playerHandler.getCurrentPlayer().isJail()){
-                    communicationController.playerTurnInJail(playerName);
+                    if(playerHandler.getCurrentPlayer().isGetOutOfJailCard()){
+                        communicationController.playerTurnInJailCard(playerName);
+                    }
+                    else{
+                        communicationController.playerTurnInJail(playerName);
+                    }
+
                 }
                 else{
                     communicationController.playerTurnStart(playerName);

@@ -107,6 +107,21 @@ public class CommunicationController {
     }
 
     public void playerTurnInJail(String playerName){
+        String[] choiceOptions = new String[2];
+        choiceOptions[0] = "Betal 1000 kr";
+        choiceOptions[1] = "Prøv at slå dobbeltslag";
+
+
+        String textField = playerName + "er i fængsel. Du har nu følgende valgmuligheder.";
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> boardController.payForPrison());
+        choices[1].setOnAction(e -> boardController.rollDoublePrison());
+
+
+
+    }
+
+    public void playerTurnInJailCard(String playerName){
         String[] choiceOptions = new String[3];
         choiceOptions[0] = "Betal 1000 kr";
         choiceOptions[1] = "Prøv at slå dobbeltslag";
@@ -120,6 +135,8 @@ public class CommunicationController {
 
 
     }
+
+
 
     public void payedForPrisonDouble(){
         String[] choiceOptions = new String[1];
@@ -135,6 +152,15 @@ public class CommunicationController {
         choiceOptions[0] = "Okay";
 
         String textField = "Du har nu betalt for fængsel.";
+        showCommunicationBox(textField, choiceOptions);
+        choices[0].setOnAction(e -> boardController.roll());
+    }
+
+    public void usedCardForPrison(){
+        String[] choiceOptions = new String[1];
+        choiceOptions[0] = "Okay";
+
+        String textField = "Du har nu brugt dit get out of jail freecard.";
         showCommunicationBox(textField, choiceOptions);
         choices[0].setOnAction(e -> boardController.roll());
     }
