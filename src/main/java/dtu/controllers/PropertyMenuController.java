@@ -453,13 +453,14 @@ public class PropertyMenuController {
                 parent.getChildren().add(cards[i+3]);
                 System.out.println(i);
                 names[i+3].setText(ferry.getFerry().getName());
+                setPledgeValueSign(ferry.isPledgeState(), i+3);
                 if(player != -1) {
                     if (ferry.isPledgeState()) {
-                        pledgeButtons[i].setText("Åben for: " + numbersToString(ferry.getFerry().getPrice()/2 + playerHandler.nonPledgeTax(ferry.getFerry().getPrice()/2)));
+                        pledgeButtons[i+3].setText("Åben for: " + numbersToString(ferry.getFerry().getPrice()/2 + playerHandler.nonPledgeTax(ferry.getFerry().getPrice()/2)));
                     } else {
-                        pledgeButtons[i].setText("Pantsæt og få: " + numbersToString(ferry.getFerry().getPrice()/2));
+                        pledgeButtons[i+3].setText("Pantsæt og få: " + numbersToString(ferry.getFerry().getPrice()/2));
                     }
-                    pledgeButtons[i].setOnAction(e -> doPledge(ferry, !ferry.isPledgeState(), player, properties));
+                    pledgeButtons[i+3].setOnAction(e -> doPledge(ferry, !ferry.isPledgeState(), player, properties));
                 }
             }
         }
@@ -467,6 +468,7 @@ public class PropertyMenuController {
             for(int i = 0; i < properties.length; i++) {
                 BreweryField breweryField = (BreweryField) properties[i];
                 parent.getChildren().add(cards[i+7]);
+                setPledgeValueSign(breweryField.isPledgeState(), i+7);
                 if(breweryField.getBrewery().getName().equals("Coca Cola")){
 
                     cardImages[i+7].setImage(image("src/textures/colaflaske.png"));
@@ -477,11 +479,11 @@ public class PropertyMenuController {
                 names[i+7].setText(breweryField.getBrewery().getName());
                 if(player != -1) {
                     if (breweryField.isPledgeState()) {
-                        pledgeButtons[i].setText("Åben for: " + numbersToString(breweryField.getBrewery().getPrice()/2 + playerHandler.nonPledgeTax(breweryField.getBrewery().getPrice()/2)));
+                        pledgeButtons[i+7].setText("Åben for: " + numbersToString(breweryField.getBrewery().getPrice()/2 + playerHandler.nonPledgeTax(breweryField.getBrewery().getPrice()/2)));
                     } else {
-                        pledgeButtons[i].setText("Pantsæt og få: " + numbersToString(breweryField.getBrewery().getPrice()/2));
+                        pledgeButtons[i+7].setText("Pantsæt og få: " + numbersToString(breweryField.getBrewery().getPrice()/2));
                     }
-                    pledgeButtons[i].setOnAction(e -> doPledge(breweryField, !breweryField.isPledgeState(), player, properties));
+                    pledgeButtons[i+7].setOnAction(e -> doPledge(breweryField, !breweryField.isPledgeState(), player, properties));
                 }
             }
         }

@@ -1226,6 +1226,7 @@ public class BoardController {
 
     //region cheating
     public void initCheating(){
+        cheatBox.getChildren().clear();
         if(ControllerHandler.getInstance().getMenuScreenController().getIsCheating()){
             cheatBox.getChildren().addAll(cheatDropDown, cheatInput ,cheatFieldButton, cheatMoneyButton, cheatMoveButton);
             System.out.println("Engaging");
