@@ -2,6 +2,7 @@ package dtu.filereader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -28,7 +29,7 @@ public class CSVFileReader {
 
         try
         {
-            FileReader read = new FileReader(filepath);
+            FileReader read = new FileReader(filepath, StandardCharsets.UTF_8);
             BufferedReader bread = new BufferedReader(read);
             while((currentLine = bread.readLine()) != null)
             {
