@@ -116,9 +116,6 @@ public class CommunicationController {
         showCommunicationBox(textField, choiceOptions);
         choices[0].setOnAction(e -> boardController.payForPrison());
         choices[1].setOnAction(e -> boardController.rollDoublePrison());
-
-
-
     }
 
     public void playerTurnInJailCard(String playerName){
@@ -132,8 +129,6 @@ public class CommunicationController {
         choices[0].setOnAction(e -> boardController.payForPrison());
         choices[1].setOnAction(e -> boardController.rollDoublePrison());
         choices[2].setOnAction(e -> boardController.useGetOutOfJailCard());
-
-
     }
 
 
