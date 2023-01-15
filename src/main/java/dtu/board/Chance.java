@@ -18,13 +18,13 @@ public class Chance extends Field{
         return "chance";
     }
 
-    public String[] drawCard(int index){
+    public String[] drawCard(){
         cardIndex++;
         if(cardIndex >= chanceCardDeck.getDeck().size()){
             cardIndex = 0;
         }
 
-        return chanceCardDeck.getDeck().get(index);
+        return chanceCardDeck.getDeck().get(cardIndex);
     }
 
     public ChanceCardDeck getChanceCardDeck() {

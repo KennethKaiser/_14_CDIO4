@@ -22,7 +22,7 @@ public class ChanceCardDeck {
         //Shuffle Deck
         this.deck = deck;
 
-        //shuffle();
+        shuffle();
 
     }
 
