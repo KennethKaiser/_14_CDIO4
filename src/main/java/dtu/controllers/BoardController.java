@@ -874,6 +874,9 @@ public class BoardController {
     public void rollDoublePrison(){
         int[] ourRoll = dice.roll();
         rollDiceAnimation(ourRoll[0], ourRoll[1]);
+        dice.rolledDouble();
+
+
         playerHandler.getCurrentPlayer().setJailTurns(playerHandler.getCurrentPlayer().getJailTurns()+1);
 
         if(dice.isRolledDouble()){
