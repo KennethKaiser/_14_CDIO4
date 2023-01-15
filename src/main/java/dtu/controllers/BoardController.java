@@ -7,6 +7,7 @@ import dtu.chancecard.ChanceCardFunctionality;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
+import javafx.animation.TranslateTransition;
 import javafx.beans.Observable;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -27,6 +28,8 @@ import java.io.InputStream;
 import java.util.Random;
 
 import static java.lang.Integer.parseInt;
+import javafx.animation.Transition;
+import javafx.util.Duration;
 
 public class BoardController {
 
@@ -1082,6 +1085,18 @@ public class BoardController {
         cheatRemoveCarFromBoard(player);
 
         fields[fieldPlacement].getChildren().add(playerCars[player]);
+    }
+
+    public void playerTransition(int player, int fieldPlacement){
+        TranslateTransition transition = new TranslateTransition();
+        transition.setDuration(Duration.millis(200));
+
+        for(int i = 0; i<fieldPlacement; i++){
+            transition.play();
+            fields[playerHandler.getPlayers()[player].getPosition()+1].getChildren().add(playerCars[player]);
+            transition.stop();
+        }
+
     }
 
     public void multipleCars(int player, int position){
