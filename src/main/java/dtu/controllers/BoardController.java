@@ -842,7 +842,7 @@ public class BoardController {
     public void whatChanceCard(Field field){
         Chance chance = (Chance) field;
 
-        String[] drawnCard = chance.drawCard(8);
+        String[] drawnCard = chance.drawCard(30);
         Player currentPlayer = playerHandler.getCurrentPlayer();
 
         chanceCardFunctionality.chanceCardFunction(Integer.parseInt(drawnCard[0]),currentPlayer);
@@ -858,8 +858,11 @@ public class BoardController {
             chanceCardFunctionality.setDidPlayerMove(false);
             turnMove();
         }
+        else{
+            endTurn();
+        }
 
-        endTurn();
+
 
     }
 
