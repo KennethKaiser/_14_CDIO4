@@ -842,7 +842,7 @@ public class BoardController {
     public void whatChanceCard(Field field){
         Chance chance = (Chance) field;
 
-        String[] drawnCard = chance.drawCard(4);
+        String[] drawnCard = chance.drawCard(8);
         Player currentPlayer = playerHandler.getCurrentPlayer();
 
         chanceCardFunctionality.chanceCardFunction(Integer.parseInt(drawnCard[0]),currentPlayer);
