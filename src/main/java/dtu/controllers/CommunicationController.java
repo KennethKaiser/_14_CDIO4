@@ -490,7 +490,7 @@ public class CommunicationController {
 
         String textField = cardText;
 
-        chanceCardsController.showChanceCard(cardText,"Prøv lykken");
+        chanceCardsController.showChanceCard("Prøv lykken", cardText);
 
         showCommunicationBox(textField, choiceOptions);
 

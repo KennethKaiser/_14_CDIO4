@@ -20,7 +20,7 @@ public class Chance extends Field{
 
     public String[] drawCard(int index){
         cardIndex++;
-        if(cardIndex == chanceCardDeck.getDeck().size()){
+        if(cardIndex >= chanceCardDeck.getDeck().size()){
             cardIndex = 0;
         }
 
