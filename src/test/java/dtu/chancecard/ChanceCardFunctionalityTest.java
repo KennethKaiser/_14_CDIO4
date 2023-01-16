@@ -1,6 +1,7 @@
 package dtu.chancecard;
 
 import dtu.board.Chance;
+import dtu.board.Jackpot;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,10 @@ class ChanceCardFunctionalityTest {
     void chanceCardFunctionTest() {
         ChanceCardFunctionality chanceCardFunctionality = new ChanceCardFunctionality();
         PlayerHandler playerHandler = new PlayerHandler();
+
+        //Temp
+        Jackpot jackpot = new Jackpot();
+        chanceCardFunctionality.setJackpot(jackpot);
 
         playerHandler.initializePlayers(3);
         playerHandler.initializePlayerInPlayers(0,"Niels", 50000, "black");
