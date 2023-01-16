@@ -2,6 +2,7 @@ package dtu.chancecard;
 
 import dtu.board.Field;
 import dtu.board.FieldProperty;
+import dtu.board.Jackpot;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
 
@@ -9,6 +10,8 @@ import java.util.ArrayList;
 
 public class ChanceCardFunctionality {
     PlayerHandler playerHandler;
+
+    private Jackpot jackpot;
 
     private boolean didPlayerMove = false;
 
@@ -265,6 +268,18 @@ public class ChanceCardFunctionality {
 
     public void setDidPlayerMove(boolean didPlayerMove) {
         this.didPlayerMove = didPlayerMove;
+    }
+
+    public PlayerHandler getPlayerHandler() {
+        return playerHandler;
+    }
+
+    public Jackpot getJackpot() {
+        return jackpot;
+    }
+
+    public void setJackpot(Jackpot jackpot) {
+        this.jackpot = jackpot;
     }
 }
 

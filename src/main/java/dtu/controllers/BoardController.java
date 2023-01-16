@@ -43,6 +43,7 @@ public class BoardController {
     RaffleCup dice = new RaffleCup();
     PlayerHandler playerHandler = new PlayerHandler();
 
+
     //GUI variables
     private ImageView[] cars; //car Icons that move on the field
     private StackPane[] fields; //The Stackpanes that a car is placed in on each field
@@ -369,6 +370,10 @@ public class BoardController {
         initializePlayerHandlerPlayerViewController();
         initTradeMenu();
         initializeChanceCardDeck();
+
+
+
+
     }
 
     //region delegate model objects to other controller
@@ -605,6 +610,23 @@ public class BoardController {
     //endregion
     //region game loop actions
 
+    public void landedOnJackpot(){
+        Jackpot jackpot = (Jackpot) ControllerHandler.getInstance().getBoard().getCurrentBoard()[20];
+        chanceCardFunctionality.setJackpot(jackpot);
+        String playerName = playerHandler.getCurrentPlayer().getName();
+        int prize = jackpot.getAmount();
+        communicationController.youWonJackpot(playerName, prize);
+
+    }
+
+    public void addJackpotToPlayer(int prize){
+        Jackpot jackpot = (Jackpot) ControllerHandler.getInstance().getBoard().getCurrentBoard()[20];
+        jackpot.jackpotWin();
+        playerHandler.changePlayerBalance(playerHandler.getCurrentPlayer(), prize);
+        communicationController.addedJackpot(playerHandler.getCurrentPlayer().getName(), prize);
+
+    }
+
 
     public void roll(){
         int[] playerRoll = dice.roll();
@@ -708,6 +730,9 @@ public class BoardController {
         }
         else if(type.equals("jail")){
             goToJail();
+        }
+        else if(type.equals("parking")){
+            landedOnJackpot();
         }
 
 
