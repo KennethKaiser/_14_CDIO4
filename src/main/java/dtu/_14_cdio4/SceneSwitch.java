@@ -38,7 +38,7 @@ public class SceneSwitch {
     StackPane propertyMenu;
     HBox communication;
     AnchorPane tradeMenu;
-    StackPane pauseMenu;
+    AnchorPane pauseMenu;
     //endregion
     Scene menuScene;
     Scene boardScene;
@@ -88,7 +88,7 @@ public class SceneSwitch {
             tradingMenuController = fxmlLoader.getController();
             ControllerHandler.getInstance().setTradingMenuController(tradingMenuController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PauseMenu.fxml"));
-            pauseMenu = (StackPane) fxmlLoader.load();
+            pauseMenu = (AnchorPane) fxmlLoader.load();
             pauseMenuController = fxmlLoader.getController();
             ControllerHandler.getInstance().setPauseMenuController(pauseMenuController);
         } catch (Exception e){
