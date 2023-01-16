@@ -325,4 +325,35 @@ class PlayerHandlerTest {
         playerHandler.currentPlayer();
         assertEquals(playerHandler.getPlayers()[3], playerHandler.getCurrentPlayer());
     }
+
+    @Test
+    void testMoveToPrison(){
+        PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.initializePlayers(4);
+        playerHandler.initializePlayerInPlayers(0, "Freddy Krueger", 40000, "black");
+        playerHandler.initializePlayerInPlayers(1, "Amanda Young", 40000, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Jason Vorhees", 40000, "red");
+        playerHandler.initializePlayerInPlayers(3, "Herbert West", 40000, "green");
+
+        playerHandler.moveToPrison(playerHandler.getPlayers()[0]);
+
+        assertEquals(10, playerHandler.getPlayers()[0].getPosition(),
+                "Expect player to be moved to 10. is at: "+ playerHandler.getPlayers()[0].getPosition());
+    }
+
+    @Test
+    void testOverStart(){
+        PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.initializePlayers(4);
+        playerHandler.initializePlayerInPlayers(0, "Freddy Krueger", 40000, "black");
+        playerHandler.initializePlayerInPlayers(1, "Amanda Young", 40000, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Jason Vorhees", 40000, "red");
+        playerHandler.initializePlayerInPlayers(3, "Herbert West", 40000, "green");
+
+        playerHandler.setCurrentPlayer(playerHandler.getPlayers()[0]);
+        playerHandler.setOverStart(true);
+
+        assertEquals(true, playerHandler.isOverStart(),
+                "Expect player overstart as true. it is: "+ playerHandler.isOverStart());
+    }
 }
