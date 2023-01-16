@@ -30,13 +30,13 @@ public class SceneSwitch {
     private PauseMenuController pauseMenuController;
     //endregion
     //region loads
-    VBox menu;
+    AnchorPane menu;
     AnchorPane root;
-    HBox playerView;
+    AnchorPane playerView;
     AnchorPane board;
     AnchorPane chanceCards;
-    StackPane propertyMenu;
-    HBox communication;
+    AnchorPane propertyMenu;
+    AnchorPane communication;
     AnchorPane tradeMenu;
     AnchorPane pauseMenu;
     //endregion
@@ -54,7 +54,7 @@ public class SceneSwitch {
     private void loadScenes() throws IOException {
         FXMLLoader fxmlLoader;
         fxmlLoader = new FXMLLoader(MainApplication.class.getResource("MenuScreen.fxml"));
-        menu = (VBox) fxmlLoader.load();
+        menu = (AnchorPane) fxmlLoader.load();
         menuScreenController = fxmlLoader.getController();
         ControllerHandler.getInstance().setMenuScreenController(menuScreenController);
     }
@@ -64,7 +64,7 @@ public class SceneSwitch {
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Background.fxml"));
             root = (AnchorPane) fxmlLoader.load();
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PlayerView.fxml"));
-            playerView = (HBox) fxmlLoader.load();
+            playerView = (AnchorPane) fxmlLoader.load();
             playerViewController = fxmlLoader.getController();
             ControllerHandler.getInstance().setPlayerViewController(playerViewController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Board.fxml"));
@@ -76,11 +76,11 @@ public class SceneSwitch {
             chanceCardsController = fxmlLoader.getController();
             ControllerHandler.getInstance().setChanceCardsController(chanceCardsController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PropertyMenu.fxml"));
-            propertyMenu = (StackPane) fxmlLoader.load();
+            propertyMenu = (AnchorPane) fxmlLoader.load();
             propertyMenuController = fxmlLoader.getController();
             ControllerHandler.getInstance().setPropertyMenuController(propertyMenuController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Communication.fxml"));
-            communication = (HBox) fxmlLoader.load();
+            communication = (AnchorPane) fxmlLoader.load();
             communicationController = fxmlLoader.getController();
             ControllerHandler.getInstance().setCommunicationController(communicationController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("TradeMenu.fxml"));
@@ -102,7 +102,7 @@ public class SceneSwitch {
         boardController.getMiddleParent().getChildren().add(3, communication);
         playerView.getChildren().add(1, board);
         root.getChildren().add(playerView);
-        boardScene = new Scene(root, 1600, 700);
+        boardScene = new Scene(root);
     }
     public void switchToMenu(){
         stage.setTitle("Matador");
@@ -115,11 +115,6 @@ public class SceneSwitch {
         Rectangle2D bounds = screen.getVisualBounds();
         stage.setScene(boardScene);
         stage.setMaximized(true);
-        stage.setX(bounds.getMinX());
-        stage.setY(bounds.getMinY());
-        stage.setWidth(bounds.getWidth());
-        stage.setHeight(bounds.getHeight());
-        stage.resizableProperty().setValue(Boolean.FALSE);
         stage.show();
         boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getColorNames(isLoad));
         boardController.giveButtonsFunctions();

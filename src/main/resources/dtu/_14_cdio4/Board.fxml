@@ -16,14 +16,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.BoardController">
    <children>
-      <StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="990.0" prefWidth="880.0" style="-fx-background-color: #F3F9D2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <StackPane style="-fx-background-color: #F3F9D2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <children>
-              <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="990.0" prefWidth="880.0">
+              <VBox alignment="CENTER" StackPane.alignment="CENTER">
                   <children>
-                      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="880.0">
+                      <HBox>
                           <children>
                               <StackPane fx:id="field20" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                                   <children>
@@ -36,7 +35,7 @@
                                               </ImageView>
                                           </children>
                                       </VBox>
-                                      <VBox alignment="CENTER" minWidth="-Infinity" prefHeight="90.0" prefWidth="80.0" style="-fx-border-color: black; -fx-border-width: 1;">
+                                      <VBox alignment="CENTER" prefHeight="90.0" prefWidth="80.0" style="-fx-border-color: black; -fx-border-width: 1;">
                                           <children>
                                               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gratis " textAlignment="CENTER" wrappingWidth="62.05127239227295">
                                                   <font>
@@ -51,7 +50,7 @@
                                               </Text>
                                           </children>
                                       </VBox>
-                                      <Button fx:id="bField20" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01">
+                                      <Button fx:id="bField20" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
                                           <font>
                                               <Font size="9.0" />
                                           </font>
@@ -95,7 +94,7 @@
                                               </Text>
                                           </children>
                                       </VBox>
-                                      <Button fx:id="bField21" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01" prefWidth="80.0">
+                                      <Button fx:id="bField21" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefWidth="80.0">
                                           <font>
                                               <Font size="9.0" />
                                           </font>
@@ -118,14 +117,14 @@
                                               </Text>
                                           </children>
                                       </VBox>
-                                      <Button fx:id="bField22" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01" prefWidth="80.0">
+                                      <Button fx:id="bField22" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefWidth="80.0">
                                           <font>
                                               <Font size="9.0" />
                                           </font>
                                       </Button>
                                   </children>
                               </StackPane>
-                        <StackPane fx:id="field23" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
+                        <StackPane fx:id="field23" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -169,7 +168,7 @@
                               </Button>
                            </children>
                         </StackPane>
-                        <StackPane fx:id="field24" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
+                        <StackPane fx:id="field24" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -213,7 +212,7 @@
                               </Button>
                            </children>
                         </StackPane>
-                              <StackPane fx:id="field25" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
+                              <StackPane fx:id="field25" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                                   <children>
                                       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
                                           <children>
@@ -254,7 +253,7 @@
                                       </Button>
                                   </children>
                               </StackPane>
-                        <StackPane fx:id="field26" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
+                        <StackPane fx:id="field26" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -298,7 +297,7 @@
                               </Button>
                            </children>
                         </StackPane>
-                        <StackPane fx:id="field27" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
+                        <StackPane fx:id="field27" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -342,7 +341,7 @@
                               </Button>
                            </children>
                         </StackPane>
-                              <StackPane fx:id="field28" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
+                              <StackPane fx:id="field28" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                                   <children>
                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="71.0" style="-fx-background-color: #FF69B4;">
                                           <children>
@@ -375,7 +374,7 @@
                                       </Button>
                                   </children>
                               </StackPane>
-                        <StackPane fx:id="field29" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
+                        <StackPane fx:id="field29" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -445,7 +444,7 @@
                                               </Text>
                                           </children>
                                       </VBox>
-                                      <Button fx:id="bField30" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01" prefWidth="80.0">
+                                      <Button fx:id="bField30" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefWidth="80.0">
                                           <font>
                                               <Font size="9.0" />
                                           </font>
@@ -457,9 +456,9 @@
                               </StackPane>
                           </children>
                   </HBox>
-                      <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="810.0" prefWidth="880.0">
+                      <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0">
                           <children>
-                              <VBox minWidth="-Infinity" prefHeight="810.0" prefWidth="80.0">
+                              <VBox>
                                   <children>
                                       <StackPane fx:id="field19" layoutX="10.0" layoutY="136.0" prefHeight="90.0" prefWidth="80.0">
                                           <children>
@@ -499,14 +498,14 @@
                                                       </Text>
                                                   </children>
                                               </VBox>
-                                              <Button fx:id="bField19" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="100.0" prefWidth="85.0">
+                                              <Button fx:id="bField19" mnemonicParsing="false" opacity="0.01" prefHeight="100.0" prefWidth="85.0">
                                                   <font>
                                                       <Font size="9.0" />
                                                   </font>
                                               </Button>
                                           </children>
                                  <VBox.margin>
-                                    <Insets right="1.0" />
+                                    <Insets />
                                  </VBox.margin>
                                       </StackPane>
                               <StackPane fx:id="field18" prefHeight="90.0" prefWidth="80.0">
@@ -539,7 +538,7 @@
                                                 </VBox>
                                              </children>
                                           </VBox>
-                                          <VBox prefHeight="39.0" prefWidth="58.0" />
+                                          <VBox prefHeight="54.0" prefWidth="78.0" />
                                           <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4.000" textAlignment="CENTER" wrappingWidth="65.0">
                                              <font>
                                                 <Font size="10.0" />
@@ -836,62 +835,58 @@
                               <Insets />
                            </HBox.margin>
                         </VBox>
-                              <StackPane fx:id="middleParent" alignment="BOTTOM_CENTER" maxWidth="-Infinity" prefHeight="0.0" prefWidth="0.0">
+                              <StackPane fx:id="middleParent" prefHeight="810.0" prefWidth="720.0" HBox.hgrow="ALWAYS">
                                   <children>
-                              <VBox prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;">
+                              <VBox alignment="TOP_CENTER" prefHeight="810.0" prefWidth="720.0" style="-fx-background-color: #F3F9D2;">
                                  <children>
-                                            <AnchorPane fx:id="diceBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="720.0">
-                                                <children>
-                                          <Text layoutX="92.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MATADOR" textAlignment="CENTER" wrappingWidth="550.2752685546875">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MATADOR" textAlignment="CENTER" wrappingWidth="550.2752685546875">
+                                       <font>
+                                          <Font name="Century Gothic" size="96.0" />
+                                       </font>
+                                    </Text>
+                                              <ImageView fx:id="dice1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                                              <ImageView fx:id="dice2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="centerGraphics" fitHeight="288.0" fitWidth="578.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/centerGraphics.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="backgroundButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.0" prefHeight="157.0" prefWidth="720.0" text="BackgroundButton" />
+                                    <StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="50.0">
+                                       <children>
+                                          <ImageView fx:id="tradeMenuImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="tradeMenuButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.0" />
+                                       </children>
+                                    </StackPane>
+                                    <HBox fx:id="cheatBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" prefWidth="317.0">
+                                       <children>
+                                          <ComboBox fx:id="cheatDropDown" prefHeight="26.0" prefWidth="92.0" promptText="Spiller" />
+                                          <TextField fx:id="cheatInput" prefHeight="26.0" prefWidth="70.0" promptText="nr">
                                              <font>
-                                                <Font name="Century Gothic" size="96.0" />
+                                                <Font size="10.0" />
                                              </font>
-                                          </Text>
-                                          <ImageView fx:id="centerGraphics" fitHeight="294.0" fitWidth="682.0" layoutX="23.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../../textures/centerGraphics.png" />
-                                             </image>
-                                          </ImageView>
-                                                    <ImageView fx:id="dice1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" translateX="450.0" translateY="350.0" />
-                                                    <ImageView fx:id="dice2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-                                          <Button fx:id="backgroundButton" layoutY="3.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.0" prefHeight="810.0" prefWidth="720.0" text="BackgroundButton" />
-                                          <StackPane layoutX="658.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="50.0">
-                                             <children>
-                                                <ImageView fx:id="tradeMenuImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-                                                <Button fx:id="tradeMenuButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.0" />
-                                             </children>
-                                          </StackPane>
-                                          <HBox fx:id="cheatBox" alignment="CENTER" layoutX="209.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" prefWidth="317.0">
-                                             <children>
-                                                <ComboBox fx:id="cheatDropDown" prefHeight="26.0" prefWidth="92.0" promptText="Spiller" />
-                                                <TextField fx:id="cheatInput" prefHeight="26.0" prefWidth="70.0" promptText="nr">
-                                                   <font>
-                                                      <Font size="10.0" />
-                                                   </font>
-                                                </TextField>
-                                                <Button fx:id="cheatFieldButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" text="Grund">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="10.0" />
-                                                   </font>
-                                                </Button>
-                                                <Button fx:id="cheatMoneyButton" layoutX="327.0" layoutY="12.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" text="Penge">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="10.0" />
-                                                   </font>
-                                                </Button>
-                                                <Button fx:id="cheatMoveButton" layoutX="356.0" layoutY="12.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" text="Ryk">
-                                                   <font>
-                                                      <Font name="Century Gothic" size="10.0" />
-                                                   </font>
-                                                </Button>
-                                             </children>
-                                             <padding>
-                                                <Insets top="-2.0" />
-                                             </padding>
-                                          </HBox>
-                                          <Button fx:id="pauseButton" layoutX="-1.0" layoutY="2.0" mnemonicParsing="false" text="Pause" />
-                                                </children>
-                                            </AnchorPane>
+                                          </TextField>
+                                          <Button fx:id="cheatFieldButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" text="Grund">
+                                             <font>
+                                                <Font name="Century Gothic" size="10.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="cheatMoneyButton" layoutX="327.0" layoutY="12.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" text="Penge">
+                                             <font>
+                                                <Font name="Century Gothic" size="10.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="cheatMoveButton" layoutX="356.0" layoutY="12.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" text="Ryk">
+                                             <font>
+                                                <Font name="Century Gothic" size="10.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <padding>
+                                          <Insets top="-2.0" />
+                                       </padding>
+                                    </HBox>
+                                    <Button fx:id="pauseButton" mnemonicParsing="false" text="Pause" />
                                  </children>
                                  <effect>
                                     <DisplacementMap>
@@ -901,13 +896,13 @@
                                     </DisplacementMap>
                                  </effect>
                               </VBox>
-                              <VBox alignment="CENTER" layoutX="10.0" layoutY="96.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="0.0" prefWidth="400.0" />
-                                      <VBox fx:id="middleVBOX" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" translateY="-319.0">
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="96.0" prefHeight="0.0" prefWidth="400.0" />
+                                      <VBox fx:id="middleVBOX" alignment="CENTER" translateY="-319.0">
 
                                 </VBox>
                                   </children>
                               </StackPane>
-                              <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="80.0">
+                              <VBox prefHeight="810.0" prefWidth="80.0">
                                   <children>
                               <StackPane fx:id="field31" prefHeight="90.0" prefWidth="80.0">
                                  <children>
@@ -1283,11 +1278,11 @@
                         <Insets />
                      </VBox.margin>
                       </HBox>
-                      <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="880.0">
+                      <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0">
                           <children>
                               <StackPane fx:id="field10" alignment="TOP_CENTER" layoutX="544.0" layoutY="10.0" prefHeight="90.0" prefWidth="80.0">
                                   <children>
-                                      <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="80.0" style="-fx-background-color: #808080;">
+                                      <VBox alignment="CENTER" prefHeight="90.0" prefWidth="80.0" style="-fx-background-color: #808080;">
                                           <children>
                                               <ImageView fx:id="prisonImage" fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                                   <image>
@@ -1311,14 +1306,14 @@
                                               </Text>
                                           </children>
                                       </VBox>
-                                      <Button fx:id="bField10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01">
+                                      <Button fx:id="bField10" maxHeight="-Infinity" mnemonicParsing="false" opacity="0.01">
                                           <font>
                                               <Font size="9.0" />
                                           </font>
                                       </Button>
                                   </children>
                            <HBox.margin>
-                              <Insets left="-1.0" />
+                              <Insets />
                            </HBox.margin>
                               </StackPane>
                         <StackPane fx:id="field9" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
@@ -1677,9 +1672,6 @@
                                   </children>
                               </StackPane>
                           </children>
-                          <padding>
-                              <Insets left="1.0" />
-                          </padding>
                       </HBox>
                   </children>
             </VBox>
