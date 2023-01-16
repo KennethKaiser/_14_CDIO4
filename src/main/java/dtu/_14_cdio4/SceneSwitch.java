@@ -31,10 +31,10 @@ public class SceneSwitch {
     //endregion
     //region loads
     VBox menu;
-    HBox root;
+    AnchorPane root;
     HBox playerView;
     AnchorPane board;
-    StackPane chanceCards;
+    AnchorPane chanceCards;
     StackPane propertyMenu;
     HBox communication;
     AnchorPane tradeMenu;
@@ -62,7 +62,7 @@ public class SceneSwitch {
         try{
             FXMLLoader fxmlLoader;
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Background.fxml"));
-            root = (HBox) fxmlLoader.load();
+            root = (AnchorPane) fxmlLoader.load();
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PlayerView.fxml"));
             playerView = (HBox) fxmlLoader.load();
             playerViewController = fxmlLoader.getController();
@@ -72,7 +72,7 @@ public class SceneSwitch {
             boardController = fxmlLoader.getController();
             ControllerHandler.getInstance().setBoardController(boardController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("ChanceCards.fxml"));
-            chanceCards = (StackPane) fxmlLoader.load();
+            chanceCards = (AnchorPane) fxmlLoader.load();
             chanceCardsController = fxmlLoader.getController();
             ControllerHandler.getInstance().setChanceCardsController(chanceCardsController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PropertyMenu.fxml"));
