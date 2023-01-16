@@ -404,29 +404,21 @@ public class CommunicationController {
         int rent = fieldProperty.findActiveRent();
         PlayerHandler ph = ControllerHandler.getInstance().getBoardController().playerHandler;
         player.setLastPlayerPaid(fieldProperty.getOwner().getId());
+
         if(ph.canAffordTotal(player, rent)){
             fieldProperty.rent(player, rent);
-            playerViewController.updatePlayerMoney();
-
-
-            String textField = propertyName + " er ejet af " + propertyOwner + ". Betal " + rent + " i leje."  ;
-            showCommunicationBox(textField, choiceOptions);
-
-            choices[0].setOnAction(e -> boardController.endTurn());
         }
         else{
-
-            String[] choiceOptions2 = new String[1];
-            choiceOptions2[0] = "Overdrag";
-
-            String textField = propertyName + " er ejet af " + propertyOwner + ". Du har ikke råd til at betale for den fulde leje. Overdrag ejendele til " + propertyOwner  ;
-
-            showCommunicationBox(textField, choiceOptions);
-            choices[0].setOnAction(e -> {
-                ph.bankruptPlayerToPlayer(player, fieldProperty.getOwner());
-                boardController.endTurn();
-            });
+            ph.changePlayerBalance(fieldProperty.getOwner(), ph.valueOfAllAssets(player)/2 + player.getMoney()/2);
+            ph.changePlayerBalance(player, -rent);
         }
+        playerViewController.updatePlayerMoney();
+
+
+        String textField = propertyName + " er ejet af " + propertyOwner + ". Betal " + rent + " i leje."  ;
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurn());
     }
     public void payRentFerry(FerryField ferryField, Player player){
         String[] choiceOptions = new String[1];
@@ -440,30 +432,21 @@ public class CommunicationController {
 
         PlayerHandler ph = ControllerHandler.getInstance().getBoardController().playerHandler;
         player.setLastPlayerPaid(ferryField.getOwner().getId());
-        if(ph.canAffordTotal(player, rent)) {
+        if(ph.canAffordTotal(player, rent)){
             ferryField.rent(player, rent);
-            playerViewController.updatePlayerMoney();
-
-
-            String textField = ferryName + " er ejet af " + ferryOwner + ". Betal " + rent + " i leje."  ;
-            showCommunicationBox(textField, choiceOptions);
-
-            choices[0].setOnAction(e -> boardController.endTurn());
-
         }
         else{
-            String[] choiceOptions2 = new String[1];
-            choiceOptions2[0] = "Overdrag";
-
-            String textField = ferryName + " er ejet af " + ferryOwner + ". Du har ikke råd til at betale for den fulde leje. Overdrag ejendele til " + ferryOwner  ;
-
-            showCommunicationBox(textField, choiceOptions);
-            choices[0].setOnAction(e -> {
-                ph.bankruptPlayerToPlayer(player, ferryField.getOwner());
-                ph.currentPlayer();
-            });
+            ph.changePlayerBalance(ferryField.getOwner(), ph.valueOfAllAssets(player)/2 + player.getMoney()/2);
+            ph.changePlayerBalance(player, -rent);
         }
 
+        playerViewController.updatePlayerMoney();
+
+
+        String textField = ferryName + " er ejet af " + ferryOwner + ". Betal " + rent + " i leje."  ;
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurn());
 
     }
 
@@ -482,28 +465,21 @@ public class CommunicationController {
 
         PlayerHandler ph = ControllerHandler.getInstance().getBoardController().playerHandler;
         player.setLastPlayerPaid(breweryField.getOwner().getId());
-        if(ph.canAffordTotal(player, rent)) {
+        if(ph.canAffordTotal(player, rent)){
             breweryField.rent(player, rent);
-            playerViewController.updatePlayerMoney();
-
-
-            String textField = breweryName + " er ejet af " + breweryOwner + ". Betal " + rent + " i leje.";
-            showCommunicationBox(textField, choiceOptions);
-
-            choices[0].setOnAction(e -> boardController.endTurn());
         }
         else{
-        String[] choiceOptions2 = new String[1];
-        choiceOptions2[0] = "Overdrag";
+            ph.changePlayerBalance(breweryField.getOwner(), ph.valueOfAllAssets(player)/2 + player.getMoney()/2);
+            ph.changePlayerBalance(player, -rent);
+        }
+        playerViewController.updatePlayerMoney();
 
-        String textField = breweryName + " er ejet af " + breweryOwner + ". Du har ikke råd til at betale for den fulde leje. Overdrag ejendele til " + breweryOwner  ;
 
+        String textField = breweryName + " er ejet af " + breweryOwner + ". Betal " + rent + " i leje.";
         showCommunicationBox(textField, choiceOptions);
-        choices[0].setOnAction(e -> {
-            ph.bankruptPlayerToPlayer(player, breweryField.getOwner());
-            boardController.endTurn();
-        });
-    }
+
+        choices[0].setOnAction(e -> boardController.endTurn());
+
     }
     public void playerAlreadyOwn(String fieldName, String playerName){
         String[] choiceOptions = new String[1];

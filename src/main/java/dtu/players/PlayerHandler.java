@@ -218,18 +218,22 @@ public class PlayerHandler {
                     case "buyablefield":
                         changePlayerBalance(playerToGain, ((FieldProperty)toGive.get(i)).getProperty().getPrice());
                         ControllerHandler.getInstance().getBoardController().buyPropertyTrade(((FieldProperty)toGive.get(i)), playerToGain);
+                        ((FieldProperty) toGive.get(i)).setPledgeState(true);
+
                         break;
                     case "ferry":
                         changePlayerBalance(playerToGain, ((FerryField)toGive.get(i)).getFerry().getPrice());
                         ControllerHandler.getInstance().getBoardController().buyFerryTrade(((FerryField)toGive.get(i)), playerToGain);
+                        ((FerryField) toGive.get(i)).setPledgeState(true);
                         break;
                     case "brewery":
                         changePlayerBalance(playerToGain, ((BreweryField)toGive.get(i)).getBrewery().getPrice());
                         ControllerHandler.getInstance().getBoardController().buyBreweryTrade(((BreweryField)toGive.get(i)), playerToGain);
+                        ((BreweryField) toGive.get(i)).setPledgeState(true);
                         break;
                 }
             }
-            changePlayerBalance(playerToGain, value);
+            if(value > 0) changePlayerBalance(playerToGain, value);
             ControllerHandler.getInstance().getPlayerViewController().removePlayerFromPlayerView(playerBankrupt.getId());
             ControllerHandler.getInstance().getBoardController().removeCarPlayer(playerBankrupt.getId());
     }
