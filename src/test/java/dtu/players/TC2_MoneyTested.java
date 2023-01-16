@@ -1,3 +1,5 @@
+package dtu.players;
+
 import dtu.players.Player;
 import org.junit.jupiter.api.Test;
 
