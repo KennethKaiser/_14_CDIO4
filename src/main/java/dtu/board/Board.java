@@ -36,7 +36,7 @@ public class Board {
                         Integer.parseInt(fieldText.get(i)[5]),Integer.parseInt(fieldText.get(i)[6])));
             }
 
-            else if(fieldText.get(i)[2].equals("start")||fieldText.get(i)[2].equals("jailvisit")||fieldText.get(i)[2].equals("parking")){
+            else if(fieldText.get(i)[2].equals("start")||fieldText.get(i)[2].equals("jailvisit")){
                 currentBoard[i-1] = new DummyField(new Dummy(Integer.parseInt(fieldText.get(i)[1]),fieldText.get(i)[0]));
             }
             else if(fieldText.get(i)[2].equals("tax")){
@@ -47,6 +47,12 @@ public class Board {
             }
             else if(fieldText.get(i)[2].equals("jail")){
                 currentBoard[i-1] = new GoPrisonField();
+            }
+            else if(fieldText.get(i)[2].equals("parking")){
+                currentBoard[i-1] = new Jackpot();
+                Jackpot jackpot = (Jackpot) currentBoard[i-1];
+                jackpot.setName(fieldText.get(i)[0]);
+                jackpot.setAmount(0);
             }
         }
 
