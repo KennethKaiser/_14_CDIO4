@@ -35,7 +35,7 @@ public class SceneSwitch {
     HBox playerView;
     AnchorPane board;
     StackPane chanceCards;
-    StackPane propertyMenu;
+    AnchorPane propertyMenu;
     HBox communication;
     AnchorPane tradeMenu;
     StackPane pauseMenu;
@@ -76,7 +76,7 @@ public class SceneSwitch {
             chanceCardsController = fxmlLoader.getController();
             ControllerHandler.getInstance().setChanceCardsController(chanceCardsController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PropertyMenu.fxml"));
-            propertyMenu = (StackPane) fxmlLoader.load();
+            propertyMenu = (AnchorPane) fxmlLoader.load();
             propertyMenuController = fxmlLoader.getController();
             ControllerHandler.getInstance().setPropertyMenuController(propertyMenuController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Communication.fxml"));
