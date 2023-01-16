@@ -9,22 +9,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PropertyMenuController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" translateY="-150.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PropertyMenuController">
    <children>
       <HBox fx:id="parent" alignment="CENTER" prefHeight="0.0" prefWidth="0.0" spacing="3.0">
-         <VBox fx:id="soda1" alignment="TOP_CENTER" layoutX="262.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="136.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+         <VBox fx:id="soda1" alignment="TOP_CENTER" layoutX="262.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="160.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
             <children>
-               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #bbbbbb; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #bbbbbb; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
                   <VBox.margin>
                      <Insets top="5.0" />
                   </VBox.margin>
                   <children>
-                     <ImageView fx:id="sodaImage1" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="sodaImage1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
                   </children>
                </HBox>
-               <Text fx:id="sodaName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Coca Cola Fabrik" textAlignment="CENTER" underline="true" wrappingWidth="110.0">
+               <Text fx:id="sodaName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Coca Cola Fabrik" textAlignment="CENTER" underline="true" wrappingWidth="150.0">
                   <font>
-                     <Font name="Century Gothic Bold" size="12.0" />
+                     <Font name="Century Gothic Bold" size="13.0" />
                   </font>
                </Text>
                <StackPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="112.0">
@@ -33,9 +33,9 @@
                         <children>
                            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ved leje modtag terningernes øjne ganget med 100" wrappingWidth="102.79992866516113">
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ved leje modtag terningernes øjne ganget med 100" wrappingWidth="140.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -57,9 +57,9 @@
                            </HBox>
                            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hvis man ejer begge sodavandsfabrikker kan terningerne ganges med 200" wrappingWidth="102.79992866516113">
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hvis man ejer begge sodavandsfabrikker kan terningerne ganges med 200" wrappingWidth="140.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -68,13 +68,6 @@
                               </padding>
                            </HBox>
                            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
-                              <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
-                                    <font>
-                                       <Font name="Century Gothic" size="10.0" />
-                                    </font>
-                                 </Text>
-                              </children>
                               <padding>
                                  <Insets left="3.0" right="1.0" />
                               </padding>
@@ -93,11 +86,11 @@
                            </HBox>
                         </children>
                      </VBox>
-                     <VBox fx:id="pansatSoda1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="30.0" prefWidth="100.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
+                     <VBox fx:id="pansatSoda1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="40.0" prefWidth="140.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
                         <children>
                            <Text fill="#5b5959" strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsat">
                               <font>
-                                 <Font name="Century Gothic Bold" size="21.0" />
+                                 <Font name="Century Gothic Bold" size="31.0" />
                               </font>
                            </Text>
                         </children>
@@ -106,19 +99,19 @@
                </StackPane>
             </children>
          </VBox>
-         <VBox fx:id="soda2" alignment="TOP_CENTER" layoutX="324.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="136.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+         <VBox fx:id="soda2" alignment="TOP_CENTER" layoutX="324.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="160.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
             <children>
-               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #bbbbbb; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #bbbbbb; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
                   <VBox.margin>
                      <Insets top="5.0" />
                   </VBox.margin>
                   <children>
-                     <ImageView fx:id="sodaImage2" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="sodaImage2" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
                   </children>
                </HBox>
-               <Text fx:id="sodaName2" strokeType="OUTSIDE" strokeWidth="0.0" text="Squash Fabrik" textAlignment="CENTER" underline="true" wrappingWidth="110.0">
+               <Text fx:id="sodaName2" strokeType="OUTSIDE" strokeWidth="0.0" text="Squash Fabrik" textAlignment="CENTER" underline="true" wrappingWidth="150.0">
                   <font>
-                     <Font name="Century Gothic Bold" size="12.0" />
+                     <Font name="Century Gothic Bold" size="13.0" />
                   </font>
                </Text>
                <StackPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="112.0">
@@ -127,9 +120,9 @@
                         <children>
                            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ved leje modtag terningernes øjne ganget med 100" wrappingWidth="102.79992866516113">
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ved leje modtag terningernes øjne ganget med 100" wrappingWidth="140.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -151,9 +144,9 @@
                            </HBox>
                            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hvis man ejer begge sodavandsfabrikker kan terningerne ganges med 200" wrappingWidth="102.79992866516113">
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hvis man ejer begge sodavandsfabrikker kan terningerne ganges med 200" wrappingWidth="140.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -162,13 +155,6 @@
                               </padding>
                            </HBox>
                            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
-                              <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
-                                    <font>
-                                       <Font name="Century Gothic" size="10.0" />
-                                    </font>
-                                 </Text>
-                              </children>
                               <padding>
                                  <Insets left="3.0" right="1.0" />
                               </padding>
@@ -187,11 +173,11 @@
                            </HBox>
                         </children>
                      </VBox>
-                     <VBox fx:id="pansatSoda2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="30.0" prefWidth="100.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
+                     <VBox fx:id="pansatSoda2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="40.0" prefWidth="140.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
                         <children>
                            <Text fill="#5b5959" strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsat">
                               <font>
-                                 <Font name="Century Gothic Bold" size="21.0" />
+                                 <Font name="Century Gothic Bold" size="31.0" />
                               </font>
                            </Text>
                         </children>
@@ -200,9 +186,9 @@
                </StackPane>
             </children>
          </VBox>
-         <VBox fx:id="property1" alignment="TOP_CENTER" layoutX="75.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="136.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+         <VBox fx:id="property1" alignment="TOP_CENTER" layoutX="75.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="160.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
             <children>
-               <HBox fx:id="color1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+               <HBox fx:id="color1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
                   <VBox.margin>
                      <Insets top="5.0" />
                   </VBox.margin>
@@ -220,7 +206,7 @@
                            </Button>
                         </children>
                      </StackPane>
-                     <ImageView fx:id="propertyImage1" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="propertyImage1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
                      <StackPane fx:id="plus1" prefHeight="150.0" prefWidth="200.0">
                         <children>
                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="+" translateY="-2.0">
@@ -236,9 +222,9 @@
                      </StackPane>
                   </children>
                </HBox>
-               <Text fx:id="propertyName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksberg Allé" textAlignment="CENTER" underline="true" wrappingWidth="120.0">
+               <Text fx:id="propertyName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksberg Allé" textAlignment="CENTER" underline="true" wrappingWidth="150.0">
                   <font>
-                     <Font name="Century Gothic Bold" size="12.0" />
+                     <Font name="Century Gothic Bold" size="13.0" />
                   </font>
                </Text>
                <StackPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="112.0">
@@ -249,12 +235,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="leje" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="leje1" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="leje1" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -266,7 +252,7 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -278,12 +264,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 hus" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hus11" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hus11" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -295,12 +281,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 huse" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hus21" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hus21" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -312,12 +298,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 huse" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hus31" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hus31" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -329,12 +315,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 huse" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hus41" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hus41" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -346,12 +332,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hotel1" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hotel1" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -360,13 +346,6 @@
                               </padding>
                            </HBox>
                            <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="0.0" prefWidth="0.0">
-                              <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
-                                    <font>
-                                       <Font name="Century Gothic" size="10.0" />
-                                    </font>
-                                 </Text>
-                              </children>
                               <padding>
                                  <Insets left="3.0" right="1.0" />
                               </padding>
@@ -375,12 +354,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pris pr hus" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="husPris1" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="husPris1" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -402,11 +381,11 @@
                            </HBox>
                         </children>
                      </VBox>
-                     <VBox fx:id="pansatProp1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="30.0" prefWidth="100.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
+                     <VBox fx:id="pansatProp1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="40.0" prefWidth="140.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
                         <children>
                            <Text fill="#5b5959" strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsat">
                               <font>
-                                 <Font name="Century Gothic Bold" size="21.0" />
+                                 <Font name="Century Gothic Bold" size="31.0" />
                               </font>
                            </Text>
                         </children>
@@ -415,9 +394,9 @@
                </StackPane>
             </children>
          </VBox>
-         <VBox fx:id="property2" alignment="TOP_CENTER" layoutX="886.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="136.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+         <VBox fx:id="property2" alignment="TOP_CENTER" layoutX="886.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="160.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
             <children>
-               <HBox fx:id="color2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+               <HBox fx:id="color2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
                   <VBox.margin>
                      <Insets top="5.0" />
                   </VBox.margin>
@@ -435,7 +414,7 @@
                            </Button>
                         </children>
                      </StackPane>
-                     <ImageView fx:id="propertyImage2" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="propertyImage2" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
                      <StackPane fx:id="plus2" layoutX="36.0" layoutY="11.0" prefHeight="150.0" prefWidth="200.0">
                         <children>
                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="+" translateY="-2.0">
@@ -451,9 +430,9 @@
                      </StackPane>
                   </children>
                </HBox>
-               <Text fx:id="propertyName2" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksberg Allé" textAlignment="CENTER" underline="true" wrappingWidth="120.0">
+               <Text fx:id="propertyName2" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksberg Allé" textAlignment="CENTER" underline="true" wrappingWidth="150.0">
                   <font>
-                     <Font name="Century Gothic Bold" size="12.0" />
+                     <Font name="Century Gothic Bold" size="13.0" />
                   </font>
                </Text>
                <StackPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="112.0">
@@ -464,12 +443,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="leje" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="leje2" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="leje2" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -481,7 +460,7 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -493,12 +472,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 hus" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hus12" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hus12" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -510,12 +489,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 huse" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hus22" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hus22" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -527,12 +506,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 huse" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hus32" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hus32" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -544,12 +523,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 huse" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hus42" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hus42" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -561,12 +540,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hotel2" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hotel2" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -575,13 +554,6 @@
                               </padding>
                            </HBox>
                            <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="0.0" prefWidth="0.0">
-                              <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
-                                    <font>
-                                       <Font name="Century Gothic" size="10.0" />
-                                    </font>
-                                 </Text>
-                              </children>
                               <padding>
                                  <Insets left="3.0" right="1.0" />
                               </padding>
@@ -590,12 +562,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pris pr hus" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="husPris2" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="husPris2" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -617,11 +589,11 @@
                            </HBox>
                         </children>
                      </VBox>
-                     <VBox fx:id="pansatProp2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="30.0" prefWidth="100.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
+                     <VBox fx:id="pansatProp2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="40.0" prefWidth="140.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
                         <children>
                            <Text fill="#5b5959" strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsat">
                               <font>
-                                 <Font name="Century Gothic Bold" size="21.0" />
+                                 <Font name="Century Gothic Bold" size="31.0" />
                               </font>
                            </Text>
                         </children>
@@ -630,9 +602,9 @@
                </StackPane>
             </children>
          </VBox>
-         <VBox fx:id="property3" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="136.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+         <VBox fx:id="property3" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="160.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
             <children>
-               <HBox fx:id="color3" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+               <HBox fx:id="color3" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: red; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
                   <VBox.margin>
                      <Insets top="5.0" />
                   </VBox.margin>
@@ -650,7 +622,7 @@
                            </Button>
                         </children>
                      </StackPane>
-                     <ImageView fx:id="propertyImage3" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="propertyImage3" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
                      <StackPane fx:id="plus3" prefHeight="150.0" prefWidth="200.0">
                         <children>
                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="+" translateY="-2.0">
@@ -666,9 +638,9 @@
                      </StackPane>
                   </children>
                </HBox>
-               <Text fx:id="propertyName3" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksberg Allé" textAlignment="CENTER" underline="true" wrappingWidth="120.0">
+               <Text fx:id="propertyName3" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksberg Allé" textAlignment="CENTER" underline="true" wrappingWidth="150.0">
                   <font>
-                     <Font name="Century Gothic Bold" size="12.0" />
+                     <Font name="Century Gothic Bold" size="13.0" />
                   </font>
                </Text>
                <StackPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="112.0">
@@ -679,12 +651,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="leje" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="leje3" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="leje3" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -696,7 +668,7 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -708,12 +680,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 hus" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hus13" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hus13" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -725,12 +697,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 huse" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hus23" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hus23" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -742,12 +714,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 huse" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hus33" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hus33" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -759,12 +731,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 huse" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hus43" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hus43" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -776,12 +748,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="hotel3" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="hotel3" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -790,13 +762,6 @@
                               </padding>
                            </HBox>
                            <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="0.0" prefWidth="0.0">
-                              <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
-                                    <font>
-                                       <Font name="Century Gothic" size="10.0" />
-                                    </font>
-                                 </Text>
-                              </children>
                               <padding>
                                  <Insets left="3.0" right="1.0" />
                               </padding>
@@ -805,12 +770,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pris pr hus" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text fx:id="husPris3" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="55.0">
+                                 <Text fx:id="husPris3" layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxx kr." textAlignment="RIGHT" wrappingWidth="75.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -832,11 +797,11 @@
                            </HBox>
                         </children>
                      </VBox>
-                     <VBox fx:id="pansatProp3" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="30.0" prefWidth="100.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
+                     <VBox fx:id="pansatProp3" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="40.0" prefWidth="140.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
                         <children>
                            <Text fill="#5b5959" strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsat">
                               <font>
-                                 <Font name="Century Gothic Bold" size="21.0" />
+                                 <Font name="Century Gothic Bold" size="31.0" />
                               </font>
                            </Text>
                         </children>
@@ -845,19 +810,19 @@
                </StackPane>
             </children>
          </VBox>
-         <VBox fx:id="ferry1" alignment="TOP_CENTER" layoutX="324.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="136.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+         <VBox fx:id="ferry1" alignment="TOP_CENTER" layoutX="324.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="160.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
             <children>
-               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #00ffff; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #00ffff; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
                   <VBox.margin>
                      <Insets top="5.0" />
                   </VBox.margin>
                   <children>
-                     <ImageView fx:id="ferryImage1" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="ferryImage1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
                   </children>
                </HBox>
-               <Text fx:id="ferryName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør - Helsingborg" textAlignment="CENTER" underline="true" wrappingWidth="130.0">
+               <Text fx:id="ferryName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør - Helsingborg" textAlignment="CENTER" underline="true" wrappingWidth="150.0">
                   <font>
-                     <Font name="Century Gothic Bold" size="11.0" />
+                     <Font name="Century Gothic Bold" size="13.0" />
                   </font>
                </Text>
                <StackPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="112.0">
@@ -866,9 +831,9 @@
                         <children>
                            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Færger giver større indkomst ved flere færger ejet" wrappingWidth="102.79992866516113">
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Færger giver større indkomst ved flere færger ejet" wrappingWidth="140.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -897,12 +862,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 færge" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -914,12 +879,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 færger" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.000 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -931,12 +896,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 færger" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -948,12 +913,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 færger" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.000 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -962,18 +927,6 @@
                               </padding>
                            </HBox>
                            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
-                              <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
-                                    <font>
-                                       <Font name="Century Gothic" size="10.0" />
-                                    </font>
-                                 </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
-                                    <font>
-                                       <Font name="Century Gothic" size="10.0" />
-                                    </font>
-                                 </Text>
-                              </children>
                               <padding>
                                  <Insets left="3.0" right="1.0" />
                               </padding>
@@ -992,11 +945,11 @@
                            </HBox>
                         </children>
                      </VBox>
-                     <VBox fx:id="pansatFerry1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="30.0" prefWidth="100.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
+                     <VBox fx:id="pansatFerry1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="40.0" prefWidth="140.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
                         <children>
                            <Text fill="#5b5959" strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsat">
                               <font>
-                                 <Font name="Century Gothic Bold" size="21.0" />
+                                 <Font name="Century Gothic Bold" size="31.0" />
                               </font>
                            </Text>
                         </children>
@@ -1005,19 +958,19 @@
                </StackPane>
             </children>
          </VBox>
-         <VBox fx:id="ferry2" alignment="TOP_CENTER" layoutX="200.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="136.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+         <VBox fx:id="ferry2" alignment="TOP_CENTER" layoutX="200.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="160.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
             <children>
-               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #00ffff; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #00ffff; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
                   <VBox.margin>
                      <Insets top="5.0" />
                   </VBox.margin>
                   <children>
-                     <ImageView fx:id="ferryImage2" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="ferryImage2" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
                   </children>
                </HBox>
-               <Text fx:id="ferryName2" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør - Helsingborg" textAlignment="CENTER" underline="true" wrappingWidth="130.0">
+               <Text fx:id="ferryName2" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør - Helsingborg" textAlignment="CENTER" underline="true" wrappingWidth="150.0">
                   <font>
-                     <Font name="Century Gothic Bold" size="11.0" />
+                     <Font name="Century Gothic Bold" size="13.0" />
                   </font>
                </Text>
                <StackPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="112.0">
@@ -1026,9 +979,9 @@
                         <children>
                            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Færger giver større indkomst ved flere færger ejet" wrappingWidth="102.79992866516113">
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Færger giver større indkomst ved flere færger ejet" wrappingWidth="140.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1057,12 +1010,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 færge" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1074,12 +1027,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 færger" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.000 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1091,12 +1044,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 færger" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1108,29 +1061,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 færger" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.000 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
-                                    </font>
-                                 </Text>
-                              </children>
-                              <padding>
-                                 <Insets left="3.0" right="1.0" />
-                              </padding>
-                           </HBox>
-                           <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
-                              <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
-                                    <font>
-                                       <Font name="Century Gothic" size="10.0" />
-                                    </font>
-                                 </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
-                                    <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1152,11 +1088,11 @@
                            </HBox>
                         </children>
                      </VBox>
-                     <VBox fx:id="pansatFerry2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="30.0" prefWidth="100.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
+                     <VBox fx:id="pansatFerry2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="40.0" prefWidth="140.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
                         <children>
                            <Text fill="#5b5959" strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsat">
                               <font>
-                                 <Font name="Century Gothic Bold" size="21.0" />
+                                 <Font name="Century Gothic Bold" size="31.0" />
                               </font>
                            </Text>
                         </children>
@@ -1165,19 +1101,19 @@
                </StackPane>
             </children>
          </VBox>
-         <VBox fx:id="ferry3" alignment="TOP_CENTER" layoutX="134.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="136.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+         <VBox fx:id="ferry3" alignment="TOP_CENTER" layoutX="134.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="160.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
             <children>
-               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #00ffff; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #00ffff; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
                   <VBox.margin>
                      <Insets top="5.0" />
                   </VBox.margin>
                   <children>
-                     <ImageView fx:id="ferryImage3" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="ferryImage3" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
                   </children>
                </HBox>
-               <Text fx:id="ferryName3" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør - Helsingborg" textAlignment="CENTER" underline="true" wrappingWidth="130.0">
+               <Text fx:id="ferryName3" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør - Helsingborg" textAlignment="CENTER" underline="true" wrappingWidth="150.0">
                   <font>
-                     <Font name="Century Gothic Bold" size="11.0" />
+                     <Font name="Century Gothic Bold" size="13.0" />
                   </font>
                </Text>
                <StackPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="112.0">
@@ -1186,9 +1122,9 @@
                         <children>
                            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Færger giver større indkomst ved flere færger ejet" wrappingWidth="102.79992866516113">
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Færger giver større indkomst ved flere færger ejet" wrappingWidth="140.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1217,12 +1153,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 færge" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1234,12 +1170,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 færger" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.000 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1251,12 +1187,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 færger" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1268,29 +1204,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 færger" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.000 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
-                                    </font>
-                                 </Text>
-                              </children>
-                              <padding>
-                                 <Insets left="3.0" right="1.0" />
-                              </padding>
-                           </HBox>
-                           <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
-                              <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
-                                    <font>
-                                       <Font name="Century Gothic" size="10.0" />
-                                    </font>
-                                 </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
-                                    <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1312,11 +1231,11 @@
                            </HBox>
                         </children>
                      </VBox>
-                     <VBox fx:id="pansatFerry3" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="30.0" prefWidth="100.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
+                     <VBox fx:id="pansatFerry3" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="40.0" prefWidth="140.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
                         <children>
                            <Text fill="#5b5959" strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsat">
                               <font>
-                                 <Font name="Century Gothic Bold" size="21.0" />
+                                 <Font name="Century Gothic Bold" size="31.0" />
                               </font>
                            </Text>
                         </children>
@@ -1325,19 +1244,19 @@
                </StackPane>
             </children>
          </VBox>
-         <VBox fx:id="ferry4" alignment="TOP_CENTER" layoutX="258.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="136.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
+         <VBox fx:id="ferry4" alignment="TOP_CENTER" layoutX="258.0" layoutY="165.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="160.0" spacing="5.0" style="-fx-background-color: white; -fx-border-color: #00aa00; -fx-border-radius: 10; -fx-border-width: 5; -fx-background-radius: 12;">
             <children>
-               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #00ffff; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
+               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #00ffff; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 1;">
                   <VBox.margin>
                      <Insets top="5.0" />
                   </VBox.margin>
                   <children>
-                     <ImageView fx:id="ferryImage4" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="ferryImage4" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
                   </children>
                </HBox>
-               <Text fx:id="ferryName4" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør - Helsingborg" textAlignment="CENTER" underline="true" wrappingWidth="130.0">
+               <Text fx:id="ferryName4" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør - Helsingborg" textAlignment="CENTER" underline="true" wrappingWidth="150.0">
                   <font>
-                     <Font name="Century Gothic Bold" size="11.0" />
+                     <Font name="Century Gothic Bold" size="13.0" />
                   </font>
                </Text>
                <StackPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="112.0">
@@ -1346,9 +1265,9 @@
                         <children>
                            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
                               <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Færger giver større indkomst ved flere færger ejet" wrappingWidth="102.79992866516113">
+                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Færger giver større indkomst ved flere færger ejet" wrappingWidth="140.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1377,12 +1296,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1 færge" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1394,12 +1313,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2 færger" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.000 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1411,12 +1330,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3 færger" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.000 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1428,29 +1347,12 @@
                               <children>
                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 færger" wrappingWidth="63.59997749328613">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.000 kr." textAlignment="RIGHT" wrappingWidth="42.79999363422394">
+                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.000 kr." textAlignment="RIGHT" wrappingWidth="60.0">
                                     <font>
-                                       <Font name="Century Gothic" size="10.0" />
-                                    </font>
-                                 </Text>
-                              </children>
-                              <padding>
-                                 <Insets left="3.0" right="1.0" />
-                              </padding>
-                           </HBox>
-                           <HBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
-                              <children>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="63.59997749328613">
-                                    <font>
-                                       <Font name="Century Gothic" size="10.0" />
-                                    </font>
-                                 </Text>
-                                 <Text layoutX="10.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="42.79999363422394">
-                                    <font>
-                                       <Font name="Century Gothic" size="10.0" />
+                                       <Font name="Century Gothic" size="13.0" />
                                     </font>
                                  </Text>
                               </children>
@@ -1472,11 +1374,11 @@
                            </HBox>
                         </children>
                      </VBox>
-                     <VBox fx:id="pansatFerry4" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="30.0" prefWidth="100.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
+                     <VBox fx:id="pansatFerry4" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" opacity="0.84" prefHeight="40.0" prefWidth="140.0" rotate="345.0" style="-fx-background-color: #dddddd;" translateY="30.0">
                         <children>
                            <Text fill="#5b5959" strokeType="OUTSIDE" strokeWidth="0.0" text="Pantsat">
                               <font>
-                                 <Font name="Century Gothic Bold" size="21.0" />
+                                 <Font name="Century Gothic Bold" size="31.0" />
                               </font>
                            </Text>
                         </children>

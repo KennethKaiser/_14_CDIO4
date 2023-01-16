@@ -43,7 +43,6 @@ public class BoardController {
     RaffleCup dice = new RaffleCup();
     PlayerHandler playerHandler = new PlayerHandler();
 
-
     //GUI variables
     private ImageView[] cars; //car Icons that move on the field
     private StackPane[] fields; //The Stackpanes that a car is placed in on each field
@@ -370,10 +369,6 @@ public class BoardController {
         initializePlayerHandlerPlayerViewController();
         initTradeMenu();
         initializeChanceCardDeck();
-
-
-
-
     }
 
     //region delegate model objects to other controller
@@ -741,7 +736,6 @@ public class BoardController {
     }
 
     public void whatYourTaxes(Field field){
-
         TaxField taxField = (TaxField) field;
         Player currentPlayer = playerHandler.getCurrentPlayer();
 

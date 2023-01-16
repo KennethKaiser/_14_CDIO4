@@ -53,11 +53,11 @@ public class SaveAndLoad {
     }
     public boolean delete(String name){
         if(csvFileReader.deleteSave(name)){
-            sendText("Deleted Save " + name);
+            System.out.println("Deleted Save " + name);
             return true;
         }
         else{
-            sendText("Could not find the save " + name + " to delete");
+            System.out.println("Could not find the save " + name + " to delete");
             return false;
         }
     }

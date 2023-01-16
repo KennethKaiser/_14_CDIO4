@@ -4,10 +4,13 @@ import dtu.board.Field;
 import dtu.board.Property;
 import dtu.controllers.*;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -30,11 +33,11 @@ public class SceneSwitch {
     VBox menu;
     HBox root;
     HBox playerView;
-    StackPane board;
+    AnchorPane board;
     StackPane chanceCards;
     StackPane propertyMenu;
     HBox communication;
-    VBox tradeMenu;
+    AnchorPane tradeMenu;
     StackPane pauseMenu;
     //endregion
     Scene menuScene;
@@ -65,7 +68,7 @@ public class SceneSwitch {
             playerViewController = fxmlLoader.getController();
             ControllerHandler.getInstance().setPlayerViewController(playerViewController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Board.fxml"));
-            board = (StackPane) fxmlLoader.load();
+            board = (AnchorPane) fxmlLoader.load();
             boardController = fxmlLoader.getController();
             ControllerHandler.getInstance().setBoardController(boardController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("ChanceCards.fxml"));
@@ -81,7 +84,7 @@ public class SceneSwitch {
             communicationController = fxmlLoader.getController();
             ControllerHandler.getInstance().setCommunicationController(communicationController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("TradeMenu.fxml"));
-            tradeMenu = (VBox) fxmlLoader.load();
+            tradeMenu = (AnchorPane) fxmlLoader.load();
             tradingMenuController = fxmlLoader.getController();
             ControllerHandler.getInstance().setTradingMenuController(tradingMenuController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PauseMenu.fxml"));
@@ -108,9 +111,15 @@ public class SceneSwitch {
         stage.show();
     }
     public void switchToBoard(boolean isLoad){
+        Screen screen = Screen.getPrimary();
+        Rectangle2D bounds = screen.getVisualBounds();
         stage.setScene(boardScene);
         stage.setMaximized(true);
-        stage.setResizable(false);
+        stage.setX(bounds.getMinX());
+        stage.setY(bounds.getMinY());
+        stage.setWidth(bounds.getWidth());
+        stage.setHeight(bounds.getHeight());
+        stage.resizableProperty().setValue(Boolean.FALSE);
         stage.show();
         boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getColorNames(isLoad));
         boardController.giveButtonsFunctions();
