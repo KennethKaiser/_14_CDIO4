@@ -6,10 +6,7 @@ import dtu.controllers.*;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -33,7 +30,7 @@ public class SceneSwitch {
     AnchorPane menu;
     HBox root;
     HBox playerView;
-    AnchorPane board;
+    BorderPane board;
     AnchorPane chanceCards;
     AnchorPane propertyMenu;
     AnchorPane communication;
@@ -68,7 +65,7 @@ public class SceneSwitch {
             playerViewController = fxmlLoader.getController();
             ControllerHandler.getInstance().setPlayerViewController(playerViewController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Board.fxml"));
-            board = (AnchorPane) fxmlLoader.load();
+            board = (BorderPane) fxmlLoader.load();
             boardController = fxmlLoader.getController();
             ControllerHandler.getInstance().setBoardController(boardController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("ChanceCards.fxml"));
