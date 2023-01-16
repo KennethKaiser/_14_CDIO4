@@ -139,6 +139,7 @@ public class SceneSwitch {
     public void switchToPauseMenu(){
         if(!boardController.getMiddleParent().getChildren().contains(pauseMenu)){
             boardController.getMiddleParent().getChildren().add(pauseMenu);
+            pauseMenuController.open();
         }
     }
     public void removePauseMenu(){

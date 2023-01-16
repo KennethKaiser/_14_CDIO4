@@ -361,6 +361,7 @@ public class BoardController {
     //Initializes on start
     @FXML
     public void initialize() {
+        pauseButton.setOnAction(e -> ControllerHandler.getInstance().getSceneSwitch().switchToPauseMenu());
         initPics();
         setCars();
         initFields();
