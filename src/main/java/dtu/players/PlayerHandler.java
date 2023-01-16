@@ -174,6 +174,57 @@ public class PlayerHandler {
             }
         }
     }
+    public void bankruptPlayerToPlayer(Player playerBankrupt, int toPay, Player playerToGain){
+        int value = valueOfAllAssets(playerBankrupt) + playerBankrupt.getMoney()/2;
+        if(value < toPay){
+            ControllerHandler.getInstance().getCommunicationController().showOkBox("Din totale værdi af " + value + "kr. er ikke nok til at betale " + toPay + "kr. Derfor gives alle dine ejendele til " + playerToGain.getName());
+            ArrayList<Field> toGive = new ArrayList<>();
+            for (int i=0; i<playerBankrupt.getProperties().size();i++) {
+                ((FieldProperty)playerBankrupt.getProperties().get(i)).setOwner(null);
+                ((FieldProperty)playerBankrupt.getProperties().get(i)).setOwned(false);
+                ((FieldProperty)playerBankrupt.getProperties().get(i)).setBuildings(0);
+                ((FieldProperty)playerBankrupt.getProperties().get(i)).setPledgeState(true);
+
+                if(((FieldProperty)playerBankrupt.getProperties().get(i)).getProperty().getFamilie() <9){
+                    ControllerHandler.getInstance().getBoardController().setHousesOn(0, ((FieldProperty)playerBankrupt.getProperties().get(i)).getProperty().getID());
+                }
+                toGive.add(playerBankrupt.getProperties().get(i));
+            }
+            for(int i = 0; i < playerBankrupt.getFerries().size(); i++){
+                ((FerryField)playerBankrupt.getFerries().get(i)).setOwner(null);
+                ((FerryField)playerBankrupt.getFerries().get(i)).setOwned(false);
+                ((FerryField)playerBankrupt.getFerries().get(i)).setPledgeState(true);
+                toGive.add(playerBankrupt.getFerries().get(i));
+            }
+            for(int i = 0; i < playerBankrupt.getBreweries().size(); i++){
+                ((BreweryField)playerBankrupt.getBreweries().get(i)).setOwner(null);
+                ((BreweryField)playerBankrupt.getBreweries().get(i)).setOwned(false);
+                ((BreweryField)playerBankrupt.getBreweries().get(i)).setPledgeState(true);
+                toGive.add(playerBankrupt.getBreweries().get(i));
+            }
+            for(int i = 0; i < toGive.size(); i++){
+                ControllerHandler.getInstance().getPlayerViewController().removeCard(toGive.get(i));
+                switch (toGive.get(i).type()){
+                    case "buyablefield":
+                        changePlayerBalance(playerToGain, ((FieldProperty)toGive.get(i)).getProperty().getPrice());
+                        ControllerHandler.getInstance().getBoardController().buyPropertyTrade(((FieldProperty)toGive.get(i)), playerToGain);
+                        break;
+                    case "ferry":
+                        changePlayerBalance(playerToGain, ((FerryField)toGive.get(i)).getFerry().getPrice());
+                        ControllerHandler.getInstance().getBoardController().buyFerryTrade(((FerryField)toGive.get(i)), playerToGain);
+                        break;
+                    case "brewery":
+                        changePlayerBalance(playerToGain, ((BreweryField)toGive.get(i)).getBrewery().getPrice());
+                        ControllerHandler.getInstance().getBoardController().buyBreweryTrade(((BreweryField)toGive.get(i)), playerToGain);
+                        break;
+                }
+            }
+            changePlayerBalance(playerToGain, value);
+        }
+        else{
+            ControllerHandler.getInstance().getCommunicationController().showOkBox("Du vil have råd til at betale hvis du pantsætter/tager huse af");
+        }
+    }
 
     /**
      *  Method that changes the player to null and moves all players to new array.
