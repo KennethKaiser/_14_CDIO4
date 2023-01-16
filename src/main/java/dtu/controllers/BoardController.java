@@ -383,6 +383,7 @@ public class BoardController {
 
     //region Initialize Fields and buttons to fields
     private void initFields(){
+        pauseButton.setOnAction(e -> ControllerHandler.getInstance().getSceneSwitch().switchToPauseMenu());
         backgroundButton.setOnAction(e -> removeOnScreen());
         fields = new StackPane[40];
         fields[0] = field0;

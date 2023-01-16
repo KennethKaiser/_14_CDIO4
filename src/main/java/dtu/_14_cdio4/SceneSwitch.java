@@ -5,6 +5,7 @@ import dtu.board.Property;
 import dtu.controllers.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -34,7 +35,7 @@ public class SceneSwitch {
     StackPane chanceCards;
     StackPane propertyMenu;
     HBox communication;
-    VBox tradeMenu;
+    AnchorPane tradeMenu;
     StackPane pauseMenu;
     //endregion
     Scene menuScene;
@@ -81,7 +82,7 @@ public class SceneSwitch {
             communicationController = fxmlLoader.getController();
             ControllerHandler.getInstance().setCommunicationController(communicationController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("TradeMenu.fxml"));
-            tradeMenu = (VBox) fxmlLoader.load();
+            tradeMenu = (AnchorPane) fxmlLoader.load();
             tradingMenuController = fxmlLoader.getController();
             ControllerHandler.getInstance().setTradingMenuController(tradingMenuController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PauseMenu.fxml"));

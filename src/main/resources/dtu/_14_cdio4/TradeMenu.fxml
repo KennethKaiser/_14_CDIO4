@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
@@ -13,218 +14,227 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.TradingMenuController">
+
+<AnchorPane prefHeight="0.0" prefWidth="0.0" translateY="-100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.TradingMenuController">
    <children>
-      <StackPane prefHeight="410.0" prefWidth="500.0">
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox prefHeight="407.0" prefWidth="500.0" style="-fx-background-color: #ffffff; -fx-background-radius: 14; -fx-border-color: #00aa00; -fx-border-radius: 12; -fx-border-width: 5;">
+            <StackPane prefHeight="506.0" prefWidth="650.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="46.0" prefWidth="671.0">
+                  <VBox prefHeight="500.0" prefWidth="650.0" style="-fx-background-color: #ffffff; -fx-background-radius: 14; -fx-border-color: #00aa00; -fx-border-radius: 12; -fx-border-width: 5;">
                      <children>
-                        <ComboBox fx:id="player1DropDown" prefWidth="220.0" promptText="Vælg Spiller" scaleX="0.8" scaleY="0.8" style="-fx-background-radius: 4; -fx-background-color: #ffffff; -fx-border-color: #00aa00; -fx-border-radius: 3;" />
-                        <Button fx:id="makeTradeButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="127.0" style="-fx-background-color: #ffffff; -fx-border-color: #00aa00; -fx-border-radius: 3; -fx-background-radius: 4;" text="Make Trade" textFill="#767676">
-                           <font>
-                              <Font name="Century Gothic Bold" size="13.0" />
-                           </font>
-                        </Button>
-                        <ComboBox fx:id="player2DropDown" layoutX="180.0" layoutY="47.0" prefWidth="220.0" promptText="Vælg Spiller" scaleX="0.8" scaleY="0.8" style="-fx-background-radius: 4; -fx-background-color: #ffffff; -fx-border-color: #00aa00; -fx-border-radius: 3;" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="326.0" prefWidth="479.0" spacing="10.0">
-                     <children>
-                        <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" style="-fx-border-color: #dddddd; -fx-border-radius: 3;">
+                        <HBox alignment="CENTER" prefHeight="88.0" prefWidth="630.0" spacing="10.0">
                            <children>
-                              <HBox alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="188.0" spacing="10.0">
+                              <ComboBox fx:id="player1DropDown" prefWidth="220.0" promptText="Vælg Spiller" style="-fx-background-radius: 4; -fx-background-color: #ffffff; -fx-border-color: #00aa00; -fx-border-radius: 3;" />
+                              <Button fx:id="makeTradeButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="137.0" style="-fx-background-color: #ffffff; -fx-border-color: #00aa00; -fx-border-radius: 3; -fx-background-radius: 4;" text="Make Trade" textFill="#767676">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                              <ComboBox fx:id="player2DropDown" layoutX="180.0" layoutY="47.0" prefWidth="220.0" promptText="Vælg Spiller" style="-fx-background-radius: 4; -fx-background-color: #ffffff; -fx-border-color: #00aa00; -fx-border-radius: 3;" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="410.0" prefWidth="630.0" spacing="10.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="400.0" style="-fx-border-color: #dddddd; -fx-border-radius: 3;">
                                  <children>
-                                    <Text fx:id="playerName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="104.12346959114075">
-                                       <font>
-                                          <Font name="Century Gothic" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text fx:id="playerMoney1" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxxx kr">
-                                       <font>
-                                          <Font name="Century Gothic" size="14.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                                 <padding>
-                                    <Insets right="10.0" />
-                                 </padding>
-                              </HBox>
-                              <FlowPane fx:id="properties1" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="170.0" prefWidth="166.0" vgap="18.0">
-                                 <padding>
-                                    <Insets top="5.0" />
-                                 </padding>
-                              </FlowPane>
-                              <HBox fx:id="cardHolder1" alignment="CENTER" prefHeight="202.0" prefWidth="188.0">
-                                 <children>
-                                    <VBox fx:id="card1" alignment="TOP_CENTER" prefHeight="134.0" prefWidth="89.0" spacing="2.0" style="-fx-border-color: #00dd00; -fx-border-radius: 9; -fx-border-width: 3;">
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="188.0" spacing="10.0">
                                        <children>
-                                          <VBox alignment="TOP_CENTER" maxHeight="67.0" prefHeight="62.0" prefWidth="83.0">
+                                          <Text fx:id="playerName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="140.0">
+                                             <font>
+                                                <Font name="Century Gothic" size="19.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="playerMoney1" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxxx kr" wrappingWidth="100.0">
+                                             <font>
+                                                <Font name="Century Gothic" size="19.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <FlowPane fx:id="properties1" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="170.0" prefWidth="300.0" vgap="18.0">
+                                       <padding>
+                                          <Insets top="5.0" />
+                                       </padding>
+                                    </FlowPane>
+                                    <HBox fx:id="cardHolder1" alignment="CENTER" prefHeight="240.0" prefWidth="188.0">
+                                       <children>
+                                          <VBox fx:id="card1" alignment="TOP_CENTER" maxHeight="-Infinity" prefHeight="180.0" prefWidth="120.0" spacing="2.0" style="-fx-border-color: #00dd00; -fx-border-radius: 9; -fx-border-width: 3;">
                                              <children>
-                                                <VBox fx:id="color1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: red; -fx-border-color: #dddddd; -fx-border-radius: 5; -fx-background-radius: 6;">
-                                                   <VBox.margin>
-                                                      <Insets top="2.0" />
-                                                   </VBox.margin>
+                                                <VBox alignment="TOP_CENTER" maxHeight="67.0" prefHeight="62.0" prefWidth="83.0">
                                                    <children>
-                                                      <ImageView fx:id="image1" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" />
+                                                      <VBox fx:id="color1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: red; -fx-border-color: #dddddd; -fx-border-radius: 5; -fx-background-radius: 6;">
+                                                         <VBox.margin>
+                                                            <Insets top="2.0" />
+                                                         </VBox.margin>
+                                                         <children>
+                                                            <ImageView fx:id="image1" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="BOTTOM_CENTER" prefHeight="26.0" prefWidth="83.0">
+                                                         <children>
+                                                            <Text fx:id="name1" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør Helsingborg" textAlignment="CENTER" wrappingWidth="100.0">
+                                                               <font>
+                                                                  <Font size="13.0" />
+                                                               </font>
+                                                            </Text>
+                                                         </children>
+                                                      </VBox>
                                                    </children>
                                                 </VBox>
-                                                <VBox alignment="BOTTOM_CENTER" prefHeight="26.0" prefWidth="83.0">
+                                                <VBox alignment="TOP_CENTER" prefHeight="78.0" prefWidth="83.0">
                                                    <children>
-                                                      <Text fx:id="name1" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør Helsingborg" textAlignment="CENTER" wrappingWidth="75.466796875">
-                                                         <font>
-                                                            <Font size="9.0" />
-                                                         </font>
-                                                      </Text>
+                                                      <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="2.0" prefWidth="80.0" style="-fx-background-color: #404040;" />
+                                                      <VBox alignment="CENTER" minHeight="7.0" minWidth="20.0" prefHeight="64.0" prefWidth="83.0">
+                                                         <children>
+                                                            <Button fx:id="add1" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #ffffff; -fx-border-color: #00dd00; -fx-border-radius: 4;" text="Add to Trade">
+                                                               <font>
+                                                                  <Font name="Century Gothic" size="12.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="2.0" />
+                                                         </padding>
+                                                      </VBox>
                                                    </children>
-                                                </VBox>
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="TOP_CENTER" prefHeight="78.0" prefWidth="83.0">
-                                             <children>
-                                                <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="2.0" prefWidth="80.0" style="-fx-background-color: #404040;" />
-                                                <VBox alignment="CENTER" minHeight="7.0" minWidth="20.0" prefHeight="64.0" prefWidth="83.0">
-                                                   <children>
-                                                      <Button fx:id="add1" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #00dd00; -fx-border-radius: 4;" text="Add to Trade">
-                                                         <font>
-                                                            <Font name="Century Gothic" size="9.0" />
-                                                         </font>
-                                                      </Button>
-                                                   </children>
-                                                   <padding>
-                                                      <Insets bottom="2.0" />
-                                                   </padding>
                                                 </VBox>
                                              </children>
                                           </VBox>
                                        </children>
-                                    </VBox>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="80.0" style="-fx-border-color: #dddddd; -fx-border-radius: 3;">
-                                 <children>
-                                    <TextField fx:id="moneyInput1" alignment="CENTER" prefHeight="10.0" prefWidth="78.0" promptText="Money">
-                                       <font>
-                                          <Font size="10.0" />
-                                       </font>
-                                    </TextField>
-                                    <FlowPane fx:id="tradeProps1" prefHeight="200.0" prefWidth="200.0" />
+                                    </HBox>
                                  </children>
                               </VBox>
-                              <ImageView fx:id="arrowRight" fitHeight="29.0" fitWidth="41.0" opacity="0.6" pickOnBounds="true" preserveRatio="true" scaleY="0.7">
-                                 <image>
-                                    <Image url="@../../../../textures/arrow.png" />
-                                 </image>
-                              </ImageView>
-                              <VBox layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="80.0" style="-fx-border-color: #dddddd; -fx-border-radius: 3;">
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
                                  <children>
-                                    <TextField fx:id="moneyInput2" alignment="CENTER" promptText="Money">
-                                       <font>
-                                          <Font size="10.0" />
-                                       </font>
-                                    </TextField>
-                                    <FlowPane fx:id="tradeProps2" prefHeight="200.0" prefWidth="200.0" />
-                                 </children>
-                              </VBox>
-                              <ImageView fx:id="arrowLeft" fitHeight="29.0" fitWidth="41.0" layoutX="40.0" layoutY="111.0" opacity="0.6" pickOnBounds="true" preserveRatio="true" rotate="180.0" scaleY="0.7">
-                                 <image>
-                                    <Image url="@../../../../textures/arrow.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </VBox>
-                        <VBox alignment="TOP_CENTER" layoutX="250.0" layoutY="10.0" prefHeight="300.0" prefWidth="300.0" style="-fx-border-color: #dddddd; -fx-border-radius: 3;">
-                           <children>
-                              <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="188.0" spacing="10.0">
-                                 <children>
-                                    <Text fx:id="playerName2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="101.72344517707825">
-                                       <font>
-                                          <Font name="Century Gothic" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Text fx:id="playerMoney2" layoutX="91.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxxx kr">
-                                       <font>
-                                          <Font name="Century Gothic" size="14.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                                 <padding>
-                                    <Insets right="10.0" />
-                                 </padding>
-                              </HBox>
-                              <FlowPane fx:id="properties2" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="170.0" prefWidth="163.0" vgap="18.0">
-                                 <padding>
-                                    <Insets top="5.0" />
-                                 </padding>
-                              </FlowPane>
-                              <HBox fx:id="cardHolder2" alignment="CENTER" prefHeight="160.0" prefWidth="188.0">
-                                 <children>
-                                    <VBox fx:id="card2" alignment="TOP_CENTER" prefHeight="134.0" prefWidth="89.0" spacing="2.0" style="-fx-border-color: #00dd00; -fx-border-radius: 9; -fx-border-width: 3;">
+                                    <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="80.0" style="-fx-border-color: #dddddd; -fx-border-radius: 3;">
                                        <children>
-                                          <VBox alignment="TOP_CENTER" maxHeight="67.0" prefHeight="62.0" prefWidth="83.0">
+                                          <TextField fx:id="moneyInput1" alignment="CENTER" prefHeight="10.0" prefWidth="78.0" promptText="Money">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <FlowPane fx:id="tradeProps1" prefHeight="200.0" prefWidth="200.0" />
+                                       </children>
+                                    </VBox>
+                                    <ImageView fx:id="arrowRight" fitHeight="29.0" fitWidth="41.0" opacity="0.6" pickOnBounds="true" preserveRatio="true" scaleY="0.7">
+                                       <image>
+                                          <Image url="@../../../../textures/arrow.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="80.0" style="-fx-border-color: #dddddd; -fx-border-radius: 3;">
+                                       <children>
+                                          <TextField fx:id="moneyInput2" alignment="CENTER" promptText="Money">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <FlowPane fx:id="tradeProps2" prefHeight="200.0" prefWidth="200.0" />
+                                       </children>
+                                    </VBox>
+                                    <ImageView fx:id="arrowLeft" fitHeight="29.0" fitWidth="41.0" layoutX="40.0" layoutY="111.0" opacity="0.6" pickOnBounds="true" preserveRatio="true" rotate="180.0" scaleY="0.7">
+                                       <image>
+                                          <Image url="@../../../../textures/arrow.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" layoutX="250.0" layoutY="10.0" prefHeight="300.0" prefWidth="400.0" style="-fx-border-color: #dddddd; -fx-border-radius: 3;">
+                                 <children>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="188.0" spacing="10.0">
+                                       <children>
+                                          <Text fx:id="playerName2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="140.0">
+                                             <font>
+                                                <Font name="Century Gothic" size="19.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="playerMoney2" layoutX="91.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xxxxxx kr" wrappingWidth="100.0">
+                                             <font>
+                                                <Font name="Century Gothic" size="19.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <FlowPane fx:id="properties2" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="170.0" prefWidth="300.0" vgap="18.0">
+                                       <padding>
+                                          <Insets top="5.0" />
+                                       </padding>
+                                    </FlowPane>
+                                    <HBox fx:id="cardHolder2" alignment="CENTER" prefHeight="240.0" prefWidth="188.0">
+                                       <children>
+                                          <VBox fx:id="card2" alignment="TOP_CENTER" maxHeight="-Infinity" prefHeight="180.0" prefWidth="120.0" spacing="2.0" style="-fx-border-color: #00dd00; -fx-border-radius: 9; -fx-border-width: 3;">
                                              <children>
-                                                <VBox fx:id="color2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: red; -fx-border-color: #dddddd; -fx-border-radius: 5; -fx-background-radius: 6;">
-                                                   <VBox.margin>
-                                                      <Insets top="2.0" />
-                                                   </VBox.margin>
+                                                <VBox alignment="TOP_CENTER" maxHeight="67.0" prefHeight="62.0" prefWidth="83.0">
                                                    <children>
-                                                      <ImageView fx:id="image2" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" />
+                                                      <VBox fx:id="color2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: red; -fx-border-color: #dddddd; -fx-border-radius: 5; -fx-background-radius: 6;">
+                                                         <VBox.margin>
+                                                            <Insets top="2.0" />
+                                                         </VBox.margin>
+                                                         <children>
+                                                            <ImageView fx:id="image2" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="BOTTOM_CENTER" prefHeight="26.0" prefWidth="83.0">
+                                                         <children>
+                                                            <Text fx:id="name2" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør Helsingborg" textAlignment="CENTER" wrappingWidth="100.0">
+                                                               <font>
+                                                                  <Font size="13.0" />
+                                                               </font>
+                                                            </Text>
+                                                         </children>
+                                                      </VBox>
                                                    </children>
                                                 </VBox>
-                                                <VBox alignment="BOTTOM_CENTER" prefHeight="26.0" prefWidth="83.0">
+                                                <VBox alignment="TOP_CENTER" prefHeight="78.0" prefWidth="83.0">
                                                    <children>
-                                                      <Text fx:id="name2" strokeType="OUTSIDE" strokeWidth="0.0" text="Helsingør Helsingborg" textAlignment="CENTER" wrappingWidth="75.466796875">
-                                                         <font>
-                                                            <Font size="9.0" />
-                                                         </font>
-                                                      </Text>
+                                                      <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="2.0" prefWidth="80.0" style="-fx-background-color: #404040;" />
+                                                      <VBox alignment="CENTER" minHeight="7.0" minWidth="20.0" prefHeight="64.0" prefWidth="83.0">
+                                                         <children>
+                                                            <Button fx:id="add2" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #ffffff; -fx-border-color: #00dd00; -fx-border-radius: 4;" text="Add to Trade">
+                                                               <font>
+                                                                  <Font name="Century Gothic" size="12.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="2.0" />
+                                                         </padding>
+                                                      </VBox>
                                                    </children>
-                                                </VBox>
-                                             </children>
-                                          </VBox>
-                                          <VBox alignment="TOP_CENTER" prefHeight="78.0" prefWidth="83.0">
-                                             <children>
-                                                <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="2.0" prefWidth="80.0" style="-fx-background-color: #404040;" />
-                                                <VBox alignment="CENTER" minHeight="7.0" minWidth="20.0" prefHeight="64.0" prefWidth="83.0">
-                                                   <children>
-                                                      <Button fx:id="add2" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #00dd00; -fx-border-radius: 4;" text="Add to Trade">
-                                                         <font>
-                                                            <Font name="Century Gothic" size="9.0" />
-                                                         </font>
-                                                      </Button>
-                                                   </children>
-                                                   <padding>
-                                                      <Insets bottom="2.0" />
-                                                   </padding>
                                                 </VBox>
                                              </children>
                                           </VBox>
                                        </children>
-                                    </VBox>
+                                    </HBox>
                                  </children>
-                              </HBox>
+                              </VBox>
                            </children>
-                        </VBox>
+                        </HBox>
                      </children>
-                  </HBox>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <Button fx:id="closeMenuButton" mnemonicParsing="false" scaleX="0.7" scaleY="0.6" style="-fx-background-color: #ffffff; -fx-border-radius: 20; -fx-border-color: #00aa00; -fx-background-radius: 21;" text="X" translateX="305.0" translateY="-230.0">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
                </children>
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-            </VBox>
-            <Button fx:id="closeMenuButton" mnemonicParsing="false" scaleX="0.7" scaleY="0.6" style="-fx-background-color: #ffffff; -fx-border-radius: 20; -fx-border-color: #00aa00;" text="X" translateX="235.0" translateY="-187.0" />
+            </StackPane>
          </children>
-      </StackPane>
+      </VBox>
    </children>
-</VBox>
+</AnchorPane>
