@@ -24,7 +24,7 @@
                   <children>
                       <HBox>
                           <children>
-                              <StackPane fx:id="field20" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field20" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                                   <children>
                                       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="80.0" style="-fx-background-color: #0020ff;">
                                           <children>
@@ -57,7 +57,7 @@
                                       </Button>
                                   </children>
                               </StackPane>
-                              <StackPane fx:id="field21" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field21" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                                   <children>
                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                           <children>
@@ -101,7 +101,7 @@
                                       </Button>
                                   </children>
                               </StackPane>
-                              <StackPane fx:id="field22" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field22" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                                   <children>
                                       <VBox alignment="CENTER" prefHeight="60.0" prefWidth="70.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 1;">
                                           <children>
@@ -124,7 +124,7 @@
                                       </Button>
                                   </children>
                               </StackPane>
-                        <StackPane fx:id="field23" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                        <StackPane fx:id="field23" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -142,7 +142,7 @@
                                           <Insets />
                                        </VBox.margin>
                                        <children>
-                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Østerbrogade" textAlignment="CENTER" wrappingWidth="74.0">
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Østerbroga." textAlignment="CENTER" wrappingWidth="58.799991607666016">
                                              <font>
                                                 <Font name="Arial Black" size="9.0" />
                                              </font>
@@ -168,7 +168,7 @@
                               </Button>
                            </children>
                         </StackPane>
-                        <StackPane fx:id="field24" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                        <StackPane fx:id="field24" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -212,7 +212,7 @@
                               </Button>
                            </children>
                         </StackPane>
-                              <StackPane fx:id="field25" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field25" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                                   <children>
                                       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
                                           <children>
@@ -253,7 +253,7 @@
                                       </Button>
                                   </children>
                               </StackPane>
-                        <StackPane fx:id="field26" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                        <StackPane fx:id="field26" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -297,7 +297,7 @@
                               </Button>
                            </children>
                         </StackPane>
-                        <StackPane fx:id="field27" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                        <StackPane fx:id="field27" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -341,7 +341,7 @@
                               </Button>
                            </children>
                         </StackPane>
-                              <StackPane fx:id="field28" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field28" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                                   <children>
                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="71.0" style="-fx-background-color: #FF69B4;">
                                           <children>
@@ -359,7 +359,14 @@
                                                       <Font name="System Bold" size="10.0" />
                                                   </font>
                                               </Text>
-                                              <VBox prefHeight="63.0" prefWidth="83.0" />
+                                              <VBox prefHeight="63.0" prefWidth="83.0">
+                                       <children>
+                                                  <Button fx:id="bField28" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                                      <font>
+                                                          <Font size="9.0" />
+                                                      </font>
+                                                  </Button>
+                                       </children></VBox>
                                               <Text fill="WHITE" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 3.000" textAlignment="CENTER" wrappingWidth="57.5999755859375">
                                                   <font>
                                                       <Font size="10.0" />
@@ -367,14 +374,9 @@
                                               </Text>
                                           </children>
                                       </VBox>
-                                      <Button fx:id="bField28" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                          <font>
-                                              <Font size="9.0" />
-                                          </font>
-                                      </Button>
                                   </children>
                               </StackPane>
-                        <StackPane fx:id="field29" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                        <StackPane fx:id="field29" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -418,7 +420,7 @@
                               </Button>
                            </children>
                         </StackPane>
-                              <StackPane fx:id="field30" alignment="TOP_CENTER" layoutX="73.0" layoutY="10.0" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field30" alignment="TOP_CENTER" layoutX="73.0" layoutY="10.0" prefHeight="76.5" prefWidth="68.0">
                                   <children>
                                       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #0080ff;">
                                           <children>
@@ -460,7 +462,7 @@
                           <children>
                               <VBox>
                                   <children>
-                                      <StackPane fx:id="field19" layoutX="10.0" layoutY="136.0" prefHeight="90.0" prefWidth="80.0">
+                                      <StackPane fx:id="field19" layoutX="10.0" layoutY="136.0" prefHeight="76.5" prefWidth="68.0">
                                           <children>
                                               <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
                                                   <children>
@@ -473,7 +475,7 @@
                                               </VBox>
                                               <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-border-color: black; -fx-border-width: 1;">
                                                   <children>
-                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="100.0" style="-fx-background-color: #aaaaaa;">
+                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="0.0" style="-fx-background-color: #aaaaaa;">
                                              <children>
                                                             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Strandvejen" textAlignment="CENTER" wrappingWidth="65.0">
                                                                 <font>
@@ -498,7 +500,7 @@
                                                       </Text>
                                                   </children>
                                               </VBox>
-                                              <Button fx:id="bField19" mnemonicParsing="false" opacity="0.01" prefHeight="100.0" prefWidth="85.0">
+                                              <Button fx:id="bField19" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="0.0" prefWidth="0.0">
                                                   <font>
                                                       <Font size="9.0" />
                                                   </font>
@@ -508,7 +510,7 @@
                                     <Insets />
                                  </VBox.margin>
                                       </StackPane>
-                              <StackPane fx:id="field18" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field18" prefHeight="76.5" prefWidth="68.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -521,7 +523,7 @@
                                     </VBox>
                                     <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-border-color: black; -fx-border-width: 1;">
                                        <children>
-                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="100.0" style="-fx-background-color: #aaaaaa;">
+                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="0.0" style="-fx-background-color: #aaaaaa;">
                                              <children>
                                                 <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Hellerupvej" textAlignment="CENTER" wrappingWidth="65.0">
                                                    <font>
@@ -531,10 +533,13 @@
                                                       <Insets />
                                                    </VBox.margin>
                                                 </Text>
-                                                <VBox prefHeight="2.0" prefWidth="58.0" style="-fx-background-color: black;">
+                                                <VBox prefHeight="2.0" prefWidth="0.0" style="-fx-background-color: black;">
                                                    <VBox.margin>
                                                       <Insets top="4.0" />
                                                    </VBox.margin>
+                                                   <padding>
+                                                      <Insets top="2.0" />
+                                                   </padding>
                                                 </VBox>
                                              </children>
                                           </VBox>
@@ -546,14 +551,14 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button fx:id="bField18" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="90.0" prefWidth="80.0">
+                                    <Button fx:id="bField18" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="0.0" prefWidth="0.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
                                     </Button>
                                  </children>
                               </StackPane>
-                                      <StackPane fx:id="field17" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                                      <StackPane fx:id="field17" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                                           <children>
                                               <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 1;">
                                                   <children>
@@ -576,7 +581,7 @@
                                               </Button>
                                           </children>
                                       </StackPane>
-                              <StackPane fx:id="field16" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field16" prefHeight="76.5" prefWidth="68.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -589,7 +594,7 @@
                                     </VBox>
                                     <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-border-color: black; -fx-border-width: 1;">
                                        <children>
-                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="100.0" style="-fx-background-color: #aaaaaa;">
+                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="0.0" style="-fx-background-color: #aaaaaa;">
                                              <children>
                                                 <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Bernstoffsvej" textAlignment="CENTER" wrappingWidth="65.0">
                                                    <font>
@@ -614,16 +619,16 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button fx:id="bField16" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="90.0" prefWidth="80.0">
+                                    <Button fx:id="bField16" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="0.0" prefWidth="0.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
                                     </Button>
                                  </children>
                               </StackPane>
-                                      <StackPane fx:id="field15" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                                      <StackPane fx:id="field15" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                                           <children>
-                                              <VBox alignment="CENTER" prefHeight="90.0" prefWidth="80.0" style="-fx-background-color: #00ffff;">
+                                              <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #00ffff;">
                                                   <children>
                                                       <ImageView fx:id="ferry2" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" translateY="-2.0">
                                                           <image>
@@ -642,7 +647,7 @@
                                                               <Font name="System Bold" size="10.0" />
                                                           </font>
                                                       </Text>
-                                                      <VBox prefHeight="39.0" prefWidth="99.0" />
+                                                      <VBox prefHeight="39.0" prefWidth="0.0" />
                                                       <Text fill="#404040" layoutX="15.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Molslinjen" textAlignment="CENTER" wrappingWidth="65.0">
                                                           <font>
                                                               <Font size="10.0" />
@@ -662,7 +667,7 @@
                                               </Button>
                                           </children>
                                       </StackPane>
-                              <StackPane fx:id="field14" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field14" prefHeight="76.5" prefWidth="68.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -700,14 +705,14 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button fx:id="bField14" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="90.0" prefWidth="80.0">
+                                    <Button fx:id="bField14" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="0.0" prefWidth="0.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
                                     </Button>
                                  </children>
                               </StackPane>
-                              <StackPane fx:id="field13" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field13" prefHeight="76.5" prefWidth="68.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -745,14 +750,14 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button fx:id="bField13" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="77.77" prefWidth="100.0">
+                                    <Button fx:id="bField13" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="0.0" prefWidth="0.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
                                     </Button>
                                  </children>
                               </StackPane>
-                                      <StackPane fx:id="field12" alignment="TOP_CENTER" layoutX="10.0" layoutY="326.0" prefHeight="90.0" prefWidth="80.0">
+                                      <StackPane fx:id="field12" alignment="TOP_CENTER" layoutX="10.0" layoutY="326.0" prefHeight="76.5" prefWidth="68.0">
                                           <children>
                                               <VBox alignment="CENTER" prefHeight="90.0" prefWidth="80.0" style="-fx-background-color: #FF69B4;">
                                                   <children>
@@ -785,7 +790,7 @@
                                               </Button>
                                           </children>
                                       </StackPane>
-                              <StackPane fx:id="field11" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field11" prefHeight="76.5" prefWidth="68.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -800,7 +805,7 @@
                                        <children>
                                           <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="100.0" style="-fx-background-color: #28a200;">
                                              <children>
-                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksb. A." textAlignment="CENTER" wrappingWidth="75.0">
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Fre. Allé" textAlignment="CENTER" wrappingWidth="61.399993896484375">
                                                    <font>
                                                       <Font name="System Bold" size="10.0" />
                                                    </font>
@@ -823,7 +828,7 @@
                                           </Text>
                                        </children>
                                     </VBox>
-                                    <Button fx:id="bField11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="90.0" prefWidth="80.0">
+                                    <Button fx:id="bField11" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="0.0" prefWidth="0.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -835,30 +840,40 @@
                               <Insets />
                            </HBox.margin>
                         </VBox>
-                              <StackPane fx:id="middleParent" prefHeight="810.0" prefWidth="720.0" HBox.hgrow="ALWAYS">
+                              <StackPane fx:id="middleParent" HBox.hgrow="ALWAYS">
                                   <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="810.0" prefWidth="720.0" style="-fx-background-color: #F3F9D2;">
+                              <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MATADOR" textAlignment="CENTER" wrappingWidth="550.2752685546875">
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MATADOR" textAlignment="CENTER" wrappingWidth="511.87530821561813">
                                        <font>
                                           <Font name="Century Gothic" size="96.0" />
                                        </font>
                                     </Text>
-                                              <ImageView fx:id="dice1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-                                              <ImageView fx:id="dice2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-                                    <ImageView fx:id="centerGraphics" fitHeight="288.0" fitWidth="578.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="centerGraphics" fitHeight="390.0" fitWidth="573.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../textures/centerGraphics.png" />
                                        </image>
                                     </ImageView>
-                                    <Button fx:id="backgroundButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.0" prefHeight="157.0" prefWidth="720.0" text="BackgroundButton" />
+                                 </children>
+                                 <effect>
+                                    <DisplacementMap>
+                                       <mapData>
+                                          <FloatMap />
+                                       </mapData>
+                                    </DisplacementMap>
+                                 </effect>
+                              </VBox>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                              <ImageView fx:id="dice1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                                              <ImageView fx:id="dice2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
                                     <StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="50.0">
                                        <children>
                                           <ImageView fx:id="tradeMenuImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
                                           <Button fx:id="tradeMenuButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.0" />
                                        </children>
                                     </StackPane>
-                                    <HBox fx:id="cheatBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" prefWidth="317.0">
+                                    <HBox fx:id="cheatBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" prefWidth="317.0" AnchorPane.rightAnchor="200.0">
                                        <children>
                                           <ComboBox fx:id="cheatDropDown" prefHeight="26.0" prefWidth="92.0" promptText="Spiller" />
                                           <TextField fx:id="cheatInput" prefHeight="26.0" prefWidth="70.0" promptText="nr">
@@ -888,23 +903,14 @@
                                     </HBox>
                                     <Button fx:id="pauseButton" mnemonicParsing="false" text="Pause" />
                                  </children>
-                                 <effect>
-                                    <DisplacementMap>
-                                       <mapData>
-                                          <FloatMap />
-                                       </mapData>
-                                    </DisplacementMap>
-                                 </effect>
-                              </VBox>
-                              <VBox alignment="CENTER" layoutX="10.0" layoutY="96.0" prefHeight="0.0" prefWidth="400.0" />
-                                      <VBox fx:id="middleVBOX" alignment="CENTER" translateY="-319.0">
-
-                                </VBox>
+                              </AnchorPane>
+                              <VBox fx:id="middleVBOX" prefHeight="200.0" prefWidth="100.0" />
+                              <Button fx:id="backgroundButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.0" prefHeight="0.0" prefWidth="0.0" text="BackgroundButton" />
                                   </children>
                               </StackPane>
-                              <VBox prefHeight="810.0" prefWidth="80.0">
+                              <VBox>
                                   <children>
-                              <StackPane fx:id="field31" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field31" prefHeight="76.5" prefWidth="68.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -949,7 +955,7 @@
                                     </Button>
                                  </children>
                               </StackPane>
-                              <StackPane fx:id="field32" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field32" prefHeight="76.5" prefWidth="68.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -964,7 +970,7 @@
                                        <children>
                                           <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="100.0" style="-fx-background-color: #f5f800;">
                                              <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vimmelskaftet" textAlignment="CENTER" wrappingWidth="76.0">
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vimmelskaft." textAlignment="CENTER" wrappingWidth="62.4000244140625">
                                                    <font>
                                                       <Font name="System Bold" size="10.0" />
                                                    </font>
@@ -994,7 +1000,7 @@
                                     </Button>
                                  </children>
                               </StackPane>
-                                      <StackPane fx:id="field33" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                                      <StackPane fx:id="field33" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                                           <children>
                                               <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 1;">
                                                   <children>
@@ -1017,7 +1023,7 @@
                                               </Button>
                                           </children>
                                       </StackPane>
-                              <StackPane fx:id="field34" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field34" prefHeight="76.5" prefWidth="68.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -1062,7 +1068,7 @@
                                     </Button>
                                  </children>
                               </StackPane>
-                                      <StackPane fx:id="field35" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                                      <StackPane fx:id="field35" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                                           <children>
                                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="80.0" style="-fx-background-color: #00ffff;">
                                                   <children>
@@ -1084,7 +1090,7 @@
                                                           </font>
                                                       </Text>
                                                       <VBox prefHeight="30.0" prefWidth="58.0" />
-                                                      <Text fill="#404040" layoutX="15.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rødby - Puttgarden" textAlignment="CENTER" wrappingWidth="76.0">
+                                                      <Text fill="#404040" layoutX="15.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rødby - Puttgarden" textAlignment="CENTER" wrappingWidth="63.19995164871216">
                                                           <font>
                                                               <Font size="10.0" />
                                                           </font>
@@ -1103,7 +1109,7 @@
                                               </Button>
                                           </children>
                                       </StackPane>
-                                      <StackPane fx:id="field36" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                                      <StackPane fx:id="field36" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                                           <children>
                                               <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 1;">
                                                   <children>
@@ -1126,7 +1132,7 @@
                                               </Button>
                                           </children>
                                       </StackPane>
-                              <StackPane fx:id="field37" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field37" prefHeight="76.5" prefWidth="68.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="90.0" prefWidth="80.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -1141,7 +1147,7 @@
                                        <children>
                                           <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="80.0" style="-fx-background-color: #8a00d5;">
                                              <children>
-                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksbergg." textAlignment="CENTER" wrappingWidth="75.0">
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiks. g." textAlignment="CENTER" wrappingWidth="61.4000244140625">
                                                    <font>
                                                       <Font name="System Bold" size="10.0" />
                                                    </font>
@@ -1171,7 +1177,7 @@
                                     </Button>
                                  </children>
                               </StackPane>
-                                      <StackPane fx:id="field38" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                                      <StackPane fx:id="field38" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                                           <children>
                                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #dddddd;" />
                                               <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: black; -fx-border-width: 1;">
@@ -1182,7 +1188,7 @@
                                                           </font>
                                                       </Text>
                                                       <VBox prefHeight="27.0" prefWidth="98.0" />
-                                                      <Text fill="#404040" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betal kr. 2.000" textAlignment="CENTER" wrappingWidth="72.5999755859375">
+                                                      <Text fill="#404040" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betal kr. 2.000" textAlignment="CENTER" wrappingWidth="63.0">
                                              <font>
                                                 <Font size="11.0" />
                                              </font>
@@ -1196,7 +1202,7 @@
                                               </Button>
                                           </children>
                                       </StackPane>
-                              <StackPane fx:id="field39" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field39" prefHeight="76.5" prefWidth="68.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -1209,9 +1215,9 @@
                                     </VBox>
                                     <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-border-color: black; -fx-border-width: 1;">
                                        <children>
-                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="100.0" style="-fx-background-color: #8a00d5;">
+                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="0.0" style="-fx-background-color: #8a00d5;">
                                              <children>
-                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Rådhuspladsen" textAlignment="CENTER" wrappingWidth="77.0">
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Rådhusplads." textAlignment="CENTER" wrappingWidth="63.4000244140625">
                                                    <font>
                                                       <Font name="System Bold" size="10.0" />
                                                    </font>
@@ -1264,7 +1270,7 @@
                                                       <Image url="@../../../../textures/blueCar.png" />
                                                   </image>
                                               </ImageView>
-                                    <Button fx:id="bField39" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01" prefHeight="90.0" prefWidth="80.0">
+                                    <Button fx:id="bField39" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="0.0" prefWidth="0.0">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
@@ -1280,7 +1286,7 @@
                       </HBox>
                       <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0">
                           <children>
-                              <StackPane fx:id="field10" alignment="TOP_CENTER" layoutX="544.0" layoutY="10.0" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field10" alignment="TOP_CENTER" layoutX="544.0" layoutY="10.0" prefHeight="76.5" prefWidth="68.0">
                                   <children>
                                       <VBox alignment="CENTER" prefHeight="90.0" prefWidth="80.0" style="-fx-background-color: #808080;">
                                           <children>
@@ -1316,7 +1322,7 @@
                               <Insets />
                            </HBox.margin>
                               </StackPane>
-                        <StackPane fx:id="field9" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                        <StackPane fx:id="field9" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -1360,7 +1366,7 @@
                               </Button>
                            </children>
                         </StackPane>
-                        <StackPane fx:id="field8" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                        <StackPane fx:id="field8" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -1404,7 +1410,7 @@
                               </Button>
                            </children>
                         </StackPane>
-                              <StackPane fx:id="field7" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field7" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                                   <children>
                                       <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 1;">
                                           <children>
@@ -1427,7 +1433,7 @@
                                       </Button>
                                   </children>
                               </StackPane>
-                        <StackPane fx:id="field6" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                        <StackPane fx:id="field6" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -1471,7 +1477,7 @@
                               </Button>
                            </children>
                         </StackPane>
-                              <StackPane fx:id="field5" alignment="TOP_CENTER" layoutX="292.0" layoutY="10.0" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field5" alignment="TOP_CENTER" layoutX="292.0" layoutY="10.0" prefHeight="76.5" prefWidth="68.0">
                                   <children>
                                       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
                                           <children>
@@ -1512,18 +1518,18 @@
                                       </Button>
                                   </children>
                               </StackPane>
-                              <StackPane fx:id="field4" alignment="TOP_CENTER" layoutX="418.0" layoutY="10.0" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field4" alignment="TOP_CENTER" layoutX="418.0" layoutY="10.0" prefHeight="76.5" prefWidth="68.0">
                                   <children>
                                       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #dddddd;" />
                                       <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: black; -fx-border-width: 1;">
                                           <children>
-                                              <Text fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="Indkomst- skat" textAlignment="CENTER" wrappingWidth="74.0">
+                                              <Text fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="Indkomsskat" textAlignment="CENTER" wrappingWidth="60.399967193603516">
                                                   <font>
                                                       <Font name="System Bold" size="10.0" />
                                                   </font>
                                               </Text>
                                               <VBox prefHeight="30.0" prefWidth="78.0" />
-                                              <Text fill="#404040" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betal kr. 4.000 eller 10% af dine penge" textAlignment="CENTER" wrappingWidth="65.0">
+                                              <Text fill="#404040" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betal kr. 4.000 eller 10% af dine penge" textAlignment="CENTER" wrappingWidth="64.20001220703125">
                                                   <font>
                                                       <Font size="9.0" />
                                                   </font>
@@ -1537,7 +1543,7 @@
                                       </Button>
                                   </children>
                               </StackPane>
-                        <StackPane fx:id="field3" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                        <StackPane fx:id="field3" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -1581,7 +1587,7 @@
                               </Button>
                            </children>
                         </StackPane>
-                              <StackPane fx:id="field2" alignment="TOP_CENTER" layoutX="292.0" layoutY="10.0" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field2" alignment="TOP_CENTER" layoutX="292.0" layoutY="10.0" prefHeight="76.5" prefWidth="68.0">
                                   <children>
                                       <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 1;">
                                           <children>
@@ -1604,7 +1610,7 @@
                                       </Button>
                                   </children>
                               </StackPane>
-                        <StackPane fx:id="field1" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                        <StackPane fx:id="field1" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                            <children>
                               <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
                                  <children>
@@ -1648,16 +1654,16 @@
                               </Button>
                            </children>
                         </StackPane>
-                              <StackPane fx:id="field0" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field0" alignment="TOP_CENTER" prefHeight="76.5" prefWidth="68.0">
                                   <children>
-                                      <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="80.0" style="-fx-background-color: red; -fx-border-color: black; -fx-border-width: 1;">
+                                      <VBox alignment="CENTER" prefHeight="76.5" prefWidth="68.0" style="-fx-background-color: red; -fx-border-color: black; -fx-border-width: 1;">
                                           <children>
-                                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Start" textAlignment="CENTER" wrappingWidth="61.25133800506592">
+                                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Start" textAlignment="CENTER" wrappingWidth="54.05126476287842">
                                                   <font>
                                                       <Font name="System Bold" size="22.0" />
                                                   </font>
                                               </Text>
-                                              <Text fill="WHITE" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="modtag kr. 4.000" textAlignment="CENTER" wrappingWidth="57.5999755859375">
+                                              <Text fill="WHITE" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="modtag kr. 4.000" textAlignment="CENTER" wrappingWidth="52.0">
                                                   <font>
                                                       <Font size="13.0" />
                                                   </font>
