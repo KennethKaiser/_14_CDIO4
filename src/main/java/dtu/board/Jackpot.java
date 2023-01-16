@@ -18,7 +18,12 @@ public class Jackpot extends Field{
         return "parking";
     }
 
-    public void jackPotWin(){
+
+    public void addToJackpot(int fine){
+        amount += fine;
+    }
+
+    public void jackpotWin(){
 
         amount = 0;
 
