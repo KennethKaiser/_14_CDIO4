@@ -757,6 +757,7 @@ public class BoardController {
 
         taxField.taxing(playerHandler.getCurrentPlayer(), choice);
         playerViewController.updatePlayerMoney();
+        playerHandler.getCurrentPlayer().setLastPlayerPaid(-1);
         endTurn();
 
 
@@ -768,6 +769,7 @@ public class BoardController {
 
         taxField.taxing(playerHandler.getCurrentPlayer(), true);
         playerViewController.updatePlayerMoney();
+        playerHandler.getCurrentPlayer().setLastPlayerPaid(-1);
         endTurn();
 
 
@@ -943,6 +945,7 @@ public class BoardController {
         currentPlayer.setJail(false);
         playerHandler.changePlayerBalance(currentPlayer, -1000);
         playerViewController.updatePlayerMoney();
+        playerHandler.getCurrentPlayer().setLastPlayerPaid(-1);
         communicationController.payedForPrison();
 
     }
@@ -952,6 +955,7 @@ public class BoardController {
         currentPlayer.setJail(false);
         playerHandler.changePlayerBalance(currentPlayer, -1000);
         playerViewController.updatePlayerMoney();
+        playerHandler.getCurrentPlayer().setLastPlayerPaid(-1);
         communicationController.payedForPrisonDouble();
 
     }

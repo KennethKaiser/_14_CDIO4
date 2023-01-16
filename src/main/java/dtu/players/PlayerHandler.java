@@ -141,7 +141,12 @@ public class PlayerHandler {
     public void isPlayerBankrupt(Player player){
         if (player.getMoney() < 0){
             player.setBankrupt(true);
-            playerIsBankrupt(player);
+            if(player.getLastPlayerPaid() >= 0){
+                bankruptPlayerToPlayer(player, players[player.getLastPlayerPaid()]);
+            }
+            else{
+                playerIsBankrupt(player);
+            }
         }
     }
 
@@ -173,6 +178,64 @@ public class PlayerHandler {
                 ((BreweryField)player.getBreweries().get(i)).setPledgeState(false);
             }
         }
+    }
+    public boolean canAffordTotal(Player playerBankrupt, int toPay) {
+        int value = (valueOfAllAssets(playerBankrupt) + playerBankrupt.getMoney() / 2);
+        System.out.println(value + " værdi af spiller " + playerBankrupt);
+        if (value < toPay) return false;
+        else return true;
+    }
+
+    public void bankruptPlayerToPlayer(Player playerBankrupt, Player playerToGain){
+            int value = (valueOfAllAssets(playerBankrupt) + playerBankrupt.getMoney() / 2);
+            ArrayList<Field> toGive = new ArrayList<>();
+            for (int i=0; i<playerBankrupt.getProperties().size();i++) {
+                ((FieldProperty)playerBankrupt.getProperties().get(i)).setOwner(null);
+                ((FieldProperty)playerBankrupt.getProperties().get(i)).setOwned(false);
+                ((FieldProperty)playerBankrupt.getProperties().get(i)).setBuildings(0);
+                ((FieldProperty)playerBankrupt.getProperties().get(i)).setPledgeState(true);
+
+                if(((FieldProperty)playerBankrupt.getProperties().get(i)).getProperty().getFamilie() <9){
+                    ControllerHandler.getInstance().getBoardController().setHousesOn(0, ((FieldProperty)playerBankrupt.getProperties().get(i)).getProperty().getID());
+                }
+                toGive.add(playerBankrupt.getProperties().get(i));
+            }
+            for(int i = 0; i < playerBankrupt.getFerries().size(); i++){
+                ((FerryField)playerBankrupt.getFerries().get(i)).setOwner(null);
+                ((FerryField)playerBankrupt.getFerries().get(i)).setOwned(false);
+                ((FerryField)playerBankrupt.getFerries().get(i)).setPledgeState(true);
+                toGive.add(playerBankrupt.getFerries().get(i));
+            }
+            for(int i = 0; i < playerBankrupt.getBreweries().size(); i++){
+                ((BreweryField)playerBankrupt.getBreweries().get(i)).setOwner(null);
+                ((BreweryField)playerBankrupt.getBreweries().get(i)).setOwned(false);
+                ((BreweryField)playerBankrupt.getBreweries().get(i)).setPledgeState(true);
+                toGive.add(playerBankrupt.getBreweries().get(i));
+            }
+            for(int i = 0; i < toGive.size(); i++){
+                ControllerHandler.getInstance().getPlayerViewController().removeCard(toGive.get(i));
+                switch (toGive.get(i).type()){
+                    case "buyablefield":
+                        changePlayerBalance(playerToGain, ((FieldProperty)toGive.get(i)).getProperty().getPrice());
+                        ControllerHandler.getInstance().getBoardController().buyPropertyTrade(((FieldProperty)toGive.get(i)), playerToGain);
+                        ((FieldProperty) toGive.get(i)).setPledgeState(true);
+
+                        break;
+                    case "ferry":
+                        changePlayerBalance(playerToGain, ((FerryField)toGive.get(i)).getFerry().getPrice());
+                        ControllerHandler.getInstance().getBoardController().buyFerryTrade(((FerryField)toGive.get(i)), playerToGain);
+                        ((FerryField) toGive.get(i)).setPledgeState(true);
+                        break;
+                    case "brewery":
+                        changePlayerBalance(playerToGain, ((BreweryField)toGive.get(i)).getBrewery().getPrice());
+                        ControllerHandler.getInstance().getBoardController().buyBreweryTrade(((BreweryField)toGive.get(i)), playerToGain);
+                        ((BreweryField) toGive.get(i)).setPledgeState(true);
+                        break;
+                }
+            }
+            if(value > 0) changePlayerBalance(playerToGain, value);
+            ControllerHandler.getInstance().getPlayerViewController().removePlayerFromPlayerView(playerBankrupt.getId());
+            ControllerHandler.getInstance().getBoardController().removeCarPlayer(playerBankrupt.getId());
     }
 
     /**
