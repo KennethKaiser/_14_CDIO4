@@ -308,7 +308,28 @@ public class CommunicationController {
         choices[1].setOnAction(e-> boardController.endTurn());
     }
 
+    public void youWonJackpot(String playerName, int prize){
 
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        String textField = playerName + " vandt jackpotten på " + prize + ".";
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.addJackpotToPlayer(prize));
+    }
+
+    public void addedJackpot(String playerName, int prize){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        String textField = prize + " er blevet tilføjet til " + playerName + " balance.";
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurn());
+    }
 
     public void playerBoughtProperty(FieldProperty fieldProperty, Player player){
         String[] choiceOptions = new String[1];

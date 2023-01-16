@@ -6,7 +6,7 @@ import dtu.players.PlayerHandler;
 public class TaxField extends Field{
 
     private Tax tax;
-
+    PlayerHandler playerHandler;
 
     public TaxField(Tax tax) {
         this.tax = tax;
@@ -27,15 +27,19 @@ public class TaxField extends Field{
     }
 
     public void taxing(Player player, boolean choice){
-        PlayerHandler playerHandler = new PlayerHandler();
+
 
         if(tax.getID() == 4){
             playerHandler.incomeTax(player, choice);
         }
         else if(tax.getID() == 38){
-            playerHandler.changePlayerBalance(player, -2000);
+
+            playerHandler.otherTaxField(player);
         }
 
     }
 
+    public void setPlayerHandler(PlayerHandler playerHandler) {
+        this.playerHandler = playerHandler;
+    }
 }

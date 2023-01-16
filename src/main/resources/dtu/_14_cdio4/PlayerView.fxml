@@ -12,10 +12,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PlayerViewController">
+
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PlayerViewController">
    <children>
-      <HBox fx:id="wholeArea" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-          <VBox fx:id="part1" maxHeight="-Infinity" spacing="5.0">
+      <HBox fx:id="wholeArea" alignment="CENTER" prefHeight="990.0" prefWidth="1600.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <VBox fx:id="part1" prefHeight="990.0" prefWidth="700.0" spacing="5.0">
               <children>
                   <VBox fx:id="area1" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="990.0" prefWidth="700.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
                       <children>
@@ -196,9 +197,9 @@
                   </VBox>
               </children>
           </VBox>
-          <VBox fx:id="part2" maxHeight="-Infinity" spacing="5.0">
+          <VBox fx:id="part2" prefHeight="990.0" prefWidth="700.0" spacing="5.0">
               <children>
-                  <VBox fx:id="area2" alignment="TOP_CENTER" prefHeight="900.0" prefWidth="700.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
+                  <VBox fx:id="area2" alignment="TOP_CENTER" prefHeight="990.0" prefWidth="700.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
                       <children>
                           <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                               <children>

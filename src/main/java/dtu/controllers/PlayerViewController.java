@@ -1104,6 +1104,11 @@ public class PlayerViewController {
         }
         else System.out.println("Player is already removed");
     }
+
+    public HBox getWholeArea() {
+        return wholeArea;
+    }
+
     public void removePlayerBankruptOnLoad(){
         for(int i = 0; i < playerHandler.getPlayers().length; i++){
             if(playerHandler.getPlayers()[i].getMoney() < 0){

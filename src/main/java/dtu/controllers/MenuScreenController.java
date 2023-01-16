@@ -4,10 +4,12 @@ import dtu.SaveAndLoad.SaveAndLoad;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -100,28 +102,12 @@ public class MenuScreenController {
     boolean isCheat = false;
     String[] colorsLoaded;
     Image[] imagesLoaded;
-
+    String last = "";
 
 
     @FXML
     public void initialize() {
-
-        SaveAndLoad saveAndLoad = new SaveAndLoad();
-        ArrayList<String> saves = saveAndLoad.getSaves();
-        if(saves == null){
-            savedHolder.setOpacity(0);
-        }
-        else{
-
-            savedHolder.setOpacity(1);
-            for(int i = 0; i < saves.size(); i++){
-                Text newSave = new Text(saves.get(i));
-                newSave.setStyle("-fx-font-size: 15");
-                savedGamesVBOX.getChildren().add(newSave);
-            }
-        }
-        deleteSaveButton.setOnAction(e -> deleteSave());
-        loadButton.setOnAction(e -> load());
+        updateSaves();
         carImages = new Image[6];
         carImages[0] = image("src/textures/greenCar.png");
         carImages[1] = image("src/textures/blueCar.png");
@@ -150,7 +136,7 @@ public class MenuScreenController {
         players[3] = player4;
         players[4] = player5;
         players[5] = player6;
-        for(int i = 0; i < players.length; i++){
+        for (int i = 0; i < players.length; i++) {
             players[i].setOpacity(0);
         }
         numbers = new int[6];
@@ -182,18 +168,20 @@ public class MenuScreenController {
         cars[4] = car5;
         cars[5] = car6;
     }
-    private Image image(String url){
-        try{
+
+    private Image image(String url) {
+        try {
             InputStream stream = new FileInputStream(url);
             Image newImage = new Image(stream);
             return newImage;
-        }catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
 
     }
-    private Image getCarImage(String color){
-        switch (color){
+
+    private Image getCarImage(String color) {
+        switch (color) {
             case "Green":
                 return carImages[0];
             case "Blue":
@@ -210,146 +198,173 @@ public class MenuScreenController {
                 return null;
         }
     }
-    private void updateColorPicker(){
+
+    private void updateColorPicker() {
         colorPicker.getItems().clear();
-        for(int i = 0; i < colors.length; i++){
-            if(colors[i] != ""){
+        for (int i = 0; i < colors.length; i++) {
+            if (colors[i] != "") {
                 colorPicker.getItems().add(colorDanishfy(colors[i]));
             }
         }
     }
-    public void load(){
+
+    private void updateSaves() {
         SaveAndLoad saveAndLoad = new SaveAndLoad();
-
-
-        if(!loadInput.getText().equals("")){
-            if(saveAndLoad.getSaves() == null){
-                communicator.setText("Der er ingen gemte spil");
+        savedGamesVBOX.getChildren().clear();
+        ArrayList<String> saves = saveAndLoad.getSaves();
+        if (saves != null) {
+            savedHolder.setOpacity(1);
+            for (int i = 0; i < saves.size(); i++) {
+                HBox holder = new HBox();
+                Button newSave = new Button(saves.get(i));
+                newSave.setStyle("-fx-font-size: 18");
+                newSave.setOpacity(0);
+                Text saveName = new Text(saves.get(i));
+                saveName.setStyle("-fx-font-size: 18");
+                newSave.setOnMouseEntered(e -> saveName.setStyle(saveName.getStyle() + ";-fx-font-weight: bold"));
+                newSave.setOnMouseExited(e -> saveName.setStyle(saveName.getStyle() + ";-fx-font-weight: normal"));
+                saveName.setWrappingWidth(80);
+                newSave.setPrefWidth(80);
+                StackPane buttonHolder = new StackPane();
+                buttonHolder.setPrefWidth(81);
+                int temp = i;
+                newSave.setOnAction(e -> saveAndLoad.load(saves.get(temp)));
+                buttonHolder.getChildren().addAll(saveName, newSave);
+                Button delete = new Button("x");
+                delete.setStyle("-fx-font-size: 18");
+                delete.setOnAction(e -> deleteSave(saves.get(temp)));
+                delete.setOpacity(0);
+                Label deleteX = new Label("x");
+                deleteX.setStyle("-fx-text-fill: red; -fx-font-size: 18");
+                delete.setOnMouseEntered(e -> deleteX.setStyle(deleteX.getStyle() + ";-fx-font-weight: bold"));
+                delete.setOnMouseExited(e -> deleteX.setStyle(deleteX.getStyle() + ";-fx-font-weight: normal"));
+                deleteX.setPrefWidth(10);
+                delete.setPrefWidth(10);
+                StackPane buttonHolderX = new StackPane();
+                buttonHolderX.setPrefWidth(11);
+                buttonHolderX.getChildren().addAll(deleteX, delete);
+                holder.getChildren().addAll(buttonHolder, buttonHolderX);
+                savedGamesVBOX.getChildren().add(holder);
             }
-            else if(saveAndLoad.getSaves().contains(loadInput.getText())){
-                saveAndLoad.load(loadInput.getText());
-            }
-            else communicator.setText("Kan ikke finde et gemt spil med det navn");
         }
-        else communicator.setText("Du skal skrive et navn til dit load");
+        else{
+            savedHolder.setOpacity(0);
+        }
     }
 
-    public void deleteSave(){
-        if(!deleteSaveInput.getText().equals("")){
+    public void deleteSave(String saveName) {
+        if(saveName == last){
             SaveAndLoad saveAndLoad = new SaveAndLoad();
-            saveAndLoad.delete(deleteSaveInput.getText());
-            savedGamesVBOX.getChildren().clear();
-            ArrayList<String> saves = saveAndLoad.getSaves();
-            if(saves != null){
-                for(int i = 0; i < saves.size(); i++){
-                    Text newSave = new Text(saves.get(i));
-                    newSave.setStyle("-fx-font-size: 15");
-                    savedGamesVBOX.getChildren().add(newSave);
-                }
-                savedHolder.setOpacity(1);
-
-            }
-            else{
-                savedHolder.setOpacity(0);
-
-            }
+            saveAndLoad.delete(saveName);
+            updateSaves();
         }
+        else{
+            last = saveName;
+            communicator.setText("Er du sikker på at du vil slette? Hvis ja tryk igen");
+        }
+
     }
-    private String colorDanishfy(String color){
-        switch (color){
+
+    private String colorDanishfy(String color) {
+        switch (color) {
             case "Red":
             case "Rød":
                 return "Rød";
             case "Yellow":
-            case "Gul" :
-                    return "Gul";
+            case "Gul":
+                return "Gul";
             case "Blue":
             case "Blå":
                 return "Blå";
-            case "Orange": return "Orange";
+            case "Orange":
+                return "Orange";
             case "Green":
             case "Grøn":
-                    return "Grøn";
+                return "Grøn";
             case "Black":
             case "Sort":
                 return "Sort";
         }
         return "fejl";
     }
-    private String colorEnglishfy(String color){
-        switch (color){
-            case "Rød": return "Red";
-            case "Gul": return "Yellow";
-            case "Blå": return "Blue";
-            case "Orange": return "Orange";
-            case "Grøn": return "Green";
-            case "Sort": return "Black";
+
+    private String colorEnglishfy(String color) {
+        switch (color) {
+            case "Rød":
+                return "Red";
+            case "Gul":
+                return "Yellow";
+            case "Blå":
+                return "Blue";
+            case "Orange":
+                return "Orange";
+            case "Grøn":
+                return "Green";
+            case "Sort":
+                return "Black";
         }
         return "fejl";
     }
-    public void addPlayerPressed(){
-        if(nameInput.getText().equals("test")) cheat();
-        else if(playersAdded < 6){
-            if(nameInput.getText().length() < 16){
-                if(!nameInput.getText().equals("")) {
+
+    public void addPlayerPressed() {
+        if (nameInput.getText().equals("test")) cheat();
+        else if (playersAdded < 6) {
+            if (nameInput.getText().length() < 16) {
+                if (!nameInput.getText().equals("")) {
                     boolean free = true;
-                    for(int currentNames = 0; currentNames < playersAdded; currentNames++){
-                        if(nameInput.getText().equals(names[currentNames].getText())) {
+                    for (int currentNames = 0; currentNames < playersAdded; currentNames++) {
+                        if (nameInput.getText().equals(names[currentNames].getText())) {
                             free = false;
                         }
                     }
-                    if(free){
-                        if(colorPicker.getValue() != null){
+                    if (free) {
+                        if (colorPicker.getValue() != null) {
                             String name = nameInput.getText();
                             String color = colorEnglishfy(colorPicker.getValue().toString());
                             removeColor(color);
-                            for(int i = 0; i < players.length; i++){
-                                if(players[i].getOpacity() < 1){
-                                    setPlayer(i,name,color);
+                            for (int i = 0; i < players.length; i++) {
+                                if (players[i].getOpacity() < 1) {
+                                    setPlayer(i, name, color);
                                     break;
                                 }
                             }
                             playersAdded++;
                             communicator.setText("Tilføjede " + name + " til spillet");
 
-                        }
-                        else{
+                        } else {
                             communicator.setText("Du skal vælge en farve, med dropdown menuen");
                         }
-                    }
-                    else{
+                    } else {
                         communicator.setText("Du kan ikke hedde det samme navn to gange");
                     }
-                }
-                else{
+                } else {
                     communicator.setText("Indsæt et navn til spilleren");
                 }
-            }
-            else{
+            } else {
                 communicator.setText("Dit navn skal være på maximum 15 karakterer");
             }
-        }
-        else{
+        } else {
             communicator.setText("Du kan kun tilføje op til 6 spillere");
         }
     }
-    private void setPlayer(int playerNumber, String name, String color){
+
+    private void setPlayer(int playerNumber, String name, String color) {
         players[playerNumber].setOpacity(1);
         names[playerNumber].setText(name);
         cars[playerNumber].setImage(getCarImage(color));
         buttons[playerNumber].setOnAction(e -> removePlayer(playerNumber, color));
     }
-    private void removePlayer(int playerNumber, String colorToReturn){
-        for(int i = 0; i < colors.length;i++){
-            if(colors[i] == "") {
+
+    private void removePlayer(int playerNumber, String colorToReturn) {
+        for (int i = 0; i < colors.length; i++) {
+            if (colors[i] == "") {
                 colors[i] = colorToReturn;
                 break;
             }
         }
-        if(playerNumber < playersAdded-1){
-            moveDown(playerNumber+1, colorToReturn);
-        }
-        else{
+        if (playerNumber < playersAdded - 1) {
+            moveDown(playerNumber + 1, colorToReturn);
+        } else {
             players[playerNumber].setOpacity(0);
         }
         playersAdded--;
@@ -360,37 +375,36 @@ public class MenuScreenController {
         this.communicator = communicator;
     }
 
-    private void moveDown(int playerNumber, String color){
-        names[playerNumber-1].setText(names[playerNumber].getText());
-        cars[playerNumber-1].setImage(cars[playerNumber].getImage());
-        buttons[playerNumber-1].setOnAction(e -> removePlayer(playerNumber-1, color));
-        if(playerNumber < playersAdded-1){
-            moveDown(playerNumber+1, color);
-        }
-        else{
+    private void moveDown(int playerNumber, String color) {
+        names[playerNumber - 1].setText(names[playerNumber].getText());
+        cars[playerNumber - 1].setImage(cars[playerNumber].getImage());
+        buttons[playerNumber - 1].setOnAction(e -> removePlayer(playerNumber - 1, color));
+        if (playerNumber < playersAdded - 1) {
+            moveDown(playerNumber + 1, color);
+        } else {
             players[playerNumber].setOpacity(0);
         }
     }
-    private void removeColor(String color){
+
+    private void removeColor(String color) {
         colorPicker.getItems().removeAll();
-        for (int i = 0; i < colors.length; i++){
-            if(colors[i].equals(colorDanishfy(color))){
+        for (int i = 0; i < colors.length; i++) {
+            if (colors[i].equals(colorDanishfy(color))) {
                 colors[i] = "";
-            }
-            else if(colors[i].equals(color)){
+            } else if (colors[i].equals(color)) {
                 colors[i] = "";
             }
         }
         updateColorPicker();
     }
-    public void startGamePressed(){
-        if(playersAdded < 3){
+
+    public void startGamePressed() {
+        if (playersAdded < 3) {
             communicator.setText("Du skal tilføje minimum 3 spillere før du kan starte spillet");
-        }
-        else{
+        } else {
             playerColorsAdded = new Image[playersAdded];
             playerNamesAdded = new String[playersAdded];
-            for(int i = 0; i < playersAdded; i++){
+            for (int i = 0; i < playersAdded; i++) {
                 playerColorsAdded[i] = cars[i].getImage();
                 playerNamesAdded[i] = names[i].getText();
             }
@@ -399,16 +413,17 @@ public class MenuScreenController {
         }
 
     }
-    public String[] getMenuNames(){
+
+    public String[] getMenuNames() {
         return playerNamesAdded;
     }
-    public Image[] getMenuCarColorImages(boolean isLoad){
-        if(isLoad){
-            return  imagesLoaded;
-        }
-        else{
+
+    public Image[] getMenuCarColorImages(boolean isLoad) {
+        if (isLoad) {
+            return imagesLoaded;
+        } else {
             Image[] carColors = new Image[playersAdded];
-            for(int i = 0; i <carColors.length; i++){
+            for (int i = 0; i < carColors.length; i++) {
                 carColors[i] = cars[i].getImage();
             }
 
@@ -416,40 +431,39 @@ public class MenuScreenController {
         }
 
     }
-    public String[] getColorNames(boolean isLoad){
-        if(!isLoad){
+
+    public String[] getColorNames(boolean isLoad) {
+        if (!isLoad) {
             String[] colors = new String[playersAdded];
-            for(int i = 0; i < playersAdded; i++){
-                if(cars[i].getImage() == carImages[0]){
+            for (int i = 0; i < playersAdded; i++) {
+                if (cars[i].getImage() == carImages[0]) {
                     colors[i] = "Green";
-                } else if(cars[i].getImage() == carImages[1]){
+                } else if (cars[i].getImage() == carImages[1]) {
                     colors[i] = "Blue";
-                } else if(cars[i].getImage() == carImages[2]){
+                } else if (cars[i].getImage() == carImages[2]) {
                     colors[i] = "Yellow";
-                } else if(cars[i].getImage() == carImages[3]){
+                } else if (cars[i].getImage() == carImages[3]) {
                     colors[i] = "Red";
-                } else if(cars[i].getImage() == carImages[4]){
+                } else if (cars[i].getImage() == carImages[4]) {
                     colors[i] = "Orange";
-                } else if(cars[i].getImage() == carImages[5]){
+                } else if (cars[i].getImage() == carImages[5]) {
                     colors[i] = "Black";
                 }
             }
             return colors;
-        }
-        else
-        {
+        } else {
             return colorsLoaded;
         }
 
 
     }
 
-    public void loadInfo(String[] colorNames, String[] playerNames, int amount){
+    public void loadInfo(String[] colorNames, String[] playerNames, int amount) {
         playersAdded = amount;
         playerNamesAdded = new String[amount];
         colorsLoaded = new String[amount];
         imagesLoaded = new Image[amount];
-        for(int i = 0; i < amount; i++){
+        for (int i = 0; i < amount; i++) {
             playerNamesAdded[i] = playerNames[i];
             colorsLoaded[i] = colorNames[i];
             imagesLoaded[i] = getCarImage(colorNames[i]);
@@ -461,14 +475,15 @@ public class MenuScreenController {
         //getColorNames - DONE
     }
 
-    public int getMenuAmountOfPlayers(){
+    public int getMenuAmountOfPlayers() {
         return playersAdded;
     }
-    private void cheat(){
+
+    private void cheat() {
         playersAdded = 0;
-        for(int i = 0; i < 6; i++){
+        for (int i = 0; i < 6; i++) {
             playersAdded++;
-            names[i].setText("Spiller " + (i+1));
+            names[i].setText("Spiller " + (i + 1));
             cars[i].setImage(carImages[i]);
         }
 
@@ -476,11 +491,12 @@ public class MenuScreenController {
         startGamePressed();
 
     }
-    public boolean getIsCheating(){
-        return  isCheat;
-    }
-    public void setIsCheating(boolean cheat){
-        this.isCheat = cheat;
+
+    public boolean getIsCheating() {
+        return isCheat;
     }
 
+    public void setIsCheating(boolean cheat) {
+        this.isCheat = cheat;
+    }
 }
