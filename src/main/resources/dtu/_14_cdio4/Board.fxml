@@ -1297,7 +1297,7 @@
                                               </ImageView>
                                           </children>
                                       </VBox>
-                                      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="85.0" style="-fx-border-color: black; -fx-border-width: 1;">
+                                      <VBox alignment="CENTER" style="-fx-border-color: black; -fx-border-width: 1;">
                                           <children>
                                               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Fængsel" textAlignment="CENTER" wrappingWidth="54.05127239227295">
                                                   <font>
