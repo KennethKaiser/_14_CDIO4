@@ -174,10 +174,15 @@ public class PlayerHandler {
             }
         }
     }
-    public void bankruptPlayerToPlayer(Player playerBankrupt, int toPay, Player playerToGain){
-        int value = valueOfAllAssets(playerBankrupt) + playerBankrupt.getMoney()/2;
-        if(value < toPay){
-            ControllerHandler.getInstance().getCommunicationController().showOkBox("Din totale værdi af " + value + "kr. er ikke nok til at betale " + toPay + "kr. Derfor gives alle dine ejendele til " + playerToGain.getName());
+    public boolean canAffordTotal(Player playerBankrupt, int toPay) {
+        int value = (valueOfAllAssets(playerBankrupt) + playerBankrupt.getMoney() / 2);
+        System.out.println(value + " værdi af spiller " + playerBankrupt);
+        if (value < toPay) return false;
+        else return true;
+    }
+
+    public void bankruptPlayerToPlayer(Player playerBankrupt, Player playerToGain){
+            int value = (valueOfAllAssets(playerBankrupt) + playerBankrupt.getMoney() / 2);
             ArrayList<Field> toGive = new ArrayList<>();
             for (int i=0; i<playerBankrupt.getProperties().size();i++) {
                 ((FieldProperty)playerBankrupt.getProperties().get(i)).setOwner(null);
@@ -220,10 +225,7 @@ public class PlayerHandler {
                 }
             }
             changePlayerBalance(playerToGain, value);
-        }
-        else{
-            ControllerHandler.getInstance().getCommunicationController().showOkBox("Du vil have råd til at betale hvis du pantsætter/tager huse af");
-        }
+            ControllerHandler.getInstance().getPlayerViewController().removePlayerFromPlayerView(playerBankrupt.getId());
     }
 
     /**

@@ -2,6 +2,7 @@ package dtu.controllers;
 
 import dtu.board.*;
 import dtu.players.Player;
+import dtu.players.PlayerHandler;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -401,15 +402,30 @@ public class CommunicationController {
         String propertyName = fieldProperty.getProperty().getName();
         String propertyOwner = fieldProperty.getOwner().getName();
         int rent = fieldProperty.findActiveRent();
+        PlayerHandler ph = ControllerHandler.getInstance().getBoardController().playerHandler;
+        if(ph.canAffordTotal(player, rent)){
+            fieldProperty.rent(player, rent);
+            playerViewController.updatePlayerMoney();
 
-        fieldProperty.rent(player, rent);
-        playerViewController.updatePlayerMoney();
 
+            String textField = propertyName + " er ejet af " + propertyOwner + ". Betal " + rent + " i leje."  ;
+            showCommunicationBox(textField, choiceOptions);
 
-        String textField = propertyName + " er ejet af " + propertyOwner + ". Betal " + rent + " i leje."  ;
-        showCommunicationBox(textField, choiceOptions);
+            choices[0].setOnAction(e -> boardController.endTurn());
+        }
+        else{
 
-        choices[0].setOnAction(e -> boardController.endTurn());
+            String[] choiceOptions2 = new String[1];
+            choiceOptions2[0] = "Overdrag";
+
+            String textField = propertyName + " er ejet af " + propertyOwner + ". Du har ikke råd til at betale for den fulde leje. Overdrag ejendele til " + propertyOwner  ;
+
+            showCommunicationBox(textField, choiceOptions);
+            choices[0].setOnAction(e -> {
+                ph.bankruptPlayerToPlayer(player, fieldProperty.getOwner());
+                boardController.endTurn();
+            });
+        }
     }
     public void payRentFerry(FerryField ferryField, Player player){
         String[] choiceOptions = new String[1];
@@ -421,14 +437,32 @@ public class CommunicationController {
         String ferryOwner = ferryField.getOwner().getName();
         int rent = ferryField.findActiveRent();
 
-        ferryField.rent(player, rent);
-        playerViewController.updatePlayerMoney();
+        PlayerHandler ph = ControllerHandler.getInstance().getBoardController().playerHandler;
+        if(ph.canAffordTotal(player, rent)) {
+            ferryField.rent(player, rent);
+            playerViewController.updatePlayerMoney();
 
 
-        String textField = ferryName + " er ejet af " + ferryOwner + ". Betal " + rent + " i leje."  ;
-        showCommunicationBox(textField, choiceOptions);
+            String textField = ferryName + " er ejet af " + ferryOwner + ". Betal " + rent + " i leje."  ;
+            showCommunicationBox(textField, choiceOptions);
 
-        choices[0].setOnAction(e -> boardController.endTurn());
+            choices[0].setOnAction(e -> boardController.endTurn());
+
+        }
+        else{
+            String[] choiceOptions2 = new String[1];
+            choiceOptions2[0] = "Overdrag";
+
+            String textField = ferryName + " er ejet af " + ferryOwner + ". Du har ikke råd til at betale for den fulde leje. Overdrag ejendele til " + ferryOwner  ;
+
+            showCommunicationBox(textField, choiceOptions);
+            choices[0].setOnAction(e -> {
+                ph.bankruptPlayerToPlayer(player, ferryField.getOwner());
+                boardController.endTurn();
+            });
+        }
+
+
     }
 
     public void payRentBrewery(BreweryField breweryField, Player player){
@@ -444,14 +478,29 @@ public class CommunicationController {
 
         int rent = breweryField.findActiveRent(turnRollSum);
 
-        breweryField.rent(player, rent);
-        playerViewController.updatePlayerMoney();
+        PlayerHandler ph = ControllerHandler.getInstance().getBoardController().playerHandler;
+        if(ph.canAffordTotal(player, rent)) {
+            breweryField.rent(player, rent);
+            playerViewController.updatePlayerMoney();
 
 
-        String textField = breweryName + " er ejet af " + breweryOwner + ". Betal " + rent + " i leje."  ;
+            String textField = breweryName + " er ejet af " + breweryOwner + ". Betal " + rent + " i leje.";
+            showCommunicationBox(textField, choiceOptions);
+
+            choices[0].setOnAction(e -> boardController.endTurn());
+        }
+        else{
+        String[] choiceOptions2 = new String[1];
+        choiceOptions2[0] = "Overdrag";
+
+        String textField = breweryName + " er ejet af " + breweryOwner + ". Du har ikke råd til at betale for den fulde leje. Overdrag ejendele til " + breweryOwner  ;
+
         showCommunicationBox(textField, choiceOptions);
-
-        choices[0].setOnAction(e -> boardController.endTurn());
+        choices[0].setOnAction(e -> {
+            ph.bankruptPlayerToPlayer(player, breweryField.getOwner());
+            boardController.endTurn();
+        });
+    }
     }
     public void playerAlreadyOwn(String fieldName, String playerName){
         String[] choiceOptions = new String[1];
