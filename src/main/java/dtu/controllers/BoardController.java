@@ -613,6 +613,7 @@ public class BoardController {
     public void landedOnJackpot(){
         Jackpot jackpot = (Jackpot) ControllerHandler.getInstance().getBoard().getCurrentBoard()[20];
         chanceCardFunctionality.setJackpot(jackpot);
+        playerHandler.setJackpot(jackpot);
         String playerName = playerHandler.getCurrentPlayer().getName();
         int prize = jackpot.getAmount();
         communicationController.youWonJackpot(playerName, prize);

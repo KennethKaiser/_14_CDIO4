@@ -14,6 +14,8 @@ public class PlayerHandler {
     private boolean overStart = false;
     private static final int STARTMONEY = 30000;
 
+    private Jackpot jackpot;
+
 
 
     public void currentPlayer(){
@@ -405,5 +407,13 @@ public class PlayerHandler {
 
     public void setOverStart(boolean overStart) {
         this.overStart = overStart;
+    }
+
+    public Jackpot getJackpot() {
+        return jackpot;
+    }
+
+    public void setJackpot(Jackpot jackpot) {
+        this.jackpot = jackpot;
     }
 }
