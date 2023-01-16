@@ -890,6 +890,11 @@ public class BoardController {
         String[] drawnCard = chance.drawCard();
         Player currentPlayer = playerHandler.getCurrentPlayer();
 
+        Jackpot jackpot = (Jackpot) ControllerHandler.getInstance().getBoard().getCurrentBoard()[20];
+        playerHandler.setJackpot(jackpot);
+
+        chanceCardFunctionality.setJackpot(jackpot);
+
         chanceCardFunctionality.chanceCardFunction(Integer.parseInt(drawnCard[0]),currentPlayer);
 
         communicationController.chanceCardTurn(drawnCard[1]);

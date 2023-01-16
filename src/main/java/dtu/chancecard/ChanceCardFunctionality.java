@@ -23,6 +23,7 @@ public class ChanceCardFunctionality {
                 int hotels = playerHandler.amountOfHotels(playerHandler.getPlayers()[player.getId()]);
                 playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(houses*500));
                 playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(hotels*2000));
+                jackpot.addToJackpot(houses + hotels);
                 break;
             }
             case 27: {
@@ -31,56 +32,67 @@ public class ChanceCardFunctionality {
                 int hotels = playerHandler.amountOfHotels(playerHandler.getPlayers()[player.getId()]);
                 playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(houses*800));
                 playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(hotels*2300));
+                jackpot.addToJackpot(houses+hotels);
                 break;
             }
             case 1: {
                 //De har kørt overfor "rødt lys". Betal 1000 kroner i bøde.
                 playerHandler.changePlayerBalance(player, -1000);
+                jackpot.addToJackpot(1000);
                 break;
             }
             case 2: {
                 //Betal for vognvask og smøring 300,-
                 playerHandler.changePlayerBalance(player, -300);
+                jackpot.addToJackpot(300);
                 break;
             }
             case 3: {
                 //Betal 200,- for levering af 2 kasser øl.
                 playerHandler.changePlayerBalance(player, -200);
+                jackpot.addToJackpot(200);
                 break;
             }
             case 4: {
                 //Betal 3000,- for reparation af deres vogn.
                 playerHandler.changePlayerBalance(player, -3000);
+                jackpot.addToJackpot(3000);
                 break;
             }
             case 5: {
                 //Betal 3000,- for reparation af deres vogn.
                 playerHandler.changePlayerBalance(player, -3000);
+                jackpot.addToJackpot(3000);
                 break;
             }
             case 6: {
                 //De har købt 4 nye dæk til Deres vogn. Betal 1000,-.
                 playerHandler.changePlayerBalance(player, -1000);
+                jackpot.addToJackpot(1000);
                 break;
             }
             case 7: {
                 //De har fået en parkeringsbøde. Betal 200,- i bøde.
                 playerHandler.changePlayerBalance(player, -200);
+                jackpot.addToJackpot(200);
                 break;
             }
             case 8: {
                 //Betal deres bilforsikring 1000,-
                 playerHandler.changePlayerBalance(player, -1000);
+                jackpot.addToJackpot(1000);
                 break;
             }
             case 9: {
                 //De har været udenlands og købt for mange Cult Shaker bedre kendt som "Son of a Bitch".  Betal 200,- i told.
                 playerHandler.changePlayerBalance(player, -200);
+                jackpot.addToJackpot(200);
                 break;
             }
             case 10: {
                 //Tandlægeregning. Betal 2000,-
                 playerHandler.changePlayerBalance(player, -2000);
+                jackpot.addToJackpot(2000);
                 break;
             }
             case 11:
