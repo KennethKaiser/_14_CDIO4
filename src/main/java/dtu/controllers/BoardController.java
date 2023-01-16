@@ -361,6 +361,7 @@ public class BoardController {
     //Initializes on start
     @FXML
     public void initialize() {
+        pauseButton.setOnAction(e -> ControllerHandler.getInstance().getSceneSwitch().switchToPauseMenu());
         initPics();
         setCars();
         initFields();
@@ -368,6 +369,7 @@ public class BoardController {
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
         initTradeMenu();
+        initializeChanceCardDeck();
     }
 
     //region delegate model objects to other controller
@@ -604,6 +606,25 @@ public class BoardController {
     //endregion
     //region game loop actions
 
+    public void landedOnJackpot(){
+        Jackpot jackpot = (Jackpot) ControllerHandler.getInstance().getBoard().getCurrentBoard()[20];
+        chanceCardFunctionality.setJackpot(jackpot);
+        playerHandler.setJackpot(jackpot);
+        String playerName = playerHandler.getCurrentPlayer().getName();
+        int prize = jackpot.getAmount();
+        communicationController.youWonJackpot(playerName, prize);
+
+    }
+
+    public void addJackpotToPlayer(int prize){
+        Jackpot jackpot = (Jackpot) ControllerHandler.getInstance().getBoard().getCurrentBoard()[20];
+        jackpot.jackpotWin();
+        playerHandler.changePlayerBalance(playerHandler.getCurrentPlayer(), prize);
+        playerViewController.updatePlayerMoney();
+        communicationController.addedJackpot(playerHandler.getCurrentPlayer().getName(), prize);
+
+    }
+
 
     public void roll(){
         int[] playerRoll = dice.roll();
@@ -708,6 +729,9 @@ public class BoardController {
         else if(type.equals("jail")){
             goToJail();
         }
+        else if(type.equals("parking")){
+            landedOnJackpot();
+        }
 
 
     }
@@ -727,6 +751,9 @@ public class BoardController {
     }
 
     public void payYourTaxes(TaxField taxField, Boolean choice){
+        Jackpot jackpot = (Jackpot) ControllerHandler.getInstance().getBoard().getCurrentBoard()[20];
+        playerHandler.setJackpot(jackpot);
+        taxField.setPlayerHandler(playerHandler);
 
         taxField.taxing(playerHandler.getCurrentPlayer(), choice);
         playerViewController.updatePlayerMoney();
@@ -735,6 +762,9 @@ public class BoardController {
 
     }
     public void payYourExtraTax(TaxField taxField){
+        Jackpot jackpot = (Jackpot) ControllerHandler.getInstance().getBoard().getCurrentBoard()[20];
+        playerHandler.setJackpot(jackpot);
+        taxField.setPlayerHandler(playerHandler);
 
         taxField.taxing(playerHandler.getCurrentPlayer(), true);
         playerViewController.updatePlayerMoney();
@@ -854,6 +884,11 @@ public class BoardController {
 
         String[] drawnCard = chance.drawCard();
         Player currentPlayer = playerHandler.getCurrentPlayer();
+
+        Jackpot jackpot = (Jackpot) ControllerHandler.getInstance().getBoard().getCurrentBoard()[20];
+        playerHandler.setJackpot(jackpot);
+
+        chanceCardFunctionality.setJackpot(jackpot);
 
         chanceCardFunctionality.chanceCardFunction(Integer.parseInt(drawnCard[0]),currentPlayer);
 
@@ -1341,26 +1376,51 @@ public class BoardController {
                 if(player.equals(("Spiller " + (i+1)))) playerIndex = i;
             }
             String stepsString = cheatInput.getText();
-            int steps = parseInt(stepsString);
+            int steps;
+            if(stepsString.charAt(0) == 'd'){
+                char[] charArray = stepsString.toCharArray();
+                String number = "";
+                for(int i = 1; i < charArray.length; i++){
+                    number += charArray[i];
+                }
+                steps = 2*parseInt(number);
 
-            //setting the dice sum, not possible to set individual dice with cheats
-            dice.setSum(steps);
+                int[] toIntArray = new int[2];
+                toIntArray[0] = steps/2;
+                toIntArray[1] = steps/2;
 
-            System.out.println(steps);
+                dice.setSum(steps);
+                Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+                playerHandler.movePlayer(cheatPlayer, steps);
+                int playerId = cheatPlayer.getId();
+                int playerPosition = cheatPlayer.getPosition();
+                dice.setRolledDouble(true);
+                rollDiceAnimation(steps/2, steps/2);
+                movePLayerOnGUI(playerId, playerPosition);
+                multipleCars(playerId, playerPosition);
+                //Switch decision box
+                communicationController.whatRolled(toIntArray, playerHandler.getCurrentPlayer());
+            }
+            else{
+                steps = parseInt(stepsString);
+                dice.setSum(steps);
+                Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+                playerHandler.movePlayer(cheatPlayer, steps);
+                int playerId = cheatPlayer.getId();
+                int playerPosition = cheatPlayer.getPosition();
+
+                movePLayerOnGUI(playerId, playerPosition);
+                multipleCars(playerId, playerPosition);
+                int[] toIntArray = new int[1];
+                toIntArray[0] = steps;
+                //Switch decision box
+                communicationController.whatRolled(toIntArray, playerHandler.getCurrentPlayer());
+            }
 
 
-            Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
-            playerHandler.movePlayer(cheatPlayer, steps);
 
-            int playerId = cheatPlayer.getId();
-            int playerPosition = cheatPlayer.getPosition();
 
-            movePLayerOnGUI(playerId, playerPosition);
-            multipleCars(playerId, playerPosition);
-            int[] toIntArray = new int[1];
-            toIntArray[0] = steps;
-            //Switch decision box
-            communicationController.whatRolled(toIntArray, playerHandler.getCurrentPlayer());
+
         }
         else System.out.println("No player selected");
 

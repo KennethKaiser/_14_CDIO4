@@ -53,11 +53,11 @@ public class SaveAndLoad {
     }
     public boolean delete(String name){
         if(csvFileReader.deleteSave(name)){
-            sendText("Deleted Save " + name);
+            System.out.println("Deleted Save " + name);
             return true;
         }
         else{
-            sendText("Could not find the save " + name + " to delete");
+            System.out.println("Could not find the save " + name + " to delete");
             return false;
         }
     }
@@ -243,7 +243,7 @@ public class SaveAndLoad {
         ControllerHandler.getInstance().getPlayerViewController().removePlayerBankruptOnLoad();
         ControllerHandler.getInstance().getPlayerViewController().updatePlayerTurn();
         ControllerHandler.getInstance().getCommunicationController().playerTurnStart(playerHandler.getCurrentPlayer().getName());
-
+        ControllerHandler.getInstance().getPauseMenuController().setCurrentLoad(name);
         return true;
     }
     private void stopper(ArrayList<String[]> list, String text){

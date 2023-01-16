@@ -4,6 +4,7 @@
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
@@ -11,395 +12,402 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="wholeArea" alignment="CENTER" prefHeight="990.0" prefWidth="1600.0" spacing="5.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PlayerViewController">
-    <VBox fx:id="part1" maxHeight="-Infinity" prefHeight="990.0" prefWidth="400.0" spacing="5.0">
-        <children>
-            <VBox fx:id="area1" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
-                <children>
-                    <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
-                        <children>
-                            <ImageView fx:id="p1KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-                                <image>
-                                    <Image url="@../../../../textures/key.png" />
-                                </image>
-                                <effect>
-                                    <ColorAdjust brightness="1.0" />
-                                </effect>
-                            </ImageView>
-                            <ImageView fx:id="p1JailIcon" fitHeight="20.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-                                <image>
-                                    <Image url="@../../../../textures/inJailIcon.png" />
-                                </image>
-                                <effect>
-                                    <ColorAdjust brightness="1.0" />
-                                </effect>
-                            </ImageView>
-                            <Text fx:id="p1Name" strokeType="OUTSIDE" strokeWidth="0.0" text="PlayerName" textAlignment="CENTER" wrappingWidth="160.0">
-                                <font>
-                                    <Font name="System Bold" size="16.0" />
-                                </font>
-                            </Text>
-                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
-                                <children>
-                                    <Text fx:id="p1Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
-                                        <font>
-                                            <Font size="16.0" />
-                                        </font>
-                                    </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
-                                        <font>
-                                            <Font size="16.0" />
-                                        </font>
-                                    </Text>
-                                </children>
-                            </HBox>
-                     <ImageView fx:id="car1" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
-                        </children>
-                        <VBox.margin>
-                            <Insets />
-                        </VBox.margin>
-                    </HBox>
-                    <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <FlowPane fx:id="propAreaP1" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
-                            <FlowPane fx:id="moneyAreaP1" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
-                        </children>
-                    </HBox>
-                </children>
-                <padding>
-                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                </padding>
-                <opaqueInsets>
-                    <Insets top="5.0" />
-                </opaqueInsets>
-            </VBox>
-            <VBox fx:id="area3" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
-                <children>
-                    <HBox alignment="CENTER" prefHeight="27.0" prefWidth="386.0" spacing="8.0">
-                        <children>
-                            <ImageView fx:id="p3KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-                                <image>
-                                    <Image url="@../../../../textures/key.png" />
-                                </image>
-                                <effect>
-                                    <ColorAdjust brightness="1.0" />
-                                </effect>
-                            </ImageView>
-                            <ImageView fx:id="p3JailIcon" fitHeight="20.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-                                <image>
-                                    <Image url="@../../../../textures/inJailIcon.png" />
-                                </image>
-                                <effect>
-                                    <ColorAdjust brightness="1.0" />
-                                </effect>
-                            </ImageView>
-                            <Text fx:id="p3Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
-                                <font>
-                                    <Font name="System Bold" size="16.0" />
-                                </font>
-                            </Text>
-                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
-                                <children>
-                                    <Text fx:id="p3Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
-                                        <font>
-                                            <Font size="16.0" />
-                                        </font>
-                                    </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
-                                        <font>
-                                            <Font size="16.0" />
-                                        </font>
-                                    </Text>
-                                </children>
-                            </HBox>
-                     <ImageView fx:id="car3" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
-                        </children>
-                        <VBox.margin>
-                            <Insets />
-                        </VBox.margin>
-                    </HBox>
-                    <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <FlowPane fx:id="propAreaP3" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
-                            <FlowPane fx:id="moneyAreaP3" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
-                        </children>
-                    </HBox>
-                </children>
-                <padding>
-                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                </padding>
-                <opaqueInsets>
-                    <Insets top="5.0" />
-                </opaqueInsets>
-            </VBox>
-            <VBox fx:id="area5" alignment="TOP_CENTER" layoutX="10.0" layoutY="352.0" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
-                <children>
-                    <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
-                        <children>
-                            <ImageView fx:id="p5KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-                                <image>
-                                    <Image url="@../../../../textures/key.png" />
-                                </image>
-                                <effect>
-                                    <ColorAdjust brightness="1.0" />
-                                </effect>
-                            </ImageView>
-                            <ImageView fx:id="p5JailIcon" fitHeight="20.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-                                <image>
-                                    <Image url="@../../../../textures/inJailIcon.png" />
-                                </image>
-                                <effect>
-                                    <ColorAdjust brightness="1.0" />
-                                </effect>
-                            </ImageView>
-                            <Text fx:id="p5Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
-                                <font>
-                                    <Font name="System Bold" size="16.0" />
-                                </font>
-                            </Text>
-                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
-                                <children>
-                                    <Text fx:id="p5Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
-                                        <font>
-                                            <Font size="16.0" />
-                                        </font>
-                                    </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
-                                        <font>
-                                            <Font size="16.0" />
-                                        </font>
-                                    </Text>
-                                </children>
-                            </HBox>
-                     <ImageView fx:id="car5" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
-                        </children>
-                        <VBox.margin>
-                            <Insets />
-                        </VBox.margin>
-                    </HBox>
-                    <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <FlowPane fx:id="propAreaP5" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
-                            <FlowPane fx:id="moneyAreaP5" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
-                        </children>
-                    </HBox>
-                </children>
-                <padding>
-                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                </padding>
-                <opaqueInsets>
-                    <Insets top="5.0" />
-                </opaqueInsets>
-            </VBox>
-        </children>
-    </VBox>
-    <VBox fx:id="part2" maxHeight="-Infinity" prefHeight="990.0" prefWidth="400.0" spacing="5.0">
-        <children>
-            <VBox fx:id="area2" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
-                <children>
-                    <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
-                        <children>
-                            <ImageView fx:id="p2KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-                                <image>
-                                    <Image url="@../../../../textures/key.png" />
-                                </image>
-                                <effect>
-                                    <ColorAdjust brightness="1.0" />
-                                </effect>
-                            </ImageView>
-                            <ImageView fx:id="p2JailIcon" fitHeight="20.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-                                <image>
-                                    <Image url="@../../../../textures/inJailIcon.png" />
-                                </image>
-                                <effect>
-                                    <ColorAdjust brightness="1.0" />
-                                </effect>
-                            </ImageView>
-                            <Text fx:id="p2Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
-                                <font>
-                                    <Font name="System Bold" size="16.0" />
-                                </font>
-                            </Text>
-                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
-                                <children>
-                                    <Text fx:id="p2Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
-                                        <font>
-                                            <Font size="16.0" />
-                                        </font>
-                                    </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
-                                        <font>
-                                            <Font size="16.0" />
-                                        </font>
-                                    </Text>
-                                </children>
-                            </HBox>
-                     <ImageView fx:id="car2" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
-                        </children>
-                        <VBox.margin>
-                            <Insets />
-                        </VBox.margin>
-                    </HBox>
-                    <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <FlowPane fx:id="propAreaP2" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
-                            <FlowPane fx:id="moneyAreaP2" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
-                        </children>
-                    </HBox>
-                </children>
-                <padding>
-                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                </padding>
-                <opaqueInsets>
-                    <Insets top="5.0" />
-                </opaqueInsets>
-            </VBox>
-            <VBox fx:id="area4" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
-                <children>
-                    <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
-                        <children>
-                            <ImageView fx:id="p4KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-                                <image>
-                                    <Image url="@../../../../textures/key.png" />
-                                </image>
-                                <effect>
-                                    <ColorAdjust brightness="1.0" />
-                                </effect>
-                            </ImageView>
-                            <ImageView fx:id="p4JailIcon" fitHeight="20.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-                                <image>
-                                    <Image url="@../../../../textures/inJailIcon.png" />
-                                </image>
-                                <effect>
-                                    <ColorAdjust brightness="1.0" />
-                                </effect>
-                            </ImageView>
-                            <Text fx:id="p4Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
-                                <font>
-                                    <Font name="System Bold" size="16.0" />
-                                </font>
-                            </Text>
-                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
-                                <children>
-                                    <Text fx:id="p4Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
-                                        <font>
-                                            <Font size="16.0" />
-                                        </font>
-                                    </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
-                                        <font>
-                                            <Font size="16.0" />
-                                        </font>
-                                    </Text>
-                                </children>
-                            </HBox>
-                     <ImageView fx:id="car4" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
-                        </children>
-                        <VBox.margin>
-                            <Insets />
-                        </VBox.margin>
-                    </HBox>
-                    <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <FlowPane fx:id="propAreaP4" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
-                            <FlowPane fx:id="moneyAreaP4" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
-                        </children>
-                    </HBox>
-                </children>
-                <padding>
-                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                </padding>
-                <opaqueInsets>
-                    <Insets top="5.0" />
-                </opaqueInsets>
-            </VBox>
-            <VBox fx:id="area6" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
-                <children>
-                    <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
-                        <children>
-                            <ImageView fx:id="p6KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-                                <image>
-                                    <Image url="@../../../../textures/key.png" />
-                                </image>
-                                <effect>
-                                    <ColorAdjust brightness="1.0" />
-                                </effect>
-                            </ImageView>
-                            <ImageView fx:id="p6JailIcon" fitHeight="20.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
-                                <image>
-                                    <Image url="@../../../../textures/inJailIcon.png" />
-                                </image>
-                                <effect>
-                                    <ColorAdjust brightness="1.0" />
-                                </effect>
-                            </ImageView>
-                            <Text fx:id="p6Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
-                                <font>
-                                    <Font name="System Bold" size="16.0" />
-                                </font>
-                            </Text>
-                            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
-                                <children>
-                                    <Text fx:id="p6Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
-                                        <font>
-                                            <Font size="16.0" />
-                                        </font>
-                                    </Text>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
-                                        <font>
-                                            <Font size="16.0" />
-                                        </font>
-                                    </Text>
-                                </children>
-                            </HBox>
-                     <ImageView fx:id="car6" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
-                        </children>
-                        <VBox.margin>
-                            <Insets />
-                        </VBox.margin>
-                    </HBox>
-                    <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
-                        <children>
-                            <FlowPane fx:id="propAreaP6" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
-                            <FlowPane fx:id="moneyAreaP6" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0">
-                                <children>
-                                    <StackPane alignment="TOP_LEFT" prefHeight="60.0" prefWidth="1.0">
+
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PlayerViewController">
+   <children>
+      <HBox fx:id="wholeArea" alignment="CENTER" prefHeight="990.0" prefWidth="1600.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <VBox fx:id="part1" prefHeight="990.0" prefWidth="700.0" spacing="5.0">
+              <children>
+                  <VBox fx:id="area1" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="990.0" prefWidth="700.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
+                      <children>
+                          <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                               <children>
-                                 <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                       <Image url="@../../../../textures/50_v2.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="20.0" fitWidth="30.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" translateY="10.0">
-                                    <image>
-                                       <Image url="@../../../../textures/50_v2.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="20.0" fitWidth="30.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" translateY="10.0">
-                                    <image>
-                                       <Image url="@../../../../textures/50_v2.png" />
-                                    </image>
-                                 </ImageView>
-                                 <ImageView fitHeight="20.0" fitWidth="30.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" translateY="10.0">
-                                    <image>
-                                       <Image url="@../../../../textures/50_v2.png" />
-                                    </image>
-                                 </ImageView>
+                                  <ImageView fx:id="p1KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                                      <image>
+                                          <Image url="@../../../../textures/key.png" />
+                                      </image>
+                                      <effect>
+                                          <ColorAdjust brightness="1.0" />
+                                      </effect>
+                                  </ImageView>
+                                  <ImageView fx:id="p1JailIcon" fitHeight="20.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                                      <image>
+                                          <Image url="@../../../../textures/inJailIcon.png" />
+                                      </image>
+                                      <effect>
+                                          <ColorAdjust brightness="1.0" />
+                                      </effect>
+                                  </ImageView>
+                                  <Text fx:id="p1Name" strokeType="OUTSIDE" strokeWidth="0.0" text="PlayerName" textAlignment="CENTER" wrappingWidth="160.0">
+                                      <font>
+                                          <Font name="System Bold" size="16.0" />
+                                      </font>
+                                  </Text>
+                                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
+                                      <children>
+                                          <Text fx:id="p1Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
+                                              <font>
+                                                  <Font size="16.0" />
+                                              </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
+                                              <font>
+                                                  <Font size="16.0" />
+                                              </font>
+                                          </Text>
+                                      </children>
+                                  </HBox>
+                           <ImageView fx:id="car1" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
                               </children>
-                              <opaqueInsets>
-                                 <Insets />
-                              </opaqueInsets></StackPane>
-                                </children>
-                            </FlowPane>
-                        </children>
-                    </HBox>
-                </children>
-                <padding>
-                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                </padding>
-                <opaqueInsets>
-                    <Insets top="5.0" />
-                </opaqueInsets>
-            </VBox>
-        </children></VBox>
-</HBox>
+                              <VBox.margin>
+                                  <Insets />
+                              </VBox.margin>
+                          </HBox>
+                          <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
+                              <children>
+                                  <FlowPane fx:id="propAreaP1" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
+                                  <FlowPane fx:id="moneyAreaP1" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
+                              </children>
+                          </HBox>
+                      </children>
+                      <padding>
+                          <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                      </padding>
+                      <opaqueInsets>
+                          <Insets top="5.0" />
+                      </opaqueInsets>
+                  </VBox>
+                  <VBox fx:id="area3" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="990.0" prefWidth="700.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
+                      <children>
+                          <HBox alignment="CENTER" prefHeight="27.0" prefWidth="386.0" spacing="8.0">
+                              <children>
+                                  <ImageView fx:id="p3KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                                      <image>
+                                          <Image url="@../../../../textures/key.png" />
+                                      </image>
+                                      <effect>
+                                          <ColorAdjust brightness="1.0" />
+                                      </effect>
+                                  </ImageView>
+                                  <ImageView fx:id="p3JailIcon" fitHeight="20.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                                      <image>
+                                          <Image url="@../../../../textures/inJailIcon.png" />
+                                      </image>
+                                      <effect>
+                                          <ColorAdjust brightness="1.0" />
+                                      </effect>
+                                  </ImageView>
+                                  <Text fx:id="p3Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
+                                      <font>
+                                          <Font name="System Bold" size="16.0" />
+                                      </font>
+                                  </Text>
+                                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
+                                      <children>
+                                          <Text fx:id="p3Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
+                                              <font>
+                                                  <Font size="16.0" />
+                                              </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
+                                              <font>
+                                                  <Font size="16.0" />
+                                              </font>
+                                          </Text>
+                                      </children>
+                                  </HBox>
+                           <ImageView fx:id="car3" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                              </children>
+                              <VBox.margin>
+                                  <Insets />
+                              </VBox.margin>
+                          </HBox>
+                          <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
+                              <children>
+                                  <FlowPane fx:id="propAreaP3" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
+                                  <FlowPane fx:id="moneyAreaP3" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
+                              </children>
+                          </HBox>
+                      </children>
+                      <padding>
+                          <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                      </padding>
+                      <opaqueInsets>
+                          <Insets top="5.0" />
+                      </opaqueInsets>
+                  </VBox>
+                  <VBox fx:id="area5" alignment="TOP_CENTER" layoutX="10.0" layoutY="352.0" prefHeight="990.0" prefWidth="700.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
+                      <children>
+                          <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
+                              <children>
+                                  <ImageView fx:id="p5KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                                      <image>
+                                          <Image url="@../../../../textures/key.png" />
+                                      </image>
+                                      <effect>
+                                          <ColorAdjust brightness="1.0" />
+                                      </effect>
+                                  </ImageView>
+                                  <ImageView fx:id="p5JailIcon" fitHeight="20.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                                      <image>
+                                          <Image url="@../../../../textures/inJailIcon.png" />
+                                      </image>
+                                      <effect>
+                                          <ColorAdjust brightness="1.0" />
+                                      </effect>
+                                  </ImageView>
+                                  <Text fx:id="p5Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
+                                      <font>
+                                          <Font name="System Bold" size="16.0" />
+                                      </font>
+                                  </Text>
+                                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
+                                      <children>
+                                          <Text fx:id="p5Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
+                                              <font>
+                                                  <Font size="16.0" />
+                                              </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
+                                              <font>
+                                                  <Font size="16.0" />
+                                              </font>
+                                          </Text>
+                                      </children>
+                                  </HBox>
+                           <ImageView fx:id="car5" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                              </children>
+                              <VBox.margin>
+                                  <Insets />
+                              </VBox.margin>
+                          </HBox>
+                          <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
+                              <children>
+                                  <FlowPane fx:id="propAreaP5" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
+                                  <FlowPane fx:id="moneyAreaP5" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
+                              </children>
+                          </HBox>
+                      </children>
+                      <padding>
+                          <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                      </padding>
+                      <opaqueInsets>
+                          <Insets top="5.0" />
+                      </opaqueInsets>
+                  </VBox>
+              </children>
+          </VBox>
+          <VBox fx:id="part2" prefHeight="990.0" prefWidth="700.0" spacing="5.0">
+              <children>
+                  <VBox fx:id="area2" alignment="TOP_CENTER" prefHeight="990.0" prefWidth="700.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
+                      <children>
+                          <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
+                              <children>
+                                  <ImageView fx:id="p2KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                                      <image>
+                                          <Image url="@../../../../textures/key.png" />
+                                      </image>
+                                      <effect>
+                                          <ColorAdjust brightness="1.0" />
+                                      </effect>
+                                  </ImageView>
+                                  <ImageView fx:id="p2JailIcon" fitHeight="20.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                                      <image>
+                                          <Image url="@../../../../textures/inJailIcon.png" />
+                                      </image>
+                                      <effect>
+                                          <ColorAdjust brightness="1.0" />
+                                      </effect>
+                                  </ImageView>
+                                  <Text fx:id="p2Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
+                                      <font>
+                                          <Font name="System Bold" size="16.0" />
+                                      </font>
+                                  </Text>
+                                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
+                                      <children>
+                                          <Text fx:id="p2Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
+                                              <font>
+                                                  <Font size="16.0" />
+                                              </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
+                                              <font>
+                                                  <Font size="16.0" />
+                                              </font>
+                                          </Text>
+                                      </children>
+                                  </HBox>
+                           <ImageView fx:id="car2" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                              </children>
+                              <VBox.margin>
+                                  <Insets />
+                              </VBox.margin>
+                          </HBox>
+                          <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
+                              <children>
+                                  <FlowPane fx:id="propAreaP2" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
+                                  <FlowPane fx:id="moneyAreaP2" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
+                              </children>
+                          </HBox>
+                      </children>
+                      <padding>
+                          <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                      </padding>
+                      <opaqueInsets>
+                          <Insets top="5.0" />
+                      </opaqueInsets>
+                  </VBox>
+                  <VBox fx:id="area4" alignment="TOP_CENTER" prefHeight="990.0" prefWidth="700.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
+                      <children>
+                          <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
+                              <children>
+                                  <ImageView fx:id="p4KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                                      <image>
+                                          <Image url="@../../../../textures/key.png" />
+                                      </image>
+                                      <effect>
+                                          <ColorAdjust brightness="1.0" />
+                                      </effect>
+                                  </ImageView>
+                                  <ImageView fx:id="p4JailIcon" fitHeight="20.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                                      <image>
+                                          <Image url="@../../../../textures/inJailIcon.png" />
+                                      </image>
+                                      <effect>
+                                          <ColorAdjust brightness="1.0" />
+                                      </effect>
+                                  </ImageView>
+                                  <Text fx:id="p4Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
+                                      <font>
+                                          <Font name="System Bold" size="16.0" />
+                                      </font>
+                                  </Text>
+                                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
+                                      <children>
+                                          <Text fx:id="p4Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
+                                              <font>
+                                                  <Font size="16.0" />
+                                              </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
+                                              <font>
+                                                  <Font size="16.0" />
+                                              </font>
+                                          </Text>
+                                      </children>
+                                  </HBox>
+                           <ImageView fx:id="car4" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                              </children>
+                              <VBox.margin>
+                                  <Insets />
+                              </VBox.margin>
+                          </HBox>
+                          <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
+                              <children>
+                                  <FlowPane fx:id="propAreaP4" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
+                                  <FlowPane fx:id="moneyAreaP4" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0" />
+                              </children>
+                          </HBox>
+                      </children>
+                      <padding>
+                          <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                      </padding>
+                      <opaqueInsets>
+                          <Insets top="5.0" />
+                      </opaqueInsets>
+                  </VBox>
+                  <VBox fx:id="area6" alignment="TOP_CENTER" prefHeight="990.0" prefWidth="700.0" spacing="10.0" style="-fx-background-color: #F3F9D2;">
+                      <children>
+                          <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
+                              <children>
+                                  <ImageView fx:id="p6KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                                      <image>
+                                          <Image url="@../../../../textures/key.png" />
+                                      </image>
+                                      <effect>
+                                          <ColorAdjust brightness="1.0" />
+                                      </effect>
+                                  </ImageView>
+                                  <ImageView fx:id="p6JailIcon" fitHeight="20.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                                      <image>
+                                          <Image url="@../../../../textures/inJailIcon.png" />
+                                      </image>
+                                      <effect>
+                                          <ColorAdjust brightness="1.0" />
+                                      </effect>
+                                  </ImageView>
+                                  <Text fx:id="p6Name" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Name" textAlignment="CENTER" wrappingWidth="160.0">
+                                      <font>
+                                          <Font name="System Bold" size="16.0" />
+                                      </font>
+                                  </Text>
+                                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="0.0" prefWidth="90.0">
+                                      <children>
+                                          <Text fx:id="p6Money" strokeType="OUTSIDE" strokeWidth="0.0" text="0000" textAlignment="RIGHT" wrappingWidth="60.300126791000366">
+                                              <font>
+                                                  <Font size="16.0" />
+                                              </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kr" textAlignment="CENTER" wrappingWidth="24.300098538398743">
+                                              <font>
+                                                  <Font size="16.0" />
+                                              </font>
+                                          </Text>
+                                      </children>
+                                  </HBox>
+                           <ImageView fx:id="car6" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                              </children>
+                              <VBox.margin>
+                                  <Insets />
+                              </VBox.margin>
+                          </HBox>
+                          <HBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="200.0" spacing="10.0">
+                              <children>
+                                  <FlowPane fx:id="propAreaP6" alignment="TOP_CENTER" hgap="10.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="140.0" vgap="25.0" />
+                                  <FlowPane fx:id="moneyAreaP6" alignment="TOP_CENTER" hgap="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="130.0" vgap="20.0">
+                                      <children>
+                                          <StackPane alignment="TOP_LEFT" prefHeight="60.0" prefWidth="1.0">
+                                    <children>
+                                       <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                             <Image url="@../../../../textures/50_v2.png" />
+                                          </image>
+                                       </ImageView>
+                                       <ImageView fitHeight="20.0" fitWidth="30.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" translateY="10.0">
+                                          <image>
+                                             <Image url="@../../../../textures/50_v2.png" />
+                                          </image>
+                                       </ImageView>
+                                       <ImageView fitHeight="20.0" fitWidth="30.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" translateY="10.0">
+                                          <image>
+                                             <Image url="@../../../../textures/50_v2.png" />
+                                          </image>
+                                       </ImageView>
+                                       <ImageView fitHeight="20.0" fitWidth="30.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true" translateY="10.0">
+                                          <image>
+                                             <Image url="@../../../../textures/50_v2.png" />
+                                          </image>
+                                       </ImageView>
+                                    </children>
+                                    <opaqueInsets>
+                                       <Insets />
+                                    </opaqueInsets>
+                                 </StackPane>
+                                      </children>
+                                  </FlowPane>
+                              </children>
+                          </HBox>
+                      </children>
+                      <padding>
+                          <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                      </padding>
+                      <opaqueInsets>
+                          <Insets top="5.0" />
+                      </opaqueInsets>
+                  </VBox>
+              </children>
+         </VBox>
+      </HBox>
+   </children>
+</AnchorPane>
