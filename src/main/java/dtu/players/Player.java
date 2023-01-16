@@ -10,6 +10,7 @@ public class Player {
     private String name;
     private int position;
     private int money;
+    private int lastPlayerPaid;
     private ArrayList<Field> properties = new ArrayList<>();
     private ArrayList<Field> ferries = new ArrayList<>();
     private ArrayList<Field> breweries = new ArrayList<>();
@@ -91,6 +92,14 @@ public class Player {
 
     public void setJail(boolean jail) {
         this.jail = jail;
+    }
+
+    public int getLastPlayerPaid() {
+        return lastPlayerPaid;
+    }
+
+    public void setLastPlayerPaid(int lastPlayerPaid) {
+        this.lastPlayerPaid = lastPlayerPaid;
     }
 
     public boolean isGetOutOfJailCard() {

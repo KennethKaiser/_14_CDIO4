@@ -223,10 +223,10 @@ public class MenuScreenController {
                 saveName.setStyle("-fx-font-size: 18");
                 newSave.setOnMouseEntered(e -> saveName.setStyle(saveName.getStyle() + ";-fx-font-weight: bold"));
                 newSave.setOnMouseExited(e -> saveName.setStyle(saveName.getStyle() + ";-fx-font-weight: normal"));
-                saveName.setWrappingWidth(80);
-                newSave.setPrefWidth(80);
+                saveName.setWrappingWidth(120);
+                newSave.setPrefWidth(120);
                 StackPane buttonHolder = new StackPane();
-                buttonHolder.setPrefWidth(81);
+                buttonHolder.setPrefWidth(121);
                 int temp = i;
                 newSave.setOnAction(e -> saveAndLoad.load(saves.get(temp)));
                 buttonHolder.getChildren().addAll(saveName, newSave);

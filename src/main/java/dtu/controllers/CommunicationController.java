@@ -403,6 +403,7 @@ public class CommunicationController {
         String propertyOwner = fieldProperty.getOwner().getName();
         int rent = fieldProperty.findActiveRent();
         PlayerHandler ph = ControllerHandler.getInstance().getBoardController().playerHandler;
+        player.setLastPlayerPaid(fieldProperty.getOwner().getId());
         if(ph.canAffordTotal(player, rent)){
             fieldProperty.rent(player, rent);
             playerViewController.updatePlayerMoney();
@@ -438,6 +439,7 @@ public class CommunicationController {
         int rent = ferryField.findActiveRent();
 
         PlayerHandler ph = ControllerHandler.getInstance().getBoardController().playerHandler;
+        player.setLastPlayerPaid(ferryField.getOwner().getId());
         if(ph.canAffordTotal(player, rent)) {
             ferryField.rent(player, rent);
             playerViewController.updatePlayerMoney();
@@ -458,7 +460,7 @@ public class CommunicationController {
             showCommunicationBox(textField, choiceOptions);
             choices[0].setOnAction(e -> {
                 ph.bankruptPlayerToPlayer(player, ferryField.getOwner());
-                boardController.endTurn();
+                ph.currentPlayer();
             });
         }
 
@@ -479,6 +481,7 @@ public class CommunicationController {
         int rent = breweryField.findActiveRent(turnRollSum);
 
         PlayerHandler ph = ControllerHandler.getInstance().getBoardController().playerHandler;
+        player.setLastPlayerPaid(breweryField.getOwner().getId());
         if(ph.canAffordTotal(player, rent)) {
             breweryField.rent(player, rent);
             playerViewController.updatePlayerMoney();

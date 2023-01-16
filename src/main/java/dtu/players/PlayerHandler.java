@@ -141,7 +141,12 @@ public class PlayerHandler {
     public void isPlayerBankrupt(Player player){
         if (player.getMoney() < 0){
             player.setBankrupt(true);
-            playerIsBankrupt(player);
+            if(player.getLastPlayerPaid() >= 0){
+                bankruptPlayerToPlayer(player, players[player.getLastPlayerPaid()]);
+            }
+            else{
+                playerIsBankrupt(player);
+            }
         }
     }
 
@@ -226,6 +231,7 @@ public class PlayerHandler {
             }
             changePlayerBalance(playerToGain, value);
             ControllerHandler.getInstance().getPlayerViewController().removePlayerFromPlayerView(playerBankrupt.getId());
+            ControllerHandler.getInstance().getBoardController().removeCarPlayer(playerBankrupt.getId());
     }
 
     /**
