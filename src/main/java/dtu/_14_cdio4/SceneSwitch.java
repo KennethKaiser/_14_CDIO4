@@ -3,6 +3,7 @@ package dtu._14_cdio4;
 import dtu.board.Field;
 import dtu.board.Property;
 import dtu.controllers.*;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
@@ -12,6 +13,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
@@ -120,6 +122,13 @@ public class SceneSwitch {
         stage.setWidth(bounds.getWidth());
         stage.setHeight(bounds.getHeight());
         stage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent windowEvent) {
+                windowEvent.consume();
+                switchToPauseMenu();
+            }
+        });
         stage.show();
         boardController.initializingPlayers(menuScreenController.getMenuAmountOfPlayers(), menuScreenController.getMenuNames(), menuScreenController.getColorNames(isLoad));
         boardController.giveButtonsFunctions();

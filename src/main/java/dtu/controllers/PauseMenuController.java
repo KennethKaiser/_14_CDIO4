@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.WindowEvent;
 
 public class PauseMenuController {
 
@@ -20,6 +21,7 @@ public class PauseMenuController {
     Button resumeButton;
     @FXML
     Button giveUpButton;
+    String currentLoad = "";
 
 
     SaveAndLoad saveAndLoad = new SaveAndLoad();
@@ -31,9 +33,20 @@ public class PauseMenuController {
         exitNoSaveButton.setOnAction(e -> exitWithoutSaving());
         saveAsButton.setOnAction(e -> saveAs());
     }
+
+    public String getCurrentLoad() {
+        return currentLoad;
+    }
+
+    public void setCurrentLoad(String currentLoad) {
+        this.currentLoad = currentLoad;
+    }
+
     public void open(){
         Player playerToGiveUp = ControllerHandler.getInstance().getBoardController().playerHandler.getCurrentPlayer();
-
+        if(!currentLoad.equals("")){
+            saveInput.setText(currentLoad);
+        }
         giveUpButton.setText("Giv op for " + playerToGiveUp.getName());
         giveUpButton.setOnAction(e -> giveUpPlayer(playerToGiveUp));
     }
@@ -55,7 +68,10 @@ public class PauseMenuController {
                 ControllerHandler.getInstance().getMenuScreenController().setIsCheating(true);
                 ControllerHandler.getInstance().getBoardController().initCheating();
             }
-            else saveAndLoad.saveAs(saveInput.getText());
+            else {
+                saveAndLoad.saveAs(saveInput.getText());
+                currentLoad = saveInput.getText();
+            }
         }
         else sendText("Du skal skrive et navn til dit save");
     }

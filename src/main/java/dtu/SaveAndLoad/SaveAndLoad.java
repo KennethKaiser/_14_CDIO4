@@ -243,7 +243,7 @@ public class SaveAndLoad {
         ControllerHandler.getInstance().getPlayerViewController().removePlayerBankruptOnLoad();
         ControllerHandler.getInstance().getPlayerViewController().updatePlayerTurn();
         ControllerHandler.getInstance().getCommunicationController().playerTurnStart(playerHandler.getCurrentPlayer().getName());
-
+        ControllerHandler.getInstance().getPauseMenuController().setCurrentLoad(name);
         return true;
     }
     private void stopper(ArrayList<String[]> list, String text){
