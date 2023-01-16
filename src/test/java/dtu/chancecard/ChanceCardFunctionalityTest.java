@@ -127,7 +127,7 @@ class ChanceCardFunctionalityTest {
         int money17 = playerHandler.getPlayers()[0].getMoney() + 1000;
         chanceCardFunctionality.chanceCardFunction(17, playerHandler.getPlayers()[0]);
 
-        assertEquals(45100, playerHandler.getPlayers()[0].getMoney(),"Tester card ID:17");
+        assertEquals(money17, playerHandler.getPlayers()[0].getMoney(),"Tester card ID:17");
 
         //Tester kort id:18
         int money18 = playerHandler.getPlayers()[0].getMoney() + 1000;
@@ -160,92 +160,138 @@ class ChanceCardFunctionalityTest {
         assertEquals(money22, playerHandler.getPlayers()[0].getMoney(),"Tester card ID:22");
 
         //Tester kort id:23
-        int money23 = playerHandler.getPlayers()[0].getMoney() + 200;
+        int money23 = playerHandler.getPlayers()[0].getMoney() + (200 * 2);
         chanceCardFunctionality.chanceCardFunction(23, playerHandler.getPlayers()[0]);
 
         assertEquals(money23, playerHandler.getPlayers()[0].getMoney(),"Tester card ID:23");
 
         //Tester card id:24
-        //Testing if it gives money or not if value is under 15000
-        playerHandler.getPlayers()[0].setMoney(14500);
+        int money24 = playerHandler.getPlayers()[0].getMoney() + (500 * 2);
         chanceCardFunctionality.chanceCardFunction(24, playerHandler.getPlayers()[0]);
-        assertEquals(54500, playerHandler.getPlayers()[0].getMoney(),"Tester card ID:24, under 15000");
-        //And also that it doesn't give it if it's above 15000
-        chanceCardFunctionality.chanceCardFunction(24, playerHandler.getPlayers()[0]);
-        assertEquals(54500, playerHandler.getPlayers()[0].getMoney(),"Tester card ID:24, over 15000");
-        //And the boundary = 15000
-        playerHandler.getPlayers()[0].setMoney(15000);
-        chanceCardFunctionality.chanceCardFunction(24, playerHandler.getPlayers()[0]);
-        assertEquals(15000, playerHandler.getPlayers()[0].getMoney(),"Tester card ID:24, on 15000");
+        assertEquals(money24, playerHandler.getPlayers()[0].getMoney(),"Tester card ID:24");
 
         //Tetser card id:25
+        int money25 = playerHandler.getPlayers()[0].getMoney() + (500 * 2);
         chanceCardFunctionality.chanceCardFunction(25, playerHandler.getPlayers()[0]);
-        assertEquals(15400, playerHandler.getPlayers()[0].getMoney());
+        assertEquals(money25, playerHandler.getPlayers()[0].getMoney(),"Tester card ID:25");
 
+        //Tester card id:26
+        //Testing if it gives money or not if value is under 15000
+        playerHandler.getPlayers()[0].setMoney(14500);
         chanceCardFunctionality.chanceCardFunction(26, playerHandler.getPlayers()[0]);
-        assertEquals(16400, playerHandler.getPlayers()[0].getMoney());
+        assertEquals(54500, playerHandler.getPlayers()[0].getMoney(),"Tester card ID:26, under 15000");
+        //And also that it doesn't give it if it's above 15000
+        chanceCardFunctionality.chanceCardFunction(26, playerHandler.getPlayers()[0]);
+        assertEquals(54500, playerHandler.getPlayers()[0].getMoney(),"Tester card ID:26, over 15000");
+        //And the boundary = 15000
+        playerHandler.getPlayers()[0].setMoney(15000);
+        chanceCardFunctionality.chanceCardFunction(26, playerHandler.getPlayers()[0]);
+        assertEquals(15000, playerHandler.getPlayers()[0].getMoney(),"Tester card ID:26, on 15000");
 
+
+        //Tester card id:27
+        int money27 = playerHandler.getPlayers()[0].getMoney();
         chanceCardFunctionality.chanceCardFunction(27, playerHandler.getPlayers()[0]);
-        assertEquals(17400, playerHandler.getPlayers()[0].getMoney());
+        assertEquals(money27, playerHandler.getPlayers()[0].getMoney(), "Tester card ID:27");
 
+        //Tester card id:28
+        int START = 0;
         chanceCardFunctionality.chanceCardFunction(28, playerHandler.getPlayers()[0]);
-        assertEquals(0, playerHandler.getPlayers()[0].getPosition());
+        assertEquals(START, playerHandler.getPlayers()[0].getPosition(),"Tester card ID:28");
 
+        //Tester card id:29
+        playerHandler.getPlayers()[0].setPosition(3);
         chanceCardFunctionality.chanceCardFunction(29, playerHandler.getPlayers()[0]);
-        assertEquals(0, playerHandler.getPlayers()[0].getPosition());
+        assertEquals(START, playerHandler.getPlayers()[0].getPosition(),"Tester card ID:29");
 
+        //Tester card id:30
+        int pos30 = playerHandler.getPlayers()[0].getPosition() + 3;
         chanceCardFunctionality.chanceCardFunction(30, playerHandler.getPlayers()[0]);
-        assertEquals(3, playerHandler.getPlayers()[0].getPosition());
+        assertEquals(pos30, playerHandler.getPlayers()[0].getPosition(), "Tester card ID:30");
 
+        //Tester card id:31
+        int pos31 = playerHandler.getPlayers()[0].getPosition() - 3;
         chanceCardFunctionality.chanceCardFunction(31, playerHandler.getPlayers()[0]);
-        assertEquals(0, playerHandler.getPlayers()[0].getPosition());
+        assertEquals(pos31, playerHandler.getPlayers()[0].getPosition(),"Tester card ID:31");
 
+        //Tester card id:32
+        playerHandler.getPlayers()[0].setPosition(30);
+        int pos32 = playerHandler.getPlayers()[0].getPosition() - 3;
         chanceCardFunctionality.chanceCardFunction(32, playerHandler.getPlayers()[0]);
-        assertEquals(37, playerHandler.getPlayers()[0].getPosition());
+        assertEquals(pos32, playerHandler.getPlayers()[0].getPosition(),"Tester card ID:32");
 
+        //Tester card id:33
+        int pos33 = 11;
         chanceCardFunctionality.chanceCardFunction(33, playerHandler.getPlayers()[0]);
-        assertEquals(11, playerHandler.getPlayers()[0].getPosition());
+        assertEquals(pos33, playerHandler.getPlayers()[0].getPosition(),"Tester card ID:33");
 
+        //Tester card id:34
+        playerHandler.getPlayers()[0].setPosition(11);
+        int pos34 = 15;
         chanceCardFunctionality.chanceCardFunction(34, playerHandler.getPlayers()[0]);
-        assertEquals(15, playerHandler.getPlayers()[0].getPosition());
+        assertEquals(pos34, playerHandler.getPlayers()[0].getPosition(),"Tester card ID:34");
 
+        //tester card id:35
+        int pos35 = 24;
         chanceCardFunctionality.chanceCardFunction(35, playerHandler.getPlayers()[0]);
-        assertEquals(25, playerHandler.getPlayers()[0].getPosition());
+        assertEquals(pos35, playerHandler.getPlayers()[0].getPosition(),"Tester card ID: 35");
 
+        //Tester card id:36
+        int pos36 = 32;
         chanceCardFunctionality.chanceCardFunction(36, playerHandler.getPlayers()[0]);
-        assertEquals(15, playerHandler.getPlayers()[0].getPosition());
+        assertEquals(32, playerHandler.getPlayers()[0].getPosition(),"Tester card ID:36");
 
+        //Tester card id:37
+        playerHandler.getPlayers()[0].setPosition(32);
+        int pos37 = 35;
         chanceCardFunctionality.chanceCardFunction(37, playerHandler.getPlayers()[0]);
-        assertEquals(24, playerHandler.getPlayers()[0].getPosition());
+        assertEquals(pos37, playerHandler.getPlayers()[0].getPosition(),"Tester card ID:37");
 
+        //Tester card id:38
+        int pos38 = 19;
         chanceCardFunctionality.chanceCardFunction(38, playerHandler.getPlayers()[0]);
-        assertEquals(32, playerHandler.getPlayers()[0].getPosition());
+        assertEquals(pos38, playerHandler.getPlayers()[0].getPosition(),"Tester card ID:38");
 
+        //Tester card id:39
+        int pos39 = 39;
         chanceCardFunctionality.chanceCardFunction(39   , playerHandler.getPlayers()[0]);
-        assertEquals(35, playerHandler.getPlayers()[0].getPosition());
+        assertEquals(pos39, playerHandler.getPlayers()[0].getPosition(),"Tester card ID: 39");
 
+        //Tester card id:40
         chanceCardFunctionality.chanceCardFunction(40, playerHandler.getPlayers()[0]);
-        assertEquals(19, playerHandler.getPlayers()[0].getPosition());
+        assertEquals(true, playerHandler.getPlayers()[0].isGetOutOfJailCard(),"Tester card ID:40");
 
-        chanceCardFunctionality.chanceCardFunction(41, playerHandler.getPlayers()[0]);
-        assertEquals(39, playerHandler.getPlayers()[0].getPosition());
-
-        chanceCardFunctionality.chanceCardFunction(42, playerHandler.getPlayers()[0]);
-        assertEquals(true, playerHandler.getPlayers()[0].isGetOutOfJailCard());
-
+        //Tester card id:41
         playerHandler.getPlayers()[0].setGetOutOfJailCard(false);
-        assertEquals(false, playerHandler.getPlayers()[0].isGetOutOfJailCard());
+        chanceCardFunctionality.chanceCardFunction(41, playerHandler.getPlayers()[0]);
+        assertEquals(true, playerHandler.getPlayers()[0].isGetOutOfJailCard(), "Tester card ID:41");
+
+        //Tester card 42
+        playerHandler.getPlayers()[0].setPosition(34);
+        int pos42 = 35;
+        chanceCardFunctionality.chanceCardFunction(42, playerHandler.getPlayers()[0]);
+        assertEquals(pos42, playerHandler.getPlayers()[0].getPosition(),"Tester card ID:42");
+
+        //Tester card 43
+        playerHandler.getPlayers()[0].setPosition(34);
+        int pos43 = 35;
         chanceCardFunctionality.chanceCardFunction(43, playerHandler.getPlayers()[0]);
-        assertEquals(true, playerHandler.getPlayers()[0].isGetOutOfJailCard());
+        assertEquals(pos43, playerHandler.getPlayers()[0].getPosition(),"Tester card ID:43");
 
-        assertEquals(false, playerHandler.getPlayers()[0].isJail());
+        //Tester card id:44
+        playerHandler.getPlayers()[0].setGetOutOfJailCard(false);
+        playerHandler.getPlayers()[0].setPosition(22);
+        assertEquals(false, playerHandler.getPlayers()[0].isJail(),"Tester card ID:44 del1");
         chanceCardFunctionality.chanceCardFunction(44, playerHandler.getPlayers()[0]);
-        assertEquals(true, playerHandler.getPlayers()[0].isJail());
+        assertEquals(true, playerHandler.getPlayers()[0].isJail(), "Tester card ID:44 del 2");
 
+        //Tester card id:45
+        playerHandler.getPlayers()[0].setGetOutOfJailCard(false);
+        playerHandler.getPlayers()[0].setPosition(22);
         playerHandler.getPlayers()[0].setJail(false);
-        assertEquals(false, playerHandler.getPlayers()[0].isJail());
+        assertEquals(false, playerHandler.getPlayers()[0].isJail(), "Tester card ID:45 del 1");
         chanceCardFunctionality.chanceCardFunction(45, playerHandler.getPlayers()[0]);
-        assertEquals(true, playerHandler.getPlayers()[0].isJail());
+        assertEquals(true, playerHandler.getPlayers()[0].isJail(),"Tester card ID:45 del 2");
 
 
     }
