@@ -191,13 +191,7 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="52.0" prefWidth="600.0">
          <children>
-            <Button fx:id="deleteSaveButton" mnemonicParsing="false" text="Delete Save" />
-            <TextField fx:id="deleteSaveInput" prefHeight="25.0" prefWidth="122.0" promptText="Save Name" />
-            <HBox layoutX="829.0" layoutY="10.0" prefHeight="52.0" prefWidth="21.0" />
-            <Button fx:id="loadButton" mnemonicParsing="false" text="Load Save" />
-            <TextField fx:id="loadInput" prefHeight="25.0" prefWidth="122.0" promptText="Save Name" />
-            <HBox layoutX="679.0" layoutY="10.0" prefHeight="52.0" prefWidth="21.0" />
-            <Button mnemonicParsing="false" onAction="#startGamePressed" prefHeight="23.0" prefWidth="150.0" text="Start Spil">
+            <Button mnemonicParsing="false" onAction="#startGamePressed" prefHeight="23.0" prefWidth="218.0" text="Start Spil">
                <font>
                   <Font name="Century Gothic" size="12.0" />
                </font>
