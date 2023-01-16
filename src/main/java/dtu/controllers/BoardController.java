@@ -624,6 +624,7 @@ public class BoardController {
         Jackpot jackpot = (Jackpot) ControllerHandler.getInstance().getBoard().getCurrentBoard()[20];
         jackpot.jackpotWin();
         playerHandler.changePlayerBalance(playerHandler.getCurrentPlayer(), prize);
+        playerViewController.updatePlayerMoney();
         communicationController.addedJackpot(playerHandler.getCurrentPlayer().getName(), prize);
 
     }
@@ -740,6 +741,7 @@ public class BoardController {
     }
 
     public void whatYourTaxes(Field field){
+
         TaxField taxField = (TaxField) field;
         Player currentPlayer = playerHandler.getCurrentPlayer();
 
@@ -754,6 +756,9 @@ public class BoardController {
     }
 
     public void payYourTaxes(TaxField taxField, Boolean choice){
+        Jackpot jackpot = (Jackpot) ControllerHandler.getInstance().getBoard().getCurrentBoard()[20];
+        playerHandler.setJackpot(jackpot);
+        taxField.setPlayerHandler(playerHandler);
 
         taxField.taxing(playerHandler.getCurrentPlayer(), choice);
         playerViewController.updatePlayerMoney();
@@ -762,6 +767,9 @@ public class BoardController {
 
     }
     public void payYourExtraTax(TaxField taxField){
+        Jackpot jackpot = (Jackpot) ControllerHandler.getInstance().getBoard().getCurrentBoard()[20];
+        playerHandler.setJackpot(jackpot);
+        taxField.setPlayerHandler(playerHandler);
 
         taxField.taxing(playerHandler.getCurrentPlayer(), true);
         playerViewController.updatePlayerMoney();

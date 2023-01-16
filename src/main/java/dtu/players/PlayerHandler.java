@@ -234,6 +234,7 @@ public class PlayerHandler {
     public void incomeTax(Player player, boolean choice){
 
         if (choice == true){
+            jackpot.addToJackpot(4000);
             changePlayerBalance(player, -4000);
         }
         if (choice == false){
@@ -245,8 +246,15 @@ public class PlayerHandler {
         double roundUpTenPercent = (((player.getMoney()*0.10)/50));
         double roundUpFifty = Math.ceil(roundUpTenPercent)*50;
         int roundedToFifty = (int)roundUpFifty;
+        jackpot.addToJackpot(roundedToFifty);
         changePlayerBalance(player, -roundedToFifty);
     }
+
+    public void otherTaxField(Player player){
+        jackpot.addToJackpot(2000);
+        changePlayerBalance(player, -2000);
+    }
+
     public int nonPledgeTax(int pledgeAmount){
         double nonPledgeTax = (((pledgeAmount*0.10)/100));
         double roundUpHundred = Math.ceil(nonPledgeTax)*100;
