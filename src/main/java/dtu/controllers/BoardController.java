@@ -368,6 +368,7 @@ public class BoardController {
         initFieldButtons();
         initializePlayerHandlerPlayerViewController();
         initTradeMenu();
+        initializeChanceCardDeck();
     }
 
     //region delegate model objects to other controller
