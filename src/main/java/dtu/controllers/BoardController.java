@@ -1343,26 +1343,51 @@ public class BoardController {
                 if(player.equals(("Spiller " + (i+1)))) playerIndex = i;
             }
             String stepsString = cheatInput.getText();
-            int steps = parseInt(stepsString);
+            int steps;
+            if(stepsString.charAt(0) == 'd'){
+                char[] charArray = stepsString.toCharArray();
+                String number = "";
+                for(int i = 1; i < charArray.length; i++){
+                    number += charArray[i];
+                }
+                steps = 2*parseInt(number);
 
-            //setting the dice sum, not possible to set individual dice with cheats
-            dice.setSum(steps);
+                int[] toIntArray = new int[2];
+                toIntArray[0] = steps/2;
+                toIntArray[1] = steps/2;
 
-            System.out.println(steps);
+                dice.setSum(steps);
+                Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+                playerHandler.movePlayer(cheatPlayer, steps);
+                int playerId = cheatPlayer.getId();
+                int playerPosition = cheatPlayer.getPosition();
+                dice.setRolledDouble(true);
+                rollDiceAnimation(steps/2, steps/2);
+                movePLayerOnGUI(playerId, playerPosition);
+                multipleCars(playerId, playerPosition);
+                //Switch decision box
+                communicationController.whatRolled(toIntArray, playerHandler.getCurrentPlayer());
+            }
+            else{
+                steps = parseInt(stepsString);
+                dice.setSum(steps);
+                Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
+                playerHandler.movePlayer(cheatPlayer, steps);
+                int playerId = cheatPlayer.getId();
+                int playerPosition = cheatPlayer.getPosition();
+
+                movePLayerOnGUI(playerId, playerPosition);
+                multipleCars(playerId, playerPosition);
+                int[] toIntArray = new int[1];
+                toIntArray[0] = steps;
+                //Switch decision box
+                communicationController.whatRolled(toIntArray, playerHandler.getCurrentPlayer());
+            }
 
 
-            Player cheatPlayer = playerHandler.getPlayers()[playerIndex];
-            playerHandler.movePlayer(cheatPlayer, steps);
 
-            int playerId = cheatPlayer.getId();
-            int playerPosition = cheatPlayer.getPosition();
 
-            movePLayerOnGUI(playerId, playerPosition);
-            multipleCars(playerId, playerPosition);
-            int[] toIntArray = new int[1];
-            toIntArray[0] = steps;
-            //Switch decision box
-            communicationController.whatRolled(toIntArray, playerHandler.getCurrentPlayer());
+
         }
         else System.out.println("No player selected");
 
