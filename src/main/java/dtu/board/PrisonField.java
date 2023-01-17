@@ -33,7 +33,7 @@ public class PrisonField extends Field {
     //Double
     //Card
 
-public void bailOut(Player player){
+    public void bailOut(Player player){
         if(player.isJail() == true){
             if(player.getMoney() >= BAIL) {
                 player.setMoney(player.getMoney() - BAIL);
