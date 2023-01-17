@@ -9,6 +9,8 @@ What you see here is our project 1.0. There are minor bugs, that we plan to fix 
 To run the project on a Windows Computer: Download and build project. If you are on a computer with 1920x1080 pixels, and you are using screen-zoom higher than 100%.
 Set the screen zoom to 100%. We will look into getting DPI-scaling to work 100% in the future, but DPI-scaling is wonkly at best to say the least.
 
+The specific way to download and run the project will be in final report + F1 Status report.
+
 This will be released under personal use copyright when project is done, but until then, all rights rerserved!
 
 Have a lovely day, and thanks for watching.
