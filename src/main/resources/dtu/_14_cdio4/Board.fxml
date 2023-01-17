@@ -22,35 +22,355 @@
           <children>
               <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="990.0" prefWidth="880.0">
                   <children>
-                      <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="90.0" prefWidth="880.0">
+                      <HBox maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="90.0" prefWidth="880.0">
                           <children>
-                              <StackPane fx:id="field20" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field30" alignment="TOP_CENTER" layoutX="73.0" layoutY="10.0" prefHeight="90.0" prefWidth="80.0">
                                   <children>
-                                      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="80.0" style="-fx-background-color: #0020ff;">
+                                      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #0080ff;">
                                           <children>
-                                              <ImageView fx:id="parkingImage" fitHeight="44.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                              <ImageView fx:id="policeImage" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                                   <image>
-                                                      <Image url="@../../../../textures/parking_field.png" />
+                                                      <Image url="@../../../../textures/police_man_card.png" />
                                                   </image>
                                               </ImageView>
                                           </children>
                                       </VBox>
-                                      <VBox alignment="CENTER" minWidth="-Infinity" prefHeight="90.0" prefWidth="80.0" style="-fx-border-color: black; -fx-border-width: 1;">
+                                      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: black; -fx-border-width: 1;">
                                           <children>
-                                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gratis " textAlignment="CENTER" wrappingWidth="62.05127239227295">
+                                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Politi" textAlignment="CENTER" wrappingWidth="54.05127239227295">
                                                   <font>
-                                                      <Font name="System Bold" size="11.0" />
+                                                      <Font name="System Bold" size="10.0" />
                                                   </font>
                                               </Text>
-                                              <VBox prefHeight="40.0" prefWidth="66.0" />
-                                              <Text fill="WHITE" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parkering" textAlignment="CENTER" wrappingWidth="57.5999755859375">
+                                              <VBox prefHeight="60.0" prefWidth="98.0" />
+                                              <Text fill="WHITE" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gå i fængsel" textAlignment="CENTER" wrappingWidth="57.5999755859375">
+                                                  <font>
+                                                      <Font size="9.0" />
+                                                  </font>
+                                              </Text>
+                                          </children>
+                                      </VBox>
+                                      <Button fx:id="bField30" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01" prefWidth="80.0">
+                                          <font>
+                                              <Font size="9.0" />
+                                          </font>
+                                 <rotationAxis>
+                                    <Point3D />
+                                 </rotationAxis>
+                                      </Button>
+                                  </children>
+                              </StackPane>
+                        <StackPane fx:id="field29" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #ffffff;">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Østergade" textAlignment="CENTER" wrappingWidth="65.0">
+                                             <font>
+                                                <Font name="Arial Black" size="9.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="-2.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="3.0" prefWidth="67.0" style="-fx-background-color: black;" />
+                                    <VBox prefHeight="50.0" prefWidth="67.0" />
+                                    <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 5.600" textAlignment="CENTER" wrappingWidth="65.0">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseWhite3" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="bField29" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                              <StackPane fx:id="field28" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
+                                  <children>
+                                      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="71.0" style="-fx-background-color: #FF69B4;">
+                                          <children>
+                                              <ImageView fx:id="colaImage" fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                  <image>
+                                                      <Image url="@../../../../textures/colaflaske.png" />
+                                                  </image>
+                                              </ImageView>
+                                          </children>
+                                      </VBox>
+                                      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="71.0" style="-fx-border-color: black; -fx-border-width: 1;">
+                                          <children>
+                                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Coca Cola" textAlignment="CENTER" wrappingWidth="54.05127239227295">
+                                                  <font>
+                                                      <Font name="System Bold" size="10.0" />
+                                                  </font>
+                                              </Text>
+                                              <VBox prefHeight="63.0" prefWidth="83.0" />
+                                              <Text fill="WHITE" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 3.000" textAlignment="CENTER" wrappingWidth="57.5999755859375">
+                                                  <font>
+                                                      <Font size="10.0" />
+                                                  </font>
+                                              </Text>
+                                          </children>
+                                      </VBox>
+                                      <Button fx:id="bField28" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                          <font>
+                                              <Font size="9.0" />
+                                          </font>
+                                      </Button>
+                                  </children>
+                              </StackPane>
+                        <StackPane fx:id="field27" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #ffffff;">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kgs. Nytorv" textAlignment="CENTER" wrappingWidth="65.0">
+                                             <font>
+                                                <Font name="Arial Black" size="9.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="-2.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="3.0" prefWidth="67.0" style="-fx-background-color: black;" />
+                                    <VBox prefHeight="50.0" prefWidth="67.0" />
+                                    <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 5.200" textAlignment="CENTER" wrappingWidth="65.0">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseWhite2" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="bField27" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                        <StackPane fx:id="field26" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #ffffff;">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bredgade" textAlignment="CENTER" wrappingWidth="65.0">
+                                             <font>
+                                                <Font name="Arial Black" size="9.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="-2.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="3.0" prefWidth="67.0" style="-fx-background-color: black;" />
+                                    <VBox prefHeight="50.0" prefWidth="67.0" />
+                                    <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 5.200" textAlignment="CENTER" wrappingWidth="65.0">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseWhite1" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="bField26" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                              <StackPane fx:id="field25" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
+                                  <children>
+                                      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
+                                          <children>
+                                              <ImageView fx:id="ferry3" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" translateY="-2.0">
+                                                  <image>
+                                                      <Image url="@../../../../textures/ferry_card.png" />
+                                                  </image>
+                                       <VBox.margin>
+                                          <Insets top="-20.0" />
+                                       </VBox.margin>
+                                              </ImageView>
+                                          </children>
+                                      </VBox>
+                                      <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: black; -fx-border-width: 1;">
+                                          <children>
+                                              <Text fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="Færge" textAlignment="CENTER" wrappingWidth="54.05127239227295">
+                                                  <font>
+                                                      <Font name="System Bold" size="10.0" />
+                                                  </font>
+                                              </Text>
+                                              <VBox prefHeight="56.0" prefWidth="83.0" />
+                                              <Text fill="#404040" layoutX="15.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gedser - Rostock  " textAlignment="CENTER" wrappingWidth="66.0">
+                                                  <font>
+                                                      <Font size="10.0" />
+                                                  </font>
+                                              </Text>
+                                              <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4.000" textAlignment="CENTER" wrappingWidth="57.5999755859375">
+                                                  <font>
+                                                      <Font size="10.0" />
+                                                  </font>
+                                              </Text>
+                                          </children>
+                                      </VBox>
+                                      <Button fx:id="bField25" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                          <font>
+                                              <Font size="9.0" />
+                                          </font>
+                                      </Button>
+                                  </children>
+                              </StackPane>
+                        <StackPane fx:id="field24" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: bf0017;">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Grønnningen" textAlignment="CENTER" wrappingWidth="65.0">
+                                             <font>
+                                                <Font name="Arial Black" size="9.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="-2.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="3.0" prefWidth="67.0" style="-fx-background-color: black;" />
+                                    <VBox prefHeight="50.0" prefWidth="67.0" />
+                                    <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4.800" textAlignment="CENTER" wrappingWidth="65.0">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseRed3" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="bField24" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                        <StackPane fx:id="field23" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: bf0017;">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Østerbrogade" textAlignment="CENTER" wrappingWidth="74.0">
+                                             <font>
+                                                <Font name="Arial Black" size="9.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="-2.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="3.0" prefWidth="67.0" style="-fx-background-color: black;" />
+                                    <VBox prefHeight="50.0" prefWidth="67.0" />
+                                    <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4.400" textAlignment="CENTER" wrappingWidth="65.0">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseRed2" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="bField23" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                              <StackPane fx:id="field22" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                                  <children>
+                                      <VBox alignment="CENTER" prefHeight="60.0" prefWidth="70.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 1;">
+                                          <children>
+                                              <Text fill="#00af00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" translateX="-3.0" wrappingWidth="8.851318359375">
+                                                  <font>
+                                                      <Font name="System Bold" size="34.0" />
+                                                  </font>
+                                              </Text>
+                                              <Text fill="#00af00" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prøv Lykken" textAlignment="CENTER" wrappingWidth="65.0">
                                                   <font>
                                                       <Font name="System Bold" size="11.0" />
                                                   </font>
                                               </Text>
                                           </children>
                                       </VBox>
-                                      <Button fx:id="bField20" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01">
+                                      <Button fx:id="bField22" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01" prefWidth="80.0">
                                           <font>
                                               <Font size="9.0" />
                                           </font>
@@ -101,356 +421,36 @@
                                       </Button>
                                   </children>
                               </StackPane>
-                              <StackPane fx:id="field22" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field20" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                                   <children>
-                                      <VBox alignment="CENTER" prefHeight="60.0" prefWidth="70.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 1;">
+                                      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="80.0" style="-fx-background-color: #0020ff;">
                                           <children>
-                                              <Text fill="#00af00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" translateX="-3.0" wrappingWidth="8.851318359375">
+                                              <ImageView fx:id="parkingImage" fitHeight="44.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                  <image>
+                                                      <Image url="@../../../../textures/parking_field.png" />
+                                                  </image>
+                                              </ImageView>
+                                          </children>
+                                      </VBox>
+                                      <VBox alignment="CENTER" minWidth="-Infinity" prefHeight="90.0" prefWidth="80.0" style="-fx-border-color: black; -fx-border-width: 1;">
+                                          <children>
+                                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gratis " textAlignment="CENTER" wrappingWidth="62.05127239227295">
                                                   <font>
-                                                      <Font name="System Bold" size="34.0" />
+                                                      <Font name="System Bold" size="11.0" />
                                                   </font>
                                               </Text>
-                                              <Text fill="#00af00" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prøv Lykken" textAlignment="CENTER" wrappingWidth="65.0">
+                                              <VBox prefHeight="40.0" prefWidth="66.0" />
+                                              <Text fill="WHITE" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parkering" textAlignment="CENTER" wrappingWidth="57.5999755859375">
                                                   <font>
                                                       <Font name="System Bold" size="11.0" />
                                                   </font>
                                               </Text>
                                           </children>
                                       </VBox>
-                                      <Button fx:id="bField22" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01" prefWidth="80.0">
+                                      <Button fx:id="bField20" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01">
                                           <font>
                                               <Font size="9.0" />
                                           </font>
-                                      </Button>
-                                  </children>
-                              </StackPane>
-                        <StackPane fx:id="field23" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
-                           <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
-                                 <children>
-                                    <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: bf0017;">
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                       <children>
-                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Østerbrogade" textAlignment="CENTER" wrappingWidth="74.0">
-                                             <font>
-                                                <Font name="Arial Black" size="9.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="-2.0" />
-                                             </VBox.margin>
-                                          </Text>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="3.0" prefWidth="67.0" style="-fx-background-color: black;" />
-                                    <VBox prefHeight="50.0" prefWidth="67.0" />
-                                    <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4.400" textAlignment="CENTER" wrappingWidth="65.0">
-                                       <font>
-                                          <Font size="10.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseRed2" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <Button fx:id="bField23" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                 <font>
-                                    <Font size="9.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </StackPane>
-                        <StackPane fx:id="field24" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
-                           <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
-                                 <children>
-                                    <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: bf0017;">
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                       <children>
-                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Grønnningen" textAlignment="CENTER" wrappingWidth="65.0">
-                                             <font>
-                                                <Font name="Arial Black" size="9.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="-2.0" />
-                                             </VBox.margin>
-                                          </Text>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="3.0" prefWidth="67.0" style="-fx-background-color: black;" />
-                                    <VBox prefHeight="50.0" prefWidth="67.0" />
-                                    <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4.800" textAlignment="CENTER" wrappingWidth="65.0">
-                                       <font>
-                                          <Font size="10.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseRed3" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <Button fx:id="bField24" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                 <font>
-                                    <Font size="9.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </StackPane>
-                              <StackPane fx:id="field25" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
-                                  <children>
-                                      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #00ffff;">
-                                          <children>
-                                              <ImageView fx:id="ferry3" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" translateY="-2.0">
-                                                  <image>
-                                                      <Image url="@../../../../textures/ferry_card.png" />
-                                                  </image>
-                                       <VBox.margin>
-                                          <Insets top="-20.0" />
-                                       </VBox.margin>
-                                              </ImageView>
-                                          </children>
-                                      </VBox>
-                                      <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: black; -fx-border-width: 1;">
-                                          <children>
-                                              <Text fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="Færge" textAlignment="CENTER" wrappingWidth="54.05127239227295">
-                                                  <font>
-                                                      <Font name="System Bold" size="10.0" />
-                                                  </font>
-                                              </Text>
-                                              <VBox prefHeight="56.0" prefWidth="83.0" />
-                                              <Text fill="#404040" layoutX="15.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gedser - Rostock  " textAlignment="CENTER" wrappingWidth="66.0">
-                                                  <font>
-                                                      <Font size="10.0" />
-                                                  </font>
-                                              </Text>
-                                              <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4.000" textAlignment="CENTER" wrappingWidth="57.5999755859375">
-                                                  <font>
-                                                      <Font size="10.0" />
-                                                  </font>
-                                              </Text>
-                                          </children>
-                                      </VBox>
-                                      <Button fx:id="bField25" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                          <font>
-                                              <Font size="9.0" />
-                                          </font>
-                                      </Button>
-                                  </children>
-                              </StackPane>
-                        <StackPane fx:id="field26" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
-                           <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
-                                 <children>
-                                    <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #ffffff;">
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                       <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bredgade" textAlignment="CENTER" wrappingWidth="65.0">
-                                             <font>
-                                                <Font name="Arial Black" size="9.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="-2.0" />
-                                             </VBox.margin>
-                                          </Text>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="3.0" prefWidth="67.0" style="-fx-background-color: black;" />
-                                    <VBox prefHeight="50.0" prefWidth="67.0" />
-                                    <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 5.200" textAlignment="CENTER" wrappingWidth="65.0">
-                                       <font>
-                                          <Font size="10.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseWhite1" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <Button fx:id="bField26" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                 <font>
-                                    <Font size="9.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </StackPane>
-                        <StackPane fx:id="field27" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
-                           <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
-                                 <children>
-                                    <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #ffffff;">
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                       <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kgs. Nytorv" textAlignment="CENTER" wrappingWidth="65.0">
-                                             <font>
-                                                <Font name="Arial Black" size="9.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="-2.0" />
-                                             </VBox.margin>
-                                          </Text>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="3.0" prefWidth="67.0" style="-fx-background-color: black;" />
-                                    <VBox prefHeight="50.0" prefWidth="67.0" />
-                                    <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 5.200" textAlignment="CENTER" wrappingWidth="65.0">
-                                       <font>
-                                          <Font size="10.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseWhite2" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <Button fx:id="bField27" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                 <font>
-                                    <Font size="9.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </StackPane>
-                              <StackPane fx:id="field28" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
-                                  <children>
-                                      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="71.0" style="-fx-background-color: #FF69B4;">
-                                          <children>
-                                              <ImageView fx:id="colaImage" fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                                  <image>
-                                                      <Image url="@../../../../textures/colaflaske.png" />
-                                                  </image>
-                                              </ImageView>
-                                          </children>
-                                      </VBox>
-                                      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="71.0" style="-fx-border-color: black; -fx-border-width: 1;">
-                                          <children>
-                                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Coca Cola" textAlignment="CENTER" wrappingWidth="54.05127239227295">
-                                                  <font>
-                                                      <Font name="System Bold" size="10.0" />
-                                                  </font>
-                                              </Text>
-                                              <VBox prefHeight="63.0" prefWidth="83.0" />
-                                              <Text fill="WHITE" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 3.000" textAlignment="CENTER" wrappingWidth="57.5999755859375">
-                                                  <font>
-                                                      <Font size="10.0" />
-                                                  </font>
-                                              </Text>
-                                          </children>
-                                      </VBox>
-                                      <Button fx:id="bField28" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                          <font>
-                                              <Font size="9.0" />
-                                          </font>
-                                      </Button>
-                                  </children>
-                              </StackPane>
-                        <StackPane fx:id="field29" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
-                           <children>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
-                                 <children>
-                                    <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #ffffff;">
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                       <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Østergade" textAlignment="CENTER" wrappingWidth="65.0">
-                                             <font>
-                                                <Font name="Arial Black" size="9.0" />
-                                             </font>
-                                             <VBox.margin>
-                                                <Insets top="-2.0" />
-                                             </VBox.margin>
-                                          </Text>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="3.0" prefWidth="67.0" style="-fx-background-color: black;" />
-                                    <VBox prefHeight="50.0" prefWidth="67.0" />
-                                    <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 5.600" textAlignment="CENTER" wrappingWidth="65.0">
-                                       <font>
-                                          <Font size="10.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseWhite3" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <Button fx:id="bField29" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                 <font>
-                                    <Font size="9.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </StackPane>
-                              <StackPane fx:id="field30" alignment="TOP_CENTER" layoutX="73.0" layoutY="10.0" prefHeight="90.0" prefWidth="80.0">
-                                  <children>
-                                      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #0080ff;">
-                                          <children>
-                                              <ImageView fx:id="policeImage" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                                  <image>
-                                                      <Image url="@../../../../textures/police_man_card.png" />
-                                                  </image>
-                                              </ImageView>
-                                          </children>
-                                      </VBox>
-                                      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: black; -fx-border-width: 1;">
-                                          <children>
-                                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Politi" textAlignment="CENTER" wrappingWidth="54.05127239227295">
-                                                  <font>
-                                                      <Font name="System Bold" size="10.0" />
-                                                  </font>
-                                              </Text>
-                                              <VBox prefHeight="60.0" prefWidth="98.0" />
-                                              <Text fill="WHITE" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gå i fængsel" textAlignment="CENTER" wrappingWidth="57.5999755859375">
-                                                  <font>
-                                                      <Font size="9.0" />
-                                                  </font>
-                                              </Text>
-                                          </children>
-                                      </VBox>
-                                      <Button fx:id="bField30" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01" prefWidth="80.0">
-                                          <font>
-                                              <Font size="9.0" />
-                                          </font>
-                                 <rotationAxis>
-                                    <Point3D />
-                                 </rotationAxis>
                                       </Button>
                                   </children>
                               </StackPane>
@@ -460,7 +460,7 @@
                           <children>
                               <VBox minWidth="-Infinity" prefHeight="810.0" prefWidth="80.0">
                                   <children>
-                                      <StackPane fx:id="field19" layoutX="10.0" layoutY="136.0" prefHeight="90.0" prefWidth="80.0">
+                                      <StackPane fx:id="field19" alignment="TOP_CENTER" layoutX="10.0" layoutY="136.0" prefHeight="90.0" prefWidth="80.0">
                                           <children>
                                               <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                                   <children>
@@ -508,7 +508,7 @@
                                     <Insets right="1.0" />
                                  </VBox.margin>
                                       </StackPane>
-                              <StackPane fx:id="field18" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field18" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -576,7 +576,7 @@
                                               </Button>
                                           </children>
                                       </StackPane>
-                              <StackPane fx:id="field16" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field16" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -662,7 +662,7 @@
                                               </Button>
                                           </children>
                                       </StackPane>
-                              <StackPane fx:id="field14" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field14" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -707,7 +707,7 @@
                                     </Button>
                                  </children>
                               </StackPane>
-                              <StackPane fx:id="field13" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field13" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -785,7 +785,7 @@
                                               </Button>
                                           </children>
                                       </StackPane>
-                              <StackPane fx:id="field11" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field11" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -908,299 +908,7 @@
                               </StackPane>
                               <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="80.0">
                                   <children>
-                              <StackPane fx:id="field31" prefHeight="90.0" prefWidth="80.0">
-                                 <children>
-                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
-                                       <children>
-                                          <ImageView fx:id="houseYellow1" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../../textures/houseNulIcon.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-border-color: black; -fx-border-width: 1;">
-                                       <children>
-                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="100.0" style="-fx-background-color: #f5f800;">
-                                             <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amagertorv" textAlignment="CENTER" wrappingWidth="65.0">
-                                                   <font>
-                                                      <Font name="System Bold" size="10.0" />
-                                                   </font>
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                </Text>
-                                                <VBox prefHeight="2.0" prefWidth="58.0" style="-fx-background-color: black;">
-                                                   <VBox.margin>
-                                                      <Insets top="4.0" />
-                                                   </VBox.margin>
-                                                </VBox>
-                                             </children>
-                                          </VBox>
-                                          <VBox prefHeight="54.0" prefWidth="58.0" />
-                                          <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 6.000" textAlignment="CENTER" wrappingWidth="65.0">
-                                             <font>
-                                                <Font size="10.0" />
-                                             </font>
-                                          </Text>
-                                       </children>
-                                    </VBox>
-                                    <Button fx:id="bField31" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="77.77">
-                                       <font>
-                                          <Font size="9.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </StackPane>
-                              <StackPane fx:id="field32" prefHeight="90.0" prefWidth="80.0">
-                                 <children>
-                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
-                                       <children>
-                                          <ImageView fx:id="houseYellow2" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../../textures/houseNulIcon.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-border-color: black; -fx-border-width: 1;">
-                                       <children>
-                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="100.0" style="-fx-background-color: #f5f800;">
-                                             <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vimmelskaftet" textAlignment="CENTER" wrappingWidth="76.0">
-                                                   <font>
-                                                      <Font name="System Bold" size="10.0" />
-                                                   </font>
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                </Text>
-                                                <VBox prefHeight="2.0" prefWidth="58.0" style="-fx-background-color: black;">
-                                                   <VBox.margin>
-                                                      <Insets top="4.0" />
-                                                   </VBox.margin>
-                                                </VBox>
-                                             </children>
-                                          </VBox>
-                                          <VBox prefHeight="54.0" prefWidth="58.0" />
-                                          <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 6.000" textAlignment="CENTER" wrappingWidth="65.0">
-                                             <font>
-                                                <Font size="10.0" />
-                                             </font>
-                                          </Text>
-                                       </children>
-                                    </VBox>
-                                    <Button fx:id="bField32" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                       <font>
-                                          <Font size="9.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </StackPane>
-                                      <StackPane fx:id="field33" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
-                                          <children>
-                                              <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 1;">
-                                                  <children>
-                                                      <Text fill="#00af00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" translateX="-3.0" wrappingWidth="8.851318359375">
-                                                          <font>
-                                                              <Font name="System Bold" size="34.0" />
-                                                          </font>
-                                                      </Text>
-                                                      <Text fill="#00af00" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prøv Lykken" textAlignment="CENTER" wrappingWidth="65.0">
-                                                          <font>
-                                                              <Font name="System Bold" size="11.0" />
-                                                          </font>
-                                                      </Text>
-                                                  </children>
-                                              </VBox>
-                                              <Button fx:id="bField33" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                                  <font>
-                                                      <Font size="9.0" />
-                                                  </font>
-                                              </Button>
-                                          </children>
-                                      </StackPane>
-                              <StackPane fx:id="field34" prefHeight="90.0" prefWidth="80.0">
-                                 <children>
-                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
-                                       <children>
-                                          <ImageView fx:id="houseYellow3" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../../textures/houseNulIcon.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-border-color: black; -fx-border-width: 1;">
-                                       <children>
-                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="80.0" style="-fx-background-color: #f5f800;">
-                                             <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nygade" textAlignment="CENTER" wrappingWidth="65.0">
-                                                   <font>
-                                                      <Font name="System Bold" size="10.0" />
-                                                   </font>
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                </Text>
-                                                <VBox prefHeight="2.0" prefWidth="58.0" style="-fx-background-color: black;">
-                                                   <VBox.margin>
-                                                      <Insets top="4.0" />
-                                                   </VBox.margin>
-                                                </VBox>
-                                             </children>
-                                          </VBox>
-                                          <VBox prefHeight="54.0" prefWidth="58.0" />
-                                          <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 6.400" textAlignment="CENTER" wrappingWidth="65.0">
-                                             <font>
-                                                <Font size="10.0" />
-                                             </font>
-                                          </Text>
-                                       </children>
-                                    </VBox>
-                                    <Button fx:id="bField34" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                       <font>
-                                          <Font size="9.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </StackPane>
-                                      <StackPane fx:id="field35" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
-                                          <children>
-                                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="80.0" style="-fx-background-color: #00ffff;">
-                                                  <children>
-                                                      <ImageView fx:id="ferry4" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" translateY="-2.0">
-                                                          <image>
-                                                              <Image url="@../../../../textures/ferry_card.png" />
-                                                          </image>
-                                             <VBox.margin>
-                                                <Insets top="-14.0" />
-                                             </VBox.margin>
-                                                      </ImageView>
-                                                  </children>
-                                              </VBox>
-                                              <VBox alignment="CENTER" prefHeight="90.0" prefWidth="80.0" style="-fx-border-color: black; -fx-border-width: 1;">
-                                                  <children>
-                                                      <Text fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="Færge" textAlignment="CENTER" wrappingWidth="54.05127239227295">
-                                                          <font>
-                                                              <Font name="System Bold" size="10.0" />
-                                                          </font>
-                                                      </Text>
-                                                      <VBox prefHeight="30.0" prefWidth="58.0" />
-                                                      <Text fill="#404040" layoutX="15.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rødby - Puttgarden" textAlignment="CENTER" wrappingWidth="76.0">
-                                                          <font>
-                                                              <Font size="10.0" />
-                                                          </font>
-                                                      </Text>
-                                                      <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4.000" textAlignment="CENTER" wrappingWidth="57.5999755859375">
-                                                          <font>
-                                                              <Font size="10.0" />
-                                                          </font>
-                                                      </Text>
-                                                  </children>
-                                              </VBox>
-                                              <Button fx:id="bField35" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                                  <font>
-                                                      <Font size="9.0" />
-                                                  </font>
-                                              </Button>
-                                          </children>
-                                      </StackPane>
-                                      <StackPane fx:id="field36" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
-                                          <children>
-                                              <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 1;">
-                                                  <children>
-                                                      <Text fill="#00af00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" translateX="-3.0" wrappingWidth="8.851318359375">
-                                                          <font>
-                                                              <Font name="System Bold" size="34.0" />
-                                                          </font>
-                                                      </Text>
-                                                      <Text fill="#00af00" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prøv Lykken" textAlignment="CENTER" wrappingWidth="65.0">
-                                                          <font>
-                                                              <Font name="System Bold" size="11.0" />
-                                                          </font>
-                                                      </Text>
-                                                  </children>
-                                              </VBox>
-                                              <Button fx:id="bField36" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                                  <font>
-                                                      <Font size="9.0" />
-                                                  </font>
-                                              </Button>
-                                          </children>
-                                      </StackPane>
-                              <StackPane fx:id="field37" prefHeight="90.0" prefWidth="80.0">
-                                 <children>
-                                    <VBox alignment="CENTER" prefHeight="90.0" prefWidth="80.0" StackPane.alignment="TOP_LEFT">
-                                       <children>
-                                          <ImageView fx:id="housePurple1" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../../textures/houseNulIcon.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-border-color: black; -fx-border-width: 1;">
-                                       <children>
-                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="80.0" style="-fx-background-color: #8a00d5;">
-                                             <children>
-                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksbergg." textAlignment="CENTER" wrappingWidth="75.0">
-                                                   <font>
-                                                      <Font name="System Bold" size="10.0" />
-                                                   </font>
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                </Text>
-                                                <VBox prefHeight="2.0" prefWidth="58.0" style="-fx-background-color: black;">
-                                                   <VBox.margin>
-                                                      <Insets top="4.0" />
-                                                   </VBox.margin>
-                                                </VBox>
-                                             </children>
-                                          </VBox>
-                                          <VBox prefHeight="54.0" prefWidth="58.0" />
-                                          <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 7.000" textAlignment="CENTER" wrappingWidth="65.0">
-                                             <font>
-                                                <Font size="10.0" />
-                                             </font>
-                                          </Text>
-                                       </children>
-                                    </VBox>
-                                    <Button fx:id="bField37" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                       <font>
-                                          <Font size="9.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </StackPane>
-                                      <StackPane fx:id="field38" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
-                                          <children>
-                                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #dddddd;" />
-                                              <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: black; -fx-border-width: 1;">
-                                                  <children>
-                                                      <Text fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="Statsskat" textAlignment="CENTER" wrappingWidth="54.05127239227295">
-                                                          <font>
-                                                              <Font name="System Bold" size="10.0" />
-                                                          </font>
-                                                      </Text>
-                                                      <VBox prefHeight="27.0" prefWidth="98.0" />
-                                                      <Text fill="#404040" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betal kr. 2.000" textAlignment="CENTER" wrappingWidth="72.5999755859375">
-                                             <font>
-                                                <Font size="11.0" />
-                                             </font>
-                                                      </Text>
-                                                  </children>
-                                              </VBox>
-                                              <Button fx:id="bField38" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
-                                                  <font>
-                                                      <Font size="9.0" />
-                                                  </font>
-                                              </Button>
-                                          </children>
-                                      </StackPane>
-                              <StackPane fx:id="field39" prefHeight="90.0" prefWidth="80.0">
+                              <StackPane fx:id="field39" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0" translateY="720.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
@@ -1269,6 +977,298 @@
                                                   </image>
                                               </ImageView>
                                     <Button fx:id="bField39" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01" prefHeight="90.0" prefWidth="80.0">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </StackPane>
+                                      <StackPane fx:id="field38" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0" translateY="540.0">
+                                          <children>
+                                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #dddddd;" />
+                                              <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: black; -fx-border-width: 1;">
+                                                  <children>
+                                                      <Text fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="Statsskat" textAlignment="CENTER" wrappingWidth="54.05127239227295">
+                                                          <font>
+                                                              <Font name="System Bold" size="10.0" />
+                                                          </font>
+                                                      </Text>
+                                                      <VBox prefHeight="27.0" prefWidth="98.0" />
+                                                      <Text fill="#404040" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Betal kr. 2.000" textAlignment="CENTER" wrappingWidth="72.5999755859375">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                                      </Text>
+                                                  </children>
+                                              </VBox>
+                                              <Button fx:id="bField38" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                                  <font>
+                                                      <Font size="9.0" />
+                                                  </font>
+                                              </Button>
+                                          </children>
+                                      </StackPane>
+                              <StackPane fx:id="field37" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0" translateY="360.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="90.0" prefWidth="80.0" StackPane.alignment="TOP_LEFT">
+                                       <children>
+                                          <ImageView fx:id="housePurple1" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../textures/houseNulIcon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-border-color: black; -fx-border-width: 1;">
+                                       <children>
+                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="80.0" style="-fx-background-color: #8a00d5;">
+                                             <children>
+                                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Frederiksbergg." textAlignment="CENTER" wrappingWidth="75.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="10.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <VBox prefHeight="2.0" prefWidth="58.0" style="-fx-background-color: black;">
+                                                   <VBox.margin>
+                                                      <Insets top="4.0" />
+                                                   </VBox.margin>
+                                                </VBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="54.0" prefWidth="58.0" />
+                                          <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 7.000" textAlignment="CENTER" wrappingWidth="65.0">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <Button fx:id="bField37" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </StackPane>
+                                      <StackPane fx:id="field36" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0" translateY="180.0">
+                                          <children>
+                                              <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 1;">
+                                                  <children>
+                                                      <Text fill="#00af00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" translateX="-3.0" wrappingWidth="8.851318359375">
+                                                          <font>
+                                                              <Font name="System Bold" size="34.0" />
+                                                          </font>
+                                                      </Text>
+                                                      <Text fill="#00af00" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prøv Lykken" textAlignment="CENTER" wrappingWidth="65.0">
+                                                          <font>
+                                                              <Font name="System Bold" size="11.0" />
+                                                          </font>
+                                                      </Text>
+                                                  </children>
+                                              </VBox>
+                                              <Button fx:id="bField36" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                                  <font>
+                                                      <Font size="9.0" />
+                                                  </font>
+                                              </Button>
+                                          </children>
+                                      </StackPane>
+                                      <StackPane fx:id="field35" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
+                                          <children>
+                                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="80.0" style="-fx-background-color: #00ffff;">
+                                                  <children>
+                                                      <ImageView fx:id="ferry4" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" translateY="-2.0">
+                                                          <image>
+                                                              <Image url="@../../../../textures/ferry_card.png" />
+                                                          </image>
+                                             <VBox.margin>
+                                                <Insets top="-14.0" />
+                                             </VBox.margin>
+                                                      </ImageView>
+                                                  </children>
+                                              </VBox>
+                                              <VBox alignment="CENTER" prefHeight="90.0" prefWidth="80.0" style="-fx-border-color: black; -fx-border-width: 1;">
+                                                  <children>
+                                                      <Text fill="#404040" strokeType="OUTSIDE" strokeWidth="0.0" text="Færge" textAlignment="CENTER" wrappingWidth="54.05127239227295">
+                                                          <font>
+                                                              <Font name="System Bold" size="10.0" />
+                                                          </font>
+                                                      </Text>
+                                                      <VBox prefHeight="30.0" prefWidth="58.0" />
+                                                      <Text fill="#404040" layoutX="15.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rødby - Puttgarden" textAlignment="CENTER" wrappingWidth="76.0">
+                                                          <font>
+                                                              <Font size="10.0" />
+                                                          </font>
+                                                      </Text>
+                                                      <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4.000" textAlignment="CENTER" wrappingWidth="57.5999755859375">
+                                                          <font>
+                                                              <Font size="10.0" />
+                                                          </font>
+                                                      </Text>
+                                                  </children>
+                                              </VBox>
+                                              <Button fx:id="bField35" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                                  <font>
+                                                      <Font size="9.0" />
+                                                  </font>
+                                              </Button>
+                                          </children>
+                                      </StackPane>
+                              <StackPane fx:id="field34" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0" translateY="-180.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
+                                       <children>
+                                          <ImageView fx:id="houseYellow3" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../textures/houseNulIcon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-border-color: black; -fx-border-width: 1;">
+                                       <children>
+                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="80.0" style="-fx-background-color: #f5f800;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nygade" textAlignment="CENTER" wrappingWidth="65.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="10.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <VBox prefHeight="2.0" prefWidth="58.0" style="-fx-background-color: black;">
+                                                   <VBox.margin>
+                                                      <Insets top="4.0" />
+                                                   </VBox.margin>
+                                                </VBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="54.0" prefWidth="58.0" />
+                                          <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 6.400" textAlignment="CENTER" wrappingWidth="65.0">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <Button fx:id="bField34" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </StackPane>
+                                      <StackPane fx:id="field33" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0" translateY="-360.0">
+                                          <children>
+                                              <VBox alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 1;">
+                                                  <children>
+                                                      <Text fill="#00af00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" translateX="-3.0" wrappingWidth="8.851318359375">
+                                                          <font>
+                                                              <Font name="System Bold" size="34.0" />
+                                                          </font>
+                                                      </Text>
+                                                      <Text fill="#00af00" layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prøv Lykken" textAlignment="CENTER" wrappingWidth="65.0">
+                                                          <font>
+                                                              <Font name="System Bold" size="11.0" />
+                                                          </font>
+                                                      </Text>
+                                                  </children>
+                                              </VBox>
+                                              <Button fx:id="bField33" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                                  <font>
+                                                      <Font size="9.0" />
+                                                  </font>
+                                              </Button>
+                                          </children>
+                                      </StackPane>
+                              <StackPane fx:id="field32" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0" translateY="-540.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
+                                       <children>
+                                          <ImageView fx:id="houseYellow2" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../textures/houseNulIcon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-border-color: black; -fx-border-width: 1;">
+                                       <children>
+                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="100.0" style="-fx-background-color: #f5f800;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vimmelskaftet" textAlignment="CENTER" wrappingWidth="76.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="10.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <VBox prefHeight="2.0" prefWidth="58.0" style="-fx-background-color: black;">
+                                                   <VBox.margin>
+                                                      <Insets top="4.0" />
+                                                   </VBox.margin>
+                                                </VBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="54.0" prefWidth="58.0" />
+                                          <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 6.000" textAlignment="CENTER" wrappingWidth="65.0">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <Button fx:id="bField32" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
+                                       <font>
+                                          <Font size="9.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="field31" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0" translateY="-720.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
+                                       <children>
+                                          <ImageView fx:id="houseYellow1" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../textures/houseNulIcon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-border-color: black; -fx-border-width: 1;">
+                                       <children>
+                                          <VBox alignment="TOP_CENTER" prefHeight="19.0" prefWidth="100.0" style="-fx-background-color: #f5f800;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amagertorv" textAlignment="CENTER" wrappingWidth="65.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="10.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <VBox prefHeight="2.0" prefWidth="58.0" style="-fx-background-color: black;">
+                                                   <VBox.margin>
+                                                      <Insets top="4.0" />
+                                                   </VBox.margin>
+                                                </VBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="54.0" prefWidth="58.0" />
+                                          <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 6.000" textAlignment="CENTER" wrappingWidth="65.0">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <Button fx:id="bField31" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01" prefHeight="77.77">
                                        <font>
                                           <Font size="9.0" />
                                        </font>
