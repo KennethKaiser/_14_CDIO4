@@ -116,10 +116,11 @@ public class SaveAndLoad {
         }
         stopper(saveData, "FIELDS_END");
         stopper(saveData, "OTHER_START");
-        String[] other = new String[1];
+        String[] other = new String[2];
         //Free parking Jackpot
         PlayerHandler playerHandler = ControllerHandler.getInstance().getBoardController().getPlayerHandler();
         other[0] = "" + playerHandler.getCurrentPlayer().getId();
+        other[1] = "" + ((Jackpot)fields[20]).getAmount();
         saveData.add(other);
         stopper(saveData, "OTHER_END");
         csvFileReader.saveGame(saveData, name);
@@ -227,6 +228,7 @@ public class SaveAndLoad {
             while(playerHandler.getCurrentPlayer().getId() != currentPlayerID){
                 playerHandler.currentPlayer();
             }
+            ((Jackpot)board.getCurrentBoard()[20]).setAmount(parseInt(other.get(i)[1]));
         }
         for(int i = 0; i < amount; i++){
             int current = playerHandler.getPlayers()[i].getMoney();
@@ -240,10 +242,12 @@ public class SaveAndLoad {
 
         }
         ControllerHandler.getInstance().getPlayerViewController().updatePlayerMoney();
+        ControllerHandler.getInstance().getBoardController().jackpotInt();
         ControllerHandler.getInstance().getPlayerViewController().removePlayerBankruptOnLoad();
         ControllerHandler.getInstance().getPlayerViewController().updatePlayerTurn();
         ControllerHandler.getInstance().getCommunicationController().playerTurnStart(playerHandler.getCurrentPlayer().getName());
         ControllerHandler.getInstance().getPauseMenuController().setCurrentLoad(name);
+
         return true;
     }
     private void stopper(ArrayList<String[]> list, String text){
