@@ -35,7 +35,7 @@ class TestJackpot {
     void testLabelAndType() {
         Jackpot jackpot = new Jackpot();
         //Variable
-        final String LABEL = "Du er landet på "+ jackpot.getName()+" .";
+        final String LABEL = "Du er landet på "+ jackpot.getName()+".";
         final String TYPE = "parking";
 
         //Tester label

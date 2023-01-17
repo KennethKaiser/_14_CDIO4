@@ -1589,7 +1589,12 @@ public class BoardController {
             car.setTranslateX(transition.getByX());
             car.setTranslateY(transition.getByY());
             fields[finalCurrent].getChildren().remove(car);
-            fields[moveTo].getChildren().add(car);
+            try{
+                fields[moveTo].getChildren().add(car);
+            }catch (IllegalArgumentException p){
+                System.out.println();
+            }
+
             multipleCars(player, moveTo);
             if(finalAmount > 1){
                 moveCar(player, finalAmount-1);
