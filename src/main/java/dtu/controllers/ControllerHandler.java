@@ -12,7 +12,6 @@ public class ControllerHandler {
     private ChanceCardsController chanceCardsController;
     private PlayerViewController playerViewController;
     private PropertyMenuController propertyMenuController;
-    private StartGameController startGameController;
     private TradingMenuController tradingMenuController;
     private MenuScreenController menuScreenController;
     private PauseMenuController pauseMenuController;
@@ -140,14 +139,6 @@ public class ControllerHandler {
 
     public void setPropertyMenuController(PropertyMenuController propertyMenuController) {
         this.propertyMenuController = propertyMenuController;
-    }
-
-    public StartGameController getStartGameController() {
-        return startGameController;
-    }
-
-    public void setStartGameController(StartGameController startGameController) {
-        this.startGameController = startGameController;
     }
 
     public TradingMenuController getTradingMenuController() {
