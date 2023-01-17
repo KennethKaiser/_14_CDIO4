@@ -7,8 +7,7 @@ import dtu.chancecard.ChanceCardFunctionality;
 import dtu.dice.RaffleCup;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
-import javafx.beans.Observable;
-import javafx.collections.ObservableList;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -20,9 +19,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Random;
 
@@ -1126,10 +1125,24 @@ public class BoardController {
 
     //region car gui methods
     public void movePLayerOnGUI(int player, int fieldPlacement){
-        //Just a cheat implementation
-        cheatRemoveCarFromBoard(player);
+        int currentPos = 0;
+        for(int i = 0; i < fields.length; i++){
+            if(fields[i].getChildren().contains(playerCars[player])){
+                currentPos = i;
+                break;
+            }
+        }
+        int toMove = 0;
+        if(currentPos<fieldPlacement) {
+            toMove = fieldPlacement - currentPos;
+        }
+        if(currentPos>fieldPlacement){
+            toMove = (40-currentPos)+fieldPlacement;
+        }
 
-        fields[fieldPlacement].getChildren().add(playerCars[player]);
+
+        moveCar(player, toMove);
+
     }
 
     public void multipleCars(int player, int position){
@@ -1149,11 +1162,7 @@ public class BoardController {
                     newTotal++;
                 }
             }
-
         }
-
-
-
     }
     //endregion
 
@@ -1429,6 +1438,11 @@ public class BoardController {
         else System.out.println("No player selected");
 
     }
+    public void cheatRemoveCarFromBoard(int player){
+        for(int n = 0; n < fields.length; n++){
+            fields[n].getChildren().remove(playerCars[player]);
+        }
+    }
     //endregion
 
     //region remove car
@@ -1442,12 +1456,62 @@ public class BoardController {
     }
     //endregion
 
-    public void cheatRemoveCarFromBoard(int player){
-        for(int n = 0; n < fields.length; n++){
-            fields[n].getChildren().remove(playerCars[player]);
+    //region Animation
+    public void moveCar(int player, int amount){
+        ImageView car = playerCars[player];
+
+        TranslateTransition transition = new TranslateTransition();
+        transition.setDuration(Duration.millis(200));
+        transition.setNode(car);
+        int yDif = 24;
+        car.setTranslateY(yDif);
+        int current = 0;
+        for(int i = 0; i < fields.length; i++){
+            if(fields[i].getChildren().contains(car)){
+                current = i;
+                break;
+            }
         }
+        if(current < 10){ //Move left (negative)
+            transition.setToX(-fields[current].getWidth());
+            transition.setToY(yDif);
+        }
+        else if(current < 20) { //Move up (negative)
+            transition.setToX(0);
+            transition.setToY((-fields[current].getHeight())+yDif);
+        }
+        else if(current < 30){ //Move right (positive)
+            transition.setToX(fields[current].getWidth());
+            transition.setToY(yDif);
+        }
+        else if(current < 40){ //Move down (positive)
+            transition.setToX(0);
+            transition.setToY((fields[current].getHeight())+yDif);
+        }
+        transition.setCycleCount(1);
+        transition.play();
+
+        int finalAmount = amount;
+        int finalCurrent = current;
+        transition.setOnFinished(e -> {
+            int moveTo = 0;
+            if(finalCurrent < 39) moveTo = finalCurrent+1;
+            else moveTo = 0;
+            car.setTranslateX(0);
+            car.setTranslateY(yDif);
+            fields[finalCurrent].getChildren().remove(car);
+            fields[moveTo].getChildren().add(car);
+            multipleCars(player, moveTo);
+            if(finalAmount > 1){
+                moveCar(player, finalAmount-1);
+            }
+        });
     }
 
+
+
+
+    //endregion
 
     //Getter dice
     public RaffleCup getDice() {
