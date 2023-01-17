@@ -939,6 +939,7 @@ public class BoardController {
 
     public void updateAfterChanceCard(){
         playerViewController.updatePlayerMoney();
+        playerHandler.getCurrentPlayer().setLastPlayerPaid(-1);
 
         if(chanceCardFunctionality.isDidPlayerMove() && chanceCardFunctionality.isDidPlayerMoveBackwards()){
             chanceCardFunctionality.setDidPlayerMove(false);
@@ -1025,6 +1026,7 @@ public class BoardController {
 
     public void endTurn(){
 
+
         playerHandler.isPlayerBankrupt(playerHandler.getCurrentPlayer());
 
         if(playerHandler.getCurrentPlayer().isBankrupt()){
@@ -1070,9 +1072,6 @@ public class BoardController {
     public void endTurnAfterBankrupt(){
 
         int temp = playerHandler.getCurrentPlayer().getId();
-
-
-        //playerHandler.changePlayerArray();
 
         playerViewController.removePlayerFromPlayerView(temp);
         removeCarPlayer(temp);
