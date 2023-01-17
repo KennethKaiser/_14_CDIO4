@@ -2,7 +2,6 @@ package dtu.controllers;
 
 import dtu.board.*;
 import dtu.players.PlayerHandler;
-import javafx.css.Style;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -16,7 +15,6 @@ import javafx.scene.text.Text;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.ArrayList;
 
 public class PropertyMenuController {
 

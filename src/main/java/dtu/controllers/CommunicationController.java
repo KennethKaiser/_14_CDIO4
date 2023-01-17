@@ -3,7 +3,6 @@ package dtu.controllers;
 import dtu.board.*;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;

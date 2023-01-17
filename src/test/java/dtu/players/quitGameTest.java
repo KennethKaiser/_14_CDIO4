@@ -1,11 +1,7 @@
 package dtu.players;
 
-import dtu.board.Board;
-import dtu.board.Field;
-import dtu.board.FieldProperty;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 

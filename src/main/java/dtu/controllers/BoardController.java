@@ -22,7 +22,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
-import javafx.scene.text.Text;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
