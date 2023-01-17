@@ -24,7 +24,7 @@ public class ChanceCardFunctionality {
                 int hotels = playerHandler.amountOfHotels(playerHandler.getPlayers()[player.getId()]);
                 playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(houses*500));
                 playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(hotels*2000));
-                jackpot.addToJackpot(houses + hotels);
+                jackpot.addToJackpot(houses*500 + hotels*2000);
                 break;
             }
             case 27: {
