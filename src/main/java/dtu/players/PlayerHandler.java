@@ -234,8 +234,13 @@ public class PlayerHandler {
                 }
             }
             if(value > 0) changePlayerBalance(playerToGain, value);
-            ControllerHandler.getInstance().getPlayerViewController().removePlayerFromPlayerView(playerBankrupt.getId());
-            ControllerHandler.getInstance().getBoardController().removeCarPlayer(playerBankrupt.getId());
+            if(ControllerHandler.getInstance().getPlayerViewController() != null){
+                ControllerHandler.getInstance().getPlayerViewController().removePlayerFromPlayerView(playerBankrupt.getId());
+            }
+            if(ControllerHandler.getInstance().getBoardController()!= null){
+                ControllerHandler.getInstance().getBoardController().removeCarPlayer(playerBankrupt.getId());
+            }
+
     }
 
     /**

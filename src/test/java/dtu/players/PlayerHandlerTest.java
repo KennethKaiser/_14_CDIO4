@@ -1,5 +1,7 @@
 package dtu.players;
 
+import dtu._14_cdio4.MainApplication;
+import dtu._14_cdio4.SceneSwitch;
 import dtu.board.Board;
 import dtu.board.FieldProperty;
 import dtu.board.Jackpot;
@@ -294,6 +296,7 @@ class PlayerHandlerTest {
 
     @Test
     void whoWonTest(){
+
         Jackpot jackpot = new Jackpot();
         PlayerHandler playerHandler = new PlayerHandler();
         playerHandler.setJackpot(jackpot);
