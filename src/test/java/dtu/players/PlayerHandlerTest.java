@@ -1,12 +1,8 @@
 package dtu.players;
 
-import dtu._14_cdio4.MainApplication;
-import dtu._14_cdio4.SceneSwitch;
 import dtu.board.Board;
 import dtu.board.FieldProperty;
 import dtu.board.Jackpot;
-import dtu.board.Tax;
-import dtu.chancecard.ChanceCardFunctionality;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
