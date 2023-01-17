@@ -585,6 +585,7 @@ public class PropertyMenuController {
     public void doPledge(Field property, boolean toState, int player, Field[] initialProperties){
         int moneyToChange = 0;
         CommunicationController coms = ControllerHandler.getInstance().getCommunicationController();
+        HousingLogic housingLogic = new HousingLogic();
         switch(property.type()){
             case "buyablefield":
 
@@ -593,6 +594,10 @@ public class PropertyMenuController {
                     if(((FieldProperty)property).getBuildings() > 0){
                         //Du kan ikke pantsætte da der er bygninger på grunden.
                         coms.showOkBox("Du kan ikke pantsætte da der er bygninger på grunden");
+                    }
+                    else if(housingLogic.doesFamilyHaveHouses((FieldProperty) property, player)){
+                        //Du kan ikke pantsætte da der er bygninger på grunden.
+                        coms.showOkBox("Du kan ikke pantsætte da der er bygninger på andre grunde af samme familie");
                     }
                     else{
                         moneyToChange = ((FieldProperty)property).getProperty().getPrice()/2;
