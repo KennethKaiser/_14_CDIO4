@@ -34,7 +34,7 @@ public class SceneSwitch {
     //region loads
     VBox menu;
     HBox root;
-    AnchorPane playerView;
+    HBox playerView;
     AnchorPane board;
     StackPane chanceCards;
     AnchorPane propertyMenu;
@@ -66,7 +66,7 @@ public class SceneSwitch {
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Background.fxml"));
             root = (HBox) fxmlLoader.load();
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PlayerView.fxml"));
-            playerView = (AnchorPane) fxmlLoader.load();
+            playerView = (HBox) fxmlLoader.load();
             playerViewController = fxmlLoader.getController();
             ControllerHandler.getInstance().setPlayerViewController(playerViewController);
             fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Board.fxml"));
@@ -104,7 +104,7 @@ public class SceneSwitch {
         boardController.getMiddleParent().getChildren().add(3, communication);
         playerViewController.getWholeArea().getChildren().add(1, board);
         root.getChildren().add(playerView);
-        boardScene = new Scene(root, 1600, 700);
+        boardScene = new Scene(root);
     }
     public void switchToMenu(){
         stage.setTitle("Matador");
