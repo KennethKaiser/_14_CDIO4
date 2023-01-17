@@ -842,19 +842,6 @@
                                  <children>
                                             <AnchorPane fx:id="diceBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="720.0">
                                                 <children>
-                                          <Text layoutX="92.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MATADOR" textAlignment="CENTER" wrappingWidth="550.2752685546875">
-                                             <font>
-                                                <Font name="Century Gothic" size="96.0" />
-                                             </font>
-                                          </Text>
-                                          <ImageView fx:id="centerGraphics" fitHeight="294.0" fitWidth="682.0" layoutX="19.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../../textures/centerGraphics.png" />
-                                             </image>
-                                          </ImageView>
-                                                    <ImageView fx:id="dice1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" translateX="450.0" translateY="350.0" />
-                                                    <ImageView fx:id="dice2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-                                          <Button fx:id="backgroundButton" layoutY="3.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.0" prefHeight="810.0" prefWidth="720.0" text="BackgroundButton" />
                                           <StackPane layoutX="658.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="50.0">
                                              <children>
                                                 <ImageView fx:id="tradeMenuImage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
@@ -919,6 +906,19 @@
                                                 <Button fx:id="jackpotButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.0" prefHeight="27.0" prefWidth="97.0" text="0" />
                                              </children>
                                           </StackPane>
+                                          <Text layoutX="92.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MATADOR" textAlignment="CENTER" wrappingWidth="550.2752685546875">
+                                             <font>
+                                                <Font name="Century Gothic" size="96.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fx:id="centerGraphics" fitHeight="294.0" fitWidth="682.0" layoutX="19.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../textures/centerGraphics.png" />
+                                             </image>
+                                          </ImageView>
+                                                    <ImageView fx:id="dice1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" translateX="450.0" translateY="350.0" />
+                                                    <ImageView fx:id="dice2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="backgroundButton" layoutY="3.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.0" prefHeight="810.0" prefWidth="720.0" text="BackgroundButton" />
                                                 </children>
                                             </AnchorPane>
                                  </children>

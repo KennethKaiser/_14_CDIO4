@@ -646,6 +646,7 @@ public class BoardController {
         playerHandler.setJackpot(jackpot);
         String playerName = playerHandler.getCurrentPlayer().getName();
         int prize = jackpot.getAmount();
+        jackpotIntLabel.setText("kr. 0");
         communicationController.youWonJackpot(playerName, prize);
 
     }
@@ -828,6 +829,8 @@ public class BoardController {
         taxField.taxing(playerHandler.getCurrentPlayer(), true);
         playerViewController.updatePlayerMoney();
         playerHandler.getCurrentPlayer().setLastPlayerPaid(-1);
+        jackpot.addToJackpot(2000);
+        jackpotIntLabel.setText("kr." + jackpot.getAmount());
         endTurn();
 
 
