@@ -14,6 +14,8 @@ public class ChanceCardFunctionality {
     private boolean didPlayerMove = false;
     private boolean didPlayerMoveBackwards = false;
 
+    private boolean doubleferry = false;
+
     public String chanceCardFunction(int id, Player player) {
         switch (id) {
             case 0: {
@@ -201,12 +203,14 @@ public class ChanceCardFunctionality {
             case 42: {
                 //Ryk frem til det nærmeste rederi og betal ejeren to gange den leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
                 playerHandler.nearestFerry(player);
+                doubleferry = true;
                 didPlayerMove = true;
                 break;
             }
             case 43: {
                 //Ryk frem til det nærmeste rederi og betal ejeren to gange den leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
                 playerHandler.nearestFerry(player);
+                doubleferry = true;
                 didPlayerMove = true;
                 break;
             }
