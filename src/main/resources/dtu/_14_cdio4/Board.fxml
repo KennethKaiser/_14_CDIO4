@@ -18,7 +18,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.BoardController">
    <children>
-      <StackPane prefHeight="990.0" prefWidth="880.0" style="-fx-background-color: #F3F9D2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <StackPane prefHeight="990.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <children>
               <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="990.0" prefWidth="880.0">
                   <children>
@@ -59,16 +59,7 @@
                               </StackPane>
                               <StackPane fx:id="field21" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                                   <children>
-                                      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                          <children>
-                                              <ImageView fx:id="houseRed1" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                                  <image>
-                                                      <Image url="@../../../../textures/houseNulIcon.png" />
-                                                  </image>
-                                              </ImageView>
-                                          </children>
-                                      </VBox>
-                                      <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1; -fx-background-color: #F3F9D2;">
+                                      <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
                                           <children>
                                     <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: bf0017;">
                                        <VBox.margin>
@@ -92,6 +83,15 @@
                                                       <Font size="10.0" />
                                                   </font>
                                               </Text>
+                                          </children>
+                                      </VBox>
+                                      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                          <children>
+                                              <ImageView fx:id="houseRed1" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                                  <image>
+                                                      <Image url="@../../../../textures/houseNulIcon.png" />
+                                                  </image>
+                                              </ImageView>
                                           </children>
                                       </VBox>
                                       <Button fx:id="bField21" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" opacity="0.01" prefWidth="80.0">
@@ -126,16 +126,7 @@
                               </StackPane>
                         <StackPane fx:id="field23" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
                            <children>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseRed2" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1; -fx-background-color: #F3F9D2;">
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: bf0017;">
                                        <VBox.margin>
@@ -161,6 +152,15 @@
                                     </Text>
                                  </children>
                               </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseRed2" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
                               <Button fx:id="bField23" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
                                  <font>
                                     <Font size="9.0" />
@@ -170,16 +170,7 @@
                         </StackPane>
                         <StackPane fx:id="field24" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
                            <children>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseRed3" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1; -fx-background-color: #F3F9D2;">
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: bf0017;">
                                        <VBox.margin>
@@ -203,6 +194,15 @@
                                           <Font size="10.0" />
                                        </font>
                                     </Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseRed3" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
                                  </children>
                               </VBox>
                               <Button fx:id="bField24" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
@@ -255,16 +255,7 @@
                               </StackPane>
                         <StackPane fx:id="field26" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
                            <children>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseWhite1" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1; -fx-background-color: #F3F9D2;">
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #ffffff;">
                                        <VBox.margin>
@@ -290,6 +281,15 @@
                                     </Text>
                                  </children>
                               </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseWhite1" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
                               <Button fx:id="bField26" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
                                  <font>
                                     <Font size="9.0" />
@@ -299,16 +299,7 @@
                         </StackPane>
                         <StackPane fx:id="field27" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
                            <children>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseWhite2" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1; -fx-background-color: #F3F9D2;">
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #ffffff;">
                                        <VBox.margin>
@@ -332,6 +323,15 @@
                                           <Font size="10.0" />
                                        </font>
                                     </Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseWhite2" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
                                  </children>
                               </VBox>
                               <Button fx:id="bField27" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
@@ -376,16 +376,7 @@
                               </StackPane>
                         <StackPane fx:id="field29" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="85.0">
                            <children>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseWhite3" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1; -fx-background-color: #F3F9D2;">
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #ffffff;">
                                        <VBox.margin>
@@ -409,6 +400,15 @@
                                           <Font size="10.0" />
                                        </font>
                                     </Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseWhite3" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
                                  </children>
                               </VBox>
                               <Button fx:id="bField29" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
@@ -462,7 +462,7 @@
                                   <children>
                                       <StackPane fx:id="field19" layoutX="10.0" layoutY="136.0" prefHeight="90.0" prefWidth="80.0">
                                           <children>
-                                              <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
+                                              <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                                   <children>
                                                       <ImageView fx:id="houseGrey3" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                                           <image>
@@ -510,7 +510,7 @@
                                       </StackPane>
                               <StackPane fx:id="field18" prefHeight="90.0" prefWidth="80.0">
                                  <children>
-                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
+                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
                                           <ImageView fx:id="houseGrey2" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -578,7 +578,7 @@
                                       </StackPane>
                               <StackPane fx:id="field16" prefHeight="90.0" prefWidth="80.0">
                                  <children>
-                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
+                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
                                           <ImageView fx:id="houseGrey1" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -664,7 +664,7 @@
                                       </StackPane>
                               <StackPane fx:id="field14" prefHeight="90.0" prefWidth="80.0">
                                  <children>
-                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
+                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
                                           <ImageView fx:id="houseGreen3" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -709,7 +709,7 @@
                               </StackPane>
                               <StackPane fx:id="field13" prefHeight="90.0" prefWidth="80.0">
                                  <children>
-                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
+                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
                                           <ImageView fx:id="houseGreen2" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -787,7 +787,7 @@
                                       </StackPane>
                               <StackPane fx:id="field11" prefHeight="90.0" prefWidth="80.0">
                                  <children>
-                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
+                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
                                           <ImageView fx:id="houseGreen1" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -837,7 +837,7 @@
                         </VBox>
                               <StackPane fx:id="middleParent" alignment="BOTTOM_CENTER" maxWidth="-Infinity" prefHeight="0.0" prefWidth="0.0">
                                   <children>
-                              <VBox prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;">
+                              <VBox prefHeight="0.0" prefWidth="0.0">
                                  <children>
                                             <AnchorPane fx:id="diceBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="720.0">
                                                 <children>
@@ -846,7 +846,7 @@
                                                 <Font name="Century Gothic" size="96.0" />
                                              </font>
                                           </Text>
-                                          <ImageView fx:id="centerGraphics" fitHeight="294.0" fitWidth="682.0" layoutX="23.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="centerGraphics" fitHeight="294.0" fitWidth="682.0" layoutX="19.0" layoutY="494.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../../../textures/centerGraphics.png" />
                                              </image>
@@ -910,7 +910,7 @@
                                   <children>
                               <StackPane fx:id="field31" prefHeight="90.0" prefWidth="80.0">
                                  <children>
-                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
+                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
                                           <ImageView fx:id="houseYellow1" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -955,7 +955,7 @@
                               </StackPane>
                               <StackPane fx:id="field32" prefHeight="90.0" prefWidth="80.0">
                                  <children>
-                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
+                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
                                           <ImageView fx:id="houseYellow2" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -1023,7 +1023,7 @@
                                       </StackPane>
                               <StackPane fx:id="field34" prefHeight="90.0" prefWidth="80.0">
                                  <children>
-                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
+                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
                                           <ImageView fx:id="houseYellow3" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -1132,7 +1132,7 @@
                                       </StackPane>
                               <StackPane fx:id="field37" prefHeight="90.0" prefWidth="80.0">
                                  <children>
-                                    <VBox alignment="CENTER" prefHeight="90.0" prefWidth="80.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
+                                    <VBox alignment="CENTER" prefHeight="90.0" prefWidth="80.0" StackPane.alignment="TOP_LEFT">
                                        <children>
                                           <ImageView fx:id="housePurple1" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -1202,7 +1202,7 @@
                                       </StackPane>
                               <StackPane fx:id="field39" prefHeight="90.0" prefWidth="80.0">
                                  <children>
-                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F3F9D2;" StackPane.alignment="TOP_LEFT">
+                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0" StackPane.alignment="TOP_LEFT">
                                        <children>
                                           <ImageView fx:id="housePurple2" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -1322,16 +1322,7 @@
                               </StackPane>
                         <StackPane fx:id="field9" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                            <children>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseOrange3" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1; -fx-background-color: #F3F9D2;">
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #eeb000;">
                                        <VBox.margin>
@@ -1357,6 +1348,15 @@
                                     </Text>
                                  </children>
                               </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseOrange3" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
                               <Button fx:id="bField9" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
                                  <font>
                                     <Font size="9.0" />
@@ -1366,16 +1366,7 @@
                         </StackPane>
                         <StackPane fx:id="field8" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                            <children>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseOrange2" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1; -fx-background-color: #F3F9D2;">
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #eeb000;">
                                        <VBox.margin>
@@ -1399,6 +1390,15 @@
                                           <Font size="10.0" />
                                        </font>
                                     </Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseOrange2" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
                                  </children>
                               </VBox>
                               <Button fx:id="bField8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
@@ -1433,16 +1433,7 @@
                               </StackPane>
                         <StackPane fx:id="field6" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                            <children>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseOrange1" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1; -fx-background-color: #F3F9D2;">
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #eeb000;">
                                        <VBox.margin>
@@ -1466,6 +1457,15 @@
                                           <Font size="10.0" />
                                        </font>
                                     </Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseOrange1" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
                                  </children>
                               </VBox>
                               <Button fx:id="bField6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
@@ -1543,16 +1543,7 @@
                               </StackPane>
                         <StackPane fx:id="field3" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                            <children>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseBlue2" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1; -fx-background-color: #F3F9D2;">
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #001fc8;">
                                        <VBox.margin>
@@ -1576,6 +1567,15 @@
                                           <Font size="10.0" />
                                        </font>
                                     </Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseBlue2" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
                                  </children>
                               </VBox>
                               <Button fx:id="bField3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
@@ -1610,16 +1610,7 @@
                               </StackPane>
                         <StackPane fx:id="field1" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="80.0">
                            <children>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
-                                 <children>
-                                    <ImageView fx:id="houseBlue1" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../textures/houseNulIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1; -fx-background-color: #F3F9D2;">
+                              <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="70.8" style="-fx-border-color: black; -fx-border-width: 1;">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #001fc8;">
                                        <VBox.margin>
@@ -1643,6 +1634,15 @@
                                           <Font size="10.0" />
                                        </font>
                                     </Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="70.8">
+                                 <children>
+                                    <ImageView fx:id="houseBlue1" fitHeight="53.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../textures/houseNulIcon.png" />
+                                       </image>
+                                    </ImageView>
                                  </children>
                               </VBox>
                               <Button fx:id="bField1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.01">
