@@ -22,7 +22,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
-import javafx.scene.text.Text;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -801,6 +800,7 @@ public class BoardController {
         playerHandler.moveToPrison(currentPlayer);
         int playerID = currentPlayer.getId();
         int playerPosition = currentPlayer.getPosition();
+        ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(true, currentPlayer.getId());
         movePLayerOnGUI(playerID, playerPosition);
         multipleCars(playerID, playerPosition);
         endTurn();
@@ -949,6 +949,7 @@ public class BoardController {
 
         if(dice.isRolledDouble()){
             playerHandler.getCurrentPlayer().setJail(false);
+            ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(false, playerHandler.getCurrentPlayer().getId());
             playerHandler.getCurrentPlayer().setJailTurns(0);
             communicationController.luckInJail();
         }
@@ -964,6 +965,7 @@ public class BoardController {
     public void payForPrison(){
         Player currentPlayer = playerHandler.getCurrentPlayer();
         currentPlayer.setJail(false);
+        ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(false, playerHandler.getCurrentPlayer().getId());
         playerHandler.changePlayerBalance(currentPlayer, -1000);
         playerViewController.updatePlayerMoney();
         playerHandler.getCurrentPlayer().setLastPlayerPaid(-1);
@@ -974,6 +976,7 @@ public class BoardController {
     public void payForPrisonDouble(){
         Player currentPlayer = playerHandler.getCurrentPlayer();
         currentPlayer.setJail(false);
+        ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(false, playerHandler.getCurrentPlayer().getId());
         playerHandler.changePlayerBalance(currentPlayer, -1000);
         playerViewController.updatePlayerMoney();
         playerHandler.getCurrentPlayer().setLastPlayerPaid(-1);
@@ -987,6 +990,8 @@ public class BoardController {
         Player currentPlayer = playerHandler.getCurrentPlayer();
         currentPlayer.setJail(false);
         currentPlayer.setGetOutOfJailCard(false);
+        ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(false, playerHandler.getCurrentPlayer().getId());
+        ControllerHandler.getInstance().getPlayerViewController().setGetOutOfJailFreeCard(false, playerHandler.getCurrentPlayer().getId());
         communicationController.usedCardForPrison();
 
     }

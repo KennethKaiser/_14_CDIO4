@@ -1,7 +1,6 @@
 package dtu._14_cdio4;
 
 import dtu.board.Field;
-import dtu.board.Property;
 import dtu.controllers.*;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;

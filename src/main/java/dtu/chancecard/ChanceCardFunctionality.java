@@ -1,12 +1,10 @@
 package dtu.chancecard;
 
-import dtu.board.Field;
-import dtu.board.FieldProperty;
 import dtu.board.Jackpot;
+import dtu.controllers.ControllerHandler;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
 
-import java.util.ArrayList;
 
 public class ChanceCardFunctionality {
     PlayerHandler playerHandler;
@@ -245,23 +243,17 @@ public class ChanceCardFunctionality {
                 didPlayerMove = true;
                 break;
             }
-            case 40: {
-                //I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares indtil De får brug for det  eller De kan sælge det.
-                player.setGetOutOfJailCard(true);
-                break;
-            }
+            case 40:
             case 41: {
                 //I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares indtil De får brug for det  eller De kan sælge det.
                 player.setGetOutOfJailCard(true);
+                ControllerHandler.getInstance().getPlayerViewController().setGetOutOfJailFreeCard(true, playerHandler.getCurrentPlayer().getId());
                 break;
             }
-            case 44: {
-                playerHandler.moveToPrison(player);
-                didPlayerMove = true;
-                break;
-            }
+            case 44:
             case 45: {
                 playerHandler.moveToPrison(player);
+                ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(true, playerHandler.getCurrentPlayer().getId());
                 didPlayerMove = true;
                 break;
             }

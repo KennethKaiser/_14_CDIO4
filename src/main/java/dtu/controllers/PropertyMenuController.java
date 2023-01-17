@@ -2,7 +2,6 @@ package dtu.controllers;
 
 import dtu.board.*;
 import dtu.players.PlayerHandler;
-import javafx.css.Style;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -16,7 +15,6 @@ import javafx.scene.text.Text;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.ArrayList;
 
 public class PropertyMenuController {
 
@@ -587,6 +585,7 @@ public class PropertyMenuController {
     public void doPledge(Field property, boolean toState, int player, Field[] initialProperties){
         int moneyToChange = 0;
         CommunicationController coms = ControllerHandler.getInstance().getCommunicationController();
+        HousingLogic housingLogic = new HousingLogic();
         switch(property.type()){
             case "buyablefield":
 
@@ -595,6 +594,10 @@ public class PropertyMenuController {
                     if(((FieldProperty)property).getBuildings() > 0){
                         //Du kan ikke pantsætte da der er bygninger på grunden.
                         coms.showOkBox("Du kan ikke pantsætte da der er bygninger på grunden");
+                    }
+                    else if(housingLogic.doesFamilyHaveHouses((FieldProperty) property, player)){
+                        //Du kan ikke pantsætte da der er bygninger på grunden.
+                        coms.showOkBox("Du kan ikke pantsætte da der er bygninger på andre grunde af samme familie");
                     }
                     else{
                         moneyToChange = ((FieldProperty)property).getProperty().getPrice()/2;

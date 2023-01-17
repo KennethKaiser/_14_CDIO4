@@ -3,7 +3,6 @@ package dtu.controllers;
 import dtu.board.*;
 import dtu.players.Player;
 import dtu.players.PlayerHandler;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
@@ -123,7 +122,7 @@ public class CommunicationController {
         String[] choiceOptions = new String[3];
         choiceOptions[0] = "Betal 1000 kr";
         choiceOptions[1] = "Prøv at slå dobbeltslag";
-        choiceOptions[2] = "Brug 'get out a jail card'";
+        choiceOptions[2] = "Brug 'Benådningskort'";
 
         String textField = playerName + "er i fængsel. Du har nu følgende valgmuligheder.";
         showCommunicationBox(textField, choiceOptions);

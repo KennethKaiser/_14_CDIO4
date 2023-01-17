@@ -1,8 +1,6 @@
 package dtu.board;
 
-import dtu.controllers.PlayerViewController;
-import dtu.players.Player;
-import dtu.players.PlayerHandler;
+
 
 public class GoPrisonField extends Field {
 

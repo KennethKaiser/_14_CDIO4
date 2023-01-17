@@ -1,8 +1,6 @@
 package dtu.board;
 
 import dtu.controllers.BoardController;
-import dtu.controllers.PlayerViewController;
-import dtu.dice.RaffleCup;
 import dtu.players.PlayerHandler;
 import org.junit.jupiter.api.Test;
 
