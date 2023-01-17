@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -20,6 +21,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -353,6 +355,8 @@ public class BoardController {
 
     @FXML
     Button pauseButton;
+    @FXML
+    Label pauseButtonLabel;
     //endregion
 
     //Methods:
@@ -361,7 +365,7 @@ public class BoardController {
     //Initializes on start
     @FXML
     public void initialize() {
-        pauseButton.setOnAction(e -> ControllerHandler.getInstance().getSceneSwitch().switchToPauseMenu());
+        pauseButton();
         initPics();
         setCars();
         initFields();
@@ -474,6 +478,18 @@ public class BoardController {
     public Button[] getFieldButtons(){
         if(fieldButtons == null) initFieldButtons();
         return fieldButtons;
+    }
+
+    public void pauseButton(){
+        pauseButton.setOpacity(0);
+        pauseButtonLabel.setText("Pause");
+        pauseButtonLabel.setStyle("-fx-font-size: 18");
+        pauseButton.setOnMouseEntered(e -> pauseButtonLabel.setStyle(pauseButtonLabel.getStyle() + ";-fx-font-weight: bold"));
+        pauseButton.setOnMouseExited(e -> pauseButtonLabel.setStyle(pauseButtonLabel.getStyle() + ";-fx-font-weight: normal"));
+        pauseButtonLabel.setPrefWidth(120);
+        pauseButton.setOnAction(e -> ControllerHandler.getInstance().getSceneSwitch().switchToPauseMenu());
+        StackPane buttonHolder = new StackPane();
+        buttonHolder.setPrefWidth(121);
     }
     //endregion
 

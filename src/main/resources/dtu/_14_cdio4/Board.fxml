@@ -4,6 +4,7 @@
 <?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DisplacementMap?>
 <?import javafx.scene.effect.FloatMap?>
@@ -860,7 +861,7 @@
                                                 <Button fx:id="tradeMenuButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" opacity="0.0" />
                                              </children>
                                           </StackPane>
-                                          <HBox fx:id="cheatBox" alignment="CENTER" layoutX="209.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" prefWidth="317.0">
+                                          <HBox fx:id="cheatBox" alignment="CENTER" layoutX="209.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" prefWidth="317.0" translateY="30.0">
                                              <children>
                                                 <ComboBox fx:id="cheatDropDown" prefHeight="26.0" prefWidth="92.0" promptText="Spiller" />
                                                 <TextField fx:id="cheatInput" prefHeight="26.0" prefWidth="70.0" promptText="nr">
@@ -888,7 +889,19 @@
                                                 <Insets top="-2.0" />
                                              </padding>
                                           </HBox>
-                                          <Button fx:id="pauseButton" layoutX="-1.0" layoutY="2.0" mnemonicParsing="false" text="Pause" />
+                                          <StackPane layoutX="30.0" layoutY="2.0">
+                                             <children>
+                                                <Button fx:id="pauseButton" mnemonicParsing="false" opacity="0.16" prefHeight="25.0" prefWidth="111.0" text="Pause">
+                                                   <graphic>
+                                                      <Label fx:id="pauseButtonLabel" text="Pause">
+                                                         <font>
+                                                            <Font name="System Bold" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </StackPane>
                                                 </children>
                                             </AnchorPane>
                                  </children>
