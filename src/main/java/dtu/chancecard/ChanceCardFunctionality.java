@@ -300,6 +300,14 @@ public class ChanceCardFunctionality {
     public void setDidPlayerMoveBackwards(boolean didPlayerMoveBackwards) {
         this.didPlayerMoveBackwards = didPlayerMoveBackwards;
     }
+
+    public boolean isDoubleferry() {
+        return doubleferry;
+    }
+
+    public void setDoubleferry(boolean doubleferry) {
+        this.doubleferry = doubleferry;
+    }
 }
 
 
