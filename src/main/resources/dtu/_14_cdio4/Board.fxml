@@ -318,7 +318,7 @@
                                     </VBox>
                                     <VBox prefHeight="3.0" prefWidth="67.0" style="-fx-background-color: black;" />
                                     <VBox prefHeight="50.0" prefWidth="67.0" />
-                                    <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4.400" textAlignment="CENTER" wrappingWidth="65.0">
+                                    <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 5.200" textAlignment="CENTER" wrappingWidth="65.0">
                                        <font>
                                           <Font size="10.0" />
                                        </font>
@@ -539,7 +539,7 @@
                                              </children>
                                           </VBox>
                                           <VBox prefHeight="54.0" prefWidth="58.0" />
-                                          <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 4.000" textAlignment="CENTER" wrappingWidth="65.0">
+                                          <Text layoutX="21.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr. 3.600" textAlignment="CENTER" wrappingWidth="65.0">
                                              <font>
                                                 <Font size="10.0" />
                                              </font>
