@@ -80,7 +80,11 @@ class TaxTest {
         final int RENT1 = (START_MONEY - AMOUNT);
         final int RENT2 = (START_MONEY - AMOUNT2);
         final int RENT3 = (START_MONEY - (START_MONEY/10));
+        Jackpot jackpot = new Jackpot();
+        jackpot.setAmount(100);
+        jackpot.addToJackpot(200);
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(4);
         playerHandler.initializePlayerInPlayers(0, "Niels", START_MONEY, "black");
         playerHandler.initializePlayerInPlayers(1, "Karl", START_MONEY, "blue");
@@ -95,20 +99,70 @@ class TaxTest {
         assertEquals(START_MONEY, playerHandler.getPlayers()[0].getMoney(),
                 "1Forventer spilleren har: "+ START_MONEY +". Spilleren har: "+ playerHandler.getPlayers()[0].getMoney());
 
-        taxField.taxing(playerHandler.getPlayers()[0],true);
+        playerHandler.incomeTax(playerHandler.getPlayers()[0],true);
 
         assertEquals(RENT1, playerHandler.getPlayers()[0].getMoney(),
                 "2Forventer spilleren har: "+ RENT1 +". Spilleren har: "+ playerHandler.getPlayers()[0].getMoney());
 
-        taxField2.taxing(playerHandler.getPlayers()[1],false);
+        playerHandler.otherTaxField(playerHandler.getPlayers()[1]);
 
         assertEquals(RENT2, playerHandler.getPlayers()[1].getMoney(),
-                "3Forventer spilleren har: "+ START_MONEY +". Spilleren har: "+ playerHandler.getPlayers()[1].getMoney());
+                "3Forventer spilleren har: "+ RENT2 +". Spilleren har: "+ playerHandler.getPlayers()[1].getMoney());
 
-        taxField.taxing(playerHandler.getPlayers()[2],false);
+        playerHandler.incomeTax(playerHandler.getPlayers()[2],false);
 
         assertEquals(RENT3, playerHandler.getPlayers()[2].getMoney(),
-                "4Forventer spilleren har: "+ START_MONEY +". Spilleren har: "+ playerHandler.getPlayers()[2].getMoney());
+                "4Forventer spilleren har: "+ RENT3 +". Spilleren har: "+ playerHandler.getPlayers()[2].getMoney());
+    }
+
+    @Test
+    void testTaxing2() {
+        //Variable
+        final int ID = 4;
+        final int ID2 = 38;
+        final String NAME = "TaxTest";
+        final String NAME2 = "IndkomstTest";
+        final int AMOUNT = 4000;
+        final int AMOUNT2 = 2000;
+        final int START_MONEY = 50000;
+        final int RENT1 = (START_MONEY - AMOUNT);
+        final int RENT2 = (START_MONEY - AMOUNT2);
+        final int RENT3 = (START_MONEY - (START_MONEY/10));
+        Jackpot jackpot = new Jackpot();
+        jackpot.setAmount(100);
+        jackpot.addToJackpot(200);
+        PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
+        playerHandler.initializePlayers(4);
+        playerHandler.initializePlayerInPlayers(0, "Niels", START_MONEY, "black");
+        playerHandler.initializePlayerInPlayers(1, "Karl", START_MONEY, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Hans", START_MONEY, "red");
+        playerHandler.initializePlayerInPlayers(3, "test", START_MONEY, "green");
+
+        Tax tax = new Tax(ID, NAME, AMOUNT);
+        TaxField taxField = new TaxField(tax);
+        taxField.setPlayerHandler(playerHandler);
+        Tax tax2 = new Tax(ID2, NAME2, AMOUNT2);
+        TaxField taxField2 = new TaxField(tax2);
+        taxField2.setPlayerHandler(playerHandler);
+
+        assertEquals(START_MONEY, playerHandler.getPlayers()[0].getMoney(),
+                "1Forventer spilleren har: "+ START_MONEY +". Spilleren har: "+ playerHandler.getPlayers()[0].getMoney());
+
+        taxField.taxing(playerHandler.getPlayers()[0], true);
+
+        assertEquals(RENT1, playerHandler.getPlayers()[0].getMoney(),
+                "2Forventer spilleren har: "+ RENT1 +". Spilleren har: "+ playerHandler.getPlayers()[0].getMoney());
+
+        taxField2.taxing(playerHandler.getPlayers()[1], false);
+
+        assertEquals(RENT2, playerHandler.getPlayers()[1].getMoney(),
+                "3Forventer spilleren har: "+ RENT2 +". Spilleren har: "+ playerHandler.getPlayers()[1].getMoney());
+
+        taxField.taxing(playerHandler.getPlayers()[2], false);
+
+        assertEquals(RENT3, playerHandler.getPlayers()[2].getMoney(),
+                "4Forventer spilleren har: "+ RENT3 +". Spilleren har: "+ playerHandler.getPlayers()[2].getMoney());
     }
 
 }
