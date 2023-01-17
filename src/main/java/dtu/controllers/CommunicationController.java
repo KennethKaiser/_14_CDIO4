@@ -2,6 +2,7 @@ package dtu.controllers;
 
 import dtu.board.*;
 import dtu.players.Player;
+import dtu.players.PlayerHandler;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -401,8 +402,16 @@ public class CommunicationController {
         String propertyName = fieldProperty.getProperty().getName();
         String propertyOwner = fieldProperty.getOwner().getName();
         int rent = fieldProperty.findActiveRent();
+        PlayerHandler ph = ControllerHandler.getInstance().getBoardController().playerHandler;
+        player.setLastPlayerPaid(fieldProperty.getOwner().getId());
 
-        fieldProperty.rent(player, rent);
+        if(ph.canAffordTotal(player, rent)){
+            fieldProperty.rent(player, rent);
+        }
+        else{
+            ph.changePlayerBalance(fieldProperty.getOwner(), ph.valueOfAllAssets(player)/2 + player.getMoney()/2);
+            ph.changePlayerBalance(player, -rent);
+        }
         playerViewController.updatePlayerMoney();
 
 
@@ -421,7 +430,16 @@ public class CommunicationController {
         String ferryOwner = ferryField.getOwner().getName();
         int rent = ferryField.findActiveRent();
 
-        ferryField.rent(player, rent);
+        PlayerHandler ph = ControllerHandler.getInstance().getBoardController().playerHandler;
+        player.setLastPlayerPaid(ferryField.getOwner().getId());
+        if(ph.canAffordTotal(player, rent)){
+            ferryField.rent(player, rent);
+        }
+        else{
+            ph.changePlayerBalance(ferryField.getOwner(), ph.valueOfAllAssets(player)/2 + player.getMoney()/2);
+            ph.changePlayerBalance(player, -rent);
+        }
+
         playerViewController.updatePlayerMoney();
 
 
@@ -429,6 +447,7 @@ public class CommunicationController {
         showCommunicationBox(textField, choiceOptions);
 
         choices[0].setOnAction(e -> boardController.endTurn());
+
     }
 
     public void payRentBrewery(BreweryField breweryField, Player player){
@@ -444,14 +463,23 @@ public class CommunicationController {
 
         int rent = breweryField.findActiveRent(turnRollSum);
 
-        breweryField.rent(player, rent);
+        PlayerHandler ph = ControllerHandler.getInstance().getBoardController().playerHandler;
+        player.setLastPlayerPaid(breweryField.getOwner().getId());
+        if(ph.canAffordTotal(player, rent)){
+            breweryField.rent(player, rent);
+        }
+        else{
+            ph.changePlayerBalance(breweryField.getOwner(), ph.valueOfAllAssets(player)/2 + player.getMoney()/2);
+            ph.changePlayerBalance(player, -rent);
+        }
         playerViewController.updatePlayerMoney();
 
 
-        String textField = breweryName + " er ejet af " + breweryOwner + ". Betal " + rent + " i leje."  ;
+        String textField = breweryName + " er ejet af " + breweryOwner + ". Betal " + rent + " i leje.";
         showCommunicationBox(textField, choiceOptions);
 
         choices[0].setOnAction(e -> boardController.endTurn());
+
     }
     public void playerAlreadyOwn(String fieldName, String playerName){
         String[] choiceOptions = new String[1];
