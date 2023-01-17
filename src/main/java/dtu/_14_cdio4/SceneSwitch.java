@@ -27,7 +27,6 @@ public class SceneSwitch {
     private ChanceCardsController chanceCardsController;
     private PlayerViewController playerViewController;
     private PropertyMenuController propertyMenuController;
-    private StartGameController startGameController;
     private TradingMenuController tradingMenuController;
     private MenuScreenController menuScreenController;
     private CommunicationController communicationController;
