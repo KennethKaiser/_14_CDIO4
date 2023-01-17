@@ -2,6 +2,8 @@ package dtu.players;
 
 import dtu.board.Board;
 import dtu.board.FieldProperty;
+import dtu.board.Jackpot;
+import dtu.board.Tax;
 import dtu.chancecard.ChanceCardFunctionality;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +13,9 @@ class PlayerHandlerTest {
 
     @Test
     void getMoneyFromOtherPlayers() {
+        Jackpot jackpot = new Jackpot();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(3);
         playerHandler.initializePlayerInPlayers(0,"Niels", 10000, "black");
         playerHandler.initializePlayerInPlayers(1, "Karl", 10000, "blue");
@@ -29,7 +33,9 @@ class PlayerHandlerTest {
 
     @Test
     void incomeTax() {
+        Jackpot jackpot = new Jackpot();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(3);
         playerHandler.initializePlayerInPlayers(0,"Niels", 10000, "black");
         playerHandler.initializePlayerInPlayers(1, "Karl", 10000, "blue");
@@ -42,7 +48,9 @@ class PlayerHandlerTest {
 
     @Test
     void tenPercentTax() {
+        Jackpot jackpot = new Jackpot();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(3);
         playerHandler.initializePlayerInPlayers(0,"Niels", 11250, "black");
         playerHandler.initializePlayerInPlayers(1, "Karl", 10000, "blue");
@@ -53,8 +61,10 @@ class PlayerHandlerTest {
 
     @Test
     void valueOfAllHousesOnPlayerProperties() {
+        Jackpot jackpot = new Jackpot();
         Board board = new Board();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(3);
         playerHandler.initializePlayerInPlayers(0,"Niels", 50000, "black");
         playerHandler.initializePlayerInPlayers(1, "Karl", 10000, "blue");
@@ -93,8 +103,10 @@ class PlayerHandlerTest {
 
     @Test
     void getValueOfPlayersProperties() {
+        Jackpot jackpot = new Jackpot();
         Board board = new Board();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(3);
         playerHandler.initializePlayerInPlayers(0,"Niels", 42000, "black");
         playerHandler .initializePlayerInPlayers(1, "Karl", 10000, "blue");
@@ -124,8 +136,10 @@ class PlayerHandlerTest {
 
     @Test
     void valueOfAllAssets() {
+        Jackpot jackpot = new Jackpot();
         Board board = new Board();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(3);
         playerHandler.initializePlayerInPlayers(0,"Niels", 11250, "black");
         playerHandler .initializePlayerInPlayers(1, "Karl", 10000, "blue");
@@ -144,7 +158,9 @@ class PlayerHandlerTest {
 
     @Test
     void nearestFerryTest(){
+        Jackpot jackpot = new Jackpot();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(3);
         playerHandler.initializePlayerInPlayers(0,"Niels", 10000, "black");
         playerHandler.initializePlayerInPlayers(1, "Karl", 10000, "blue");
@@ -167,8 +183,10 @@ class PlayerHandlerTest {
 
     @Test
     void amountOfHouses(){
+        Jackpot jackpot = new Jackpot();
         Board board = new Board();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(3);
         playerHandler.initializePlayerInPlayers(0,"Niels", 42000, "black");
         playerHandler.initializePlayerInPlayers(1, "Karl", 10000, "blue");
@@ -205,7 +223,9 @@ class PlayerHandlerTest {
 
     @Test
     void playerStartMoneyTest(){
+        Jackpot jackpot = new Jackpot();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(3);
         playerHandler.initializePlayerInPlayers(0,"Niels", 0, "black");
         playerHandler.initializePlayerInPlayers(1, "Karl", 0, "blue");
@@ -219,7 +239,9 @@ class PlayerHandlerTest {
 
     @Test
     void currentPlayerTest(){
+        Jackpot jackpot = new Jackpot();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(3);
         playerHandler.initializePlayerInPlayers(0,"Niels", 0, "black");
         playerHandler.initializePlayerInPlayers(1, "Karl", 0, "blue");
@@ -233,8 +255,10 @@ class PlayerHandlerTest {
 
     @Test
     void amountOfHotels(){
+        Jackpot jackpot = new Jackpot();
         Board board = new Board();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(3);
         playerHandler.initializePlayerInPlayers(0,"Niels", 42000, "black");
         playerHandler.initializePlayerInPlayers(1, "Karl", 10000, "blue");
@@ -270,7 +294,9 @@ class PlayerHandlerTest {
 
     @Test
     void whoWonTest(){
+        Jackpot jackpot = new Jackpot();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(3);
         playerHandler.initializePlayerInPlayers(0,"Niels", 42000, "black");
         playerHandler.initializePlayerInPlayers(1, "Karl", 10000, "blue");
@@ -287,13 +313,17 @@ class PlayerHandlerTest {
 
     @Test
     void nonPledgeTest(){
+        Jackpot jackpot = new Jackpot();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         assertEquals(400, playerHandler.nonPledgeTax(3100));
     }
 
     @Test
     void winnerWinnerChickenDinnerTest() {
+        Jackpot jackpot = new Jackpot();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(4);
         playerHandler.initializePlayerInPlayers(0, "Niels", 0, "black");
         playerHandler.initializePlayerInPlayers(1, "Karl", 0, "blue");
@@ -313,7 +343,9 @@ class PlayerHandlerTest {
 
     @Test
     void checkNIDeqZero(){
+        Jackpot jackpot = new Jackpot();
         PlayerHandler playerHandler = new PlayerHandler();
+        playerHandler.setJackpot(jackpot);
         playerHandler.initializePlayers(4);
         playerHandler.initializePlayerInPlayers(0, "Niels", 40000, "black");
         playerHandler.initializePlayerInPlayers(1, "Karl", 40000, "blue");
