@@ -293,6 +293,14 @@ public class ChanceCardFunctionality {
     public void setJackpot(Jackpot jackpot) {
         this.jackpot = jackpot;
     }
+
+    public boolean isDidPlayerMoveBackwards() {
+        return didPlayerMoveBackwards;
+    }
+
+    public void setDidPlayerMoveBackwards(boolean didPlayerMoveBackwards) {
+        this.didPlayerMoveBackwards = didPlayerMoveBackwards;
+    }
 }
 
 
