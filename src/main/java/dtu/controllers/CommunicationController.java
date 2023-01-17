@@ -104,7 +104,7 @@ public class CommunicationController {
         choiceOptions[0] = "Okay";
         String textField = playerName + " slog et dobbeltslag for 3. gang i træk og ryger derfor i fængsel";
         showCommunicationBox(textField, choiceOptions);
-        choices[0].setOnAction(e -> boardController.endTurn());
+        choices[0].setOnAction(e -> boardController.moveBeforeEndTurn());
     }
 
     public void playerTurnInJail(String playerName){
