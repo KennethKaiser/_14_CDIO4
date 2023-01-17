@@ -10,7 +10,7 @@ public class Player {
     private String name;
     private int position;
     private int money;
-    private int lastPlayerPaid;
+    private int lastPlayerPaid = -1;
     private ArrayList<Field> properties = new ArrayList<>();
     private ArrayList<Field> ferries = new ArrayList<>();
     private ArrayList<Field> breweries = new ArrayList<>();

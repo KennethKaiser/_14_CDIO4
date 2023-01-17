@@ -66,7 +66,7 @@ public class SaveAndLoad {
         PlayerHandler ph = ControllerHandler.getInstance().getBoardController().getPlayerHandler();
         stopper(saveData, "PLAYERS_START");
         for(int i = 0; i < ph.getPlayers().length; i++){
-            String[] player = new String[8];
+            String[] player = new String[9];
             player[0] = ph.getPlayers()[i].getName();
             player[1] = "" + ph.getPlayers()[i].getMoney();
             player[2] = ph.getPlayers()[i].getColor();
@@ -78,6 +78,7 @@ public class SaveAndLoad {
             else player[6] = "false";
             if(ph.getPlayers()[i].isBankrupt()) player[7] = "true";
             else player[7] = "false";
+            player[8] = "" + ph.getPlayers()[i].getLastPlayerPaid();
             saveData.add(player);
         }
         stopper(saveData, "PLAYERS_END");
@@ -116,10 +117,10 @@ public class SaveAndLoad {
         }
         stopper(saveData, "FIELDS_END");
         stopper(saveData, "OTHER_START");
-        String[] other = new String[1];
-        //Free parking Jackpot
+        String[] other = new String[2];
         PlayerHandler playerHandler = ControllerHandler.getInstance().getBoardController().getPlayerHandler();
         other[0] = "" + playerHandler.getCurrentPlayer().getId();
+        other[1] = "" + ((Jackpot)fields[20]).getAmount();
         saveData.add(other);
         stopper(saveData, "OTHER_END");
         csvFileReader.saveGame(saveData, name);
@@ -159,6 +160,7 @@ public class SaveAndLoad {
         boolean[] isGetOutOfJailFreeCard = new boolean[amount];
         boolean[] isInJail = new boolean[amount];
         boolean[] isBankrupt = new boolean[amount];
+        int[] playerLastPaid = new int[amount];
         for(int i = 0; i < amount; i++){
             names[i] = players.get(i)[0]; //names
             money[i] = parseInt(players.get(i)[1]); //money
@@ -171,6 +173,7 @@ public class SaveAndLoad {
             else isGetOutOfJailFreeCard[i] = false;
             if(players.get(i)[7].equals("true")) isBankrupt[i] = true; //Is bankrupt
             else isGetOutOfJailFreeCard[i] = false;
+            playerLastPaid[i] = parseInt(players.get(i)[8]);
         }
         Board board = new Board();
         ControllerHandler.getInstance().getMenuScreenController().loadInfo(colors, names, amount);
@@ -223,10 +226,10 @@ public class SaveAndLoad {
         for(int i = 0; i < other.size(); i++){
 
             int currentPlayerID = parseInt(other.get(i)[0]); //sets the turn to the turn it was when saved.
-            System.out.println("Current player turn: " + currentPlayerID);
             while(playerHandler.getCurrentPlayer().getId() != currentPlayerID){
                 playerHandler.currentPlayer();
             }
+            ((Jackpot)board.getCurrentBoard()[20]).setAmount(parseInt(other.get(i)[1]));
         }
         for(int i = 0; i < amount; i++){
             int current = playerHandler.getPlayers()[i].getMoney();
@@ -237,6 +240,7 @@ public class SaveAndLoad {
             playerHandler.getPlayers()[i].setGetOutOfJailCard(isGetOutOfJailFreeCard[i]);
             playerHandler.getPlayers()[i].setJail(isInJail[i]);
             playerHandler.getPlayers()[i].setBankrupt(isBankrupt[i]);
+            playerHandler.getPlayers()[i].setLastPlayerPaid(playerLastPaid[i]);
 
         }
         ControllerHandler.getInstance().getPlayerViewController().updatePlayerMoney();
