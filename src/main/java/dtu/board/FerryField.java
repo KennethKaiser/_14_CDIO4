@@ -12,7 +12,6 @@ public class FerryField extends BuyableFields{
 
     private Player owner;
 
-    //private int activeRent;
 
 
     private boolean pledgeState;
