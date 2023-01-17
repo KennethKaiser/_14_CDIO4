@@ -112,6 +112,9 @@ public class SceneSwitch {
         stage.setScene(menuScene);
         stage.show();
     }
+
+
+
     public void switchToBoard(boolean isLoad){
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
@@ -175,5 +178,11 @@ public class SceneSwitch {
         boardController.getMiddleMenuVBox().getChildren().add(tradeMenu);
         tradingMenuController.onSwitched();
     }
+    public HBox getRoot() {
+        return root;
+    }
 
+    public void setRoot(HBox root) {
+        this.root = root;
+    }
 }

@@ -3,9 +3,12 @@ package dtu.controllers;
 import dtu.SaveAndLoad.SaveAndLoad;
 import dtu.players.Player;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.WindowEvent;
 
@@ -21,17 +24,90 @@ public class PauseMenuController {
     Button resumeButton;
     @FXML
     Button giveUpButton;
+    @FXML
+    Button changeTheme;
+    @FXML
+    Button color1;
+    @FXML
+    Button color2;
+    @FXML
+    Button color3;
+    @FXML
+    Button color4;
+
     String currentLoad = "";
 
+    Button[] colors;
+    Button currentColor;
 
     SaveAndLoad saveAndLoad = new SaveAndLoad();
     Player playerCheck = null;
 
     @FXML
     public void initialize(){
+        initColors();
         resumeButton.setOnAction(e -> resumeGame());
         exitNoSaveButton.setOnAction(e -> exitWithoutSaving());
         saveAsButton.setOnAction(e -> saveAs());
+        changeTheme.setOnAction(e -> changeTheme());
+    }
+    public void initColors(){
+        colors = new Button[4];
+        colors[0] = color1;
+        colors[1] = color2;
+        colors[2] = color3;
+        colors[3] = color4;
+        currentColor = colors[0];
+        currentColor.setStyle(currentColor.getStyle() + "; -fx-border-color: yellow");
+        colors[0].setStyle(colors[0].getStyle() + "; -fx-background-color: #fffee2");
+        colors[1].setStyle(colors[1].getStyle() + "; -fx-background-color: #d4ffbd");
+        colors[2].setStyle(colors[2].getStyle() + "; -fx-background-color: #91eeff");
+        colors[3].setStyle(colors[3].getStyle() + "; -fx-background-color: #ffb1b1");
+        colors[0].setOnAction(e -> changeToMe(colors[0]));
+        colors[1].setOnAction(e -> changeToMe(colors[1]));
+        colors[2].setOnAction(e -> changeToMe(colors[2]));
+        colors[3].setOnAction(e -> changeToMe(colors[3]));
+    }
+    public void changeToMe(Button button){
+        currentColor.setStyle(currentColor.getStyle() + "; -fx-border-color: #aaaaaa");
+        currentColor = button;
+        currentColor.setStyle(currentColor.getStyle() + "; -fx-border-color: yellow");
+        setColorOfNode(ControllerHandler.getInstance().getSceneSwitch().getRoot());
+    }
+
+    public void changeTheme(){
+        currentColor.setStyle(currentColor.getStyle() + "; -fx-border-color: #aaaaaa");
+        if (colors[0] == currentColor) {
+            currentColor = colors[1];
+        }
+        else if (colors[1] == currentColor) {
+            currentColor = colors[2];
+
+        }
+        else if (colors[2] == currentColor) {
+            currentColor = colors[3];
+
+        }
+        else if (colors[3] == currentColor) {
+            currentColor = colors[0];
+        }
+        currentColor.setStyle(currentColor.getStyle() + "; -fx-border-color: yellow");
+        setColorOfNode(ControllerHandler.getInstance().getSceneSwitch().getRoot());
+    }
+
+    public void setColorOfNode(Node node){
+        if (colors[0] == currentColor) {
+            node.setStyle(node.getStyle() + ";-fx-background-color: #fffee2");
+        }
+        else if (colors[1] == currentColor) {
+            node.setStyle(node.getStyle() + ";-fx-background-color: #d4ffbd");
+        }
+        else if (colors[2] == currentColor) {
+            node.setStyle(node.getStyle() + ";-fx-background-color: #91eeff");
+        }
+        else if (colors[3] == currentColor) {
+            node.setStyle(node.getStyle() + ";-fx-background-color: #ffb1b1");
+        }
     }
 
     public String getCurrentLoad() {
@@ -60,6 +136,10 @@ public class PauseMenuController {
             player.setBankrupt(true);
             ControllerHandler.getInstance().getBoardController().playerHandler.playerIsBankrupt(player);
             ControllerHandler.getInstance().getBoardController().endTurnAfterBankrupt();
+            Player playerToGiveUp = ControllerHandler.getInstance().getBoardController().playerHandler.getCurrentPlayer();
+
+            giveUpButton.setText("Giv op for " + playerToGiveUp.getName());
+            giveUpButton.setOnAction(e -> giveUpPlayer(playerToGiveUp));
         }
     }
     public void saveAs(){
