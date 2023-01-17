@@ -254,13 +254,19 @@ public class ChanceCardFunctionality {
             case 41: {
                 //I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares indtil De får brug for det  eller De kan sælge det.
                 player.setGetOutOfJailCard(true);
-                ControllerHandler.getInstance().getPlayerViewController().setGetOutOfJailFreeCard(true, playerHandler.getCurrentPlayer().getId());
+                if(ControllerHandler.getInstance().getPlayerViewController() != null){
+                    ControllerHandler.getInstance().getPlayerViewController().setGetOutOfJailFreeCard(true, playerHandler.getCurrentPlayer().getId());
+                }
+
                 break;
             }
             case 44:
             case 45: {
                 playerHandler.moveToPrison(player);
-                ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(true, playerHandler.getCurrentPlayer().getId());
+                if(ControllerHandler.getInstance().getPlayerViewController()!= null){
+                    ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(true, playerHandler.getCurrentPlayer().getId());
+                }
+
                 didPlayerMove = true;
                 break;
             }

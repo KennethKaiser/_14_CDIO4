@@ -1125,6 +1125,10 @@ public class BoardController {
                 else if(ferryField.isPledgeState()){
                     communicationController.fieldIsPledged(ferryField.getFerry().getName());
                 }
+                else if(chanceCardFunctionality.isDoubleferry()){
+                    chanceCardFunctionality.setDoubleferry(false);
+                    communicationController.doubleFerryRent(ferryField, playerHandler.getCurrentPlayer());
+                }
                 else {
                     communicationController.payRentFerry(ferryField, playerHandler.getCurrentPlayer());
                 }
