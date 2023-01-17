@@ -1241,15 +1241,15 @@ public class BoardController {
         double y = 0;
         switch (cases){
             case 1:
-                x = rnd.nextDouble(10, 160);
-                y = rnd.nextDouble(10, 380);
+                x = rnd.nextDouble(10, 180);
+                y = rnd.nextDouble(10, 450);
                 break;
             case 2:
-                x = rnd.nextDouble(10, 560);
-                y = rnd.nextDouble(10, 100);
+                x = rnd.nextDouble(10, 650);
+                y = rnd.nextDouble(10, 150);
                 break;
             case 3:
-                x = rnd.nextDouble(410, 560);
+                x = rnd.nextDouble(450, 650);
                 y = rnd.nextDouble(10, 380);
                 break;
         }
