@@ -1,6 +1,5 @@
 package dtu.dice;
 
-import dtu.players.PlayerHandler;
 
 import java.util.Random;
 
