@@ -1478,7 +1478,7 @@ public class BoardController {
         }
         else if(current < 20) { //Move up (negative)
             transition.setToX(0);
-            transition.setToY((-fields[current].getHeight())+yDif);
+            transition.setToY(-66);
         }
         else if(current < 30){ //Move right (positive)
             transition.setToX(fields[current].getWidth());
@@ -1486,7 +1486,7 @@ public class BoardController {
         }
         else if(current < 40){ //Move down (positive)
             transition.setToX(0);
-            transition.setToY((fields[current].getHeight())+yDif);
+            transition.setToY(114);
         }
         transition.setCycleCount(1);
         transition.play();
@@ -1497,8 +1497,8 @@ public class BoardController {
             int moveTo = 0;
             if(finalCurrent < 39) moveTo = finalCurrent+1;
             else moveTo = 0;
-            car.setTranslateX(0);
-            car.setTranslateY(yDif);
+            car.setTranslateX(transition.getByX());
+            car.setTranslateY(transition.getByY());
             fields[finalCurrent].getChildren().remove(car);
             fields[moveTo].getChildren().add(car);
             multipleCars(player, moveTo);
