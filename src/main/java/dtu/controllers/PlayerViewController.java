@@ -286,7 +286,8 @@ public class PlayerViewController {
     @FXML
     ImageView car6;
     ImageView[] cars;
-
+    ImageView[] keyIcons;
+    ImageView[] jailIcons;
     //endregion
 
 
@@ -302,12 +303,37 @@ public class PlayerViewController {
         initializePlayerMoneyTextArray();
         initializePlayerAreaArray();
         initCarImages();
+        initIcons();
+
     }
 
 
     /**
      * Initializes a player info area array at start
      */
+    public void initIcons(){
+        keyIcons = new ImageView[6];
+        keyIcons[0] = p1KeyIcon;
+        keyIcons[1] = p2KeyIcon;
+        keyIcons[2] = p3KeyIcon;
+        keyIcons[3] = p4KeyIcon;
+        keyIcons[4] = p5KeyIcon;
+        keyIcons[5] = p6KeyIcon;
+        jailIcons = new ImageView[6];
+        jailIcons[0] = p1JailIcon;
+        jailIcons[1] = p2JailIcon;
+        jailIcons[2] = p3JailIcon;
+        jailIcons[3] = p4JailIcon;
+        jailIcons[4] = p5JailIcon;
+        jailIcons[5] = p6JailIcon;
+
+        for(int i = 0; i < 6; i++){
+            setInJailIcon(false, i);
+            setGetOutOfJailFreeCard(false, i);
+            keyIcons[i].setImage(image("src/textures/key.png"));
+            jailIcons[i].setImage(image("src/textures/inJailIcon.png"));
+        }
+    }
     public void initializePlayerAreaArray(){
         areas = new VBox[6];
         areas[0] = area1;
@@ -893,7 +919,7 @@ public class PlayerViewController {
     //endregion
     //region Get out of jail free card ICON
     public boolean isGetOutOfJailFreeCard(int player){
-        switch (player){
+        switch (player+1){
             case 1:
                 if(p1KeyIcon.getOpacity() > 0) return true;
                 else return false;
@@ -923,37 +949,14 @@ public class PlayerViewController {
         if(state) toSet = 1;
         else toSet = 0;
 
-
-        switch (player){
-            case 1:
-                p1KeyIcon.setOpacity(toSet);
-                break;
-            case 2:
-                p2KeyIcon.setOpacity(toSet);
-                break;
-            case 3:
-                p3KeyIcon.setOpacity(toSet);
-                break;
-            case 4:
-                p4KeyIcon.setOpacity(toSet);
-                break;
-            case 5:
-                p5KeyIcon.setOpacity(toSet);
-                break;
-            case 6:
-                p6KeyIcon.setOpacity(toSet);
-                break;
-            default:
-                System.out.println("Error: could not find player with number {" + player + "} while trying to setGetOutOfJailFreeCard");
-                break;
-        }
+        keyIcons[player].setOpacity(toSet);
     }
 
 
     //endregion
     //region Is in jail ICON
     public boolean isInJail(int player){
-        switch (player-1){
+        switch (player+1){
             case 1:
                 if(p1JailIcon.getOpacity() > 0) return true;
                 else return false;
@@ -983,30 +986,7 @@ public class PlayerViewController {
         if(state) toSet = 1;
         else toSet = 0;
 
-
-        switch (player-1){
-            case 1:
-                p1JailIcon.setOpacity(toSet);
-                break;
-            case 2:
-                p2JailIcon.setOpacity(toSet);
-                break;
-            case 3:
-                p3JailIcon.setOpacity(toSet);
-                break;
-            case 4:
-                p4JailIcon.setOpacity(toSet);
-                break;
-            case 5:
-                p5JailIcon.setOpacity(toSet);
-                break;
-            case 6:
-                p6JailIcon.setOpacity(toSet);
-                break;
-            default:
-                System.out.println("Error: could not find player with number {" + player + "} while trying to setInJailIcon");
-                break;
-        }
+        jailIcons[player].setOpacity(toSet);
     }
     //endregion
     //region Set Player Name
