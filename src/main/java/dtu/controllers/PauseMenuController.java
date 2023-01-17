@@ -127,13 +127,17 @@ public class PauseMenuController {
         giveUpButton.setOnAction(e -> giveUpPlayer(playerToGiveUp));
     }
     private void giveUpPlayer(Player player){
-        if(playerCheck == null){
-            playerCheck = player;
-            sendText("Er du sikker på at du vil opgive " + player.getName());
+
+        Player[] players = ControllerHandler.getInstance().getBoardController().playerHandler.getPlayers();
+        int totalLeft = 0;
+        for(int i = 0; i < players.length; i++){
+            if(!players[i].isBankrupt()) totalLeft++;
         }
-        else if(playerCheck == player){
+
+        if(totalLeft>1){
             sendText("Gav alle " + player.getName() + "'s grunde tilbage til banken");
             player.setBankrupt(true);
+            player.setLastPlayerPaid(-1);
             ControllerHandler.getInstance().getBoardController().playerHandler.playerIsBankrupt(player);
             ControllerHandler.getInstance().getBoardController().endTurnAfterBankrupt();
             Player playerToGiveUp = ControllerHandler.getInstance().getBoardController().playerHandler.getCurrentPlayer();
@@ -141,6 +145,9 @@ public class PauseMenuController {
             giveUpButton.setText("Giv op for " + playerToGiveUp.getName());
             giveUpButton.setOnAction(e -> giveUpPlayer(playerToGiveUp));
         }
+
+
+
     }
     public void saveAs(){
         if(!saveInput.getText().equals("")){
