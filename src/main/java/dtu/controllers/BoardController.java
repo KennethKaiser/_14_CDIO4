@@ -1477,15 +1477,15 @@ public class BoardController {
         }
         else if(current < 20) { //Move up (negative)
             transition.setToX(0);
-            transition.setToY(-66);
+            transition.setToY((-fields[current].getHeight()) + yDif);
         }
         else if(current < 30){ //Move right (positive)
-            transition.setToX(fields[current].getWidth());
+            transition.setToX(-fields[current].getWidth());
             transition.setToY(yDif);
         }
         else if(current < 40){ //Move down (positive)
             transition.setToX(0);
-            transition.setToY(114);
+            transition.setToY(fields[current].getHeight() + yDif);
         }
         transition.setCycleCount(1);
         transition.play();
