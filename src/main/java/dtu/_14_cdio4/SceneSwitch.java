@@ -7,6 +7,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -127,6 +129,21 @@ public class SceneSwitch {
             public void handle(WindowEvent windowEvent) {
                 windowEvent.consume();
                 switchToPauseMenu();
+            }
+        });
+        stage.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>
+                () {
+            @Override
+            public void handle(KeyEvent t) {
+                if(t.getCode()== KeyCode.ESCAPE)
+                {
+                    if(boardController.getMiddleParent().getChildren().contains(pauseMenu)){
+                        removePauseMenu();
+                    }
+                    else{
+                        switchToPauseMenu();
+                    }
+                }
             }
         });
         stage.show();
