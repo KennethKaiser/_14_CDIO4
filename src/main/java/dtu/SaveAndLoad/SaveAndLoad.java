@@ -228,7 +228,9 @@ public class SaveAndLoad {
             while(playerHandler.getCurrentPlayer().getId() != currentPlayerID){
                 playerHandler.currentPlayer();
             }
-            ((Jackpot)board.getCurrentBoard()[20]).setAmount(parseInt(other.get(i)[1]));
+            if(other.get(i).length > 1){
+                ((Jackpot)board.getCurrentBoard()[20]).setAmount(parseInt(other.get(i)[1]));
+            }
         }
         for(int i = 0; i < amount; i++){
             int current = playerHandler.getPlayers()[i].getMoney();
