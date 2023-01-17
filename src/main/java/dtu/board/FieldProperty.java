@@ -107,7 +107,7 @@ public class FieldProperty extends BuyableFields{
 
         HousingLogic housingLogic = new HousingLogic();
 
-        if(housingLogic.checkForHasAllOfFamily(this, owner.getId())&&buildings==0){
+        if(housingLogic.checkForHasAllOfFamily(this, owner.getId())&& buildings==0 && housingLogic.familyIsPledge(this,  owner.getId())&&buildings==0){
             temp =10;
         }
 

@@ -420,7 +420,7 @@ public class PropertyMenuController {
                     pledgeButtons[i].setOnAction(e -> doPledge(fieldProperty, !fieldProperty.isPledgeState(), player, properties));
 
                     if(houseLogic.checkForHasAllOfFamily(fieldProperty, player)){
-                        if(houseLogic.canBuild(fieldProperty, player)){
+                        if(houseLogic.canBuild(fieldProperty, player) && houseLogic.familyIsPledge(fieldProperty, player)){
                             if(fieldProperty.getBuildings()<5){
                                 plusStackPanes[i].setOpacity(1);
                                 plusButtons[i].setDisable(false);

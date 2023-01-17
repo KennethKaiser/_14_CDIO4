@@ -57,7 +57,15 @@ public class FerryField extends BuyableFields{
 
     public int findActiveRent(){
 
-        int temp = owner.getFerries().size();
+        int temp = 0;
+
+        for(int i = 0; i<owner.getFerries().size(); i++){
+            FerryField ferryField = (FerryField) owner.getFerries().get(i);
+            if(!ferryField.isPledgeState()){
+                temp++;
+            }
+        }
+
         int activeRent = 0;
 
 

@@ -76,6 +76,22 @@ public class HousingLogic {
         }
         return canBuild;
     }
+    public boolean familyIsPledge(FieldProperty property, int player){
+        int family = property.getProperty().getFamilie();
+        if(property.isPledgeState()) return  false;
+        ArrayList<Field> properties = playerHandler.getPlayers()[player].getProperties();
+        ArrayList<Field> sameFamily = new ArrayList<>();
+        for(int i = 0; i < properties.size(); i++){
+            if(((FieldProperty)properties.get(i)).getProperty().getFamilie() == family) {
+                if((FieldProperty) properties.get(i) != property) sameFamily.add(properties.get(i));
+            }
+        }
+        boolean canBuild = true;
+        for(int i = 0; i < sameFamily.size(); i++){
+            if(((FieldProperty)sameFamily.get(i)).isPledgeState()) canBuild = false;
+        }
+        return canBuild;
+    }
     public boolean canRemove(FieldProperty property, int player){
         int family = property.getProperty().getFamilie();
         if(property.isPledgeState()) return  false;
