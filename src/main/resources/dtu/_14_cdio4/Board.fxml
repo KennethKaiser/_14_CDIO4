@@ -359,7 +359,7 @@
                                   <children>
                                       <VBox alignment="CENTER" prefHeight="60.0" prefWidth="70.0" style="-fx-background-color: #404040; -fx-border-color: black; -fx-border-width: 1;">
                                           <children>
-                                              <Text fill="#00af00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" translateX="-3.0" wrappingWidth="8.851318359375">
+                                              <Text fill="#00af00" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" translateX="3.0" wrappingWidth="8.851318359375">
                                                   <font>
                                                       <Font name="System Bold" size="34.0" />
                                                   </font>
