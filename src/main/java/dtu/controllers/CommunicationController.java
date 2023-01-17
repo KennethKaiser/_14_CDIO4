@@ -449,6 +449,37 @@ public class CommunicationController {
 
     }
 
+    public void doubleFerryRent(FerryField ferryField, Player player){
+        String[] choiceOptions = new String[1];
+
+        choiceOptions[0] = "Okay";
+
+        String playerName = player.getName();
+        String ferryName = ferryField.getFerry().getName();
+        String ferryOwner = ferryField.getOwner().getName();
+        int rent = ferryField.findActiveRent();
+
+        PlayerHandler ph = ControllerHandler.getInstance().getBoardController().playerHandler;
+        player.setLastPlayerPaid(ferryField.getOwner().getId());
+        if(ph.canAffordTotal(player, rent*2)){
+            ferryField.rent(player, rent*2);
+        }
+        else{
+            ph.changePlayerBalance(ferryField.getOwner(), ph.valueOfAllAssets(player)/2 + player.getMoney()/2);
+            ph.changePlayerBalance(player, -rent*2);
+        }
+
+        playerViewController.updatePlayerMoney();
+
+
+        String textField = ferryName + " er ejet af " + ferryOwner + " og du skal betale dobbelt i leje. Betal " + rent*2 + " i leje."  ;
+        showCommunicationBox(textField, choiceOptions);
+
+        choices[0].setOnAction(e -> boardController.endTurn());
+
+    }
+
+
     public void payRentBrewery(BreweryField breweryField, Player player){
         String[] choiceOptions = new String[1];
 

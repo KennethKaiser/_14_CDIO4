@@ -12,6 +12,9 @@ public class ChanceCardFunctionality {
     private Jackpot jackpot;
 
     private boolean didPlayerMove = false;
+    private boolean didPlayerMoveBackwards = false;
+
+    private boolean doubleferry = false;
 
     public String chanceCardFunction(int id, Player player) {
         switch (id) {
@@ -181,12 +184,14 @@ public class ChanceCardFunctionality {
                 //Ryk tre felter tilbage
                 playerHandler.movePlayer(player, -3);
                 didPlayerMove = true;
+                didPlayerMoveBackwards = true;
                 break;
             }
             case 32: {
                 ////Ryk tre felter tilbage
                 playerHandler.movePlayer(player, -3);
                 didPlayerMove = true;
+                didPlayerMoveBackwards = true;
                 break;
             }
             case 33: {
@@ -198,12 +203,14 @@ public class ChanceCardFunctionality {
             case 42: {
                 //Ryk frem til det nærmeste rederi og betal ejeren to gange den leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
                 playerHandler.nearestFerry(player);
+                doubleferry = true;
                 didPlayerMove = true;
                 break;
             }
             case 43: {
                 //Ryk frem til det nærmeste rederi og betal ejeren to gange den leje han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
                 playerHandler.nearestFerry(player);
+                doubleferry = true;
                 didPlayerMove = true;
                 break;
             }
@@ -284,6 +291,22 @@ public class ChanceCardFunctionality {
 
     public void setJackpot(Jackpot jackpot) {
         this.jackpot = jackpot;
+    }
+
+    public boolean isDidPlayerMoveBackwards() {
+        return didPlayerMoveBackwards;
+    }
+
+    public void setDidPlayerMoveBackwards(boolean didPlayerMoveBackwards) {
+        this.didPlayerMoveBackwards = didPlayerMoveBackwards;
+    }
+
+    public boolean isDoubleferry() {
+        return doubleferry;
+    }
+
+    public void setDoubleferry(boolean doubleferry) {
+        this.doubleferry = doubleferry;
     }
 }
 
