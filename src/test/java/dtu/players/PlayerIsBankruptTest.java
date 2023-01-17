@@ -1,9 +1,6 @@
 package dtu.players;
 
-import dtu.board.Board;
-import dtu.board.Field;
-import dtu.board.FieldProperty;
-import dtu.board.Property;
+import dtu.board.*;
 import dtu.controllers.BoardController;
 import dtu.controllers.ControllerHandler;
 import org.junit.jupiter.api.Test;
@@ -14,34 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 class PlayerIsBankruptTest {
-    /*
-
-    @Test
-    void playerIsBankruptTest() {
-        ControllerHandler controllerHandler = new ControllerHandler();
-        BoardController boardController = new BoardController();
-        ArrayList<Field> properties = new ArrayList<>();
-        PlayerHandler playerHandler = new PlayerHandler();
-        Board board = new Board();
-        controllerHandler.setBoardController(boardController);
-        controllerHandler.setBoard(board);
-
-        playerHandler.initializePlayers(3);
-        playerHandler.initializePlayerInPlayers(0, "Test1", 4000, "black");
-        playerHandler.initializePlayerInPlayers(1, "Test2", 4000, "blue");
-        playerHandler.initializePlayerInPlayers(2, "Test3", 4000, "red");
-
-        properties.add(board.getCurrentBoard()[1]);
-        playerHandler.getPlayers()[0].setProperties(properties);
-        FieldProperty fieldProperty = (FieldProperty) playerHandler.getPlayers()[0].getProperties().get(0);
-        fieldProperty.setOwner(playerHandler.getPlayers()[0]);
-        //fieldProperty.setOwned(true);
-        //fieldProperty.setActiveRent(500);
-        //fieldProperty.setBuildings(1);
-
-        playerHandler.playerIsBankrupt(playerHandler.getPlayers()[0]);
-        assertEquals(false, playerHandler.getPlayers()[0].isBankrupt());
-    }
 
     @Test
     void playerIsBankruptTest2() {
@@ -51,28 +20,50 @@ class PlayerIsBankruptTest {
         //Player player = new Player(0, "test0", 4000, "black");
 
         playerHandler.initializePlayers(4);
-        playerHandler.initializePlayerInPlayers(0, "Test1", 4000, "black");
-        playerHandler.initializePlayerInPlayers(1, "Test2", 4000, "blue");
-        playerHandler.initializePlayerInPlayers(2, "Test3", 4000, "red");
-        playerHandler.initializePlayerInPlayers(3, "Test4", 4000, "green");
+        playerHandler.initializePlayerInPlayers(0, "Test1", 40000, "black");
+        playerHandler.initializePlayerInPlayers(1, "Test2", 40000, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Test3", 40000, "red");
+        playerHandler.initializePlayerInPlayers(3, "Test4", 40000, "green");
 
         FieldProperty fieldProperty1 = (FieldProperty) board.getCurrentBoard()[1];
         fieldProperty1.buy(playerHandler.getPlayers()[0]);
         fieldProperty1.setBuildings(3);
+        fieldProperty1.setPledgeState(true);
         FieldProperty fieldProperty34 = (FieldProperty) board.getCurrentBoard()[34];
         fieldProperty34.buy(playerHandler.getPlayers()[0]);
         fieldProperty34.setBuildings(3);
 
-        System.out.println(playerHandler.getPlayers()[0].getProperties().size());
+        FerryField ferryField = (FerryField) board.getCurrentBoard()[5];
+        ferryField.buy(playerHandler.getPlayers()[0]);
+        ferryField.setPledgeState(true);
+
+        BreweryField breweryField = (BreweryField) board.getCurrentBoard()[12];
+        breweryField.buy(playerHandler.getPlayers()[0]);
+        breweryField.setPledgeState(true);
+
 
         playerHandler.playerIsBankrupt(playerHandler.getPlayers()[0]);
+
+        assertEquals(null, fieldProperty1.getOwner());
+        assertEquals(false, fieldProperty1.isOwned());
+        assertEquals(0, fieldProperty1.getBuildings());
+        assertEquals(false, fieldProperty1.isPledgeState());
+
+        assertEquals(null, ferryField.getOwner());
+        assertEquals(false, ferryField.getOwned());
+        assertEquals(false, ferryField.isPledgeState());
+
+        assertEquals(null, breweryField.getOwner());
+        assertEquals(false, breweryField.getOwned());
+        assertEquals(false, breweryField.isPledgeState());
+
 
 
 
 
     }
 
-     */
+
 }
 
 

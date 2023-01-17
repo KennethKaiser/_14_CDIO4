@@ -9,6 +9,7 @@ import dtu.players.Player;
 import dtu.players.PlayerHandler;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.geometry.NodeOrientation;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -1487,22 +1488,29 @@ public class BoardController {
                 break;
             }
         }
+        boolean direction = false;
         if(current < 10){ //Move left (negative)
             transition.setToX(-fields[current].getWidth());
             transition.setToY(yDif);
+            direction = true;
         }
         else if(current < 20) { //Move up (negative)
             transition.setToX(0);
             transition.setToY((-fields[current].getHeight()) + yDif);
+            direction = true;
         }
         else if(current < 30){ //Move right (positive)
             transition.setToX(-fields[current].getWidth());
             transition.setToY(yDif);
+            direction = false;
         }
         else if(current < 40){ //Move down (positive)
             transition.setToX(0);
             transition.setToY(fields[current].getHeight() + yDif);
+            direction = false;
         }
+        if(direction) car.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
+        else car.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
         transition.setCycleCount(1);
         transition.play();
 
