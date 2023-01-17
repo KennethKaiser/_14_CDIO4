@@ -11,6 +11,7 @@ public class ChanceCardFunctionality {
     private Jackpot jackpot;
 
     private boolean didPlayerMove = false;
+    private boolean didPlayerMoveBackwards = false;
 
     public String chanceCardFunction(int id, Player player) {
         switch (id) {
@@ -180,12 +181,14 @@ public class ChanceCardFunctionality {
                 //Ryk tre felter tilbage
                 playerHandler.movePlayer(player, -3);
                 didPlayerMove = true;
+                didPlayerMoveBackwards = true;
                 break;
             }
             case 32: {
                 ////Ryk tre felter tilbage
                 playerHandler.movePlayer(player, -3);
                 didPlayerMove = true;
+                didPlayerMoveBackwards = true;
                 break;
             }
             case 33: {
