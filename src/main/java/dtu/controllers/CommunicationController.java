@@ -234,7 +234,7 @@ public class CommunicationController {
         choiceOptions[0] = "Okay";
         String textField = name + " rykkede over start og modtager 4000 kr.";
         showCommunicationBox(textField, choiceOptions);
-        choices[0].setOnAction(e -> boardController.whatField());
+        choices[0].setOnAction(e -> boardController.moneyStart());
 
     }
 

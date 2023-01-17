@@ -708,8 +708,7 @@ public class BoardController {
         multipleCars(playerId, playerPosition);
 
         if(playerHandler.isOverStart()){
-            playerHandler.changePlayerBalance(playerHandler.getCurrentPlayer(),4000);
-            playerViewController.updatePlayerMoney();
+
             communicationController.moneyOverStart(playerHandler.getCurrentPlayer().getName());
         }
         else{
@@ -717,6 +716,12 @@ public class BoardController {
         }
 
 
+    }
+
+    public void moneyStart(){
+        playerHandler.changePlayerBalance(playerHandler.getCurrentPlayer(),4000);
+        playerViewController.updatePlayerMoney();
+        whatField();
     }
 
     public void backwardsTurnMove(){
@@ -951,6 +956,7 @@ public class BoardController {
 
     public void updateAfterChanceCard(){
         playerViewController.updatePlayerMoney();
+        playerHandler.getCurrentPlayer().setLastPlayerPaid(-1);
 
         if(chanceCardFunctionality.isDidPlayerMove() && chanceCardFunctionality.isDidPlayerMoveBackwards()){
             chanceCardFunctionality.setDidPlayerMove(false);
@@ -1037,6 +1043,7 @@ public class BoardController {
 
     public void endTurn(){
 
+
         playerHandler.isPlayerBankrupt(playerHandler.getCurrentPlayer());
 
         if(playerHandler.getCurrentPlayer().isBankrupt()){
@@ -1082,9 +1089,6 @@ public class BoardController {
     public void endTurnAfterBankrupt(){
 
         int temp = playerHandler.getCurrentPlayer().getId();
-
-
-        //playerHandler.changePlayerArray();
 
         playerViewController.removePlayerFromPlayerView(temp);
         removeCarPlayer(temp);
