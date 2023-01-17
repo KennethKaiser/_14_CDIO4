@@ -502,6 +502,9 @@ public class BoardController {
         buttonHolder.setPrefWidth(121);
     }
 
+    /**
+     * Showing jackpot on screen.
+     */
     public void jackpotInt(){
         Jackpot jackpot = (Jackpot) ControllerHandler.getInstance().getBoard().getCurrentBoard()[20];
         jackpotIntLabel.setText("kr. " + jackpot.getAmount());
