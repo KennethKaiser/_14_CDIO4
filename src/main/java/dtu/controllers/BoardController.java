@@ -671,6 +671,7 @@ public class BoardController {
             dice.setOurRolls(null);
             playerHandler.movePlayerChanceCard(playerHandler.getCurrentPlayer(), 10);
             movePLayerOnGUI(playerHandler.getCurrentPlayer().getId(), 10);
+            ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(true, playerHandler.getCurrentPlayer().getId());
             communicationController.thirdDoublePrison(playerHandler.getCurrentPlayer().getName());
         }else{
             communicationController.whatRolled(playerRoll, currentPlayer);
