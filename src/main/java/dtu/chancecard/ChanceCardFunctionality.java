@@ -27,15 +27,6 @@ public class ChanceCardFunctionality {
                 jackpot.addToJackpot(houses*500 + hotels*2000);
                 break;
             }
-            case 27: {
-                //Ejendomsskatten er steget. Ekstraudgifterne er: 800,- pr. hus og 2300,- pr. hotel.
-                int houses = playerHandler.amountOfHouses(playerHandler.getPlayers()[player.getId()]);
-                int hotels = playerHandler.amountOfHotels(playerHandler.getPlayers()[player.getId()]);
-                playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(houses*800));
-                playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(hotels*2300));
-                jackpot.addToJackpot(houses*800+hotels*2300);
-                break;
-            }
             case 1: {
                 //De har kørt overfor "rødt lys". Betal 1000 kroner i bøde.
                 playerHandler.changePlayerBalance(player, -1000);
@@ -140,13 +131,6 @@ public class ChanceCardFunctionality {
                 playerHandler.changePlayerBalance(player, 200);
                 break;
             }
-            case 26: {
-                //De modtager “Matador-legatet” på 40.000,-  men kun hvis værdier ikke overstiger 15.000,-
-                if (playerHandler.valueOfAllAssets(player)<15000){
-                    playerHandler.changePlayerBalance(player, 40000);
-                }
-                break;
-            }
             case 23: {
                 //Det er deres fødselsdag. Modtag af hver medspiller 200,-.
                 playerHandler.getMoneyFromOtherPlayers(player, 200);
@@ -160,6 +144,22 @@ public class ChanceCardFunctionality {
             case 25: {
                 //De skal holde familiefest og får et tilskud fra hver medspiller på 500,-.
                 playerHandler.getMoneyFromOtherPlayers(player, 500);
+                break;
+            }
+            case 26: {
+                //De modtager “Matador-legatet” på 40.000,-  men kun hvis værdier ikke overstiger 15.000,-
+                if (playerHandler.valueOfAllAssets(player)<15000){
+                    playerHandler.changePlayerBalance(player, 40000);
+                }
+                break;
+            }
+            case 27: {
+                //Ejendomsskatten er steget. Ekstraudgifterne er: 800,- pr. hus og 2300,- pr. hotel.
+                int houses = playerHandler.amountOfHouses(playerHandler.getPlayers()[player.getId()]);
+                int hotels = playerHandler.amountOfHotels(playerHandler.getPlayers()[player.getId()]);
+                playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(houses*800));
+                playerHandler.changePlayerBalance(playerHandler.getPlayers()[player.getId()], -(hotels*2300));
+                jackpot.addToJackpot(houses*800+hotels*2300);
                 break;
             }
             case 28: {
