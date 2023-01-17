@@ -1140,8 +1140,7 @@ public class BoardController {
             toMove = (40-currentPos)+fieldPlacement;
         }
 
-
-        moveCar(player, toMove);
+        if(toMove > 0) moveCar(player, toMove);
 
     }
 
