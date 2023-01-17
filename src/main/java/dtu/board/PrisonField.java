@@ -39,7 +39,10 @@ public class PrisonField extends Field {
             if(player.getMoney() >= BAIL) {
                 player.setMoney(player.getMoney() - BAIL);
                 player.setJail(false);
-                ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(false, player.getId());
+                if(ControllerHandler.getInstance().getPlayerViewController() != null){
+                    ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(false, player.getId());
+                }
+
             }else
                 System.out.println("Du har ikke penge nok til at løslades");
         }
@@ -73,8 +76,10 @@ public class PrisonField extends Field {
     public void cardOut(Player player){
         if(player.isJail() == true){
             if(player.isGetOutOfJailCard() == true){
-                ControllerHandler.getInstance().getPlayerViewController().setGetOutOfJailFreeCard(false, player.getId());
-                ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(false, player.getId());
+                if(ControllerHandler.getInstance().getPlayerViewController() != null){
+                    ControllerHandler.getInstance().getPlayerViewController().setGetOutOfJailFreeCard(false, player.getId());
+                    ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(false, player.getId());
+                }
                 player.setJail(false);
                 player.setGetOutOfJailCard(false);
             }
