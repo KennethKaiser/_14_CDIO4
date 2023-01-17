@@ -10,7 +10,7 @@ public class Jackpot extends Field{
 
     @Override
     public String landedLabel() {
-        return "Du er landet på " + name + " .";
+        return "Du er landet på " + name + ".";
     }
 
     @Override

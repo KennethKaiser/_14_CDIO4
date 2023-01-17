@@ -18,7 +18,7 @@
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
-                            <ImageView fx:id="p1KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <ImageView fx:id="p1KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="5.0">
                                 <image>
                                     <Image url="@../../../../textures/key.png" />
                                 </image>
@@ -77,7 +77,7 @@
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="386.0" spacing="8.0">
                         <children>
-                            <ImageView fx:id="p3KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <ImageView fx:id="p3KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="5.0">
                                 <image>
                                     <Image url="@../../../../textures/key.png" />
                                 </image>
@@ -136,7 +136,7 @@
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
-                            <ImageView fx:id="p5KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <ImageView fx:id="p5KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="5.0">
                                 <image>
                                     <Image url="@../../../../textures/key.png" />
                                 </image>
@@ -199,7 +199,7 @@
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
-                            <ImageView fx:id="p2KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <ImageView fx:id="p2KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="5.0">
                                 <image>
                                     <Image url="@../../../../textures/key.png" />
                                 </image>
@@ -258,7 +258,7 @@
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
-                            <ImageView fx:id="p4KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <ImageView fx:id="p4KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="5.0">
                                 <image>
                                     <Image url="@../../../../textures/key.png" />
                                 </image>
@@ -317,7 +317,7 @@
                 <children>
                     <HBox alignment="CENTER" prefHeight="27.0" prefWidth="396.0" spacing="8.0">
                         <children>
-                            <ImageView fx:id="p6KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <ImageView fx:id="p6KeyIcon" fitHeight="80.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="5.0">
                                 <image>
                                     <Image url="@../../../../textures/key.png" />
                                 </image>

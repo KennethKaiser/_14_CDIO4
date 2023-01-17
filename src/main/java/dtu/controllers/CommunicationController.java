@@ -124,7 +124,7 @@ public class CommunicationController {
         choiceOptions[1] = "Prøv at slå dobbeltslag";
         choiceOptions[2] = "Brug 'Benådningskort'";
 
-        String textField = playerName + "er i fængsel. Du har nu følgende valgmuligheder.";
+        String textField = playerName + " er i fængsel. Du har nu følgende valgmuligheder.";
         showCommunicationBox(textField, choiceOptions);
         choices[0].setOnAction(e -> boardController.payForPrison());
         choices[1].setOnAction(e -> boardController.rollDoublePrison());
@@ -146,7 +146,7 @@ public class CommunicationController {
         String[] choiceOptions = new String[1];
         choiceOptions[0] = "Okay";
 
-        String textField = "Du har nu betalt for fængsel.";
+        String textField = "Du har nu betalt for at komme ud af fængsel.";
         showCommunicationBox(textField, choiceOptions);
         choices[0].setOnAction(e -> boardController.roll());
     }
@@ -155,7 +155,7 @@ public class CommunicationController {
         String[] choiceOptions = new String[1];
         choiceOptions[0] = "Okay";
 
-        String textField = "Du har nu brugt dit get out of jail freecard.";
+        String textField = "Du har nu brugt din benådning.";
         showCommunicationBox(textField, choiceOptions);
         choices[0].setOnAction(e -> boardController.roll());
     }
@@ -516,7 +516,7 @@ public class CommunicationController {
 
         choiceOptions[0] = "Okay";
 
-        String textField = playerName + " ejer allerede " + fieldName;
+        String textField = "Du ejer allerede " + fieldName + ".";
         showCommunicationBox(textField, choiceOptions);
 
         choices[0].setOnAction(e -> boardController.endTurn());
@@ -553,10 +553,10 @@ public class CommunicationController {
     public void taxChoice(TaxField taxField){
         String[] choiceOptions = new String[2];
 
-        choiceOptions[0] = "4000";
+        choiceOptions[0] = "kr. 4.000";
         choiceOptions[1] = "10%";
 
-        String textField = "Vil du betale 4000 eller 10% i skat?";
+        String textField = "Vil du betale 4000 kr eller 10% i skat?";
 
         showCommunicationBox(textField, choiceOptions);
 
