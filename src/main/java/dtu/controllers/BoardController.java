@@ -703,6 +703,17 @@ public class BoardController {
 
     }
 
+    public void backwardsTurnMove(){
+        int playerId = playerHandler.getCurrentPlayer().getId();
+        int playerPosition = playerHandler.getCurrentPlayer().getPosition();
+
+        movePLayerOnGUI(playerId, -3);
+        multipleCars(playerId, playerPosition);
+
+        whatField();
+
+    }
+
     public void moveAfterDoubleInPrison(){
 
         int[] playerRoll = dice.getOurRolls();
@@ -924,7 +935,13 @@ public class BoardController {
     public void updateAfterChanceCard(){
         playerViewController.updatePlayerMoney();
 
-        if(chanceCardFunctionality.isDidPlayerMove()){
+        if(chanceCardFunctionality.isDidPlayerMove() && chanceCardFunctionality.isDidPlayerMoveBackwards()){
+            chanceCardFunctionality.setDidPlayerMove(false);
+            chanceCardFunctionality.setDidPlayerMoveBackwards(false);
+            backwardsTurnMove();
+
+        }
+        else if(chanceCardFunctionality.isDidPlayerMove()){
             chanceCardFunctionality.setDidPlayerMove(false);
             turnMove();
         }
@@ -1162,10 +1179,13 @@ public class BoardController {
             }
         }
         int toMove = 0;
-        if(currentPos<fieldPlacement) {
+        if(fieldPlacement == -3){
+            moveCarBackwards(player, 3);
+        }
+        else if(currentPos<fieldPlacement) {
             toMove = fieldPlacement - currentPos;
         }
-        if(currentPos>fieldPlacement){
+        else if(currentPos>fieldPlacement){
             toMove = (40-currentPos)+fieldPlacement;
         }
 
@@ -1547,7 +1567,72 @@ public class BoardController {
         });
     }
 
+    public void moveCarBackwards(int player, int amount){
 
+        ImageView car = playerCars[player];
+        TranslateTransition transition = new TranslateTransition();
+        transition.setDuration(Duration.millis(200));
+        transition.setNode(car);
+        int yDif = 24;
+        car.setTranslateY(yDif);
+        int current = 0;
+        for(int i = 0; i < fields.length; i++){
+            if(fields[i].getChildren().contains(car)){
+                current = i;
+                break;
+            }
+        }
+        boolean direction = false;
+
+        if(current > 30){ //up
+            transition.setToX(0);
+            transition.setToY((-fields[current].getHeight()) + yDif);
+            direction = true;
+        }
+        else if(current > 20){ //left
+            transition.setToX(fields[current].getWidth());
+            transition.setToY(yDif);
+            direction = true;
+        }
+        else if(current > 10){ //down
+            transition.setToX(0);
+            transition.setToY(fields[current].getHeight() + yDif);
+            direction = false;
+        }
+        else if(current < 10 && current != 0){ //right
+            transition.setToX(fields[current].getWidth());
+            transition.setToY(yDif);
+            direction = false;
+        }
+        else {
+            transition.setToX(0);
+            transition.setToY((-fields[current].getHeight()) + yDif);
+            direction = true;
+        }
+
+        if(!direction) car.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
+        else car.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
+
+
+        transition.setCycleCount(1);
+        transition.play();
+
+        int finalAmount = amount;
+        int finalCurrent = current;
+        transition.setOnFinished(e -> {
+            int moveTo = 0;
+            if(finalCurrent > 0) moveTo = finalCurrent-1;
+            else moveTo = 39;
+            car.setTranslateX(transition.getByX());
+            car.setTranslateY(transition.getByY());
+            fields[finalCurrent].getChildren().remove(car);
+            fields[moveTo].getChildren().add(car);
+            multipleCars(player, moveTo);
+            if(finalAmount > 1){
+                moveCarBackwards(player, finalAmount-1);
+            }
+        });
+    }
 
 
     //endregion
