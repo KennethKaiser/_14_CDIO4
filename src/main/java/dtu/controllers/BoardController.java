@@ -829,8 +829,7 @@ public class BoardController {
         taxField.taxing(playerHandler.getCurrentPlayer(), true);
         playerViewController.updatePlayerMoney();
         playerHandler.getCurrentPlayer().setLastPlayerPaid(-1);
-        jackpot.addToJackpot(2000);
-        jackpotIntLabel.setText("kr." + jackpot.getAmount());
+        jackpotIntLabel.setText("kr. " + jackpot.getAmount());
         endTurn();
 
 
