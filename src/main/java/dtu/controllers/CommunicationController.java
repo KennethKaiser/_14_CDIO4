@@ -101,7 +101,7 @@ public class CommunicationController {
     public void thirdDoublePrison(String playerName){
         String[] choiceOptions = new String[1];
         choiceOptions[0] = "Okay";
-        String textField = playerName + " slog et dobbeltslag for 3. gang i træk og ryger derfor i fængsel";
+        String textField = playerName + " slog et dobbeltslag for 3. gang i træk og ryger derfor i fængsel.";
         showCommunicationBox(textField, choiceOptions);
         choices[0].setOnAction(e -> boardController.moveBeforeEndTurn());
     }
@@ -112,7 +112,7 @@ public class CommunicationController {
         choiceOptions[1] = "Prøv at slå dobbeltslag";
 
 
-        String textField = playerName + "er i fængsel. Du har nu følgende valgmuligheder.";
+        String textField = playerName + " er i fængsel. Du har nu følgende valgmuligheder.";
         showCommunicationBox(textField, choiceOptions);
         choices[0].setOnAction(e -> boardController.payForPrison());
         choices[1].setOnAction(e -> boardController.rollDoublePrison());
