@@ -692,8 +692,7 @@ public class BoardController {
         multipleCars(playerId, playerPosition);
 
         if(playerHandler.isOverStart()){
-            playerHandler.changePlayerBalance(playerHandler.getCurrentPlayer(),4000);
-            playerViewController.updatePlayerMoney();
+
             communicationController.moneyOverStart(playerHandler.getCurrentPlayer().getName());
         }
         else{
@@ -701,6 +700,12 @@ public class BoardController {
         }
 
 
+    }
+
+    public void moneyStart(){
+        playerHandler.changePlayerBalance(playerHandler.getCurrentPlayer(),4000);
+        playerViewController.updatePlayerMoney();
+        whatField();
     }
 
     public void backwardsTurnMove(){
