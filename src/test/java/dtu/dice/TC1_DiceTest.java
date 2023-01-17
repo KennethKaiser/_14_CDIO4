@@ -4,6 +4,7 @@ import dtu.dice.RaffleCup;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TC1_DiceTest {
@@ -137,6 +138,14 @@ class TC1_DiceTest {
         assertTrue((expecVal2n12Max > twelve) && (expecVal2n12Min < twelve), "expected for 12 (" + expecVal2n12 + ") should be near collected sum of 12 " + twelve);
         System.out.println("Samlet sum af 12 " + twelve + ", forventede værdi er " + expecVal2n12);
 
+    }
+
+    @Test
+    void diceRollNullTest(){
+        RaffleCup raffleCup = new RaffleCup();
+        raffleCup.setOurRolls(null);
+
+        assertFalse(raffleCup.rolledDouble());
     }
 
 }
