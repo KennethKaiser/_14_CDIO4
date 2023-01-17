@@ -1,6 +1,5 @@
 package dtu.board;
 
-import dtu.players.Player;
 
 public abstract class Field {
 

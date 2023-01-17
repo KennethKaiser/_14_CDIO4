@@ -53,7 +53,18 @@ public class BreweryField extends BuyableFields{
 
     public int findActiveRent(int currentRoll){
 
-        int temp = owner.getBreweries().size();
+        int temp = 0;
+
+
+
+        for(int i = 0; i < owner.getBreweries().size(); i++){
+            BreweryField breweryField = (BreweryField) owner.getBreweries().get(i);
+            if(!breweryField.isPledgeState()){
+                temp++;
+            }
+        }
+
+
         int activeRent = 0;
 
 

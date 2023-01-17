@@ -1,12 +1,7 @@
 package dtu.board;
 
 import dtu.controllers.BoardController;
-import dtu.players.PlayerHandler;
-import dtu.board.Board;
-import dtu.board.FieldProperty;
-import dtu.controllers.ControllerHandler;
 import org.junit.jupiter.api.Test;
-import dtu.board.HousingLogic;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

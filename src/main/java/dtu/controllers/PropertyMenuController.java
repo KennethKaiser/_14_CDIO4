@@ -2,7 +2,6 @@ package dtu.controllers;
 
 import dtu.board.*;
 import dtu.players.PlayerHandler;
-import javafx.css.Style;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -16,7 +15,6 @@ import javafx.scene.text.Text;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.ArrayList;
 
 public class PropertyMenuController {
 
@@ -420,7 +418,7 @@ public class PropertyMenuController {
                     pledgeButtons[i].setOnAction(e -> doPledge(fieldProperty, !fieldProperty.isPledgeState(), player, properties));
 
                     if(houseLogic.checkForHasAllOfFamily(fieldProperty, player)){
-                        if(houseLogic.canBuild(fieldProperty, player)){
+                        if(houseLogic.canBuild(fieldProperty, player) && houseLogic.familyIsPledge(fieldProperty, player)){
                             if(fieldProperty.getBuildings()<5){
                                 plusStackPanes[i].setOpacity(1);
                                 plusButtons[i].setDisable(false);

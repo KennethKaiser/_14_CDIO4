@@ -1,8 +1,6 @@
 package dtu.chancecard;
 
-import dtu.board.Chance;
 import dtu.board.Jackpot;
-import dtu.players.Player;
 import dtu.players.PlayerHandler;
 import org.junit.jupiter.api.Test;
 

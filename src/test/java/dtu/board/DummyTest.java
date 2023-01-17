@@ -1,6 +1,5 @@
 package dtu.board;
 
-import dtu.chancecard.ChanceCardDeck;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
