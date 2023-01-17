@@ -672,10 +672,16 @@ public class BoardController {
             playerHandler.movePlayerChanceCard(playerHandler.getCurrentPlayer(), 10);
             movePLayerOnGUI(playerHandler.getCurrentPlayer().getId(), 10);
             ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(true, playerHandler.getCurrentPlayer().getId());
+            currentPlayer.setJail(true);
             communicationController.thirdDoublePrison(playerHandler.getCurrentPlayer().getName());
         }else{
             communicationController.whatRolled(playerRoll, currentPlayer);
         }
+    }
+
+    public void moveBeforeEndTurn(){
+        movePLayerOnGUI(playerHandler.getCurrentPlayer().getId(), 10);
+        endTurn();
     }
 
     public void turnMove(){
@@ -1419,6 +1425,8 @@ public class BoardController {
                     number += charArray[i];
                 }
                 steps = 2*parseInt(number);
+                int[] cheatRolls = {steps/2, steps/2};
+                dice.setOurRolls(cheatRolls);
 
                 int[] toIntArray = new int[2];
                 toIntArray[0] = steps/2;
@@ -1430,11 +1438,13 @@ public class BoardController {
                 int playerId = cheatPlayer.getId();
                 int playerPosition = cheatPlayer.getPosition();
                 dice.setRolledDouble(true);
+                dice.setNumberOfDoubles(dice.getNumberOfDoubles()+1);
                 rollDiceAnimation(steps/2, steps/2);
                 movePLayerOnGUI(playerId, playerPosition);
                 multipleCars(playerId, playerPosition);
+
                 //Switch decision box
-                communicationController.whatRolled(toIntArray, playerHandler.getCurrentPlayer());
+                thirdTimeRolledToPrisonOrNot(dice.getOurRolls(), cheatPlayer);
             }
             else{
                 steps = parseInt(stepsString);
