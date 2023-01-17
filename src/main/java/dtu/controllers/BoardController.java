@@ -352,11 +352,22 @@ public class BoardController {
     @FXML
     Button cheatMoveButton;
 
+
+    //endregion
+
+    //region extra functionality on middle-board.
     @FXML
     Button pauseButton;
     @FXML
     Label pauseButtonLabel;
-    //endregion
+    @FXML
+    Label jackpotIntLabel;
+
+    @FXML
+    Label jackpotLabel;
+
+    @FXML
+    Button jackpotButton;
 
     //Methods:
     //------------------------------------------------------------------------------
@@ -481,7 +492,7 @@ public class BoardController {
 
     public void pauseButton(){
         pauseButton.setOpacity(0);
-        pauseButtonLabel.setText("Pause");
+        pauseButtonLabel.setText("MENU");
         pauseButtonLabel.setStyle("-fx-font-size: 18");
         pauseButton.setOnMouseEntered(e -> pauseButtonLabel.setStyle(pauseButtonLabel.getStyle() + ";-fx-font-weight: bold"));
         pauseButton.setOnMouseExited(e -> pauseButtonLabel.setStyle(pauseButtonLabel.getStyle() + ";-fx-font-weight: normal"));
@@ -489,6 +500,11 @@ public class BoardController {
         pauseButton.setOnAction(e -> ControllerHandler.getInstance().getSceneSwitch().switchToPauseMenu());
         StackPane buttonHolder = new StackPane();
         buttonHolder.setPrefWidth(121);
+    }
+
+    public void jackpotInt(){
+        Jackpot jackpot = (Jackpot) ControllerHandler.getInstance().getBoard().getCurrentBoard()[20];
+        jackpotIntLabel.setText("kr. " + jackpot.getAmount());
     }
     //endregion
 
@@ -796,6 +812,7 @@ public class BoardController {
         taxField.taxing(playerHandler.getCurrentPlayer(), choice);
         playerViewController.updatePlayerMoney();
         playerHandler.getCurrentPlayer().setLastPlayerPaid(-1);
+        jackpotInt();
         endTurn();
 
 
@@ -932,7 +949,7 @@ public class BoardController {
         chanceCardFunctionality.setJackpot(jackpot);
 
         chanceCardFunctionality.chanceCardFunction(Integer.parseInt(drawnCard[0]),currentPlayer);
-
+        jackpotInt();
         communicationController.chanceCardTurn(drawnCard[1]);
 
     }
