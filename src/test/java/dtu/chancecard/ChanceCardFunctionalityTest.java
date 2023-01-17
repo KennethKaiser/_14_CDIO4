@@ -300,4 +300,33 @@ class ChanceCardFunctionalityTest {
 
 
     }
+
+    @Test
+    void testGetNSet() {
+        ChanceCardFunctionality chanceCardFunctionality = new ChanceCardFunctionality();
+        PlayerHandler playerHandler = new PlayerHandler();
+        int StartMoney = 500000;
+        //Temp
+        Jackpot jackpot = new Jackpot();
+        chanceCardFunctionality.setJackpot(jackpot);
+
+        playerHandler.initializePlayers(3);
+        playerHandler.initializePlayerInPlayers(0,"Niels", StartMoney, "black");
+        playerHandler.initializePlayerInPlayers(1, "Karl", 10000, "blue");
+        playerHandler.initializePlayerInPlayers(2, "Hans", 10000, "red");
+
+        chanceCardFunctionality.setPlayerHandler(playerHandler);
+
+        assertEquals(false,chanceCardFunctionality.isDidPlayerMove(),"Tester spilleren ikke er flyttet");
+
+        chanceCardFunctionality.setDidPlayerMove(true);
+
+        assertEquals(true,chanceCardFunctionality.isDidPlayerMove(),"Tester spilleren har flyttet sig");
+
+        assertEquals(jackpot,chanceCardFunctionality.getJackpot(),"Tester jackpot");
+
+        assertEquals(playerHandler,chanceCardFunctionality.getPlayerHandler(),"Tester playerHandler");
+
+    }
+
 }
