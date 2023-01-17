@@ -9,6 +9,7 @@ import dtu.players.Player;
 import dtu.players.PlayerHandler;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.geometry.NodeOrientation;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -515,6 +516,9 @@ public class BoardController {
         cars[3] = car4;
         cars[4] = car5;
         cars[5] = car6;
+        for(int i = 0; i < cars.length; i++){
+            cars[i].setTranslateZ(200);
+        }
     }
     public void startCars(boolean isLoad){
         int amount = ControllerHandler.getInstance().getMenuScreenController().getMenuAmountOfPlayers();
@@ -1152,13 +1156,27 @@ public class BoardController {
             if(fields[position].getChildren().contains(cars[i])) total++;
         }
         if(total < 3){
-            cars[player].setTranslateY((total+2)*8);
+            if(position > 10 && position < 20){
+                cars[player].setTranslateY(-(total+2)*8);
+                System.out.println("pos: " + -(total+2)*8);
+            }
+            else if(position > 30){
+                cars[player].setTranslateY(-(total+2)*8);
+                System.out.println("pos: " + -(total+2)*8);
+            }
+            else cars[player].setTranslateY((total+2)*8);
         }
         else{
             int newTotal = 1;
             for(int n = 0; n < cars.length; n++){
                 if(fields[position].getChildren().contains(cars[n])) {
-                    cars[n].setTranslateY(newTotal*8+(6-total)*4);
+                    if(position > 10 && position < 20){
+                        cars[player].setTranslateY(-newTotal*8+(6-total)*4);
+                    }
+                    else if(position > 30 && position < 40){
+                        cars[player].setTranslateY(-newTotal*8+(6-total)*4);
+                    }
+                    else cars[player].setTranslateY(newTotal*8+(6-total)*4);
                     newTotal++;
                 }
             }
@@ -1459,12 +1477,10 @@ public class BoardController {
     //region Animation
     public void moveCar(int player, int amount){
         ImageView car = playerCars[player];
-
         TranslateTransition transition = new TranslateTransition();
-        transition.setDuration(Duration.millis(200));
+        transition.setDuration(Duration.millis(400));
         transition.setNode(car);
         int yDif = 24;
-        car.setTranslateY(yDif);
         int current = 0;
         for(int i = 0; i < fields.length; i++){
             if(fields[i].getChildren().contains(car)){
@@ -1472,36 +1488,43 @@ public class BoardController {
                 break;
             }
         }
+        boolean direction = true;
         if(current < 10){ //Move left (negative)
             transition.setToX(-fields[current].getWidth());
             transition.setToY(yDif);
+            direction = true;
         }
         else if(current < 20) { //Move up (negative)
             transition.setToX(0);
-            transition.setToY((-fields[current].getHeight())+yDif);
+            transition.setToY((-(fields[current].getHeight()+yDif)));
+            direction = false;
         }
         else if(current < 30){ //Move right (positive)
-            transition.setToX(fields[current].getWidth());
+            transition.setToX(-fields[current].getWidth());
             transition.setToY(yDif);
+            direction = false;
         }
         else if(current < 40){ //Move down (positive)
             transition.setToX(0);
-            transition.setToY((fields[current].getHeight())+yDif);
+            transition.setToY((fields[current].getHeight())-yDif);
+            direction = true;
         }
+        if(direction) car.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
+        else car.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
         transition.setCycleCount(1);
         transition.play();
-
         int finalAmount = amount;
         int finalCurrent = current;
         transition.setOnFinished(e -> {
+            transition.stop();
             int moveTo = 0;
             if(finalCurrent < 39) moveTo = finalCurrent+1;
             else moveTo = 0;
-            car.setTranslateX(0);
-            car.setTranslateY(yDif);
+
             fields[finalCurrent].getChildren().remove(car);
             fields[moveTo].getChildren().add(car);
-            multipleCars(player, moveTo);
+            //multipleCars(player, moveTo);
+
             if(finalAmount > 1){
                 moveCar(player, finalAmount-1);
             }
