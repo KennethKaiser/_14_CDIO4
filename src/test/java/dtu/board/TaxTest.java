@@ -1,7 +1,5 @@
 package dtu.board;
 
-import dtu.controllers.BoardController;
-import dtu.controllers.ControllerHandler;
 import dtu.players.PlayerHandler;
 import org.junit.jupiter.api.Test;
 
