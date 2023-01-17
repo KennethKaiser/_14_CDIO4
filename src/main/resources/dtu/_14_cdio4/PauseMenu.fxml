@@ -7,17 +7,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PauseMenuController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="500.0" translateY="-300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dtu.controllers.PauseMenuController">
    <children>
       <VBox alignment="CENTER" prefHeight="206.0" prefWidth="300.0" spacing="10.0">
          <children>
-            <Button fx:id="resumeButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="420.0" text="Resume">
+            <Button fx:id="resumeButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="420.0" text="Genoptag">
                <font>
                   <Font name="Century Gothic" size="21.0" />
                </font></Button>
             <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0" spacing="20.0">
                <children>
-                  <Button fx:id="saveAsButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Save As">
+                  <Button fx:id="saveAsButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Gem som">
                      <font>
                         <Font name="Century Gothic" size="21.0" />
                      </font></Button>
@@ -32,7 +32,7 @@
                   <Font name="Century Gothic" size="21.0" />
                </font>
             </Button>
-            <Button fx:id="exitNoSaveButton" layoutX="55.0" layoutY="252.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="420.0" text="Exit Game">
+            <Button fx:id="exitNoSaveButton" layoutX="55.0" layoutY="252.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="420.0" text="Slut spil">
                <font>
                   <Font name="Century Gothic" size="21.0" />
                </font></Button>

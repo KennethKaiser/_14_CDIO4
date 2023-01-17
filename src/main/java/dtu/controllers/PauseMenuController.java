@@ -75,6 +75,7 @@ public class PauseMenuController {
         }
         else sendText("Du skal skrive et navn til dit save");
     }
+
     private void sendText(String text){
         ControllerHandler.getInstance().getCommunicationController().showOkBox(text);
     }
