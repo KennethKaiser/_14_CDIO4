@@ -1,14 +1,10 @@
 package dtu.board;
 
-import dtu.board.FieldProperty;
-import dtu.board.Board;
 import dtu.controllers.BoardController;
-import dtu.controllers.ControllerHandler;
 import dtu.players.PlayerHandler;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TC5_RentAndBuyTest {
 
