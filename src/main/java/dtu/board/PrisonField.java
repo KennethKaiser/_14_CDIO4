@@ -39,42 +39,24 @@ public class PrisonField extends Field {
             if(player.getMoney() >= BAIL) {
                 player.setMoney(player.getMoney() - BAIL);
                 player.setJail(false);
-                ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(false, player.getId());
+                if(ControllerHandler.getInstance().getPlayerViewController() != null){
+                    ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(false, player.getId());
+                }
+
             }else
                 System.out.println("Du har ikke penge nok til at løslades");
         }
 }
 
-    public void doubleOut(Player player) {
-        if (player.isJail() == true) {
-        if(player.getJailTurns() < 3){
-            PlayerHandler playerHandler = new PlayerHandler();
-            RaffleCup getOut = new RaffleCup();
-            getOut.roll();
-            die1 = Integer.valueOf(getOut.getOurRolls()[0]);
-            die2 = Integer.valueOf(getOut.getOurRolls()[1]);
-            if (die1 == die2) {
-                player.setJail(false);
-                ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(false, player.getId());
-                player.setJailTurns(0);
-                //Denne flytter spilleren deres slag, men en bedre måde eksisterer måske
-                playerHandler.movePlayer(player,(die1 + die2));
-            }
-            else{
-                System.out.println("Du slog ikke to ens og må forblive i fængsel");
-                player.setJailTurns(player.getJailTurns() + 1);
-                //Next players turn
-            }}
-        else
-        System.out.println("Du kan ikke slå terning fler gange, betal eller brug et kort");
-        }
-    }
+
 
     public void cardOut(Player player){
         if(player.isJail() == true){
             if(player.isGetOutOfJailCard() == true){
-                ControllerHandler.getInstance().getPlayerViewController().setGetOutOfJailFreeCard(false, player.getId());
-                ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(false, player.getId());
+                if(ControllerHandler.getInstance().getPlayerViewController() != null){
+                    ControllerHandler.getInstance().getPlayerViewController().setGetOutOfJailFreeCard(false, player.getId());
+                    ControllerHandler.getInstance().getPlayerViewController().setInJailIcon(false, player.getId());
+                }
                 player.setJail(false);
                 player.setGetOutOfJailCard(false);
             }
